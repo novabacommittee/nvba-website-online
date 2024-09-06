@@ -39,9 +39,8 @@ export class AlldetailsComponent implements OnInit {
 
   // SP2023CTSATURDAY:number =0;
 
-  // KP2023NON:number = 0;
-
-  // KP2023VEG:number = 0;
+  KP2023NON:number = 0;
+  KP2023VEG:number = 0;
 
   KP2024VEGCHOP:number = 0;
   KP2024GHUGNI:number = 0;
@@ -98,22 +97,8 @@ export class AlldetailsComponent implements OnInit {
   DP2023EBSUN06NON:number = 0;
   DP2023EBSUN07VEG:number = 0;
 
-  // nonCount:number =0;
-  // vegCount:number =0;
-
-  // nonCountFri:number =0;
-  // vegCountFri:number =0;
-
-  // nonCountSat:number =0;
-  // vegCountSat:number =0;
-
-  // nonCountSun:number =0;
-  // vegCountSun:number =0;
-
-
   customAdult:number =0;
   customKid:number =0;
-
 
   user: { index:number; email: string; firstname: string; lastname: string; expires: string; phone:string} | undefined;
 
@@ -121,12 +106,12 @@ export class AlldetailsComponent implements OnInit {
     vegchopcount:number;vegghugnicount:number;teacount:number;colddrinkscount:number;vegbiriyanicount:number;nonvegbiriyanicount:number
 } | undefined;
 
-    vegchopcount: number = 0;
-    vegghugnicount: number = 0;
-    teacount:number=0;
-    colddrinkscount:number = 0;
-    vegbiriyanicount:number = 0;
-    nonvegbiriyanicount:number = 0;
+  vegchopcount: number = 0;
+  vegghugnicount: number = 0;
+  teacount:number=0;
+  colddrinkscount:number = 0;
+  vegbiriyanicount:number = 0;
+  nonvegbiriyanicount:number = 0;
 
   constructor(private mds: MemberService, private tds: ConcertticketsService, private foodds:FoodticketsService ) {
 
@@ -155,46 +140,13 @@ export class AlldetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  columnDefs = [
+  membershipcolumnDefs = [
     { field: 'index',  sortable: true, resizable: true,  cellClass: 'id-class center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'expires', sortable: true, resizable: true, filter: true },
     { field: 'MM2022YY', headerName:'Membership', sortable: true, resizable: true },
-
-    // { field: 'DP2023EBALL01NON', headerName:'Adult Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBALL02VEG', headerName:'Adult Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBALL03NON', headerName:'Kids [ 11 to 18 years ] Non-Veg ', sortable: true, resizable: true },
-    // { field: 'DP2023EBALL04VEG', headerName:'Kids [ 11 to 18 years ] Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBALL05KID', headerName:'Kids [ 0 to 10 years ]', sortable: true, resizable: true },
-    // { field: 'DP2023EBALL06NON', headerName:'Students and Visiting Parents - Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBALL07VEG', headerName:'Students and Visiting Parents - Veg', sortable: true, resizable: true },
-
-    // { field: 'DP2023EBFRI01NON', headerName:'Friday - Adult Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBFRI02VEG', headerName:'Friday - Adult Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBFRI03NON', headerName:'Friday - Kids [ 11 to 18 years ] Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBFRI04VEG', headerName:'Friday - Kids [ 11 to 18 years ] Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBFRI05KID', headerName:'Friday - Kids[ 0 to 10years]', sortable: true, resizable: true },
-    // { field: 'DP2023EBFRI06NON', headerName:'Friday - Students and Visiting Parents - Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBFRI07VEG', headerName:'Friday - Students and Visiting Parents - Veg', sortable: true, resizable: true },
-
-    // { field: 'DP2023EBSAT01NON', headerName:'Saturday - Adult Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSAT02VEG', headerName:'Saturday - Adult Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSAT03NON', headerName:'Saturday - Kids [ 11 to 18 years ] - Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSAT04VEG', headerName:'Saturday - Kids [ 11 to 18 years ] - Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSAT05KID', headerName:'Saturday - Kids [ 0 to 10 years ]', sortable: true, resizable: true },
-    // { field: 'DP2023EBSAT06NON', headerName:'Saturday - Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSAT07VEG', headerName:'Saturday - Students and Visiting Parents Veg', sortable: true, resizable: true },
-
-    // { field: 'DP2023EBSUN01NON', headerName:'Sunday - Adult Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSUN02VEG', headerName:'Sunday - Adult Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSUN03NON', headerName:'Sunday - Kids [ 11 to 18 years ] Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSUN04VEG', headerName:'Sunday - Kids [ 11 to 18 years ] Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSUN05KID', headerName:'Sunday - Kids [ 0 to 10 years ]', sortable: true, resizable: true },
-    // { field: 'DP2023EBSUN06NON', headerName:'Sunday - Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
-    // { field: 'DP2023EBSUN07VEG', headerName:'Sunday - Students and Visiting Parents Veg', sortable: true, resizable: true },
-
     { field: 'phone', sortable: true, resizable: true, filter: true }
 	];
 
@@ -217,7 +169,7 @@ export class AlldetailsComponent implements OnInit {
 	];
 
 
-  columnDefsTickets = [
+  dp2024columnDefsTickets = [
     { field: 'index',  sortable: true, resizable: true,  cellClass: 'id-class center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
@@ -279,41 +231,40 @@ export class AlldetailsComponent implements OnInit {
   }
 
 
-  // checkKP2023Details(){
-  //   [...this.foodTickets].forEach( ct =>{
-  //       console.log(' Each row KP');
-  //      console.log(ct.transactions[0].item_list.items[0].quantity );
-  //      [...ct.transactions[0].item_list.items].forEach( nonandveg =>{
+  checkKP2023Details(){
+    [...this.foodTickets].forEach( ct =>{
+        console.log(' Each row KP');
+       console.log(ct.transactions[0].item_list.items[0].quantity );
+       [...ct.transactions[0].item_list.items].forEach( nonandveg =>{
 
-  //       console.log(nonandveg);
-  //       //"KP2023VEG"
-  //      if(nonandveg.sku == 'KP2023VEG'){
-  //       this.KP2023VEG = this.KP2023VEG + parseInt(nonandveg.quantity );
-  //      }
-  //      //"KP2023NON"
-  //      if(nonandveg.sku == 'KP2023NON'){
-  //       this.KP2023NON = this.KP2023NON + parseInt(nonandveg.quantity );
-  //      }
+        console.log(nonandveg);
+        //"KP2023VEG"
+       if(nonandveg.sku == 'KP2023VEG'){
+        this.KP2023VEG = this.KP2023VEG + parseInt(nonandveg.quantity );
+       }
+       //"KP2023NON"
+       if(nonandveg.sku == 'KP2023NON'){
+        this.KP2023NON = this.KP2023NON + parseInt(nonandveg.quantity );
+       }
+       })
 
-  //      })
-
-  //     //  //"KP2023VEG"
-  //     //  if(ct.transactions[0].item_list.items[0].sku == 'KP2023VEG'){
-  //     //   this.KP2023VEG = this.KP2023VEG + parseInt(ct.transactions[0].item_list.items[0].quantity );
-  //     //  }
-  //     //  //"KP2023NON"
-  //     //  if(ct.transactions[0].item_list.items[0].sku == 'KP2023NON'){
-  //     //   this.KP2023NON = this.KP2023NON + parseInt(ct.transactions[0].item_list.items[0].quantity );
-  //     //  }
-  //     //  if(ct.transactions[0].item_list.items[1].sku == 'KP2023VEG'){
-  //     //   this.KP2023VEG = this.KP2023VEG + parseInt(ct.transactions[0].item_list.items[1].quantity );
-  //     //  }
-  //     //  //"KP2023NON"
-  //     //  if(ct.transactions[0].item_list.items[1].sku == 'KP2023NON'){
-  //     //   this.KP2023NON = this.KP2023NON + parseInt(ct.transactions[0].item_list.items[1].quantity );
-  //     //  }
-  //    });
-  // }
+       //"KP2023VEG"
+       if(ct.transactions[0].item_list.items[0].sku == 'KP2023VEG'){
+        this.KP2023VEG = this.KP2023VEG + parseInt(ct.transactions[0].item_list.items[0].quantity );
+       }
+       //"KP2023NON"
+       if(ct.transactions[0].item_list.items[0].sku == 'KP2023NON'){
+        this.KP2023NON = this.KP2023NON + parseInt(ct.transactions[0].item_list.items[0].quantity );
+       }
+       if(ct.transactions[0].item_list.items[1].sku == 'KP2023VEG'){
+        this.KP2023VEG = this.KP2023VEG + parseInt(ct.transactions[0].item_list.items[1].quantity );
+       }
+       //"KP2023NON"
+       if(ct.transactions[0].item_list.items[1].sku == 'KP2023NON'){
+        this.KP2023NON = this.KP2023NON + parseInt(ct.transactions[0].item_list.items[1].quantity );
+       }
+     });
+  }
 
 
 
