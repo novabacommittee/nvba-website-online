@@ -1,7 +1,7 @@
 <div id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
 
     <p  class="red "  >
-        &ast; Tickets are required for food and cultural program for all, including <br/>kids (0 to 10 years).
+        &ast; Tickets are required for food and cultural program for everyone, including <br/>kids (0 to 10 years).
       </p> 
 
     <accordion [isAnimated]="true" [closeOthers]="false" >
@@ -106,7 +106,8 @@
                     </accordion-group>
                     <accordion-group heading="Sunday only (October 13th, 2024)">
                         <p class="ml-4 mt-3 ">
-                          <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
+                            <span> Note:- Tickets include food and cultural programs.</span>
+                            <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
                         </p>
                         <table class="table table-bordered table-hover ">
                             <thead>
@@ -150,14 +151,9 @@
             </div>
         </accordion-group>
     </accordion>
-    
-  
-  
-  
    
     <!-- <div>
         {{ dataObject | json }}
     </div> -->
     
   </div>
-  

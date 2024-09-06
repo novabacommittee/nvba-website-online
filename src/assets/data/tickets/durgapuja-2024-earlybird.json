@@ -19,7 +19,7 @@
     },
     {
       "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
-      "description": "Kids [ 8 to 18 years ] Non-Veg ",
+      "description": "Kids [ 11 to 18 years ] Non-Veg ",
       "quantity": 0,
       "price": 50,
       "tax": 0.00,
@@ -28,7 +28,7 @@
     },
     {
       "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
-      "description": "Kids [ 8 to 18 years ] Veg",
+      "description": "Kids [ 11 to 18 years ] Veg",
       "quantity": 0,
       "price": 50,
       "tax": 0.00,
@@ -37,7 +37,7 @@
     },
   {
     "name": "NVBA Durga Puja 2024 Ticket - All 3 days ",
-    "description": "Kids [ 0 to 7 years ]",
+    "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
@@ -83,7 +83,7 @@
     },
     {
       "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
-      "description": "Kids [ 8 to 18 years ] Non-Veg",
+      "description": "Kids [ 11 to 18 years ] Non-Veg",
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
@@ -92,7 +92,7 @@
     },
     {
       "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
-      "description": "Kids [ 8 to 18 years ] Veg",
+      "description": "Kids [ 11 to 18 years ] Veg",
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
@@ -101,7 +101,7 @@
     },
   {
     "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
-    "description": "Kids [ 0 to 7 years ]",
+    "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
@@ -146,7 +146,7 @@
     },
     {
       "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
-      "description": "Kids [ 8 to 18 years ] - Non-Veg - Please bring your Student ID at venue.",
+      "description": "Kids [ 11 to 18 years ] - Non-Veg - Please bring your Student ID at venue.",
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
@@ -155,7 +155,7 @@
     },
     {
       "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
-      "description": "Kids [ 8 to 18 years ] - Veg - Please bring your Student ID at venue.",
+      "description": "Kids [ 11 to 18 years ] - Veg - Please bring your Student ID at venue.",
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
@@ -164,7 +164,7 @@
     },
   {
     "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
-    "description": "Kids [ 0 to 7 years ]",
+    "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
@@ -209,7 +209,7 @@
     },
     {
       "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
-      "description": "Kids [ 8 to 18 years ] Non-Veg",
+      "description": "Kids [ 11 to 18 years ] Non-Veg",
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
@@ -218,7 +218,7 @@
     },
     {
       "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
-      "description": "Kids [ 8 to 18 years ] Veg",
+      "description": "Kids [ 11 to 18 years ] Veg",
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
@@ -227,7 +227,7 @@
     },
   {
     "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
-    "description": "Kids [ 0 to 7 years ]",
+    "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
