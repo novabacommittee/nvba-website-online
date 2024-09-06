@@ -71,6 +71,7 @@ import { FoodcheckoutComponent } from './components/foodcart/foodcheckout/foodch
 import { PicnicComponent } from './pages/picnic/picnic.component';
 import { EventsguidelinesComponent } from './pages/aboutus/eventsguidelines/eventsguidelines.component';
 import { Durgapujatickets2023Component } from './helper/tickets/durgapujatickets2023/durgapujatickets2023.component';
+import { Durgapujatickets2024Component } from './helper/tickets/durgapujatickets2024/durgapujatickets2024.component';
 import { CaresComponent } from './pages/cares/cares.component';
 
 import { ProposedconstitutionComponent } from './pages/archive/proposedconstitution/proposedconstitution.component';
@@ -132,6 +133,7 @@ import { Durgapuja2024Component } from './pages/durgapuja2024/durgapuja2024.comp
     PicnicComponent,
     EventsguidelinesComponent,
     Durgapujatickets2023Component,
+    Durgapujatickets2024Component,
     CaresComponent,
 
     ProposedconstitutionComponent,

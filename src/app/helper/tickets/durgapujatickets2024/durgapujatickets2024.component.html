@@ -1,0 +1,163 @@
+<div id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
+
+    <p  class="red "  >
+        &ast; Tickets are required for food and cultural program for all, including <br/>kids (0 to 10 years).
+      </p> 
+
+    <accordion [isAnimated]="true" [closeOthers]="false" >
+        <accordion-group style="overflow-wrap: break-word;" heading="All 3 Days (October 11th, October 12th and October 13th, 2024)"  >
+            <p class="ml-4 mt-3">
+                <span >Note:- Tickets include three days of food and cultural programs.</span>
+              <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
+            </p>
+            <table class="table table-bordered table-hover" >
+                <thead>
+                  <tr>
+                    <th scope="col"  >Items</th>
+                    <th scope="col">Cost</th>
+                    <th scope="col">Quantity</th>
+                    <!-- <th scope="col">Add</th> -->
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of dataObject; index as i" >
+                  
+                  <tr *ngIf="i < 7">
+                      <th>{{item.description}}</th>
+                      <td>$ {{item.price}}</td>
+                      <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
+                      <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
+                      <td  >$ {{item.price * item.quantity}}</td>
+                  </tr>
+                </tbody>
+                
+                <thead>
+                    <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col" ><div class="d-flex justify-content-end">Total</div></th>
+                    <!-- <th scope="col">Add</th> -->
+                    <th  scope="col">$ {{totalCost}}</th> 
+                    </tr>
+                </thead>
+            </table>
+  
+            <div class="float-right mb-3 mr-3" >
+                <span class=" red " *ngIf="!addtoCartBtn"  >Please decrease concert headcount.</span>
+                <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
+            </div> 
+        </accordion-group>
+        <accordion-group heading="Single Day Tickets" >
+            <div id="singleDay" class="singleDay" >
+                <accordion>
+                    <accordion-group heading="Friday only (October 11th, 2024)" >
+                      <p class="ml-4 mt-3 ">
+                        <span > Note:- Tickets include food and cultural programs.</span>
+                        <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
+                      </p>
+                        <table class="table table-bordered table-hover ">
+                            <thead>
+                                <tr>
+                                <th scope="col" >Items</th>
+                                <th scope="col">Cost</th>
+                                <th scope="col">Quantity</th>
+                                <!-- <th scope="col">Add</th> -->
+                                <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let item of dataObject; index as i" >
+                                
+                                <tr *ngIf="i > 6 && i < 14" >
+                                    <th>{{item.description}}</th>
+                                    <td>$ {{item.price}}</td>
+                                    <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
+                                    <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
+                                    <td  >$ {{item.price * item.quantity}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </accordion-group>
+                    <accordion-group heading="Saturday only (October 12th , 2024)">
+                        <p class="ml-4 mt-3 ">
+                         <span> Note:- Tickets include food and cultural programs.</span>
+                          <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
+                        </p>
+                        <table class="table table-bordered table-hover ">
+                                <thead>
+                                <tr>
+                                    <th scope="col" >Items</th>
+                                    <th scope="col">Cost</th>
+                                    <th scope="col">Quantity</th>
+                                    <!-- <th scope="col">Add</th> -->
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let item of dataObject; index as i" >
+                                
+                                    <tr *ngIf="i > 13 && i < 21" >
+                                    <th>{{item.description}}</th>
+                                    <td>$ {{item.price}}</td>
+                                    <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
+                                    <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
+                                    <td  >$ {{item.price * item.quantity}}</td>
+                                    </tr>
+                            </tbody>
+                        </table>    
+                    </accordion-group>
+                    <accordion-group heading="Sunday only (October 13th, 2024)">
+                        <p class="ml-4 mt-3 ">
+                          <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
+                        </p>
+                        <table class="table table-bordered table-hover ">
+                            <thead>
+                                <tr>
+                                    <th scope="col" >Items</th>
+                                    <th scope="col">Cost</th>
+                                    <th scope="col">Quantity</th>
+                                    <!-- <th scope="col">Add</th> -->
+                                    <th scope="col">Total</th>
+                                </tr>
+                                </thead>
+                                <tbody *ngFor="let item of dataObject; index as i" >
+                                
+                                    <tr *ngIf="i > 20" >
+                                    <th>{{item.description}}</th>
+                                    <td>$ {{item.price}}</td>
+                                    <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
+                                    <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
+                                    <td  >$ {{item.price * item.quantity}}</td>
+                                    </tr>
+                            </tbody>
+                        </table>    
+                    </accordion-group>
+                    <table class="table table-bordered table-hover  ">
+                        <thead>
+                            <tr>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col" colspan="3" ><div class="d-flex justify-content-end">Total</div></th>
+                            <!-- <th scope="col">Add</th> -->
+                            <th  scope="col">$ {{totalCost}}</th> 
+                            </tr>
+                        </thead>
+                    </table>
+                
+                    <div class="float-right mb-3 mr-3">
+                        <!-- <span class=" red " *ngIf="!addtoCartBtn"  >Please decrease concert headcount.</span> -->
+                        <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
+                    </div>
+                </accordion>
+            </div>
+        </accordion-group>
+    </accordion>
+    
+  
+  
+  
+   
+    <!-- <div>
+        {{ dataObject | json }}
+    </div> -->
+    
+  </div>
+  
