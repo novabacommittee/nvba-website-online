@@ -106,4 +106,12 @@ export class MemberService {
             });
         }
 
+  dp2024(purches:any){
+    this.db.object('/dp2024/'+purches.id).set({ ...purches }).catch(error => {
+          console.log(error);
+        }).then( c => {
+          console.log("Success Create.");
+        });
+    }
+  
 }
