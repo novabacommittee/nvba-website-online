@@ -1,4 +1,5 @@
 export interface Member {
+    address: string;
     address1: string;
     address2: string;
     billingFirstname: string;
@@ -6,6 +7,7 @@ export interface Member {
     city: string;
     country: string;
     discount_code: string;
+    displayName: string;
     $email: string;
     expires: string;
     fee: number;
@@ -15,14 +17,12 @@ export interface Member {
     joined: string;
     lastname: string;
     membership: string;
+    membershipstatus: string;
     phonenumber: number;
+    provider: string;
     state: string;
     term: string;
+    usertype: string;
     zipcode: number;
     photoURL: string;
-    displayName: string;
-    provider: string;
-    address: string;
-    membershipstatus: string;
-    usertype: string;
 }

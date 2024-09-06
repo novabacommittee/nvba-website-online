@@ -5,7 +5,7 @@
       "quantity": 0,
       "price": 90,
       "tax": 0.00,
-      "sku": "DP2024EBALL01NON",
+      "sku": "DP2024ALL01NON",
       "currency": "USD"
     },
     {
@@ -14,7 +14,7 @@
       "quantity": 0,
       "price": 90,
       "tax": 0.00,
-      "sku": "DP2024EBALL02VEG",
+      "sku": "DP2024ALL02VEG",
       "currency": "USD"
     },
     {
@@ -23,7 +23,7 @@
       "quantity": 0,
       "price": 50,
       "tax": 0.00,
-      "sku": "DP2024EBALL03NON",
+      "sku": "DP2024ALL03NON",
       "currency": "USD"
     },
     {
@@ -32,7 +32,7 @@
       "quantity": 0,
       "price": 50,
       "tax": 0.00,
-      "sku": "DP2024EBALL04VEG",
+      "sku": "DP2024ALL04VEG",
       "currency": "USD"
     },
   {
@@ -41,7 +41,7 @@
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
-    "sku": "DP2024EBALL05KID",
+    "sku": "DP2024ALL05KID",
     "currency": "USD"
   },
   {
@@ -50,7 +50,7 @@
       "quantity": 0,
       "price": 50,
       "tax": 0.00,
-      "sku": "DP2024EBALL06NON",
+      "sku": "DP2024ALL06NON",
       "currency": "USD"
   },
   {
@@ -59,7 +59,7 @@
       "quantity": 0,
       "price": 50,
       "tax": 0.00,
-      "sku": "DP2024EBALL07VEG",
+      "sku": "DP2024ALL07VEG",
       "currency": "USD"
   },
   {
@@ -68,7 +68,7 @@
       "quantity": 0,
       "price": 80,
       "tax": 0.00,
-      "sku": "DP2024EBFRI01NON",
+      "sku": "DP2024FRI01NON",
       "currency": "USD"
     },
 
@@ -78,7 +78,7 @@
       "quantity": 0,
       "price": 80,
       "tax": 0.00,
-      "sku": "DP2024EBFRI02VEG",
+      "sku": "DP2024FRI02VEG",
       "currency": "USD"
     },
     {
@@ -87,7 +87,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBFRI03NON",
+      "sku": "DP2024FRI03NON",
       "currency": "USD"
     },
     {
@@ -96,7 +96,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBFRI04VEG",
+      "sku": "DP2024FRI04VEG",
       "currency": "USD"
     },
   {
@@ -105,7 +105,7 @@
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
-    "sku": "DP2024EBFRI05KID",
+    "sku": "DP2024FRI05KID",
     "currency": "USD"
   },
   {
@@ -114,7 +114,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBFRI06NON",
+      "sku": "DP2024FRI06NON",
       "currency": "USD"
   },
   {
@@ -123,7 +123,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBFRI07VEG",
+      "sku": "DP2024FRI07VEG",
       "currency": "USD"
   },
   {
@@ -132,7 +132,7 @@
       "quantity": 0,
       "price": 80,
       "tax": 0.00,
-      "sku": "DP2024EBSAT01NON",
+      "sku": "DP2024SAT01NON",
       "currency": "USD"
     },
     {
@@ -141,7 +141,7 @@
       "quantity": 0,
       "price": 80,
       "tax": 0.00,
-      "sku": "DP2024EBSAT02VEG",
+      "sku": "DP2024SAT02VEG",
       "currency": "USD"
     },
     {
@@ -150,7 +150,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBSAT03NON",
+      "sku": "DP2024SAT03NON",
       "currency": "USD"
     },
     {
@@ -159,7 +159,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBSAT04VEG",
+      "sku": "DP2024SAT04VEG",
       "currency": "USD"
     },
   {
@@ -168,7 +168,7 @@
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
-    "sku": "DP2024EBSAT05KID",
+    "sku": "DP2024SAT05KID",
     "currency": "USD"
   },
   {
@@ -177,7 +177,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBSAT06NON",
+      "sku": "DP2024SAT06NON",
       "currency": "USD"
   },
   {
@@ -186,7 +186,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBSAT07VEG",
+      "sku": "DP2024SAT07VEG",
       "currency": "USD"
   },
   {
@@ -195,7 +195,7 @@
       "quantity": 0,
       "price": 80,
       "tax": 0.00,
-      "sku": "DP2024EBSUN01NON",
+      "sku": "DP2024SUN01NON",
       "currency": "USD"
     },
     {
@@ -204,7 +204,7 @@
       "quantity": 0,
       "price": 80,
       "tax": 0.00,
-      "sku": "DP2024EBSUN02VEG",
+      "sku": "DP2024SUN02VEG",
       "currency": "USD"
     },
     {
@@ -213,7 +213,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBSUN03NON",
+      "sku": "DP2024SUN03NON",
       "currency": "USD"
     },
     {
@@ -222,7 +222,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBSUN04VEG",
+      "sku": "DP2024SUN04VEG",
       "currency": "USD"
     },
   {
@@ -231,7 +231,7 @@
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
-    "sku": "DP2024EBSUN05KID",
+    "sku": "DP2024SUN05KID",
     "currency": "USD"
   },
   {
@@ -240,7 +240,7 @@
       "quantity": 0,
       "price": 35,
       "tax": 0.00,
-      "sku": "DP2024EBSUN06NON",
+      "sku": "DP2024SUN06NON",
       "currency": "USD"
   },
   {
@@ -249,7 +249,7 @@
     "quantity": 0,
     "price": 35,
     "tax": 0.00,
-    "sku": "DP2024EBSUN07VEG",
+    "sku": "DP2024SUN07VEG",
     "currency": "USD"
 }
 ]
