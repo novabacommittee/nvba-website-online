@@ -10,13 +10,9 @@
 
     <div class="container pt-1" >
 
-        <!-- {{ userMember?.email }} <br />
-        {{ userMember?.displayName }} -->
-
         <div>
-              
               <div class="h5 mt-4">
-                Email:-  <span class="font-weight-light">{{userMember?.email}}</span> 
+                Member Email:-  <span class="font-weight-light">{{userMember?.email}}</span> 
               </div>
               <div class="h5 mt-4">
                 Member Display Name :-   <span class="font-weight-light">{{userMember?.displayName}}</span>
@@ -45,43 +41,103 @@
                       <td *ngIf="item.sku.includes('MM2024YY')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
                       <td *ngIf="item.sku.includes('MM2024YY')" >$ {{item.price}}</td>
                       <td *ngIf="item.sku.includes('MM2024YY')" >{{ item.quantity}}</td>
-                      <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
                       <td *ngIf="item.sku.includes('MM2024YY')"  >$ {{item.price * item.quantity}}</td>
-                  </tr>
+                    </tr>
                     <tr *ngFor="let item of items ">
-                      <td *ngIf="item.sku.includes('MM2023YY')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
-                      <td *ngIf="item.sku.includes('MM2023YY')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
-                      <td *ngIf="item.sku.includes('MM2023YY')" >$ {{item.price}}</td>
-                      <td *ngIf="item.sku.includes('MM2023YY')" >{{ item.quantity}}</td>
-                      <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
-                      <td *ngIf="item.sku.includes('MM2023YY')"  >$ {{item.price * item.quantity}}</td>
-                  </tr>
+                        <td *ngIf="item.sku.includes('MM2023YY')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                        <td *ngIf="item.sku.includes('MM2023YY')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                        <td *ngIf="item.sku.includes('MM2023YY')" >$ {{item.price}}</td>
+                        <td *ngIf="item.sku.includes('MM2023YY')" >{{ item.quantity}}</td>
+                        <td *ngIf="item.sku.includes('MM2023YY')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('MM2022YY')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('MM2022YY')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('MM2022YY')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('MM2022YY')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('MM2022YY')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('MM2021YY')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('MM2021YY')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('MM2021YY')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('MM2021YY')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('MM2021YY')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('MM2020YY')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('MM2020YY')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('MM2020YY')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('MM2020YY')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('MM2020YY')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('MM2019YY')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('MM2019YY')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('MM2019YY')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('MM2019YY')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('MM2019YY')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
                     <tr *ngFor="let item of items ">
                       <td *ngIf="item.sku.includes('SP2024')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
                       <td *ngIf="item.sku.includes('SP2024')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
                       <td *ngIf="item.sku.includes('SP2024')" >$ {{item.price}}</td>
                       <td *ngIf="item.sku.includes('SP2024')" >{{ item.quantity}}</td>
-                      <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
                       <td *ngIf="item.sku.includes('SP2024')"  >$ {{item.price * item.quantity}}</td>
-                  </tr>  
-                  <tr *ngFor="let item of items ">
+                    </tr>  
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('SP2023')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('SP2023')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('SP2023')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('SP2023')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('SP2023')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>  
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('SP2022')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('SP2022')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('SP2022')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('SP2022')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('SP2022')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>  
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('DP2024')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('DP2024')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('DP2024')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('DP2024')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('DP2024')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
+                    <tr *ngFor="let item of items ">
                       <td *ngIf="item.sku.includes('DP2023')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
                       <td *ngIf="item.sku.includes('DP2023')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
                       <td *ngIf="item.sku.includes('DP2023')" >$ {{item.price}}</td>
                       <td *ngIf="item.sku.includes('DP2023')" >{{ item.quantity}}</td>
-                      <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
                       <td *ngIf="item.sku.includes('DP2023')"  >$ {{item.price * item.quantity}}</td>
-                  </tr>
-                  </tbody>
+                    </tr>
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('DP2022')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('DP2022')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('DP2022')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('DP2022')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('DP2022')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('KP2024')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('KP2024')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('KP2024')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('KP2024')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('KP2024')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
+                    <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('KP2023')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('KP2023')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('KP2023')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('KP2023')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('KP2023')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
+                </tbody>
               </table>
-  
               </div>
         </div>
-
-       
-        <!-- <div>
-            {{ ticketList | json }}
-        </div>  -->
     </div>
 
 </div>

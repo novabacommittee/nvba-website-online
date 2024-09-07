@@ -36,7 +36,7 @@ export class AlldetailsComponent implements OnInit {
 
   SP2024KIDS:number =0;
 
-  // SP2023CTSATURDAY:number =0;
+  SP2023CTSATURDAY:number =0;
 
   KP2023NON:number = 0;
   KP2023VEG:number = 0;
@@ -412,7 +412,6 @@ export class AlldetailsComponent implements OnInit {
          
           [...m.purchase].forEach(element => {
           const userTicket = {};
-          const customTicket = {};
           this.newPurches = false;
       //     console.log(element);
       //     console.log(element.sku);
