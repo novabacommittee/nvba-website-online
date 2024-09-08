@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { GetjsonfileService } from './../../services/getjsonfile.service';
 import { AuthService } from './../../shared/services/auth.service';
 
@@ -8,7 +8,7 @@ import { AuthService } from './../../shared/services/auth.service';
   styleUrls: ['./durgapuja2024.component.scss']
 })
 
-export class Durgapuja2024Component implements OnInit {
+export class Durgapuja2024Component implements OnInit, OnDestroy {
 
   @ViewChild('playA') playA!: ElementRef;
 
@@ -43,6 +43,12 @@ export class Durgapuja2024Component implements OnInit {
       console.log('Pause');
       this.playAudio = false;
     }
+  }
+
+  ngOnDestroy(): void {
+    this.audio.pause();
+    console.log('Pause');
+    this.playAudio = false;
   }
 
 }
