@@ -266,8 +266,7 @@ export class AlldetailsComponent implements OnInit {
   }
 
 
-
-    checkKP2024Details(){
+  checkKP2024Details(){
       this.foodPurchaseList = [];
 
       [...this.foodTickets].forEach( ct =>{
@@ -414,7 +413,7 @@ export class AlldetailsComponent implements OnInit {
           const userTicket = {};
           this.newPurches = false;
       //     console.log(element);
-      //     console.log(element.sku);
+           console.log(element.sku);
           [...element].forEach(e => {
 
                 if(e.sku.includes("MM2024YY")){
@@ -476,6 +475,7 @@ export class AlldetailsComponent implements OnInit {
                 //     this.newPurches = true;
                 // }
 
+                //All 3 days Ticket
                 if(e.sku.includes('DP2024ALL01NON')){
                     this.DP2024ALL01NON += e.quantity ;
                     Object.assign(userTicket,{ DP2024ALL01NON : e.quantity });
@@ -512,6 +512,8 @@ export class AlldetailsComponent implements OnInit {
                   Object.assign(userTicket,{ DP2024ALL07VEG : e.quantity });
                   this.newPurches = true;
                 }
+                
+                //Single Day Ticket
                 //Friday
                 if(e.sku.includes('DP2024FRI01NON')){
                   this.DP2024FRI01NON += e.quantity ;
@@ -617,7 +619,6 @@ export class AlldetailsComponent implements OnInit {
                   Object.assign(userTicket,{ DP2024SUN06NON : e.quantity });
                   this.newPurches = true;
                 }
-
                 if(e.sku.includes('DP2024SUN07VEG')){  
                   this.DP2024SUN07VEG += e.quantity ;
                   Object.assign(userTicket,{ DP2024SUN07VEG : e.quantity });
@@ -654,6 +655,7 @@ export class AlldetailsComponent implements OnInit {
   onBtnExport() {
     this.gridApi.exportDataAsCsv();
   }
+  
   onGridReady(params:any) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;

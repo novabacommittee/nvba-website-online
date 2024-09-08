@@ -42,12 +42,9 @@ export class UserDetailsCheckComponent implements OnInit {
    
   }
 
-
   ngOnInit(): void {
     // ngOnInit() {
     //   const id = this.route.snapshot.params['id'];
     // }
   }
-
-
 }

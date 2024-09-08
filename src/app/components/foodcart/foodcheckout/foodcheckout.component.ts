@@ -232,10 +232,10 @@ export class FoodcheckoutComponent implements OnInit {
        
              this.cart.clearCart();
              this.cleanup();
-             this.router.navigate(['/durgapuja2024']);
+            // this.router.navigate(['/durgapuja2020']);
   
             setTimeout(()=>{                           
-              this.router.navigate(['/']);
+              this.router.navigate(['/durgapuja2024']);
             }, 2000);
         })
       }
