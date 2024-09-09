@@ -24,14 +24,10 @@ export const environment = {
   production: false,
   firebase: {
     apiKey: "AIzaSyCxKE2SsBVjG-RA1uv54KgcFI6-Z0-GdKc",
-    authDomain: "nvba-dev.firebaseapp.com",
-    databaseURL: "https://nvba-dev.firebaseio.com",
-    projectId: "nvba-dev",
-    storageBucket: "nvba-dev.appspot.com",
-    // authDomain: "nvba-6bd35.firebaseapp.com",
-    // databaseURL: "https://nvba-6bd35.firebaseio.com",
-    // projectId: "nvba-6bd35",
-    // storageBucket: "nvba-6bd35.appspot.com",
+    authDomain: "nvba-6bd35.firebaseapp.com",
+    databaseURL: "https://nvba-6bd35.firebaseio.com",
+    projectId: "nvba-6bd35",
+    storageBucket: "nvba-6bd35.appspot.com",
     messagingSenderId: "576609571271",
     appId: "1:576609571271:web:d7648e6a22632a55ef49e2",
     measurementId: "G-YM094H77Y4"
