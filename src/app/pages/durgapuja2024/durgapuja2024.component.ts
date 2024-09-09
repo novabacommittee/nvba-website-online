@@ -29,14 +29,14 @@ export class Durgapuja2024Component implements OnInit, OnDestroy {
        
       this.audio.src = "https://dhrubajyoti.com/nvba/media/YA-CHANDI-MAHALAYA-SONG-SOURENDRO-SOUMYOJIT.mp3"; 
       this.audio.load();
-       this.audio.play();
+      //this.audio.play();
   }
 
   soundplay() : void{
     if(this.playAudio == false){
       this.audio.play();
       console.log('Play');
-      this.playAudio = true;
+      this.playAudio = false;
     }
     else{
       this.audio.pause();
