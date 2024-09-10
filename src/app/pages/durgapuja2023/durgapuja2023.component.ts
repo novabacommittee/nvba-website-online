@@ -48,7 +48,12 @@ export class Durgapuja2023Component implements OnInit {
        }
      }
    
-   
+     ngOnDestroy(): void {
+      this.audio.pause();
+      console.log('Pause');
+      this.playAudio = false;
+    }
+     
      ngAfterViewInit() {
        //  console.log(this.playA.nativeElement.innerHTML);
      }
