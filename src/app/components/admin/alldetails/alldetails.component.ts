@@ -403,18 +403,18 @@ export class AlldetailsComponent implements OnInit {
   
     this.SP2024KIDS=0;
 
-  //  console.log(this.rowData);
+    //console.log(this.rowData);
     [...this.rowData].forEach( m =>{ 
-    //   console.log(m.purchase? true : false)  ;
+       console.log(m.purchase? true : false)  ;
 
        if(m.purchase? true : false){
          
           [...m.purchase].forEach(element => {
           const userTicket = {};
           this.newPurches = false;
-      //     console.log(element);
-           console.log(element.sku);
+           console.log(element);
           [...element].forEach(e => {
+              console.log(e.sku);
 
                 if(e.sku.includes("MM2024YY")){
                     this.MM2024YY += e.quantity ;
@@ -639,7 +639,7 @@ export class AlldetailsComponent implements OnInit {
             Object.assign(this.user, userTicket );
             //   this.user = this.user 
             this.memberList.unshift(this.user);
-            // console.log(this.user);
+             console.log(this.user);
           }
           
         }); // End of Each Member
