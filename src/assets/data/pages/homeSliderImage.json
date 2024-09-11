@@ -25,5 +25,26 @@
         "imageLink": "./../../../assets/images/gallery/dp2023/durgapuja-2023-3.jpg",
         "tag": "",
         "description": ""
+    },
+    {
+        "homeSliderImageId": "5",
+        "name": "social_media_post_dc_south_asian_festival_2024.jpeg",
+        "imageLink": "./../../../assets/images/stocks/2024/social_media_post_dc_south_asian_festival_2024.jpeg",
+        "tag": "",
+        "description": ""
+    },
+    {
+        "homeSliderImageId": "6",
+        "name": "social_media_post_dc_south_asian_festival_2024.jpeg",
+        "imageLink": "./../../../assets/images/gallery/pb2024/pb_bhog_preparation.jpg",
+        "tag": "",
+        "description": ""
+    },
+    {
+        "homeSliderImageId": "7",
+        "name": "social_media_post_dc_south_asian_festival_2024.jpeg",
+        "imageLink": "./../../../assets/images/gallery/pb2024/pb_opening_performence.jpg",
+        "tag": "",
+        "description": ""
     }
 ]
