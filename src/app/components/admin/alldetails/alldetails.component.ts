@@ -62,8 +62,8 @@ export class AlldetailsComponent implements OnInit {
 
   DP2024EBALL05KID:number = 0;
 
-  // DP2024EBALL06NON:number = 0;
-  // DP2024EBALL07VEG:number = 0;
+  DP2024EBALL06NON:number = 0;
+  DP2024EBALL07VEG:number = 0;
 
   DP2024EBFRI01NON:number = 0;
   DP2024EBFRI02VEG:number = 0;
@@ -376,8 +376,8 @@ export class AlldetailsComponent implements OnInit {
 
     this.DP2024EBALL05KID= 0;
 
-    // this.DP2024EBALL06NON= 0;
-    // this.DP2024EBALL07VEG= 0;
+    this.DP2024EBALL06NON= 0;
+    this.DP2024EBALL07VEG= 0;
 
     this.DP2024EBFRI01NON= 0;
     this.DP2024EBFRI02VEG= 0;
@@ -528,16 +528,16 @@ export class AlldetailsComponent implements OnInit {
                 Object.assign(userTicket,{ DP2024EBALL05KID : e.quantity });
                 this.newPurches = true;
               }
-              // if(e.sku.includes('DP2024EBALL06NON') || e.sku.includes('DP2024ALL06NON')){
-              //   this.DP2024EBALL06NON += e.quantity ;
-              //   Object.assign(userTicket,{ DP2024EBALL06NON : e.quantity });
-              //   this.newPurches = true;
-              // }
-              // if(e.sku.includes('DP2024EBALL07VEG') || e.sku.includes('DP2024ALL07VEG')){
-              //   this.DP2024EBALL07VEG += e.quantity ;
-              //   Object.assign(userTicket,{ DP2024EBALL07VEG : e.quantity });
-              //   this.newPurches = true;
-              // }
+              if(e.sku.includes('DP2024EBALL06NON') || e.sku.includes('DP2024ALL06NON')){
+                this.DP2024EBALL06NON += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBALL06NON : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBALL07VEG') || e.sku.includes('DP2024ALL07VEG')){
+                this.DP2024EBALL07VEG += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBALL07VEG : e.quantity });
+                this.newPurches = true;
+              }
                 
               //Single Day Ticket
               //Friday
