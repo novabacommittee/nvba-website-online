@@ -67,7 +67,7 @@
                             </thead>
                             <tbody *ngFor="let item of dataObject; index as i" >
                                 
-                                <tr *ngIf="i > 5 && i < 10" >
+                                <tr *ngIf="i > 4 && i < 10" >
                                     <th>{{item.description}}</th>
                                     <td>$ {{item.price}}</td>
                                     <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
@@ -94,7 +94,7 @@
                             </thead>
                             <tbody *ngFor="let item of dataObject; index as i" >
                                 
-                                    <tr *ngIf="i > 10 && i < 15" >
+                                    <tr *ngIf="i > 9 && i < 15" >
                                     <th>{{item.description}}</th>
                                     <td>$ {{item.price}}</td>
                                     <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
@@ -121,7 +121,7 @@
                                 </thead>
                                 <tbody *ngFor="let item of dataObject; index as i" >
                                 
-                                    <tr *ngIf="i > 15" >
+                                    <tr *ngIf="i > 14" >
                                     <th>{{item.description}}</th>
                                     <td>$ {{item.price}}</td>
                                     <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
