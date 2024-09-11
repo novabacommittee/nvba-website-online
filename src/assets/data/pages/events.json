@@ -195,5 +195,19 @@
         "pageLink": "/durgapuja2022",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
         "mapUrl": "https://maps.app.goo.gl/6idn5Y9pDNAufvr98"
+    },
+    { 
+        "eventId":16,
+        "eventType": "past",
+        "eventName": "DC South Asian Festival 2024",
+        "eventDate": "Sept 06, 2024",
+        "eventEndDate": "Sept 30, 2024",
+        "eventImage": "./../../../assets/images/stocks/2024/Social Media Post_DC South Asian Festival_2024.jpeg",
+        "timming": "Sept 06-30, 2024",
+        "venue": "9650 Main St, Fairfax, VA 22031",
+        "pageLink": "",
+        "description": "DCSAACI is dedicated to providing valuable opportunities for South Asian artists to showcase their talents through films, literature, dance and art. We are honored to have Padma Shri Sitar Maestro Ustad Shahid Parvez Khan as our opening performer on Friday September 6, 2024 at 7:30 PM. In alignment with our mission, the festival will also feature promising local South Asian talents throughout its duration.Chitra Banerjee Divakaruni on Sept 11, 2024 at 8:30 PM (Virtual) for the book discussion. The DCSAFF 2024, film festival Opening Night Film is Purtawn, Directed by Suman Ghosh, Actors Sharmila Tagore, Rituparna Sengupta will attend in person for the World Premiere on Friday September 13, 2024.",
+        "mapUrl": "https://dcsaff2024.eventive.org/schedule",
+        "externalLink":"https://dcsaff2024.eventive.org/welcome"
     }
 ]
