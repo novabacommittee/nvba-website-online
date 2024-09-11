@@ -198,7 +198,7 @@
     },
     { 
         "eventId":16,
-        "eventType": "past",
+        "eventType": "current",
         "eventName": "DC South Asian Festival 2024",
         "eventDate": "Sept 06, 2024",
         "eventEndDate": "Sept 30, 2024",
