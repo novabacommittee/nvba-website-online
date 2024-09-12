@@ -10,7 +10,7 @@
         "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
         "pageLink": "/kobipronam2024",
         "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
-        "mapUrl": "https://goo.gl/maps/R7hwqUSVbtTfyt2DA"
+        "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
     { 
         "eventId":2,
@@ -23,7 +23,7 @@
         "venue": "Shelter 8 at Bull Run Park,7700 Bull Run Dr, Centreville, VA 20121",
         "pageLink": "/picnic2024",
         "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship. Special attraction T20 Cricket Final live streaming, live photo booth.",
-        "mapUrl": "https://goo.gl/maps/2MnaWV3i8LLBneY39"
+        "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
     },
     { 
         "eventId":3,
@@ -36,7 +36,7 @@
         "venue": "Freedom High School, 25450 Riding Center Dr, Chantilly, VA 20152",
         "pageLink": "/durgapuja2024",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
-        "mapUrl": "https://maps.app.goo.gl/6idn5Y9pDNAufvr98"
+        "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
     },
     { 
         "eventId":4,
@@ -62,7 +62,7 @@
         "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
         "pageLink": "/saraswatipuja",
         "description": "Saraswati Puja",
-        "mapUrl": "https://goo.gl/maps/R7hwqUSVbtTfyt2DA"
+        "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
     { 
         "eventId":6,
@@ -75,7 +75,7 @@
         "venue": "Park View High School, 400 W Laurel Ave, Sterling, VA 20164",
         "pageLink": "/durgapuja2023",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
-        "mapUrl": "https://goo.gl/maps/PoVeTVJAiWWPYdUr9"
+        "mapUrl": "https://maps.app.goo.gl/mvmNYLDipdGZaHB36"
     },
     { 
         "eventId":7,
@@ -102,7 +102,7 @@
         "venue": "Shelter 8 at Bull Run,7700 Bull Run Dr, Centreville, VA 20121",
         "pageLink": "/picnic",
         "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship..",
-        "mapUrl": "https://goo.gl/maps/2MnaWV3i8LLBneY39"
+        "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
     },
     { 
         "eventId":9,
@@ -115,7 +115,7 @@
         "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
         "pageLink": "/kobipronam",
         "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
-        "mapUrl": "https://goo.gl/maps/R7hwqUSVbtTfyt2DA"
+        "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
     { 
         "eventId":10,
@@ -155,7 +155,7 @@
         "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
         "pageLink": "/saraswatipuja",
         "description": "Saraswati Puja   ",
-        "mapUrl": "https://goo.gl/maps/R7hwqUSVbtTfyt2DA"
+        "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
     { 
         "eventId":13,
@@ -194,7 +194,7 @@
         "venue": "Freedom High School, 25450 Riding Center Dr, Chantilly, VA 20152",
         "pageLink": "/durgapuja2022",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
-        "mapUrl": "https://maps.app.goo.gl/6idn5Y9pDNAufvr98"
+        "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
     },
     { 
         "eventId":16,
@@ -205,9 +205,9 @@
         "eventImage": "./../../../assets/images/stocks/2024/social_media_post_dc_south_asian_festival_2024.jpeg",
         "timming": "Sept 06-30, 2024",
         "venue": "9650 Main St, Fairfax, VA 22031",
-        "pageLink": "",
+        "pageLink": "https://dcsaff2024.eventive.org/welcome",
         "description": "DCSAACI is dedicated to providing valuable opportunities for South Asian artists to showcase their talents through films, literature, dance and art. We are honored to have Padma Shri Sitar Maestro Ustad Shahid Parvez Khan as our opening performer on Friday September 6, 2024 at 7:30 PM.",
-        "mapUrl": "https://dcsaff2024.eventive.org/schedule",
+        "mapUrl": "https://maps.app.goo.gl/1jaJNProjta6cev99",
         "externalLink":"https://dcsaff2024.eventive.org/welcome"
     }
 ]
