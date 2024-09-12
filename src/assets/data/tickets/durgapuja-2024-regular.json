@@ -1,6 +1,6 @@
 [
   {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
+      "name": "NVBA Durga Puja 2024 Ticket - All 3 days(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
       "price": 100,
@@ -9,7 +9,7 @@
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
+      "name": "NVBA Durga Puja 2024 Ticket - All 3 days(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
       "price": 100,
@@ -18,8 +18,8 @@
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
-      "description": "Kids [ 11 to 18 years ] Non-Veg ",
+      "name": "NVBA Durga Puja 2024 Ticket - All 3 days(Non-Veg)",
+      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Non-Veg",
       "quantity": 0,
       "price": 55,
       "tax": 0.00,
@@ -27,8 +27,8 @@
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
-      "description": "Kids [ 11 to 18 years ] Veg",
+      "name": "NVBA Durga Puja 2024 Ticket - All 3 days(Veg)",
+      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Veg",
       "quantity": 0,
       "price": 55,
       "tax": 0.00,
@@ -36,7 +36,7 @@
       "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2024 Ticket - All 3 days ",
+    "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
     "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
@@ -44,26 +44,10 @@
     "sku": "DP2024ALL05KIDREGULAR",
     "currency": "USD"
   },
+
+
   {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
-      "description": "Students and Visiting Parents - Non-Veg - Please bring your Student ID at venue.",
-      "quantity": 0,
-      "price": 55,
-      "tax": 0.00,
-      "sku": "DP2024ALL06NONREGULAR",
-      "currency": "USD"
-  },
-  {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
-      "description": "Students and Visiting Parents - Veg - Please bring your Student ID at venue.",
-      "quantity": 0,
-      "price": 55,
-      "tax": 0.00,
-      "sku": "DP2024ALL07VEGREGULAR",
-      "currency": "USD"
-  },
-  {
-      "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
+      "name": "NVBA Durga Puja 2024 Ticket - Friday Only(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
       "price": 90,
@@ -72,7 +56,7 @@
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
+      "name": "NVBA Durga Puja 2024 Ticket - Friday Only(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
       "price": 90,
@@ -81,8 +65,8 @@
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
-      "description": "Kids [ 11 to 18 years ] Non-Veg",
+      "name": "NVBA Durga Puja 2024 Ticket - Friday Only(Non-Veg)",
+      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Non-Veg",
       "quantity": 0,
       "price": 40,
       "tax": 0.00,
@@ -91,7 +75,7 @@
   },
   {
       "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
-      "description": "Kids [ 11 to 18 years ] Veg",
+      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Veg",
       "quantity": 0,
       "price": 40,
       "tax": 0.00,
@@ -99,7 +83,7 @@
       "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
+    "name": "NVBA Durga Puja 2024 Ticket - Friday Only(Veg)",
     "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
@@ -107,26 +91,10 @@
     "sku": "DP2024FRI05KIDREGULAR",
     "currency": "USD"
   },
+
+
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
-      "description": "Students and Visiting Parents - Non-Veg - Please bring your Student ID at venue.",
-      "quantity": 0,
-      "price": 40,
-      "tax": 0.00,
-      "sku": "DP2024FRI06NONREGULAR",
-      "currency": "USD"
-  },
-  {
-      "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
-      "description": "Students and Visiting Parents - Veg - Please bring your Student ID at venue.",
-      "quantity": 0,
-      "price": 40,
-      "tax": 0.00,
-      "sku": "DP2024FRI07VEGREGULAR",
-      "currency": "USD"
-  },
-  {
-      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
+      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
       "price": 90,
@@ -144,8 +112,8 @@
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
-      "description": "Kids [ 11 to 18 years ] - Non-Veg - Please bring your Student ID at venue.",
+      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only(Non-Veg)",
+      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents - Non-Veg.",
       "quantity": 0,
       "price": 40,
       "tax": 0.00,
@@ -153,8 +121,8 @@
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
-      "description": "Kids [ 11 to 18 years ] - Veg - Please bring your Student ID at venue.",
+      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only(Veg)",
+      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents - Veg.",
       "quantity": 0,
       "price": 40,
       "tax": 0.00,
@@ -170,26 +138,10 @@
     "sku": "DP2024SAT05KIDREGULAR",
     "currency": "USD"
   },
+
+
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
-      "description": "Students and Visiting Parents Non-Veg - Please bring your Student ID at venue.",
-      "quantity": 0,
-      "price": 40,
-      "tax": 0.00,
-      "sku": "DP2024SAT06NONREGULAR",
-      "currency": "USD"
-  },
-  {
-      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
-      "description": "Students and Visiting Parents Veg - Please bring your Student ID at venue.",
-      "quantity": 0,
-      "price": 40,
-      "tax": 0.00,
-      "sku": "DP2024SAT07VEGREGULAR",
-      "currency": "USD"
-  },
-  {
-      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
+      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
       "price": 90,
@@ -198,7 +150,7 @@
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
+      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
       "price": 90,
@@ -207,8 +159,8 @@
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
-      "description": "Kids [ 11 to 18 years ] Non-Veg",
+      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only(Non-Veg)",
+      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Non-Veg",
       "quantity": 0,
       "price": 40,
       "tax": 0.00,
@@ -216,8 +168,8 @@
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
-      "description": "Kids [ 11 to 18 years ] Veg",
+      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only(Veg)",
+      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Veg",
       "quantity": 0,
       "price": 40,
       "tax": 0.00,
@@ -231,24 +183,6 @@
     "price": 0,
     "tax": 0.00,
     "sku": "DP2024SUN05KIDREGULAR",
-    "currency": "USD"
-  },
-  {
-      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
-      "description": "Students and Visiting Parents Non-Veg - Please bring your Student ID at venue.",
-      "quantity": 0,
-      "price": 40,
-      "tax": 0.00,
-      "sku": "DP2024SUN06NONREGULAR",
-      "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
-    "description": "Students and Visiting Parents Veg - Please bring your Student ID at venue.",
-    "quantity": 0,
-    "price": 40,
-    "tax": 0.00,
-    "sku": "DP2024SUN07VEGREGULAR",
     "currency": "USD"
   }
 ]

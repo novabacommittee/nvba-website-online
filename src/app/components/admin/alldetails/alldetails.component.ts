@@ -20,8 +20,10 @@ export class AlldetailsComponent implements OnInit {
   private gridApi:any;
   private gridColumnApi:any;
 
-  memberList:any;
+  membershipList:any;
+  dp2024TicketList:any;
   foodPurchaseList:any;
+  membershipRenew:boolean = false;
   newPurches:boolean = false;
 
   MM2022YY: number = 0;
@@ -52,50 +54,51 @@ export class AlldetailsComponent implements OnInit {
   DP2024CTSATURDAY:number = 0;
   DP2024CTSUNDAY:number =0;
 
-  DP2024ALL01NON:number = 0;
-  DP2024ALL02VEG:number = 0;
+  DP2024EBALL01NON:number = 0;
+  DP2024EBALL02VEG:number = 0;
 
-  DP2024ALL03NON:number = 0;
-  DP2024ALL04VEG:number = 0;
+  DP2024EBALL03NON:number = 0;
+  DP2024EBALL04VEG:number = 0;
 
-  DP2024ALL05KID:number = 0;
+  DP2024EBALL05KID:number = 0;
 
-  DP2024ALL06NON:number = 0;
-  DP2024ALL07VEG:number = 0;
+  DP2024EBALL06NON:number = 0;
+  DP2024EBALL07VEG:number = 0;
 
-  DP2024FRI01NON:number = 0;
-  DP2024FRI02VEG:number = 0;
+  DP2024EBFRI01NON:number = 0;
+  DP2024EBFRI02VEG:number = 0;
 
-  DP2024FRI03NON:number = 0;
-  DP2024FRI04VEG:number = 0;
+  DP2024EBFRI03NON:number = 0;
+  DP2024EBFRI04VEG:number = 0;
 
-  DP2024FRI05KID:number = 0;
+  DP2024EBFRI05KID:number = 0;
 
-  DP2024FRI06NON:number = 0;
-  DP2024FRI07VEG:number = 0;
+  // DP2024EBFRI06NON:number = 0;
+  // DP2024EBFRI07VEG:number = 0;
 
-  DP2024SAT01NON:number = 0;
-  DP2024SAT02VEG:number = 0;
+  DP2024EBSAT01NON:number = 0;
+  DP2024EBSAT02VEG:number = 0;
 
-  DP2024SAT03NON:number = 0;
-  DP2024SAT04VEG:number = 0;
+  DP2024EBSAT03NON:number = 0;
+  DP2024EBSAT04VEG:number = 0;
 
-  DP2024SAT05KID:number = 0;
+  DP2024EBSAT05KID:number = 0;
 
-  DP2024SAT06NON:number = 0;
-  DP2024SAT07VEG:number = 0;
+  // DP2024EBSAT06NON:number = 0;
+  // DP2024EBSAT07VEG:number = 0;
 
-  DP2024SUN01NON:number = 0;
-  DP2024SUN02VEG:number = 0;
+  DP2024EBSUN01NON:number = 0;
+  DP2024EBSUN02VEG:number = 0;
 
-  DP2024SUN03NON:number = 0;
-  DP2024SUN04VEG:number = 0;
+  DP2024EBSUN03NON:number = 0;
+  DP2024EBSUN04VEG:number = 0;
 
-  DP2024SUN05KID:number = 0;
+  DP2024EBSUN05KID:number = 0;
 
-  DP2024SUN06NON:number = 0;
-  DP2024SUN07VEG:number = 0;
+  // DP2024EBSUN06NON:number = 0;
+  // DP2024EBSUN07VEG:number = 0;
 
+  paymentTime:any;
   customAdult:number =0;
   customKid:number =0;
 
@@ -134,19 +137,19 @@ export class AlldetailsComponent implements OnInit {
       this.checkKP2024Details();
     })
 
-   }
+  }
 
   ngOnInit(): void {
   }
 
   membershipcolumnDefs = [
     { field: 'index',  sortable: true, resizable: true,  cellClass: 'id-class center' },
-    { field: 'email', sortable: true, resizable: true, filter: true },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
-    { field: 'expires', sortable: true, resizable: true, filter: true },
+    { field: 'email', sortable: true, resizable: true, filter: true },
+    { field: 'phone', sortable: true, resizable: true, filter: true },
     { field: 'MM2024YY', headerName:'Membership', sortable: true, resizable: true },
-    { field: 'phone', sortable: true, resizable: true, filter: true }
+    { field: 'expires', sortable: true, resizable: true, filter: true }
 	];
 
 
@@ -170,49 +173,51 @@ export class AlldetailsComponent implements OnInit {
 
   dp2024columnDefsTickets = [
     { field: 'index',  sortable: true, resizable: true,  cellClass: 'id-class center' },
-    { field: 'email', sortable: true, resizable: true, filter: true },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
-    
-    { field: 'DP2024ALL01NON', headerName:'Adult Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024ALL02VEG', headerName:'Adult Veg', sortable: true, resizable: true },
-    { field: 'DP2024ALL03NON', headerName:'Kids [ 11 to 18 years ] Non-Veg ', sortable: true, resizable: true },
-    { field: 'DP2024ALL04VEG', headerName:'Kids [ 11 to 18 years ] Veg', sortable: true, resizable: true },
-    { field: 'DP2024ALL05KID', headerName:'Kids [ 0 to 10 years ]', sortable: true, resizable: true },
-    { field: 'DP2024ALL06NON', headerName:'Students and Visiting Parents - Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024ALL07VEG', headerName:'Students and Visiting Parents - Veg', sortable: true, resizable: true },
-
-    { field: 'DP2024FRI01NON', headerName:'Friday - Adult Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024FRI02VEG', headerName:'Friday - Adult Veg', sortable: true, resizable: true },
-    { field: 'DP2024FRI03NON', headerName:'Friday - Kids [ 11 to 18 years ] Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024FRI04VEG', headerName:'Friday - Kids [ 11 to 18 years ] Veg', sortable: true, resizable: true },
-    { field: 'DP2024FRI05KID', headerName:'Friday - Kids[ 0 to 10years]', sortable: true, resizable: true },
-    { field: 'DP2024FRI06NON', headerName:'Friday - Students and Visiting Parents - Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024FRI07VEG', headerName:'Friday - Students and Visiting Parents - Veg', sortable: true, resizable: true },
-
-    { field: 'DP2024SAT01NON', headerName:'Saturday - Adult Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024SAT02VEG', headerName:'Saturday - Adult Veg', sortable: true, resizable: true },
-    { field: 'DP2024SAT03NON', headerName:'Saturday - Kids [ 11 to 18 years ] - Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024SAT04VEG', headerName:'Saturday - Kids [ 11 to 18 years ] - Veg', sortable: true, resizable: true },
-    { field: 'DP2024SAT05KID', headerName:'Saturday - Kids [ 0 to 10 years ]', sortable: true, resizable: true },
-    { field: 'DP2024SAT06NON', headerName:'Saturday - Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024SAT07VEG', headerName:'Saturday - Students and Visiting Parents Veg', sortable: true, resizable: true },
-
-    { field: 'DP2024SUN01NON', headerName:'Sunday - Adult Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024SUN02VEG', headerName:'Sunday - Adult Veg', sortable: true, resizable: true },
-    { field: 'DP2024SUN03NON', headerName:'Sunday - Kids [ 11 to 18 years ] Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024SUN04VEG', headerName:'Sunday - Kids [ 11 to 18 years ] Veg', sortable: true, resizable: true },
-    { field: 'DP2024SUN05KID', headerName:'Sunday - Kids [ 0 to 10 years ]', sortable: true, resizable: true },
-    { field: 'DP2024SUN06NON', headerName:'Sunday - Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
-    { field: 'DP2024SUN07VEG', headerName:'Sunday - Students and Visiting Parents Veg', sortable: true, resizable: true },
-
-    { field: 'expires', sortable: true, resizable: true, filter: true },
+    { field: 'email', sortable: true, resizable: true, filter: true },
     { field: 'phone', sortable: true, resizable: true, filter: true },
-    { field: 'MM2024YY', headerName:'Membership', sortable: true, resizable: true },
+    { field: 'paymentTime', headerName:'Purchase Date', sortable: true, resizable: true },
+    
+    { field: 'DP2024EBALL01NON', headerName:'Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBALL02VEG', headerName:'Adult Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBALL03NON', headerName:'Kids [ 11 to 18 years ],Students and Visiting Parents Non-Veg ', sortable: true, resizable: true },
+    { field: 'DP2024EBALL04VEG', headerName:'Kids [ 11 to 18 years ],Students and Visiting Parents Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBALL05KID', headerName:'Kids [ 0 to 10 years ]', sortable: true, resizable: true },
+    // { field: 'DP2024EBALL06NON', headerName:'Students and Visiting Parents - Non-Veg', sortable: true, resizable: true },
+    // { field: 'DP2024EBALL07VEG', headerName:'Students and Visiting Parents - Veg', sortable: true, resizable: true },
+
+    { field: 'DP2024EBFRI01NON', headerName:'Friday - Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBFRI02VEG', headerName:'Friday - Adult Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBFRI03NON', headerName:'Friday - Kids [ 11 to 18 years ],Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBFRI04VEG', headerName:'Friday - Kids [ 11 to 18 years ],Students and Visiting Parents Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBFRI05KID', headerName:'Friday - Kids[ 0 to 10years]', sortable: true, resizable: true },
+    // { field: 'DP2024EBFRI06NON', headerName:'Friday - Students and Visiting Parents - Non-Veg', sortable: true, resizable: true },
+    // { field: 'DP2024EBFRI07VEG', headerName:'Friday - Students and Visiting Parents - Veg', sortable: true, resizable: true },
+
+    { field: 'DP2024EBSAT01NON', headerName:'Saturday - Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBSAT02VEG', headerName:'Saturday - Adult Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBSAT03NON', headerName:'Saturday - Kids [ 11 to 18 years ],Students and Visiting Parents - Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBSAT04VEG', headerName:'Saturday - Kids [ 11 to 18 years ],Students and Visiting Parents - Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBSAT05KID', headerName:'Saturday - Kids [ 0 to 10 years ]', sortable: true, resizable: true },
+    // { field: 'DP2024EBSAT06NON', headerName:'Saturday - Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
+    // { field: 'DP2024EBSAT07VEG', headerName:'Saturday - Students and Visiting Parents Veg', sortable: true, resizable: true },
+
+    { field: 'DP2024EBSUN01NON', headerName:'Sunday - Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBSUN02VEG', headerName:'Sunday - Adult Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBSUN03NON', headerName:'Sunday - Kids [ 11 to 18 years ],Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBSUN04VEG', headerName:'Sunday - Kids [ 11 to 18 years ],Students and Visiting Parents Veg', sortable: true, resizable: true },
+    { field: 'DP2024EBSUN05KID', headerName:'Sunday - Kids [ 0 to 10 years ]', sortable: true, resizable: true },
+    // { field: 'DP2024EBSUN06NON', headerName:'Sunday - Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
+    // { field: 'DP2024EBSUN07VEG', headerName:'Sunday - Students and Visiting Parents Veg', sortable: true, resizable: true }
+
+    // { field: 'MM2024YY', headerName:'Membership', sortable: true, resizable: true },
+    // { field: 'expires', sortable: true, resizable: true, filter: true }
 	];
 
 
   checkConcertDetails(){
+    try{
     [...this.concertTickets].forEach( ct =>{
         console.log(' Each row ', ct.transactions[0].item_list.items[0].quantity);
        [...ct.transactions[0].item_list.items].forEach(tic =>{
@@ -227,10 +232,15 @@ export class AlldetailsComponent implements OnInit {
           }
        });
      });
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
 
   checkKP2023Details(){
+    try{
     [...this.foodTickets].forEach( ct =>{
         console.log(' Each row KP');
        console.log(ct.transactions[0].item_list.items[0].quantity );
@@ -263,12 +273,17 @@ export class AlldetailsComponent implements OnInit {
         this.KP2023NON = this.KP2023NON + parseInt(ct.transactions[0].item_list.items[1].quantity );
        }
      });
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
 
   checkKP2024Details(){
       this.foodPurchaseList = [];
 
+      try{
       [...this.foodTickets].forEach( ct =>{
         console.log(' Each row KP2024');
 
@@ -336,61 +351,66 @@ export class AlldetailsComponent implements OnInit {
     // console.log(this.kp2024FoodOurchaseDetails);
 
      });
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
 
   checkDetails(){
     let couter = 0;
 
-    this.memberList = [];
+    this.membershipList = [];
+    this.dp2024TicketList = [];
     
     this.MM2022YY = 0;
     this.MM2023YY = 0;
     this.MM2024YY = 0;
 
-    this.DP2024ALL01NON= 0;
-    this.DP2024ALL02VEG= 0;
+    this.DP2024EBALL01NON= 0;
+    this.DP2024EBALL02VEG= 0;
 
-    this.DP2024ALL03NON= 0;
-    this.DP2024ALL04VEG= 0;
+    this.DP2024EBALL03NON= 0;
+    this.DP2024EBALL04VEG= 0;
 
-    this.DP2024ALL05KID= 0;
+    this.DP2024EBALL05KID= 0;
 
-    this.DP2024ALL06NON= 0;
-    this.DP2024ALL07VEG= 0;
+    this.DP2024EBALL06NON= 0;
+    this.DP2024EBALL07VEG= 0;
 
-    this.DP2024FRI01NON= 0;
-    this.DP2024FRI02VEG= 0;
+    this.DP2024EBFRI01NON= 0;
+    this.DP2024EBFRI02VEG= 0;
 
-    this.DP2024FRI03NON= 0;
-    this.DP2024FRI04VEG= 0;
+    this.DP2024EBFRI03NON= 0;
+    this.DP2024EBFRI04VEG= 0;
 
-    this.DP2024FRI05KID= 0;
+    this.DP2024EBFRI05KID= 0;
 
-    this.DP2024FRI06NON= 0;
-    this.DP2024FRI07VEG= 0;
+    // this.DP2024EBFRI06NON= 0;
+    // this.DP2024EBFRI07VEG= 0;
 
-    this.DP2024SAT01NON= 0;
-    this.DP2024SAT02VEG= 0;
+    this.DP2024EBSAT01NON= 0;
+    this.DP2024EBSAT02VEG= 0;
 
-    this.DP2024SAT03NON= 0;
-    this.DP2024SAT04VEG= 0;
+    this.DP2024EBSAT03NON= 0;
+    this.DP2024EBSAT04VEG= 0;
 
-    this.DP2024SAT05KID= 0;
+    this.DP2024EBSAT05KID= 0;
 
-    this.DP2024SAT06NON= 0;
-    this.DP2024SAT07VEG= 0;
+    // this.DP2024EBSAT06NON= 0;
+    // this.DP2024EBSAT07VEG= 0;
 
-    this.DP2024SUN01NON= 0;
-    this.DP2024SUN02VEG= 0;
+    this.DP2024EBSUN01NON= 0;
+    this.DP2024EBSUN02VEG= 0;
 
-    this.DP2024SUN03NON= 0;
-    this.DP2024SUN04VEG= 0;
+    this.DP2024EBSUN03NON= 0;
+    this.DP2024EBSUN04VEG= 0;
 
-    this.DP2024SUN05KID= 0;
+    this.DP2024EBSUN05KID= 0;
 
-    this.DP2024SUN06NON= 0;
-    this.DP2024SUN07VEG= 0;
+    // this.DP2024EBSUN06NON= 0;
+    // this.DP2024EBSUN07VEG= 0;
 
     this.customAdult = 0;
     this.customKid = 0;
@@ -403,253 +423,269 @@ export class AlldetailsComponent implements OnInit {
   
     this.SP2024KIDS=0;
 
+    try{
     //console.log(this.rowData);
     [...this.rowData].forEach( m =>{ 
-       console.log(m.purchase? true : false)  ;
+       console.log(m.purchase? true : false);
 
        if(m.purchase? true : false){
          
           [...m.purchase].forEach(element => {
-          const userTicket = {};
-          this.newPurches = false;
-           console.log(element);
-          [...element].forEach(e => {
-              console.log(e.sku);
-
-                if(e.sku.includes("MM2024YY")){
-                    this.MM2024YY += e.quantity ;
-                    Object.assign(userTicket,{ MM2024YY : e.quantity });
-                    this.newPurches = true;
-                }
-
-                // if(e.sku.includes("SP2024AEBNON")){
-                //   this.SP2024AEBNON += e.quantity ;
-                //   Object.assign(userTicket,{ SP2024AEBNON : e.quantity });
-                //   this.newPurches = true;
-                // }
-
-                // if(e.sku.includes("SP2024AEBVEG")){
-                //   this.SP2024AEBVEG += e.quantity ;
-                //   Object.assign(userTicket,{ SP2024AEBVEG : e.quantity });
-                //   this.newPurches = true;
-                // }
-
-                // if(e.sku.includes("SP2024STUDENTEBNON")){
-                //   this.SP2024STUDENTEBNON += e.quantity ;
-                //   Object.assign(userTicket,{ SP2024STUDENTEBNON : e.quantity });
-                //   this.newPurches = true;
-                // }
-
-                // if(e.sku.includes("SP2024STUDENTEBVEG")){
-                //   this.SP2024STUDENTEBVEG += e.quantity ;
-                //   Object.assign(userTicket,{ SP2024STUDENTEBVEG : e.quantity });
-                //   this.newPurches = true;
-                // }
-
-                // if(e.sku.includes("SP2024KIDS")){
-                //   this.SP2024KIDS += e.quantity ;
-                //   Object.assign(userTicket,{ SP2024KIDS : e.quantity });
-                //   this.newPurches = true;
-                // }
-
-                // if(e.sku.includes("SP2023CTSATURDAY")){  
-                //   this.SP2023CTSATURDAY += e.quantity ;
-                //   Object.assign(userTicket,{ SP2023CTSATURDAY : e.quantity });
-                //   this.newPurches = true;
-                // }
-
-                // if(e.sku.includes("KP2023NON")){  
-                //   this.KP2023NON += e.quantity ;
-                //   Object.assign(userTicket,{ KP2023NON : e.quantity });
-                //   this.newPurches = true;
-                // }
-                // if(e.sku.includes("KP2023VEG")){  
-                //   this.KP2023VEG += e.quantity ;
-                //   Object.assign(userTicket,{ KP2023VEG : e.quantity });
-                //   this.newPurches = true;
-                // }
-
-                // if(e.sku.includes("MM2022YY")){  KP2023VEG
-                //     this.MM2022YY += e.quantity ;
-                //     Object.assign(userTicket,{ MM2022YY : e.quantity });
-                //     this.newPurches = true;
-                // }
-
-                //All 3 days Ticket
-                if(e.sku.includes('DP2024EBALL01NON') || e.sku.includes('DP2024ALL01NON')){
-                    this.DP2024ALL01NON += e.quantity ;
-                    Object.assign(userTicket,{ DP2024ALL01NON : e.quantity });
-                    this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBALL02VEG') || e.sku.includes('DP2024ALL02VEG')){
-                    this.DP2024ALL02VEG += e.quantity ;
-                    Object.assign(userTicket,{ DP2024ALL02VEG : e.quantity });
-                    this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBALL03NON') || e.sku.includes('DP2024ALL03NON')){
-                    this.DP2024ALL03NON += e.quantity ;
-                    Object.assign(userTicket,{ DP2024ALL03NON : e.quantity });
-                    this.newPurches = true;
-                }
-
-                if(e.sku.includes('DP2024EBALL04VEG') || e.sku.includes('DP2024ALL04VEG')){
-                  this.DP2024ALL04VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024ALL04VEG : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBALL05KID') || e.sku.includes('DP2024ALL05KID')){
-                  this.DP2024ALL05KID += e.quantity ;
-                  Object.assign(userTicket,{ DP2024ALL05KID : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBALL06NON') || e.sku.includes('DP2024ALL06NON')){
-                  this.DP2024ALL06NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024ALL06NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBALL07VEG') || e.sku.includes('DP2024ALL07VEG')){
-                  this.DP2024ALL07VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024ALL07VEG : e.quantity });
-                  this.newPurches = true;
-                }
-                
-                //Single Day Ticket
-                //Friday
-                if(e.sku.includes('DP2024EBFRI01NON') || e.sku.includes('DP2024FRI01NON')){
-                  this.DP2024FRI01NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024FRI01NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBFRI02VEG') || e.sku.includes('DP2024FRI02VEG')){
-                  this.DP2024FRI02VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024FRI02VEG : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBFRI03NON') || e.sku.includes('DP2024FRI03NON')){
-                  this.DP2024FRI03NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024FRI03NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBFRI04VEG') || e.sku.includes('DP2024FRI04VEG')){
-                  this.DP2024FRI04VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024FRI04VEG : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBFRI05KID') || e.sku.includes('DP2024FRI05KID')){
-                  this.DP2024FRI05KID += e.quantity ;
-                  Object.assign(userTicket,{ DP2024FRI05KID : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBFRI06NON') || e.sku.includes('DP2024FRI06NON')){
-                  this.DP2024FRI06NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024FRI06NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBFRI07VEG') || e.sku.includes('DP2024FRI07VEG')){
-                  this.DP2024FRI07VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024FRI07VEG : e.quantity });
-                  this.newPurches = true;
-                }
-
-                //Satuerday
-                if(e.sku.includes('DP2024RBSAT01NON') || e.sku.includes('DP2024SAT01NON')){
-                  this.DP2024SAT01NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SAT01NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSAT02VEG') || e.sku.includes('DP2024SAT02VEG')){
-                  this.DP2024SAT02VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SAT02VEG : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSAT03NON') || e.sku.includes('DP2024SAT03NON')){
-                  this.DP2024SAT03NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SAT03NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSAT04VEG') || e.sku.includes('DP2024SAT04VEG')){
-                  this.DP2024SAT04VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SAT04VEG : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSAT05KID') || e.sku.includes('DP2024SAT05KID')){
-                  this.DP2024SAT05KID += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SAT05KID : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSAT06NON') || e.sku.includes('DP2024SAT06NON')){
-                  this.DP2024SAT06NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SAT06NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSAT07VEG') || e.sku.includes('DP2024SAT07VEG')){
-                  this.DP2024SAT07VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SAT07VEG : e.quantity });
-                  this.newPurches = true;
-                }
-
-                //Sunday
-                if(e.sku.includes('DP2024EBSUN01NON') || e.sku.includes('DP2024SUN01NON')){
-                  this.DP2024SUN01NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SUN01NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSUN02VEG') || e.sku.includes('DP2024SUN02VEG')){
-                  this.DP2024SUN02VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SUN02VEG : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSUN03NON') || e.sku.includes('DP2024SUN03NON')){
-                  this.DP2024SUN03NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SUN03NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSUN04VEG') || e.sku.includes('DP2024SUN04VEG')){
-                  this.DP2024SUN04VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SUN04VEG : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSUN05KID') || e.sku.includes('DP2024SUN05KID')){
-                  this.DP2024SUN05KID += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SUN05KID : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSUN06NON') || e.sku.includes('DP2024SUN06NON')){
-                  this.DP2024SUN06NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SUN06NON : e.quantity });
-                  this.newPurches = true;
-                }
-                if(e.sku.includes('DP2024EBSUN07VEG') || e.sku.includes('DP2024SUN07VEG')){  
-                  this.DP2024SUN07VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024SUN07VEG : e.quantity });
-                  this.newPurches = true;
-                }
-                
-          }); // End of Purchase Loop e
           
-          if(this.newPurches){
-            this.user = {
-              index : couter,
-              email : m.email,
-              firstname : m.firstname,
-              lastname : m.lastname,
-              expires : moment(m.expires).format("YYYY-MM-DD"),
-              phone : m.phone
-            };
-            Object.assign(this.user, userTicket );
-            //   this.user = this.user 
-            this.memberList.unshift(this.user);
-             console.log(this.user);
+          const userTicket = {};
+          console.log(element);
+          
+          if(element != undefined){
+
+            [...element].forEach(e => {
+              console.log(e.sku);
+              console.log(e.paymentTime);
+
+              this.paymentTime = e.paymentTime;
+              if(e.sku.includes("MM2024YY")){
+                  this.MM2024YY += e.quantity ;
+                  Object.assign(userTicket,{ MM2024YY : e.quantity });
+                  this.membershipRenew = true;
+              }
+
+              // if(e.sku.includes("SP2024AEBNON")){
+              //   this.SP2024AEBNON += e.quantity ;
+              //   Object.assign(userTicket,{ SP2024AEBNON : e.quantity });
+              //   this.newPurches = true;
+              // }
+
+              // if(e.sku.includes("SP2024AEBVEG")){
+              //   this.SP2024AEBVEG += e.quantity ;
+              //   Object.assign(userTicket,{ SP2024AEBVEG : e.quantity });
+              //   this.newPurches = true;
+              // }
+
+              // if(e.sku.includes("SP2024STUDENTEBNON")){
+              //   this.SP2024STUDENTEBNON += e.quantity ;
+              //   Object.assign(userTicket,{ SP2024STUDENTEBNON : e.quantity });
+              //   this.newPurches = true;
+              // }
+
+              // if(e.sku.includes("SP2024STUDENTEBVEG")){
+              //   this.SP2024STUDENTEBVEG += e.quantity ;
+              //   Object.assign(userTicket,{ SP2024STUDENTEBVEG : e.quantity });
+              //   this.newPurches = true;
+              // }
+
+              // if(e.sku.includes("SP2024KIDS")){
+              //   this.SP2024KIDS += e.quantity ;
+              //   Object.assign(userTicket,{ SP2024KIDS : e.quantity });
+              //   this.newPurches = true;
+              // }
+
+              // if(e.sku.includes("SP2023CTSATURDAY")){  
+              //   this.SP2023CTSATURDAY += e.quantity ;
+              //   Object.assign(userTicket,{ SP2023CTSATURDAY : e.quantity });
+              //   this.newPurches = true;
+              // }
+
+              // if(e.sku.includes("KP2023NON")){  
+              //   this.KP2023NON += e.quantity ;
+              //   Object.assign(userTicket,{ KP2023NON : e.quantity });
+              //   this.newPurches = true;
+              // }
+              // if(e.sku.includes("KP2023VEG")){  
+              //   this.KP2023VEG += e.quantity ;
+              //   Object.assign(userTicket,{ KP2023VEG : e.quantity });
+              //   this.newPurches = true;
+              // }
+
+              // if(e.sku.includes("MM2022YY")){  KP2023VEG
+              //     this.MM2022YY += e.quantity ;
+              //     Object.assign(userTicket,{ MM2022YY : e.quantity });
+              //     this.newPurches = true;
+              // }
+
+              //All 3 days Ticket
+              if(e.sku.includes('DP2024EBALL01NON') || e.sku.includes('DP2024ALL01NON')){
+                  this.DP2024EBALL01NON += e.quantity ;
+                  Object.assign(userTicket,{ DP2024EBALL01NON : e.quantity });
+                  this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBALL02VEG') || e.sku.includes('DP2024ALL02VEG')){
+                  this.DP2024EBALL02VEG += e.quantity ;
+                  Object.assign(userTicket,{ DP2024EBALL02VEG : e.quantity });
+                  this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBALL03NON') || e.sku.includes('DP2024ALL03NON')){
+                  this.DP2024EBALL03NON += e.quantity ;
+                  Object.assign(userTicket,{ DP2024EBALL03NON : e.quantity });
+                  this.newPurches = true;
+              }
+
+              if(e.sku.includes('DP2024EBALL04VEG') || e.sku.includes('DP2024ALL04VEG')){
+                this.DP2024EBALL04VEG += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBALL04VEG : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBALL05KID') || e.sku.includes('DP2024ALL05KID')){
+                this.DP2024EBALL05KID += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBALL05KID : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBALL06NON') || e.sku.includes('DP2024ALL06NON')){
+                this.DP2024EBALL06NON += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBALL06NON : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBALL07VEG') || e.sku.includes('DP2024ALL07VEG')){
+                this.DP2024EBALL07VEG += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBALL07VEG : e.quantity });
+                this.newPurches = true;
+              }
+                
+              //Single Day Ticket
+              //Friday
+              if(e.sku.includes('DP2024EBFRI01NON') || e.sku.includes('DP2024FRI01NON')){
+                this.DP2024EBFRI01NON += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBFRI01NON : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBFRI02VEG') || e.sku.includes('DP2024FRI02VEG')){
+                this.DP2024EBFRI02VEG += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBFRI02VEG : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBFRI03NON') || e.sku.includes('DP2024FRI03NON')){
+                this.DP2024EBFRI03NON += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBFRI03NON : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBFRI04VEG') || e.sku.includes('DP2024FRI04VEG')){
+                this.DP2024EBFRI04VEG += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBFRI04VEG : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBFRI05KID') || e.sku.includes('DP2024FRI05KID')){
+                this.DP2024EBFRI05KID += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBFRI05KID : e.quantity });
+                this.newPurches = true;
+              }
+              // if(e.sku.includes('DP2024EBFRI06NON') || e.sku.includes('DP2024FRI06NON')){
+              //   this.DP2024EBFRI06NON += e.quantity ;
+              //   Object.assign(userTicket,{ DP2024EBFRI06NON : e.quantity });
+              //   this.newPurches = true;
+              // }
+              // if(e.sku.includes('DP2024EBFRI07VEG') || e.sku.includes('DP2024FRI07VEG')){
+              //   this.DP2024EBFRI07VEG += e.quantity ;
+              //   Object.assign(userTicket,{ DP2024EBFRI07VEG : e.quantity });
+              //   this.newPurches = true;
+              // }
+
+              //Satuerday
+              if(e.sku.includes('DP2024EBSAT01NON') || e.sku.includes('DP2024SAT01NON')){
+                this.DP2024EBSAT01NON += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSAT01NON : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBSAT02VEG') || e.sku.includes('DP2024SAT02VEG')){
+                this.DP2024EBSAT02VEG += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSAT02VEG : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBSAT03NON') || e.sku.includes('DP2024SAT03NON')){
+                this.DP2024EBSAT03NON += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSAT03NON : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBSAT04VEG') || e.sku.includes('DP2024SAT04VEG')){
+                this.DP2024EBSAT04VEG += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSAT04VEG : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBSAT05KID') || e.sku.includes('DP2024SAT05KID')){
+                this.DP2024EBSAT05KID += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSAT05KID : e.quantity });
+                this.newPurches = true;
+              }
+              // if(e.sku.includes('DP2024EBSAT06NON') || e.sku.includes('DP2024SAT06NON')){
+              //   this.DP2024EBSAT06NON += e.quantity ;
+              //   Object.assign(userTicket,{ DP2024EBSAT06NON : e.quantity });
+              //   this.newPurches = true;
+              // }
+              // if(e.sku.includes('DP2024EBSAT07VEG') || e.sku.includes('DP2024SAT07VEG')){
+              //   this.DP2024EBSAT07VEG += e.quantity ;
+              //   Object.assign(userTicket,{ DP2024EBSAT07VEG : e.quantity });
+              //   this.newPurches = true;
+              // }
+
+              //Sunday
+              if(e.sku.includes('DP2024EBSUN01NON') || e.sku.includes('DP2024SUN01NON')){
+                this.DP2024EBSUN01NON += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSUN01NON : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBSUN02VEG') || e.sku.includes('DP2024SUN02VEG')){
+                this.DP2024EBSUN02VEG += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSUN02VEG : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBSUN03NON') || e.sku.includes('DP2024SUN03NON')){
+                this.DP2024EBSUN03NON += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSUN03NON : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBSUN04VEG') || e.sku.includes('DP2024SUN04VEG')){
+                this.DP2024EBSUN04VEG += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSUN04VEG : e.quantity });
+                this.newPurches = true;
+              }
+              if(e.sku.includes('DP2024EBSUN05KID') || e.sku.includes('DP2024SUN05KID')){
+                this.DP2024EBSUN05KID += e.quantity ;
+                Object.assign(userTicket,{ DP2024EBSUN05KID : e.quantity });
+                this.newPurches = true;
+              }
+              // if(e.sku.includes('DP2024EBSUN06NON') || e.sku.includes('DP2024SUN06NON')){
+              //   this.DP2024EBSUN06NON += e.quantity ;
+              //   Object.assign(userTicket,{ DP2024EBSUN06NON : e.quantity });
+              //   this.newPurches = true;
+              // }
+              // if(e.sku.includes('DP2024EBSUN07VEG') || e.sku.includes('DP2024SUN07VEG')){  
+              //   this.DP2024EBSUN07VEG += e.quantity ;
+              //   Object.assign(userTicket,{ DP2024EBSUN07VEG : e.quantity });
+              //   this.newPurches = true;
+              // }
+            }); // End of Purchase Loop e
           }
           
-        }); // End of Each Member
-       }
+          if(this.newPurches || this.membershipRenew){
+              this.user = {
+                index : couter,
+                firstname : m.firstname,
+                lastname : m.lastname,
+                email : m.email,
+                phone : m.phone,
+                expires : moment(m.expires).format("YYYY-MM-DD")
+              };
+              Object.assign(this.user, userTicket );
+
+              //   this.user = this.user 
+              if(this.membershipRenew == true)
+                this.membershipList.unshift(this.user);
+              else if(this.newPurches == true)
+                this.dp2024TicketList.unshift(this.user);
+
+              console.log(this.user);
+
+              this.newPurches = false;
+              this.membershipRenew = false;
+            }
+          }); // End of Each Member
+        }
 
        couter++;
     });
  //   console.log(couter);
   //  this.lastOrder = this.rowData.purchase? true : false ;
-
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
   onBtnExport() {

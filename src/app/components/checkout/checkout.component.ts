@@ -225,8 +225,6 @@ export class CheckoutComponent implements OnInit {
     };
 
 
-
-
   goBack(){
       this.location.back();
   }
@@ -237,8 +235,5 @@ export class CheckoutComponent implements OnInit {
     this.tax= 0;
     this.emptyCart= true;
   }
-  
-
-
 
 }
