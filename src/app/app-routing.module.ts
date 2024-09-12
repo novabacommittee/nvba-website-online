@@ -45,7 +45,7 @@ import { Kobipronam2024Component } from './pages/kobipronam2024/kobipronam2024.c
 import { Poilabaishak2024Component } from './pages/poilabaishak2024/poilabaishak2024.component';
 import { Picnic2024Component } from './pages/picnic2024/picnic2024.component';
 import { TechadvisorComponent } from './pages/aboutus/techadvisor/techadvisor.component';
-
+import { SponsorshipComponent } from './pages/sponsorship/sponsorship.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: 'full' }, 
@@ -95,6 +95,7 @@ const routes: Routes = [
   { path: 'picnic2024', component: Picnic2024Component },
   { path: 'cares', component: CaresComponent },
   { path: "durgapuja2024", component: Durgapuja2024Component, pathMatch: 'full'  },
+  { path: "sponsorship", component: SponsorshipComponent, pathMatch: 'full'  },
   
   { path: 'proposedconstitution', component:ProposedconstitutionComponent, canActivate:[AuthGuard] },
   { path: 'user-details-check/:id', component: UserDetailsCheckComponent },

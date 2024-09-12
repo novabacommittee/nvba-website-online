@@ -85,6 +85,7 @@ import { TechadvisorComponent } from './pages/aboutus/techadvisor/techadvisor.co
 import { Poilabaishak2024Component } from './pages/poilabaishak2024/poilabaishak2024.component';
 import { Picnic2024Component } from './pages/picnic2024/picnic2024.component';
 import { Durgapuja2024Component } from './pages/durgapuja2024/durgapuja2024.component';
+import { SponsorshipComponent } from './pages/sponsorship/sponsorship.component';
 
 
 @NgModule({
@@ -143,7 +144,8 @@ import { Durgapuja2024Component } from './pages/durgapuja2024/durgapuja2024.comp
     TechadvisorComponent,
     Poilabaishak2024Component,
     Picnic2024Component,
-    Durgapuja2024Component
+    Durgapuja2024Component,
+    SponsorshipComponent
 
   ],
   imports: [
