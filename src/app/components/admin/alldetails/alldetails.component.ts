@@ -148,6 +148,7 @@ export class AlldetailsComponent implements OnInit {
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
     { field: 'phone', sortable: true, resizable: true, filter: true },
+    { field: 'paymentTime', headerName:'Renewed Last', sortable: true, resizable: true },
     { field: 'MM2024YY', headerName:'Membership', sortable: true, resizable: true },
     { field: 'expires', sortable: true, resizable: true, filter: true }
 	];
@@ -441,7 +442,7 @@ export class AlldetailsComponent implements OnInit {
               console.log(e.sku);
               console.log(e.paymentTime);
 
-              this.paymentTime = moment(e.paymentTime).format("YYYY-MM-DD");
+              this.paymentTime = moment(e.paymentTime).format("YYYY-MM-DD HH:mm");
               if(e.sku.includes("MM2024YY")){
                   this.MM2024YY += e.quantity ;
                   Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2024YY:e.quantity,sku:e.sku,tax:e.tax});
