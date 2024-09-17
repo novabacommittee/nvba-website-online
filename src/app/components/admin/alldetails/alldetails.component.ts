@@ -432,7 +432,7 @@ export class AlldetailsComponent implements OnInit {
          
           [...m.purchase].forEach(element => {
           
-          const userTicket = {};
+          const userPurchase = {};
           console.log(element);
           
           if(element != undefined){
@@ -441,10 +441,10 @@ export class AlldetailsComponent implements OnInit {
               console.log(e.sku);
               console.log(e.paymentTime);
 
-              this.paymentTime = e.paymentTime;
+              this.paymentTime = moment(e.paymentTime).format("YYYY-MM-DD");
               if(e.sku.includes("MM2024YY")){
                   this.MM2024YY += e.quantity ;
-                  Object.assign(userTicket,{ MM2024YY : e.quantity });
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2024YY:e.quantity,sku:e.sku,tax:e.tax});
                   this.membershipRenew = true;
               }
 
@@ -502,68 +502,68 @@ export class AlldetailsComponent implements OnInit {
               // }
 
               //All 3 days Ticket
-              if(e.sku.includes('DP2024EBALL01NON') || e.sku.includes('DP2024ALL01NON')){
+              else if(e.sku.includes('DP2024EBALL01NON') || e.sku.includes('DP2024ALL01NON')){
                   this.DP2024EBALL01NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024EBALL01NON : e.quantity });
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL01NON:e.quantity,sku:e.sku,tax:e.tax});
                   this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBALL02VEG') || e.sku.includes('DP2024ALL02VEG')){
+              else if(e.sku.includes('DP2024EBALL02VEG') || e.sku.includes('DP2024ALL02VEG')){
                   this.DP2024EBALL02VEG += e.quantity ;
-                  Object.assign(userTicket,{ DP2024EBALL02VEG : e.quantity });
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL02VEG:e.quantity,sku:e.sku,tax:e.tax});
                   this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBALL03NON') || e.sku.includes('DP2024ALL03NON')){
+              else if(e.sku.includes('DP2024EBALL03NON') || e.sku.includes('DP2024ALL03NON')){
                   this.DP2024EBALL03NON += e.quantity ;
-                  Object.assign(userTicket,{ DP2024EBALL03NON : e.quantity });
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL03NON:e.quantity,sku:e.sku,tax:e.tax});
                   this.newPurches = true;
               }
 
-              if(e.sku.includes('DP2024EBALL04VEG') || e.sku.includes('DP2024ALL04VEG')){
+              else if(e.sku.includes('DP2024EBALL04VEG') || e.sku.includes('DP2024ALL04VEG')){
                 this.DP2024EBALL04VEG += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBALL04VEG : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL04VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBALL05KID') || e.sku.includes('DP2024ALL05KID')){
+              else if(e.sku.includes('DP2024EBALL05KID') || e.sku.includes('DP2024ALL05KID')){
                 this.DP2024EBALL05KID += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBALL05KID : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBALL06NON') || e.sku.includes('DP2024ALL06NON')){
+              else if(e.sku.includes('DP2024EBALL06NON') || e.sku.includes('DP2024ALL06NON')){
                 this.DP2024EBALL06NON += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBALL06NON : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL06NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBALL07VEG') || e.sku.includes('DP2024ALL07VEG')){
+              else if(e.sku.includes('DP2024EBALL07VEG') || e.sku.includes('DP2024ALL07VEG')){
                 this.DP2024EBALL07VEG += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBALL07VEG : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL07VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
                 
               //Single Day Ticket
               //Friday
-              if(e.sku.includes('DP2024EBFRI01NON') || e.sku.includes('DP2024FRI01NON')){
+              else if(e.sku.includes('DP2024EBFRI01NON') || e.sku.includes('DP2024FRI01NON')){
                 this.DP2024EBFRI01NON += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBFRI01NON : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI01NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBFRI02VEG') || e.sku.includes('DP2024FRI02VEG')){
+              else if(e.sku.includes('DP2024EBFRI02VEG') || e.sku.includes('DP2024FRI02VEG')){
                 this.DP2024EBFRI02VEG += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBFRI02VEG : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI02VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBFRI03NON') || e.sku.includes('DP2024FRI03NON')){
+              else if(e.sku.includes('DP2024EBFRI03NON') || e.sku.includes('DP2024FRI03NON')){
                 this.DP2024EBFRI03NON += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBFRI03NON : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI03NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBFRI04VEG') || e.sku.includes('DP2024FRI04VEG')){
+              else if(e.sku.includes('DP2024EBFRI04VEG') || e.sku.includes('DP2024FRI04VEG')){
                 this.DP2024EBFRI04VEG += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBFRI04VEG : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI04VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBFRI05KID') || e.sku.includes('DP2024FRI05KID')){
+              else if(e.sku.includes('DP2024EBFRI05KID') || e.sku.includes('DP2024FRI05KID')){
                 this.DP2024EBFRI05KID += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBFRI05KID : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               // if(e.sku.includes('DP2024EBFRI06NON') || e.sku.includes('DP2024FRI06NON')){
@@ -578,29 +578,29 @@ export class AlldetailsComponent implements OnInit {
               // }
 
               //Satuerday
-              if(e.sku.includes('DP2024EBSAT01NON') || e.sku.includes('DP2024SAT01NON')){
+              else if(e.sku.includes('DP2024EBSAT01NON') || e.sku.includes('DP2024SAT01NON')){
                 this.DP2024EBSAT01NON += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSAT01NON : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT01NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBSAT02VEG') || e.sku.includes('DP2024SAT02VEG')){
+              else if(e.sku.includes('DP2024EBSAT02VEG') || e.sku.includes('DP2024SAT02VEG')){
                 this.DP2024EBSAT02VEG += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSAT02VEG : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT02VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBSAT03NON') || e.sku.includes('DP2024SAT03NON')){
+              else if(e.sku.includes('DP2024EBSAT03NON') || e.sku.includes('DP2024SAT03NON')){
                 this.DP2024EBSAT03NON += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSAT03NON : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT03NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBSAT04VEG') || e.sku.includes('DP2024SAT04VEG')){
+              else if(e.sku.includes('DP2024EBSAT04VEG') || e.sku.includes('DP2024SAT04VEG')){
                 this.DP2024EBSAT04VEG += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSAT04VEG : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT04VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBSAT05KID') || e.sku.includes('DP2024SAT05KID')){
+              else if(e.sku.includes('DP2024EBSAT05KID') || e.sku.includes('DP2024SAT05KID')){
                 this.DP2024EBSAT05KID += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSAT05KID : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               // if(e.sku.includes('DP2024EBSAT06NON') || e.sku.includes('DP2024SAT06NON')){
@@ -615,29 +615,29 @@ export class AlldetailsComponent implements OnInit {
               // }
 
               //Sunday
-              if(e.sku.includes('DP2024EBSUN01NON') || e.sku.includes('DP2024SUN01NON')){
+              else if(e.sku.includes('DP2024EBSUN01NON') || e.sku.includes('DP2024SUN01NON')){
                 this.DP2024EBSUN01NON += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSUN01NON : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN01NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBSUN02VEG') || e.sku.includes('DP2024SUN02VEG')){
+              else if(e.sku.includes('DP2024EBSUN02VEG') || e.sku.includes('DP2024SUN02VEG')){
                 this.DP2024EBSUN02VEG += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSUN02VEG : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN02VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBSUN03NON') || e.sku.includes('DP2024SUN03NON')){
+              else if(e.sku.includes('DP2024EBSUN03NON') || e.sku.includes('DP2024SUN03NON')){
                 this.DP2024EBSUN03NON += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSUN03NON : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN03NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBSUN04VEG') || e.sku.includes('DP2024SUN04VEG')){
+              else if(e.sku.includes('DP2024EBSUN04VEG') || e.sku.includes('DP2024SUN04VEG')){
                 this.DP2024EBSUN04VEG += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSUN04VEG : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN04VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              if(e.sku.includes('DP2024EBSUN05KID') || e.sku.includes('DP2024SUN05KID')){
+              else if(e.sku.includes('DP2024EBSUN05KID') || e.sku.includes('DP2024SUN05KID')){
                 this.DP2024EBSUN05KID += e.quantity ;
-                Object.assign(userTicket,{ DP2024EBSUN05KID : e.quantity });
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               // if(e.sku.includes('DP2024EBSUN06NON') || e.sku.includes('DP2024SUN06NON')){
@@ -654,22 +654,22 @@ export class AlldetailsComponent implements OnInit {
           }
           
           if(this.newPurches || this.membershipRenew){
-              this.user = {
-                index : couter,
-                firstname : m.firstname,
-                lastname : m.lastname,
-                email : m.email,
-                phone : m.phone,
-                expires : moment(m.expires).format("YYYY-MM-DD")
-              };
-              Object.assign(this.user, userTicket );
+                this.user = {
+                  index : m.id,
+                  firstname : m.firstname,
+                  lastname : m.lastname,
+                  email : m.email,
+                  phone : m.phone,
+                  expires : moment(m.expires).format("YYYY-MM-DD")
+                };
+                Object.assign(this.user, userPurchase );
 
-              //   this.user = this.user 
-              if(this.membershipRenew == true)
-                this.membershipList.unshift(this.user);
-              else if(this.newPurches == true)
-                this.dp2024TicketList.unshift(this.user);
-
+                if(this.membershipRenew == true){
+                  this.membershipList.unshift(this.user);
+                }
+                else if(this.newPurches == true){
+                  this.dp2024TicketList.unshift(this.user);
+              }
               console.log(this.user);
 
               this.newPurches = false;
