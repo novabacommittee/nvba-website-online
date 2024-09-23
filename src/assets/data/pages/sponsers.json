@@ -5,8 +5,8 @@
         "url": "https://www.c-mci.com/corporate/",
         "dateofDonation" : "Donated Just now",
         "amount" : "10,000",
-        "cause" : "Puja Sponser",
-        "type" : "Grand"
+        "cause" : "NVBA Sponser",
+        "type" : "Platinum"
     },
     {
         "name" : "Synergy",
@@ -14,26 +14,17 @@
         "url": "https://www.synergybis.com/",
         "dateofDonation" : "Donated Just now",
         "amount" : "10,000",
-        "cause" : "Puja Sponser",
-        "type" : "Grand"
-    },
-    {
-        "name" : "Synchronisys",
-        "image" : "assets/images/gallery/sponsors/sync.png",
-        "url": "https://www.synchronisys.com",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "5,000",
-        "cause" : "Puja Sponser",
-        "type" : "Gold"
+        "cause" : "NVBA Sponser",
+        "type" : "Platinum"
     },
     {
         "name" : "Brite Group Inc. ",
         "image" : "assets/images/gallery/sponsors/thebritegroup.png",
         "url": "https://www.thebritegroup.com/",
         "dateofDonation" : "Donated Just now",
-        "amount" : "4,000",
-        "cause" : "Puja Sponser",
-        "type" : "Silver"
+        "amount" : "2,500",
+        "cause" : "NVBA Sponser",
+        "type" : "Benefactor"
     },
     {
         "name" : "Long and Foster -Reema Raju",
@@ -41,7 +32,7 @@
         "url": "https://www.facebook.com/shailaja.raju.3",
         "dateofDonation" : "Donated Just now",
         "amount" : "2,500",
-        "cause" : "Puja Sponser",
+        "cause" : "NVBA Sponser",
         "type" : "Benefactor"
     },
     {
@@ -50,7 +41,25 @@
         "url": "https://raahallc.com/",
         "dateofDonation" : "Donated Just now",
         "amount" : "2,500",
-        "cause" : "Puja Sponser",
+        "cause" : "NVBA Sponser",
         "type" : "Benefactor"
+    },
+    {
+        "name" : "DesiNatural",
+        "image" : "assets/images/gallery/sponsors/Desibadge3c.png",
+        "url": "https://desifreshfoods.com/",
+        "dateofDonation" : "Donated Just now",
+        "amount" : "2,300",
+        "cause" : "NVBA Sponser",
+        "type" : "Benefactor"
+    },
+    {
+        "name" : "Keller Williams",
+        "image" : "assets/images/gallery/sponsors/Keller Williams Sponsor Logo.png",
+        "url": "https://kwcapitalproperties.com/",
+        "dateofDonation" : "Donated Just now",
+        "amount" : "1,000",
+        "cause" : "NVBA Sponser",
+        "type" : "Donor"
     }
 ]
