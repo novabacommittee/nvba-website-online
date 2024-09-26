@@ -61,5 +61,14 @@
         "amount" : "1,000",
         "cause" : "NVBA Sponser",
         "type" : "Donor"
+    },
+    {
+        "name" : "Tech Soft Inc.",
+        "image" : "assets/images/gallery/sponsors/TechSoftLogo.jpg",
+        "url": "https://techsoft-inc.com/",
+        "dateofDonation" : "Donated Just now",
+        "amount" : "2,000",
+        "cause" : "NVBA Sponser",
+        "type" : "Benefactor"
     }
 ]
