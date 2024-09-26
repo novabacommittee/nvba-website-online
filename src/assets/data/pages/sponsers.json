@@ -70,5 +70,14 @@
         "amount" : "2,000",
         "cause" : "NVBA Sponser",
         "type" : "Benefactor"
+    },
+    {
+        "name" : "Stone Ridge Family Medicine",
+        "image" : "assets/images/gallery/sponsors/Stone Ridge Family Medicine main logo.png",
+        "url": "https://www.stoneridgefamilymedicine.com/",
+        "dateofDonation" : "Donated Just now",
+        "amount" : "1,500",
+        "cause" : "NVBA Sponser",
+        "type" : "Digital Partner"
     }
 ]
