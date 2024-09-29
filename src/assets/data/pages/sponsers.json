@@ -1,7 +1,7 @@
 [
     {
         "name" : "CMCI",
-        "image" : "assets/images/gallery/sponsors/CMCI.png",
+        "image" : "assets/images/gallery/sponsors/CMCI New Logo.jpeg",
         "url": "https://www.c-mci.com/corporate/",
         "dateofDonation" : "Donated Just now",
         "amount" : "10,000",
@@ -75,6 +75,15 @@
         "name" : "Stone Ridge Family Medicine",
         "image" : "assets/images/gallery/sponsors/Stone Ridge Family Medicine main logo.png",
         "url": "https://www.stoneridgefamilymedicine.com/",
+        "dateofDonation" : "Donated Just now",
+        "amount" : "1,500",
+        "cause" : "NVBA Sponser",
+        "type" : "Digital Partner"
+    },
+    {
+        "name" : "Halo Capital Management",
+        "image" : "assets/images/gallery/sponsors/Halo Capital Management.png",
+        "url": "https://halocap.com/",
         "dateofDonation" : "Donated Just now",
         "amount" : "1,500",
         "cause" : "NVBA Sponser",
