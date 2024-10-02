@@ -97,3 +97,20 @@ div{
   .warning{
     font-size: 0.8rem;
   }
+
+  .blinking-text {
+    animation: blink 1s step-start infinite;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
