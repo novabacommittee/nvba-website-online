@@ -1,9 +1,9 @@
 [
     {
-        "name": "NVBA Presents Somlata Acharya Chowdhury",
-        "description": "Somlata Acharya Chowdhury - Friday October 11th, 2024 at 8:30 PM",
+        "name": "NVBA Presents Somlata and The Aces",
+        "description": "Somlata and The Aces - Friday October 11th, 2024 at 8 PM",
         "quantity": 0,
-        "price": 40,
+        "price": 50,
         "tax": 0,
         "sku": "DP2024CTFRIDAY",
         "currency": "USD" 
@@ -12,16 +12,16 @@
       "name": "NVBA Presents Madhushree Bhattacharya",
       "description": " Madhushree Bhattacharya - Saturday October 12th, 2024 at 8 PM",
       "quantity": 0,
-      "price": 40,
+      "price": 50,
       "tax": 0.00,
       "sku": "DP2024CTSATURDAY",
       "currency": "USD"
     },
     {
       "name": "NVBA Presents Somlata Acharya Chowdhury & Madhushree Bhattacharya(Combo Ticket)",
-      "description": "Somlata Acharya Chowdhury - Friday October 11th, 2024 at 8:30 PM \nMadhushree Bhattacharya - Saturday October 12th, 2024 at 8 PM",
+      "description": "Somlata Acharya Chowdhury - Friday October 11th, 2024 at 8 PM \nMadhushree Bhattacharya - Saturday October 12th, 2024 at 8 PM",
       "quantity": 0,
-      "price": 70,
+      "price": 90,
       "tax": 0.00,
       "sku": "DP2024CTCOMBO",
       "currency": "USD"
@@ -30,7 +30,7 @@
         "name": "NVBA Presents Arnab Chakraborty",
         "description": " Arnab Chakraborty - Sunday October 13th, 2024 at 8 PM",
         "quantity": 0,
-        "price": 30,
+        "price": 35,
         "tax": 0.00,
         "sku": "DP2024CTSUNDAY",
         "currency": "USD"

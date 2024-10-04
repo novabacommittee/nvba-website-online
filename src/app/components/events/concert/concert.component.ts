@@ -30,7 +30,7 @@ export class ConcertComponent implements OnInit, OnChanges, AfterViewChecked {
   // headCount: number = 0;
 
 
-  private _jsonURLcart = '/assets/data/tickets/tickets-2023-concert.json';
+  private _jsonURLcart = '/assets/data/tickets/tickets-2024-concert.json';
    constructor(private http: HttpClient, private cs: CartService, public router: Router, private cdr: ChangeDetectorRef) {
     this.cs.currentCart.subscribe( cartCheck => this.cartCheck = cartCheck);
     this.getJSON().subscribe(data => {
