@@ -114,11 +114,11 @@ export class EventscheckoutComponent implements OnInit {
 
 
   paypalConfig = {
-      env: 'sandbox',
-      //env: 'production',
+      //env: 'sandbox',
+      env: 'production',
       client: {
-        sandbox: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
-        //production: 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS'
+        //sandbox: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
+        production: 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS'
       },
       style: {
         shape: 'rect',
@@ -230,8 +230,4 @@ export class EventscheckoutComponent implements OnInit {
     this.tax= 0;
     this.emptyCart= true;
   }
-  
-
-
-
 }
