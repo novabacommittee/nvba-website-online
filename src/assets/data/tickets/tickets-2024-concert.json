@@ -18,21 +18,39 @@
       "currency": "USD"
     },
     {
-      "name": "NVBA Presents Somlata Acharya Chowdhury & Madhushree Bhattacharya(Combo Ticket)",
+      "name": "NVBA Presents Arnab Chakraborty",
+      "description": "Arnab Chakraborty - Sunday October 13th, 2024 at 8 PM",
+      "quantity": 0,
+      "price": 50,
+      "tax": 0.00,
+      "sku": "DP2024CTSUNDAY",
+      "currency": "USD"
+    },
+    {
+      "name": "NVBA Presents Somlata Acharyya Chowdhury & Madhushree Bhattacharya(Combo Ticket)",
       "description": "Somlata Acharya Chowdhury - Friday October 11th, 2024 at 8 PM \nMadhushree Bhattacharya - Saturday October 12th, 2024 at 8 PM",
       "quantity": 0,
       "price": 90,
       "tax": 0.00,
-      "sku": "DP2024CTCOMBO",
+      "sku": "DP2024CTFRYSATCOMBO",
       "currency": "USD"
     },
     {
-        "name": "NVBA Presents Arnab Chakraborty",
-        "description": " Arnab Chakraborty - Sunday October 13th, 2024 at 8 PM",
-        "quantity": 0,
-        "price": 50,
-        "tax": 0.00,
-        "sku": "DP2024CTSUNDAY",
-        "currency": "USD"
+      "name": "NVBA Presents Somlata Acharyya Chowdhury & Arnab Chakraborty(Combo Ticket)",
+      "description": "Somlata Acharya Chowdhury - Friday October 11th, 2024 at 8 PM \nArnab Chakraborty - Sunday October 13th, 2024 at 8 PM",
+      "quantity": 0,
+      "price": 90,
+      "tax": 0.00,
+      "sku": "DP2024CTFRYSUNCOMBO",
+      "currency": "USD"
+    },
+    {
+      "name": "NVBA Presents Madhushree Bhattacharya & Arnab Chakraborty(Combo Ticket)",
+      "description": "Madhushree Bhattacharya - Saturday October 12th, 2024 at 8 PM \nArnab Chakraborty - Sunday October 13th, 2024 at 8 PM",
+      "quantity": 0,
+      "price": 90,
+      "tax": 0.00,
+      "sku": "DP2024CTSATSUNCOMBO",
+      "currency": "USD"
     }
 ]
