@@ -22,6 +22,7 @@ export class AlldetailsComponent implements OnInit {
 
   membershipList:any;
   dp2024TicketList:any;
+  dp2024ConcertTicketList:any;
   foodPurchaseList:any;
   membershipRenew:boolean = false;
   newPurches:boolean = false;
@@ -53,6 +54,9 @@ export class AlldetailsComponent implements OnInit {
   DP2024CTFRIDAY:number = 0;
   DP2024CTSATURDAY:number = 0;
   DP2024CTSUNDAY:number =0;
+  DP2024CTFRYSATCOMBO:number = 0;
+  DP2024CTFRYSUNCOMBO:number = 0;
+  DP2024CTSATSUNCOMBO:number =0;
 
   DP2024EBALL01NON:number = 0;
   DP2024EBALL02VEG:number = 0;
@@ -216,12 +220,28 @@ export class AlldetailsComponent implements OnInit {
     // { field: 'expires', sortable: true, resizable: true, filter: true }
 	];
 
+  dp2024ConcertTicketcolumnDefs = [
+    // { field: 'id',  sortable: true, resizable: true,  cellClass: 'id-class center' },
+		{ field: 'create_time', headerName:'Purchase Date/Time',sortable: true, resizable: false, filter: true  },
+    { field: 'description', headerName:'Description', sortable: true, resizable: true },
+    { field: 'price', headerName:'Price', sortable: true, resizable: false },
+    { field: 'quantity', headerName:'Quantity', sortable: true, resizable: false },
+    { field: 'sku', headerName:'Product Code', sortable: true, resizable: false },
+		{ field: 'first_name', sortable: true, resizable: false, filter: true  },
+		{ field: 'last_name', sortable: true, resizable: false, filter: true },
+//    { field: 'email', sortable: true, resizable: true, filter: true },
+	];
 
   checkConcertDetails(){
     try{
+
+    this.dp2024ConcertTicketList = [];
+
     [...this.concertTickets].forEach( ct =>{
         console.log(' Each row ', ct.transactions[0].item_list.items[0].quantity);
-       [...ct.transactions[0].item_list.items].forEach(tic =>{
+        const concertPurchase = {};
+
+        [...ct.transactions[0].item_list.items].forEach(tic =>{
           if(tic.sku == 'DP2024CTFRIDAY'){
             this.DP2024CTFRIDAY = this.DP2024CTFRIDAY + parseInt(tic.quantity );
           }
@@ -232,7 +252,16 @@ export class AlldetailsComponent implements OnInit {
             this.DP2024CTSUNDAY = this.DP2024CTSUNDAY + parseInt(tic.quantity );
           }
        });
-     });
+
+       Object.assign(concertPurchase,{ create_time: moment(ct.create_time).format("YYYY-MM-DD HH:mm"), first_name:ct.payer.payer_info.first_name, 
+        last_name:ct.payer.payer_info.last_name,
+        email:ct.payer.payer_info.email,description:ct.transactions[0].item_list.items[0].description,
+        price:ct.transactions[0].item_list.items[0].price,quantity:ct.transactions[0].item_list.items[0].quantity,sku:ct.transactions[0].item_list.items[0].sku});
+
+      this.dp2024ConcertTicketList.unshift(concertPurchase);
+    // console.log(concertPurchase);
+
+      });
     }
     catch (e) {
       console.error(e);
@@ -286,7 +315,7 @@ export class AlldetailsComponent implements OnInit {
 
       try{
       [...this.foodTickets].forEach( ct =>{
-        console.log(' Each row KP2024');
+        console.log('Each row KP2024');
 
         this.vegchopcount = 0;
         this.vegghugnicount = 0;
@@ -388,9 +417,6 @@ export class AlldetailsComponent implements OnInit {
 
     this.DP2024EBFRI05KID= 0;
 
-    // this.DP2024EBFRI06NON= 0;
-    // this.DP2024EBFRI07VEG= 0;
-
     this.DP2024EBSAT01NON= 0;
     this.DP2024EBSAT02VEG= 0;
 
@@ -399,9 +425,6 @@ export class AlldetailsComponent implements OnInit {
 
     this.DP2024EBSAT05KID= 0;
 
-    // this.DP2024EBSAT06NON= 0;
-    // this.DP2024EBSAT07VEG= 0;
-
     this.DP2024EBSUN01NON= 0;
     this.DP2024EBSUN02VEG= 0;
 
@@ -409,9 +432,6 @@ export class AlldetailsComponent implements OnInit {
     this.DP2024EBSUN04VEG= 0;
 
     this.DP2024EBSUN05KID= 0;
-
-    // this.DP2024EBSUN06NON= 0;
-    // this.DP2024EBSUN07VEG= 0;
 
     this.customAdult = 0;
     this.customKid = 0;
@@ -567,16 +587,6 @@ export class AlldetailsComponent implements OnInit {
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              // if(e.sku.includes('DP2024EBFRI06NON') || e.sku.includes('DP2024FRI06NON')){
-              //   this.DP2024EBFRI06NON += e.quantity ;
-              //   Object.assign(userTicket,{ DP2024EBFRI06NON : e.quantity });
-              //   this.newPurches = true;
-              // }
-              // if(e.sku.includes('DP2024EBFRI07VEG') || e.sku.includes('DP2024FRI07VEG')){
-              //   this.DP2024EBFRI07VEG += e.quantity ;
-              //   Object.assign(userTicket,{ DP2024EBFRI07VEG : e.quantity });
-              //   this.newPurches = true;
-              // }
 
               //Satuerday
               else if(e.sku.includes('DP2024EBSAT01NON') || e.sku.includes('DP2024SAT01NON')){
@@ -604,16 +614,6 @@ export class AlldetailsComponent implements OnInit {
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              // if(e.sku.includes('DP2024EBSAT06NON') || e.sku.includes('DP2024SAT06NON')){
-              //   this.DP2024EBSAT06NON += e.quantity ;
-              //   Object.assign(userTicket,{ DP2024EBSAT06NON : e.quantity });
-              //   this.newPurches = true;
-              // }
-              // if(e.sku.includes('DP2024EBSAT07VEG') || e.sku.includes('DP2024SAT07VEG')){
-              //   this.DP2024EBSAT07VEG += e.quantity ;
-              //   Object.assign(userTicket,{ DP2024EBSAT07VEG : e.quantity });
-              //   this.newPurches = true;
-              // }
 
               //Sunday
               else if(e.sku.includes('DP2024EBSUN01NON') || e.sku.includes('DP2024SUN01NON')){
@@ -641,16 +641,6 @@ export class AlldetailsComponent implements OnInit {
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
-              // if(e.sku.includes('DP2024EBSUN06NON') || e.sku.includes('DP2024SUN06NON')){
-              //   this.DP2024EBSUN06NON += e.quantity ;
-              //   Object.assign(userTicket,{ DP2024EBSUN06NON : e.quantity });
-              //   this.newPurches = true;
-              // }
-              // if(e.sku.includes('DP2024EBSUN07VEG') || e.sku.includes('DP2024SUN07VEG')){  
-              //   this.DP2024EBSUN07VEG += e.quantity ;
-              //   Object.assign(userTicket,{ DP2024EBSUN07VEG : e.quantity });
-              //   this.newPurches = true;
-              // }
             }); // End of Purchase Loop e
           }
           

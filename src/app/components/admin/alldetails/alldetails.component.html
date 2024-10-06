@@ -10,9 +10,7 @@
     </div>
 
     <div class="container" >
-
         <h3 class="text-center mt-3 mb-2 " >Durga Pujo-2024 Food Sell Summary</h3>
-
         <div>
             <!-- Kobi Pronam 2024 Food Summary Report -->
             <!-- <table class="table table-bordered " >
@@ -314,9 +312,7 @@
     </div>
     
     <div class=" container mt-5 mb-3 " >
-
         <h3 class="text-center " >Durga Puja-2024 Food Purchase Transactions</h3>
-        
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
                 style="height:500px; "
@@ -338,15 +334,31 @@
     </div>
 
     <div class=" container mt-5 mb-3 " >
-
-        <h3 class="text-center " >Membership Details of 2024</h3>
-        
+        <h3 class="text-center " >Durga Puja-2024 Concert Ticket Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
                 style="height:500px; "
                 class="ag-theme-alpine table-light table-responsive agGridTable"
                 #agGrid
                 
+                id="myGrid"
+                class="ag-theme-alpine"
+                (gridReady)="onGridReady($event)"
+                [rowData]="dp2024ConcertTicketList"
+                [columnDefs]="dp2024ConcertTicketcolumnDefs"
+                [animateRows]="true"
+                 >
+            </ag-grid-angular>
+        </div>
+    </div>
+
+    <div class=" container mt-5 mb-3 " >
+        <h3 class="text-center " >Membership Details of 2024</h3>
+        <div class=" mb-3  table-bordered" >
+            <ag-grid-angular
+                style="height:500px; "
+                class="ag-theme-alpine table-light table-responsive agGridTable"
+                #agGrid
                 id="myGrid"
                 class="ag-theme-alpine"
                 (gridReady)="onGridReady($event)"
@@ -359,7 +371,5 @@
         <div class=" d-flex justify-content-end mb-5 " >
             <button (click)="onBtnExport()" class=" btn-get-started " > Export CSV File </button>
         </div>
-
     </div>
-
 </div>
