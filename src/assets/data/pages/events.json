@@ -27,7 +27,7 @@
     },
     { 
         "eventId":3,
-        "eventType": "current",
+        "eventType": "past",
         "eventName": "Sarbojanin Durgotsob 2024",
         "eventDate": "October 11th, 2024 - October 13th, 2024",
         "eventEndDate": "October 13th, 2024",
@@ -198,7 +198,7 @@
     },
     { 
         "eventId":16,
-        "eventType": "current",
+        "eventType": "past",
         "eventName": "DC South Asian Festival 2024",
         "eventDate": "Sept 06-30, 2024",
         "eventEndDate": "Sept 30, 2024",
@@ -209,5 +209,18 @@
         "description": "DCSAACI is dedicated to providing valuable opportunities for South Asian artists to showcase their talents through films, literature, dance and art. We are honored to have Padma Shri Sitar Maestro Ustad Shahid Parvez Khan as our opening performer on Friday September 6, 2024 at 7:30 PM.",
         "mapUrl": "https://maps.app.goo.gl/1jaJNProjta6cev99",
         "externalLink":"https://dcsaff2024.eventive.org/welcome"
+    },
+    { 
+        "eventId":17,
+        "eventType": "current",
+        "eventName": "Saraswati Puja 2025",
+        "eventDate": "February 1st, 2025 - Saturday",
+        "eventEndDate": "February 10th, 2025 - Saturday",
+        "eventImage": "./../../../assets/images/stocks/saraswati-2021.jpg",
+        "timming": "11:00 AM - 10:00 PM",
+        "venue": "TBD",
+        "pageLink": "/saraswatipuja2025",
+        "description": "Saraswati Puja",
+        "mapUrl": ""
     }
 ]

@@ -86,6 +86,7 @@ import { Poilabaishak2024Component } from './pages/poilabaishak2024/poilabaishak
 import { Picnic2024Component } from './pages/picnic2024/picnic2024.component';
 import { Durgapuja2024Component } from './pages/durgapuja2024/durgapuja2024.component';
 import { SponsorshipComponent } from './pages/sponsorship/sponsorship.component';
+import { Saraswatipuja2025Component } from './pages/saraswatipuja2025/saraswatipuja2025.component';
 
 
 @NgModule({
@@ -145,7 +146,8 @@ import { SponsorshipComponent } from './pages/sponsorship/sponsorship.component'
     Poilabaishak2024Component,
     Picnic2024Component,
     Durgapuja2024Component,
-    SponsorshipComponent
+    SponsorshipComponent,
+    Saraswatipuja2025Component
 
   ],
   imports: [

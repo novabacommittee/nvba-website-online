@@ -30,6 +30,7 @@ import { AlldetailsComponent } from './components/admin/alldetails/alldetails.co
 import { ConcertComponent } from './components/events/concert/concert.component';
 import { EventscheckoutComponent } from './components/events/eventscheckout/eventscheckout.component';
 import { SaraswatiComponent } from './pages/saraswati/saraswati.component';
+import { Saraswatipuja2025Component } from './pages/saraswatipuja2025/saraswatipuja2025.component';
 import { EventticketsComponent } from './components/events/eventtickets/eventtickets.component';
 import { PresidentsdeskComponent } from './pages/aboutus/presidentsdesk/presidentsdesk.component';
 import { KobipronamComponent } from './pages/kobipronam/kobipronam.component';
@@ -48,7 +49,7 @@ import { TechadvisorComponent } from './pages/aboutus/techadvisor/techadvisor.co
 import { SponsorshipComponent } from './pages/sponsorship/sponsorship.component';
 
 const routes: Routes = [
-  { path: "", component: Durgapuja2024Component, pathMatch: 'full' }, 
+  { path: "", component: HomeComponent, pathMatch: 'full' }, 
   { path: "home", component: HomeComponent, pathMatch: 'full'  },
   { path: "team", component: TeamComponent, pathMatch: 'full'  },
   { path: "bod", component: BodComponent, pathMatch: 'full'  },
@@ -59,6 +60,7 @@ const routes: Routes = [
   { path: "durgapuja2022", component: Durgapuja2022Component, pathMatch: 'full'  },
   { path: "durgapuja2023", component: Durgapuja2023Component, pathMatch: 'full'  },
   { path: "saraswatipuja", component: SaraswatiComponent, pathMatch: 'full'  },
+  { path: "saraswatipuja2025", component: Saraswatipuja2025Component, pathMatch: 'full'  },
   { path: "gallery", component: GalleryComponent, pathMatch: 'full'  },
   { path: "magazines", component: MagazinesComponent, pathMatch: 'full'  },
   { path: "pastteam2020", component: Pastteam2020To21Component, pathMatch: 'full'  },
