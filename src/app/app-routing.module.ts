@@ -49,7 +49,7 @@ import { TechadvisorComponent } from './pages/aboutus/techadvisor/techadvisor.co
 import { SponsorshipComponent } from './pages/sponsorship/sponsorship.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent, pathMatch: 'full' }, 
+  { path: "", component: Saraswatipuja2025Component, pathMatch: 'full' }, 
   { path: "home", component: HomeComponent, pathMatch: 'full'  },
   { path: "team", component: TeamComponent, pathMatch: 'full'  },
   { path: "bod", component: BodComponent, pathMatch: 'full'  },
