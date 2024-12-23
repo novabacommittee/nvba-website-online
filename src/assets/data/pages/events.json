@@ -1,6 +1,6 @@
 [
     { 
-        "eventId":1,
+        "eventId":3,
         "eventType": "past",
         "eventName": "Kobi Pronam 2024",
         "eventDate": "June 22nd, 2024",
@@ -26,7 +26,7 @@
         "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
     },
     { 
-        "eventId":3,
+        "eventId":1,
         "eventType": "past",
         "eventName": "Sarbojanin Durgotsob 2024",
         "eventDate": "October 11th, 2024 - October 13th, 2024",
