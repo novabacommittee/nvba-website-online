@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetjsonfileService } from './../../../services/getjsonfile.service';
 
-
 @Component({
   selector: 'app-latestevents',
   templateUrl: './latestevents.component.html',
@@ -27,15 +26,7 @@ export class LatesteventsComponent implements OnInit {
   
         });
     });
-
-
-
       console.log( this.pastevents);
 
   }
-
-
-
-
-
 }
