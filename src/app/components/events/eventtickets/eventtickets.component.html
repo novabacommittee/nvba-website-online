@@ -12,29 +12,24 @@
         </div>
     </div> -->
 
-
-
     <section class="ftco-section bg-light">
         <div class="container">
             <div class="row text-center ">
-                <h1>Saraswati Puja - 2024 - Regular Tickets </h1>
+                <h1>Saraswati Puja - 2025 - Early Bird Tickets </h1>
             </div>
-
-
                 <div id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
-
                     <p  class="warningText "  >
                         &ast; Students are required to show Student Identification Card.
                     </p> 
                 
                     <p class=" mt-3">
-                        <span >Note:- Tickets include Pujo, access to all events, cultural programs along with both Lunch and Dinner !. <br /></span>
+                        <span >Note:- Tickets include Puja, access to all activities, cultural programs along with both Lunch and Dinner !. <br /></span>
                     <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
                     </p>
                     <table class="table table-bordered table-hover" >
                         <thead>
                         <tr>
-                            <th scope="col"  >Items</th>
+                            <th scope="col">Items</th>
                             <th scope="col">Cost</th>
                             <th scope="col">Quantity</th>
                             <!-- <th scope="col">Add</th> -->
@@ -43,7 +38,7 @@
                         </thead>
                         <tbody *ngFor="let item of dataObject; index as i" >
                         
-                        <tr *ngIf="i < 7">
+                        <tr *ngIf="i < 6">
                             <th><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</th>
                             <td>$ {{item.price}}</td>
                             <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
@@ -68,14 +63,11 @@
                         <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
                     </div>
                 
-                
                     <!-- <div>
                         {{ dataObject | json }}
                     </div> -->
                     
                 </div>
-
         </div>
     </section>
-
 </div>

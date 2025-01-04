@@ -1,0 +1,47 @@
+[
+      {
+        "name": "NVBA Saraswati Puja 2025 Ticket Adults Non-Veg",
+        "description": "Adults -  Non-Veg",
+        "quantity": 0,
+        "price": 45,
+        "tax": 0,
+        "sku": "SP2025EBNVADULT",
+        "currency": "USD" 
+      },
+      {
+        "name": "NVBA Saraswati Puja 2025 Ticket Adults Veg",
+        "description": "Adults -  Veg",
+        "quantity": 0,
+        "price": 40,
+        "tax": 0,
+        "sku": "SP2025EBVEGADULT",
+        "currency": "USD" 
+      },
+      {
+        "name": "NVBA Saraswati Puja 2025 Ticket Non-Veg",
+        "description": "Kids [ 11 to 18 years ] / Visiting Parents / Students Non-Veg",
+        "quantity": 0,
+        "price": 35,
+        "tax": 0,
+        "sku": "SP2025EBNVOTHER",
+        "currency": "USD"
+      },
+      {
+        "name": "NVBA Saraswati Puja 2025 Ticket Veg",
+        "description": "Kids [ 11 to 18 years ] / Visiting Parents / Students Veg",
+        "quantity": 0,
+        "price": 30,
+        "tax": 0,
+        "sku": "SP2025EBVEGOTHER",
+        "currency": "USD"
+      },
+      {
+        "name": "NVBA Saraswati Puja 2025 Ticket Kids Below 10",
+        "description": "Kids meal for age group [ 0 - 10 years ]",
+        "quantity": 0,
+        "price": 0,
+        "tax": 0,
+        "sku": "SP2025EBKIDS",
+        "currency": "USD" 
+      }
+]

@@ -6,6 +6,7 @@ import { GetjsonfileService } from './../../../services/getjsonfile.service';
   templateUrl: './latestevents.component.html',
   styleUrls: ['./latestevents.component.scss']
 })
+
 export class LatesteventsComponent implements OnInit {
   events: any = [];
   pastevents: any =[];
@@ -23,10 +24,8 @@ export class LatesteventsComponent implements OnInit {
         else{
           this.commingevents.push(e);
         }
-  
         });
     });
       console.log( this.pastevents);
-
   }
 }
