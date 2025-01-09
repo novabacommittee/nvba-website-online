@@ -113,5 +113,13 @@ export class MemberService {
           console.log("Success Create.");
         });
     }
+
+  sp2025(purches:any){
+      this.db.object('/sp2025/'+purches.id).set({ ...purches }).catch(error => {
+            console.log(error);
+          }).then( c => {
+            console.log("Success Create.");
+          });
+      }
   
 }
