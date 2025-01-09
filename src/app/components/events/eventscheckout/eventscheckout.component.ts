@@ -202,7 +202,6 @@ export class EventscheckoutComponent implements OnInit {
            console.log('update done');
         //  this.toastr.success('Your payment is successful.','Payment Process');
           this.toastr.success('Hi '+ payment.payer.payer_info.first_name +', \n  Thanks for your recent purchase. Your payment is successful. \n You will get confirmation emails form PayPal. ','Payment Process');
-   
        
              this.cart.clearCart();
              this.cleanup();
@@ -211,14 +210,9 @@ export class EventscheckoutComponent implements OnInit {
             setTimeout(()=>{                           
               this.router.navigate(['/']);
             }, 2000);
-            
-  
         })
       }
     };
-
-
-
 
   goBack(){
       this.location.back();

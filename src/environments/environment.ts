@@ -19,7 +19,6 @@
 
 export const paypalKey = 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS';
 
-
 export const environment = {
   production: false,
   firebase: {
@@ -33,8 +32,6 @@ export const environment = {
     measurementId: "G-YM094H77Y4"
   }
 };
-
-
 
 
 /*

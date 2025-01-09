@@ -14,10 +14,7 @@ import { MemberService } from '../member/member.service';
 })
 export class UserDetailsCheckService {
 
-
-
   constructor( ) {
   }
-
 
 }

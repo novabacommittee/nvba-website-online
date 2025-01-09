@@ -83,11 +83,7 @@ export class CheckoutComponent implements OnInit {
         //   this.member.expires = moment(this.member.expires).add(1, 'years').format('M-D-YYYY');
         //   ////console.log( this.member.expires );
         // }
-
   }
-
-
-
 
    ngAfterViewInit(): void {
     if(this.cartCheck){
@@ -178,7 +174,6 @@ export class CheckoutComponent implements OnInit {
               }
             }
 
-
            if((!this.member.payments) && (!this.member.purchase) ){ 
             ////console.log('First Time');
             this.member.payments = [];
@@ -209,7 +204,6 @@ export class CheckoutComponent implements OnInit {
            const userNa = this.member.displayName?this.member.displayName:'';
            console.log(userNa);
           this.toastr.success('Hi '+ userNa +', \n  Thanks for your recent purchase. Your payment is successful. \n You will get confirmation emails form Paypal. \n You can varify your tickets at Membership page under order history tab. ','Payment Process');
-   
        
              this.cart.clearCart();
              this.cleanup();
@@ -218,8 +212,6 @@ export class CheckoutComponent implements OnInit {
             setTimeout(()=>{                           
               this.router.navigate(['/']);
             }, 2000);
-            
-  
         })
       }
     };
