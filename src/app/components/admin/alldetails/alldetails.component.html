@@ -10,7 +10,7 @@
     </div>
 
     <div class="container" >
-        <h3 class="text-center mt-3 mb-2 " >Durga Pujo-2024 Food Sell Summary</h3>
+        <h3 class="text-center mt-3 mb-2 " >Saraswati Puja-2025 Ticket Sell Summary</h3>
         <div>
             <!-- Kobi Pronam 2024 Food Summary Report -->
             <!-- <table class="table table-bordered " >
@@ -151,7 +151,7 @@
               </table> -->
 
             <!-- Durga Puja 2024 Food Summary Report -->
-            <table class="table table-bordered " >
+            <!-- <table class="table table-bordered " >
               <tr>
                     <th>Total Annual Membership </th>
                     <th>{{MM2024YY}}</th>
@@ -243,33 +243,6 @@
                     </div>
                 </td>
               </tr>
-              <!-- <tr>
-                <th>Students and Visiting Parents</th>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBALL06NON}}</div>
-                        <div class="green">{{DP2024EBALL07VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBFRI06NON}}</div>
-                        <div class="green">{{DP2024EBFRI07VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSAT06NON}}</div>
-                        <div class="green">{{DP2024EBSAT07VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSUN06NON}}</div>
-                        <div class="green">{{DP2024EBSUN07VEG}}</div>
-                    </div>
-                </td>
-              </tr> -->
               <tr class=" bg-light " >
                 <th>Total</th>
                   <th>
@@ -297,22 +270,69 @@
                     </div>
                   </th>
               </tr>
-              <!-- <tr style="background-color: antiquewhite;" >
-                <th>
-                    Concert Tickets
-                </th>
-                <th></th>
-                <th>{{DP2024CTFRIDAY}}</th>
-                <th>{{DP2024CTSATURDAY}}</th>
-                <th>{{DP2024CTSUNDAY}}</th>
-              </tr> -->
-            </table>
+            </table> -->
+
+            <!-- Saraswati Puja 2025 Food Summary Report -->
+            <table class="table table-bordered " >
+                <tr>
+                      <th>Total Annual Membership - 2025</th>
+                      <th>{{MM2025YY}}</th>
+                </tr>  
+                <tr>
+                  <th></th>
+                  <th class="d-flex justify-content-around " >Saturday, 1st February, 2025</th>
+                </tr>
+                <tr>
+                  <th>Adult</th>
+                  <td>
+                      <div class="d-flex justify-content-around ">
+                          <div class="red" >{{SP2025EBNVADULT}}</div>
+                          <div class="green">{{SP2025EBVEGADULT}}</div>
+                     </div> 
+                  </td>
+                </tr>
+                <tr>
+                  <th>Teens [ 11 to 18 years ] / Visiting Parents / Students for Non-Veg</th>
+                  <td>
+                      <div class="d-flex justify-content-around ">
+                          <div class="red" >{{SP2025EBNVOTHER}}</div>
+                          <div class="green">{{SP2025EBVEGOTHER}}</div>
+                      </div>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <th>Kids age group [ 0 - 10 years ] are free </th>
+                  <td>
+                      <div class="d-flex justify-content-around ">
+                          <div >{{SP2025EBKIDS}}</div>
+                      </div>
+                  </td>
+                </tr>
+                <tr class=" bg-light " >
+                  <th>Total (without kids count)</th>
+                    <th>
+                      <div class="d-flex justify-content-around ">
+                          <div class="red" >{{SP2025EBNVADULT + SP2025EBNVOTHER }}</div>
+                          <div class="green">{{SP2025EBVEGADULT + SP2025EBVEGOTHER }}</div>
+                      </div>
+                    </th>
+                </tr>
+                <tr class=" bg-light " >
+                    <th>Total Head Count</th>
+                      <th>
+                        <div class="d-flex justify-content-around ">
+                            <div  >{{SP2025EBNVADULT + SP2025EBNVOTHER + SP2025EBVEGADULT + SP2025EBVEGOTHER + SP2025EBKIDS}}</div>
+                        </div>
+                      </th>
+                </tr>
+              </table>
 
         </div>
     </div>
     
     <div class=" container mt-5 mb-3 " >
-        <h3 class="text-center " >Durga Puja-2024 Food Purchase Transactions</h3>
+        <h3 class="text-center " >Saraswati Puja-2025 Food Purchase Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
                 style="height:500px; "
@@ -322,8 +342,8 @@
                 id="myGrid"
                 class="ag-theme-alpine"
                 (gridReady)="onGridReady($event)"
-                [rowData]="dp2024TicketList"
-                [columnDefs]="dp2024columnDefsTickets"
+                [rowData]="sp2025TicketList"
+                [columnDefs]="sp2025columnDefsTickets"
                 [animateRows]="true"
                  >
             </ag-grid-angular>
@@ -333,7 +353,7 @@
         </div> -->
     </div>
 
-    <div class=" container mt-5 mb-3 " >
+    <!-- <div class=" container mt-5 mb-3 " >
         <h3 class="text-center " >Durga Puja-2024 Concert Ticket Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
@@ -350,10 +370,10 @@
                  >
             </ag-grid-angular>
         </div>
-    </div>
+    </div> -->
 
     <div class=" container mt-5 mb-3 " >
-        <h3 class="text-center " >Membership Details of 2024</h3>
+        <h3 class="text-center " >Membership Details of 2025</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
                 style="height:500px; "
