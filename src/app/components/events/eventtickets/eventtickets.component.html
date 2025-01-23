@@ -28,8 +28,8 @@
                         
                         <tr *ngIf="i < 6">
                             <th><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}
-                                <div class="active">{{item.itemdetails_1}}</div>
-                                <div class="active">{{item.itemdetails_2}}</div>
+                                <!-- <div class="active">{{item.itemdetails_1}}</div>
+                                <div class="active">{{item.itemdetails_2}}</div> -->
                             </th>
                             <td>$ {{item.price}}</td>
                             <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
