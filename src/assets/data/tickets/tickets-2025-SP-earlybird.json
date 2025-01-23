@@ -2,8 +2,6 @@
       {
         "name": "NVBA Saraswati Puja 2025 Ticket Adults Non-Veg",
         "description": "Adults -  Non-Veg",
-        "itemdetails_1": "Lunch: Basanti Pulao, Paneer Butter Masala, Kashmiri Aloor Dum, Amsotto & Tomato Chutney, Payes",
-        "itemdetails_2": "Dinner: White Rice, Cauliflower Muger daal with peas, Aloo Bhaja, Ilish Bhapa, Malai Chomchom",
         "quantity": 0,
         "price": 45,
         "tax": 0,
@@ -13,8 +11,6 @@
       {
         "name": "NVBA Saraswati Puja 2025 Ticket Adults Veg",
         "description": "Adults -  Veg",
-        "itemdetails_1": "Lunch: Basanti Pulao, Paneer Butter Masala, Kashmiri Aloor Dum, Amsotto & Tomato Chutney, Payes",
-        "itemdetails_2": "Dinner: White Rice, Cauliflower Muger daal with peas, Aloo Bhaja, Potol Posto, Malai Chomchom",
         "quantity": 0,
         "price": 40,
         "tax": 0,
@@ -24,8 +20,6 @@
       {
         "name": "NVBA Saraswati Puja 2025 Ticket Other Non-Veg",
         "description": "Teens [ 11 to 18 years ] / Visiting Parents / Students Non-Veg",
-        "itemdetails_1": "Lunch: Basanti Pulao, Paneer Butter Masala, Kashmiri Aloor Dum, Amsotto & Tomato Chutney, Payes",
-        "itemdetails_2": "Dinner: White rice, Cauliflower Muger daal with peas, Aloo Bhaja, Butter Chicken, Malai Chomchom",
         "quantity": 0,
         "price": 35,
         "tax": 0,
@@ -35,8 +29,6 @@
       {
         "name": "NVBA Saraswati Puja 2025 Ticket Other Veg",
         "description": "Teens [ 11 to 18 years ] / Visiting Parents / Students Veg",
-        "itemdetails_1": "Lunch: Basanti Pulao, Paneer Butter Masala, Kashmiri Aloor Dum, Amsotto & Tomato Chutney, Payes",
-        "itemdetails_2": "Dinner: White Rice, Cauliflower Muger daal with peas, Aloo Bhaja, Potol Posto, Malai Chomchom",
         "quantity": 0,
         "price": 30,
         "tax": 0,
@@ -46,8 +38,6 @@
       {
         "name": "NVBA Saraswati Puja 2025 Ticket Kids Below 10",
         "description": "Kids meal for age group [ 0 - 10 years ]",
-        "itemdetails_1": "Lunch: Basanti Pulao, Paneer Butter Masala, Fruit Juice, Ice cream",
-        "itemdetails_2": "Dinner: Pizza, Chicken wings, Fruit Juice, Brownie",
         "quantity": 0,
         "price": 0,
         "tax": 0,
