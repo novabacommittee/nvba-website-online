@@ -29,7 +29,10 @@
                         </thead>
                         <tbody>
                         <tr *ngFor="let item of cartCheck">
-                            <th><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</th>
+                            <th><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}
+                                <div class="active">{{item.itemdetails_1}}</div>
+                                <div class="active">{{item.itemdetails_2}}</div>
+                            </th>
                             <td>$ {{item.price}}</td>
                             <td>{{ item.quantity}}</td>
                             <td  >$ {{item.price * item.quantity}}</td>

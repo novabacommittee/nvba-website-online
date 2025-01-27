@@ -30,7 +30,7 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
   // headCount: number = 0;
 
 
-  private _jsonURLcart = '/assets/data/tickets/tickets-2025-SP-earlybird.json';
+  private _jsonURLcart = '/assets/data/tickets/tickets-2025-SP-regular.json';
    constructor(private http: HttpClient, private cs: CartService, public router: Router, private cdr: ChangeDetectorRef) {
     this.cs.currentCart.subscribe( cartCheck => this.cartCheck = cartCheck);
     this.getJSON().subscribe(data => {
@@ -58,8 +58,6 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
       });
        
     });
- //   ////console.log('this.dataObject - Check data');
- //   ////console.log(this.dataObject);
    }
 
   
@@ -135,8 +133,4 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
     });
   }
 
-
-
-
 }
-

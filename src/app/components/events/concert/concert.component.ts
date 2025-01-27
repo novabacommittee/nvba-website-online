@@ -58,8 +58,6 @@ export class ConcertComponent implements OnInit, OnChanges, AfterViewChecked {
       });
        
     });
- //   ////console.log('this.dataObject - Check data');
- //   ////console.log(this.dataObject);
    }
 
   
