@@ -296,10 +296,10 @@
         "eventEndDate": "June 1st, 2025",
         "eventImage": "./../../../assets/images/gallery/common/kobipronam.jpg",
         "timming": "7:00 PM - 10:00 PM",
-        "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
+        "venue": "TBD",
         "pageLink": "",
         "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
-        "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
+        "mapUrl": ""
     },
     { 
         "eventId":25,
@@ -325,7 +325,7 @@
         "venue": "TBD",
         "pageLink": "",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
-        "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
+        "mapUrl": ""
     },
     { 
         "eventId":27,
@@ -334,7 +334,7 @@
         "eventDate": "Date: December 13th, 2025",
         "eventEndDate": "December 13th, 2025",
         "eventImage": "./../../../assets/images/stocks/agm.jpg",
-        "timming": "3:30 PM - 6:00 PM",
+        "timming": "3:00 PM - 6:30 PM",
         "venue": "Chantilly Regional Library  4000 Stringfellow Rd, Chantilly, VA 20151",
         "pageLink": "",
         "description": "Your participation is highly appreciated.",
