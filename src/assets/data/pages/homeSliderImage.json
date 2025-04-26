@@ -1,47 +1,34 @@
 [
     {
         "homeSliderImageId": "1",
-        "homeSliderImage": "1.jpg",
-        "imageLink": "./../../../assets/images/gallery/common/images-2021/1.jpg",
+        "homeSliderImage": "Saraswati Pujo 2025",
+        "imageLink": "./../../../assets/images/stocks/2023/DP-2023.jpg",
         "tag": "",
-        "description": ""
+        "description": "Saraswati Pujo 2025 Event"
     },
     {
         "homeSliderImageId": "2",
-        "homeSliderImage": "DP-2023",
-        "imageLink": "./../../../assets/images/stocks/2023/DP-2023.jpg",
+        "homeSliderImage": "Poila Baishak 2024",
+        "imageLink": "./../../../assets/images/gallery/pb2024/pb_bhog_preparation.jpg",
         "tag": "",
-        "description": ""
-    },{
+        "description": "Poula Baishak Event"
+    },
+    {
         "homeSliderImageId": "3",
-        "homeSliderImage": "bg_3.jpg",
-        "imageLink": "./../../../assets/images/gallery/picnic2024/picnic_2024_group_photo.jpg",
+        "homeSliderImage": "Kobi Pronam 2024",
+        "imageLink": "./../../../assets/images/gallery/kp2024/_DSC0619.jpg",
         "tag": "",
-        "description": ""
+        "description": "Kobi Pronam Event"
     },
     {
         "homeSliderImageId": "4",
-        "name": "durgapuja-2023-3.jpg",
-        "imageLink": "./../../../assets/images/gallery/dp2023/durgapuja-2023-3.jpg",
+        "name": "Picnic 2024",
+        "imageLink": "./../../../assets/images/gallery/pincnic2024/picnic_2024_group_photo.jpg",
         "tag": "",
-        "description": ""
+        "description": "Annual NVBA Picnic"
     },
     {
         "homeSliderImageId": "5",
-        "name": "social_media_post_dc_south_asian_festival_2024.jpg",
-        "imageLink": "./../../../assets/images/stocks/2024/social_media_post_dc_south_asian_festival_2024.jpg",
-        "tag": "",
-        "description": ""
-    },
-    {
-        "homeSliderImageId": "6",
-        "name": "pb_bhog_preparation.jpg",
-        "imageLink": "./../../../assets/images/gallery/pb2024/pb_bhog_preparation.jpg",
-        "tag": "",
-        "description": ""
-    },
-    {
-        "homeSliderImageId": "7",
         "name": "pb_opening_performence.jpg",
         "imageLink": "./../../../assets/images/gallery/pb2024/pb_opening_performence.jpg",
         "tag": "",

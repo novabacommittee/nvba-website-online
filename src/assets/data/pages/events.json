@@ -1,5 +1,18 @@
 [
     { 
+        "eventId":23,
+        "eventType": "past",
+        "eventName": "Poila Boisakh 2025",
+        "eventDate": "April 13th, 2025",
+        "eventEndDate": "April 13th, 2025",
+        "eventImage": "./../../../assets/images/gallery/common/poila-boisakh.jpg",
+        "timming": "10:00 AM - 5:00 PM",
+        "venue": "Washington Kali Temple",
+        "pageLink": "",
+        "description": "Come join us to celebrate our new year.",
+        "mapUrl": "https://goo.gl/maps/oK7kDeWN1RjXAZQRA"
+    },
+    { 
         "eventId":21,
         "eventType": "past",
         "eventName": "Saraswati Puja 2025",
@@ -276,17 +289,17 @@
         "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
     },
     { 
-        "eventId":23,
+        "eventId":28,
         "eventType": "current",
-        "eventName": "Poila Boisakh 2025",
-        "eventDate": "April 13th, 2025",
-        "eventEndDate": "April 13th, 2025",
-        "eventImage": "./../../../assets/images/gallery/common/poila-boisakh.jpg",
-        "timming": "10:00 AM - 5:00 PM",
-        "venue": "Washington Kali Temple",
-        "pageLink": "",
-        "description": "Come join us to celebrate our new year.",
-        "mapUrl": "https://goo.gl/maps/oK7kDeWN1RjXAZQRA"
+        "eventName": "Papon Live Concert",
+        "eventDate": "June 27th, 2025",
+        "eventEndDate": "June 27th, 2025",
+        "eventImage": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo.jpg",
+        "timming": "7:00 PM - 9:30 PM",
+        "venue": "Stone Bridge High School, 43100 Hay Rd, Ashburn, VA 20147",
+        "pageLink": "/paponliveconcert2025",
+        "description": "NVBA proudly presents a LIVE concert featuring the sensational Papon and top Bollywood musicians!",
+        "mapUrl": "https://maps.app.goo.gl/k4gcfuTCaWnDynEt7"
     },
     { 
         "eventId":24,
@@ -296,7 +309,7 @@
         "eventEndDate": "June 1st, 2025",
         "eventImage": "./../../../assets/images/gallery/common/kobipronam.jpg",
         "timming": "4:00 PM - 9:00 PM",
-        "venue": "TBD",
+        "venue": "Stone Hills Middle School, 23415 Evergreen Ridge Dr, Ashburn, VA 20148",
         "pageLink": "",
         "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
         "mapUrl": ""

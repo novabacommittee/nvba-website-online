@@ -87,6 +87,11 @@ import { Picnic2024Component } from './pages/picnic2024/picnic2024.component';
 import { Durgapuja2024Component } from './pages/durgapuja2024/durgapuja2024.component';
 import { SponsorshipComponent } from './pages/sponsorship/sponsorship.component';
 import { Saraswatipuja2025Component } from './pages/saraswatipuja2025/saraswatipuja2025.component';
+import { Paponliveconcert2025Component } from './pages/paponliveconcert2025/paponliveconcert2025.component';
+import { Picnic2025Component } from './pages/picnic2025/picnic2025.component';
+import { Kobipronam2025Component } from './pages/kobipronam2025/kobipronam2025.component';
+import { Poilabaishak2025Component } from './pages/poilabaishak2025/poilabaishak2025.component';
+import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.component';
 
 
 @NgModule({
@@ -147,7 +152,12 @@ import { Saraswatipuja2025Component } from './pages/saraswatipuja2025/saraswatip
     Picnic2024Component,
     Durgapuja2024Component,
     SponsorshipComponent,
-    Saraswatipuja2025Component
+    Saraswatipuja2025Component,
+    Paponliveconcert2025Component,
+    Picnic2025Component,
+    Kobipronam2025Component,
+    Poilabaishak2025Component,
+    Durgapuja2025Component
 
   ],
   imports: [

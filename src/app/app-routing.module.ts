@@ -20,7 +20,6 @@ import { TicketsComponent } from './components/tickets/tickets.component';
 
 import { Durgapuja2022Component } from './pages/durgapuja2022/durgapuja2022.component';
 import { Durgapuja2023Component } from './pages/durgapuja2023/durgapuja2023.component';
-import { Durgapuja2024Component } from './pages/durgapuja2024/durgapuja2024.component';
 import { GalleryComponent } from './pages/gallery/gallery/gallery.component';
 import { Pastteam2020To21Component } from './pages/archive/pastteam2020-21/pastteam2020-21.component';
 import { MagazinesComponent } from './pages/archive/magazines/magazines.component';
@@ -30,7 +29,6 @@ import { AlldetailsComponent } from './components/admin/alldetails/alldetails.co
 import { ConcertComponent } from './components/events/concert/concert.component';
 import { EventscheckoutComponent } from './components/events/eventscheckout/eventscheckout.component';
 import { SaraswatiComponent } from './pages/saraswati/saraswati.component';
-import { Saraswatipuja2025Component } from './pages/saraswatipuja2025/saraswatipuja2025.component';
 import { EventticketsComponent } from './components/events/eventtickets/eventtickets.component';
 import { PresidentsdeskComponent } from './pages/aboutus/presidentsdesk/presidentsdesk.component';
 import { KobipronamComponent } from './pages/kobipronam/kobipronam.component';
@@ -42,11 +40,20 @@ import { CaresComponent } from './pages/cares/cares.component';
 import { ProposedconstitutionComponent } from './pages/archive/proposedconstitution/proposedconstitution.component';
 import { UserDetailsCheckComponent } from './components/user-details-check/user-details-check.component';
 import { Pastteam2022To23Component } from './pages/archive/pastteam2022-23/pastteam2022-23.component';
-import { Kobipronam2024Component } from './pages/kobipronam2024/kobipronam2024.component';
-import { Poilabaishak2024Component } from './pages/poilabaishak2024/poilabaishak2024.component';
-import { Picnic2024Component } from './pages/picnic2024/picnic2024.component';
 import { TechadvisorComponent } from './pages/aboutus/techadvisor/techadvisor.component';
 import { SponsorshipComponent } from './pages/sponsorship/sponsorship.component';
+
+import { Poilabaishak2024Component } from './pages/poilabaishak2024/poilabaishak2024.component';
+import { Kobipronam2024Component } from './pages/kobipronam2024/kobipronam2024.component';
+import { Picnic2024Component } from './pages/picnic2024/picnic2024.component';
+import { Durgapuja2024Component } from './pages/durgapuja2024/durgapuja2024.component';
+
+import { Saraswatipuja2025Component } from './pages/saraswatipuja2025/saraswatipuja2025.component';
+import { Poilabaishak2025Component } from './pages/poilabaishak2025/poilabaishak2025.component';
+import { Paponliveconcert2025Component } from './pages/paponliveconcert2025/paponliveconcert2025.component';
+import { Kobipronam2025Component } from './pages/kobipronam2025/kobipronam2025.component';
+import { Picnic2025Component } from './pages/picnic2025/picnic2025.component';
+import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: 'full' }, 
@@ -60,7 +67,6 @@ const routes: Routes = [
   { path: "durgapuja2022", component: Durgapuja2022Component, pathMatch: 'full'  },
   { path: "durgapuja2023", component: Durgapuja2023Component, pathMatch: 'full'  },
   { path: "saraswatipuja", component: SaraswatiComponent, pathMatch: 'full'  },
-  { path: "saraswatipuja2025", component: Saraswatipuja2025Component, pathMatch: 'full'  },
   { path: "gallery", component: GalleryComponent, pathMatch: 'full'  },
   { path: "magazines", component: MagazinesComponent, pathMatch: 'full'  },
   { path: "pastteam2020", component: Pastteam2020To21Component, pathMatch: 'full'  },
@@ -101,6 +107,13 @@ const routes: Routes = [
   
   { path: 'proposedconstitution', component:ProposedconstitutionComponent, canActivate:[AuthGuard] },
   { path: 'user-details-check/:id', component: UserDetailsCheckComponent },
+
+  { path: "saraswatipuja2025", component: Saraswatipuja2025Component, pathMatch: 'full'  },
+  { path: 'poilabaishak2025', component: Poilabaishak2025Component },
+  { path: 'paponliveconcert2025', component: Paponliveconcert2025Component },
+  { path: 'kobipronam2025', component: Kobipronam2025Component },
+  { path: 'picnic2025', component: Picnic2025Component },
+  { path: "durgapuja2025", component: Durgapuja2025Component, pathMatch: 'full'  },
 
 ];
 
