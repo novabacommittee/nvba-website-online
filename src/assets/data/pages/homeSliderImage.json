@@ -1,36 +1,43 @@
 [
     {
         "homeSliderImageId": "1",
-        "homeSliderImage": "Saraswati Pujo 2025",
+        "homeSliderImage": "Durga Pujo 2024",
         "imageLink": "./../../../assets/images/stocks/2023/DP-2023.jpg",
         "tag": "",
-        "description": "Saraswati Pujo 2025 Event"
+        "description": "Durga Pujo 2024 Event"
     },
     {
         "homeSliderImageId": "2",
-        "homeSliderImage": "Poila Baishak 2024",
+        "homeSliderImage": "Poila Baishak 2025",
         "imageLink": "./../../../assets/images/gallery/pb2024/pb_bhog_preparation.jpg",
         "tag": "",
         "description": "Poula Baishak Event"
     },
     {
         "homeSliderImageId": "3",
-        "homeSliderImage": "Kobi Pronam 2024",
-        "imageLink": "./../../../assets/images/gallery/kp2024/_DSC0619.jpg",
+        "homeSliderImage": "Papon Concert 2025",
+        "imageLink": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
         "tag": "",
         "description": "Kobi Pronam Event"
     },
     {
         "homeSliderImageId": "4",
         "name": "Picnic 2024",
-        "imageLink": "./../../../assets/images/gallery/pincnic2024/picnic_2024_group_photo.jpg",
+        "imageLink": "./../../../assets/images/gallery/picnic2024/picnic_2024_group_photo.jpg",
         "tag": "",
         "description": "Annual NVBA Picnic"
     },
     {
         "homeSliderImageId": "5",
-        "name": "pb_opening_performence.jpg",
+        "name": "Poila Baishak 2024",
         "imageLink": "./../../../assets/images/gallery/pb2024/pb_opening_performence.jpg",
+        "tag": "",
+        "description": ""
+    },
+    {
+        "homeSliderImageId": "6",
+        "name": "NVBA_Sponsors_Benefactors",
+        "imageLink": "./../../../assets/images/gallery/sponsors/NVBA_Sponsors_Benefactors_2024_v3.png",
         "tag": "",
         "description": ""
     }

@@ -17,7 +17,7 @@ export class Paponliveconcert2025Component implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-    this.audio.src = "https://gaana.com/song/moh-moh-ke-dhaage-male"; 
+    this.audio.src = "https://www.youtube.com/embed/miM_DM4RWI0"; 
     this.audio.load();
     this.audio.play();
 }
