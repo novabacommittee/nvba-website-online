@@ -91,7 +91,7 @@
     },
     {
         "name": "Regular - Non-Veg Chicken Biryani",
-        "description": "Non Veg Dinner",
+        "description": "Non Veg Dinner(Biryani, Raita & Sweet)",
         "quantity": 0,
         "price": 12,
         "tax": 0,
@@ -100,7 +100,7 @@
     },
     {
         "name": "Regular - Veg Biryani",
-        "description": "Veg Dinner",
+        "description": "Veg Dinner(Biryani, Raita & Sweet)",
         "quantity": 0,
         "price": 10,
         "tax": 0,
