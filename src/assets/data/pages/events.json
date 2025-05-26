@@ -295,7 +295,7 @@
         "eventDate": "June 27th, 2025",
         "eventEndDate": "June 27th, 2025",
         "eventImage": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
-        "timming": "7:00 PM - 9:30 PM",
+        "timming": "5:30 PM - 9:00 PM",
         "venue": "Stone Bridge High School, 43100 Hay Rd, Ashburn, VA 20147",
         "pageLink": "/paponliveconcert2025",
         "description": "NVBA proudly presents a LIVE concert featuring the sensational Papon and top Bollywood musicians!",
@@ -310,9 +310,9 @@
         "eventImage": "./../../../assets/images/gallery/common/kobipronam.jpg",
         "timming": "4:00 PM - 9:00 PM",
         "venue": "Stone Hills Middle School, 23415 Evergreen Ridge Dr, Ashburn, VA 20148",
-        "pageLink": "",
+        "pageLink": "/kobipronam2025",
         "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
-        "mapUrl": ""
+        "mapUrl": "https://maps.app.goo.gl/MeLB5sAGvx8SZvna9"
     },
     { 
         "eventId":25,
@@ -323,7 +323,7 @@
         "eventImage": "./../../../assets/images/gallery/common/picnic/picnic-2022.jpg",
         "timming": "10:00 AM - 5:00 PM",
         "venue": "Shelter 1 at Bull Run,7700 Bull Run Dr, Centreville, VA 20121",
-        "pageLink": "",
+        "pageLink": "/picnic2025",
         "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship..",
         "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
     },
@@ -335,10 +335,10 @@
         "eventEndDate": "October 3-5, 2025",
         "eventImage": "./../../../assets/images/stocks/DP-2020.jpg",
         "timming": "October 3rd - 6 PM to 10 PM. October 4th and 5th - 9 AM to 10 PM",
-        "venue": "TBD",
-        "pageLink": "",
+        "venue": "Freedom High School, 25450 Riding Center Dr, Chantilly, VA 20152",
+        "pageLink": "/durgapuja2025",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
-        "mapUrl": ""
+        "mapUrl": "https://maps.app.goo.gl/ubZNqZwacYfyeupv6"
     },
     { 
         "eventId":27,

@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Beverage",
+    "description": "Tea (Milk or Black)",
+    "quantity": 0,
+    "price": 1,
+    "tax": 0,
+    "sku": "KP2025TEA",
+    "currency": "USD" 
+  },
+  {
+    "name": "Beverage",
+    "description": "Coffee",
+    "quantity": 0,
+    "price": 2,
+    "tax": 0,
+    "sku": "KP2025COFFEE",
+    "currency": "USD" 
+  },
+  {
+    "name": "Cold Drinks",
+    "description": "Cold Drinks (Coke, Fanta)",
+    "quantity": 0,
+    "price": 1,
+    "tax": 0,
+    "sku": "KP2025COLDDRINKS",
+    "currency": "USD" 
+  },
+  {
+      "name": "Snacks",
+      "description": "Veg Chop (2 Pcs)",
+      "quantity": 0,
+      "price": 4,
+      "tax": 0,
+      "sku": "KP2025VEGCHOP",
+      "currency": "USD" 
+    },
+    {
+      "name": "Snacks",
+      "description": "Veg Ghugni (1 Bowl)",
+      "quantity": 0,
+      "price": 3,
+      "tax": 0,
+      "sku": "KP2025GHUGNISINGLE",
+      "currency": "USD" 
+    },
+    {
+      "name": "Snacks",
+      "description": "Veg Ghugni (2 Bowl)",
+      "quantity": 0,
+      "price": 5,
+      "tax": 0,
+      "sku": "KP2025GHUGNIDOUBLE",
+      "currency": "USD" 
+    },
+    {
+      "name": "Snacks",
+      "description": "Jhal Muri (1 Bowl)",
+      "quantity": 0,
+      "price": 3,
+      "tax": 0,
+      "sku": "KP2025JHALMURISINGLE",
+      "currency": "USD" 
+    },
+    {
+      "name": "Snacks",
+      "description": "Jhal Muri (2 Bowl)",
+      "quantity": 0,
+      "price": 5,
+      "tax": 0,
+      "sku": "KP2025JHALMURIDOUBLE",
+      "currency": "USD" 
+    },
+    {
+      "name": "Snacks",
+      "description": "Egg Devil (1 Pc)",
+      "quantity": 0,
+      "price": 3,
+      "tax": 0,
+      "sku": "KP2025EGGDEVILSINGLE",
+      "currency": "USD" 
+    },
+    {
+      "name": "Snacks",
+      "description": "Egg Devil (2 Pcs)",
+      "quantity": 0,
+      "price": 5,
+      "tax": 0,
+      "sku": "KP2025EGGDEVILDOUBLE",
+      "currency": "USD" 
+    },
+    {
+        "name": "Regular - Non-Veg Chicken Biryani",
+        "description": "Non Veg Dinner",
+        "quantity": 0,
+        "price": 12,
+        "tax": 0,
+        "sku": "KP2025NONVEG",
+        "currency": "USD" 
+    },
+    {
+        "name": "Regular - Veg Biryani",
+        "description": "Veg Dinner",
+        "quantity": 0,
+        "price": 10,
+        "tax": 0,
+        "sku": "KP2025VEG",
+        "currency": "USD" 
+    }
+]

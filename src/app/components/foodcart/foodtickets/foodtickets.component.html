@@ -6,50 +6,69 @@
                 <h1>Food Tickets</h1>
             </div>
 
-                <div id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
+            <div id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
 
-                    <p  class="warningText "  >
-                        &ast; Tickets are required.
-                    </p> 
-                
-                    <p class=" mt-3">
-                        <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
-                    </p>
-                    <table class="table table-bordered table-hover" >
-                        <thead>
-                        <tr>
-                            <th scope="col">Items</th>
-                            <th scope="col">Cost</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                        </thead>
-                        <tbody *ngFor="let item of dataObject; index as i" >
-                        
-                        <tr *ngIf="i < 7">
-                            <th><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</th>
+                <p  class="warningText "  >
+                    &ast; Tickets are required.
+                </p> 
+            
+                <p class=" mt-3">
+                    <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
+                </p>
+
+                <table class="table table-bordered table-hover" >
+                    <thead>
+                    <tr>
+                        <th scope="col">Beverage Items</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody *ngFor="let item of dataObject; index as i" >
+                        <tr *ngIf="i < 3">
+                            <th><div class="mediumOrangeHeader"></div>{{item.description}}</th>
                             <td>$ {{item.price}}</td>
                             <td><input type="number" pattern="[0-9]" [(ngModel)]="item.quantity" style="width:50px" min="0" max="20"></td>
                             <td  >$ {{item.price * item.quantity}}</td>
                         </tr>
-                        </tbody>
-                        
-                        <thead>
-                            <tr>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col" ><div class="d-flex justify-content-end">Total</div></th>
-                            <th  scope="col">$ {{totalCost}}</th> 
-                            </tr>
-                        </thead>
-                    </table>
-        
-                    <div class="float-right mb-3 mr-3" >
-                        <span class=" red " *ngIf="!addtoCartBtn"  >Please decrease concert headcount.</span>
-                        <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
-                    </div>
-                
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered table-hover" >
+                    <thead>
+                    <tr>
+                        <th scope="col">Snacks and Dinner</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody *ngFor="let item of dataObject; index as i" >
+                        <tr *ngIf="i > 2">
+                            <th><div class="mediumOrangeHeader"></div>{{item.description}}</th>
+                            <td>$ {{item.price}}</td>
+                            <td><input type="number" pattern="[0-9]" [(ngModel)]="item.quantity" style="width:50px" min="0" max="20"></td>
+                            <td  >$ {{item.price * item.quantity}}</td>
+                        </tr>
+                    </tbody>
+
+                    <thead>
+                        <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col" ><div class="d-flex justify-content-end">Total Price</div></th>
+                        <th  scope="col">$ {{totalCost}}</th> 
+                        </tr>
+                    </thead>
+                </table>
+
+                <div class="float-right mb-3 mr-3" >
+                    <span class=" red " *ngIf="!addtoCartBtn"  >Please decrease concert headcount.</span>
+                    <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
                 </div>
+            
+            </div>
 
         </div>
     </section>
