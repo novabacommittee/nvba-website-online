@@ -289,19 +289,6 @@
         "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
     },
     { 
-        "eventId":28,
-        "eventType": "current",
-        "eventName": "Papon Live Concert",
-        "eventDate": "June 27th, 2025",
-        "eventEndDate": "June 27th, 2025",
-        "eventImage": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
-        "timming": "5:30 PM - 9:00 PM",
-        "venue": "Stone Bridge High School, 43100 Hay Rd, Ashburn, VA 20147",
-        "pageLink": "/paponliveconcert2025",
-        "description": "NVBA proudly presents a LIVE concert featuring the sensational Papon and top Bollywood musicians!",
-        "mapUrl": "https://maps.app.goo.gl/k4gcfuTCaWnDynEt7"
-    },
-    { 
         "eventId":24,
         "eventType": "current",
         "eventName": "Kobi Pronam 2025",
@@ -326,6 +313,19 @@
         "pageLink": "/picnic2025",
         "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship..",
         "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
+    },
+    { 
+        "eventId":28,
+        "eventType": "current",
+        "eventName": "Papon Live Concert",
+        "eventDate": "June 27th, 2025",
+        "eventEndDate": "June 27th, 2025",
+        "eventImage": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
+        "timming": "5:30 PM - 9:00 PM",
+        "venue": "Stone Bridge High School, 43100 Hay Rd, Ashburn, VA 20147",
+        "pageLink": "/paponliveconcert2025",
+        "description": "NVBA proudly presents a LIVE concert featuring the sensational Papon and top Bollywood musicians!",
+        "mapUrl": "https://maps.app.goo.gl/k4gcfuTCaWnDynEt7"
     },
     { 
         "eventId":26,
