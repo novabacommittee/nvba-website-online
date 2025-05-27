@@ -15,7 +15,7 @@ export class FoodticketsService {
   ticketsitems!: Observable<any[]>; 
 
   constructor(private db: AngularFireDatabase) {
-    this.ticketsitems = db.list('/sp2025').valueChanges();
+    this.ticketsitems = db.list('/kp2025').valueChanges();
   }
 
   GetTicketsList() {

@@ -12,6 +12,149 @@
     <div class="container" >
         <h3 class="text-center mt-3 mb-2 " >Kobi Pronam-2025 Ticket Sell Summary</h3>
         <div>
+            <!-- Kobi Pronam 2025 Food Summary Report -->
+            <table class="table table-bordered " >
+                <tr>
+                      <th>Total Annual Membership - 2025</th>
+                      <th>{{MM2025YY}}</th>
+                </tr>  
+                <tr>
+                  <th></th>
+                  <th class="d-flex justify-content-around " >Sunday, 1st June, 2025</th>
+                </tr>
+                <tr>
+                    <th class="d-flex justify-content-around ">Beverage</th>
+                    <th align="d-flex justify-content-center">Count/Price Details</th>
+                </tr>
+                <tr>
+                    <th>Tea with Milk or Black($1)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green" >{{KP2025TEA}}</div>
+                            <div class="green" >${{KP2025TEA}}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Coffee($2)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green" >{{KP2025COFFEE}}</div>
+                            <div class="green" >${{KP2025COFFEE}}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Cold Drinks($1)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green" >{{KP2025COLDDRINKS}}</div>
+                            <div class="green" >${{KP2025COLDDRINKS}}</div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th class="d-flex justify-content-around ">Snacks</th>
+                    <th align="d-flex justify-content-center">Count/Price Details</th>
+                </tr>
+                <tr>
+                  <th>Veg Chop($5/2 pcs)</th>
+                  <td>
+                      <div class="d-flex justify-content-around ">
+                          <div class="green" >{{KP2025VEGCHOP*2}}</div>
+                          <div class="green" >${{KP2025VEGCHOP*5}}</div>
+                     </div> 
+                  </td>
+                </tr>
+                <tr>
+                    <th>Veg Ghugni($3/bowl)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green">{{KP2025GHUGNISINGLE}}</div>
+                            <div class="green" >${{KP2025GHUGNISINGLE*3}}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Veg Ghugni($5 for 2 bowls)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green">{{KP2025GHUGNIDOUBLE}}</div>
+                            <div class="green" >${{KP2025GHUGNIDOUBLE*5}}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Jhal Muri($3/bowl)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green">{{KP2025JHALMURISINGLE}}</div>
+                            <div class="green" >${{KP2025JHALMURISINGLE*3}}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Jhal Muri($5 for 2 bowls)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green">{{KP2025JHALMURIDOUBLE}}</div>
+                            <div class="green" >${{KP2025JHALMURIDOUBLE*5}}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Egg Devil($3/piece)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green">{{KP2025EGGDEVILSINGLE}}</div>
+                            <div class="green" >${{KP2025EGGDEVILSINGLE*3}}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Egg Devil($5 for 2 pieces)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green">{{KP2025EGGDEVILDOUBLE}}</div>
+                            <div class="green" >${{KP2025EGGDEVILDOUBLE*5}}</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="d-flex justify-content-around ">Dinner</th>
+                    <th>Count/Price Details</th>
+                </tr>
+                <tr>
+                    <th>Veg Biriyani with Sweet and Raita($10)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green" >{{KP2025VEG}}</div>
+                            <div class="green" >${{KP2025VEG*10}}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Non-Veg Biriyani with Sweet and Raita($12)</th>
+                    <td>
+                        <div class="d-flex justify-content-around ">
+                            <div class="green" >{{KP2025NONVEG}}</div>
+                            <div class="green" >${{KP2025NONVEG*12}}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class=" bg-light " >
+                    <th>Total Food Sell</th>
+                      <th>
+                        <div class="d-flex justify-content-around ">
+                            <div  >${{KP2025TEA+KP2025COFFEE*2+KP2025COLDDRINKS+KP2025VEGCHOP*5+KP2025GHUGNISINGLE*3+KP2025GHUGNIDOUBLE*5+KP2025JHALMURISINGLE*3+KP2025JHALMURIDOUBLE*5+KP2025EGGDEVILSINGLE*3+KP2025EGGDEVILDOUBLE*5+KP2025VEG*10+KP2025NONVEG*12}}</div>
+                        </div>
+                      </th>
+                </tr>
+            </table>
+
+
             <!-- Kobi Pronam 2024 Food Summary Report -->
             <!-- <table class="table table-bordered " >
                 <tr>
@@ -332,7 +475,7 @@
     </div>
     
     <div class=" container mt-5 mb-3 " >
-        <h3 class="text-center " >Saraswati Puja-2025 Ticket Sell Transactions</h3>
+        <h3 class="text-center " >Kobi Pronam-2025 Ticket Sell Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
                 style="height:500px; "

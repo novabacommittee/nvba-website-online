@@ -85,6 +85,19 @@ export class AlldetailsComponent implements OnInit {
   SP2025EBVEGOTHER:number =0;
   SP2025EBKIDS:number =0;
 
+  KP2025TEA:number = 0;
+  KP2025COFFEE:number = 0;
+  KP2025COLDDRINKS:number = 0;
+  KP2025VEGCHOP:number = 0;
+  KP2025GHUGNISINGLE:number = 0;
+  KP2025GHUGNIDOUBLE:number = 0;
+  KP2025JHALMURISINGLE:number = 0;
+  KP2025JHALMURIDOUBLE:number = 0;
+  KP2025EGGDEVILSINGLE:number = 0;
+  KP2025EGGDEVILDOUBLE:number = 0;
+  KP2025NONVEG:number = 0;
+  KP2025VEG:number = 0;
+
   paymentTime:any;
   customAdult:number =0;
   customKid:number =0;

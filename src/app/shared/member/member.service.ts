@@ -106,6 +106,14 @@ export class MemberService {
             });
         }
 
+  kp2025(purches:any){
+    this.db.object('/kp2025/'+purches.id).set({ ...purches }).catch(error => {
+          console.log(error);
+        }).then( c => {
+          console.log("Success Create.");
+        });
+    }
+  
   dp2024(purches:any){
     this.db.object('/dp2024/'+purches.id).set({ ...purches }).catch(error => {
           console.log(error);
