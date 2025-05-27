@@ -104,14 +104,26 @@ export class AlldetailsComponent implements OnInit {
 
   user: { index:number; email: string; firstname: string; lastname: string; expires: string; phone:string} | undefined;
 
-   kp2024FoodOurchaseDetails: { purchase_date_time:string;payer_id:string; email: string; firstname: string; lastname: string; payment_method: string; payment_status:string;total:number;
+   kp2024FoodPurchaseDetails: { purchase_date_time:string;payer_id:string; email: string; firstname: string; lastname: string; payment_method: string; payment_status:string;total:number;
     vegchopcount:number;vegghugnicount:number;teacount:number;colddrinkscount:number;vegbiriyanicount:number;nonvegbiriyanicount:number
 } | undefined;
 
+  kp2025FoodPurchaseDetails: { purchase_date_time:string;payer_id:string; email: string; firstname: string; lastname: string; payment_method: string; payment_status:string;total:number;
+    teacount:number;coffeecount:number;colddrinkscount:number;
+    vegchopcount:number;vegghugnicount:number;jhalmuricount:number;eggdevilcount:number;
+    vegbiriyanicount:number;nonvegbiriyanicount:number
+  } | undefined;
+
+  //Beverage
+  teacount:number=0;
+  coffeecount:number=0;
+  colddrinkscount:number = 0;
+  //Snacks
   vegchopcount: number = 0;
   vegghugnicount: number = 0;
-  teacount:number=0;
-  colddrinkscount:number = 0;
+  jhalmuricount: number = 0;
+  eggdevilcount: number = 0;
+  //Dinner
   vegbiriyanicount:number = 0;
   nonvegbiriyanicount:number = 0;
 
@@ -134,7 +146,7 @@ export class AlldetailsComponent implements OnInit {
     this.foodds.GetTicketsList().subscribe(t => {
       this.foodTickets = t;
       console.log(t);
-      this.checkKP2024Details();
+      this.checkKP2025Details();
     })
 
   }
@@ -226,6 +238,24 @@ export class AlldetailsComponent implements OnInit {
     { field: 'SP2025EBNVOTHER', headerName:'Teens [ 11 to 18 years ],Students and Visiting Parents Non-Veg ', sortable: true, resizable: true },
     { field: 'SP2025EBVEGOTHER', headerName:'Teens [ 11 to 18 years ],Students and Visiting Parents Veg', sortable: true, resizable: true },
     { field: 'SP2025EBKIDS', headerName:'Kids meal for age group [ 0 to 10 years ]', sortable: true, resizable: true }
+	];
+
+  kp2025foodPurchasecolumnDefs = [
+		{ field: 'purchase_date_time', headerName:'Purchase Date/Time',sortable: true, resizable: false, filter: true  },
+		{ field: 'firstname', sortable: true, resizable: false, filter: true  },
+		{ field: 'lastname', sortable: true, resizable: false, filter: true },
+    { field: 'teacount', headerName:'Tea', sortable: true, resizable: false },
+    { field: 'coffeecount', headerName:'Coffee', sortable: true, resizable: false },
+    { field: 'colddrinkscount', headerName:'Cold Drinks', sortable: true, resizable: false },
+    { field: 'vegchopcount', headerName:'Veg Chop', sortable: true, resizable: false },
+    { field: 'jhalmuricount', headerName:'Jhal Muri', sortable: true, resizable: false },
+    { field: 'vegghugnicount', headerName:'Veg Ghugni', sortable: true, resizable: false },
+    { field: 'eggdevilcount', headerName:'Egg Devil', sortable: true, resizable: false },
+    { field: 'vegbiriyanicount', headerName:'Veg Biriyani', sortable: true, resizable: false },
+    { field: 'nonvegbiriyanicount', headerName:'Non-Veg Biriyani', sortable: true, resizable: false },
+    { field: 'total', sortable: true, resizable: true, filter: false },
+    { field: 'payment_method', sortable: true, resizable: true, filter: false },
+    { field: 'payment_status', headerName:'Status', sortable: true, resizable: false },
 	];
 
   checkConcertDetails(){
@@ -324,40 +354,36 @@ export class AlldetailsComponent implements OnInit {
         [...ct.transactions[0].item_list.items].forEach( item =>{
 
           console.log(item);
-          //"KP2024VEGCHOP"
-          if(item.sku == 'KP2024VEGCHOP'){
-            //this.KP2024VEGCHOP = this.KP2024VEGCHOP + parseInt(item.quantity );
-            this.vegchopcount = parseInt(item.quantity );
-          }
-          //"KP2024GHUGNI"
-          if(item.sku == 'KP2024GHUGNI'){
-            //this.KP2024GHUGNI = this.KP2024GHUGNI + parseInt(item.quantity );
-            this.vegghugnicount = parseInt(item.quantity );
-          }
+
           //"KP2024TEA"
           if(item.sku == 'KP2024TEA'){
-            //this.KP2024TEA = this.KP2024TEA + parseInt(item.quantity );
             this.teacount = parseInt(item.quantity );
           }
           //"KP2024COLDDRINKS"
           if(item.sku == 'KP2024COLDDRINKS'){
-            //this.KP2024COLDDRINKS = this.KP2024COLDDRINKS + parseInt(item.quantity );
             this.colddrinkscount = parseInt(item.quantity );
+          }
+
+          //"KP2024VEGCHOP"
+          if(item.sku == 'KP2024VEGCHOP'){
+            this.vegchopcount = parseInt(item.quantity );
+          }
+          //"KP2024GHUGNI"
+          if(item.sku == 'KP2024GHUGNI'){
+            this.vegghugnicount = parseInt(item.quantity );
           }
 
           //"KP2024VEG"
           if(item.sku == 'KP2024VEG'){
-            //this.KP2024VEG = this.KP2024VEG + parseInt(item.quantity );
             this.vegbiriyanicount = parseInt(item.quantity );
           }
           //"KP2024NON"
           if(item.sku == 'KP2024NONVEG'){
-            //this.KP2024NONVEG = this.KP2024NONVEG + parseInt(item.quantity );
             this.nonvegbiriyanicount = parseInt(item.quantity );
           }
        })
 
-       this.kp2024FoodOurchaseDetails = {
+       this.kp2024FoodPurchaseDetails = {
         payer_id : ct.payer.payer_info.payer_id,
         purchase_date_time: ct.create_time,
         email : ct.payer.payer_info.email,
@@ -373,8 +399,8 @@ export class AlldetailsComponent implements OnInit {
         vegbiriyanicount:this.vegbiriyanicount,
         nonvegbiriyanicount:this.nonvegbiriyanicount
       };
-      this.foodPurchaseList.unshift(this.kp2024FoodOurchaseDetails);
-    // console.log(this.kp2024FoodOurchaseDetails);
+      this.foodPurchaseList.unshift(this.kp2024FoodPurchaseDetails);
+    // console.log(this.kp2024FoodPurchaseDetails);
 
      });
     }
@@ -382,6 +408,112 @@ export class AlldetailsComponent implements OnInit {
       console.error(e);
     }
   }
+
+
+  checkKP2025Details(){
+    this.foodPurchaseList = [];
+
+    try{
+    [...this.foodTickets].forEach( ct =>{
+      console.log('Each row KP2025');
+
+      this.teacount = 0;
+      this.coffeecount = 0;
+      this.colddrinkscount = 0;
+
+      this.vegchopcount = 0;
+      this.vegghugnicount = 0;
+      this.jhalmuricount = 0;
+      this.eggdevilcount = 0;
+
+      this.vegbiriyanicount = 0;
+      this.nonvegbiriyanicount = 0;
+
+      console.log(ct.transactions[0].item_list.items[0].quantity );
+      [...ct.transactions[0].item_list.items].forEach( item =>{
+
+        console.log(item);
+
+        //"KP2025TEA"
+        if(item.sku == 'KP2025TEA'){
+          this.teacount = parseInt(item.quantity );
+        }
+        //"KP2025COFFEE"
+        if(item.sku == 'KP2025COFFEE'){
+          this.coffeecount = parseInt(item.quantity );
+        }
+        //"KP2025COLDDRINKS"
+        if(item.sku == 'KP2025COLDDRINKS'){
+          this.colddrinkscount = parseInt(item.quantity );
+        }
+
+        //"KP2025VEGCHOP"
+        if(item.sku == 'KP2025VEGCHOP'){
+          this.vegchopcount = parseInt(item.quantity );
+        }
+        //"KP2025GHUGNISINGLE"
+        if(item.sku == 'KP2025GHUGNISINGLE'){
+          this.vegghugnicount = parseInt(item.quantity );
+        }
+        //"KP2025GHUGNIDOUBLE"
+        if(item.sku == 'KP2025GHUGNIDOUBLE'){
+          this.vegghugnicount = parseInt(item.quantity )*2;
+        }
+        //"KP2025JHALMURISINGLE"
+        if(item.sku == 'KP2025JHALMURISINGLE'){
+          this.jhalmuricount = parseInt(item.quantity );
+        }
+        //"KP2025JHALMURIDOUBLE"
+        if(item.sku == 'KP2025JHALMURIDOUBLE'){
+          this.jhalmuricount = parseInt(item.quantity )*2;
+        }
+        //"KP2025EGGDEVILSINGLE"
+        if(item.sku == 'KP2025EGGDEVILSINGLE'){
+          this.jhalmuricount = parseInt(item.quantity );
+        }
+        //"KP2025EGGDEVILDOUBLE"
+        if(item.sku == 'KP2025EGGDEVILDOUBLE'){
+          this.jhalmuricount = parseInt(item.quantity )*2;
+        }
+
+        //"KP2025VEG"
+        if(item.sku == 'KP2025VEG'){
+          this.vegbiriyanicount = parseInt(item.quantity );
+        }
+        //"KP2025NON"
+        if(item.sku == 'KP2025NONVEG'){
+          this.nonvegbiriyanicount = parseInt(item.quantity );
+        }
+     })
+
+     this.kp2025FoodPurchaseDetails = {
+      payer_id : ct.payer.payer_info.payer_id,
+      purchase_date_time: ct.create_time,
+      email : ct.payer.payer_info.email,
+      firstname : ct.payer.payer_info.first_name,
+      lastname : ct.payer.payer_info.last_name,
+      payment_method : ct.payer.payment_method,
+      payment_status : ct.state,
+      total : ct.transactions[0].amount.total,
+      teacount:this.teacount,
+      coffeecount:this.coffeecount,
+      colddrinkscount:this.colddrinkscount,
+      vegchopcount : this.vegchopcount,
+      vegghugnicount:this.vegghugnicount,
+      jhalmuricount:this.jhalmuricount,
+      eggdevilcount:this.eggdevilcount,
+      vegbiriyanicount:this.vegbiriyanicount,
+      nonvegbiriyanicount:this.nonvegbiriyanicount
+    };
+    this.foodPurchaseList.unshift(this.kp2025FoodPurchaseDetails);
+  // console.log(this.kp2025FoodPurchaseDetails);
+
+   });
+  }
+  catch (e) {
+    console.error(e);
+  }
+}
 
 
   checkDetails(){
