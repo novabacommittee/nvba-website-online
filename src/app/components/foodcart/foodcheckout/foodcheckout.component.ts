@@ -209,14 +209,14 @@ export class FoodcheckoutComponent implements OnInit {
         //    this.member.purchase.unshift(this.cartCheck);
         //    console.log(this.member);
         //    this.mds.UpdateMember(this.member.id, this.member);
-          this.mds.sp2025(payment);
+          this.mds.kp2025(payment);
            console.log('update done');
           this.toastr.success('Your payment is successful.','Payment Process');
           console.log(payment);
           const htmlvalue = this.getInnerHtml();
 
           this.dataformail = {
-            subject: 'Saraswati Puja 2025 food Tickets',
+            subject: 'Kobi Pronam 2025 food Tickets',
             id: payment.id,
             create_time: payment.create_time,
             cart: payment.cart,
@@ -235,7 +235,7 @@ export class FoodcheckoutComponent implements OnInit {
             // this.router.navigate(['/durgapuja2020']);
   
             setTimeout(()=>{                           
-              this.router.navigate(['/saraswatipuja2025']);
+              this.router.navigate(['/kobipronam2025']);
             }, 2000);
         })
       }
