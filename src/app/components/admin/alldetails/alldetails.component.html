@@ -40,7 +40,7 @@
                     <td>
                         <div class="d-flex justify-content-around ">
                             <div class="green" >{{KP2025COFFEE}}</div>
-                            <div class="green" >${{KP2025COFFEE*2}}</div>
+                            <div class="green" >${{KP2025COFFEE}}</div>
                         </div>
                     </td>
                 </tr>
@@ -62,8 +62,8 @@
                   <th>Veg Chop($5/2 pcs)</th>
                   <td>
                       <div class="d-flex justify-content-around ">
-                          <div class="green" >{{KP2025VEGCHOP}}</div>
-                          <div class="green" >${{KP2025VEGCHOP*5}}</div>
+                          <div class="green" >{{KP2025VEGCHOP+KP2025VEGCHOPDOUBLE}}</div>
+                          <div class="green" >${{(KP2025VEGCHOP+KP2025VEGCHOPDOUBLE)*5}}</div>
                      </div> 
                   </td>
                 </tr>
@@ -148,7 +148,7 @@
                     <th>Total Food Sell</th>
                       <th>
                         <div class="d-flex justify-content-around ">
-                            <div  >${{KP2025TEA+KP2025COFFEE*2+KP2025COLDDRINKS+KP2025VEGCHOP*5+KP2025GHUGNISINGLE*3+KP2025GHUGNIDOUBLE*5+KP2025JHALMURISINGLE*3+KP2025JHALMURIDOUBLE*5+KP2025EGGDEVILSINGLE*3+KP2025EGGDEVILDOUBLE*5+KP2025VEG*10+KP2025NONVEG*12}}</div>
+                            <div  >${{KP2025TEA+KP2025COFFEE*2+KP2025COLDDRINKS+(KP2025VEGCHOP+KP2025VEGCHOPDOUBLE)*5+KP2025GHUGNISINGLE*3+KP2025GHUGNIDOUBLE*5+KP2025JHALMURISINGLE*3+KP2025JHALMURIDOUBLE*5+KP2025EGGDEVILSINGLE*3+KP2025EGGDEVILDOUBLE*5+KP2025VEG*10+KP2025NONVEG*12}}</div>
                         </div>
                       </th>
                 </tr>

@@ -89,6 +89,7 @@ export class AlldetailsComponent implements OnInit {
   KP2025COFFEE:number = 0;
   KP2025COLDDRINKS:number = 0;
   KP2025VEGCHOP:number = 0;
+  KP2025VEGCHOPDOUBLE:number = 0;
   KP2025GHUGNISINGLE:number = 0;
   KP2025GHUGNIDOUBLE:number = 0;
   KP2025JHALMURISINGLE:number = 0;
@@ -463,6 +464,12 @@ export class AlldetailsComponent implements OnInit {
           this.KP2025VEGCHOP = this.KP2025VEGCHOP + parseInt(item.quantity);
           this.vegchopcount = parseInt(item.quantity )*2;
         }
+        //"KP2025VEGCHOPDOUBLE"
+        else if(item.sku == 'KP2025VEGCHOPDOUBLE'){
+          this.KP2025VEGCHOPDOUBLE = this.KP2025VEGCHOPDOUBLE + parseInt(item.quantity);
+          this.vegchopcount = parseInt(item.quantity )*2;
+        }
+
         //"KP2025GHUGNISINGLE"
         else if(item.sku == 'KP2025GHUGNISINGLE'){
           this.KP2025GHUGNISINGLE = this.KP2025GHUGNISINGLE + parseInt(item.quantity);
