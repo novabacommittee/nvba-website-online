@@ -444,7 +444,7 @@ export class AlldetailsComponent implements OnInit {
 
         //"KP2025TEA"
         if(item.sku == 'KP2025TEA'){
-          this.KP2024TEA = this.KP2024TEA + parseInt(item.quantity);
+          this.KP2025TEA = this.KP2025TEA + parseInt(item.quantity);
           this.teacount = parseInt(item.quantity );
         }
         //"KP2025COFFEE"
