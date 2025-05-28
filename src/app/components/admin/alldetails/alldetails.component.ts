@@ -33,8 +33,8 @@ export class AlldetailsComponent implements OnInit {
   MM2024YY: number = 0;
   MM2025YY: number = 0;
 
-  // KP2023NON:number = 0;
-  // KP2023VEG:number = 0;
+  KP2023NON:number = 0;
+  KP2023VEG:number = 0;
 
   // SP2024AEBNON:number = 0;
   // SP2024AEBVEG:number = 0;
@@ -42,12 +42,12 @@ export class AlldetailsComponent implements OnInit {
   // SP2024STUDENTEBVEG:number =0;
   // SP2024KIDS:number =0;
 
-  // KP2024VEGCHOP:number = 0;
-  // KP2024GHUGNI:number = 0;
-  // KP2024TEA:number = 0;
-  // KP2024COLDDRINKS:number = 0;
-  // KP2024NONVEG:number = 0;
-  // KP2024VEG:number = 0;
+  KP2024VEGCHOP:number = 0;
+  KP2024GHUGNI:number = 0;
+  KP2024TEA:number = 0;
+  KP2024COLDDRINKS:number = 0;
+  KP2024NONVEG:number = 0;
+  KP2024VEG:number = 0;
 
   // DP2024CTFRIDAY:number = 0;
   // DP2024CTSATURDAY:number = 0;
@@ -299,34 +299,36 @@ export class AlldetailsComponent implements OnInit {
     try{
     [...this.foodTickets].forEach( ct =>{
         console.log(' Each row KP');
-       console.log(ct.transactions[0].item_list.items[0].quantity );
-       [...ct.transactions[0].item_list.items].forEach( nonandveg =>{
+        console.log(ct.transactions[0].item_list.items[0].quantity );
+        [...ct.transactions[0].item_list.items].forEach( nonandveg =>{
 
         console.log(nonandveg);
         //"KP2023VEG"
-       if(nonandveg.sku == 'KP2023VEG'){
-        //this.KP2023VEG = this.KP2023VEG + parseInt(nonandveg.quantity );
-       }
+      if(nonandveg.sku == 'KP2023VEG')
+      {
+        this.KP2023VEG = this.KP2023VEG + parseInt(nonandveg.quantity );
+      }
        //"KP2023NON"
-       if(nonandveg.sku == 'KP2023NON'){
-        //this.KP2023NON = this.KP2023NON + parseInt(nonandveg.quantity );
+      if(nonandveg.sku == 'KP2023NON')
+      {
+          this.KP2023NON = this.KP2023NON + parseInt(nonandveg.quantity );
        }
        })
 
        //"KP2023VEG"
        if(ct.transactions[0].item_list.items[0].sku == 'KP2023VEG'){
-        //this.KP2023VEG = this.KP2023VEG + parseInt(ct.transactions[0].item_list.items[0].quantity );
+          this.KP2023VEG = this.KP2023VEG + parseInt(ct.transactions[0].item_list.items[0].quantity );
        }
        //"KP2023NON"
        if(ct.transactions[0].item_list.items[0].sku == 'KP2023NON'){
-        //this.KP2023NON = this.KP2023NON + parseInt(ct.transactions[0].item_list.items[0].quantity );
+          this.KP2023NON = this.KP2023NON + parseInt(ct.transactions[0].item_list.items[0].quantity );
        }
        if(ct.transactions[0].item_list.items[1].sku == 'KP2023VEG'){
-        //this.KP2023VEG = this.KP2023VEG + parseInt(ct.transactions[0].item_list.items[1].quantity );
+          this.KP2023VEG = this.KP2023VEG + parseInt(ct.transactions[0].item_list.items[1].quantity );
        }
        //"KP2023NON"
        if(ct.transactions[0].item_list.items[1].sku == 'KP2023NON'){
-        //this.KP2023NON = this.KP2023NON + parseInt(ct.transactions[0].item_list.items[1].quantity );
+          this.KP2023NON = this.KP2023NON + parseInt(ct.transactions[0].item_list.items[1].quantity );
        }
      });
     }
@@ -357,28 +359,34 @@ export class AlldetailsComponent implements OnInit {
 
           //"KP2024TEA"
           if(item.sku == 'KP2024TEA'){
+            this.KP2024TEA = this.KP2024TEA + parseInt(item.quantity);
             this.teacount = parseInt(item.quantity );
           }
           //"KP2024COLDDRINKS"
           if(item.sku == 'KP2024COLDDRINKS'){
+            this.KP2024COLDDRINKS = this.KP2024COLDDRINKS + parseInt(item.quantity);
             this.colddrinkscount = parseInt(item.quantity );
           }
 
           //"KP2024VEGCHOP"
           if(item.sku == 'KP2024VEGCHOP'){
+            this.KP2024VEGCHOP = this.KP2024VEGCHOP + parseInt(item.quantity);
             this.vegchopcount = parseInt(item.quantity );
           }
           //"KP2024GHUGNI"
           if(item.sku == 'KP2024GHUGNI'){
+            this.KP2024GHUGNI = this.KP2024GHUGNI + parseInt(item.quantity);
             this.vegghugnicount = parseInt(item.quantity );
           }
 
           //"KP2024VEG"
           if(item.sku == 'KP2024VEG'){
+            this.KP2024VEG = this.KP2024VEG + parseInt(item.quantity);
             this.vegbiriyanicount = parseInt(item.quantity );
           }
           //"KP2024NON"
           if(item.sku == 'KP2024NONVEG'){
+            this.KP2024NONVEG = this.KP2024NONVEG + parseInt(item.quantity);
             this.nonvegbiriyanicount = parseInt(item.quantity );
           }
        })
@@ -436,52 +444,64 @@ export class AlldetailsComponent implements OnInit {
 
         //"KP2025TEA"
         if(item.sku == 'KP2025TEA'){
+          this.KP2024TEA = this.KP2024TEA + parseInt(item.quantity);
           this.teacount = parseInt(item.quantity );
         }
         //"KP2025COFFEE"
-        if(item.sku == 'KP2025COFFEE'){
+        else if(item.sku == 'KP2025COFFEE'){
+          this.KP2025COFFEE = this.KP2025COFFEE + parseInt(item.quantity);
           this.coffeecount = parseInt(item.quantity );
         }
         //"KP2025COLDDRINKS"
-        if(item.sku == 'KP2025COLDDRINKS'){
+        else if(item.sku == 'KP2025COLDDRINKS'){
+          this.KP2025COLDDRINKS = this.KP2025COLDDRINKS + parseInt(item.quantity);
           this.colddrinkscount = parseInt(item.quantity );
         }
 
         //"KP2025VEGCHOP"
-        if(item.sku == 'KP2025VEGCHOP'){
+        else if(item.sku == 'KP2025VEGCHOP'){
+          this.KP2025VEGCHOP = this.KP2025VEGCHOP + parseInt(item.quantity);
           this.vegchopcount = parseInt(item.quantity );
         }
         //"KP2025GHUGNISINGLE"
-        if(item.sku == 'KP2025GHUGNISINGLE'){
+        else if(item.sku == 'KP2025GHUGNISINGLE'){
+          this.KP2025GHUGNISINGLE = this.KP2025GHUGNISINGLE + parseInt(item.quantity);
           this.vegghugnicount = parseInt(item.quantity );
         }
         //"KP2025GHUGNIDOUBLE"
-        if(item.sku == 'KP2025GHUGNIDOUBLE'){
+        else if(item.sku == 'KP2025GHUGNIDOUBLE'){
+          this.KP2025GHUGNIDOUBLE = this.KP2025GHUGNIDOUBLE + parseInt(item.quantity);
           this.vegghugnicount = parseInt(item.quantity )*2;
         }
         //"KP2025JHALMURISINGLE"
-        if(item.sku == 'KP2025JHALMURISINGLE'){
+        else if(item.sku == 'KP2025JHALMURISINGLE'){
+          this.KP2025JHALMURISINGLE = this.KP2025JHALMURISINGLE + parseInt(item.quantity);
           this.jhalmuricount = parseInt(item.quantity );
         }
         //"KP2025JHALMURIDOUBLE"
-        if(item.sku == 'KP2025JHALMURIDOUBLE'){
+        else if(item.sku == 'KP2025JHALMURIDOUBLE'){
+          this.KP2025JHALMURIDOUBLE = this.KP2025JHALMURIDOUBLE + parseInt(item.quantity);
           this.jhalmuricount = parseInt(item.quantity )*2;
         }
         //"KP2025EGGDEVILSINGLE"
-        if(item.sku == 'KP2025EGGDEVILSINGLE'){
+        else if(item.sku == 'KP2025EGGDEVILSINGLE'){
+          this.KP2025EGGDEVILSINGLE = this.KP2025EGGDEVILSINGLE + parseInt(item.quantity);
           this.eggdevilcount = parseInt(item.quantity );
         }
         //"KP2025EGGDEVILDOUBLE"
-        if(item.sku == 'KP2025EGGDEVILDOUBLE'){
+        else if(item.sku == 'KP2025EGGDEVILDOUBLE'){
+          this.KP2025EGGDEVILDOUBLE = this.KP2025EGGDEVILDOUBLE + parseInt(item.quantity);
           this.eggdevilcount = parseInt(item.quantity )*2;
         }
 
         //"KP2025VEG"
-        if(item.sku == 'KP2025VEG'){
+        else if(item.sku == 'KP2025VEG'){
+          this.KP2025VEG = this.KP2025VEG + parseInt(item.quantity);
           this.vegbiriyanicount = parseInt(item.quantity );
         }
         //"KP2025NON"
-        if(item.sku == 'KP2025NONVEG'){
+        else if(item.sku == 'KP2025NONVEG'){
+          this.KP2025NONVEG = this.KP2025NONVEG + parseInt(item.quantity);
           this.nonvegbiriyanicount = parseInt(item.quantity );
         }
      })
