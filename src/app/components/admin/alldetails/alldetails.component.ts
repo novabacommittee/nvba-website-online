@@ -461,7 +461,7 @@ export class AlldetailsComponent implements OnInit {
         //"KP2025VEGCHOP"
         else if(item.sku == 'KP2025VEGCHOP'){
           this.KP2025VEGCHOP = this.KP2025VEGCHOP + parseInt(item.quantity);
-          this.vegchopcount = parseInt(item.quantity );
+          this.vegchopcount = parseInt(item.quantity )*2;
         }
         //"KP2025GHUGNISINGLE"
         else if(item.sku == 'KP2025GHUGNISINGLE'){
