@@ -469,11 +469,11 @@ export class AlldetailsComponent implements OnInit {
         }
         //"KP2025EGGDEVILSINGLE"
         if(item.sku == 'KP2025EGGDEVILSINGLE'){
-          this.jhalmuricount = parseInt(item.quantity );
+          this.eggdevilcount = parseInt(item.quantity );
         }
         //"KP2025EGGDEVILDOUBLE"
         if(item.sku == 'KP2025EGGDEVILDOUBLE'){
-          this.jhalmuricount = parseInt(item.quantity )*2;
+          this.eggdevilcount = parseInt(item.quantity )*2;
         }
 
         //"KP2025VEG"
