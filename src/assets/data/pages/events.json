@@ -1,5 +1,18 @@
 [
     { 
+        "eventId":24,
+        "eventType": "past",
+        "eventName": "Kobi Pronam 2025",
+        "eventDate": "June 1st, 2025",
+        "eventEndDate": "June 1st, 2025",
+        "eventImage": "./../../../assets/images/gallery/common/kobipronam.jpg",
+        "timming": "3:30 PM - 8:30 PM",
+        "venue": "Stone Hills Middle School, 23415 Evergreen Ridge Dr, Ashburn, VA 20148",
+        "pageLink": "/kobipronam2025",
+        "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
+        "mapUrl": "https://maps.app.goo.gl/MeLB5sAGvx8SZvna9"
+    },
+    { 
         "eventId":23,
         "eventType": "past",
         "eventName": "Poila Boisakh 2025",
@@ -287,19 +300,6 @@
         "pageLink": "/durgapuja2022",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
         "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
-    },
-    { 
-        "eventId":24,
-        "eventType": "current",
-        "eventName": "Kobi Pronam 2025",
-        "eventDate": "June 1st, 2025",
-        "eventEndDate": "June 1st, 2025",
-        "eventImage": "./../../../assets/images/gallery/common/kobipronam.jpg",
-        "timming": "3:30 PM - 8:30 PM",
-        "venue": "Stone Hills Middle School, 23415 Evergreen Ridge Dr, Ashburn, VA 20148",
-        "pageLink": "/kobipronam2025",
-        "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
-        "mapUrl": "https://maps.app.goo.gl/MeLB5sAGvx8SZvna9"
     },
     { 
         "eventId":25,
