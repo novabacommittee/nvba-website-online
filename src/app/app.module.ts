@@ -158,14 +158,12 @@ import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.comp
     Kobipronam2025Component,
     Poilabaishak2025Component,
     Durgapuja2025Component
-
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    //fire
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
@@ -184,7 +182,8 @@ import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.comp
     AccordionModule.forRoot(),
     NgxPayPalModule,
     AgGridModule,
-    QRCodeModule
+    QRCodeModule,
+    NgxPayPalModule
   ],
   providers: [GetjsonfileService, AuthService ],
   bootstrap: [AppComponent]

@@ -2,18 +2,15 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef  } from '@angul
 import { ActivatedRoute } from '@angular/router';
 import { CartService} from './../../../shared/services/cart.service';
 import { MemberService } from './../../../shared/member/member.service';
-import { from, Observable } from 'rxjs';
+//import { from, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { Location} from "@angular/common";
 import { Router } from '@angular/router';
 import { AuthService } from './../../../shared/services/auth.service';
-import {
-  IPayPalConfig,
-  ICreateOrderRequest 
-} from 'ngx-paypal';
+import { IPayPalConfig,ICreateOrderRequest } from 'ngx-paypal';
 //import { environment } from 'environments/environment';
 
-import * as moment from 'moment';
+//import * as moment from 'moment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 declare let paypal:any;
 
@@ -140,7 +137,8 @@ constructor(
   paypalConfig = {
       //env: 'sandbox',
       //env: 'production',
-      //clientId: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
+      currency: 'USD',
+      clientId: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
       // client: {
       //   sandbox: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
       //   //production: 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS'
@@ -155,7 +153,8 @@ constructor(
 
       //New architecture or process
       createOrderOnClient: (data: any) => <ICreateOrderRequest>{
-          intent: 'CAPTURE',
+        //console.log("createOrder - creating new orer ",data);
+        intent: 'CAPTURE',
           purchase_units: [
             {
               amount: {
@@ -189,9 +188,9 @@ constructor(
       //     ]
       //   })
       // },
-      // advanced: {
-      //   commit: "true"
-      // },
+      advanced: {
+        commit: "true"
+      },
       onApprove: (data:any, actions:any) => {
         console.log("onApprove - transaction was approved, but not authorized",data,actions);
         actions.order.get().then((details: any) => {
