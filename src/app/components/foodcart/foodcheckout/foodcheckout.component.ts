@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from './../../../shared/services/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 
 @Component({
@@ -68,9 +68,7 @@ constructor(
   private initPayPalConfig(): void {
     this.payPalConfig = {
       currency: 'USD',
-      //sandbox: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
-      //production: 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS'
-      clientId: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
+      clientId: environment.paypal.clientId,
       createOrderOnClient: (data) => <ICreateOrderRequest>{
         intent: 'CAPTURE',
         purchase_units: [{
