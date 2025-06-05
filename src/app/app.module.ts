@@ -182,8 +182,7 @@ import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.comp
     AccordionModule.forRoot(),
     NgxPayPalModule,
     AgGridModule,
-    QRCodeModule,
-    NgxPayPalModule
+    QRCodeModule
   ],
   providers: [GetjsonfileService, AuthService ],
   bootstrap: [AppComponent]
