@@ -34,9 +34,6 @@ export class FoodcheckoutComponent implements OnInit {
   paypalLoad: boolean = true;
   emptyCart: boolean = false;
   member:any;
-  userDetails: any;
-  move:boolean = false;
-  item: any;
 
   public payPalConfig ? : IPayPalConfig;
 
@@ -56,7 +53,8 @@ constructor(
       });
 
       this.cart.currentCart.subscribe( (cartCheck) => this.cartCheck = cartCheck);
-      console.log(this.cart.getItems());
+      //console.log(this.cartCheck.length);
+      //console.log(this.cart.getItems());
   }
 
   private calculateSubtotal(): void {
@@ -70,6 +68,8 @@ constructor(
   private initPayPalConfig(): void {
     this.payPalConfig = {
       currency: 'USD',
+      //sandbox: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
+      //production: 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS'
       clientId: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
       createOrderOnClient: (data) => <ICreateOrderRequest>{
         intent: 'CAPTURE',
@@ -110,47 +110,48 @@ constructor(
         });
       },
       onClientAuthorization: (data) => {
-        console.log('Transaction authorized', data);
-        this.toastr.success('Payment successful');
-
-        const items = data?.purchase_units?.[0]?.items;
-        if (items) {
-          items.forEach(item => {
-            console.log('Item:', item.name, item.sku, item.quantity, item.unit_amount.value);
-          });
-        }
-
         // Optionally clear cart or redirect
         if(data.status == 'COMPLETED')
-          {
-            this.mds.kp2025(data);
-            console.log('update done');
-            this.toastr.success('Your payment is successful.','Payment Process');
-            console.log(data.payer);
-    
-            const htmlvalue = this.getInnerHtml();
-            this.dataformail = {
-              subject: 'Kobi Pronam 2025 food Tickets',
-              id: data.id,
-              create_time: data.update_time,
-              cart: data.purchase_units,
-              fname: data.payer.name?.given_name,
-              lname: data.payer.name?.surname,
-              email: data.payer.email_address,
-              emailtemplate: 'durgapuja.html',
-              items: this.getInnerHtml()
-            };
-            // for Send Mail
-            this.postData(this.dataformail);
+        {
+          console.log('Transaction authorized', data);
+          this.toastr.success('Payment successful');
           
-            this.cart.clearCart();
-            this.cleanup();
-    
-            setTimeout(()=>{                           
-              this.router.navigate(['/kobipronam2025']);
-            }, 2000);
+          const items = data?.purchase_units?.[0]?.items;
+          if (items) 
+          {
+            items.forEach(item => {
+              console.log('Item:', item.name, item.sku, item.quantity, item.unit_amount.value);
+            });
           }
-    },
+
+          this.mds.kp2025(data);
+          console.log('update done');
+          this.toastr.success('Your payment is successful.','Payment Process');
+          console.log(data.payer);
+  
+          const htmlvalue = this.getInnerHtml();
+          this.dataformail = {
+            subject: 'Kobi Pronam 2025 food Tickets',
+            id: data.id,
+            create_time: data.update_time,
+            cart: data.purchase_units,
+            fname: data.payer.name?.given_name,
+            lname: data.payer.name?.surname,
+            email: data.payer.email_address,
+            emailtemplate: 'durgapuja.html',
+            items: this.getInnerHtml()
+          };
+          // for Send Mail
+          this.postData(this.dataformail);
+        
+          this.cart.clearCart();
+          this.cleanup();
+  
+          setTimeout(()=>{                           
+            this.router.navigate(['/kobipronam2025']);
+          }, 2000);
+        }
+      },
       onError: err => {
         console.error('PayPal error:', err);
         this.toastr.error('Payment failed');

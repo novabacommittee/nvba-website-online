@@ -1,26 +1,20 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService} from './../../shared/services/cart.service';
 import { MemberService } from './../../shared/member/member.service';
-import { from } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { Location} from "@angular/common";
 import { Router } from '@angular/router';
 import { AuthService } from './../../shared/services/auth.service';
-import {
-  IPayPalConfig,
-  ICreateOrderRequest 
-} from 'ngx-paypal';
-
+import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 import * as moment from 'moment';
-declare let paypal:any;
-
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss']
 })
+
 export class CheckoutComponent implements OnInit {
   cartCheck: any = [];
   subtotal: number = 0;
@@ -28,15 +22,11 @@ export class CheckoutComponent implements OnInit {
   addScript: boolean = false;
   paypalLoad: boolean = true;
   emptyCart: boolean = false;
-
   member:any;
-
-  userDetails: any;
   move:boolean = false;
   currentPurches: any =[];
 
   public payPalConfig ? : IPayPalConfig;
-  item: any;
 
   constructor( 
     private cart: CartService, 
@@ -46,176 +36,146 @@ export class CheckoutComponent implements OnInit {
     private location: Location,
     private router: Router,
     private userService: AuthService
-    ) {
+    ) 
+    {
 
       this.userService.cast.subscribe( m => {
         this.member = m;
-        ////console.log(this.member);
+        //console.log(this.member);
       });
 
-    this.cart.currentCart.subscribe( (cartCheck) => this.cartCheck = cartCheck);
-    ////console.log(this.cartCheck.length);
-    ////console.log(this.cart.getItems());
-
+      this.cart.currentCart.subscribe( (cartCheck) => this.cartCheck = cartCheck);
+      //console.log(this.cartCheck.length);
+      //console.log(this.cart.getItems());
     }
 
-  ngOnInit(): void {
-        this.cartCheck.forEach((i:any)=>{
-        //  ////console.log(parseFloat(i.price) * parseFloat(i.quantity));
-          this.subtotal +=(( parseFloat(i.price)) * (parseFloat(i.quantity)));
-          this.emptyCart = true;
-        });
-        // ////console.log( moment(this.member.expires).format('LL') );
-        // ////console.log( 'Line 68 - expires date=> '+ this.member.expires );
-
-        // var current = moment();
-        // ////console.log(current.toString());
-
-        // ////console.log( moment(this.member.expires).isSame(current)); // true
-        // ////console.log( moment(this.member.expires).isAfter(current)); // false
-        
-        // if(moment(this.member.expires).isSame(current) ||  moment(current).isAfter(this.member.expires) ){
-        //   ////console.log(moment(current).add(1, 'years').format('M-D-YYYY'));
-        //   this.member.expires = moment(current).add(1, 'years').format('M-D-YYYY');
-        // }
-        // else{
-        //  ////console.log( moment(current).add(1, 'years').format('M-D-YYYY') );
-        //   this.member.expires = moment(this.member.expires).add(1, 'years').format('M-D-YYYY');
-        //   ////console.log( this.member.expires );
-        // }
+  private calculateSubtotal(): void {
+    this.subtotal = 0;
+    this.cartCheck.forEach((item: any) => {
+      this.subtotal += parseFloat(item.price) * parseFloat(item.quantity);
+    });
+    this.emptyCart = this.cartCheck.length > 0;
   }
 
-   ngAfterViewInit(): void {
-    if(this.cartCheck){
-      if (!this.addScript) {
-        this.addPaypalScript().then(() => {
-          paypal.Button.render(this.paypalConfig, '#paypal-button-container');
-          this.paypalLoad = false;
-           ////console.log(this.paypalConfig);  
-        })
-      }
-    }
-   } // }  // End of ngAfterViewInit
-
-   addPaypalScript() {
-    this.addScript = true;
-    return new Promise((resolve, reject) => {
-      let scripttagElement = document.createElement('script');    
-      scripttagElement.src = 'https://www.paypalobjects.com/api/checkout.js';
-      scripttagElement.onload = resolve;
-      document.body.appendChild(scripttagElement);
-   //   ////console.log(scripttagElement);
-    })
-  } // End of AddPaypalScript
-
-
-  paypalConfig = {
-      //env: 'sandbox',
-      env: 'production',
-      client: {
-       //sandbox: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
-        production: 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS'
+  private initPayPalConfig(): void {
+    this.payPalConfig = {
+      currency: 'USD',
+      //sandbox: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
+      //production: 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS'
+      clientId: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
+      createOrderOnClient: (data) => <ICreateOrderRequest>{
+        intent: 'CAPTURE',
+        purchase_units: [{
+          amount: {
+            currency_code: 'USD',
+            value: this.subtotal.toFixed(2),
+            breakdown: {
+              item_total: {
+                currency_code: 'USD',
+                value: this.subtotal.toFixed(2)
+              }
+            }
+          },
+          items: this.cartCheck.map((item: any) => ({
+            name: item.name,
+            quantity: item.quantity.toString(),
+            unit_amount: {
+              currency_code: 'USD',
+              value: parseFloat(item.price).toFixed(2)
+            },
+            sku: item.sku || item.id || 'N/A'  // Replace with real SKU if available
+          }))
+        }]
+      },
+      advanced: {
+        commit: 'true'
       },
       style: {
         shape: 'rect',
         color: 'gold',
         layout: 'vertical',
         label: 'paypal',
-      },
-      commit: true,
-      payment: (data:any, actions:any) => {
-        return actions.payment.create({
-          payment: {
-            transactions: [ 
-              {
-                "amount": {
-                  "total": (this.subtotal + this.tax),
-                  "currency": "USD",
-                  "details": {
-                    "subtotal": this.subtotal,
-                    "tax": this.tax
-                  }
-                },
-                "description": "NVBA Website Payment.", 
-                "item_list": {
-                  "items": this.cartCheck
-                }  
-              }
-            ]
-          }
+        },
+      onApprove: (data, actions) => {
+        actions.order.get().then((details: any) => {
+          console.log('Order approved: ', details);
         });
       },
-      onAuthorize: (data:any, actions:any) => {
-        return actions.payment.execute().then((payment:any) => {
-          let paymentTrans = {...payment};
-  
-          //Do something when payment is successful.
-           ////console.log(payment);
-           ////console.log(this.member);
+      onClientAuthorization: (data) => {
+        console.log('Transaction authorized', data);
+        this.toastr.success('Payment successful');
 
-           //Adjust Expiretion Date
-           if( payment.transactions[0].item_list.items[0].name == 'NVBA Annual Membership' ){
-              
-              let current = moment(); 
-              ////console.log( moment(this.member.expires).isSame(current)); ////  true
-              ////console.log( moment(this.member.expires).isAfter(current)); ////  false
-              
-              if(moment(this.member.expires).isSame(current) ||  moment(current).isAfter(this.member.expires) ){
-                this.member.expires = moment(current).add(1, 'years'); 
-                this.member.membershipstatus = 'Valid';
-              }
-              else{
-                this.member.expires = moment(this.member.expires).add(1, 'years'); 
-                this.member.membershipstatus = 'Valid'; 
-              }
+        // Optionally clear cart or redirect
+        if(data.status == 'COMPLETED')
+        {
+          const items = data?.purchase_units?.[0]?.items;
+          if(items)
+          {
+            items.forEach(item => 
+            {
+                console.log('Item:', item.name, item.sku, item.quantity, item.unit_amount.value);
+                if(item.name == 'NVBA Annual Membership' )
+                {
+                  let current = moment(); 
+                  
+                  if(moment(this.member.expires).isSame(current) ||  moment(current).isAfter(this.member.expires) ){
+                    this.member.expires = moment(current).add(1, 'years'); 
+                    this.member.membershipstatus = 'Valid';
+                  }
+                  else{
+                    this.member.expires = moment(this.member.expires).add(1, 'years'); 
+                    this.member.membershipstatus = 'Valid'; 
+                  }
 
-              if(!this.member.expires){
-                this.member.expires = moment(current).add(1, 'years'); 
-              }
-            }
+                  if(!this.member.expires){
+                    this.member.expires = moment(current).add(1, 'years'); 
+                  }
+                }
+              });
 
-           if((!this.member.payments) && (!this.member.purchase) ){ 
-            ////console.log('First Time');
-            this.member.payments = [];
-            this.member.purchase = [];
-           }
-           else {
-            console.log('regular Member');
-           }
+              if((!this.member.payments) && (!this.member.purchase) )
+              { 
+                  this.member.payments = [];
+                  this.member.purchase = [];
+              }
+              else {
+                console.log('regular Member');
+              }
             
-           this.currentPurches = [];
-           [...this.cartCheck].forEach(e => {
-            this.currentPurches.unshift({ ...e, paymentTime: paymentTrans.create_time });
+            this.currentPurches = [];
+            [...this.cartCheck].forEach(e => {
+              this.currentPurches.unshift({ ...e, paymentTime: data.create_time });
             });
-          //  console.log('paymentTrans>>');
-          //   console.log(paymentTrans);
-          //   console.log(...this.cartCheck);
-          //   console.log( this.member.payments);
-          //   console.log('currentPurches>');
-          //   console.log(this.currentPurches);
 
-          //  this.member.payments = paymentTrans.con
-
-         //  this.member.payments.unshift(paymentTrans);
-           this.member.purchase.unshift(this.currentPurches);
-           console.log(this.member);
-           this.mds.UpdateMember(this.member.id, this.member);
-           console.log('update done');
-           const userNa = this.member.displayName?this.member.displayName:'';
-           console.log(userNa);
-          this.toastr.success('Hi '+ userNa +', \n  Thanks for your recent purchase. Your payment is successful. \n You will get confirmation emails form Paypal. \n You can varify your tickets at Membership page under order history tab. ','Payment Process');
-       
-             this.cart.clearCart();
-             this.cleanup();
-            // this.router.navigate(['/durgapuja2020']);
-  
+            this.member.purchase.unshift(this.currentPurches);
+            console.log(this.member);
+            this.mds.UpdateMember(this.member.id, this.member);
+            console.log('update done');
+            const userNa = this.member.displayName?this.member.displayName:'';
+            console.log(userNa);
+            this.toastr.success('Hi '+ userNa +', \n  Thanks for your recent purchase. Your payment is successful. \n You will get confirmation emails form Paypal. \n You can varify your tickets at Membership page under order history tab. ','Payment Process');
+            console.log(data.payer);
+    
+            this.cart.clearCart();
+            this.cleanup();
+    
             setTimeout(()=>{                           
               this.router.navigate(['/']);
             }, 2000);
-        })
+          }
+        }
+      },
+      onError: err => {
+        console.error('PayPal error:', err);
+        this.toastr.error('Payment failed');
       }
     };
+  }
 
+  ngOnInit(): void {
+      this.calculateSubtotal();
+      this.initPayPalConfig();
+  }
 
   goBack(){
       this.location.back();
