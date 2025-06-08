@@ -7,6 +7,7 @@ import { Location} from "@angular/common";
 import { Router } from '@angular/router';
 import { AuthService } from './../../../shared/services/auth.service';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-eventscheckout',
@@ -57,17 +58,17 @@ export class EventscheckoutComponent implements OnInit {
 
   private initPayPalConfig(): void {
     this.payPalConfig = {
-      currency: 'USD',
-      clientId: 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz',
+      currency: environment.paypal.currency,
+      clientId: environment.paypal.clientId,
       createOrderOnClient: (data) => <ICreateOrderRequest>{
         intent: 'CAPTURE',
         purchase_units: [{
           amount: {
-            currency_code: 'USD',
+            currency_code: environment.paypal.currency,
             value: this.subtotal.toFixed(2),
             breakdown: {
               item_total: {
-                currency_code: 'USD',
+                currency_code: environment.paypal.currency,
                 value: this.subtotal.toFixed(2)
               }
             }
@@ -76,7 +77,7 @@ export class EventscheckoutComponent implements OnInit {
             name: item.name,
             quantity: item.quantity.toString(),
             unit_amount: {
-              currency_code: 'USD',
+              currency_code: environment.paypal.currency,
               value: parseFloat(item.price).toFixed(2)
             },
             sku: item.sku || item.id || 'N/A'  // Replace with real SKU if available

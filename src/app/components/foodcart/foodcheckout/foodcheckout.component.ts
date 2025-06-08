@@ -67,17 +67,17 @@ constructor(
 
   private initPayPalConfig(): void {
     this.payPalConfig = {
-      currency: 'USD',
+      currency: environment.paypal.currency,
       clientId: environment.paypal.clientId,
       createOrderOnClient: (data) => <ICreateOrderRequest>{
         intent: 'CAPTURE',
         purchase_units: [{
           amount: {
-            currency_code: 'USD',
+            currency_code: environment.paypal.currency,
             value: this.subtotal.toFixed(2),
             breakdown: {
               item_total: {
-                currency_code: 'USD',
+                currency_code: environment.paypal.currency,
                 value: this.subtotal.toFixed(2)
               }
             }
@@ -86,7 +86,7 @@ constructor(
             name: item.name,
             quantity: item.quantity.toString(),
             unit_amount: {
-              currency_code: 'USD',
+              currency_code: environment.paypal.currency,
               value: parseFloat(item.price).toFixed(2)
             },
             sku: item.sku || item.id || 'N/A'  // Replace with real SKU if available
