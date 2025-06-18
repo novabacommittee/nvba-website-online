@@ -303,7 +303,7 @@
     },
     { 
         "eventId":25,
-        "eventType": "current",
+        "eventType": "past",
         "eventName": "Annual Picnic 2025",
         "eventDate": "June 14th, 2025",
         "eventEndDate": "June 14th, 2025",
