@@ -1,5 +1,18 @@
 [
     { 
+        "eventId":25,
+        "eventType": "past",
+        "eventName": "Annual Picnic 2025",
+        "eventDate": "June 14th, 2025",
+        "eventEndDate": "June 14th, 2025",
+        "eventImage": "./../../../assets/images/gallery/picnic2025/event_photo_15.jpeg",
+        "timming": "10:00 AM - 6:00 PM",
+        "venue": "Shelter 1 at Bull Run,7700 Bull Run Dr, Centreville, VA 20121",
+        "pageLink": "/picnic2025",
+        "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship..",
+        "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
+    },
+    { 
         "eventId":24,
         "eventType": "past",
         "eventName": "Kobi Pronam 2025",
@@ -300,19 +313,6 @@
         "pageLink": "/durgapuja2022",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
         "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
-    },
-    { 
-        "eventId":25,
-        "eventType": "past",
-        "eventName": "Annual Picnic 2025",
-        "eventDate": "June 14th, 2025",
-        "eventEndDate": "June 14th, 2025",
-        "eventImage": "./../../../assets/images/gallery/picnic2025/event_photo_15.jpeg",
-        "timming": "10:00 AM - 6:00 PM",
-        "venue": "Shelter 1 at Bull Run,7700 Bull Run Dr, Centreville, VA 20121",
-        "pageLink": "/picnic2025",
-        "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship..",
-        "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
     },
     { 
         "eventId":28,
