@@ -1,5 +1,18 @@
 [
     { 
+        "eventId":28,
+        "eventType": "past",
+        "eventName": "Papon Live Concert",
+        "eventDate": "June 27th, 2025",
+        "eventEndDate": "June 27th, 2025",
+        "eventImage": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
+        "timming": "5:00 PM - 9:30 PM",
+        "venue": "Stone Bridge High School, 43100 Hay Rd, Ashburn, VA 20147",
+        "pageLink": "/paponliveconcert2025",
+        "description": "NVBA proudly presents a LIVE concert featuring the sensational Papon and top Bollywood musicians!",
+        "mapUrl": "https://maps.app.goo.gl/k4gcfuTCaWnDynEt7"
+    },
+    { 
         "eventId":25,
         "eventType": "past",
         "eventName": "Annual Picnic 2025",
@@ -315,19 +328,6 @@
         "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
     },
     { 
-        "eventId":28,
-        "eventType": "current",
-        "eventName": "Papon Live Concert",
-        "eventDate": "June 27th, 2025",
-        "eventEndDate": "June 27th, 2025",
-        "eventImage": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
-        "timming": "5:00 PM - 9:30 PM",
-        "venue": "Stone Bridge High School, 43100 Hay Rd, Ashburn, VA 20147",
-        "pageLink": "/paponliveconcert2025",
-        "description": "NVBA proudly presents a LIVE concert featuring the sensational Papon and top Bollywood musicians!",
-        "mapUrl": "https://maps.app.goo.gl/k4gcfuTCaWnDynEt7"
-    },
-    { 
         "eventId":26,
         "eventType": "current",
         "eventName": "Sarbojanin Durgotsob 2025",
@@ -335,10 +335,10 @@
         "eventEndDate": "October 3-5, 2025",
         "eventImage": "./../../../assets/images/stocks/DP-2020.jpg",
         "timming": "October 3rd - 6 PM to 10 PM. October 4th and 5th - 9 AM to 10 PM",
-        "venue": "Freedom High School, 25450 Riding Center Dr, Chantilly, VA 20152",
+        "venue": "TBD",
         "pageLink": "/durgapuja2025",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
-        "mapUrl": "https://maps.app.goo.gl/ubZNqZwacYfyeupv6"
+        "mapUrl": ""
     },
     { 
         "eventId":27,
