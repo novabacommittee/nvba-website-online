@@ -36,6 +36,15 @@
         "type" : "Benefactor"
     },
     {
+        "name" : "GoldenYug Life",
+        "image" : "assets/images/gallery/sponsors/Sandesh Sarda Sponsor.jpg",
+        "url": "https://www.goldenyug.life/",
+        "dateofDonation" : "Donated Just now",
+        "amount" : "2,000",
+        "cause" : "NVBA Sponser",
+        "type" : "Benefactor"
+    },
+    {
         "name" : "Raaha LLC",
         "image" : "assets/images/gallery/sponsors/raahallc.png",
         "url": "https://raahallc.com/",
