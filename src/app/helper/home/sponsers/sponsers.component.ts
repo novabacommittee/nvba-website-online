@@ -7,7 +7,14 @@ import { GetjsonfileService } from './../../../services/getjsonfile.service';
   templateUrl: './sponsers.component.html',
   styleUrls: ['./sponsers.component.scss']
 })
+
 export class SponsersComponent implements OnInit {
+
+  myStyles = {
+    'background-color': 'violet',
+    'padding': '10px'
+  };
+
   sponsers: any = [];
   constructor(private jsonFile:GetjsonfileService) { }
 
