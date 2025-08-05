@@ -2,18 +2,21 @@
   <div class="row text-center">
     
     <div class="col-lg-8 col-md-12 m-auto ">
-      <h2 class=" text-black-50">Welcome, {{member?.firstname}}</h2>
-      <p *ngIf="member?.membershipstatus == 'Valid'" class="text-gray mt-0 mb-5">Thanks for being part of the NVBA family. This is your account's profile page. You can see the membership details along with various updates.</p>
+      <h2 class=" text-black-50">Welcome, {{member?.firstname}} {{member?.lastname}}</h2>
+      <p *ngIf="member?.membershipstatus == 'Valid'" class="text-gray mt-0 mb-7">Thanks for being part of the NVBA family. This is your account's profile page. You can see the membership details along with various updates.</p>
       <div class="alert alert-warning" role="alert" *ngIf="!member?.firstname" >
         Please update your details, on profile tab.
       </div>
       
       <div class="h5 mt-4">
-        <i class="ni business_briefcase-24 mr-2"></i>Member Since,   {{member?.joined}}
+        <i class="ni business_briefcase-24 mr-2"></i>Member Since, {{member?.joined}}
       </div>
       <div>
         <i class="ni education_hat mr-2"></i>Email: <span class="font-weight-light">{{member?.email}}</span> 
       </div>
+      <!-- <div>
+        <i class="ni education_hat mr-2"></i>Phone: <span class="font-weight-light">{{member?.Phone}}</span> 
+      </div> -->
 
       <!-- <p><a class=" btn btn-secondary px-3 py-2 mt-2" routerLink="/kobipronam2025">Click here for 2025 Kobi Pronam Tickets </a></p>
       <p><a class=" btn btn-secondary px-3 py-2 mt-2" routerLink="/paponliveconcert2025">Click here for Papon Live Concert Tickets </a></p> -->
