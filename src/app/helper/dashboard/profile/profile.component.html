@@ -2,30 +2,31 @@
   <div class="row text-center">
     
     <div class="col-lg-8 col-md-12 m-auto ">
-      <h2 class=" text-black-50">Welcome, {{member?.firstname}}</h2>
-      <p *ngIf="member?.membershipstatus == 'Valid'" class="text-gray mt-0 mb-5">Thanks for being part of the NVBA family. This is your account's profile page. You can see the membership details along with various updates.</p>
+      <h2 class=" text-black-50">Welcome, {{member?.firstname}} {{member?.lastname}}</h2>
+      <p *ngIf="member?.membershipstatus == 'Valid'" class="text-gray mt-0 mb-7">Thanks for being part of the NVBA family. This is your account's profile page. You can see the membership details along with various updates.</p>
       <div class="alert alert-warning" role="alert" *ngIf="!member?.firstname" >
         Please update your details, on profile tab.
       </div>
       
       <div class="h5 mt-4">
-        <i class="ni business_briefcase-24 mr-2"></i>Member Since,   {{member?.joined}}
+        <i class="ni business_briefcase-24 mr-2"></i>Member Since, {{member?.joined}}
       </div>
       <div>
         <i class="ni education_hat mr-2"></i>Email: <span class="font-weight-light">{{member?.email}}</span> 
       </div>
+      <!-- <div>
+        <i class="ni education_hat mr-2"></i>Phone: <span class="font-weight-light">{{member?.Phone}}</span> 
+      </div> -->
 
-      <p><a class=" btn btn-secondary px-3 py-2 mt-2" routerLink="/kobipronam2025">Click here for 2025 Kobi Pronam Tickets </a></p>
-      <p><a class=" btn btn-secondary px-3 py-2 mt-2" routerLink="/paponliveconcert2025">Click here for Papon Live Concert Tickets </a></p>
+      <!-- <p><a class=" btn btn-secondary px-3 py-2 mt-2" routerLink="/kobipronam2025">Click here for 2025 Kobi Pronam Tickets </a></p>
+      <p><a class=" btn btn-secondary px-3 py-2 mt-2" routerLink="/paponliveconcert2025">Click here for Papon Live Concert Tickets </a></p> -->
       <app-cartmember></app-cartmember>
 
       <div class="mb-5 ">
         <!-- <p style="text-align: left;" class="text-gray pt-3 " >
             Dear Member,<br />
               As we had mentioned in our New Year’s message, we have been working diligently on revising our constitution to make it more robust and useful for NVBA of the future. And just like everything significant in NVBA, we need your involvement and feedback on this important topic.<br /><br />
-
             We would like you to review the revised constitution document and let us know if you agree or disagree with the key changes. We would also like to get your valuable comments on the document, if you may want to share. While sharing comments please refer to the section number and line number in the document so that we can easily gather and review your comments by sections.<br /><br />
-
             We have made changes primarily in the following sections:  <br />
             Article V…Section 4…Quorum <br />
             Article VII…Board of Directors <br />
@@ -33,17 +34,10 @@
             Article IX…Election Process <br />
             Article X…Transfer of responsibilities (New section) <br />
             Article XI…Financial Management <br /><br />
-
             <a routerLink="/proposedconstitution" target="_blank" >Our Proposed Constitution Amendments By Laws</a><br /><br />
-
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmbZf1qwHUamxjgaBCmY9aCs5QuVQU2Fjnmq73ooDtIIGzw/viewform" target="_blank" > Please provide your <strong>VOTE</strong> on Proposed Constitution Amendments By Laws.</a><br /><br />
-                  
-
             <a routerLink="/constitution" target="_blank" >Current Constitution document</a> <br /><br />
-
             <strong>Note: This voting and feedback process is time sensitive and the last date to review and submit your vote is 01/29/2024</strong><br />
-
-            
             <br />
             Thank you <br />
             EC & Steering Committee
@@ -61,9 +55,7 @@
         </div> -->
       </div>
 
-
       <a href="https://novaba.us5.list-manage.com/subscribe?u=71b8b228056801a92f04f6000&id=172a06829e" class=" btn btn-secondary px-3 py-2 mt-2" target="_blank" >Subscribe for email</a>
-        
     
       <!-- <app-cartmember></app-cartmember> -->
       <!-- <a href=" " class="btn btn-primary">Edit profile</a> -->
@@ -72,7 +64,6 @@
                margin-left: auto ;
                margin-right: auto ; 
            }
-           
        
      </style>
 
@@ -82,7 +73,7 @@
           Sorry for the inconvenience.
         </p> -->
         <!-- <div class="flex-center mb-1">
-          <button class="btn-get-started btn-primary w-100 mb-3 mt-2" routerLink="/tickets" >Tickets for Saraswati Puja</button>             
+          <button class="btn-get-started btn-primary w-100 mb-3 mt-2" routerLink="/tickets" >Tickets for Durga Puja</button>             
         </div>  -->
       </div>
      <div class="mt-2 mb-3"  >
@@ -110,17 +101,12 @@
           </div>  
           <a [href]="qrCodeDownloadLink" download="qrcode" class=" btn btn-secondary px-3 py-2 mt-2" target="_blank" >Download QR Code</a>
       </div>
-
     </div>
-    
   </div>
 </div>
 
-
-
 <div class="card-body border " id="profileTab" >
   <div  >
-
   </div>
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
       <h6 class="heading-small text-muted mb-4">User information</h6>
@@ -208,13 +194,9 @@
           </div>
         </div>
         <button  type="submit" name="submit" class="btn btn-block btn-primary">Save Update</button>
-
       </div>
-
     </form>
 </div>
-
-
 
 <div class="card-Body border" id="orderHistoryTab"  >
 
@@ -239,11 +221,9 @@
                     <td  >$ {{item.price * item.quantity}}</td>
                 </tr>
                 </tbody>
-            </table>
-
+              </table>
             </div>
           </div>
         </div>
     </div>
-
 </div>

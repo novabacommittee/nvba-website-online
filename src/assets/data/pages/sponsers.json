@@ -27,11 +27,20 @@
         "type" : "Benefactor"
     },
     {
-        "name" : "Long and Foster -Reema Raju",
-        "image" : "assets/images/gallery/sponsors/realtor.png",
-        "url": "https://www.facebook.com/shailaja.raju.3",
+        "name" : "RR Homes",
+        "image" : "assets/images/gallery/sponsors/RRHomesAD.png",
+        "url": "https://www.facebook.com/share/1AzYAGMxhu/?mibextid=wwXIfr",
         "dateofDonation" : "Donated Just now",
         "amount" : "2,500",
+        "cause" : "NVBA Sponser",
+        "type" : "Benefactor"
+    },
+    {
+        "name" : "GoldenYug Life",
+        "image" : "assets/images/gallery/sponsors/GoldenYug.png",
+        "url": "https://www.goldenyug.life/",
+        "dateofDonation" : "Donated Just now",
+        "amount" : "2,000",
         "cause" : "NVBA Sponser",
         "type" : "Benefactor"
     },
