@@ -81,7 +81,13 @@ export class AuthService  {
     return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())
       .then(() => {
+        this.toastr.success('Verification email sent, check your inbox or spam folder.','Verification Email');
+        console.log('Verification email sent, check your inbox.');
         this.router.navigate(['verify-email-address']);
+      })
+      .catch((error) => {
+        this.toastr.error(error,'Error sending email verification');
+        console.error("Error sending email verification:", error);
       });
   }
   // Reset forgot password
@@ -89,7 +95,7 @@ export class AuthService  {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        this.toastr.success('Password reset email sent, check your inbox.','Reset forgot Password');
+        this.toastr.success('Password reset email sent, check your inbox or spam folder.','Reset forgot Password');
         console.log('Password reset email sent, check your inbox.');
       })
       .catch((error) => {
