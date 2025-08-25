@@ -159,7 +159,7 @@ export class CheckoutComponent implements OnInit {
             this.cleanup();
     
             setTimeout(()=>{                           
-              this.router.navigate(['/']);
+              this.router.navigate(['/durgapuja2025']);
             }, 2000);
           }
         }

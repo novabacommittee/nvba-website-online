@@ -56,7 +56,7 @@ import { Picnic2025Component } from './pages/picnic2025/picnic2025.component';
 import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent, pathMatch: 'full' }, 
+  { path: "", component: Durgapuja2025Component, pathMatch: 'full' }, 
   { path: "home", component: HomeComponent, pathMatch: 'full'  },
   { path: "team", component: TeamComponent, pathMatch: 'full'  },
   { path: "bod", component: BodComponent, pathMatch: 'full'  },
