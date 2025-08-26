@@ -96,6 +96,7 @@
       "description": "Adult Non-Veg",
       "quantity": 0,
       "price": 90,
+      "price": 90,
       "tax": 0.00,
       "sku": "DP2025EBSAT01NON",
       "currency": "USD"
@@ -104,6 +105,7 @@
       "name": "NVBA Durga Puja 2025 Ticket - Saturday Only(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
+      "price": 90,
       "price": 90,
       "tax": 0.00,
       "sku": "DP2025EBSAT02VEG",
