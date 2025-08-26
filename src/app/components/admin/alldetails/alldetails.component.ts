@@ -688,13 +688,13 @@ export class AlldetailsComponent implements OnInit {
           [...m.purchase].forEach(element => {
           
           const userPurchase = {};
-          console.log(element);
+          //console.log(element);
           
           if(element != undefined){
 
             [...element].forEach(e => {
-              console.log(e.sku);
-              console.log(e.paymentTime);
+              //console.log(e.sku);
+              //console.log(e.paymentTime);
 
               this.paymentTime = moment(e.paymentTime).format("YYYY-MM-DD HH:mm");
               if(e.sku.includes("MM2025YY")){
@@ -732,28 +732,28 @@ export class AlldetailsComponent implements OnInit {
               //All 3 days Ticket
               else if(e.sku.includes('DP2025EBALL01NON') || e.sku.includes('DP2025ALL01NON')){
                   this.DP2025EBALL01NON += e.quantity ;
-                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL01NON:e.quantity,sku:e.sku,tax:e.tax});
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBALL01NON:e.quantity,sku:e.sku,tax:e.tax});
                   this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBALL02VEG') || e.sku.includes('DP2025ALL02VEG')){
                   this.DP2025EBALL02VEG += e.quantity ;
-                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL02VEG:e.quantity,sku:e.sku,tax:e.tax});
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBALL02VEG:e.quantity,sku:e.sku,tax:e.tax});
                   this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBALL03NON') || e.sku.includes('DP2025ALL03NON')){
                   this.DP2025EBALL03NON += e.quantity ;
-                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL03NON:e.quantity,sku:e.sku,tax:e.tax});
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBALL03NON:e.quantity,sku:e.sku,tax:e.tax});
                   this.newPurches = true;
               }
 
               else if(e.sku.includes('DP2025EBALL04VEG') || e.sku.includes('DP2025ALL04VEG')){
                 this.DP2025EBALL04VEG += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL04VEG:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBALL04VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBALL05KID') || e.sku.includes('DP2025ALL05KID')){
                 this.DP2025EBALL05KID += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBALL05KID:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBALL05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
                 
@@ -761,81 +761,81 @@ export class AlldetailsComponent implements OnInit {
               // Friday
               else if(e.sku.includes('DP2025EBFRI01NON') || e.sku.includes('DP2025FRI01NON')){
                 this.DP2025EBFRI01NON += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI01NON:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBFRI01NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBFRI02VEG') || e.sku.includes('DP2025FRI02VEG')){
                 this.DP2025EBFRI02VEG += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI02VEG:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBFRI02VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBFRI03NON') || e.sku.includes('DP2025FRI03NON')){
                 this.DP2025EBFRI03NON += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI03NON:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBFRI03NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBFRI04VEG') || e.sku.includes('DP2025FRI04VEG')){
                 this.DP2025EBFRI04VEG += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI04VEG:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBFRI04VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBFRI05KID') || e.sku.includes('DP2025FRI05KID')){
                 this.DP2025EBFRI05KID += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBFRI05KID:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBFRI05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
 
               //Saturday
               else if(e.sku.includes('DP2025EBSAT01NON') || e.sku.includes('DP2025SAT01NON')){
                 this.DP2025EBSAT01NON += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT01NON:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSAT01NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBSAT02VEG') || e.sku.includes('DP2025SAT02VEG')){
                 this.DP2025EBSAT02VEG += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT02VEG:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSAT02VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBSAT03NON') || e.sku.includes('DP2025SAT03NON')){
                 this.DP2025EBSAT03NON += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT03NON:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSAT03NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBSAT04VEG') || e.sku.includes('DP2025SAT04VEG')){
                 this.DP2025EBSAT04VEG += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT04VEG:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSAT04VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBSAT05KID') || e.sku.includes('DP2025SAT05KID')){
                 this.DP2025EBSAT05KID += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSAT05KID:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSAT05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
 
               //Sunday
               else if(e.sku.includes('DP2025EBSUN01NON') || e.sku.includes('DP2025SUN01NON')){
                 this.DP2025EBSUN01NON += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN01NON:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSUN01NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBSUN02VEG') || e.sku.includes('DP2025SUN02VEG')){
                 this.DP2025EBSUN02VEG += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN02VEG:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSUN02VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBSUN03NON') || e.sku.includes('DP2025SUN03NON')){
                 this.DP2025EBSUN03NON += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN03NON:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSUN03NON:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBSUN04VEG') || e.sku.includes('DP2025SUN04VEG')){
                 this.DP2025EBSUN04VEG += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN04VEG:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSUN04VEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes('DP2025EBSUN05KID') || e.sku.includes('DP2025SUN05KID')){
                 this.DP2025EBSUN05KID += e.quantity ;
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2024EBSUN05KID:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,DP2025EBSUN05KID:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
 
