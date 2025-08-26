@@ -23,6 +23,8 @@ export class AlldetailsComponent implements OnInit {
   membershipList:any;
   dp2024TicketList:any;
   dp2024ConcertTicketList:any;
+  dp2025TicketList:any;
+  dp2025ConcertTicketList:any;
   foodPurchaseList:any;
   membershipRenew:boolean = false;
   newPurches:boolean = false;
@@ -98,6 +100,30 @@ export class AlldetailsComponent implements OnInit {
   KP2025EGGDEVILDOUBLE:number = 0;
   KP2025NONVEG:number = 0;
   KP2025VEG:number = 0;
+
+  DP2025EBALL01NON:number = 0;
+  DP2025EBALL02VEG:number = 0;
+  DP2025EBALL03NON:number = 0;
+  DP2025EBALL04VEG:number = 0;
+  DP2025EBALL05KID:number = 0;
+
+  DP2025EBFRI01NON:number = 0;
+  DP2025EBFRI02VEG:number = 0;
+  DP2025EBFRI03NON:number = 0;
+  DP2025EBFRI04VEG:number = 0;
+  DP2025EBFRI05KID:number = 0;
+
+  DP2025EBSAT01NON:number = 0;
+  DP2025EBSAT02VEG:number = 0;
+  DP2025EBSAT03NON:number = 0;
+  DP2025EBSAT04VEG:number = 0;
+  DP2025EBSAT05KID:number = 0;
+  
+  DP2025EBSUN01NON:number = 0;
+  DP2025EBSUN02VEG:number = 0;
+  DP2025EBSUN03NON:number = 0;
+  DP2025EBSUN04VEG:number = 0;
+  DP2025EBSUN05KID:number = 0;
 
   paymentTime:any;
   customAdult:number =0;
@@ -257,6 +283,49 @@ export class AlldetailsComponent implements OnInit {
     { field: 'total', sortable: true, resizable: true, filter: false },
     { field: 'payment_method', sortable: true, resizable: true, filter: false },
     { field: 'payment_status', headerName:'Status', sortable: true, resizable: false },
+	];
+
+  dp2025columnDefsTickets = [
+    { field: 'index',  sortable: true, resizable: true,  cellClass: 'id-class center' },
+		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
+		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
+    { field: 'email', sortable: true, resizable: true, filter: true },
+    { field: 'phone', sortable: true, resizable: true, filter: true },
+    { field: 'paymentTime', headerName:'Purchase Date', sortable: true, resizable: true },
+    
+    { field: 'DP2025EBALL01NON', headerName:'Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBALL02VEG', headerName:'Adult Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBALL03NON', headerName:'Kids [ 11 to 18 years ],Students and Visiting Parents Non-Veg ', sortable: true, resizable: true },
+    { field: 'DP2025EBALL04VEG', headerName:'Kids [ 11 to 18 years ],Students and Visiting Parents Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBALL05KID', headerName:'Kids [ 0 to 10 years ]', sortable: true, resizable: true },
+
+    { field: 'DP2025EBFRI01NON', headerName:'Friday - Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBFRI02VEG', headerName:'Friday - Adult Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBFRI03NON', headerName:'Friday - Kids [ 11 to 18 years ],Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBFRI04VEG', headerName:'Friday - Kids [ 11 to 18 years ],Students and Visiting Parents Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBFRI05KID', headerName:'Friday - Kids[ 0 to 10years]', sortable: true, resizable: true },
+
+    { field: 'DP2025EBSAT01NON', headerName:'Saturday - Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBSAT02VEG', headerName:'Saturday - Adult Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBSAT03NON', headerName:'Saturday - Kids [ 11 to 18 years ],Students and Visiting Parents - Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBSAT04VEG', headerName:'Saturday - Kids [ 11 to 18 years ],Students and Visiting Parents - Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBSAT05KID', headerName:'Saturday - Kids [ 0 to 10 years ]', sortable: true, resizable: true },
+
+    { field: 'DP2025EBSUN01NON', headerName:'Sunday - Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBSUN02VEG', headerName:'Sunday - Adult Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBSUN03NON', headerName:'Sunday - Kids [ 11 to 18 years ],Students and Visiting Parents Non-Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBSUN04VEG', headerName:'Sunday - Kids [ 11 to 18 years ],Students and Visiting Parents Veg', sortable: true, resizable: true },
+    { field: 'DP2025EBSUN05KID', headerName:'Sunday - Kids [ 0 to 10 years ]', sortable: true, resizable: true },
+	];
+
+  dp2025ConcertTicketcolumnDefs = [
+		{ field: 'create_time', headerName:'Purchase Date/Time',sortable: true, resizable: false, filter: true  },
+    { field: 'description', headerName:'Description', sortable: true, resizable: true },
+    { field: 'price', headerName:'Price', sortable: true, resizable: false },
+    { field: 'quantity', headerName:'Quantity', sortable: true, resizable: false },
+    { field: 'sku', headerName:'Product Code', sortable: true, resizable: false },
+		{ field: 'first_name', sortable: true, resizable: false, filter: true  },
+		{ field: 'last_name', sortable: true, resizable: false, filter: true },
 	];
 
   checkConcertDetails(){
@@ -540,7 +609,7 @@ export class AlldetailsComponent implements OnInit {
   catch (e) {
     console.error(e);
   }
-}
+  }
 
 
   checkDetails(){
