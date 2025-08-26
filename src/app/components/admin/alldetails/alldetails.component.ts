@@ -182,7 +182,7 @@ export class AlldetailsComponent implements OnInit {
   }
 
   membershipcolumnDefs = [
-    { field: 'index',  headerName:'ID', sortable: true, resizable: true,  cellClass: 'id-class center' },
+    // { field: 'index',  headerName:'ID', sortable: true, resizable: true,  cellClass: 'id-class center' },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
@@ -286,7 +286,7 @@ export class AlldetailsComponent implements OnInit {
 	];
 
   dp2025columnDefsTickets = [
-    { field: 'index',  sortable: true, resizable: true,  cellClass: 'id-class center' },
+    // { field: 'index',  sortable: true, resizable: true,  cellClass: 'id-class center' },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
