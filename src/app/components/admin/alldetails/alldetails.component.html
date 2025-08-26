@@ -10,10 +10,10 @@
     </div>
 
     <div class="container" >
-        <h3 class="text-center mt-3 mb-2 " >Kobi Pronam-2025 Ticket Sell Summary</h3>
+        <h3 class="text-center mt-3 mb-2 " >Durga Puja-2025 Ticket Sell Summary</h3>
         <div>
             <!-- Kobi Pronam 2025 Food Summary Report -->
-            <table class="table table-bordered " >
+            <!-- <table class="table table-bordered " >
                 <tr>
                       <th>Total Annual Membership - 2025</th>
                       <th>{{MM2025YY}}</th>
@@ -152,7 +152,7 @@
                         </div>
                       </th>
                 </tr>
-            </table>
+            </table> -->
 
 
             <!-- Kobi Pronam 2024 Food Summary Report -->
@@ -471,11 +471,133 @@
                 </tr>
               </table> -->
 
+            <!-- Durga Puja 2024 Food Summary Report -->
+            <table class="table table-bordered " >
+              <tr>
+                    <th>Total Annual Membership </th>
+                    <th>{{MM2025YY}}</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+              </tr>  
+              <tr>
+                <th></th>
+                <th>All 3 Days</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+              </tr>
+              <tr>
+                <th>Adult</th>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBALL01NON}}</div>
+                        <div class="green">{{DP2025EBALL02VEG}}</div>
+                   </div> 
+                </td>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBFRI01NON}}</div>
+                        <div class="green">{{DP2025EBFRI02VEG}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBSAT01NON}}</div>
+                        <div class="green">{{DP2025EBSAT02VEG}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBSUN01NON}}</div>
+                        <div class="green">{{DP2025EBSUN02VEG}}</div>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Kids [ 11 to 18 years ],Students and Visiting Parents</th>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBALL03NON}}</div>
+                        <div class="green">{{DP2025EBALL04VEG}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBFRI03NON}}</div>
+                        <div class="green">{{DP2025EBFRI04VEG}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBSAT03NON}}</div>
+                        <div class="green">{{DP2025EBSAT04VEG}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBSUN03NON}}</div>
+                        <div class="green">{{DP2025EBSUN04VEG}}</div>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Kids [ 0 to 10 years ]</th>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBALL05KID}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBFRI05KID}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBSAT05KID}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBSUN05KID}}</div>
+                    </div>
+                </td>
+              </tr>
+              <tr class=" bg-light " >
+                <th>Total</th>
+                  <th>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBALL01NON + DP2025EBALL03NON + DP2025EBALL05KID }}</div>
+                        <div class="green">{{DP2025EBALL02VEG + DP2025EBALL04VEG}}</div>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBFRI01NON + DP2025EBFRI03NON + DP2025EBFRI05KID }}</div>
+                        <div class="green">{{DP2025EBFRI02VEG + DP2025EBFRI04VEG}}</div>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBSAT01NON + DP2025EBSAT03NON + DP2025EBSAT05KID }}</div>
+                        <div class="green">{{DP2025EBSAT02VEG + DP2025EBSAT04VEG }}</div>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >{{DP2025EBSUN01NON + DP2025EBSUN03NON + DP2025EBSUN05KID }}</div>
+                        <div class="green">{{DP2025EBSUN02VEG + DP2025EBSUN04VEG }}</div>
+                    </div>
+                  </th>
+              </tr>
+            </table>
+
         </div>
     </div>
     
     <div class=" container mt-5 mb-3 " >
-        <h3 class="text-center " >Kobi Pronam-2025 Ticket Sell Transactions</h3>
+        <h3 class="text-center " >Durga Puja-2025 Ticket Sell Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
                 style="height:500px; "
@@ -485,8 +607,8 @@
                 id="myGrid"
                 class="ag-theme-alpine"
                 (gridReady)="onGridReady($event)"
-                [rowData]="foodPurchaseList"
-                [columnDefs]="kp2025foodPurchasecolumnDefs"
+                [rowData]="dp2025TicketList"
+                [columnDefs]="dp2025columnDefsTickets"
                 [animateRows]="true"
                  >
             </ag-grid-angular>
