@@ -49,7 +49,7 @@
       "name": "NVBA Durga Puja 2025 Ticket - Friday Only(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
-      "price": 95,
+      "price": 90,
       "tax": 0.00,
       "sku": "DP2025EBFRI01NON",
       "currency": "USD"
@@ -58,7 +58,7 @@
       "name": "NVBA Durga Puja 2025 Ticket - Friday Only(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
-      "price": 95,
+      "price": 90,
       "tax": 0.00,
       "sku": "DP2025EBFRI02VEG",
       "currency": "USD"
@@ -95,7 +95,7 @@
       "name": "NVBA Durga Puja 2025 Ticket - Saturday Only(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
-      "price": 95,
+      "price": 90,
       "tax": 0.00,
       "sku": "DP2025EBSAT01NON",
       "currency": "USD"
@@ -104,7 +104,7 @@
       "name": "NVBA Durga Puja 2025 Ticket - Saturday Only(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
-      "price": 95,
+      "price": 90,
       "tax": 0.00,
       "sku": "DP2025EBSAT02VEG",
       "currency": "USD"
@@ -141,7 +141,7 @@
       "name": "NVBA Durga Puja 2025 Ticket - Sunday Only(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
-      "price": 95,
+      "price": 90,
       "tax": 0.00,
       "sku": "DP2025EBSUN01NON",
       "currency": "USD"
@@ -150,7 +150,7 @@
       "name": "NVBA Durga Puja 2025 Ticket - Sunday Only(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
-      "price": 95,
+      "price": 90,
       "tax": 0.00,
       "sku": "DP2025EBSUN02VEG",
       "currency": "USD"
