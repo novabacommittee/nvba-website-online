@@ -592,7 +592,6 @@
                   </th>
               </tr>
             </table>
-
         </div>
     </div>
     
@@ -603,8 +602,7 @@
                 style="height:500px; "
                 class="ag-theme-alpine table-light table-responsive agGridTable"
                 #agGrid
-                
-                id="myGrid"
+                id="DP2025Grid"
                 class="ag-theme-alpine"
                 (gridReady)="onGridReady($event)"
                 [rowData]="dp2025TicketList"
@@ -654,7 +652,7 @@
             </ag-grid-angular>
         </div>
         <div class=" d-flex justify-content-end mb-5 " >
-            <button (click)="onBtnExport()" class=" btn-get-started " > Export CSV File </button>
+            <button (click)="onBtnExport()" class=" btn-get-started ">Export CSV File</button>
         </div>
     </div>
 </div>
