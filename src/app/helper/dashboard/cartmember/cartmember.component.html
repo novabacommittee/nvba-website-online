@@ -34,28 +34,9 @@
             </p> -->
         </div>
     </div>
-    <div *ngIf="memberValidity" class="col-md-12 pt-3 "  >
-        <div  class=" " style="text-align: center; " >Membership Expiration Date : {{this.member.expires | date:'d-MMM-yyyy '  }}</div>
-        <!-- <app-eventtickets></app-eventtickets> -->
-        <!-- <button (click)="addToCartobj()" class="btn-get-started w-100 mb-5 mt-2" > Renew Annual Membership</button> --> 
- 
-        <!-- <div class=" text-center "  > -->
-             <!-- <button class="btn-get-userpage text-center "   routerLink="/tickets" >Saraswati Puja Tickets</button>  -->
-            <!-- <button *ngIf="addMoreKK"  class="btn-get-userpage text-center" routerLink="/addmoretickets" >Add Kavita Krishnamurti Tickets</button>  -->
-            <br />
-            <!-- Registration closed for Durga Puja.  -->
-            <!-- <button class="btn-get-userpage text-center "   routerLink="/ordertickets" >Register for Durga Puja 2021 Darshan & Buy Kavita Krishnamurti Concert Tickets</button> -->
-            
-
-            <!-- <app-durgapujatickets2023></app-durgapujatickets2023> -->
+    <div *ngIf="memberValidity" class="col-md-12 pt-3 ">
+        <div  class=" " style="text-align: center; " >Membership Expiration Date : {{this.member.expires | date:'d-MMM-yyyy '  }}
         </div>
-
     </div>
-
-    <!-- <div class="flex-center mb-3">
-        <a class="btn-get-started btn-get-started-dark text-center w-100 "  routerLink="/concert"   >Concert Tickets</a>             
-      </div> -->
+</div>
     
-
-
-

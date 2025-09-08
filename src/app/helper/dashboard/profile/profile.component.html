@@ -1,6 +1,6 @@
 <div class="card-body border " id="membershipTab" >
+
   <div class="row text-center">
-    
     <div class="col-lg-8 col-md-12 m-auto ">
       <h2 class=" text-black-50">Welcome, {{member?.firstname}} {{member?.lastname}}</h2>
 
@@ -22,45 +22,8 @@
 
       <app-cartmember></app-cartmember>
 
-      <!-- <p><a class=" btn btn-secondary px-3 py-2 mt-2" routerLink="/durgapuja2025">Click here for 2025 Durga Pujo Tickets </a></p> -->
-      <!-- <p><a class=" btn btn-secondary px-3 py-2 mt-2" routerLink="/paponliveconcert2025">Click here for Papon Live Concert Tickets </a></p> -->
-
-      <div class="mb-5 ">
-        <!-- <p style="text-align: left;" class="text-gray pt-3 " >
-            Dear Member,<br />
-              As we had mentioned in our New Year’s message, we have been working diligently on revising our constitution to make it more robust and useful for NVBA of the future. And just like everything significant in NVBA, we need your involvement and feedback on this important topic.<br /><br />
-            We would like you to review the revised constitution document and let us know if you agree or disagree with the key changes. We would also like to get your valuable comments on the document, if you may want to share. While sharing comments please refer to the section number and line number in the document so that we can easily gather and review your comments by sections.<br /><br />
-            We have made changes primarily in the following sections:  <br />
-            Article V…Section 4…Quorum <br />
-            Article VII…Board of Directors <br />
-            Article VIII…Executive Committee <br />
-            Article IX…Election Process <br />
-            Article X…Transfer of responsibilities (New section) <br />
-            Article XI…Financial Management <br /><br />
-            <a routerLink="/proposedconstitution" target="_blank" >Our Proposed Constitution Amendments By Laws</a><br /><br />
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmbZf1qwHUamxjgaBCmY9aCs5QuVQU2Fjnmq73ooDtIIGzw/viewform" target="_blank" > Please provide your <strong>VOTE</strong> on Proposed Constitution Amendments By Laws.</a><br /><br />
-            <a routerLink="/constitution" target="_blank" >Current Constitution document</a> <br /><br />
-            <strong>Note: This voting and feedback process is time sensitive and the last date to review and submit your vote is 01/29/2024</strong><br />
-            <br />
-            Thank you <br />
-            EC & Steering Committee
-        </p> -->
-        <!-- <div>
-          <a routerLink="/proposedconstitution" target="_blank" >Our Proposed Constitution Amendments By Laws</a>
-        </div>
-        <br />
-        <div>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmbZf1qwHUamxjgaBCmY9aCs5QuVQU2Fjnmq73ooDtIIGzw/viewform" target="_blank" > Please provide your <b>VOTE</b> on Proposed Constitution Amendments By Laws.</a>
-        </div>
-        <div>
-          <br />
-          <a routerLink="/constitution" target="_blank" >Current Constitution document</a>
-        </div> -->
-      </div>
-
       <a href="https://novaba.us5.list-manage.com/subscribe?u=71b8b228056801a92f04f6000&id=172a06829e" class=" btn btn-secondary px-3 py-2 mt-2" target="_blank" >Subscribe for email</a>
     
-      <!-- <a href=" " class="btn btn-primary">Edit profile</a> -->
       <style>
         #cartmember{
                margin-left: auto ;
@@ -69,15 +32,6 @@
        
      </style>
 
-      <div class="mt-3">
-        <!-- <p class=" text-center ">
-          We suspend our online tickets purchase. Due to overwhelming response of our Members. <br />
-          Sorry for the inconvenience.
-        </p> -->
-        <!-- <div class="flex-center mb-1">
-          <button class="btn-get-started btn-primary w-100 mb-3 mt-2" routerLink="/tickets" >Tickets for Durga Puja</button>             
-        </div>  -->
-      </div>
      <div class="mt-2 mb-3"  >
       <p class="green" > Bring QR Code as image or screenshot for fast tickets collection process.<br /></p>
          <div *ngIf="loadDiv" class="qrcodeImage">
@@ -113,28 +67,6 @@
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
       <h6 class="heading-small text-muted mb-4">User information</h6>
       <div class="pl-lg-4">
-        <!-- <div class="row">
-          <div class="col-lg-6">
-            <div class="form-group focused">
-              <label class="form-control-label" for="input-username">Username</label>
-              <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="{{member.displayname}}">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="form-group">
-              <label class="form-control-label" for="input-email">Email address</label>
-              <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{member.email}}">
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="row" *ngIf="saveBtn">
-          <div class="col-md-12">
-            <div class="form-group focused">
-              <label class="form-control-label" for="input-address">Profile Photo URL</label>
-              <input id="photoURL" formControlName="photoURL" class="form-control form-control-alternative" placeholder="Image Link" value="{{member?.photoURL}}" type="text">
-            </div>
-          </div>
-        </div> -->
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group focused">
@@ -149,6 +81,28 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="form-control-label" for="input-email">Email address</label>
+              <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{member.email}}">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group focused">
+              <label class="form-control-label" for="input-phone">Phone</label>
+              <input type="text" id="input-phone" class="form-control form-control-alternative" placeholder="Phone" value="{{member.Phone}}">
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row" *ngIf="saveBtn">
+          <div class="col-md-12">
+            <div class="form-group focused">
+              <label class="form-control-label" for="input-address">Profile Photo URL</label>
+              <input id="photoURL" formControlName="photoURL" class="form-control form-control-alternative" placeholder="Image Link" value="{{member?.photoURL}}" type="text">
+            </div>
+          </div>
+        </div> -->
       </div>
       <hr class="my-4">
       <!-- Address -->
@@ -157,7 +111,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group focused">
-              <label class="form-control-label" for="input-address">Address</label>
+              <label class="form-control-label" for="input-address">Address 1</label>
               <input id="address1" formControlName="address1" class="form-control form-control-alternative" placeholder="Street Address" value="{{member?.address1}}" type="text">
             </div>
           </div>
@@ -165,37 +119,40 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group focused">
-              <label class="form-control-label" for="input-address">Address</label>
+              <label class="form-control-label" for="input-address">Address 2</label>
               <input formControlName="address2" id="address2"  class="form-control form-control-alternative" placeholder="Apt/block/building" value="{{member?.address2}}" type="text">
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="form-group focused">
               <label class="form-control-label" for="input-city">City</label>
               <input type="text" id="city" formControlName="city" class="form-control form-control-alternative" placeholder="City" value="{{member?.city}}">
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-6">
+            <div class="form-group focused">
+              <label class="form-control-label" for="input-state">State</label>
+              <input type="text" formControlName="state" id="state" class="form-control form-control-alternative" placeholder="State" value="{{member?.state}}">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
             <div class="form-group focused">
               <label class="form-control-label" for="input-country">Country</label>
               <input type="text" formControlName="country" id="country" class="form-control form-control-alternative" placeholder="Country" value="{{member?.country}}">
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="form-group">
               <label class="form-control-label" for="input-country">Postal code</label>
               <input type="number" formControlName="zipcode" id="zipcode" class="form-control form-control-alternative" placeholder="{{member?.zipcode}}">
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-12 ">
-              <!-- <a *ngIf="saveBtn" (click)="save(profileForm.value)" class="btn btn-primary float-right">Save</a> -->
-          </div>
-        </div>
-        <button  type="submit" name="submit" class="btn btn-block btn-primary">Save Update</button>
+        <button  type="submit" name="submit" class="btn btn-block btn-primary">Save/Update</button>
       </div>
     </form>
 </div>
@@ -219,7 +176,6 @@
                     <td>{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
                     <td>$ {{item.price}}</td>
                     <td>{{ item.quantity}}</td>
-                    <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
                     <td  >$ {{item.price * item.quantity}}</td>
                 </tr>
                 </tbody>
