@@ -25,8 +25,17 @@ export class ReportsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-  }
 
+    try{
+      [...this.rowData].forEach( m =>{ 
+        if(m.membershipstatus != 'Valid')
+          m.membershipstatus = 'Expired';
+      });
+    }
+    catch (e) {
+      console.error(e);
+    }
+  }
 
   title = 'app';
 

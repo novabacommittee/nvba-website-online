@@ -167,22 +167,20 @@ export class AlldetailsComponent implements OnInit {
     this.tds.GetTicketsList().subscribe(t => {
       this.concertTickets = t;
       //console.log(t);
-      //this.checkConcertDetails();
+      this.checkDP2024ConcertDetails();
     })
 
     this.foodds.GetTicketsList().subscribe(t => {
       this.foodTickets = t;
       //console.log(t);
-      //this.checkKP2025Details();
+      this.checkKP2025Details();
     })
-
   }
 
   ngOnInit(): void {
   }
 
   membershipcolumnDefs = [
-    // { field: 'index',  headerName:'ID', sortable: true, resizable: true,  cellClass: 'id-class center' },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
@@ -210,7 +208,6 @@ export class AlldetailsComponent implements OnInit {
 
 
   dp2024columnDefsTickets = [
-    { field: 'index',  sortable: true, resizable: true,  cellClass: 'id-class center' },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
@@ -253,7 +250,6 @@ export class AlldetailsComponent implements OnInit {
 	];
 
   sp2025columnDefsTickets = [
-    { field: 'index',  headerName:'ID',sortable: true, resizable: true,  cellClass: 'id-class center' },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
@@ -327,7 +323,7 @@ export class AlldetailsComponent implements OnInit {
 		{ field: 'last_name', sortable: true, resizable: false, filter: true },
 	];
 
-  checkConcertDetails(){
+  checkDP2024ConcertDetails(){
     try{
 
     this.dp2024ConcertTicketList = [];
@@ -338,13 +334,13 @@ export class AlldetailsComponent implements OnInit {
 
         [...ct.transactions[0].item_list.items].forEach(tic =>{
           if(tic.sku == 'DP2024CTFRIDAY'){
-            //this.DP2024CTFRIDAY = this.DP2024CTFRIDAY + parseInt(tic.quantity );
+            this.DP2024CTFRIDAY = this.DP2024CTFRIDAY + parseInt(tic.quantity );
           }
           if(tic.sku == 'DP2024CTSATURDAY'){
-            //this.DP2024CTSATURDAY = this.DP2024CTSATURDAY + parseInt(tic.quantity );
+            this.DP2024CTSATURDAY = this.DP2024CTSATURDAY + parseInt(tic.quantity );
           }
           if(tic.sku == 'DP2024CTSUNDAY'){
-            //this.DP2024CTSUNDAY = this.DP2024CTSUNDAY + parseInt(tic.quantity );
+            this.DP2024CTSUNDAY = this.DP2024CTSUNDAY + parseInt(tic.quantity );
           }
        });
 
@@ -355,7 +351,6 @@ export class AlldetailsComponent implements OnInit {
 
       this.dp2024ConcertTicketList.unshift(concertPurchase);
     // console.log(concertPurchase);
-
       });
     }
     catch (e) {
