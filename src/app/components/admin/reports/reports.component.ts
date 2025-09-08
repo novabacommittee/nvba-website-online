@@ -7,6 +7,7 @@ import 'ag-grid-community';
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss']
 })
+
 export class ReportsComponent implements OnInit {
 
   members:any;
@@ -30,7 +31,6 @@ export class ReportsComponent implements OnInit {
   title = 'app';
 
 	columnDefs = [
-    { field: 'index', width: 90, cellClass: 'id-class center' },
     { field: 'id', sortable: true, filter: true, width: 90, cellClass: 'id-class center' },
 		{ field: 'firstname', sortable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, filter: true, cellClass: 'center' },
@@ -42,7 +42,9 @@ export class ReportsComponent implements OnInit {
     { field: 'address1', sortable: true , filter: true},
     { field: 'address2', sortable: true , filter: true},
     { field: 'city', sortable: true , filter: true},
+    { field: 'state', sortable: true , filter: true},
     { field: 'zipcode', sortable: true , filter: true},
+    { field: 'country', sortable: true , filter: true},
 	];
 
 
@@ -53,6 +55,4 @@ export class ReportsComponent implements OnInit {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
   }
-
-
 }
