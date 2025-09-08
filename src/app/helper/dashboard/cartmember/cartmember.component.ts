@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, from } from 'rxjs';
 import { CartService } from './../../../shared/services/cart.service';
 import { Router } from '@angular/router';
 import { AuthService } from './../../../shared/services/auth.service';
@@ -80,7 +78,6 @@ export class CartmemberComponent implements OnInit {
 
    addToCartobj(){
     this.cs.items = [];
- ///   this.memberCart.tax  = parseFloat(this.memberCart.tax ).toFixed(2);
     this.cs.addToCart(this.memberCart); 
     //console.log(this.memberCart);
     this.router.navigate(['/checkout']);

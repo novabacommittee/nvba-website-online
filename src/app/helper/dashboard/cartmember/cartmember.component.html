@@ -1,25 +1,15 @@
 <div class="row wrapper"   >
-    
-    <div *ngIf="!memberValidity" class="col-md-12 pt-3 " id="cartmember"  >
-        <!-- <p class=" text-center " style="color: #848484;">
-
-            Durga Puja 2023 tickets are exclusively available for members.<br />
-             If you are already a member, kindly log in to make your ticket purchase.  
-
-        </p> -->
+    <div *ngIf="!memberValidity" class="col-md-12 pt-5 " id="cartmember"  >
+        <p class=" text-center" style="color: #848484;">
+            Durga Puja 2025 tickets are exclusively available for members.<br />
+             If you are already a member, kindly check your membership status and renew membership if it has expired,
+             before booking your ticket for Durga Puja 2025.  
+        </p>
         <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Membership fees: $30 per family.</b> </div>
            
-        <!-- <p class=" text-center ">
-
-            We suspend our purchase tickets online. Due to overwhelming response of our Members and Guests. 
-            <br />
-            Sorry for the inconvenience.
-
-        </p> -->
-
         <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
 
-        <button *ngIf="this.member?.expires" (click)="addToCartobj()" class="btn-get-started w-100 mb-3 mt-2" > Renew Annual Membership</button>
+        <button *ngIf="this.member?.expires" (click)="addToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >Renew Annual Membership</button>
 
         <button *ngIf="!this.member?.expires" (click)="addToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
             NVBA Annual Membership</button>

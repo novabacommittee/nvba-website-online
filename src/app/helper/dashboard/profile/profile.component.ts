@@ -4,6 +4,8 @@ import { AuthService } from './../../../shared/services/auth.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SafeUrl } from '@angular/platform-browser';
 import 'base64-js';
+import { CartService } from './../../../shared/services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -30,12 +32,26 @@ export class ProfileComponent implements OnInit {
   loadDiv:boolean = false;
 
   htmlContent:any = 'hello';
+
+    private  memberCart = [{
+    "name": "NVBA Annual Membership",
+    "description": "NVBA Annual Membership Fee - 2025",
+    "quantity": 1,
+    "price": 30,
+    "tax": 0,
+    "sku": "MM2025YY",
+    "currency": "USD" 
+  }];
+
+
+  constructor( 
+    public ms:MemberService, 
+    public as:AuthService,
+    private fb: FormBuilder, 
+    private cs: CartService, 
+    public router: Router
+) { 
   
-
-  constructor( public ms:MemberService, public as:AuthService,private fb: FormBuilder, ) { 
-  
-
-
     this.profileForm = new FormGroup({
       firstname: new FormControl(),
       lastname: new FormControl(),
@@ -65,6 +81,12 @@ export class ProfileComponent implements OnInit {
    }
 
   ngOnInit(): void {}
+   addToCartobj(){
+    this.cs.items = [];
+    this.cs.addToCart(this.memberCart); 
+    //console.log(this.memberCart);
+    this.router.navigate(['/checkout']);
+  }
 
 
   createForm(id: any, firstname: any, lastname: any, photoURL: any, address1: any, address2: any, city: any, state: any, country: any, zipcode: any) {
