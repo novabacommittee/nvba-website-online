@@ -604,7 +604,7 @@
                 #agGrid
                 id="DP2025Grid"
                 class="ag-theme-alpine"
-                (gridReady)="onGridReady($event)"
+                (gridReady)="onTicketGridReady($event)"
                 [rowData]="dp2025TicketList"
                 [columnDefs]="dp2025columnDefsTickets"
                 [animateRows]="true"
@@ -612,7 +612,7 @@
             </ag-grid-angular>
         </div>
         <div class=" d-flex justify-content-end mb-5 " >
-            <button (click)="onBtnExport()" class=" btn-get-started " >Export CSV File</button>
+            <button (click)="onTicketBtnExport()" class=" btn-get-started " >Export CSV File</button>
         </div>
     </div>
 
@@ -651,8 +651,8 @@
                  >
             </ag-grid-angular>
         </div>
-        <!-- <div class=" d-flex justify-content-end mb-5 " >
+        <div class=" d-flex justify-content-end mb-5 " >
             <button (click)="onBtnExport()" class=" btn-get-started ">Export CSV File</button>
-        </div> -->
+        </div>
     </div>
 </div>

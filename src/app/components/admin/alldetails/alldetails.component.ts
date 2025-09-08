@@ -286,7 +286,6 @@ export class AlldetailsComponent implements OnInit {
 	];
 
   dp2025columnDefsTickets = [
-    // { field: 'index',  sortable: true, resizable: true,  cellClass: 'id-class center' },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
@@ -1054,8 +1053,8 @@ export class AlldetailsComponent implements OnInit {
                 else if(this.newPurches == true){
                   this.dp2025TicketList.unshift(this.user);
               }
-              console.log(this.user);
-              console.log(this.dp2025TicketList);
+              //console.log(this.user);
+              //console.log(this.dp2025TicketList);
 
               this.newPurches = false;
               this.membershipRenew = false;
@@ -1078,6 +1077,15 @@ export class AlldetailsComponent implements OnInit {
   }
   
   onGridReady(params:any) {
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
+  }
+
+    onTicketBtnExport() {
+    this.gridApi.exportDataAsCsv();
+  }
+
+    onTicketGridReady(params:any) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
   }
