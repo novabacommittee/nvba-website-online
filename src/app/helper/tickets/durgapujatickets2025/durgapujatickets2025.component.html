@@ -1,10 +1,26 @@
-<div id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
+<div *ngIf="!memberValidity" id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
+    <p class=" text-center" style="color: #848484;">
+            Durga Puja 2025 tickets are exclusively available for members.<br />
+             If you are already a member, kindly check your membership status and renew membership if it has expired,
+             before booking your ticket for Durga Puja 2025.  
+    </p>
+    <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Membership fees: $30 per family.</b> </div>
+    <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
 
+    <button *ngIf="!this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
+            NVBA Annual Membership</button>
+
+    <button *ngIf="this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
+        Renew Annual Membership</button>
+</div>
+
+<div *ngIf="memberValidity" id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
     <p  class="red "  >
         &ast; Tickets are required for food, local cultural program and concert with international artist for everyone, including kids (0 to 10 years).
-      </p> 
+    </p> 
 
     <accordion [isAnimated]="true" [closeOthers]="false" >
+        <!-- All 3 Days of Durga Puja Ticket-->
         <accordion-group style="overflow-wrap: break-word;" heading="All 3 Days (October 3rd, October 4th and October 5th, 2025)"  >
             <p class="ml-4 mt-3">
                 <span >Note:- Tickets include three days of food, local cultural programs and concert with international artist.</span>
@@ -16,7 +32,6 @@
                     <th scope="col"  >Items</th>
                     <th scope="col">Cost</th>
                     <th scope="col">Quantity</th>
-                    <!-- <th scope="col">Add</th> -->
                     <th scope="col">Total</th>
                   </tr>
                 </thead>
@@ -26,7 +41,6 @@
                       <th>{{item.description}}</th>
                       <td>$ {{item.price}}</td>
                       <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
-                      <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
                       <td  >$ {{item.price * item.quantity}}</td>
                   </tr>
                 </tbody>
@@ -36,23 +50,24 @@
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col" ><div class="d-flex justify-content-end">Total</div></th>
-                    <!-- <th scope="col">Add</th> -->
                     <th  scope="col">$ {{totalCost}}</th> 
                     </tr>
                 </thead>
             </table>
   
             <div class="float-right mb-3 mr-3" >
-                <span class=" red " *ngIf="!addtoCartBtn"  >Please decrease concert headcount.</span>
                 <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
             </div> 
         </accordion-group>
+
+        <!-- Any 1 Day of Durga Puja Ticket-->
         <accordion-group heading="Single Day Tickets" >
             <div id="singleDay" class="singleDay" >
                 <accordion>
+                    <!-- Durga Puja Ticket for Friday-->
                     <accordion-group heading="Friday only (October 3rd, 2025)" >
                       <p class="ml-4 mt-3 ">
-                        <span > Note:- Tickets include food and local cultural programs and concert with international artist.</span>
+                        <span > Note:- Tickets include food and local cultural programs.</span>
                         <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
                       </p>
                         <table class="table table-bordered table-hover ">
@@ -61,25 +76,23 @@
                                 <th scope="col" >Items</th>
                                 <th scope="col">Cost</th>
                                 <th scope="col">Quantity</th>
-                                <!-- <th scope="col">Add</th> -->
                                 <th scope="col">Total</th>
                                 </tr>
                             </thead>
                             <tbody *ngFor="let item of dataObject; index as i" >
-                                
                                 <tr *ngIf="i > 4 && i < 10" >
                                     <th>{{item.description}}</th>
                                     <td>$ {{item.price}}</td>
                                     <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
-                                    <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
                                     <td  >$ {{item.price * item.quantity}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </accordion-group>
+                    <!-- Durga Puja Ticket for Saturday-->
                     <accordion-group heading="Saturday only (October 4th , 2025)">
                         <p class="ml-4 mt-3 ">
-                         <span> Note:- Tickets include food, local cultural programs and concert with international artist.</span>
+                         <span> Note:- Tickets include food, other activities(competitions) and Anupam Roy & Band concert.</span>
                           <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
                         </p>
                         <table class="table table-bordered table-hover ">
@@ -88,25 +101,23 @@
                                     <th scope="col" >Items</th>
                                     <th scope="col">Cost</th>
                                     <th scope="col">Quantity</th>
-                                    <!-- <th scope="col">Add</th> -->
                                     <th scope="col">Total</th>
                                 </tr>
                             </thead>
                             <tbody *ngFor="let item of dataObject; index as i" >
-                                
                                     <tr *ngIf="i > 9 && i < 15" >
                                     <th>{{item.description}}</th>
                                     <td>$ {{item.price}}</td>
                                     <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
-                                    <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
                                     <td  >$ {{item.price * item.quantity}}</td>
                                     </tr>
                             </tbody>
                         </table>    
                     </accordion-group>
+                    <!-- Durga Puja Ticket for Sunday-->
                     <accordion-group heading="Sunday only (October 5th, 2025)">
                         <p class="ml-4 mt-3 ">
-                            <span> Note:- Tickets include food, local cultural programs and concert with international artist.</span>
+                            <span> Note:- Tickets include food, other activities(competitions) and Ujjaini & Dipayan concert.</span>
                             <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
                         </p>
                         <table class="table table-bordered table-hover ">
@@ -115,45 +126,35 @@
                                     <th scope="col" >Items</th>
                                     <th scope="col">Cost</th>
                                     <th scope="col">Quantity</th>
-                                    <!-- <th scope="col">Add</th> -->
                                     <th scope="col">Total</th>
                                 </tr>
                                 </thead>
                                 <tbody *ngFor="let item of dataObject; index as i" >
-                                
                                     <tr *ngIf="i > 14" >
                                     <th>{{item.description}}</th>
                                     <td>$ {{item.price}}</td>
                                     <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
-                                    <!-- <td> <button class="btn btn-warning" (click)="addToCartobj(item)" >Add to Cart</button></td> -->
                                     <td  >$ {{item.price * item.quantity}}</td>
                                     </tr>
                             </tbody>
                         </table>    
                     </accordion-group>
+
                     <table class="table table-bordered table-hover  ">
                         <thead>
                             <tr>
                             <th scope="col"></th>
                             <th scope="col"></th>
                             <th scope="col" colspan="3" ><div class="d-flex justify-content-end">Total</div></th>
-                            <!-- <th scope="col">Add</th> -->
                             <th  scope="col">$ {{totalCost}}</th> 
                             </tr>
                         </thead>
                     </table>
-                
                     <div class="float-right mb-3 mr-3">
-                        <!-- <span class=" red " *ngIf="!addtoCartBtn"  >Please decrease concert headcount.</span> -->
                         <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
                     </div>
                 </accordion>
             </div>
         </accordion-group>
     </accordion>
-   
-    <!-- <div>
-        {{ dataObject | json }}
-    </div> -->
-    
-  </div>
+</div>

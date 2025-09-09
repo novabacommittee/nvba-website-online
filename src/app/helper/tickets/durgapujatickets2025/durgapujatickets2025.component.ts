@@ -3,41 +3,79 @@ import { AfterViewChecked, ChangeDetectorRef, Component, OnChanges, OnInit } fro
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CartService } from 'src/app/shared/services/cart.service';
+import { AuthService } from './../../../shared/services/auth.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-durgapujatickets2025',
   templateUrl: './durgapujatickets2025.component.html',
   styleUrls: ['./durgapujatickets2025.component.scss']
 })
+
 export class Durgapujatickets2025Component implements OnInit, OnChanges, AfterViewChecked {
+
+  private  memberCart = [{
+    "name": "NVBA Annual Membership",
+    "description": "NVBA Annual Membership Fee - 2025",
+    "quantity": 1,
+    "price": 30,
+    "tax": 0,
+    "sku": "MM2025YY",
+    "currency": "USD" 
+  }];
+  expired:any;
+  currentDate:any;
+
+  member:any;
 
   dataObject :any=[];
   checkObject :any=[];
-  cartObject : any=[];
   totalCost: number = 0;
   cartCheck: any;
   customClass = 'customClass';
+  memberValidity : boolean = false;
 
 
   addtoCartBtn: boolean = true;
-  headCount!: number;
-  kidsCount!: number;
-
-
+  // headCount!: number;
+  // kidsCount!: number;
 
   private _jsonURLcart = '/assets/data/tickets/durgapuja-2025-earlybird.json';
-   constructor(private http: HttpClient, private cs: CartService, public router: Router, private cdr: ChangeDetectorRef) {
-    this.cs.currentCart.subscribe( cartCheck => this.cartCheck = cartCheck);
-    this.getJSON().subscribe((data: any) => {
-   //   ////console.log(data);
+
+  constructor(
+      private http: HttpClient, 
+      private cs: CartService, 
+      public router: Router, 
+      private auth: AuthService, 
+      private cdr: ChangeDetectorRef) 
+  {
+      this.cs.currentCart.subscribe( cartCheck => this.cartCheck = cartCheck);
+      this.getJSON().subscribe((data: any) => {
+      //console.log(data);
       this.dataObject = data;
+
+      this.auth.member.subscribe( m => {
+        this.member = m;
+        //console.log(moment(this.member.expires));
+  
+        this.currentDate = moment();
+  
+        if(moment(this.member.expires).isAfter(this.currentDate) ){
+          this.memberValidity = true;
+            this.member.membershipstatus = 'Valid';
+          }
+          else{
+            this.memberValidity = false;
+            this.member.membershipstatus = 'Expire';
+          }
+      });
+      
       this.checkData();
      });
-     
-   }
-   
-   ngOnInit(): void {
-    
+  }
+  
+
+  ngOnInit(): void {
   }
 
    public getJSON(): Observable<any> {
@@ -53,8 +91,6 @@ export class Durgapujatickets2025Component implements OnInit, OnChanges, AfterVi
       });
        
     });
- //   ////console.log('this.dataObject - Check data');
- //   ////console.log(this.dataObject);
    }
 
   
@@ -64,73 +100,57 @@ export class Durgapujatickets2025Component implements OnInit, OnChanges, AfterVi
 
   ngAfterViewChecked(): void {
     let tc = 0;
-    this.headCount = 0;
-    let ticketCount = 0;
-    this.kidsCount = 0;
-    let kidsTicketKK = 0;
+    // this.headCount = 0;
+    // let ticketCount = 0;
     
     [...this.dataObject].forEach(value => {
-   //   ////console.log(value);
+      //console.log(value);
       if(value.quantity > 0){ 
         tc += (value.price * value.quantity);
       }
      
     });
-
     
-    if(ticketCount>this.headCount){
-      this.addtoCartBtn = false;
-    }
-    else{
-      this.addtoCartBtn = true;
-    }
-
+    // if(ticketCount > this.headCount){
+    //   this.addtoCartBtn = false;
+    // }
+    // else{
+    //   this.addtoCartBtn = true;
+    // }
 
     this.totalCost = tc;
     this.cdr.detectChanges();
   }
 
+  addMembershipToCartobj(){
+    this.cs.items = [];
+    this.cs.addToCart(this.memberCart); 
+    this.router.navigate(['/checkout']);
+  }
   
   addToCartobj(){
-    ////console.log(this.dataObject);
-    ////console.log(this.cs.items);
     this.cs.items = [];
-    ////console.log(this.cs.items);
+    //console.log(this.cs.items);
     this.dataObject.forEach((value:any) => {
-  //    ////console.log(value.quantity);
-    //  ////console.log(value);
-      if(value.quantity > 0){ 
-       // this.cs.addToCart(value);
-        ////console.log(value.quantity);
+    //console.log(value.quantity);
+    //console.log(value);
+    if(value.quantity > 0){ 
+        //console.log(value.quantity);
         this.cs.items.push(value);
-      //  this.totalCost += (parseFloat(value.price) * parseFloat(value.quantity));
-        // value.tax = (value.price * value.quantity) * 0.00; 
-        // value.tax = parseFloat(value.tax).toFixed(2);
-       // this.cs.addToCart(value);
        
-        ////console.log(value);
+        //console.log(value);
      //   this.checkObject.push(value);
      } 
     });
-    ////console.log(this.cs.items);
     this.cs.addToCart(this.cs.items);
-
- //   this.cs.addToCart(this.checkObject);
+    if(this.member?.expires)
     this.router.navigate(['/checkout']);
- //   this.router.navigate(['/heroes', { id: itemId }]);
-
- //   item.count = 
-//    this.cartService.addToCart();
   }
 
   clearCart(){
+
     [...this.dataObject].forEach(value => {
       value.quantity = 0;
     });
   }
-
-
-
-
 }
-

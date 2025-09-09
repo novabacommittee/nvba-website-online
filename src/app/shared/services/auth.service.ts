@@ -15,6 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService  {
   userData: any; // Save logged in user data
   public memberData:any;
@@ -30,6 +31,7 @@ export class AuthService  {
     public memberService : MemberService,
     private toastr: ToastrService
   ) {
+
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
     this.afAuth.authState.subscribe((user) => {
@@ -44,6 +46,7 @@ export class AuthService  {
     });
 
   }
+
   // Sign in with email/password
   SignIn(email: string, password: string) {
     return this.afAuth
@@ -61,6 +64,7 @@ export class AuthService  {
         console.log(error.message);
       });
   }
+
   // Sign up with email/password
   SignUp(email: string, password: string) {
     return this.afAuth
@@ -76,13 +80,14 @@ export class AuthService  {
         console.log(error.message);
       });
   }
+
   // Send email verfificaiton when new user sign up
   SendVerificationMail() {
     return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())
       .then(() => {
         this.toastr.success('Verification email sent, check your inbox or spam folder.','Verification Email');
-        console.log('Verification email sent, check your inbox.');
+        console.log('Verification email sent, check your inbox or spam folder.');
         this.router.navigate(['verify-email-address']);
       })
       .catch((error) => {
@@ -90,19 +95,21 @@ export class AuthService  {
         console.error("Error sending email verification:", error);
       });
   }
+
   // Reset forgot password
   ForgotPassword(passwordResetEmail: string) {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
         this.toastr.success('Password reset email sent, check your inbox or spam folder.','Reset forgot Password');
-        console.log('Password reset email sent, check your inbox.');
+        console.log('Password reset email sent, check your inbox or spam folder.');
       })
       .catch((error) => {
         this.toastr.error(error,'Reset forgot Password');
         console.log(error);
       });
   }
+
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean { //console.log('is-Log');
     const user = JSON.parse(localStorage.getItem('user')!);
@@ -114,12 +121,14 @@ export class AuthService  {
       return false;
     }
   }
+
   // Sign in with Google
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
       this.router.navigate(['dashboard']);
     });
   }
+
   // Auth logic to run auth providers
   AuthLogin(provider: any) {
     return this.afAuth
@@ -132,6 +141,7 @@ export class AuthService  {
         window.alert(error);
       });
   }
+
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
@@ -150,6 +160,7 @@ export class AuthService  {
       merge: true,
     });
   }
+
   // Sign out
   SignOut() {
     return this.afAuth.signOut().then(() => {

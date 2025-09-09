@@ -9,10 +9,12 @@
            
         <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
 
-        <button *ngIf="this.member?.expires" (click)="addToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >Renew Annual Membership</button>
+        <button *ngIf="this.member?.expires" (click)="addToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
+            Renew Annual Membership</button>
 
         <button *ngIf="!this.member?.expires" (click)="addToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
             NVBA Annual Membership</button>
+
         <div class="flex-column row ">
             <div style="font-weight: bold; font-size: 2.2em;color: #848484; text-align: center;" ><span class=" text-primary ">*</span><b>Membership Benefits:</b> </div>
             <ul  style=" color: #848484; text-align: center;"> 
