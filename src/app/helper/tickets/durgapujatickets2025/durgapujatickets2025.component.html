@@ -1,10 +1,11 @@
 <div *ngIf="!memberValidity" id="earlyBirdWithoutcul" class="col-md-12 pt-5">
     <p class=" text-center" style="color: #848484;">
             Durga Puja 2025 tickets are exclusively available for members.<br />
-             If you are already a member, kindly check your membership status and renew membership if it has expired,
-             before booking your ticket for Durga Puja 2025.  
+            If you are not a member of NVBA, please register with annual membership fees.
+            If you are already a member, kindly check your membership status and renew membership if it has expired,
+            before booking your ticket for Durga Puja 2025.  
     </p>
-    <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Membership fees: $30 per family.</b> </div>
+    <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Annual Membership fees: $30 per family.</b> </div>
     <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
 
     <button *ngIf="!this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
