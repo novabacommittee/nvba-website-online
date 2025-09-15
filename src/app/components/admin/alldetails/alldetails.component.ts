@@ -852,11 +852,11 @@ export class AlldetailsComponent implements OnInit {
               // }
               
 
-              // else if(e.sku.includes("MM2024YY")){
-              //     this.MM2024YY += e.quantity ;
-              //     Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
-              //     this.membershipRenew = true;
-              // }
+              else if(e.sku.includes("MM2024YY")){
+                  this.MM2024YY += e.quantity ;
+                  //Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
+                  //this.membershipRenew = true;
+              }
               //Saraswati Puja 2024 Ticket Details
               // else if(e.sku.includes("SP2024AEBNON")){
               //   this.SP2024AEBNON += e.quantity ;
@@ -1006,11 +1006,11 @@ export class AlldetailsComponent implements OnInit {
               // }
 
 
-              // else if(e.sku.includes("MM2023YY")){
-              //     this.MM2023YY += e.quantity ;
-              //     Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
-              //     this.membershipRenew = true;
-              // }
+              else if(e.sku.includes("MM2023YY")){
+                  this.MM2023YY += e.quantity ;
+                  //Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
+                  //this.membershipRenew = true;
+              }
               // else if(e.sku.includes("KP2023NON")){  
               //   this.KP2023NON += e.quantity ;
               //   Object.assign(userPurchase,{ KP2023NON : e.quantity });
@@ -1021,14 +1021,11 @@ export class AlldetailsComponent implements OnInit {
               //   Object.assign(userPurchase,{ KP2023VEG : e.quantity });
               //   this.newPurches = true;
               // }
-
-
-              // else if(e.sku.includes("MM2022YY")){
-              //     this.MM2022YY += e.quantity ;
-              //     Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
-              //     this.membershipRenew = true;
-              // }
-
+              else if(e.sku.includes("MM2022YY")){
+                  this.MM2022YY += e.quantity ;
+                  //Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
+                  //this.membershipRenew = true;
+              }
             }); // End of Purchase Loop e
           }
           
