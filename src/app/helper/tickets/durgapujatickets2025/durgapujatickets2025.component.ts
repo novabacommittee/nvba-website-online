@@ -37,8 +37,6 @@ export class Durgapujatickets2025Component implements OnInit, OnChanges, AfterVi
 
 
   addtoCartBtn: boolean = true;
-  // headCount!: number;
-  // kidsCount!: number;
 
   private _jsonURLcart = '/assets/data/tickets/durgapuja-2025-earlybird.json';
 
@@ -100,8 +98,6 @@ export class Durgapujatickets2025Component implements OnInit, OnChanges, AfterVi
 
   ngAfterViewChecked(): void {
     let tc = 0;
-    // this.headCount = 0;
-    // let ticketCount = 0;
     
     [...this.dataObject].forEach(value => {
       //console.log(value);
@@ -111,13 +107,6 @@ export class Durgapujatickets2025Component implements OnInit, OnChanges, AfterVi
      
     });
     
-    // if(ticketCount > this.headCount){
-    //   this.addtoCartBtn = false;
-    // }
-    // else{
-    //   this.addtoCartBtn = true;
-    // }
-
     this.totalCost = tc;
     this.cdr.detectChanges();
   }
@@ -139,7 +128,6 @@ export class Durgapujatickets2025Component implements OnInit, OnChanges, AfterVi
         this.cs.items.push(value);
        
         //console.log(value);
-     //   this.checkObject.push(value);
      } 
     });
     this.cs.addToCart(this.cs.items);

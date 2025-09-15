@@ -181,6 +181,7 @@ export class AlldetailsComponent implements OnInit {
   }
 
   membershipcolumnDefs = [
+    { field: 'id', sortable: true, filter: true, width: 90, cellClass: 'id-class center' },
 		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
