@@ -351,8 +351,8 @@ export class AlldetailsComponent implements OnInit {
 
        Object.assign(concertPurchase,{ create_time: moment(ct.create_time).format("YYYY-MM-DD HH:mm"), first_name:ct.payer.payer_info.first_name, 
         last_name:ct.payer.payer_info.last_name,
-        email:ct.payer.payer_info.email,description:ct.transactions[0].item_list.items[0].description,
-        price:ct.transactions[0].item_list.items[0].price,quantity:ct.transactions[0].item_list.items[0].quantity,sku:ct.transactions[0].item_list.items[0].sku});
+        email:ct.payer.payer_info.email,description:ct.purchase_units[0].items[0].name,
+        price:ct.purchase_units[0].amount.value,quantity:ct.purchase_units[0].items[0].quantity,sku:ct.purchase_units[0].items[0].sku});
 
       this.dp2025ConcertTicketList.unshift(concertPurchase);
       // console.log(concertPurchase);
