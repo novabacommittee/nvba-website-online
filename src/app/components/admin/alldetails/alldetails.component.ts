@@ -171,7 +171,7 @@ export class AlldetailsComponent implements OnInit {
     this.tds.GetTicketsList().subscribe(t => {
       this.concertTickets = t;
       //console.log(t);
-      this.checkDP2024ConcertDetails();
+      this.checkDP2025ConcertDetails();
     })
 
     this.foodds.GetTicketsList().subscribe(t => {
@@ -355,7 +355,7 @@ export class AlldetailsComponent implements OnInit {
         price:ct.transactions[0].item_list.items[0].price,quantity:ct.transactions[0].item_list.items[0].quantity,sku:ct.transactions[0].item_list.items[0].sku});
 
       this.dp2025ConcertTicketList.unshift(concertPurchase);
-    // console.log(concertPurchase);
+      // console.log(concertPurchase);
       });
     }
     catch (e) {
