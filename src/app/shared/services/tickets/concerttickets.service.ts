@@ -13,7 +13,7 @@ export class ConcertticketsService {
   ticketsitems!: Observable<any[]>; 
 
   constructor(private db: AngularFireDatabase) {
-    this.ticketsitems = db.list('/concet-2024').valueChanges();
+    this.ticketsitems = db.list('/concet-2025').valueChanges();
   }
 
   GetTicketsList() {

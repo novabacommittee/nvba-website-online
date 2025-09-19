@@ -1,0 +1,29 @@
+[
+    {
+        "name": "NVBA Presents The Anupam Roy Band",
+        "description": "The Anupam Roy Band - Saturday October 4th, 2025 at 7:30 PM",
+        "quantity": 0,
+        "price": 70,
+        "tax": 0,
+        "sku": "DP2025CTSATDAY",
+        "currency": "USD" 
+      },
+    {
+      "name": "NVBA Presents Ujjaini Mukherjee & Dipayan Banerjee",
+      "description": " Ujjaini Mukherjee & Dipayan Banerjee - Sunday October 5th, 2025 at 7:30 PM",
+      "quantity": 0,
+      "price": 40,
+      "tax": 0.00,
+      "sku": "DP2025CTSUNDAY",
+      "currency": "USD"
+    },
+    {
+      "name": "NVBA Presents Anupam Roy & Ujjaini Mukherjee/Dipayan Banerjee(Combo Ticket)",
+      "description": "The Anupam Roy Band - Saturday October 4th, 2025 at 7:30 PM \n\nUjjaini Mukherjee & Dipayan Banerjee - Sunday October 5th, 2025 at 7:30 PM",
+      "quantity": 0,
+      "price": 90,
+      "tax": 0.00,
+      "sku": "DP2025CTCOMBO",
+      "currency": "USD"
+    }
+]
