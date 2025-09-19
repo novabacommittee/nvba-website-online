@@ -82,8 +82,7 @@ export class MemberService {
 
 
   concert(purches:any){
-  //  this.db.object('/concet-2022/').update( JSON.parse( JSON.stringify(memb ) )).catch(error => {
-      this.db.object('/concet-2024/'+purches.id).set({ ...purches }).catch(error => {
+      this.db.object('/concert-2025/'+purches.id).set({ ...purches }).catch(error => {
             console.log(error);
           }).then( c => {
             console.log("Success Create.");
