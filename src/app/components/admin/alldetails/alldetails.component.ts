@@ -345,7 +345,7 @@ export class AlldetailsComponent implements OnInit {
             this.DP2025CTSUNDAY = this.DP2025CTSUNDAY + parseInt(tic.quantity );
           }
           if(tic.sku == 'DP2025CTCOMBO'){
-            this.DP2024CTSUNDAY = this.DP2024CTSUNDAY + parseInt(tic.quantity );
+            this.DP2025CTCOMBO = this.DP2025CTCOMBO + parseInt(tic.quantity );
           }
        });
 
