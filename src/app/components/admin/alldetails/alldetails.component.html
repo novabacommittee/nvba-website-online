@@ -652,6 +652,25 @@
         </div>
     </div>
 
+    <div class=" container mt-5 mb-3 " >
+        <h3 class="text-center " >Durga Puja-2025 Concert Ticket Transactions</h3>
+        <div class=" mb-3  table-bordered" >
+            <ag-grid-angular
+                style="height:500px; "
+                class="ag-theme-alpine table-light table-responsive agGridTable"
+                #agGrid
+                
+                id="myGrid"
+                class="ag-theme-alpine"
+                (gridReady)="onGridReady($event)"
+                [rowData]="dp2025ConcertTicketList"
+                [columnDefs]="dp2025ConcertTicketcolumnDefs"
+                [animateRows]="true"
+                 >
+            </ag-grid-angular>
+        </div>
+    </div>
+
     <!-- <div class=" container mt-5 mb-3 " >
         <h3 class="text-center " >Durga Puja-2024 Concert Ticket Transactions</h3>
         <div class=" mb-3  table-bordered" >

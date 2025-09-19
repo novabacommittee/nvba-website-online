@@ -101,6 +101,10 @@ export class AlldetailsComponent implements OnInit {
   KP2025NONVEG:number = 0;
   KP2025VEG:number = 0;
 
+  DP2025CTSATURDAY:number = 0;
+  DP2025CTSUNDAY:number =0;
+  DP2025CTCOMBO:number = 0;
+
   DP2025EBALL01NON:number = 0;
   DP2025EBALL02VEG:number = 0;
   DP2025EBALL03NON:number = 0;
@@ -323,6 +327,41 @@ export class AlldetailsComponent implements OnInit {
 		{ field: 'first_name', sortable: true, resizable: false, filter: true  },
 		{ field: 'last_name', sortable: true, resizable: false, filter: true },
 	];
+
+  checkDP2025ConcertDetails(){
+    try{
+
+    this.dp2025ConcertTicketList = [];
+
+    [...this.concertTickets].forEach( ct =>{
+        console.log(' Each row ', ct.transactions[0].item_list.items[0].quantity);
+        const concertPurchase = {};
+
+        [...ct.transactions[0].item_list.items].forEach(tic =>{
+          if(tic.sku == 'DP2025CTSATDAY'){
+            this.DP2025CTSATURDAY = this.DP2025CTSATURDAY + parseInt(tic.quantity );
+          }
+          if(tic.sku == 'DP2025CTSUNDAY'){
+            this.DP2025CTSUNDAY = this.DP2025CTSUNDAY + parseInt(tic.quantity );
+          }
+          if(tic.sku == 'DP2025CTCOMBO'){
+            this.DP2024CTSUNDAY = this.DP2024CTSUNDAY + parseInt(tic.quantity );
+          }
+       });
+
+       Object.assign(concertPurchase,{ create_time: moment(ct.create_time).format("YYYY-MM-DD HH:mm"), first_name:ct.payer.payer_info.first_name, 
+        last_name:ct.payer.payer_info.last_name,
+        email:ct.payer.payer_info.email,description:ct.transactions[0].item_list.items[0].description,
+        price:ct.transactions[0].item_list.items[0].price,quantity:ct.transactions[0].item_list.items[0].quantity,sku:ct.transactions[0].item_list.items[0].sku});
+
+      this.dp2025ConcertTicketList.unshift(concertPurchase);
+    // console.log(concertPurchase);
+      });
+    }
+    catch (e) {
+      console.error(e);
+    }
+  }
 
   checkDP2024ConcertDetails(){
     try{
