@@ -334,10 +334,10 @@ export class AlldetailsComponent implements OnInit {
     this.dp2025ConcertTicketList = [];
 
     [...this.concertTickets].forEach( ct =>{
-        console.log(' Each row ', ct.transactions[0].item_list.items[0].quantity);
+        console.log(' Each row ', ct.purchase_units[0].items[0].quantity);
         const concertPurchase = {};
 
-        [...ct.transactions[0].item_list.items].forEach(tic =>{
+        [...ct.purchase_units[0].items].forEach(tic =>{
           if(tic.sku == 'DP2025CTSATDAY'){
             this.DP2025CTSATURDAY = this.DP2025CTSATURDAY + parseInt(tic.quantity );
           }
