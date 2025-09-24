@@ -64,8 +64,8 @@
     },
     {
         "name" : "Keller Williams",
-        "image" : "assets/images/gallery/sponsors/Keller Williams Sponsor Logo.png",
-        "url": "https://kwcapitalproperties.com/",
+        "image" : "assets/images/gallery/sponsors/Samson Property Logo.png",
+        "url": "https://chantilly.samsonproperties.net/",
         "dateofDonation" : "Donated Just now",
         "amount" : "1,000",
         "cause" : "NVBA Sponser",
@@ -100,7 +100,7 @@
     },
     {
         "name" : "Bravent",
-        "image" : "assets/images/gallery/sponsors/Bravent Sponsor.jpg",
+        "image" : "assets/images/gallery/sponsors/Bravent Sponsor.jpeg",
         "url": "http://bravent.us/",
         "dateofDonation" : "Donated Just now",
         "amount" : "1,600",
