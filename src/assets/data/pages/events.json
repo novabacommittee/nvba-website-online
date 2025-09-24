@@ -343,6 +343,19 @@
     { 
         "eventId":27,
         "eventType": "current",
+        "eventName": "Joy-Lopa Concert 2025",
+        "eventDate": "September 27, 2025",
+        "eventEndDate": "September 27, 2025",
+        "eventImage": "./../../../assets/images/gallery/externalevents/prantik concert 2025-2.jpg",
+        "timming": "September 27 - 8 PM",
+        "venue": "Howard High School Auditorium, 8700 Old Annapolis Rd, Columbia, MD 21043",
+        "pageLink": "https://www.prantik.org/event-details/prantik-durga-pujo-sep-27th-2025",
+        "description": "Prantik Baltimore is organizing a concert on September 27th during our Durga Pujo. We will have Lopamudra Mitra and Joy Sarkar with their musical group from Kolkata coming to perform. Their Joy-Lopa Express is their Signature concert making waves in Kolkata this past year.Tickets registration is on Tickets registration available below",
+        "mapUrl": "https://maps.app.goo.gl/ZY6W6DbnyjgPKQej7"
+    },
+    { 
+        "eventId":28,
+        "eventType": "current",
         "eventName": "Annual General Meeting (AGM) 2025",
         "eventDate": "December 13th, 2025",
         "eventEndDate": "December 13th, 2025",
