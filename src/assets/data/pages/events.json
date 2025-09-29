@@ -342,7 +342,7 @@
     },
     { 
         "eventId":27,
-        "eventType": "current",
+        "eventType": "past",
         "eventName": "Joy-Lopa Concert 2025",
         "eventDate": "September 27, 2025",
         "eventEndDate": "September 27, 2025",
