@@ -1,5 +1,31 @@
 [
     { 
+        "eventId":26,
+        "eventType": "past",
+        "eventName": "Sarbojanin Durgotsob 2025",
+        "eventDate": "October 3-5, 2025",
+        "eventEndDate": "October 3-5, 2025",
+        "eventImage": "./../../../assets/images/stocks/DP-2020.jpg",
+        "timming": "October 3rd - 6 PM to 10 PM. October 4th - 11 AM - 10 PM and October 5th - 9 AM to 10 PM",
+        "venue": "John Champe High School, 41535 Sacred Mountain St, Aldie, VA 20105",
+        "pageLink": "/durgapuja2025",
+        "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
+        "mapUrl": "https://maps.app.goo.gl/iKfsDD2p3cg5V6HB7"
+    },
+    { 
+        "eventId":27,
+        "eventType": "past",
+        "eventName": "Joy-Lopa Concert 2025",
+        "eventDate": "September 27, 2025",
+        "eventEndDate": "September 27, 2025",
+        "eventImage": "./../../../assets/images/gallery/externalevents/prantik-concert-2025-2.jpg",
+        "timming": "September 27 - 8 PM",
+        "venue": "Howard High School Auditorium, 8700 Old Annapolis Rd, Columbia, MD 21043",
+        "pageLink": "https://www.prantik.org/event-details/prantik-durga-pujo-sep-27th-2025",
+        "description": "Prantik Baltimore is organizing a concert on September 27th during our Durga Pujo. We will have Lopamudra Mitra and Joy Sarkar with their musical group from Kolkata coming to perform. Their Joy-Lopa Express is their Signature concert making waves in Kolkata this past year.Tickets registration is on Tickets registration available below",
+        "mapUrl": "https://maps.app.goo.gl/ZY6W6DbnyjgPKQej7"
+    },
+    { 
         "eventId":28,
         "eventType": "past",
         "eventName": "Papon Live Concert",
@@ -328,33 +354,7 @@
         "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
     },
     { 
-        "eventId":26,
-        "eventType": "past",
-        "eventName": "Sarbojanin Durgotsob 2025",
-        "eventDate": "October 3-5, 2025",
-        "eventEndDate": "October 3-5, 2025",
-        "eventImage": "./../../../assets/images/stocks/DP-2020.jpg",
-        "timming": "October 3rd - 6 PM to 10 PM. October 4th - 11 AM - 10 PM and October 5th - 9 AM to 10 PM",
-        "venue": "John Champe High School, 41535 Sacred Mountain St, Aldie, VA 20105",
-        "pageLink": "/durgapuja2025",
-        "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
-        "mapUrl": "https://maps.app.goo.gl/iKfsDD2p3cg5V6HB7"
-    },
-    { 
-        "eventId":27,
-        "eventType": "past",
-        "eventName": "Joy-Lopa Concert 2025",
-        "eventDate": "September 27, 2025",
-        "eventEndDate": "September 27, 2025",
-        "eventImage": "./../../../assets/images/gallery/externalevents/prantik-concert-2025-2.jpg",
-        "timming": "September 27 - 8 PM",
-        "venue": "Howard High School Auditorium, 8700 Old Annapolis Rd, Columbia, MD 21043",
-        "pageLink": "https://www.prantik.org/event-details/prantik-durga-pujo-sep-27th-2025",
-        "description": "Prantik Baltimore is organizing a concert on September 27th during our Durga Pujo. We will have Lopamudra Mitra and Joy Sarkar with their musical group from Kolkata coming to perform. Their Joy-Lopa Express is their Signature concert making waves in Kolkata this past year.Tickets registration is on Tickets registration available below",
-        "mapUrl": "https://maps.app.goo.gl/ZY6W6DbnyjgPKQej7"
-    },
-    { 
-        "eventId":28,
+        "eventId":29,
         "eventType": "current",
         "eventName": "Annual General Meeting (AGM) 2025",
         "eventDate": "December 6th, 2025",
