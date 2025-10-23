@@ -329,7 +329,7 @@
     },
     { 
         "eventId":26,
-        "eventType": "current",
+        "eventType": "past",
         "eventName": "Sarbojanin Durgotsob 2025",
         "eventDate": "October 3-5, 2025",
         "eventEndDate": "October 3-5, 2025",
@@ -357,13 +357,13 @@
         "eventId":28,
         "eventType": "current",
         "eventName": "Annual General Meeting (AGM) 2025",
-        "eventDate": "December 13th, 2025",
-        "eventEndDate": "December 13th, 2025",
+        "eventDate": "December 6th, 2025",
+        "eventEndDate": "December 6th, 2025",
         "eventImage": "./../../../assets/images/stocks/agm.jpg",
-        "timming": "3:00 PM - 6:30 PM",
-        "venue": "Chantilly Regional Library  4000 Stringfellow Rd, Chantilly, VA 20151",
+        "timming": "2:30 PM - 5:00 PM",
+        "venue": "Sterling Regional Library  22330 S Sterling Blvd, Sterling, VA 20164",
         "pageLink": "",
         "description": "Your participation is highly appreciated.",
-        "mapUrl": "https://www.google.com/maps/place/Chantilly+Regional+Library/@38.8826348,-77.4103814,17z/data=!4m5!3m4!1s0x89b645d93e9c74d7:0xea49f7691dcdee5f!8m2!3d38.8826348!4d-77.4081927"
+        "mapUrl": "https://maps.app.goo.gl/czVbyBMCz6nmdhDH8"
     }
 ]
