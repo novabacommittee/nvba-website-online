@@ -365,5 +365,18 @@
         "pageLink": "",
         "description": "Your participation is highly appreciated.",
         "mapUrl": "https://maps.app.goo.gl/czVbyBMCz6nmdhDH8"
+    },
+    { 
+        "eventId":30,
+        "eventType": "current",
+        "eventName": "Saraswati Puja 2026",
+        "eventDate": "February 1st, 2026",
+        "eventEndDate": "January 24th, 2026",
+        "eventImage": "./../../../assets/images/stocks/saraswati-2021.jpg",
+        "timming": "11:00 AM - 10:00 PM",
+        "venue": "J Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
+        "pageLink": "/saraswatipuja2026",
+        "description": "Saraswati Puja",
+        "mapUrl": ""
     }
 ]
