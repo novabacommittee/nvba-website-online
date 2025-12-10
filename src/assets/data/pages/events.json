@@ -1,5 +1,18 @@
 [
     { 
+        "eventId":29,
+        "eventType": "past",
+        "eventName": "Annual General Meeting (AGM) 2025",
+        "eventDate": "December 6th, 2025",
+        "eventEndDate": "December 6th, 2025",
+        "eventImage": "./../../../assets/images/stocks/agm.jpg",
+        "timming": "2:30 PM - 5:00 PM",
+        "venue": "Sterling Regional Library  22330 S Sterling Blvd, Sterling, VA 20164",
+        "pageLink": "",
+        "description": "Your participation is highly appreciated.",
+        "mapUrl": "https://maps.app.goo.gl/czVbyBMCz6nmdhDH8"
+    },
+    { 
         "eventId":26,
         "eventType": "past",
         "eventName": "Sarbojanin Durgotsob 2025",
@@ -352,19 +365,6 @@
         "pageLink": "/durgapuja2022",
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
         "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
-    },
-    { 
-        "eventId":29,
-        "eventType": "past",
-        "eventName": "Annual General Meeting (AGM) 2025",
-        "eventDate": "December 6th, 2025",
-        "eventEndDate": "December 6th, 2025",
-        "eventImage": "./../../../assets/images/stocks/agm.jpg",
-        "timming": "2:30 PM - 5:00 PM",
-        "venue": "Sterling Regional Library  22330 S Sterling Blvd, Sterling, VA 20164",
-        "pageLink": "",
-        "description": "Your participation is highly appreciated.",
-        "mapUrl": "https://maps.app.goo.gl/czVbyBMCz6nmdhDH8"
     },
     { 
         "eventId":30,

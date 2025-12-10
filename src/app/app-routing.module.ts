@@ -55,6 +55,8 @@ import { Kobipronam2025Component } from './pages/kobipronam2025/kobipronam2025.c
 import { Picnic2025Component } from './pages/picnic2025/picnic2025.component';
 import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.component';
 
+import { Saraswatipuja2026Component } from './pages/saraswatipuja2026/saraswatipuja2026.component';
+
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: 'full' }, 
   { path: "home", component: HomeComponent, pathMatch: 'full'  },
@@ -114,6 +116,8 @@ const routes: Routes = [
   { path: 'kobipronam2025', component: Kobipronam2025Component },
   { path: 'picnic2025', component: Picnic2025Component },
   { path: "durgapuja2025", component: Durgapuja2025Component, pathMatch: 'full'  },
+
+  { path: "saraswatipuja2026", component: Saraswatipuja2026Component, pathMatch: 'full'  },
 
 ];
 
