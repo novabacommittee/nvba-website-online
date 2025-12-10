@@ -355,7 +355,7 @@
     },
     { 
         "eventId":29,
-        "eventType": "current",
+        "eventType": "past",
         "eventName": "Annual General Meeting (AGM) 2025",
         "eventDate": "December 6th, 2025",
         "eventEndDate": "December 6th, 2025",
