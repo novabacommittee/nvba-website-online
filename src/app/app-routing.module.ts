@@ -56,6 +56,7 @@ import { Picnic2025Component } from './pages/picnic2025/picnic2025.component';
 import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.component';
 
 import { Saraswatipuja2026Component } from './pages/saraswatipuja2026/saraswatipuja2026.component';
+import { Pastteam2024To25Component } from './pages/archive/pastteam2024-25/pastteam2024-25.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: 'full' }, 
@@ -118,6 +119,7 @@ const routes: Routes = [
   { path: "durgapuja2025", component: Durgapuja2025Component, pathMatch: 'full'  },
 
   { path: "saraswatipuja2026", component: Saraswatipuja2026Component, pathMatch: 'full'  },
+  { path: "pastteam2024", component: Pastteam2024To25Component, pathMatch: 'full'  }
 
 ];
 

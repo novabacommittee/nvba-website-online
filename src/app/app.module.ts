@@ -94,6 +94,7 @@ import { Kobipronam2025Component } from './pages/kobipronam2025/kobipronam2025.c
 import { Poilabaishak2025Component } from './pages/poilabaishak2025/poilabaishak2025.component';
 import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.component';
 import { Saraswatipuja2026Component } from './pages/saraswatipuja2026/saraswatipuja2026.component';
+import { Pastteam2024To25Component } from './pages/archive/pastteam2024-25/pastteam2024-25.component';
 
 
 @NgModule({
@@ -161,7 +162,8 @@ import { Saraswatipuja2026Component } from './pages/saraswatipuja2026/saraswatip
     Kobipronam2025Component,
     Poilabaishak2025Component,
     Durgapuja2025Component,
-    Saraswatipuja2026Component
+    Saraswatipuja2026Component,
+    Pastteam2024To25Component
   ],
   imports: [
     BrowserModule,

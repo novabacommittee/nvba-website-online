@@ -31,4 +31,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 User name :- nvba1@sandbox.com
 Password:- nvbatesting
+https://development.d3q12bn6t7gtiz.amplifyapp.com/
+
 

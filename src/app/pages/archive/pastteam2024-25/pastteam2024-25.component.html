@@ -1,0 +1,36 @@
+<div class="wrapper" >
+
+    <div class="container p-3 pt-5" >
+        <div class="row no-gutters  align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }" style="filter: grayscale(100%) opacity(200%)" >
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> / <span>pastteam2024-25</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Our Team 2024-25</h1>
+            </div>
+        </div>
+    </div>
+
+    <section class="ftco-section bg-light">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-4 d-flex mb-sm-4 ftco-animate " *ngFor="let member of nvbaTeam" >
+                <div class="staff">
+                    <div class="d-flex mb-4">
+                        <div class="img" style="background-image: url({{member.img_url}});"></div>
+                        <div class="info ml-4">
+                            <h3>{{member.display_name}}</h3>
+                            <div class="position text mb-3">
+                                <p>{{member.designation}}</p>
+                                </div>
+                            <div class="text">
+                                <p><a target="_blank" href="{{member.facebook?member.facebook:member.linkedin}}">Social link to connect</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</div>
+
+<app-sponsers></app-sponsers>

@@ -1,0 +1,21 @@
+.hero-wrap {
+    width: 100%;
+    height: calc(40vh - 107px);
+    min-height: 100px;
+    position: relative;
+}
+
+.slider-text {
+    color: #fff;
+    height: calc(40vh - 107px);
+    p, span, h1, a {
+        color: #100f0f;
+    }
+}
+
+.slider-text .breadcrumbs {
+    text-transform: uppercase;
+
+    margin: 10px;
+}
+

@@ -88,22 +88,30 @@
         "child": [
             {
                 "pageId": "51",
-                "pageName": "Team 2022-23",
-                "pageLink": "pastteam2022",
+                "pageName": "Team 2024-25",
+                "pageLink": "pastteam2024",
                 "tag": "",
-                "description": "This is the Executive Committe for 2022-2023",
-                "child": null
-            },
-            {
-                "pageId": "51",
-                "pageName": "Team 2020-21",
-                "pageLink": "pastteam2020",
-                "tag": "",
-                "description": "This is the Executive Committe for 2020-2021",
+                "description": "This is the Executive Committee for 2024-2025",
                 "child": null
             },
             {
                 "pageId": "52",
+                "pageName": "Team 2022-23",
+                "pageLink": "pastteam2022",
+                "tag": "",
+                "description": "This is the Executive Committee for 2022-2023",
+                "child": null
+            },
+            {
+                "pageId": "53",
+                "pageName": "Team 2020-21",
+                "pageLink": "pastteam2020",
+                "tag": "",
+                "description": "This is the Executive Committee for 2020-2021",
+                "child": null
+            },
+            {
+                "pageId": "54",
                 "pageName": "Magazines",
                 "pageLink": "magazines",
                 "tag": "",
