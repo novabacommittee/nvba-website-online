@@ -1,5 +1,18 @@
 [
     { 
+        "eventId":31,
+        "eventType": "past",
+        "eventName": "Breakfast for Firefighter 2025",
+        "eventDate": "December 14th, 2025",
+        "eventEndDate": "December 14th, 2025",
+        "eventImage": "./../../../assets/images/stocks/firefighters.jpg",
+        "timming": "6:00 AM - 9:30 AM",
+        "venue": "4 Zones covering South Riding, Ashburn, Sterling, Reston",
+        "pageLink": "/cares",
+        "description": "We prepare and deliver Breakfast to our Firefighters expressing NVBA community member's gratitude to the firefighetr's service for the community.",
+        "mapUrl": ""
+    },
+    { 
         "eventId":29,
         "eventType": "past",
         "eventName": "Annual General Meeting (AGM) 2025",
@@ -100,7 +113,7 @@
         "timming": "11:00 AM - 10:00 PM",
         "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
         "pageLink": "/saraswatipuja2025",
-        "description": "Saraswati Puja",
+        "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, begali declicious food and cultural performances",
         "mapUrl": ""
     },
     { 
@@ -205,7 +218,7 @@
         "timming": "11:00 AM - 10:00 PM",
         "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
         "pageLink": "/saraswatipuja",
-        "description": "Saraswati Puja",
+        "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, begali declicious food and cultural performances",
         "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
     { 
@@ -324,7 +337,7 @@
         "timming": "11:00 AM - 5:00 PM",
         "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
         "pageLink": "/saraswatipuja",
-        "description": "Saraswati Puja   ",
+        "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, begali declicious food and cultural performances",
         "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
     { 
@@ -376,7 +389,7 @@
         "timming": "11:00 AM - 10:00 PM",
         "venue": "J Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
         "pageLink": "/saraswatipuja2026",
-        "description": "Saraswati Puja",
+        "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, begali declicious food and cultural performances",
         "mapUrl": "https://maps.app.goo.gl/ZS1Mni6M3NSxULzc9"
     }
 ]
