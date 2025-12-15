@@ -34,8 +34,6 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
   cartCheck: any;
   customClass = 'customClass';
   memberValidity : boolean = false;
-
-
   addtoCartBtn: boolean = true;
 
   private _jsonURLcart = '/assets/data/tickets/tickets-2026-SP-earlybird.json';
@@ -49,7 +47,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
   {
       this.cs.currentCart.subscribe( cartCheck => this.cartCheck = cartCheck);
       this.getJSON().subscribe((data: any) => {
-      console.log(data);
+//      console.log(data);
       this.dataObject = data;
 
       this.auth.member.subscribe( m => {
@@ -102,7 +100,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
     let tc = 0;
     
     [...this.dataObject].forEach(value => {
-      console.log(value);
+//      console.log(value);
       if(value.quantity > 0){ 
         if(!this.memberValidity)
         {
@@ -129,7 +127,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
   addToCartobj(){
     this.cs.items = [];
     this.dataObject.forEach((value:any) => {
-    console.log(value.quantity);
+//    console.log(value.quantity);
     if(value.quantity > 0){ 
         //console.log(value.quantity);
         if(!this.memberValidity)
@@ -138,7 +136,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
             value.price = value.price+5;
         }
         this.cs.items.push(value);
-        console.log(value);
+//        console.log(value);
      } 
     });
     this.cs.addToCart(this.cs.items);

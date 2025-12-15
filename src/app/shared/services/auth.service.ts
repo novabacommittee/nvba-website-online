@@ -7,7 +7,6 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Observable, BehaviorSubject, observable } from 'rxjs';
-import { Member } from './../member/member';
 import { Router } from '@angular/router';
 import { MemberService } from './../member/member.service';
 import { ToastrService } from 'ngx-toastr';

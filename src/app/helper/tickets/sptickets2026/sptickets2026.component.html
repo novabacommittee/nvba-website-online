@@ -5,6 +5,7 @@
         If you are already a member and your membership expired please renew membership, to avail discounted member rate, before purchasing event ticket(s).
     </h5>
 </div>
+
 <div *ngIf="!memberValidity" id="earlyBirdWithoutcul" class="col-md-12 pt-5">
     <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Annual Membership fees: $30 per family.</b> </div>
     <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
@@ -22,7 +23,7 @@
     </p> 
 
     <accordion [isAnimated]="true" [closeOthers]="false" >
-        <accordion-group style="overflow-wrap: break-word;" heading="Already a member? Buy ticket with membership price"  >
+        <accordion-group style="overflow-wrap: break-word;" heading="Already a member? Buy ticket with members price"  >
             <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
             <table class="table table-bordered table-hover" >
                 <thead>
@@ -34,7 +35,6 @@
                     </tr>
                 </thead>
                 <tbody *ngFor="let item of dataObject; index as i" >
-                    
                     <tr *ngIf="i < 5">
                         <th>{{item.description}}</th>
                         <td>$ {{item.price}}</td>
@@ -70,7 +70,6 @@
                     </tr>
                 </thead>
                 <tbody *ngFor="let item of dataObject; index as i" >
-                    
                     <tr *ngIf="i < 5">
                         <th>{{item.description}}</th>
                         <td>
