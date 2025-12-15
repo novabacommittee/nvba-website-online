@@ -1,11 +1,11 @@
+<div>
+    <h5>
+        Saraswati Puja 2026 Earlybird tickets are available now.<br />
+        If you are not a member of NVBA, please register with annual membership fees to avail discounted member rate, before purchasing event ticket(s).<br />
+        If you are already a member and your membership expired please renew membership, to avail discounted member rate, before purchasing event ticket(s).
+    </h5>
+</div>
 <div *ngIf="!memberValidity" id="earlyBirdWithoutcul" class="col-md-12 pt-5">
-    <!-- <p class=" text-center" style="color: #848484;"> -->
-        <h5>
-            Saraswati Puja 2026 Earlybird tickets are available now.<br />
-            If you are not a member of NVBA, please register with annual membership fees to avail discounted member rate, before purchasing event ticket(s).<br />
-            If you are already a member and your membership expired please renew membership, to avail discounted member rate, before purchasing event ticket(s).
-        </h5>
-    <!-- </p> -->
     <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Annual Membership fees: $30 per family.</b> </div>
     <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
 
