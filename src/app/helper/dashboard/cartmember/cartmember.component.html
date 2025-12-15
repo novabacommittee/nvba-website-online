@@ -1,10 +1,28 @@
 <div class="row wrapper"   >
+
+    <div class="flex-column row ">
+        <div style="font-weight: bold; font-size: 2.2em;color: #848484; text-align: center;" ><span class=" text-primary ">*</span><b>Membership Benefits:</b> </div>
+        <ul  style=" color: #848484; text-align: center;"> 
+            <li>
+                <h5>Access to year round member only events like Saraswati Puja,Kobi Pronam, Nobo Borsho celebrations, Annual Picnic,Durga Puja, NVBA hosted musical concerts  etc.</h5>
+            </li>
+            <li>
+                <h5>Access to Early Bird discounted tickets for events.</h5>
+            </li>
+            <li>
+                <h5>Can participate/perform in Cultural programs during Kobi Pronam, Saraswati Puja.</h5>
+            </li>
+            <li>
+                <h5>Registered members have voting rights at the elections.</h5>
+            </li>
+        </ul>
+        <!-- <p class=" text-center ">
+            <b> Helpline number :- +1 (512) 412-9841 [ Call or SMS ] </b>
+        </p> -->
+
+    </div>
+
     <div *ngIf="!memberValidity" class="col-md-12 pt-5" id="cartmember"  >
-        <p class=" text-center" style="color: #848484;">
-            Saraswati Puja 2026 tickets are exclusively available for members.<br />
-             If you are already a member, kindly check your membership status and renew membership if it has expired,
-             before booking your ticket for Saraswati Puja 2026.  
-        </p>
         <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Membership fees: $30 per family.</b> </div>
            
         <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
@@ -14,30 +32,16 @@
 
         <button *ngIf="!this.member?.expires" (click)="addToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
             NVBA Annual Membership</button>
-
-        <div class="flex-column row ">
-            <div style="font-weight: bold; font-size: 2.2em;color: #848484; text-align: center;" ><span class=" text-primary ">*</span><b>Membership Benefits:</b> </div>
-            <ul  style=" color: #848484; text-align: center;"> 
-                <li>
-                    Access to year round member only events like Saraswati Puja,Kobi Pronam, Nobo Borsho celebrations, Annual Picnic,Durga Puja, NVBA hosted musical concerts  etc.
-                </li>
-                <li>
-                    Access to Early Bird discounted tickets for events.
-                </li>
-                <li>
-                    Can participate/perform in Cultural programs during Kobi Pronam, Saraswati Puja.
-                </li>
-                <li>
-                    Registered members have voting rights at the elections.
-                </li>
-            </ul>
-            <!-- <p class=" text-center ">
-               <b> Helpline number :- +1 (512) 412-9841 [ Call or SMS ] </b>
-            </p> -->
-        </div>
+        <br/>
+        <br/>
     </div>
     <div *ngIf="memberValidity" class="col-md-12 pt-3 ">
         <div  class=" " style="text-align: center; " >Membership Expiration Date : {{this.member.expires | date:'d-MMM-yyyy '  }}
         </div>
     </div>
+    <h5>
+        Saraswati Puja 2026 Earlybird tickets are available now.<br />
+        If you are not a member of NVBA, please register with annual membership fees to avail discounted member rate, before purchasing event ticket(s).<br />
+        If you are already a member and your membership expired please renew membership, to avail discounted member rate, before purchasing event ticket(s).
+    </h5>
 </div>
