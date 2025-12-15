@@ -142,8 +142,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
      } 
     });
     this.cs.addToCart(this.cs.items);
-    //if(this.memberValidity)
-      this.router.navigate(['/checkout']);
+    this.router.navigate(['/checkout']);
   }
 
   clearCart(){
