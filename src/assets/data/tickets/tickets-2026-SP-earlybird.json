@@ -12,7 +12,7 @@
         "name": "NVBA Saraswati Puja 2026 Ticket Adults Veg",
         "description": "Adults -  Veg",
         "quantity": 0,
-        "price": 45,
+        "price": 40,
         "tax": 0,
         "sku": "SP2026EBVEGADULT",
         "currency": "USD" 
@@ -30,7 +30,7 @@
         "name": "NVBA Saraswati Puja 2026 Ticket Other Veg",
         "description": "Teens [ 11 to 18 years ] / Visiting Parents / Students Veg",
         "quantity": 0,
-        "price": 35,
+        "price": 30,
         "tax": 0,
         "sku": "SP2026EBVEGOTHER",
         "currency": "USD"

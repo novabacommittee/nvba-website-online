@@ -95,6 +95,7 @@ import { Poilabaishak2025Component } from './pages/poilabaishak2025/poilabaishak
 import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.component';
 import { Saraswatipuja2026Component } from './pages/saraswatipuja2026/saraswatipuja2026.component';
 import { Pastteam2024To25Component } from './pages/archive/pastteam2024-25/pastteam2024-25.component';
+import { SPtickets2026Component } from './helper/tickets/sptickets2026/sptickets2026.component';
 
 
 @NgModule({
@@ -163,7 +164,8 @@ import { Pastteam2024To25Component } from './pages/archive/pastteam2024-25/pastt
     Poilabaishak2025Component,
     Durgapuja2025Component,
     Saraswatipuja2026Component,
-    Pastteam2024To25Component
+    Pastteam2024To25Component,
+    SPtickets2026Component
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,8 @@ export class CheckoutComponent implements OnInit {
   member:any;
   move:boolean = false;
   currentPurches: any =[];
+  memberValidity : boolean = false;
+  currentDate:any;
 
   public payPalConfig ? : IPayPalConfig;
 
@@ -42,18 +44,29 @@ export class CheckoutComponent implements OnInit {
 
       this.userService.cast.subscribe( m => {
         this.member = m;
-        //console.log(this.member);
+
+        this.currentDate = moment();
+          
+        if(moment(this.member.expires).isAfter(this.currentDate) )
+        {
+            this.memberValidity = true;
+        }
+        else
+        {
+            this.memberValidity = false;
+        }
+        console.log(this.member);
       });
 
       this.cart.currentCart.subscribe( (cartCheck) => this.cartCheck = cartCheck);
       //console.log(this.cartCheck.length);
-      //console.log(this.cart.getItems());
+      console.log(this.cart.getItems());
     }
 
   private calculateSubtotal(): void {
     this.subtotal = 0;
     this.cartCheck.forEach((item: any) => {
-      this.subtotal += parseFloat(item.price) * parseFloat(item.quantity);
+        this.subtotal += parseFloat(item.price) * parseFloat(item.quantity);
     });
     this.emptyCart = this.cartCheck.length > 0;
   }
@@ -107,11 +120,11 @@ export class CheckoutComponent implements OnInit {
         // Optionally clear cart or redirect
         if(data.status == 'COMPLETED')
         {
-          const items = data?.purchase_units?.[0]?.items;
-          if(items)
-          {
-            items.forEach(item => 
+            const items = data?.purchase_units?.[0]?.items;
+            if(items)
             {
+              items.forEach(item => 
+              {
                 console.log('Item:', item.name, item.sku, item.quantity, item.unit_amount.value);
                 if(item.name == 'NVBA Annual Membership' )
                 {
@@ -159,7 +172,7 @@ export class CheckoutComponent implements OnInit {
             this.cleanup();
     
             setTimeout(()=>{                           
-              this.router.navigate(['/durgapuja2025']);
+              this.router.navigate(['/saraswatipuja2026']);
             }, 2000);
           }
         }

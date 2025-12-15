@@ -13,16 +13,11 @@ export class CartService {
 
   private cartvalue = new BehaviorSubject<any>('');
   currentCart = this.cartvalue.asObservable();
-  
 
-  // addToCart(prod: object){
-  //   this.cartvalue.next(prod);
-  // }
-
-  addToCart(product:any) { // ////console.log(product);
-    ////console.log(product);
+  addToCart(product:any) { 
+    //console.log(product);
     this.items = [...product];
- //   ////console.log(this.items);
+    //console.log(this.items);
     this.cartvalue.next(this.items);
   }
 
@@ -32,7 +27,7 @@ export class CartService {
 
   clearCart() {
     this.items = [];
-  //  ////console.log(" Clean Cart "+this.items);
+    //console.log(" Clean Cart "+this.items);
     return this.items;
   }
 
