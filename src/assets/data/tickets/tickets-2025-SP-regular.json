@@ -5,7 +5,7 @@
     "quantity": 0,
     "price": 55,
     "tax": 0,
-    "sku": "SP2025EBNVADULT",
+    "sku": "SP2025NVADULTREGULAR",
     "currency": "USD" 
   },
   {
@@ -14,7 +14,7 @@
     "quantity": 0,
     "price": 50,
     "tax": 0,
-    "sku": "SP2025EBVEGADULT",
+    "sku": "SP2025VEGADULTREGULAR",
     "currency": "USD" 
   },
   {
@@ -23,7 +23,7 @@
     "quantity": 0,
     "price": 45,
     "tax": 0,
-    "sku": "SP2025EBNVOTHER",
+    "sku": "SP2025NVOTHERREGULAR",
     "currency": "USD"
   },
   {
@@ -32,7 +32,7 @@
     "quantity": 0,
     "price": 40,
     "tax": 0,
-    "sku": "SP2025EBVEGOTHER",
+    "sku": "SP2025VEGOTHERREGULAR",
     "currency": "USD"
   },
   {
@@ -41,7 +41,7 @@
     "quantity": 0,
     "price": 0,
     "tax": 0,
-    "sku": "SP2025EBKIDS",
+    "sku": "SP2025KIDSREGULAR",
     "currency": "USD" 
   }
 ]

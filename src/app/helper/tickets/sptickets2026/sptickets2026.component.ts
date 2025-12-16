@@ -26,6 +26,16 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
   expired:any;
   currentDate:any;
 
+  private  priorityPassCart = [{
+    "name": "NVBA Saraswati Puja 2026 Priority Pass(Skip line at registration, food and auditorium priority seating for everyone)",
+    "description": "Priority Pass - 2026",
+    "quantity": 1,
+    "price": 0,
+    "tax": 0,
+    "sku": "SP2026PRPASS",
+    "currency": "USD" 
+  }];
+
   member:any;
 
   dataObject :any=[];
@@ -105,21 +115,15 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
       if(value.quantity > 0){
         if(!this.memberValidity)
         {
-          if(value.sku != 'SP2026EBKIDS')
+          if(value.sku != 'SP2026EBKIDS' && value.sku != 'SP2026KIDSREGULAR')
             tc += ((value.price+5) * value.quantity);
           else
             tc += (value.price * value.quantity);
         }
         else
           tc += (value.price * value.quantity);
-        
-        if(this.priorityPassChecked && value.sku != 'SP2026EBKIDS')
-          tc += (value.quantity * 5);
-        else if(!this.priorityPassChecked)
-          tc -= (value.quantity * 5);
       }
     });
-    
     this.totalCost = tc;
     this.cdr.detectChanges();
   }
@@ -129,22 +133,33 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
     this.cs.addToCart(this.memberCart); 
     this.router.navigate(['/checkout']);
   }
-  
+
   addToCartobj(){
+    let ticketCount = 0;
     this.cs.items = [];
     this.dataObject.forEach((value:any) => {
 //    console.log(value.quantity);
-    if(value.quantity > 0){ 
-        //console.log(value.quantity);
-        if(!this.memberValidity)
-        {
-          if(value.sku != 'SP2026EBKIDS')
-            value.price = value.price+5;
-        }
-        this.cs.items.push(value);
-//        console.log(value);
-     } 
+      if(value.quantity > 0){ 
+          //console.log(value.quantity);
+          if(!this.memberValidity)
+          {
+            if(value.sku != 'SP2026EBKIDS' && value.sku != 'SP2026KIDSREGULAR')
+              value.price = value.price+5;
+          }
+          this.cs.items.push(value);
+  //        console.log(value);
+          if(value.sku != 'SP2026EBKIDS' && value.sku != 'SP2026KIDSREGULAR')
+            ticketCount += value.quantity;
+      }
     });
+
+    if(this.priorityPassChecked && ticketCount > 0){
+        this.priorityPassCart.forEach((value:any) => {
+          value.price = (ticketCount * 5);
+          this.cs.items.push(value);
+        });
+    }
+
     this.cs.addToCart(this.cs.items);
     this.router.navigate(['/checkout']);
   }
