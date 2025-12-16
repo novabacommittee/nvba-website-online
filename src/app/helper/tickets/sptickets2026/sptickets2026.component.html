@@ -1,8 +1,9 @@
 <div>
-    <h5>
+    <h5 class="green">
         Saraswati Puja 2026 Earlybird tickets are available now.<br />
-        If you are not a member of NVBA, please register with annual membership fees to avail discounted member rate, before purchasing event ticket(s).<br />
-        If you are already a member and your membership expired please renew membership, to avail discounted member rate, before purchasing event ticket(s).
+        If you are not a member of NVBA, please register with annual membership fees to avail Members rate.<br />
+        If you are already a member and your membership expired please renew membership, to avail Members rate.<br />
+        You can purcahse event ticket without getting membership with Non-Members rate.
     </h5>
 </div>
 
@@ -23,7 +24,7 @@
     </p> 
 
     <accordion [isAnimated]="true" [closeOthers]="false" >
-        <accordion-group style="overflow-wrap: break-word;" heading="Already a member? Buy ticket with members price"  >
+        <accordion-group *ngIf="memberValidity" style="overflow-wrap: break-word;" heading="Buy ticket with Members rate"  >
             <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
             <table class="table table-bordered table-hover" >
                 <thead>
@@ -58,7 +59,7 @@
             </div> 
         </accordion-group>
 
-        <accordion-group style="overflow-wrap: break-word;" heading="Not a member? Buy ticket as guest"  >
+        <accordion-group *ngIf="!memberValidity" style="overflow-wrap: break-word;" heading="Buy ticket with Non-Members rate" >
             <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
             <table class="table table-bordered table-hover" >
                 <thead>

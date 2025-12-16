@@ -19,7 +19,7 @@
       },
       {
         "name": "NVBA Saraswati Puja 2026 Ticket Other Non-Veg",
-        "description": "Teens [ 11 to 18 years ] / Visiting Parents / Students Non-Veg",
+        "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg",
         "quantity": 0,
         "price": 35,
         "tax": 0,
@@ -28,7 +28,7 @@
       },
       {
         "name": "NVBA Saraswati Puja 2026 Ticket Other Veg",
-        "description": "Teens [ 11 to 18 years ] / Visiting Parents / Students Veg",
+        "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg",
         "quantity": 0,
         "price": 30,
         "tax": 0,
@@ -37,7 +37,7 @@
       },
       {
         "name": "NVBA Saraswati Puja 2026 Ticket Kids Below 10",
-        "description": "Kids meal for age group [ 0 - 10 years ]",
+        "description": "Kids for age group [ 0 - 10 years ]",
         "quantity": 0,
         "price": 0,
         "tax": 0,

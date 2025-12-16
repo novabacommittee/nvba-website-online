@@ -1,188 +1,188 @@
 [
   {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days(Non-Veg)",
+      "name": "NVBA Durga Puja 2025 Ticket - All 3 days(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
       "price": 115,
       "tax": 0.00,
-      "sku": "DP2024ALL01NONREGULAR",
+      "sku": "DP2025ALL01NONREGULAR",
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days(Veg)",
+      "name": "NVBA Durga Puja 2025 Ticket - All 3 days(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
       "price": 115,
       "tax": 0.00,
-      "sku": "DP2024ALL02VEGREGULAR",
+      "sku": "DP2025ALL02VEGREGULAR",
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days(Non-Veg)",
-      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Non-Veg",
+      "name": "NVBA Durga Puja 2025 Ticket - All 3 days(Non-Veg)",
+      "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg",
       "quantity": 0,
       "price": 65,
       "tax": 0.00,
-      "sku": "DP2024ALL03NONREGULAR",
+      "sku": "DP2025ALL03NONREGULAR",
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - All 3 days(Veg)",
-      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Veg",
+      "name": "NVBA Durga Puja 2025 Ticket - All 3 days(Veg)",
+      "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg",
       "quantity": 0,
       "price": 65,
       "tax": 0.00,
-      "sku": "DP2024ALL04VEGREGULAR",
+      "sku": "DP2025ALL04VEGREGULAR",
       "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2024 Ticket - All 3 days",
+    "name": "NVBA Durga Puja 2025 Ticket - All 3 days",
     "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
-    "sku": "DP2024ALL05KIDREGULAR",
+    "sku": "DP2025ALL05KIDREGULAR",
     "currency": "USD"
   },
 
 
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Friday Only(Non-Veg)",
+      "name": "NVBA Durga Puja 2025 Ticket - Friday Only(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
       "price": 105,
       "tax": 0.00,
-      "sku": "DP2024FRI01NONREGULAR",
+      "sku": "DP2025FRI01NONREGULAR",
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Friday Only(Veg)",
+      "name": "NVBA Durga Puja 2025 Ticket - Friday Only(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
       "price": 105,
       "tax": 0.00,
-      "sku": "DP2024FRI02VEGREGULAR",
+      "sku": "DP2025FRI02VEGREGULAR",
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Friday Only(Non-Veg)",
-      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Non-Veg",
+      "name": "NVBA Durga Puja 2025 Ticket - Friday Only(Non-Veg)",
+      "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg",
       "quantity": 0,
       "price": 45,
       "tax": 0.00,
-      "sku": "DP2024FRI03NONREGULAR",
+      "sku": "DP2025FRI03NONREGULAR",
       "currency": "USD"
   },
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Friday Only",
-      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Veg",
+      "name": "NVBA Durga Puja 2025 Ticket - Friday Only",
+      "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg",
       "quantity": 0,
       "price": 45,
       "tax": 0.00,
-      "sku": "DP2024FRI04VEGREGULAR",
+      "sku": "DP2025FRI04VEGREGULAR",
       "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2024 Ticket - Friday Only(Veg)",
+    "name": "NVBA Durga Puja 2025 Ticket - Friday Only(Veg)",
     "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
-    "sku": "DP2024FRI05KIDREGULAR",
+    "sku": "DP2025FRI05KIDREGULAR",
     "currency": "USD"
   },
 
 
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only(Non-Veg)",
+      "name": "NVBA Durga Puja 2025 Ticket - Saturday Only(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
       "price": 105,
       "tax": 0.00,
-      "sku": "DP2024SAT01NONREGULAR",
+      "sku": "DP2025SAT01NONREGULAR",
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
+      "name": "NVBA Durga Puja 2025 Ticket - Saturday Only",
       "description": "Adult Veg",
       "quantity": 0,
       "price": 105,
       "tax": 0.00,
-      "sku": "DP2024SAT02VEGREGULAR",
+      "sku": "DP2025SAT02VEGREGULAR",
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only(Non-Veg)",
-      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents - Non-Veg.",
+      "name": "NVBA Durga Puja 2025 Ticket - Saturday Only(Non-Veg)",
+      "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg",
       "quantity": 0,
       "price": 45,
       "tax": 0.00,
-      "sku": "DP2024SAT03NONREGULAR",
+      "sku": "DP2025SAT03NONREGULAR",
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Saturday Only(Veg)",
-      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents - Veg.",
+      "name": "NVBA Durga Puja 2025 Ticket - Saturday Only(Veg)",
+      "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg",
       "quantity": 0,
       "price": 45,
       "tax": 0.00,
-      "sku": "DP2024SAT04VEGREGULAR",
+      "sku": "DP2025SAT04VEGREGULAR",
       "currency": "USD"
     },
   {
-    "name": "NVBA Durga Puja 2024 Ticket - Saturday Only",
+    "name": "NVBA Durga Puja 2025 Ticket - Saturday Only",
     "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
-    "sku": "DP2024SAT05KIDREGULAR",
+    "sku": "DP2025SAT05KIDREGULAR",
     "currency": "USD"
   },
 
 
   {
-      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only(Non-Veg)",
+      "name": "NVBA Durga Puja 2025 Ticket - Sunday Only(Non-Veg)",
       "description": "Adult Non-Veg",
       "quantity": 0,
       "price": 105,
       "tax": 0.00,
-      "sku": "DP2024SUN01NONREGULAR",
+      "sku": "DP2025SUN01NONREGULAR",
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only(Veg)",
+      "name": "NVBA Durga Puja 2025 Ticket - Sunday Only(Veg)",
       "description": "Adult Veg",
       "quantity": 0,
       "price": 105,
       "tax": 0.00,
-      "sku": "DP2024SUN02VEGREGULAR",
+      "sku": "DP2025SUN02VEGREGULAR",
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only(Non-Veg)",
-      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Non-Veg",
+      "name": "NVBA Durga Puja 2025 Ticket - Sunday Only(Non-Veg)",
+      "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg",
       "quantity": 0,
       "price": 45,
       "tax": 0.00,
-      "sku": "DP2024SUN03NONREGULAR",
+      "sku": "DP2025SUN03NONREGULAR",
       "currency": "USD"
     },
     {
-      "name": "NVBA Durga Puja 2024 Ticket - Sunday Only(Veg)",
-      "description": "Kids [ 11 to 18 years ], Students(Please bring your Student ID at venue) and Visiting Parents Veg",
+      "name": "NVBA Durga Puja 2025 Ticket - Sunday Only(Veg)",
+      "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg",
       "quantity": 0,
       "price": 45,
       "tax": 0.00,
-      "sku": "DP2024SUN04VEGREGULAR",
+      "sku": "DP2025SUN04VEGREGULAR",
       "currency": "USD"
     },
   {
-    "name": "NVBA Durga Puja 2024 Ticket - Sunday Only",
+    "name": "NVBA Durga Puja 2025 Ticket - Sunday Only",
     "description": "Kids [ 0 to 10 years ]",
     "quantity": 0,
     "price": 0,
     "tax": 0.00,
-    "sku": "DP2024SUN05KIDREGULAR",
+    "sku": "DP2025SUN05KIDREGULAR",
     "currency": "USD"
   }
 ]
