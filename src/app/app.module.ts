@@ -96,6 +96,7 @@ import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.comp
 import { Saraswatipuja2026Component } from './pages/saraswatipuja2026/saraswatipuja2026.component';
 import { Pastteam2024To25Component } from './pages/archive/pastteam2024-25/pastteam2024-25.component';
 import { SPtickets2026Component } from './helper/tickets/sptickets2026/sptickets2026.component';
+import { CollapseModule } from "ngx-bootstrap/collapse";
 
 
 @NgModule({
@@ -180,18 +181,19 @@ import { SPtickets2026Component } from './helper/tickets/sptickets2026/sptickets
     ReactiveFormsModule,
     FormsModule,
     ToastrModule.forRoot({
-      timeOut: 50000,
-      positionClass: 'toast-top-center',
-      closeButton: true,
-      preventDuplicates: true,
+        timeOut: 50000,
+        positionClass: 'toast-top-center',
+        closeButton: true,
+        preventDuplicates: true,
     }), // ToastrModule added
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
     AccordionModule.forRoot(),
     NgxPayPalModule,
     AgGridModule,
-    QRCodeModule
-  ],
+    QRCodeModule,
+    CollapseModule
+],
   providers: [GetjsonfileService, AuthService ],
   bootstrap: [AppComponent]
 })

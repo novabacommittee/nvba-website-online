@@ -25,7 +25,7 @@
     </p> 
 
     <accordion [isAnimated]="true" [closeOthers]="false" >
-        <accordion-group *ngIf="memberValidity" style="overflow-wrap: break-word;" heading="Buy ticket with Members rate"  >
+        <accordion-group *ngIf="memberValidity" [isOpen]="true" style="overflow-wrap: break-word;" heading="Buy ticket with Members rate"  >
             <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
             <table class="table table-bordered table-hover" >
                 <thead>
@@ -76,7 +76,7 @@
             </div> 
         </accordion-group>
 
-        <accordion-group *ngIf="!memberValidity" style="overflow-wrap: break-word;" heading="Buy ticket with Non-Members rate" >
+        <accordion-group *ngIf="!memberValidity" [isOpen]="true" style="overflow-wrap: break-word;" heading="Buy ticket with Non-Members rate" >
             <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
             <table class="table table-bordered table-hover" >
                 <thead>
