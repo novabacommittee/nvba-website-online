@@ -162,7 +162,6 @@
 <div class="card-Body border" id="orderHistoryTab"  >
 
   <!-- Description -->
- <!-- <h6 class="heading-small text-muted mb-4">Order History</h6> -->
  <button (click)="showMyContainer=!showMyContainer" *ngIf="!showMyContainer" class="btn btn-sm btn-primary" >Show All Orders</button>
  <button (click)="showMyContainer=!showMyContainer" *ngIf="showMyContainer" class="btn btn-sm btn-primary" >Hide All Orders</button>
   <div *ngIf="showMyContainer">
@@ -172,6 +171,16 @@
             <div *ngFor="let items of member?.purchase " >
 
               <table class="table table-hover  mb-2"  >
+                <thead>
+                  <tr style="background-color: #ff8d00;">
+                      <th scope="col">Item Description</th>
+                      <th scope="col">Purchase Date</th>
+                      <th scope="col">Cost</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Total</th>
+                  </tr>
+                </thead>
+
                 <tbody>
                 <tr *ngFor="let item of items ">
                     <td width="60%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>

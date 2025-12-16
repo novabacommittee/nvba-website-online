@@ -172,7 +172,8 @@ export class CheckoutComponent implements OnInit {
             this.cleanup();
     
             setTimeout(()=>{                           
-              this.router.navigate(['/membership']);
+              //this.router.navigate(['/membership?#orderHistory']);
+              this.router.navigate(['/membership'], { queryParams: { tab: 'orderHistory' } });
             }, 2000);
           }
         }
