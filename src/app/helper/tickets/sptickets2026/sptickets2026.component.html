@@ -47,6 +47,22 @@
                 
                 <thead>
                     <tr>
+                    <th scope="col">
+                        <input
+                            type="checkbox"
+                            style="width:50px"
+                            (change)="onRowChecked('Terms', $event)"
+                        />
+                        Priority Pass [Skip the queue during registration, all meals and priority sitting at the auditorium]
+                    </th>
+                    <th scope="col"></th>
+                    <th scope="col" ></th>
+                    <th  scope="col"></th> 
+                    </tr>
+                </thead>
+
+                <thead>
+                    <tr>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col" ><div class="d-flex justify-content-end">Total</div></th>
@@ -85,6 +101,22 @@
                         </td>
                     </tr>
                 </tbody>
+
+                <thead>
+                    <tr>
+                    <th scope="col">
+                        <input
+                            type="checkbox"
+                            style="width:50px"
+                            (change)="onRowChecked('PriorityPass', $event)"
+                        />
+                        Priority Pass [Skip the queue during registration, all meals and priority sitting at the auditorium]
+                    </th>
+                    <th scope="col"></th>
+                    <th scope="col" ></th>
+                    <th  scope="col"></th> 
+                    </tr>
+                </thead>
                 
                 <thead>
                     <tr>

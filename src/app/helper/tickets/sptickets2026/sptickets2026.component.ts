@@ -35,6 +35,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
   customClass = 'customClass';
   memberValidity : boolean = false;
   addtoCartBtn: boolean = true;
+  priorityPassChecked: boolean = false;
 
   private _jsonURLcart = '/assets/data/tickets/tickets-2026-SP-earlybird.json';
 
@@ -100,8 +101,8 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
     let tc = 0;
     
     [...this.dataObject].forEach(value => {
-//      console.log(value);
-      if(value.quantity > 0){ 
+      console.log(value.quantity);
+      if(value.quantity > 0){
         if(!this.memberValidity)
         {
           if(value.sku != 'SP2026EBKIDS')
@@ -111,6 +112,11 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
         }
         else
           tc += (value.price * value.quantity);
+        
+        if(this.priorityPassChecked && value.sku != 'SP2026EBKIDS')
+          tc += (value.quantity * 5);
+        else if(!this.priorityPassChecked)
+          tc -= (value.quantity * 5);
       }
     });
     
@@ -148,5 +154,10 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
     [...this.dataObject].forEach(value => {
       value.quantity = 0;
     });
+  }
+
+  onRowChecked(label: string, event: Event) {
+    this.priorityPassChecked = (event.target as HTMLInputElement).checked;
+    console.log(label, this.priorityPassChecked);
   }
 }

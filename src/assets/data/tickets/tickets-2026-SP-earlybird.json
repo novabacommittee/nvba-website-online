@@ -43,14 +43,5 @@
         "tax": 0,
         "sku": "SP2026EBKIDS",
         "currency": "USD" 
-      },
-      {
-        "name": "NVBA Saraswati Puja 2026 Priority Pass",
-        "description": "Priority Pass [Skip the queue during registration, all meals and priority sitting at the auditorium]",
-        "quantity": 0,
-        "price": 5,
-        "tax": 0,
-        "sku": "SP2026PRIORITYPASS",
-        "currency": "USD"
       }
 ]
