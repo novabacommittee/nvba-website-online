@@ -37,7 +37,7 @@
                     </tr>
                 </thead>
                 <tbody *ngFor="let item of dataObject; index as i" >
-                    <tr *ngIf="i < 6">
+                    <tr *ngIf="i < 5">
                         <th>{{item.description}}</th>
                         <td>$ {{item.price}}</td>
                         <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
@@ -88,11 +88,11 @@
                     </tr>
                 </thead>
                 <tbody *ngFor="let item of dataObject; index as i" >
-                    <tr *ngIf="i < 6">
+                    <tr *ngIf="i < 5">
                         <th>{{item.description}}</th>
                         <td>
                             <span *ngIf="item.sku === 'SP2026EBKIDS'">$ {{item.price}}</span>
-                            <span *ngIf="item.sku != 'SP2026EBKIDS'">$ {{item.price+5}}</span>
+                            <span *ngIf="item.sku != 'SP2026EBKIDS'">$ {{item.price+15}}</span>
                         </td>
                         <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
                         <td>
@@ -102,7 +102,7 @@
                     </tr>
                 </tbody>
 
-                <thead>
+                <!-- <thead>
                     <tr>
                     <th scope="col">
                         <input
@@ -116,7 +116,7 @@
                     <td scope="col" ></td>
                     <td scope="col"></td> 
                     </tr>
-                </thead>
+                </thead> -->
                 
                 <thead>
                     <tr>
