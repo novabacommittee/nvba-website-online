@@ -21,8 +21,12 @@
 <div id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
     <p  class="red" style="font-weight: bold;">
         Please note - Membership rates are valid exclusively for members and their family members<br/>
-        &ast; Tickets are required for food, local cultural performances and program with external artist for everyone, including kids (0 to 10 years).
+        &ast; Tickets are required for food, local cultural performances and program with external artist for everyone, including kids (0 to 10 years).<br/>
     </p> 
+
+    <p class="red" *ngIf="memberValidity" style="font-weight: bold;">
+        Priority access tickets are limited and subject to availability - secure yours early.
+    </p>
 
     <accordion [isAnimated]="true" [closeOthers]="false" >
         <accordion-group *ngIf="memberValidity" [isOpen]="true" style="overflow-wrap: break-word;" heading="Buy ticket with Members rate"  >
@@ -53,7 +57,7 @@
                             style="width:50px"
                             (change)="onRowChecked('PriorityPass', $event)"
                         />
-                        Priority Pass [Skip the queue during registration, all meals and priority sitting at the auditorium]
+                        Pay additional $5/ticket to enjoy Priority Access [Skip the queue during registration, all meals and priority seating at the auditorium]
                     </th>
                     <th scope="col"></th>
                     <th scope="col" ></th>
