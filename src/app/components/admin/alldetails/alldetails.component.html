@@ -10,8 +10,87 @@
     </div>
 
     <div class="container" >
-        <h3 class="text-center mt-3 mb-2 " >Durga Puja-2025 Ticket Sell Summary</h3>
+        <h3 class="text-center mt-3 mb-2 " >Membership Summary for last 4 years</h3>
         <div>
+            <!-- NVBA Membership Summary Report -->
+            <table class="table table-bordered " >
+              <tr>
+                    <th>Total Annual Membership - 2022 </th>
+                    <th>{{MM2022YY}}</th>
+              </tr>  
+              <tr>
+                    <th>Total Annual Membership - 2023 </th>
+                    <th>{{MM2023YY}}</th>
+              </tr>  
+              <tr>
+                    <th>Total Annual Membership - 2024 </th>
+                    <th>{{MM2024YY}}</th>
+              </tr>  
+              <tr>
+                    <th>Total Annual Membership - 2025 </th>
+                    <th>{{MM2025YY}}</th>
+              </tr>  
+            </table>
+
+            <h3 class="text-center mt-3 mb-2 " >Saraswati Puja-2026 Ticket Sell Summary(January 24th, 2026)</h3>
+            <!-- Saraswati Puja 2026 Food Summary Report -->
+            <table class="table table-bordered " >
+                <tr>
+                  <th class="d-flex justify-content-around">Ticket Details</th>
+                  <th>
+                    <div class="d-flex justify-content-around">
+                        <div class="red" >Non Veg</div>
+                        <div class="green">Veg</div>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <th>Adult</th>
+                  <td>
+                      <div class="d-flex justify-content-around ">
+                          <div class="red" >{{SP2026EBNVADULT}}</div>
+                          <div class="green">{{SP2026EBVEGADULT}}</div>
+                     </div> 
+                  </td>
+                </tr>
+                <tr>
+                  <th>Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID</th>
+                  <td>
+                      <div class="d-flex justify-content-around ">
+                          <div class="red" >{{SP2026EBNVOTHER}}</div>
+                          <div class="green">{{SP2026EBVEGOTHER}}</div>
+                      </div>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <th>Kids for age group [ 0 - 10 years ]</th>
+                  <td>
+                      <div class="d-flex justify-content-around ">
+                          <div >{{SP2026EBKIDS}}</div>
+                      </div>
+                  </td>
+                </tr>
+                <tr class=" bg-light " >
+                  <th>Total (without kids count)</th>
+                    <th>
+                      <div class="d-flex justify-content-around ">
+                          <div class="red" >{{SP2026EBNVADULT + SP2026EBNVOTHER }}</div>
+                          <div class="green">{{SP2026EBVEGADULT + SP2026EBVEGOTHER }}</div>
+                      </div>
+                    </th>
+                </tr>
+                <tr class=" bg-light " >
+                    <th>Total Head Count</th>
+                      <th>
+                        <div class="d-flex justify-content-around ">
+                            <div  >{{SP2026EBNVADULT + SP2026EBNVOTHER + SP2026EBVEGADULT + SP2026EBVEGOTHER + SP2026EBKIDS}}</div>
+                        </div>
+                      </th>
+                </tr>
+              </table>
+
+
             <!-- Kobi Pronam 2025 Food Summary Report -->
             <!-- <table class="table table-bordered " >
                 <tr>
@@ -237,15 +316,17 @@
                 </tr>
             </table> -->
 
+            <!-- <h3 class="text-center mt-3 mb-2 " >Saraswati Puja-2024 Ticket Sell Summary(Saturday 24th, 2024)</h3>
             <!-- Saraswati Puja 2024 Food Summary Report -->
             <!-- <table class="table table-bordered " >
                 <tr>
-                      <th>Total Annual Membership - 2024</th>
-                      <th>{{MM2024YY}}</th>
-                </tr>  
-                <tr>
-                  <th></th>
-                  <th class="d-flex justify-content-around " >Saturday, 10th F, 2024</th>
+                  <th>Ticket Details</th>
+                  <th>
+                    <div class="d-flex justify-content-around ">
+                        <div class="red" >Non Veg</div>
+                        <div class="green">Veg</div>
+                    </div>
+                  </th>
                 </tr>
                 <tr>
                   <th>Adult</th>
@@ -415,15 +496,17 @@
               </tr>
             </table> -->
 
+            <!-- <h3 class="text-center mt-3 mb-2 " >Saraswati Puja-2025 Ticket Sell Summary(February 1st, 2025)</h3> -->
             <!-- Saraswati Puja 2025 Food Summary Report -->
             <!-- <table class="table table-bordered " >
                 <tr>
-                      <th>Total Annual Membership - 2025</th>
-                      <th>{{MM2025YY}}</th>
-                </tr>  
-                <tr>
-                  <th></th>
-                  <th class="d-flex justify-content-around " >Saturday, 1st February, 2025</th>
+                  <th class="d-flex justify-content-around">Ticket Details</th>
+                  <th>
+                    <div class="d-flex justify-content-around">
+                        <div class="red" >Non Veg</div>
+                        <div class="green">Veg</div>
+                    </div>
+                  </th>
                 </tr>
                 <tr>
                   <th>Adult</th>
@@ -435,7 +518,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <th>Teens [ 11 to 18 years ] / Visiting Parents / Students for Non-Veg</th>
+                  <th>Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID</th>
                   <td>
                       <div class="d-flex justify-content-around ">
                           <div class="red" >{{SP2025EBNVOTHER}}</div>
@@ -445,7 +528,7 @@
                   
                 </tr>
                 <tr>
-                  <th>Kids age group [ 0 - 10 years ] are free </th>
+                  <th>Kids for age group [ 0 - 10 years ]</th>
                   <td>
                       <div class="d-flex justify-content-around ">
                           <div >{{SP2025EBKIDS}}</div>
@@ -471,36 +554,10 @@
                 </tr>
               </table> -->
 
-            <!-- Durga Puja 2024 Food Summary Report -->
-            <table class="table table-bordered " >
-              <tr>
-                    <th>Total Annual Membership - 2022 </th>
-                    <th>{{MM2022YY}}</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-              </tr>  
-              <tr>
-                    <th>Total Annual Membership - 2023 </th>
-                    <th>{{MM2023YY}}</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-              </tr>  
-              <tr>
-                    <th>Total Annual Membership - 2024 </th>
-                    <th>{{MM2024YY}}</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-              </tr>  
-              <tr>
-                    <th>Total Annual Membership - 2025 </th>
-                    <th>{{MM2025YY}}</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-              </tr>  
+            <!-- <h3 class="text-center mt-3 mb-2 " >Durga Puja-2025 Ticket Sell Summary</h3>
+
+            <!-- Durga Puja 2025 Event Ticket Summary Report -->
+            <!-- <table class="table table-bordered " >
               <tr>
                 <th></th>
                 <th>All 3 Days</th>
@@ -627,22 +684,22 @@
                         </div>
                     </th>
               </tr>  
-            </table>
+            </table> -->
         </div>
     </div>
     
     <div class=" container mt-5 mb-3 " >
-        <h3 class="text-center " >Durga Puja-2025 Ticket Sell Transactions</h3>
+        <h3 class="text-center " >Saraswati Puja-2026 Ticket Sell Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
                 style="height:500px; "
                 class="ag-theme-alpine table-light table-responsive agGridTable"
                 #agGrid
-                id="DP2025Grid"
+                id="SP2026Grid"
                 class="ag-theme-alpine"
                 (gridReady)="onTicketGridReady($event)"
-                [rowData]="dp2025TicketList"
-                [columnDefs]="dp2025columnDefsTickets"
+                [rowData]="sp2026TicketList"
+                [columnDefs]="sp2026columnDefsTickets"
                 [animateRows]="true"
                  >
             </ag-grid-angular>
@@ -652,7 +709,7 @@
         </div>
     </div>
 
-    <div class=" container mt-5 mb-3 " >
+    <!-- <div class=" container mt-5 mb-3 " >
         <h3 class="text-center " >Durga Puja-2025 Concert Ticket Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
@@ -669,7 +726,7 @@
                  >
             </ag-grid-angular>
         </div>
-    </div>
+    </div> -->
 
     <!-- <div class=" container mt-5 mb-3 " >
         <h3 class="text-center " >Durga Puja-2024 Concert Ticket Transactions</h3>
