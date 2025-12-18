@@ -136,6 +136,7 @@ export class AlldetailsComponent implements OnInit {
   SP2026EBNVOTHER:number =0;
   SP2026EBVEGOTHER:number =0;
   SP2026EBKIDS:number =0;
+  SP2026PRPASS:number = 0;
 
   paymentTime:any;
   customAdult:number =0;
@@ -349,7 +350,8 @@ export class AlldetailsComponent implements OnInit {
     { field: 'SP2026EBVEGADULT', headerName:'Adult Veg', sortable: true, resizable: true },
     { field: 'SP2026EBNVOTHER', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg ', sortable: true, resizable: true },
     { field: 'SP2026EBVEGOTHER', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg', sortable: true, resizable: true },
-    { field: 'SP2026EBKIDS', headerName:'Kids for age group [ 0 - 10 years ]', sortable: true, resizable: true }
+    { field: 'SP2026EBKIDS', headerName:'Kids for age group [ 0 - 10 years ]', sortable: true, resizable: true },
+    { field: 'SP2026PRPASS', headerName:'Priority Access', sortable: true, resizable: true }
 	];
 
   checkDP2025ConcertDetails(){
@@ -726,6 +728,7 @@ export class AlldetailsComponent implements OnInit {
     this.SP2026EBNVOTHER =0;
     this.SP2026EBVEGOTHER =0;
     this.SP2026EBKIDS=0;
+    this.SP2026PRPASS = 0;
 
     try{
     //console.log(this.rowData);
@@ -786,6 +789,12 @@ export class AlldetailsComponent implements OnInit {
                 this.SP2026EBKIDS += e.quantity ;
                 this.ticketPrice += e.price;
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBKIDS:e.quantity,sku:e.sku,tax:e.tax});
+                this.newPurches = true;
+              }
+              else if(e.sku.includes("SP2026PRPASS")){
+                this.SP2026PRPASS += e.quantity ;
+                this.ticketPrice += e.price;
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026PRPASS:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
 
