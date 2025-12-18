@@ -46,6 +46,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
   memberValidity : boolean = false;
   addtoCartBtn: boolean = true;
   priorityPassChecked: boolean = false;
+  priorityPassLimit : boolean = false;
 
   private _jsonURLcart = '/assets/data/tickets/tickets-2026-SP-earlybird.json';
 
@@ -77,6 +78,8 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
             this.memberValidity = false;
             this.member.membershipstatus = 'Expired';
         }
+
+        this.priorityPassLimit = false;
       });
       
       this.checkData();

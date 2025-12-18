@@ -24,7 +24,7 @@
         &ast; Tickets are required for food, local cultural performances and program with external artist for everyone, including kids (0 to 10 years).<br/>
     </p> 
 
-    <p class="red" *ngIf="memberValidity" style="font-weight: bold;">
+    <p class="red" *ngIf="memberValidity && !priorityPassLimit" style="font-weight: bold;">
         Priority access tickets are limited and subject to availability - secure yours early.
     </p>
 
@@ -48,8 +48,7 @@
                         <td  >$ {{item.price * item.quantity}}</td>
                     </tr>
                 </tbody>
-                
-                <thead>
+                <thead *ngIf="!priorityPassLimit">
                     <tr>
                     <th scope="col">
                         <input
@@ -57,14 +56,13 @@
                             style="width:50px"
                             (change)="onRowChecked('PriorityPass', $event)"
                         />
-                        Pay additional $5/ticket to enjoy Priority Access [Skip the queue during registration, all meals and priority seating at the auditorium]
+                        Pay additional $5/ticket to enjoy Priority Access [Skip the queue during registration & all meals and get priority seating at the auditorium]
                     </th>
                     <th scope="col"></th>
                     <th scope="col" ></th>
                     <th  scope="col"></th> 
                     </tr>
                 </thead>
-
                 <thead>
                     <tr>
                     <th scope="col"></th>
