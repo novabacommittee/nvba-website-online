@@ -143,7 +143,7 @@ export class AlldetailsComponent implements OnInit {
   customKid:number =0;
   ticketPrice:number =0;
 
-  user: { index:number; email: string; firstname: string; lastname: string; expires: string; phone:string} | undefined;
+  user: { index:number; email: string; firstname: string; lastname: string; expires: string; phone:string;lastPurchase:number} | undefined;
 
   kp2024FoodPurchaseDetails: { purchase_date_time:string;payer_id:string; email: string; firstname: string; lastname: string; payment_method: string; payment_status:string;total:number;
     vegchopcount:number;vegghugnicount:number;teacount:number;colddrinkscount:number;vegbiriyanicount:number;nonvegbiriyanicount:number
@@ -343,7 +343,7 @@ export class AlldetailsComponent implements OnInit {
 		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
     { field: 'email', sortable: true, resizable: true, filter: true },
     { field: 'phone', sortable: true, resizable: true, filter: true },
-    { field: 'ticketPrice', headerName:'Purchase Amount', sortable: true, resizable: true },
+    { field: 'lastPurchase', headerName:'Purchase Amount', sortable: true, resizable: true,valueGetter: `' $ ' + data.lastPurchase` },
     { field: 'paymentTime', headerName:'Purchase Date', sortable: true, resizable: true },
     
     { field: 'SP2026EBNVADULT', headerName:'Adult Non-Veg', sortable: true, resizable: true },
@@ -733,10 +733,10 @@ export class AlldetailsComponent implements OnInit {
     try{
     //console.log(this.rowData);
     [...this.rowData].forEach( m =>{ 
-       console.log(m.purchase? true : false);
+      console.log(m.purchase? true : false);
 
-       if(m.purchase? true : false){
-         try{
+      if(m.purchase? true : false){
+        try{
           [...m.purchase].forEach(element => {
           
           const userPurchase = {};
@@ -763,37 +763,37 @@ export class AlldetailsComponent implements OnInit {
               //Saraswati Puja 2026 Ticket Details
               else if(e.sku.includes("SP2026EBNVADULT")){
                 this.SP2026EBNVADULT += e.quantity ;
-                this.ticketPrice += e.price;
+                this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBNVADULT:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes("SP2026EBVEGADULT")){
                 this.SP2026EBVEGADULT += e.quantity ;
-                this.ticketPrice += e.price;
+                this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBVEGADULT:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes("SP2026EBNVOTHER")){
                 this.SP2026EBNVOTHER += e.quantity ;
-                this.ticketPrice += e.price;
+                this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBNVOTHER:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes("SP2026EBVEGOTHER")){
                 this.SP2026EBVEGOTHER += e.quantity ;
-                this.ticketPrice += e.price;
+                this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBVEGOTHER:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes("SP2026EBKIDS")){
                 this.SP2026EBKIDS += e.quantity ;
-                this.ticketPrice += e.price;
+                this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBKIDS:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
               else if(e.sku.includes("SP2026PRPASS")){
                 this.SP2026PRPASS += e.quantity ;
-                this.ticketPrice += e.price;
+                this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026PRPASS:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
@@ -949,8 +949,8 @@ export class AlldetailsComponent implements OnInit {
 
               else if(e.sku.includes("MM2024YY")){
                   this.MM2024YY += e.quantity ;
-                  //Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
-                  //this.membershipRenew = true;
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
+                  this.membershipRenew = true;
               }
 
               //Saraswati Puja 2024 Ticket Details
@@ -1103,8 +1103,8 @@ export class AlldetailsComponent implements OnInit {
 
               else if(e.sku.includes("MM2023YY")){
                   this.MM2023YY += e.quantity ;
-                  //Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
-                  //this.membershipRenew = true;
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
+                  this.membershipRenew = true;
               }
               // else if(e.sku.includes("KP2023NON")){  
               //   this.KP2023NON += e.quantity ;
@@ -1131,6 +1131,7 @@ export class AlldetailsComponent implements OnInit {
                   lastname : m.lastname,
                   email : m.email,
                   phone : m.phone,
+                  lastPurchase: this.ticketPrice,
                   expires : moment(m.expires).format("YYYY-MM-DD")
                 };
                 Object.assign(this.user, userPurchase);
@@ -1146,6 +1147,7 @@ export class AlldetailsComponent implements OnInit {
 
               this.newPurches = false;
               this.membershipRenew = false;
+              this.ticketPrice = 0;
             }
           }); // End of Each Member
         }
