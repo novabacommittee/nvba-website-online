@@ -48,7 +48,7 @@
                         <td  >$ {{item.price * item.quantity}}</td>
                     </tr>
                 </tbody>
-                <thead *ngIf="!priorityPassLimit">
+                <tbody *ngIf="!priorityPassLimit">
                     <tr>
                     <th scope="col">
                         <input
@@ -58,11 +58,11 @@
                         />
                         Pay additional $5/ticket to enjoy Priority Access [Skip the queue during registration & all meals and get priority seating at the auditorium]
                     </th>
-                    <th scope="col"></th>
+                    <!-- <th scope="col"></th>
                     <th scope="col" ></th>
-                    <th  scope="col"></th> 
+                    <th  scope="col"></th>  -->
                     </tr>
-                </thead>
+                </tbody>
                 <thead>
                     <tr>
                     <th scope="col"></th>

@@ -29,8 +29,8 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
   private  priorityPassCart = [{
     "name": "NVBA Saraswati Puja 2026 Priority Pass(Skip line at registration, food and auditorium priority seating for everyone)",
     "description": "Priority Pass - 2026",
-    "quantity": 1,
-    "price": 0,
+    "quantity": 0,
+    "price": 5,
     "tax": 0,
     "sku": "SP2026PRPASS",
     "currency": "USD" 
@@ -158,7 +158,8 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
 
     if(this.priorityPassChecked && ticketCount > 0){
         this.priorityPassCart.forEach((value:any) => {
-          value.price = (ticketCount * 5);
+          //value.price = (ticketCount * 5);
+          value.quantity = ticketCount;
           this.cs.items.push(value);
         });
     }
