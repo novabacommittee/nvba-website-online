@@ -35,11 +35,11 @@ export class ProfileComponent implements OnInit {
 
     private  memberCart = [{
     "name": "NVBA Annual Membership",
-    "description": "NVBA Annual Membership Fee - 2025",
+    "description": "NVBA Annual Membership Fee - 2026",
     "quantity": 1,
     "price": 30,
     "tax": 0,
-    "sku": "MM2025YY",
+    "sku": "MM2026YY",
     "currency": "USD" 
   }];
 
