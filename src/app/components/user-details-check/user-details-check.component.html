@@ -37,6 +37,13 @@
                 <table class="table table-hover  mb-2" style="border: 1px solid #ccc;"  >
                   <tbody>
                     <tr *ngFor="let item of items ">
+                      <td *ngIf="item.sku.includes('MM2026YY')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
+                      <td *ngIf="item.sku.includes('MM2026YY')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
+                      <td *ngIf="item.sku.includes('MM2026YY')" >$ {{item.price}}</td>
+                      <td *ngIf="item.sku.includes('MM2026YY')" >{{ item.quantity}}</td>
+                      <td *ngIf="item.sku.includes('MM2026YY')"  >$ {{item.price * item.quantity}}</td>
+                    </tr>
+                    <tr *ngFor="let item of items ">
                       <td *ngIf="item.sku.includes('MM2025YY')" width="50%"><div class="smallOrangeHeader">{{item.name}}</div>{{item.description}}</td>
                       <td *ngIf="item.sku.includes('MM2025YY')" >{{item.paymentTime | date:'d-MMM-yyyy'}}</td>
                       <td *ngIf="item.sku.includes('MM2025YY')" >$ {{item.price}}</td>
