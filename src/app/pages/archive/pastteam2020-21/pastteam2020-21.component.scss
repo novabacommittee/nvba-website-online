@@ -1,21 +1,49 @@
+// Past Team 2020-21 Component Styles
+
+// Font Variables for consistency
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Apply Poppins font to all elements in this component
+:host {
+  font-family: $font-primary !important;
+}
+
+// Force all elements to use Poppins - MAXIMUM SPECIFICITY
+.wrapper * {
+  font-family: $font-primary !important;
+}
+
+.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all text elements to use Poppins - MAXIMUM SPECIFICITY
+p, span, div, a, td, th {
+  font-family: $font-primary !important;
+}
+
 .hero-wrap {
     width: 100%;
     height: calc(40vh - 107px);
     min-height: 100px;
     position: relative;
+    font-family: $font-primary !important;
 }
 
 .slider-text {
     color: #fff;
     height: calc(40vh - 107px);
+    font-family: $font-primary !important;
+    
     p, span, h1, a {
         color: #100f0f;
+        font-family: $font-primary !important;
     }
 }
 
 .slider-text .breadcrumbs {
     text-transform: uppercase;
-
     margin: 10px;
+    font-family: $font-primary !important;
 }
 
