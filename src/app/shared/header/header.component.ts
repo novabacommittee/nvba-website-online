@@ -13,7 +13,7 @@ import { AuthService } from './../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  dataObject :any={};
+  dataObject :any=[];
   navbarCollapsed : any;
   isCollapsed = false;
   member: any={}
