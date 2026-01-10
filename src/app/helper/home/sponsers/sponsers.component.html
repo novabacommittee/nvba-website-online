@@ -9,10 +9,10 @@
       <div class="row flex-row flex-wrap">
         <div class="col-md-2 " *ngFor="let sponser of sponsers " >
 
-            <div class=" card d-flex shadow mb-2 justify-content-center ftco-animate " style="align-items: center ;"  >
-                  <div class="client-logo  text-center justify-content-center p-4 ">
-                    <a href="{{sponser.url}}" target="_blank">
-                      <img src="{{sponser.image}}" class="img-fluid" alt="{{sponser.name}}"> 
+            <div class=" card d-flex shadow mb-2 justify-content-center ftco-animate " style="align-items: center; min-height: 200px; height: 200px; display: flex; flex-direction: column;"  >
+                  <div class="client-logo  text-center justify-content-center p-0 " style="height: 196px; display: flex; align-items: center; justify-content: center; margin: 0; flex: 1; padding-top: 20px;">
+                    <a href="{{sponser.url}}" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                      <img src="{{sponser.image}}" class="img-fluid" alt="{{sponser.name}}" style="max-height: 172px !important; max-width: 100% !important; width: 100% !important; height: auto !important; object-fit: contain !important; padding: 2px !important;"> 
                     </a>
                   </div>
             </div> 
