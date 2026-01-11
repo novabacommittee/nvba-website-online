@@ -2,50 +2,57 @@
     {
         "homeSliderImageId": "1",
         "homeSliderImage": "Durga Pujo 2024",
-        "imageLink": "./../../../assets/images/stocks/2023/DP-2023.jpg",
+        "imageLink": "./../../../assets/images/stocks/2026/DurgaPuja.jpg",
         "tag": "",
         "description": "Durga Pujo 2024 Event"
     },
     {
-        "homeSliderImageId": "2",
-        "homeSliderImage": "Poila Baishak 2025",
-        "imageLink": "./../../../assets/images/gallery/pb2024/pb_bhog_preparation.jpg",
-        "tag": "",
-        "description": "Poula Baishak Event"
+      "homeSliderImageId": "2",
+      "homeSliderImage": "Durga Pujo 2024",
+      "imageLink": "./../../../assets/images/stocks/2023/DP-2023.jpg",
+      "tag": "",
+      "description": "Durga Pujo 2023 Event"
     },
     {
-        "homeSliderImageId": "3",
-        "homeSliderImage": "Papon Concert 2025",
-        "imageLink": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
-        "tag": "",
-        "description": "Papon Live Concert 2025"
+      "homeSliderImageId": "3",
+      "homeSliderImage": "Poila Baishak 2025",
+      "imageLink": "./../../../assets/images/gallery/pb2024/pb_bhog_preparation.jpg",
+      "tag": "",
+      "description": "Poula Baishak Event"
     },
     {
-        "homeSliderImageId": "4",
-        "name": "Picnic 2025",
-        "imageLink": "./../../../assets/images/gallery/picnic2025/event_photo_15.jpg",
-        "tag": "",
-        "description": "Annual NVBA Picnic"
+      "homeSliderImageId": "4",
+      "homeSliderImage": "Papon Concert 2025",
+      "imageLink": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
+      "tag": "",
+      "description": "Papon Live Concert 2025"
     },
     {
-        "homeSliderImageId": "5",
-        "name": "Poila Baishak 2024",
-        "imageLink": "./../../../assets/images/gallery/pb2024/pb_opening_performence.jpg",
-        "tag": "",
-        "description": ""
+      "homeSliderImageId": "5",
+      "name": "Picnic 2025",
+      "imageLink": "./../../../assets/images/gallery/picnic2025/event_photo_15.jpg",
+      "tag": "",
+      "description": "Annual NVBA Picnic"
     },
     {
-        "homeSliderImageId": "6",
-        "name": "NVBA_Sponsors_Benefactors",
-        "imageLink": "./../../../assets/images/gallery/sponsors/NVBA_Sponsors_Benefactors_2024_v3.png",
-        "tag": "",
-        "description": ""
+      "homeSliderImageId": "6",
+      "name": "Poila Baishak 2024",
+      "imageLink": "./../../../assets/images/gallery/pb2024/pb_opening_performence.jpg",
+      "tag": "",
+      "description": ""
     },
     {
-        "homeSliderImageId": "7",
-        "name": "NVBA_Sponsors_Benefactors",
-        "imageLink": "./../../../assets/images/gallery/sponsors/NVBA_Sponsors_Benefactors_2024_v3.png",
-        "tag": "",
-        "description": ""
+      "homeSliderImageId": "7",
+      "name": "NVBA_Sponsors_Benefactors",
+      "imageLink": "./../../../assets/images/gallery/sponsors/NVBA_Sponsors_Benefactors_2024_v3.png",
+      "tag": "",
+      "description": ""
+    },
+    {
+      "homeSliderImageId": "8",
+      "name": "NVBA_Sponsors_Benefactors",
+      "imageLink": "./../../../assets/images/gallery/sponsors/NVBA_Sponsors_Benefactors_2024_v3.png",
+      "tag": "",
+      "description": ""
     }
-]
+  ]
