@@ -1,24 +1,8 @@
 // Enhanced Sponsors Component Styles
 
-// Font Variables for consistency
+// Font Variables (matching global styles)
 $font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-// Apply Poppins font to all elements in this component
-:host {
-  font-family: $font-primary !important;
-}
-
-.sponsers {
-  font-family: $font-primary !important;
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $font-primary !important;
-  }
-  
-  p, span, div, a, button {
-    font-family: $font-primary !important;
-  }
-}
+$font-secondary: 'Playfair Display', Georgia, serif;
 
 // FORCE LOGO SIZES - Maximum specificity targeting exact HTML structure
 section.ftco-section.sponsers .row .col-md-2 .card .client-logo img {
@@ -100,7 +84,7 @@ section.ftco-section.sponsers .row .col-md-2 .card {
     margin-bottom: 60px;
     
     h2 {
-      font-family: $font-primary;
+      font-family: $font-secondary;
       font-size: 3rem;
       font-weight: 700;
       color: white;

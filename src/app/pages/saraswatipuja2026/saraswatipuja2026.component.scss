@@ -30,12 +30,12 @@ $font-secondary: 'Playfair Display', Georgia, serif;
     color: #f86f2d;
 }
 
-// Apply modern fonts to all elements in this component - ALL Poppins
+// Apply modern fonts to all elements in this component
 :host {
   font-family: $font-primary !important;
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: $font-primary !important;
+    font-family: $font-secondary !important;
   }
   
   p, span, div, a, button {
@@ -49,7 +49,7 @@ $font-secondary: 'Playfair Display', Georgia, serif;
 }
 
 .wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 // Force table elements specifically - MAXIMUM SPECIFICITY
@@ -58,12 +58,12 @@ table * {
 }
 
 table h1, table h2, table h3, table h4, table h5, table h6 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 // Force all headings inside any element to use modern fonts - MAXIMUM SPECIFICITY
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 // Force all text elements to use modern fonts - MAXIMUM SPECIFICITY
@@ -90,20 +90,20 @@ h6 a, h5 a, h4 a, h3 a, h2 a, h1 a {
 }
 
 #activities h1, #activities h2, #activities h3, #activities h4, #activities h5, #activities h6 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 // Additional specific targeting for problematic elements
 .wrapper .text-center h3 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 .wrapper .text-center h5 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 .wrapper .text-center h6 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 .wrapper .text-center p {
@@ -129,7 +129,7 @@ h6 a, h5 a, h4 a, h3 a, h2 a, h1 a {
 .wrapper [class*="text-"] h4,
 .wrapper [class*="text-"] h5,
 .wrapper [class*="text-"] h6 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 // Force all flex-center elements
@@ -143,7 +143,7 @@ h6 a, h5 a, h4 a, h3 a, h2 a, h1 a {
 .wrapper [class*="flex-"] h4,
 .wrapper [class*="flex-"] h5,
 .wrapper [class*="flex-"] h6 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 // Force all elements inside container
@@ -157,7 +157,7 @@ h6 a, h5 a, h4 a, h3 a, h2 a, h1 a {
 .wrapper .container h4,
 .wrapper .container h5,
 .wrapper .container h6 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
 
 // Force all elements inside row
@@ -171,5 +171,5 @@ h6 a, h5 a, h4 a, h3 a, h2 a, h1 a {
 .wrapper .row h4,
 .wrapper .row h5,
 .wrapper .row h6 {
-  font-family: $font-primary !important;
+  font-family: $font-secondary !important;
 }
