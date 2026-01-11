@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5,
 		@include media-breakpoint-up(md){
 			color: $white;
 		}
-		text-shadow: none;
+		text-shadow: 1px 1px 4px #ccc;
 	}
 	
 	.navbar-nav {
@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5,
 				padding-left: 20px;
 				padding-right: 20px;
 				color: #ffffff;
-				text-shadow: none;
+				text-shadow: 1px 1px 3px #212121;
 				font-weight: 400;
 				&:hover {
 					color: $white;

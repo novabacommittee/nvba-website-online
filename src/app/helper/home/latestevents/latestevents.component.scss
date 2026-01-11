@@ -24,16 +24,6 @@ $font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   }
 }
 
-// Maximum specificity button text override
-h2 .btn.btn-primary.toggle-button {
-  color: white !important;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 1.3rem !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
-}
-
 // Toggle button styles
 .toggle-button {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
@@ -55,6 +45,13 @@ h2 .btn.btn-primary.toggle-button {
     transform: translateY(-2px) !important;
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
     color: white !important;
+  }
+  
+  .button-text {
+    color: white !important;
+    font-family: $font-primary !important;
+    font-weight: 700 !important;
+    font-size: 1.3rem !important;
   }
   
   .collapse-icon {
