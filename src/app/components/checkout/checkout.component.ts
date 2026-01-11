@@ -45,17 +45,20 @@ export class CheckoutComponent implements OnInit {
       this.userService.cast.subscribe( m => {
         this.member = m;
 
-        this.currentDate = moment();
-          
-        if(moment(this.member.expires).isAfter(this.currentDate) )
-        {
-            this.memberValidity = true;
+        // Only process member data if it exists
+        if (this.member) {
+          this.currentDate = moment();
+            
+          if(this.member.expires && moment(this.member.expires).isAfter(this.currentDate) )
+          {
+              this.memberValidity = true;
+          }
+          else
+          {
+              this.memberValidity = false;
+          }
+          console.log(this.member);
         }
-        else
-        {
-            this.memberValidity = false;
-        }
-        console.log(this.member);
       });
 
       this.cart.currentCart.subscribe( (cartCheck) => this.cartCheck = cartCheck);
@@ -130,7 +133,7 @@ export class CheckoutComponent implements OnInit {
                 {
                   let current = moment(); 
                   
-                  if(moment(this.member.expires).isSame(current) ||  moment(current).isAfter(this.member.expires) ){
+                  if(this.member.expires && (moment(this.member.expires).isSame(current) ||  moment(current).isAfter(this.member.expires))){
                     this.member.expires = moment(current).add(1, 'years'); 
                     this.member.membershipstatus = 'Valid';
                   }
