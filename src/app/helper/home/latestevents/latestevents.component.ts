@@ -11,8 +11,6 @@ export class LatesteventsComponent implements OnInit {
   events: any = [];
   pastevents: any =[];
   commingevents: any =[];
-  pastEventsExpanded: boolean = false; // Set to false to make it collapsed by default
-  
   constructor(private jsonFile:GetjsonfileService) { }
 
   ngOnInit(): void {
@@ -29,9 +27,5 @@ export class LatesteventsComponent implements OnInit {
         });
     });
       console.log( this.pastevents);
-  }
-  
-  togglePastEvents() {
-    this.pastEventsExpanded = !this.pastEventsExpanded;
   }
 }

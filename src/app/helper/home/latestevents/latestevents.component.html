@@ -29,30 +29,23 @@
     <div class="container">
       <div class="row justify-content-center pb-3">
         <div class="col-md-7 heading-section ftco-animate text-center">
-          <h2 class="mb-4">
-            <button class="btn btn-primary toggle-button" (click)="togglePastEvents()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; border: none !important; padding: 15px 30px !important; font-size: 1.3rem !important; font-weight: 700 !important; border-radius: 8px !important; color: white !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; min-width: 200px !important; text-transform: uppercase !important; letter-spacing: 1px !important;">
-              PAST EVENTS
-              <span class="collapse-icon" style="color: white !important; margin-left: 10px !important;">▼</span>
-            </button>
-          </h2>
+          <h2 class="mb-4">Past Events</h2>
         </div>
       </div>
-      <div class="collapsible-container" [ngClass]="{'collapsed': !pastEventsExpanded}">
-        <div class="row">
+      <div class="row">
           <div class="col-md-4 d-flex ftco-animate" *ngFor="let pevent of pastevents" >
-            <div class="blog-entry align-self-stretch w-100" *ngIf="pevent.eventType=='past'">
+            <div class="blog-entry align-self-stretch w-100 " *ngIf="pevent.eventType=='past'" >
               <a routerLink="blog-single.html" class="block-20" style="background-image: url({{pevent.eventImage}});">
               </a>
               <div class="text p-4 d-block">
                 <div class="meta mb-3">
-                  <div><a href="{{pevent.pageLink}}">{{pevent.eventDate}}</a></div>
-                </div>
-                <h3 class="heading mb-4"><a href="{{pevent.pageLink}}">{{pevent.eventName}}</a></h3>
-                <p class="time-loc"><span class="mr-2"><img src="./../../../../assets/images/icons/clock-icon.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="clock"> {{pevent.timming}}</span></p>
-                <p><a href="{{pevent.mapUrl}}" target="_blank" ><span><img src="./../../../../assets/images/icons/map-icon.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="map"> {{pevent.venue}}</span></a></p>
-                <p>{{pevent.description}}</p>
-                <p *ngIf="pevent.pageLink != '/' " ><a href="{{pevent.pageLink}}" target="_blank">Click here for more details</a></p>
+                <div><a href="{{pevent.pageLink}}">{{pevent.eventDate}}</a></div>
               </div>
+              <h3 class="heading mb-4"><a href="{{pevent.pageLink}}">{{pevent.eventName}}</a></h3>
+              <p class="time-loc"><span class="mr-2"><img src="./../../../../assets/images/icons/clock-icon.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="clock"> {{pevent.timming}}</span></p>
+              <p><a href="{{pevent.mapUrl}}" target="_blank" ><span><img src="./../../../../assets/images/icons/map-icon.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="map"> {{pevent.venue}}</span></a></p>
+              <p>{{pevent.description}}</p>
+              <p *ngIf="pevent.pageLink != '/' " ><a href="{{pevent.pageLink}}" target="_blank">Click here for more details</a></p>
             </div>
           </div>
         </div>
