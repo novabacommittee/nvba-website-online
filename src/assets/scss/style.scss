@@ -1391,12 +1391,12 @@ textarea.form-control {
 		margin: 0 10px 0 0;
 		display: inline-block;
 		a {
-			height: auto;
-			width: auto;
+			height: 50px;
+			width: 50px;
 			display: block;
 			float: left;
-			background: transparent;
-			border-radius: 0;
+			background: rgba($white, .05);
+			border-radius: 50%;
 			position: relative;
 			span {
 				position: absolute;
