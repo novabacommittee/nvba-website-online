@@ -21,7 +21,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
     "price": 30,
     "tax": 0,
     "sku": "MM2026YY",
-    "currency": "USD" 
+    "currency": "USD"
   }];
   expired:any;
   currentDate:any;
@@ -33,7 +33,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
     "price": 5,
     "tax": 0,
     "sku": "SP2026PRPASS",
-    "currency": "USD" 
+    "currency": "USD"
   }];
 
   member:any;
@@ -48,14 +48,14 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
   priorityPassChecked: boolean = false;
   priorityPassLimit : boolean = false;
 
-  private _jsonURLcart = '/assets/data/tickets/tickets-2026-SP-earlybird.json';
+  private _jsonURLcart = '/assets/data/tickets/tickets-2026-SP-regular.json';
 
   constructor(
-      private http: HttpClient, 
-      private cs: CartService, 
-      public router: Router, 
-      private auth: AuthService, 
-      private cdr: ChangeDetectorRef) 
+      private http: HttpClient,
+      private cs: CartService,
+      public router: Router,
+      private auth: AuthService,
+      private cdr: ChangeDetectorRef)
   {
       this.cs.currentCart.subscribe( cartCheck => this.cartCheck = cartCheck);
       this.getJSON().subscribe((data: any) => {
@@ -65,9 +65,9 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
       this.auth.member.subscribe( m => {
         this.member = m;
         console.log(moment(this.member.expires));
-  
+
         this.currentDate = moment();
-  
+
         if(moment(this.member.expires).isAfter(this.currentDate) )
         {
             this.memberValidity = true;
@@ -81,11 +81,11 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
 
         this.priorityPassLimit = false;
       });
-      
+
       this.checkData();
      });
   }
-  
+
 
   ngOnInit(): void {
   }
@@ -101,18 +101,18 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
           value.quantity = element.quantity;
         }
       });
-       
+
     });
    }
 
-  
+
   ngOnChanges(): void{
 
   }
 
   ngAfterViewChecked(): void {
     let tc = 0;
-    
+
     [...this.dataObject].forEach(value => {
       console.log(value.quantity);
       if(value.quantity > 0){
@@ -133,7 +133,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
 
   addMembershipToCartobj(){
     this.cs.items = [];
-    this.cs.addToCart(this.memberCart); 
+    this.cs.addToCart(this.memberCart);
     this.router.navigate(['/checkout']);
   }
 
@@ -142,7 +142,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
     this.cs.items = [];
     this.dataObject.forEach((value:any) => {
 //    console.log(value.quantity);
-      if(value.quantity > 0){ 
+      if(value.quantity > 0){
           //console.log(value.quantity);
           if(!this.memberValidity)
           {
