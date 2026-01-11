@@ -42,22 +42,26 @@ export class CartmemberComponent implements OnInit {
 
     this.auth.member.subscribe( m => {
       this.member = m;
-      //console.log(moment(this.member.expires));
+      
+      // Only process member data if it exists
+      if (this.member) {
+        //console.log(moment(this.member.expires));
 
-      this.currentDate = moment();
+        this.currentDate = moment();
 
-      if(moment(this.member.expires).isAfter(this.currentDate) ){
-        this.memberValidity = true;
-         this.member.membershipstatus = 'Valid';
-         //console.log('CartMember IF');
-         //console.log(this.member);
-       }
-       else{
-         this.memberValidity = false;
-         this.member.membershipstatus = 'Expire';
-         //console.log('CartMember Else');
-         //console.log(this.member);
-       }
+        if(this.member.expires && moment(this.member.expires).isAfter(this.currentDate) ){
+          this.memberValidity = true;
+           this.member.membershipstatus = 'Valid';
+           //console.log('CartMember IF');
+           //console.log(this.member);
+         }
+         else{
+           this.memberValidity = false;
+           this.member.membershipstatus = 'Expire';
+           //console.log('CartMember Else');
+           //console.log(this.member);
+         }
+      }
     });
   }
 

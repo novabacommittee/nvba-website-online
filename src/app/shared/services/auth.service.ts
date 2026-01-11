@@ -38,9 +38,12 @@ export class AuthService  {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user')!);
+        this.memberDetail(); // Load member details when user logs in
       } else {
+        this.userData = null;
         localStorage.setItem('user', 'null');
         JSON.parse(localStorage.getItem('user')!);
+        this.member.next(null); // Clear member data when user logs out
       }
     });
 
@@ -110,10 +113,13 @@ export class AuthService  {
   }
 
   // Returns true when user is looged in and email is verified
-  get isLoggedIn(): boolean { //console.log('is-Log');
+  get isLoggedIn(): boolean { 
     const user = JSON.parse(localStorage.getItem('user')!);
     if(user !== null && user.emailVerified !== false ? true : false){
-      this.memberDetail();
+      // Only call memberDetail if not already loading to prevent unnecessary calls
+      if (!this.member.value) {
+        this.memberDetail();
+      }
       return true;
     }
     else{
@@ -181,6 +187,12 @@ export class AuthService  {
      let newuser:boolean = true;
      let idCount = 0;
       //console.log('Auth.services->memberDetail()');
+      
+      // Only proceed if userData exists
+      if (!this.userData || !this.userData.email) {
+        return null;
+      }
+      
       this.memberService.GetMembersList().subscribe(mlist => {
          mlist.forEach((e,index)=>{
           idCount++;
