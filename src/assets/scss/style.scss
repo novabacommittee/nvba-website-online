@@ -1386,8 +1386,6 @@ textarea.form-control {
 
 
 .ftco-footer-social {
-	display: flex;
-	align-items: center;
 	li {
 		list-style: none;
 		margin: 0 10px 0 0;
@@ -1400,11 +1398,6 @@ textarea.form-control {
 			background: transparent;
 			border-radius: 0;
 			position: relative;
-			img {
-				vertical-align: middle;
-				display: inline-block;
-				object-fit: contain;
-			}
 			span {
 				position: absolute;
 				font-size: 26px;
