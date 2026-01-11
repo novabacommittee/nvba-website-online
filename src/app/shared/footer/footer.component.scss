@@ -1,0 +1,38 @@
+// Footer Component Styles
+
+// Font Variables for consistency
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Apply Poppins font to all elements in this component
+:host {
+  font-family: $font-primary !important;
+}
+
+footer {
+  font-family: $font-primary !important;
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary !important;
+  }
+  
+  p, span, div, a, button, li, ul {
+    font-family: $font-primary !important;
+  }
+}
+
+// Force all footer elements to use Poppins
+.ftco-footer {
+  font-family: $font-primary !important;
+  
+  * {
+    font-family: $font-primary !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary !important;
+  }
+  
+  p, span, div, a, button, li, ul {
+    font-family: $font-primary !important;
+  }
+}

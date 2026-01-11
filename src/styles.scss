@@ -1,19 +1,326 @@
 // /* You can add global styles to this file, and also import other style files */
 // For grid
-@import "~ag-grid-community/dist/styles/ag-grid.css";
-@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+@import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css";
 @import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
 @import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
 
 
 
 
-// $font-primary: 'Overpass',Arial, sans-serif;
-$font-primary: 'Dosis',Arial, sans-serif;
+// Modern Font Variables
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-secondary: 'Playfair Display', Georgia, serif;
 
-$font-secondary: 'Dosis',Arial, sans-serif;
+// Alternative Font Options (uncomment to use)
+// $font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+// $font-secondary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
 
-@import '~ngx-toastr/toastr';
+// $font-primary: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+// $font-secondary: 'Crimson Text', Georgia, serif;
+
+// $font-primary: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+// $font-secondary: 'Merriweather', Georgia, serif;
+
+@import "../node_modules/ngx-toastr/toastr.css";
+
+// CSS RESET - Force Modern Fonts Globally
+// This must be at the top to override everything
+
+// Override ALL font-family declarations globally
+*, *::before, *::after {
+  font-family: $font-primary !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-secondary !important;
+}
+
+// Override inline styles and !important declarations
+[style*="font-family"] {
+  font-family: $font-primary !important;
+}
+
+h1[style*="font-family"], h2[style*="font-family"], h3[style*="font-family"], 
+h4[style*="font-family"], h5[style*="font-family"], h6[style*="font-family"],
+.h1[style*="font-family"], .h2[style*="font-family"], .h3[style*="font-family"], 
+.h4[style*="font-family"], .h5[style*="font-family"], .h6[style*="font-family"] {
+  font-family: $font-secondary !important;
+}
+
+// Override Bootstrap specifically
+body, html {
+  font-family: $font-primary !important;
+}
+
+// Force all elements to use modern fonts
+div, span, p, a, button, input, textarea, select, label, li, td, th {
+  font-family: $font-primary !important;
+}
+
+// Force all headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary !important;
+}
+
+// Enhanced Typography with Modern Fonts - Global Site Styles
+body {
+  font-family: $font-primary !important;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary !important;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 2rem; font-weight: 600; }
+h3 { font-size: 1.75rem; font-weight: 600; }
+h4 { font-size: 1.5rem; font-weight: 600; }
+h5 { font-size: 1.25rem; font-weight: 500; }
+h6 { font-size: 1.1rem; font-weight: 500; }
+
+// Apply modern fonts to common elements
+p, span, div, li, a, button, input, textarea, select, label {
+  font-family: $font-primary !important;
+}
+
+// Navigation and menu items
+.navbar, .nav-link, .menu-item {
+  font-family: $font-primary !important;
+}
+
+// Form elements
+.form-control, .btn, .form-label {
+  font-family: $font-primary !important;
+}
+
+// Cards and content sections
+.card, .card-title, .card-text {
+  font-family: $font-primary !important;
+}
+
+// Footer and header elements
+footer, header {
+  font-family: $font-primary !important;
+}
+
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+header h1, header h2, header h3, header h4, header h5, header h6 {
+  font-family: $font-secondary !important;
+}
+
+// Enhanced headings for specific sections
+.heading-section h2 {
+  font-family: $font-secondary !important;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.ftco-counter .block-18 .text h3 {
+  font-family: $font-secondary !important;
+  font-weight: 600;
+}
+
+.blog-entry .heading a {
+  font-family: $font-secondary !important;
+  font-weight: 600;
+}
+
+// Override any existing font styles
+* {
+  font-family: inherit !important;
+}
+
+// Ensure all text elements use modern fonts
+.text, .title, .subtitle, .description {
+  font-family: $font-primary !important;
+}
+
+.text-large, .title-large, .heading-large {
+  font-family: $font-secondary !important;
+}
+
+// Force all wrapper elements
+.wrapper * {
+  font-family: $font-primary !important;
+}
+
+.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 {
+  font-family: $font-secondary !important;
+}
+
+// Force all text-center elements
+.text-center * {
+  font-family: $font-primary !important;
+}
+
+.text-center h1, .text-center h2, .text-center h3, .text-center h4, .text-center h5, .text-center h6 {
+  font-family: $font-secondary !important;
+}
+
+// Force all flex-center elements
+.flex-center * {
+  font-family: $font-primary !important;
+}
+
+.flex-center h1, .flex-center h2, .flex-center h3, .flex-center h4, .flex-center h5, .flex-center h6 {
+  font-family: $font-secondary !important;
+}
+
+// Force all container elements
+.container * {
+  font-family: $font-primary !important;
+}
+
+.container h1, .container h2, .container h3, .container h4, .container h5, .container h6 {
+  font-family: $font-secondary !important;
+}
+
+// Force all row elements
+.row * {
+  font-family: $font-primary !important;
+}
+
+.row h1, .row h2, .row h3, .row h4, .row h5, .row h6 {
+  font-family: $font-secondary !important;
+}
+
+// SPECIFIC TARGETING FOR PROBLEMATIC ELEMENTS
+.bread {
+  font-family: $font-secondary !important;
+}
+
+.breadcrumbs {
+  font-family: $font-primary !important;
+}
+
+.breadcrumbs * {
+  font-family: $font-primary !important;
+}
+
+.slider-text * {
+  font-family: $font-primary !important;
+}
+
+.slider-text h1 {
+  font-family: $font-secondary !important;
+}
+
+.slider-text p {
+  font-family: $font-primary !important;
+}
+
+.ftco-animate * {
+  font-family: $font-primary !important;
+}
+
+.ftco-animate h1, .ftco-animate h2, .ftco-animate h3, .ftco-animate h4, .ftco-animate h5, .ftco-animate h6 {
+  font-family: $font-secondary !important;
+}
+
+// Force orange class elements
+.orange {
+  font-family: $font-secondary !important;
+}
+
+.orange * {
+  font-family: $font-primary !important;
+}
+
+.orange h1, .orange h2, .orange h3, .orange h4, .orange h5, .orange h6 {
+  font-family: $font-secondary !important;
+}
+
+// Force all elements with specific IDs
+#activities * {
+  font-family: $font-primary !important;
+}
+
+#activities h1, #activities h2, #activities h3, #activities h4, #activities h5, #activities h6 {
+  font-family: $font-secondary !important;
+}
+
+// Force table cells specifically
+td {
+  font-family: $font-primary !important;
+}
+
+td h1, td h2, td h3, td h4, td h5, td h6 {
+  font-family: $font-secondary !important;
+}
+
+td * {
+  font-family: $font-primary !important;
+}
+
+// Force all elements by tag name with maximum specificity
+div h1, div h2, div h3, div h4, div h5, div h6 {
+  font-family: $font-secondary !important;
+}
+
+div p, div span, div a {
+  font-family: $font-primary !important;
+}
+
+section h1, section h2, section h3, section h4, section h5, section h6 {
+  font-family: $font-secondary !important;
+}
+
+section p, section span, section a {
+  font-family: $font-primary !important;
+}
+
+// OVERRIDE BOOTSTRAP SPECIFICITY
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-secondary !important;
+}
+
+// Override Bootstrap's font-family-sans-serif
+html, body {
+  font-family: $font-primary !important;
+}
+
+// Force all Bootstrap components
+.btn {
+  font-family: $font-primary !important;
+}
+
+.form-control {
+  font-family: $font-primary !important;
+}
+
+.navbar-brand {
+  font-family: $font-primary !important;
+}
+
+.nav-link {
+  font-family: $font-primary !important;
+}
+
+.card-title {
+  font-family: $font-secondary !important;
+}
+
+.card-text {
+  font-family: $font-primary !important;
+}
+
+// Override any remaining font-family declarations
+* [style*="font-family"] {
+  font-family: $font-primary !important;
+}
+
+h1 [style*="font-family"], h2 [style*="font-family"], h3 [style*="font-family"], 
+h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] {
+  font-family: $font-secondary !important;
+}
 
 #myTab{
    a.nav-link{
@@ -66,13 +373,23 @@ table tr, table tr td {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 200px;
+  min-width: 300px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 0 5px 5px 5px;
   z-index: 1;
     a{
       color:#606060;
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      background-color: #e9e9e9;
+      color: #333;
+      text-decoration: none;
     }
   margin-top: -5px;
 }
@@ -257,6 +574,7 @@ p{
     opacity: 0;
     z-index: 0;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
     -webkit-animation: imageAnimation 36s linear infinite 0s;
     -moz-animation: imageAnimation 36s linear infinite 0s;
     -o-animation: imageAnimation 36s linear infinite 0s;
@@ -403,6 +721,7 @@ p{
     opacity: 0;
     z-index: 0;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
     -webkit-animation: imageAnimation 36s linear infinite 0s;
     -moz-animation: imageAnimation 36s linear infinite 0s;
     -o-animation: imageAnimation 36s linear infinite 0s;
@@ -548,6 +867,7 @@ p{
     opacity: 0;
     z-index: 0;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
     -webkit-animation: imageAnimation 36s linear infinite 0s;
     -moz-animation: imageAnimation 36s linear infinite 0s;
     -o-animation: imageAnimation 36s linear infinite 0s;
