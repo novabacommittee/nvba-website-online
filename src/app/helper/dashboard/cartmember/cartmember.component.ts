@@ -28,49 +28,48 @@ export class CartmemberComponent implements OnInit {
     "price": 30,
     "tax": 0,
     "sku": "MM2026YY",
-    "currency": "USD" 
+    "currency": "USD"
   }];
 
   constructor(
-    private auth: AuthService, 
-    private cs: CartService, 
+    private auth: AuthService,
+    private cs: CartService,
     public router: Router
-  ) { 
+  ) {
     this.cs.currentCart.subscribe( cartCheck => this.cartCheck = cartCheck);
     this.dataObject = this.memberCart;
     //console.log(this.member);
 
     this.auth.member.subscribe( m => {
-      this.member = m;
-      
-      // Only process member data if it exists
-      if (this.member) {
-        //console.log(moment(this.member.expires));
+    this.member = m;
 
-        this.currentDate = moment();
+    // Only process member data if it exists
+    if (this.member) {
+      //console.log(moment(this.member.expires));
 
-        if(this.member.expires && moment(this.member.expires).isAfter(this.currentDate) ){
-          this.memberValidity = true;
-           this.member.membershipstatus = 'Valid';
-           //console.log('CartMember IF');
-           //console.log(this.member);
-         }
-         else{
-           this.memberValidity = false;
-           this.member.membershipstatus = 'Expire';
-           //console.log('CartMember Else');
-           //console.log(this.member);
-         }
+      this.currentDate = moment();
+
+      if(this.member.expires && moment(this.member.expires).isAfter(this.currentDate) ){
+        this.memberValidity = true;
+        this.member.membershipstatus = 'Valid';
+        //console.log('CartMember IF');
+        //console.log(this.member);
+       } else{
+        this.memberValidity = false;
+        this.member.membershipstatus = 'Expire';
+        //console.log('CartMember Else');
+        //console.log(this.member);
+       }
       }
     });
   }
 
 
-  ngOnInit(): void { } 
+  ngOnInit(): void { }
 
   addToCartobj(){
     this.cs.items = [];
-    this.cs.addToCart(this.memberCart); 
+    this.cs.addToCart(this.memberCart);
     //console.log(this.memberCart);
     this.router.navigate(['/checkout']);
   }
