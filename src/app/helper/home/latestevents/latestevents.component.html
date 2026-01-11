@@ -1,8 +1,8 @@
 <section class="ftco-section">
   <div class="container">
-    <div class="row justify-content-center pb-1">
+    <div class="row justify-content-center pb-3">
       <div class="col-md-7 heading-section ftco-animate text-center">
-        <h2 class="mb-2">Upcoming Events</h2>
+        <h2 class="mb-4">Upcoming Events</h2>
       </div>
     </div>
     <div class="row">
@@ -15,8 +15,8 @@
                 <div><a href="{{event.pageLink}}">{{event.eventDate}}</a></div>
               </div>
               <h3 class="heading mb-4"><a href="{{event.pageLink}}">{{event.eventName}}</a></h3>
-              <p class="time-loc"><span class="mr-2"><img src="./../../../assets/images/logo/clock.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="clock"> {{event.timming}}</span></p>
-              <p><a href="{{event.mapUrl}}" target="_blank" ><span><img src="./../../../assets/images/logo/map.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="map"> {{event.venue}}</span></a></p>
+              <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> {{event.timming}}</span></p>
+              <p><a href="{{event.mapUrl}}" target="_blank" ><span><i class="icon-map-o"></i> {{event.venue}}</span></a></p>
               <p>{{event.description}}</p>
               <p *ngIf="event.pageLink != '/' " ><a href="{{event.pageLink}}" target="_blank">Click here for more details</a></p>
           </div>
@@ -42,8 +42,8 @@
                 <div><a href="{{pevent.pageLink}}">{{pevent.eventDate}}</a></div>
               </div>
               <h3 class="heading mb-4"><a href="{{pevent.pageLink}}">{{pevent.eventName}}</a></h3>
-              <p class="time-loc"><span class="mr-2"><img src="./../../../assets/images/logo/clock.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="clock"> {{pevent.timming}}</span></p>
-              <p><a href="{{pevent.mapUrl}}" target="_blank" ><span><img src="./../../../assets/images/logo/map.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="map"> {{pevent.venue}}</span></a></p>
+              <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> {{pevent.timming}}</span></p>
+              <p><a href="{{pevent.mapUrl}}" target="_blank" ><span><i class="icon-map-o"></i> {{pevent.venue}}</span></a></p>
               <p>{{pevent.description}}</p>
               <p *ngIf="pevent.pageLink != '/' " ><a href="{{pevent.pageLink}}" target="_blank">Click here for more details</a></p>
             </div>

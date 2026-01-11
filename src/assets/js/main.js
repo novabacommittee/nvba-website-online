@@ -7,25 +7,14 @@
 
 	"use strict";
 
-	// Fix Stellar.js initialization with error handling
-	jquery(document).ready(function() {
-		try {
-			// Only initialize stellar if elements exist
-			if (jquery('.parallax, [data-stellar-background-ratio]').length > 0) {
-				jquery.stellar({
-					responsive: false,
-					parallaxBackgrounds: true,
-					parallaxElements: true,
-					horizontalScrolling: false,
-					hideDistantElements: false,
-					scrollProperty: 'scroll',
-					positionProperty: 'transform'
-				});
-			}
-		} catch (error) {
-			console.warn('Stellar.js initialization failed:', error);
-		}
-	});
+	jquery(window).stellar({
+    responsive: false,
+    parallaxBackgrounds: true,
+    parallaxElements: true,
+    horizontalScrolling: false,
+    hideDistantElements: false,
+    scrollProperty: 'scroll'
+  });
 
 
 	var fullHeight = function() {
