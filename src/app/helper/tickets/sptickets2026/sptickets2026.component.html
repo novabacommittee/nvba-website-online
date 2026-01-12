@@ -22,7 +22,7 @@
     <p  class="red" style="font-weight: bold;">
         Please note - Membership rates are valid exclusively for members and their family members<br/>
         &ast; Tickets are required for food, local cultural performances and program with external artist for everyone, including kids (0 to 10 years).<br/>
-    </p> 
+    </p>
 
     <p class="red" *ngIf="memberValidity && !priorityPassLimit" style="font-weight: bold;">
         Priority access tickets are limited and subject to availability - secure yours early.
@@ -68,14 +68,14 @@
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col" ><div class="d-flex justify-content-end">Total</div></th>
-                    <th  scope="col">$ {{totalCost}}</th> 
+                    <th  scope="col">$ {{totalCost}}</th>
                     </tr>
                 </thead>
             </table>
 
             <div class="float-right mb-3 mr-3" >
                 <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
-            </div> 
+            </div>
         </accordion-group>
 
         <accordion-group *ngIf="!memberValidity" [isOpen]="true" style="overflow-wrap: break-word;" heading="Buy ticket with Non-Members rate" >
@@ -94,12 +94,12 @@
                         <th>{{item.description}}</th>
                         <td>
                             <span *ngIf="item.sku === 'SP2026EBKIDS'">$ {{item.price}}</span>
-                            <span *ngIf="item.sku != 'SP2026EBKIDS'">$ {{item.price+15}}</span>
+                            <span *ngIf="item.sku != 'SP2026EBKIDS' && item.sku != 'SP2026KIDSREGULAR'">$ {{item.price+10}}</span>
                         </td>
                         <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
                         <td>
                             <span *ngIf="item.sku === 'SP2026EBKIDS'">$ {{item.price * item.quantity}}</span>
-                            <span *ngIf="item.sku != 'SP2026EBKIDS'">$ {{(item.price+5) * item.quantity}}</span>
+                            <span *ngIf="item.sku != 'SP2026EBKIDS' && item.sku != 'SP2026KIDSREGULAR'">$ {{(item.price+5) * item.quantity}}</span>
                         </td>
                     </tr>
                 </tbody>
@@ -116,23 +116,23 @@
                     </th>
                     <td scope="col">$5</td>
                     <td scope="col" ></td>
-                    <td scope="col"></td> 
+                    <td scope="col"></td>
                     </tr>
                 </thead> -->
-                
+
                 <thead>
                     <tr>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col" ><div class="d-flex justify-content-end">Total</div></th>
-                    <th  scope="col">$ {{totalCost}}</th> 
+                    <th  scope="col">$ {{totalCost}}</th>
                     </tr>
                 </thead>
             </table>
 
             <div class="float-right mb-3 mr-3" >
                 <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
-            </div> 
+            </div>
         </accordion-group>
     </accordion>
 </div>
