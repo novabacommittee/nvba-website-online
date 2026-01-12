@@ -119,7 +119,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
         if(!this.memberValidity)
         {
           if(value.sku != 'SP2026EBKIDS' && value.sku != 'SP2026KIDSREGULAR')
-            tc += ((value.price+15) * value.quantity);
+            tc += ((value.price+10) * value.quantity);
           else
             tc += (value.price * value.quantity);
         }
@@ -147,7 +147,7 @@ export class SPtickets2026Component implements OnInit, OnChanges, AfterViewCheck
           if(!this.memberValidity)
           {
             if(value.sku != 'SP2026EBKIDS' && value.sku != 'SP2026KIDSREGULAR')
-              value.price = value.price+15;
+              value.price = value.price+10;
           }
           this.cs.items.push(value);
   //        console.log(value);
