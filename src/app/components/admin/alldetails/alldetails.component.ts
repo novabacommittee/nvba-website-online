@@ -784,8 +784,7 @@ export class AlldetailsComponent implements OnInit {
                   Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
                   this.membershipRenew = true;
               }
-
-              if(e.sku.includes("MM2026YY")){
+              else if(e.sku.includes("MM2026YY")){
                   this.MM2026YY += e.quantity ;
                   Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2026YY:e.quantity,sku:e.sku,tax:e.tax});
                   this.membershipRenew = true;
@@ -1012,7 +1011,7 @@ export class AlldetailsComponent implements OnInit {
 
               else if(e.sku.includes("MM2024YY")){
                   this.MM2024YY += e.quantity ;
-                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2024YY:e.quantity,sku:e.sku,tax:e.tax});
                   this.membershipRenew = true;
               }
 
@@ -1166,7 +1165,7 @@ export class AlldetailsComponent implements OnInit {
 
               else if(e.sku.includes("MM2023YY")){
                   this.MM2023YY += e.quantity ;
-                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2023YY:e.quantity,sku:e.sku,tax:e.tax});
                   this.membershipRenew = true;
               }
               // else if(e.sku.includes("KP2023NON")){  
@@ -1181,8 +1180,8 @@ export class AlldetailsComponent implements OnInit {
               // }
               else if(e.sku.includes("MM2022YY")){
                   this.MM2022YY += e.quantity ;
-                  //Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2025YY:e.quantity,sku:e.sku,tax:e.tax});
-                  //this.membershipRenew = true;
+                  Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,MM2022YY:e.quantity,sku:e.sku,tax:e.tax});
+                  this.membershipRenew = true;
               }
             }); // End of Purchase Loop e
           }
