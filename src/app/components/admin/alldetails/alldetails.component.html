@@ -700,9 +700,9 @@
             </table> -->
         </div>
     </div>
-    
-    <div class=" container mt-5 mb-3 " >
-        <h3 class="text-center " >Saraswati Puja-2026 Ticket Sell Transactions</h3>
+
+        <div class=" container mt-5 mb-3 " >
+        <h3 class="text-center " >Saraswati Puja-2026 Early Bird Ticket Sell Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
                 style="height:500px; "
@@ -712,7 +712,28 @@
                 class="ag-theme-alpine"
                 (gridReady)="onTicketGridReady($event)"
                 [rowData]="sp2026TicketList"
-                [columnDefs]="sp2026columnDefsTickets"
+                [columnDefs]="sp2026ebcolumnDefsTickets"
+                [animateRows]="true"
+                 >
+            </ag-grid-angular>
+        </div>
+        <div class=" d-flex justify-content-end mb-5 " >
+            <button (click)="onBtnExport()" class=" btn-get-started ">Export CSV File</button>
+        </div>
+    </div>
+
+    <div class=" container mt-5 mb-3 " >
+        <h3 class="text-center " >Saraswati Puja-2026 Regular Ticket Sell Transactions</h3>
+        <div class=" mb-3  table-bordered" >
+            <ag-grid-angular
+                style="height:500px; "
+                class="ag-theme-alpine table-light table-responsive agGridTable"
+                #agGrid
+                id="SP2026Grid"
+                class="ag-theme-alpine"
+                (gridReady)="onTicketGridReady($event)"
+                [rowData]="sp2026TicketList"
+                [columnDefs]="sp2026regcolumnDefsTickets"
                 [animateRows]="true"
                  >
             </ag-grid-angular>
