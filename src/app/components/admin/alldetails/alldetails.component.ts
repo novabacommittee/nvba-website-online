@@ -352,11 +352,11 @@ export class AlldetailsComponent implements OnInit {
     { field: 'lastPurchase', headerName:'Purchase Amount', sortable: true, resizable: true,valueGetter: `' $ ' + data.lastPurchase` },
     { field: 'paymentTime', headerName:'Purchase Date', sortable: true, resizable: true },
     
-    { field: 'SP2026EBNVADULT+SP2026NVADULTREGULAR', headerName:'Adult Non-Veg', sortable: true, resizable: true },
-    { field: 'SP2026EBVEGADULT+SP2026VEGADULTREGULAR', headerName:'Adult Veg', sortable: true, resizable: true },
-    { field: 'SP2026EBNVOTHER+SP2026NVOTHERREGULAR', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg ', sortable: true, resizable: true },
-    { field: 'SP2026EBVEGOTHER+SP2026VEGOTHERREGULAR', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg', sortable: true, resizable: true },
-    { field: 'SP2026EBKIDS+SP2026KIDSREGULAR', headerName:'Kids for age group [ 0 - 10 years ]', sortable: true, resizable: true },
+    { field: 'SP2026EBNVADULT', headerName:'Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'SP2026EBVEGADULT', headerName:'Adult Veg', sortable: true, resizable: true },
+    { field: 'SP2026EBNVOTHER', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg ', sortable: true, resizable: true },
+    { field: 'SP2026EBVEGOTHER', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg', sortable: true, resizable: true },
+    { field: 'SP2026EBKIDS', headerName:'Kids for age group [ 0 - 10 years ]', sortable: true, resizable: true },
     { field: 'SP2026PRPASS', headerName:'Priority Access', sortable: true, resizable: true }
 	];
 
