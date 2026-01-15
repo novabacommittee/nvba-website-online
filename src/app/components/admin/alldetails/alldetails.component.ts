@@ -138,6 +138,12 @@ export class AlldetailsComponent implements OnInit {
   SP2026EBKIDS:number =0;
   SP2026PRPASS:number = 0;
 
+  SP2026NVADULTREGULAR:number = 0;
+  SP2026VEGADULTREGULAR:number = 0;
+  SP2026NVOTHERREGULAR:number =0;
+  SP2026VEGOTHERREGULAR:number =0;
+  SP2026KIDSREGULAR:number =0;
+
   paymentTime:any;
   customAdult:number =0;
   customKid:number =0;
@@ -346,11 +352,11 @@ export class AlldetailsComponent implements OnInit {
     { field: 'lastPurchase', headerName:'Purchase Amount', sortable: true, resizable: true,valueGetter: `' $ ' + data.lastPurchase` },
     { field: 'paymentTime', headerName:'Purchase Date', sortable: true, resizable: true },
     
-    { field: 'SP2026EBNVADULT', headerName:'Adult Non-Veg', sortable: true, resizable: true },
-    { field: 'SP2026EBVEGADULT', headerName:'Adult Veg', sortable: true, resizable: true },
-    { field: 'SP2026EBNVOTHER', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg ', sortable: true, resizable: true },
-    { field: 'SP2026EBVEGOTHER', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg', sortable: true, resizable: true },
-    { field: 'SP2026EBKIDS', headerName:'Kids for age group [ 0 - 10 years ]', sortable: true, resizable: true },
+    { field: 'SP2026EBNVADULT+SP2026NVADULTREGULAR', headerName:'Adult Non-Veg', sortable: true, resizable: true },
+    { field: 'SP2026EBVEGADULT+SP2026VEGADULTREGULAR', headerName:'Adult Veg', sortable: true, resizable: true },
+    { field: 'SP2026EBNVOTHER+SP2026NVOTHERREGULAR', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg ', sortable: true, resizable: true },
+    { field: 'SP2026EBVEGOTHER+SP2026VEGOTHERREGULAR', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg', sortable: true, resizable: true },
+    { field: 'SP2026EBKIDS+SP2026KIDSREGULAR', headerName:'Kids for age group [ 0 - 10 years ]', sortable: true, resizable: true },
     { field: 'SP2026PRPASS', headerName:'Priority Access', sortable: true, resizable: true }
 	];
 
@@ -730,6 +736,12 @@ export class AlldetailsComponent implements OnInit {
     this.SP2026EBKIDS=0;
     this.SP2026PRPASS = 0;
 
+    this.SP2026NVADULTREGULAR = 0;
+    this.SP2026VEGADULTREGULAR = 0;
+    this.SP2026NVOTHERREGULAR =0;
+    this.SP2026VEGOTHERREGULAR =0;
+    this.SP2026KIDSREGULAR=0;
+
     try{
     //console.log(this.rowData);
     [...this.rowData].forEach( m =>{ 
@@ -760,7 +772,7 @@ export class AlldetailsComponent implements OnInit {
                   this.membershipRenew = true;
               }
 
-              //Saraswati Puja 2026 Ticket Details
+              //Saraswati Puja 2026 Early Bird Ticket Details
               else if(e.sku.includes("SP2026EBNVADULT")){
                 this.SP2026EBNVADULT += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
@@ -795,6 +807,38 @@ export class AlldetailsComponent implements OnInit {
                 this.SP2026PRPASS += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026PRPASS:e.quantity,sku:e.sku,tax:e.tax});
+                this.newPurches = true;
+              }
+
+              //Saraswati Puja 2026 Regular Ticket Details
+              else if(e.sku.includes("SP2026NVADULTREGULAR")){
+                this.SP2026NVADULTREGULAR += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026NVADULTREGULAR:e.quantity,sku:e.sku,tax:e.tax});
+                this.newPurches = true;
+              }
+              else if(e.sku.includes("SP2026VEGADULTREGULAR")){
+                this.SP2026VEGADULTREGULAR += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026VEGADULTREGULAR:e.quantity,sku:e.sku,tax:e.tax});
+                this.newPurches = true;
+              }
+              else if(e.sku.includes("SP2026NVOTHERREGULAR")){
+                this.SP2026NVOTHERREGULAR += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026NVOTHERREGULAR:e.quantity,sku:e.sku,tax:e.tax});
+                this.newPurches = true;
+              }
+              else if(e.sku.includes("SP2026VEGOTHERREGULAR")){
+                this.SP2026VEGOTHERREGULAR += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026VEGOTHERREGULAR:e.quantity,sku:e.sku,tax:e.tax});
+                this.newPurches = true;
+              }
+              else if(e.sku.includes("SP2026KIDSREGULAR")){
+                this.SP2026KIDSREGULAR += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026KIDSREGULAR:e.quantity,sku:e.sku,tax:e.tax});
                 this.newPurches = true;
               }
 

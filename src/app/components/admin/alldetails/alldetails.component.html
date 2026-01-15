@@ -52,8 +52,8 @@
                   <th>Adult</th>
                   <td>
                       <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2026EBNVADULT}}</div>
-                          <div class="green">{{SP2026EBVEGADULT}}</div>
+                          <div class="red" >{{SP2026EBNVADULT+SP2026NVADULTREGULAR}}</div>
+                          <div class="green">{{SP2026EBVEGADULT+SP2026VEGADULTREGULAR}}</div>
                      </div> 
                   </td>
                 </tr>
@@ -61,8 +61,8 @@
                   <th>Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID</th>
                   <td>
                       <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2026EBNVOTHER}}</div>
-                          <div class="green">{{SP2026EBVEGOTHER}}</div>
+                          <div class="red" >{{SP2026EBNVOTHER+SP2026NVOTHERREGULAR}}</div>
+                          <div class="green">{{SP2026EBVEGOTHER+SP2026VEGOTHERREGULAR}}</div>
                       </div>
                   </td>
                   
@@ -71,7 +71,7 @@
                   <th>Kids for age group [ 0 - 10 years ]</th>
                   <td>
                       <div class="d-flex justify-content-around ">
-                          <div >{{SP2026EBKIDS}}</div>
+                          <div >{{SP2026EBKIDS+SP2026KIDSREGULAR}}</div>
                       </div>
                   </td>
                 </tr>
@@ -87,8 +87,8 @@
                   <th>Total (without kids count)</th>
                     <th>
                       <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2026EBNVADULT + SP2026EBNVOTHER }}</div>
-                          <div class="green">{{SP2026EBVEGADULT + SP2026EBVEGOTHER }}</div>
+                          <div class="red" >{{SP2026EBNVADULT + SP2026EBNVOTHER + SP2026NVADULTREGULAR + SP2026NVOTHERREGULAR }}</div>
+                          <div class="green">{{SP2026EBVEGADULT + SP2026EBVEGOTHER + SP2026VEGADULTREGULAR + SP2026VEGOTHERREGULAR }}</div>
                       </div>
                     </th>
                 </tr>
@@ -96,7 +96,8 @@
                     <th>Total Head Count</th>
                       <th>
                         <div class="d-flex justify-content-around ">
-                            <div  >{{SP2026EBNVADULT + SP2026EBNVOTHER + SP2026EBVEGADULT + SP2026EBVEGOTHER + SP2026EBKIDS}}</div>
+                            <div  >{{SP2026EBNVADULT + SP2026EBNVOTHER + SP2026EBVEGADULT + SP2026EBVEGOTHER + SP2026EBKIDS+
+                                SP2026NVADULTREGULAR+SP2026VEGADULTREGULAR+SP2026NVOTHERREGULAR+SP2026VEGOTHERREGULAR+SP2026KIDSREGULAR}}</div>
                         </div>
                       </th>
                 </tr>
