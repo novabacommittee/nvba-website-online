@@ -200,18 +200,18 @@ export class AuthService  {
               newuser = false;
               this.memberData = e;
                this.member.next({...e,...this.userData});
-              // //console.log(this.memberData);
-              // //console.log('this.member');
-              // //console.log(this.member.value);
+               //console.log(this.memberData);
+               //console.log('this.member');
+               //console.log(this.member.value);
             }
-            
          })
+
          if(newuser){
-         let con = JSON.parse(localStorage.getItem('user')!) ;
+          let con = JSON.parse(localStorage.getItem('user')!) ;
           
           let newMember = {id:idCount, email:con.email};
           //console.log( newMember );
-          this.memberService.AddMember(newMember)
+          this.memberService.AddMember(con.user.uid, con.email)
          // this.member.next(con);
          }
          

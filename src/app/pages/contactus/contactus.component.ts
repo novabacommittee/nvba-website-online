@@ -7,6 +7,7 @@ import {MemberService} from './../../shared/member/member.service';
   templateUrl: './contactus.component.html',
   styleUrls: ['./contactus.component.scss']
 })
+
 export class ContactusComponent implements OnInit {
   member: any;
 
@@ -32,13 +33,13 @@ export class ContactusComponent implements OnInit {
     // })
     ////console.log(this.member.email);
     if (this.member && this.member.email) {
-      this.memberService.GetMember("198").snapshotChanges().subscribe(m => {
-        let memberData = m.payload.toJSON()
-        ////console.log(memberData);
-        this.member = memberData;
-        ////console.log('this.member - ');
-        ////console.log(this.member.email);
-      })
+      // this.memberService.GetMember("198").snapshotChanges().subscribe(m => {
+      //   let memberData = m.payload.toJSON()
+      //   ////console.log(memberData);
+      //   this.member = memberData;
+      //   ////console.log('this.member - ');
+      //   ////console.log(this.member.email);
+      // })
       this.memberService.GetMemberbyEmail(this.member.email).snapshotChanges().subscribe(mm => {
         let md = mm.forEach(mmd => {
           let s = mmd.payload.toJSON()
@@ -59,6 +60,4 @@ export class ContactusComponent implements OnInit {
   async datafind1() {
     //  ////console.log( await this.auth.memberDetail());
   }
-
-
 }
