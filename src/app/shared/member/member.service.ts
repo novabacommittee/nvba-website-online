@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
+
 export class MemberService {
   membersRef!: AngularFireList<any>;
   memberRef!: AngularFireObject<any>;
@@ -28,7 +29,8 @@ export class MemberService {
     //   .catch((error) => {
     //     this.errorMgmt(error);
     //   });
-    this.db.object('/Members/'+member.id).set({ ...member }).catch(error => {
+    this.db.object('/Members/'+member.id).set({ ...member }).catch(error => 
+    {
       ////console.log(error);
     }).then( c => {
       ////console.log("Success Create.");
@@ -39,17 +41,20 @@ export class MemberService {
     this.memberRef = this.db.object('/Members/' + id);
     return this.memberRef;
   }
+
   /* Get member */
   GetMemberbyEmail(email: string) {
     this.membersRef = this.db.list('/Members'+email);
  //   this.membersRef.valueChanges()
     return  this.membersRef;
   }
+
   /* Get members list */
   GetMembersList() {
   //  this.membersRef = this.db.list('/Members');
     return this.items;
   }
+
   /* Update member */
   UpdateMember(id: number, memb: any) {
     // console.log(id);
@@ -66,8 +71,8 @@ export class MemberService {
     }).then( c => {
       console.log("success Update");
     });
-
   }
+
   /* Delete Member */
   // DeleteMember(id: string) {
   //   this.memberRef = this.db.object('books-list/' + id);
@@ -112,21 +117,4 @@ export class MemberService {
           console.log("Success Create.");
         });
     }
-  
-  // dp2024(purches:any){
-  //   this.db.object('/dp2024/'+purches.id).set({ ...purches }).catch(error => {
-  //         console.log(error);
-  //       }).then( c => {
-  //         console.log("Success Create.");
-  //       });
-  //   }
-
-  // sp2025(purches:any){
-  //     this.db.object('/sp2025/'+purches.id).set({ ...purches }).catch(error => {
-  //           console.log(error);
-  //         }).then( c => {
-  //           console.log("Success Create.");
-  //         });
-  //     }
-  
 }

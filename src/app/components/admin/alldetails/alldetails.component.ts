@@ -17,7 +17,8 @@ export class AlldetailsComponent implements OnInit {
   rowData:any;
   concertTickets:any;
   foodTickets:any;
-  private gridApi:any;
+  private gridApiSP26EB:any;
+  private gridApiSP26REG:any;
   private gridColumnApi:any;
 
   membershipList:any;
@@ -180,7 +181,8 @@ export class AlldetailsComponent implements OnInit {
 
     this.mds.GetMembersList().subscribe(m=>{
       this.members = m;
-      console.log(this.members);
+      //console.log('Printing all members list-->'+this.members);
+      
       this.rowData =  this.members;
       //console.log(this.rowData);
       this.checkDetails();
@@ -188,14 +190,14 @@ export class AlldetailsComponent implements OnInit {
 
     this.tds.GetTicketsList().subscribe(t => {
       this.concertTickets = t;
-      console.log(t);
-      this.checkDP2025ConcertDetails();
+      //console.log(t);
+      //this.checkDP2025ConcertDetails();
     })
 
     this.foodds.GetTicketsList().subscribe(t => {
       this.foodTickets = t;
-      console.log(t);
-      this.checkKP2025Details();
+      //console.log(t);
+      //this.checkKP2025Details();
     })
   }
 
@@ -384,7 +386,7 @@ export class AlldetailsComponent implements OnInit {
     this.dp2025ConcertTicketList = [];
 
     [...this.concertTickets].forEach( ct =>{
-        console.log(' Each row ', ct.purchase_units[0].items[0].quantity);
+        //console.log(' Each row ', ct.purchase_units[0].items[0].quantity);
         const concertPurchase = {};
 
         [...ct.purchase_units[0].items].forEach(tic =>{
@@ -419,7 +421,7 @@ export class AlldetailsComponent implements OnInit {
     this.dp2024ConcertTicketList = [];
 
     [...this.concertTickets].forEach( ct =>{
-        console.log(' Each row ', ct.transactions[0].item_list.items[0].quantity);
+        //console.log(' Each row ', ct.transactions[0].item_list.items[0].quantity);
         const concertPurchase = {};
 
         [...ct.transactions[0].item_list.items].forEach(tic =>{
@@ -451,11 +453,11 @@ export class AlldetailsComponent implements OnInit {
   checkKP2023Details(){
     try{
     [...this.foodTickets].forEach( ct =>{
-        console.log(' Each row KP');
-        console.log(ct.transactions[0].item_list.items[0].quantity );
+        //console.log(' Each row KP');
+        //console.log(ct.transactions[0].item_list.items[0].quantity );
         [...ct.transactions[0].item_list.items].forEach( nonandveg =>{
 
-        console.log(nonandveg);
+        //console.log(nonandveg);
         //"KP2023VEG"
       if(nonandveg.sku == 'KP2023VEG')
       {
@@ -495,7 +497,7 @@ export class AlldetailsComponent implements OnInit {
 
       try{
       [...this.foodTickets].forEach( ct =>{
-        console.log('Each row KP2024');
+        //console.log('Each row KP2024');
 
         this.vegchopcount = 0;
         this.vegghugnicount = 0;
@@ -504,10 +506,10 @@ export class AlldetailsComponent implements OnInit {
         this.vegbiriyanicount = 0;
         this.nonvegbiriyanicount = 0;
 
-        console.log(ct.transactions[0].item_list.items[0].quantity );
+        //console.log(ct.transactions[0].item_list.items[0].quantity );
         [...ct.transactions[0].item_list.items].forEach( item =>{
 
-          console.log(item);
+          //console.log(item);
 
           //"KP2024TEA"
           if(item.sku == 'KP2024TEA'){
@@ -574,7 +576,7 @@ export class AlldetailsComponent implements OnInit {
 
     try{
     [...this.foodTickets].forEach( ct =>{
-      console.log('Each row KP2025');
+      //console.log('Each row KP2025');
 
       this.teacount = 0;
       this.coffeecount = 0;
@@ -588,10 +590,10 @@ export class AlldetailsComponent implements OnInit {
       this.vegbiriyanicount = 0;
       this.nonvegbiriyanicount = 0;
 
-      console.log(ct.transactions[0].item_list.items[0].quantity );
+      //console.log(ct.transactions[0].item_list.items[0].quantity );
       [...ct.transactions[0].item_list.items].forEach( item =>{
 
-        console.log(item);
+        //console.log(item);
 
         //"KP2025TEA"
         if(item.sku == 'KP2025TEA'){
@@ -764,8 +766,8 @@ export class AlldetailsComponent implements OnInit {
     try{
     //console.log(this.rowData);
     [...this.rowData].forEach( m =>{ 
-      console.log(m.purchase? true : false);
-
+      //console.log(m.purchase? true : false);
+      //console.log(m);
       if(m.purchase? true : false){
         try{
           [...m.purchase].forEach(element => {
@@ -1203,12 +1205,13 @@ export class AlldetailsComponent implements OnInit {
                 }
                 else if(this.newEBPurches == true){
                   this.sp2026EBTicketList.unshift(this.user);
+                  //console.log(this.sp2026EBTicketList);
                 }
                 else if(this.newRegPurches == true){
                   this.sp2026RegTicketList.unshift(this.user);
+                  //console.log(this.sp2026RegTicketList);
                 }
               //console.log(this.user);
-              //console.log(this.sp2026EBTicketList);
 
               this.newEBPurches = false;
               this.newRegPurches = false;
@@ -1232,22 +1235,24 @@ export class AlldetailsComponent implements OnInit {
     }
   }
 
-  onBtnExport() {
-    this.gridApi.exportDataAsCsv();
-  }
-  
-  onGridReady(params:any) {
-    this.gridApi = params.api;
+ 
+  onEBTicketGridReady(params:any) {
+    this.gridApiSP26EB = params.api;
     this.gridColumnApi = params.columnApi;
   }
 
-    onTicketBtnExport() {
-    this.gridApi.exportDataAsCsv();
+  onEBBtnExport() {
+    this.gridApiSP26EB.exportDataAsCsv();
   }
 
-    onTicketGridReady(params:any) {
-    this.gridApi = params.api;
+
+  onRegTicketGridReady(params:any) {
+    this.gridApiSP26REG = params.api;
     this.gridColumnApi = params.columnApi;
+  }
+
+  onRegBtnExport() {
+    this.gridApiSP26REG.exportDataAsCsv();
   }
 
 }
