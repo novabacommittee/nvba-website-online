@@ -23,3 +23,19 @@
 .orange{
     color: #f86f2d;
 }
+
+  .blinking-text {
+    animation: blink 2s step-start infinite;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
