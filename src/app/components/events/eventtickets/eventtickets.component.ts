@@ -30,7 +30,7 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
   // headCount: number = 0;
 
 
-  private _jsonURLcart = '/assets/data/tickets/tickets-2026-SP-earlybird.json';
+  private _jsonURLcart = '/assets/data/tickets/tickets-2026-SP-regular.json';
    constructor(private http: HttpClient, private cs: CartService, public router: Router, private cdr: ChangeDetectorRef) {
     this.cs.currentCart.subscribe( cartCheck => this.cartCheck = cartCheck);
     this.getJSON().subscribe(data => {
@@ -38,11 +38,11 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
       this.dataObject = data;
       this.checkData();
      });
-     
+
    }
-   
+
    ngOnInit(): void {
-    
+
   }
 
    public getJSON(): Observable<any> {
@@ -56,11 +56,11 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
           value.quantity = element.quantity;
         }
       });
-       
+
     });
    }
 
-  
+
   ngOnChanges(): void{
 
   }
@@ -71,16 +71,16 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
     let ticketCount = 0;
     this.kidsCount = 0;
     let kidsTicketKK = 0;
-    
+
     [...this.dataObject].forEach(value => {
    //   ////console.log(value);
-      if(value.quantity > 0){ 
+      if(value.quantity > 0){
         tc += (value.price * value.quantity);
       }
-     
+
     });
 
-    
+
     if(ticketCount>this.headCount){
       this.addtoCartBtn = false;
     }
@@ -93,7 +93,7 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
     this.cdr.detectChanges();
   }
 
-  
+
   addToCartobj(){
     ////console.log(this.dataObject);
     ////console.log(this.cs.items);
@@ -102,18 +102,18 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
     this.dataObject.forEach((value:any) => {
   //    ////console.log(value.quantity);
     //  ////console.log(value);
-      if(value.quantity > 0){ 
+      if(value.quantity > 0){
        // this.cs.addToCart(value);
         ////console.log(value.quantity);
         this.cs.items.push(value);
       //  this.totalCost += (parseFloat(value.price) * parseFloat(value.quantity));
-        // value.tax = (value.price * value.quantity) * 0.00; 
+        // value.tax = (value.price * value.quantity) * 0.00;
         // value.tax = parseFloat(value.tax).toFixed(2);
        // this.cs.addToCart(value);
-       
+
         ////console.log(value);
      //   this.checkObject.push(value);
-     } 
+     }
     });
     ////console.log(this.cs.items);
     this.cs.addToCart(this.cs.items);
@@ -122,9 +122,9 @@ export class EventticketsComponent implements OnInit, OnChanges, AfterViewChecke
     this.router.navigate(['/checkout']);
  //   this.router.navigate(['/heroes', { id: itemId }]);
 
- //   item.count = 
+ //   item.count =
 //    this.cartService.addToCart();
-    
+
   }
 
   clearCart(){

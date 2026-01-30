@@ -1,5 +1,5 @@
 [
-    { 
+    {
         "eventId":31,
         "eventType": "past",
         "eventName": "Breakfast for Firefighter 2025",
@@ -12,7 +12,7 @@
         "description": "We prepare and deliver Breakfast to our Firefighters expressing NVBA community member's gratitude to the firefighetr's service for the community.",
         "mapUrl": ""
     },
-    { 
+    {
         "eventId":29,
         "eventType": "past",
         "eventName": "Annual General Meeting (AGM) 2025",
@@ -25,7 +25,7 @@
         "description": "Your participation is highly appreciated.",
         "mapUrl": "https://maps.app.goo.gl/czVbyBMCz6nmdhDH8"
     },
-    { 
+    {
         "eventId":26,
         "eventType": "past",
         "eventName": "Sarbojanin Durgotsob 2025",
@@ -38,7 +38,7 @@
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
         "mapUrl": "https://maps.app.goo.gl/iKfsDD2p3cg5V6HB7"
     },
-    { 
+    {
         "eventId":27,
         "eventType": "past",
         "eventName": "Joy-Lopa Concert 2025",
@@ -51,7 +51,7 @@
         "description": "Prantik Baltimore is organizing a concert on September 27th during our Durga Pujo. We will have Lopamudra Mitra and Joy Sarkar with their musical group from Kolkata coming to perform. Their Joy-Lopa Express is their Signature concert making waves in Kolkata this past year.Tickets registration is on Tickets registration available below",
         "mapUrl": "https://maps.app.goo.gl/ZY6W6DbnyjgPKQej7"
     },
-    { 
+    {
         "eventId":28,
         "eventType": "past",
         "eventName": "Papon Live Concert",
@@ -64,7 +64,7 @@
         "description": "NVBA proudly presents a LIVE concert featuring the sensational Papon and top Bollywood musicians!",
         "mapUrl": "https://maps.app.goo.gl/k4gcfuTCaWnDynEt7"
     },
-    { 
+    {
         "eventId":25,
         "eventType": "past",
         "eventName": "Annual Picnic 2025",
@@ -77,7 +77,7 @@
         "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship..",
         "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
     },
-    { 
+    {
         "eventId":24,
         "eventType": "past",
         "eventName": "Kobi Pronam 2025",
@@ -90,7 +90,7 @@
         "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
         "mapUrl": "https://maps.app.goo.gl/MeLB5sAGvx8SZvna9"
     },
-    { 
+    {
         "eventId":23,
         "eventType": "past",
         "eventName": "Poila Boisakh 2025",
@@ -103,7 +103,7 @@
         "description": "Come join us to celebrate our new year.",
         "mapUrl": "https://goo.gl/maps/oK7kDeWN1RjXAZQRA"
     },
-    { 
+    {
         "eventId":21,
         "eventType": "past",
         "eventName": "Saraswati Puja 2025",
@@ -116,7 +116,7 @@
         "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, bengali delicious food and cultural performances",
         "mapUrl": ""
     },
-    { 
+    {
         "eventId":1,
         "eventType": "past",
         "eventName": "Breakfast for Firefighter 2024",
@@ -129,7 +129,7 @@
         "description": "Break fast with Firefighter  ",
         "mapUrl": ""
     },
-    { 
+    {
         "eventId":2,
         "eventType": "past",
         "eventName": "Annual General Meeting (AGM) 2024",
@@ -142,7 +142,7 @@
         "description": "Your participation is highly appreciated.",
         "mapUrl": "https://www.google.com/maps/place/Chantilly+Regional+Library/@38.8826348,-77.4103814,17z/data=!4m5!3m4!1s0x89b645d93e9c74d7:0xea49f7691dcdee5f!8m2!3d38.8826348!4d-77.4081927"
     },
-    { 
+    {
         "eventId":3,
         "eventType": "past",
         "eventName": "Sarbojanin Durgotsob 2024",
@@ -155,7 +155,7 @@
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
         "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
     },
-    { 
+    {
         "eventId":4,
         "eventType": "past",
         "eventName": "DC South Asian Festival 2024",
@@ -169,7 +169,7 @@
         "mapUrl": "https://maps.app.goo.gl/1jaJNProjta6cev99",
         "externalLink":"https://dcsaff2024.eventive.org/welcome"
     },
-    { 
+    {
         "eventId":5,
         "eventType": "past",
         "eventName": "Annual Picnic 2024",
@@ -182,7 +182,7 @@
         "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship. Special attraction T20 Cricket Final live streaming, live photo booth.",
         "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
     },
-    { 
+    {
         "eventId":6,
         "eventType": "past",
         "eventName": "Kobi Pronam 2024",
@@ -195,7 +195,7 @@
         "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
         "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
-    { 
+    {
         "eventId":7,
         "eventType": "past",
         "eventName": "Poila Boisakh 2024",
@@ -208,7 +208,7 @@
         "description": "Come join us to celebrate our new year. Entry: FREE ",
         "mapUrl": "https://goo.gl/maps/oK7kDeWN1RjXAZQRA"
     },
-    { 
+    {
         "eventId":8,
         "eventType": "past",
         "eventName": "Saraswati Puja 2024",
@@ -221,7 +221,7 @@
         "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, bengali delicious food and cultural performances",
         "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
-    { 
+    {
         "eventId":9,
         "eventType": "past",
         "eventName": "Breakfast for Firefighter 2023",
@@ -234,7 +234,7 @@
         "description": "Breakfast for Firefighter",
         "mapUrl": ""
     },
-    { 
+    {
         "eventId":10,
         "eventType": "past",
         "eventName": "Annual General Meeting (AGM) 2023",
@@ -247,7 +247,7 @@
         "description": "Your participation is highly appreciated.",
         "mapUrl": "https://www.google.com/maps/place/Chantilly+Regional+Library/@38.8826348,-77.4103814,17z/data=!4m5!3m4!1s0x89b645d93e9c74d7:0xea49f7691dcdee5f!8m2!3d38.8826348!4d-77.4081927"
     },
-    { 
+    {
         "eventId":11,
         "eventType": "past",
         "eventName": "Sarbojanin Durgotsob 2023",
@@ -260,7 +260,7 @@
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
         "mapUrl": "https://maps.app.goo.gl/mvmNYLDipdGZaHB36"
     },
-    { 
+    {
         "eventId":12,
         "eventType": "past",
         "eventName": "Pancham Swar",
@@ -274,7 +274,7 @@
         "mapUrl": "https://www.google.com/maps/place/Richard+J+Ernst+Community+Cultural+Center/@38.8333994,-77.2389877,17z/data=!3m1!4b1!4m6!3m5!1s0x89b64cf9a4b7d595:0x736872a31ef0fe0b!8m2!3d38.8333994!4d-77.236799!16s%2Fg%2F1tfb7fvw?entry=ttu",
         "externalLink":"https://breakthetide.org/"
     },
-    { 
+    {
         "eventId":13,
         "eventType": "past",
         "eventName": "Annual Picnic 2023",
@@ -287,7 +287,7 @@
         "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship..",
         "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
     },
-    { 
+    {
         "eventId":14,
         "eventType": "past",
         "eventName": "Kobi Pronam 2023",
@@ -300,7 +300,7 @@
         "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
         "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
-    { 
+    {
         "eventId":15,
         "eventType": "past",
         "eventName": "Tagore and the Colors of Spring",
@@ -314,7 +314,7 @@
         "mapUrl": "https://www.google.com/maps/dir/38.8764326,-77.2290188/Kreeger+Auditorium+of+Bender+JCC+of+Rockville+(The+Jewish+Community+Center+of+Greater+Washington)+6125+Montrose+Rd,+Rockville,+MD+20852,+Rockville+,+Maryland/@38.960013,-77.2493226,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x89b7cc36396d1c21:0xab1b6afa6d90bd65!2m2!1d-77.1246265!2d39.0534384",
         "externalLink": "https://events.eventgroove.com/event/Tagore-And-The-Colors-Of-Spring-75386"
     },
-    { 
+    {
         "eventId":16,
         "eventType": "past",
         "eventName": "Poila Boisakh 2023",
@@ -327,7 +327,7 @@
         "description": "Come join us to celebrate our new year.",
         "mapUrl": "https://goo.gl/maps/oK7kDeWN1RjXAZQRA"
     },
-    { 
+    {
         "eventId":17,
         "eventType": "past",
         "eventName": "Saraswati Puja 2023",
@@ -340,7 +340,7 @@
         "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, bengali delicious food and cultural performances",
         "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
     },
-    { 
+    {
         "eventId":18,
         "eventType": "past",
         "eventName": "Breakfast for Firefighter 2022",
@@ -353,7 +353,7 @@
         "description": "Breakfast for Firefighter  ",
         "mapUrl": ""
     },
-    { 
+    {
         "eventId":19,
         "eventType": "past",
         "eventName": "Annual General Meeting (AGM) 2022",
@@ -366,7 +366,7 @@
         "description": "Your participation is highly appreciated.",
         "mapUrl": "https://www.google.com/maps/place/Chantilly+Regional+Library/@38.8826348,-77.4103814,17z/data=!4m5!3m4!1s0x89b645d93e9c74d7:0xea49f7691dcdee5f!8m2!3d38.8826348!4d-77.4081927"
     },
-    { 
+    {
         "eventId":20,
         "eventType": "past",
         "eventName": "Sarbojanin Durgotsob 2022",
@@ -379,14 +379,14 @@
         "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
         "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
     },
-    { 
+    {
         "eventId":30,
         "eventType": "current",
         "eventName": "Saraswati Puja 2026",
-        "eventDate": "January 24th, 2026",
-        "eventEndDate": "January 24th, 2026",
-        "eventImage": "./../../../assets/images/stocks/saraswati-2021.jpg",
-        "timming": "11:00 AM - 10:00 PM",
+        "eventDate": "February 7th, 2026",
+        "eventEndDate": "February 7th, 2026",
+        "eventImage": "./../../../assets/images/gallery/sp2026/SaraswatiPuja2026.jpg",
+        "timming": "10:00 AM - 10:00 PM",
         "venue": "J Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
         "pageLink": "/saraswatipuja2026",
         "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, bengali delicious food and cultural performances",
