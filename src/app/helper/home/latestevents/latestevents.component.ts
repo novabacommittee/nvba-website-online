@@ -23,11 +23,12 @@ interface Event {
 })
 
 export class LatesteventsComponent implements OnInit {
-  events: Event[] = [];
-  pastevents: Event[] = [];
-  commingevents: Event[] = [];
+  events: any = [];
+  pastevents: any =[];
+  commingevents: any =[];
   pastEventsExpanded: boolean = false; // Set to false to make it collapsed by default
-  pastEventsByYear: { [key: string]: Event[] } = {}; // Object to store events grouped by year
+  selectedYear: string = ''; // Track the selected year
+  pastEventsByYear: { [key: string]: any[] } = {}; // Group events by year
   expandedYears: { [key: string]: boolean } = {}; // Object to track which years are expanded
   
   constructor(private jsonFile:GetjsonfileService) { }
@@ -91,6 +92,10 @@ export class LatesteventsComponent implements OnInit {
   
   togglePastEvents() {
     this.pastEventsExpanded = !this.pastEventsExpanded;
+  }
+  
+  selectYear(year: string) {
+    this.selectedYear = this.selectedYear === year ? '' : year; // Toggle selection
   }
   
   toggleYear(year: string) {

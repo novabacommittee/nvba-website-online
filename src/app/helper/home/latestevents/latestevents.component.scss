@@ -23,11 +23,111 @@ $font-secondary: 'Playfair Display', Georgia, serif;
 // Apply modern fonts to all elements in this component - ALL Poppins
 :host {
   font-family: $font-primary !important;
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-family: $font-primary !important;
   }
+
+  // Override global ftco-section spacing
+  .ftco-section {
+    padding-top: 5px !important;
+    margin-top: 5px !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 5px !important;
+
+    &:first-child {
+      padding-top: 5px !important;
+      margin-top: 5px !important;
+      padding-bottom: 5px !important;
+      margin-bottom: 5px !important;
+    }
+  }
+
+  // Override container spacing
+  .container {
+    padding-top: 5px !important;
+    margin-top: 5px !important;
+    padding-bottom: 5px !important;
+    margin-bottom: -10px !important;
+  }
   
+  // Override row spacing
+  .row {
+    margin-top: 5px !important;
+    margin-bottom: -10px !important;
+  }
+  
+  // Override collapsible container spacing
+  .collapsible-container {
+    margin-bottom: -10px !important;
+    padding-bottom: 5px !important;
+    
+    &:last-child {
+      margin-bottom: -10px !important;
+      padding-bottom: 5px !important;
+    }
+  }
+  
+  // Year buttons container - horizontal layout
+  .year-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  // Selected year button highlighting
+  .year-toggle-button.selected {
+    background: linear-gradient(135deg, #ff006e 0%, #ff4081 100%) !important;
+    transform: scale(1.15);
+    box-shadow: 0 8px 25px rgba(255, 0, 110, 0.6) !important;
+    border: 3px solid #ff006e !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    animation: pulse 1.5s infinite;
+    filter: brightness(1.2);
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 8px 25px rgba(255, 0, 110, 0.6) !important;
+      filter: brightness(1.2);
+    }
+    50% {
+      box-shadow: 0 8px 35px rgba(255, 0, 110, 0.8) !important;
+      filter: brightness(1.4);
+    }
+    100% {
+      box-shadow: 0 8px 25px rgba(255, 0, 110, 0.6) !important;
+      filter: brightness(1.2);
+    }
+  }
+  
+  // Year events container
+  .selected-year-events {
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    max-height: 5000px; // Large enough for all events in a year
+    
+    &.collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  // Event card details box with rounded corners
+  .blog-entry {
+    .text {
+      border-radius: 12px !important;
+      overflow: hidden !important;
+    }
+  }
+
   p, span, div, a, button, input, textarea, select, label {
     font-family: $font-primary !important;
   }
@@ -126,7 +226,7 @@ h2 a, h3 a, h4 a, h5 a, h6 a, h1 a {
   font-family: $font-primary !important;
 }
 
-h1 [style*="font-family"], h2 [style*="font-family"], h3 [style*="font-family"], 
+h1 [style*="font-family"], h2 [style*="font-family"], h3 [style*="font-family"],
 h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] {
   font-family: $font-primary !important;
 }
@@ -136,7 +236,7 @@ h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] 
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
     max-height: 5000px; // Increased from 2000px to 5000px to show all past events
-    
+
     &.collapsed {
         max-height: 0;
         opacity: 0;
@@ -147,7 +247,7 @@ h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] 
 // Year-based collapsible styles
 .year-group {
     margin-bottom: 30px;
-    
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -161,16 +261,16 @@ h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] 
 .year-toggle-button {
     cursor: pointer;
     transition: all 0.3s ease;
-    
+
     &:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
     }
-    
+
     .collapse-icon {
         transition: transform 0.3s ease;
         display: inline-block;
-        
+
         &.rotated {
             transform: rotate(180deg);
         }
@@ -181,7 +281,7 @@ h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] 
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
     max-height: 5000px; // Large enough for all events in a year
-    
+
     &.collapsed {
         max-height: 0;
         opacity: 0;
@@ -192,12 +292,12 @@ h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] 
 .toggle-button {
     cursor: pointer;
     transition: all 0.3s ease;
-    
+
     &:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
     }
-    
+
     .collapse-icon {
         transition: transform 0.3s ease;
     }
