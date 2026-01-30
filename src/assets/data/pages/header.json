@@ -72,6 +72,14 @@
         "child": null
     },
     {
+        "pageId": "7",
+        "pageName": "Gallery",
+        "pageLink": "gallery",
+        "tag": "",
+        "description": "Photo gallery with community events organized by year",
+        "child": null
+    },
+    {
         "pageId": "5",
         "pageName": "Archive",
         "pageLink": "archive",

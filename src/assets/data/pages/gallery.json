@@ -1,0 +1,45 @@
+{
+  "communityPhotos": {
+    "2024": {
+      "year": "2024",
+      "photos": [ "_DSC0576.jpg", "_DSC0578.jpg", "_DSC0580.jpg", "_DSC0581.jpg", "_DSC0586.jpg",
+        "_DSC0596.jpg", "_DSC0599.jpg", "_DSC0605.jpg", "_DSC0610.jpg", "_DSC0611.jpg",
+        "_DSC0612.jpg", "_DSC0613.jpg", "_DSC0616.jpg", "_DSC0617.jpg", "_DSC0619.jpg",
+        "_DSC0623.jpg", "_DSC0624.jpg", "_DSC0626.jpg", "_DSC0628.jpg", "_DSC0631.JPG",
+        "_DSC0632.jpg", "_DSC0643.jpg", "_DSC0649.jpg", "_DSC0664.jpg", "_DSC0669.jpg",
+        "_DSC0671.jpg", "_DSC0674.jpg", "_DSC0675.jpg", "event_photo_1.jpeg", "event_photo_10.jpeg",
+        "event_photo_15.jpeg", "event_photo_16.jpeg", "event_photo_17.jpeg", "event_photo_18.jpeg",
+        "event_photo_19.jpeg", "event_photo_2.jpeg", "event_photo_20.jpeg", "event_photo_21.jpeg",
+        "event_photo_22.jpeg", "event_photo_3.jpeg", "event_photo_4.jpeg", "event_photo_5.jpeg",
+        "event_photo_6.jpeg", "event_photo_7.jpeg", "event_photo_8.jpeg", "event_photo_9.jpeg",
+        "pb_bhog_preparation.jpg", "pb_opening_performence.jpg"]
+    },
+    "2022": {
+      "year": "2022",
+      "photos": ["picnic-2022.jpg"]
+    },
+    "2021": {
+      "year": "2021",
+      "photos": ["1.jpg"]
+    },
+    "2019": {
+      "year": "2019",
+      "photos": [ "1.jpg", "10.jpeg", "11.jpeg", "111.jpeg", "111.jpg", "1122.jpeg",
+        "12.jpeg", "13.jpeg", "14.jpeg", "2.jpg", "21.jpeg", "22.jpeg",
+        "23.jpeg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg",
+        "8.jpg", "9.jpeg"]
+    },
+    "2018": {
+      "year": "2018",
+      "photos": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
+    },
+    "2017": {
+      "year": "2017",
+      "photos": ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "picnic2.jpg", "picnic3.jpg", "picnic4.jpg"]
+    },
+    "2016": {
+      "year": "2016",
+      "photos": ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "picnic-2016.jpg"]
+    }
+  }
+}
