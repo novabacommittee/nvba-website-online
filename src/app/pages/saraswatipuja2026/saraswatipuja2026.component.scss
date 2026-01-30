@@ -1,41 +1,175 @@
+// Modern Font Variables
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-secondary: 'Playfair Display', Georgia, serif;
+
+// Apply modern fonts to this page
 .btn-get-started {
-    background: #ff8d00;
-    border: 2px solid #ff8d00;
-    color: #fff;
-    font-family: Montserrat, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 10px 32px;
-    border-radius: 5px;
-    transition: 0.5s;
-    margin: 0 20px 20px 0;
-    -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
-    -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
-    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
+  background: #ff8d00;
+  border: 2px solid #ff8d00;
+  color: #fff;
+  font-family: $font-primary !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin: 0 20px 20px 0;
+  -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
+  -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
 }
 
 .btn-get-blue{
-    background-color: cornflowerblue;
+  background-color: cornflowerblue;
+  font-family: $font-primary !important;
 }
 
 .orange{
-    color: #f86f2d;
+  color: #f86f2d;
 }
 
-  .blinking-text {
-    animation: blink 2s step-start infinite;
+// Apply modern fonts to all elements in this component - ALL Poppins
+:host {
+  font-family: $font-primary !important;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary !important;
   }
-  
-  @keyframes blink {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+
+  p, span, div, a, button {
+    font-family: $font-primary !important;
   }
+}
+
+// Force all elements to use modern fonts - MAXIMUM SPECIFICITY
+.wrapper * {
+  font-family: $font-primary !important;
+}
+
+.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 {
+  font-family: $font-primary !important;
+}
+
+// Force table elements specifically - MAXIMUM SPECIFICITY
+table * {
+  font-family: $font-primary !important;
+}
+
+table h1, table h2, table h3, table h4, table h5, table h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all headings inside any element to use modern fonts - MAXIMUM SPECIFICITY
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all text elements to use modern fonts - MAXIMUM SPECIFICITY
+p, span, div, a, td, th {
+  font-family: $font-primary !important;
+}
+
+// Specific overrides for nested elements - MAXIMUM SPECIFICITY
+h6 p, h5 p, h4 p, h3 p, h2 p, h1 p {
+  font-family: $font-primary !important;
+}
+
+h6 span, h5 span, h4 span, h3 span, h2 span, h1 span {
+  font-family: $font-primary !important;
+}
+
+h6 a, h5 a, h4 a, h3 a, h2 a, h1 a {
+  font-family: $font-primary !important;
+}
+
+// Table specific overrides - MAXIMUM SPECIFICITY
+#activities * {
+  font-family: $font-primary !important;
+}
+
+#activities h1, #activities h2, #activities h3, #activities h4, #activities h5, #activities h6 {
+  font-family: $font-primary !important;
+}
+
+// Additional specific targeting for problematic elements
+.wrapper .text-center h3 {
+  font-family: $font-primary !important;
+}
+
+.wrapper .text-center h5 {
+  font-family: $font-primary !important;
+}
+
+.wrapper .text-center h6 {
+  font-family: $font-primary !important;
+}
+
+.wrapper .text-center p {
+  font-family: $font-primary !important;
+}
+
+.wrapper .text-center span {
+  font-family: $font-primary !important;
+}
+
+.wrapper .text-center div {
+  font-family: $font-primary !important;
+}
+
+// Force all elements with any class
+.wrapper [class*="text-"] {
+  font-family: $font-primary !important;
+}
+
+.wrapper [class*="text-"] h1,
+.wrapper [class*="text-"] h2,
+.wrapper [class*="text-"] h3,
+.wrapper [class*="text-"] h4,
+.wrapper [class*="text-"] h5,
+.wrapper [class*="text-"] h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all flex-center elements
+.wrapper [class*="flex-"] {
+  font-family: $font-primary !important;
+}
+
+.wrapper [class*="flex-"] h1,
+.wrapper [class*="flex-"] h2,
+.wrapper [class*="flex-"] h3,
+.wrapper [class*="flex-"] h4,
+.wrapper [class*="flex-"] h5,
+.wrapper [class*="flex-"] h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all elements inside container
+.wrapper .container * {
+  font-family: $font-primary !important;
+}
+
+.wrapper .container h1,
+.wrapper .container h2,
+.wrapper .container h3,
+.wrapper .container h4,
+.wrapper .container h5,
+.wrapper .container h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all elements inside row
+.wrapper .row * {
+  font-family: $font-primary !important;
+}
+
+.wrapper .row h1,
+.wrapper .row h2,
+.wrapper .row h3,
+.wrapper .row h4,
+.wrapper .row h5,
+.wrapper .row h6 {
+  font-family: $font-primary !important;
+}

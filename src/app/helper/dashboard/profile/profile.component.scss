@@ -30,15 +30,95 @@ $font-secondary: 'Playfair Display', Georgia, serif;
     box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
 }
 
-// Apply modern fonts to all elements in this component
+// Apply modern fonts to all elements in this component - ALL Poppins
 :host {
   font-family: $font-primary !important;
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: $font-secondary !important;
+    font-family: $font-primary !important;
   }
   
   p, span, div, a, button, input, textarea, select, label {
     font-family: $font-primary !important;
   }
+}
+
+// Force all elements to use modern fonts - MAXIMUM SPECIFICITY
+* {
+  font-family: $font-primary !important;
+}
+
+// Force all headings inside any element to use modern fonts - MAXIMUM SPECIFICITY
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all text elements to use modern fonts - MAXIMUM SPECIFICITY
+p, span, div, a, td, th, h2 {
+  font-family: $font-primary !important;
+}
+
+// Specific overrides for nested elements - MAXIMUM SPECIFICITY
+h2 p, h3 p, h4 p, h5 p, h6 p, h1 p {
+  font-family: $font-primary !important;
+}
+
+h2 span, h3 span, h4 span, h5 span, h6 span, h1 span {
+  font-family: $font-primary !important;
+}
+
+h2 a, h3 a, h4 a, h5 a, h6 a, h1 a {
+  font-family: $font-primary !important;
+}
+
+// Force all elements with any class
+[class*="text-"] {
+  font-family: $font-primary !important;
+}
+
+[class*="text-"] h1,
+[class*="text-"] h2,
+[class*="text-"] h3,
+[class*="text-"] h4,
+[class*="text-"] h5,
+[class*="text-"] h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all elements inside container
+.container * {
+  font-family: $font-primary !important;
+}
+
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all elements inside row
+.row * {
+  font-family: $font-primary !important;
+}
+
+.row h1,
+.row h2,
+.row h3,
+.row h4,
+.row h5,
+.row h6 {
+  font-family: $font-primary !important;
+}
+
+// Override any remaining font-family declarations
+* [style*="font-family"] {
+  font-family: $font-primary !important;
+}
+
+h1 [style*="font-family"], h2 [style*="font-family"], h3 [style*="font-family"], 
+h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] {
+  font-family: $font-primary !important;
 }

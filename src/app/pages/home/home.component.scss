@@ -9,14 +9,14 @@
   border-radius: 0 0 30px 30px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
-  
+
   .carousel-inner {
     height: 100%;
-    
+
     .carousel-item {
       height: 100%;
       position: relative;
-      
+
       img {
         height: 100%;
         width: 100vw; // Full viewport width
@@ -25,13 +25,13 @@
         border-radius: 15px; // Rounded corners on carousel images
         filter: brightness(0.9);
         transition: transform 0.8s ease, filter 0.8s ease;
-        
+
         &:hover {
           transform: scale(1.05);
           filter: brightness(1);
         }
       }
-      
+
       // Add overlay gradient for better text readability
       &::after {
         content: '';
@@ -43,7 +43,7 @@
         background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
         z-index: 1;
       }
-      
+
       &.active img {
         animation: slideIn 0.8s ease-out;
       }
@@ -63,14 +63,14 @@
     opacity: 0.8;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    
+
     &:hover {
       opacity: 1;
       transform: translateY(-50%) scale(1.1);
       background: rgba(255, 255, 255, 1);
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
       width: 24px;
@@ -105,7 +105,7 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
   overflow: hidden;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -133,7 +133,7 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -145,11 +145,11 @@
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
-    
+
     &:hover {
       transform: translateY(-10px) scale(1.02);
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-      
+
       &::before {
         transform: scaleX(1);
       }
@@ -157,7 +157,7 @@
 
     .text {
       text-align: center;
-      
+
       h3 {
         color: #2c3e50;
         font-size: 1.8rem;
@@ -187,7 +187,7 @@
         letter-spacing: 1px;
         transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(255, 141, 0, 0.3);
-        
+
         &:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(255, 141, 0, 0.4);
@@ -201,21 +201,21 @@
 // Events Section Enhancement
 ::ng-deep .ftco-section {
   padding: 80px 0;
-  
+
   &.bg-light {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   }
 
   .heading-section {
     margin-bottom: 50px;
-    
+
     h2 {
       font-size: 2.5rem;
       font-weight: 700;
       color: #2c3e50;
       position: relative;
       display: inline-block;
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -238,7 +238,7 @@
     margin-bottom: 30px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    
+
     &:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -250,7 +250,7 @@
       background-position: center;
       position: relative;
       overflow: hidden;
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -262,7 +262,7 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      
+
       &:hover::after {
         opacity: 1;
       }
@@ -270,10 +270,10 @@
 
     .text {
       padding: 30px;
-      
+
       .meta {
         margin-bottom: 15px;
-        
+
         div {
           display: inline-block;
           background: linear-gradient(135deg, #667eea, #764ba2);
@@ -283,11 +283,11 @@
           font-size: 0.9rem;
           font-weight: 600;
         }
-        
+
         a {
           color: white;
           text-decoration: none;
-          
+
           &:hover {
             text-decoration: underline;
           }
@@ -296,7 +296,7 @@
 
       .heading {
         margin-bottom: 15px;
-        
+
         a {
           color: #2c3e50;
           font-size: 1.4rem;
@@ -304,7 +304,7 @@
           text-decoration: none;
           line-height: 1.4;
           transition: color 0.3s ease;
-          
+
           &:hover {
             color: #ff8d00;
           }
@@ -315,22 +315,22 @@
         color: #666;
         font-size: 0.95rem;
         margin-bottom: 10px;
-        
+
         span {
           display: inline-block;
           margin-right: 15px;
-          
+
           i {
             color: #ff8d00;
             margin-right: 5px;
           }
         }
-        
+
         a {
           color: #666;
           text-decoration: none;
           transition: color 0.3s ease;
-          
+
           &:hover {
             color: #ff8d00;
           }
@@ -341,17 +341,17 @@
         color: #555;
         line-height: 1.6;
         margin-bottom: 15px;
-        
+
         &:last-child {
           margin-bottom: 0;
         }
-        
+
         a {
           color: #ff8d00;
           font-weight: 600;
           text-decoration: none;
           transition: all 0.3s ease;
-          
+
           &:hover {
             color: #ff6b6b;
             text-decoration: underline;
@@ -367,7 +367,7 @@
   #carouselExampleControls {
     height: 50vh;
     min-height: 300px;
-    
+
     .carousel-control-prev,
     .carousel-control-next {
       width: 40px;
@@ -378,16 +378,16 @@
 
   ::ng-deep .ftco-counter.ftco-intro {
     padding: 40px 0;
-    
+
     .block-18 {
       margin: 10px 0;
       padding: 30px 20px;
-      
+
       .text {
         h3 {
           font-size: 1.5rem;
         }
-        
+
         p {
           font-size: 1rem;
         }
@@ -397,19 +397,19 @@
 
   ::ng-deep .ftco-section {
     padding: 60px 0;
-    
+
     .heading-section h2 {
       font-size: 2rem;
     }
-    
+
     .blog-entry {
       .block-20 {
         height: 200px;
       }
-      
+
       .text {
         padding: 20px;
-        
+
         .heading a {
           font-size: 1.2rem;
         }
@@ -427,7 +427,7 @@
 
   ::ng-deep .ftco-section {
     padding: 40px 0;
-    
+
     .heading-section h2 {
       font-size: 1.8rem;
     }
@@ -442,7 +442,7 @@ html {
 // Loading animation for images
 img {
   transition: opacity 0.3s ease;
-  
+
   &:not([src]) {
     opacity: 0;
   }
@@ -475,7 +475,7 @@ a:focus {
 .stagger-animation {
   animation: staggerFadeIn 0.8s ease-out forwards;
   opacity: 0;
-  
+
   &:nth-child(1) { animation-delay: 0.1s; }
   &:nth-child(2) { animation-delay: 0.2s; }
   &:nth-child(3) { animation-delay: 0.3s; }
@@ -497,7 +497,7 @@ html {
 // Loading animation for images
 img {
   transition: opacity 0.3s ease;
-  
+
   &:not([src]) {
     opacity: 0;
   }
@@ -507,7 +507,7 @@ img {
 .parallax-section {
   position: relative;
   overflow: hidden;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -519,7 +519,7 @@ img {
     z-index: -1;
     transition: transform 0.5s ease-out;
   }
-  
+
   &:hover::before {
     transform: scale(1.05);
   }
@@ -577,7 +577,7 @@ img {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease-out;
-  
+
   &.visible {
     opacity: 1;
     transform: translateY(0);
@@ -588,7 +588,7 @@ img {
   opacity: 0;
   transform: translateX(-30px);
   transition: all 0.6s ease-out;
-  
+
   &.visible {
     opacity: 1;
     transform: translateX(0);
@@ -599,7 +599,7 @@ img {
   opacity: 0;
   transform: translateX(30px);
   transition: all 0.6s ease-out;
-  
+
   &.visible {
     opacity: 1;
     transform: translateX(0);
@@ -610,7 +610,7 @@ img {
   opacity: 0;
   transform: scale(0.9);
   transition: all 0.6s ease-out;
-  
+
   &.visible {
     opacity: 1;
     transform: scale(1);

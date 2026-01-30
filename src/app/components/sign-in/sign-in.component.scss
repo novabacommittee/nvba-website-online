@@ -1,0 +1,111 @@
+// Modern Font Variables
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-secondary: 'Playfair Display', Georgia, serif;
+
+// Apply modern fonts to all elements in this component - ALL Poppins
+:host {
+  font-family: $font-primary !important;
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary !important;
+  }
+  
+  p, span, div, a, button, input, textarea, select, label {
+    font-family: $font-primary !important;
+  }
+}
+
+// Force all elements to use modern fonts - MAXIMUM SPECIFICITY
+* {
+  font-family: $font-primary !important;
+}
+
+// Force all headings inside any element to use modern fonts - MAXIMUM SPECIFICITY
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all text elements to use modern fonts - MAXIMUM SPECIFICITY
+p, span, div, a, td, th, h3 {
+  font-family: $font-primary !important;
+}
+
+// Specific overrides for nested elements - MAXIMUM SPECIFICITY
+h3 p, h2 p, h1 p, h4 p, h5 p, h6 p {
+  font-family: $font-primary !important;
+}
+
+h3 span, h2 span, h1 span, h4 span, h5 span, h6 span {
+  font-family: $font-primary !important;
+}
+
+h3 a, h2 a, h1 a, h4 a, h5 a, h6 a {
+  font-family: $font-primary !important;
+}
+
+// Form elements specifically
+.formGroup * {
+  font-family: $font-primary !important;
+}
+
+.formGroup h1, .formGroup h2, .formGroup h3, .formGroup h4, .formGroup h5, .formGroup h6 {
+  font-family: $font-primary !important;
+}
+
+.formControl {
+  font-family: $font-primary !important;
+}
+
+.btn {
+  font-family: $font-primary !important;
+}
+
+.googleBtn {
+  font-family: $font-primary !important;
+}
+
+// Auth block specific
+.authBlock * {
+  font-family: $font-primary !important;
+}
+
+.authBlock h1, .authBlock h2, .authBlock h3, .authBlock h4, .authBlock h5, .authBlock h6 {
+  font-family: $font-primary !important;
+}
+
+// Display table elements
+.displayTable * {
+  font-family: $font-primary !important;
+}
+
+.displayTableCell * {
+  font-family: $font-primary !important;
+}
+
+// Force all elements with any class
+[class*="form"] {
+  font-family: $font-primary !important;
+}
+
+[class*="form"] h1,
+[class*="form"] h2,
+[class*="form"] h3,
+[class*="form"] h4,
+[class*="form"] h5,
+[class*="form"] h6 {
+  font-family: $font-primary !important;
+}
+
+[class*="btn"] {
+  font-family: $font-primary !important;
+}
+
+// Override any remaining font-family declarations
+* [style*="font-family"] {
+  font-family: $font-primary !important;
+}
+
+h1 [style*="font-family"], h2 [style*="font-family"], h3 [style*="font-family"], 
+h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] {
+  font-family: $font-primary !important;
+}
