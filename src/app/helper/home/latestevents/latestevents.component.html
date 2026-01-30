@@ -18,7 +18,7 @@
               <h3 class="heading mb-4"><a href="{{event.pageLink}}">{{event.eventName}}</a></h3>
               <p class="time-loc"><span class="mr-2"><img src="./../../../../assets/images/icons/clock-icon.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="clock"> {{event.timming}}</span></p>
               <p><a href="{{event.mapUrl}}" target="_blank" ><span><img src="./../../../../assets/images/icons/map-icon.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="map"> {{event.venue}}</span></a></p>
-              <p>{{event.description}}</p>
+              <!-- <p>{{event.description}}</p>-->
               <p *ngIf="event.pageLink != '/' " ><a href="{{event.pageLink}}" target="_blank">Click here for more details</a></p>
           </div>
         </div>
@@ -41,29 +41,29 @@
       <div class="collapsible-container" [ngClass]="{'collapsed': !pastEventsExpanded}">
         <!-- Year buttons arranged horizontally -->
         <div class="year-buttons-container">
-          <button class="btn btn-primary year-toggle-button" 
+          <button class="btn btn-primary year-toggle-button"
                   *ngFor="let year of getYearKeys(); let i = index"
-                  (click)="selectYear(year)" 
+                  (click)="selectYear(year)"
                   [ngClass]="{'selected': selectedYear === year}"
-                  style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; 
-                         border: none !important; 
-                         padding: 10px 20px !important; 
-                         font-size: 1rem !important; 
-                         font-weight: 600 !important; 
-                         border-radius: 6px !important; 
-                         color: #fafafa !important; 
-                         display: inline-flex !important; 
-                         align-items: center !important; 
-                         justify-content: center !important; 
-                         min-width: 120px !important; 
-                         text-transform: uppercase !important; 
-                         letter-spacing: 1px !important; 
+                  style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                         border: none !important;
+                         padding: 10px 20px !important;
+                         font-size: 1rem !important;
+                         font-weight: 600 !important;
+                         border-radius: 6px !important;
+                         color: #fafafa !important;
+                         display: inline-flex !important;
+                         align-items: center !important;
+                         justify-content: center !important;
+                         min-width: 120px !important;
+                         text-transform: uppercase !important;
+                         letter-spacing: 1px !important;
                          margin-right: 10px !important;
                          margin-bottom: 15px !important;">
             {{ year }}
           </button>
         </div>
-        
+
         <!-- Single expandable section for selected year events -->
         <div class="selected-year-events" [ngClass]="{'collapsed': !selectedYear || !pastEventsExpanded}">
           <div class="row" *ngIf="selectedYear">
@@ -78,7 +78,7 @@
                   <h3 class="heading mb-4"><a href="{{pevent.pageLink}}">{{pevent.eventName}}</a></h3>
                   <p class="time-loc"><span class="mr-2"><img src="./../../../../assets/images/icons/clock-icon.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="clock"> {{pevent.timming}}</span></p>
                   <p><a href="{{pevent.mapUrl}}" target="_blank" ><span><img src="./../../../../assets/images/icons/map-icon.png" style="width: 16px; height: 16px; margin-right: 5px;" alt="map"> {{pevent.venue}}</span></a></p>
-                  <p>{{pevent.description}}</p>
+                  <!-- <p>{{event.description}}</p>-->
                   <p *ngIf="pevent.pageLink != '/' " ><a href="{{pevent.pageLink}}" target="_blank">Click here for more details</a></p>
                 </div>
               </div>
