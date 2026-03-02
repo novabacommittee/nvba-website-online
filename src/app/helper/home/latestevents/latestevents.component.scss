@@ -66,7 +66,7 @@ $radius-full:   100px;
 // ─── Upcoming Section ─────────────────────────────────────────────────────────
 .ev-upcoming {
   padding: 52px 0;
-  background: $ev-white;
+  background: $ev-cream;
 }
 
 // ─── Grid ─────────────────────────────────────────────────────────────────────
@@ -198,6 +198,28 @@ $radius-full:   100px;
       border-color: $ev-red;
       text-decoration: none;
     }
+  }
+}
+
+// ─── Section Divider ──────────────────────────────────────────────────────────
+.ev-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: $ev-cream;
+  padding: 0 40px;
+
+  &__line {
+    flex: 1;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba($ev-red, 0.35), transparent);
+  }
+
+  &__icon {
+    font-size: 1rem;
+    color: $ev-gold;
+    line-height: 1;
+    opacity: 0.85;
   }
 }
 
