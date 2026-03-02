@@ -1,67 +1,86 @@
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="site-footer__container">
+      <div class="site-footer__grid">
 
-
-    <footer class="ftco-footer ftco-section img">
-    	<div class="overlay"></div>
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About Us</h2>
-              <p>NVBA is a 100% volunteer driven 501(c)3 organization. The success of our community depends on the sincere effort by our volunteers. Please participate with full enthusiasm and you will find a place to belong. </p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <!-- <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li> -->
-                <li class="ftco-animate"><a href="https://www.facebook.com/novaba" target="_blank" ><img src="./../../../assets/images/icons/facebook-icon.png" style="width: 30px; height: 30px; vertical-align: middle;" alt="Facebook"></a></li>
-                <li class="ftco-animate"><a href="https://www.instagram.com/novaba_org/" target="_blank" ><img src="./../../../assets/images/icons/instagram-icon.png" style="width: 32px; height: 32px; vertical-align: middle;" alt="Instagram"></a></li>
-                <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCbvbSyIiBYbP_vuB3qzD0Tw" target="_blank" ><img src="./../../../assets/images/icons/youtube-icon.png" style="width: 41px; height: 41px; vertical-align: middle;" alt="YouTube"></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Our Newsletter</h2>
-              <p>The best way to keep in touch with your local bengali community is through the NVBA newsletter. Please provide your email for subscription.</p>
-              <a href="https://novaba.us5.list-manage.com/subscribe?u=71b8b228056801a92f04f6000&id=172a06829e" class=" btn btn-white px-3 py-2 mt-2" target="_blank" >Subscribe</a>
-
-            </div>
-          </div>
-          <div class="col-md-2">
-             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Site Links</h2>
-              <ul class="list-unstyled">
-                <li *ngFor="let link of siteLinks" >
-                  <a href="{{link.pageLink}}" class="py-2 d-block">{{link.pageName}}</a>
-                  <!-- <ul >
-                    <li *ngFor="let linkc of link.child"  >
-                      <a href="{{linkc.pageLink}}" class="py-2 d-block">{{linkc.pageName}}</a>
-                    </li>
-                  </ul> -->
-                </li>
-
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><img src="./../../../assets/images/icons/map-icon.png" style="width: 23px; height: 23px; margin-right: 8px;" alt="Map"><span class="text">22809 Queensbridge Dr<br>
-                    Ashburn, VA 20148 <br>
-                    United States <br></span></li>
-	                <li><a href="tel:+16077687705" target="_blank"><img src="./../../../assets/images/icons/phone-icon.png" style="width: 27px; height: 27px; margin-right: 8px;" alt="Phone"><span class="text">+1 (607) 768-7705</span></a></li>
-	                <li><a href="mailto:ec@novaba.org" target="_blank" ><img src="./../../../assets/images/icons/email-icon.png" style="width: 23px; height: 23px; margin-right: 8px;" alt="Email"><span class="text">ec@novaba.org</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
+        <!-- About Us -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">About Us</h3>
+          <div class="site-footer__divider"></div>
+          <p class="site-footer__text">NVBA is a 100% volunteer driven 501(c)3 organization. The success of our community depends on the sincere effort by our volunteers. Please participate with full enthusiasm and you will find a place to belong.</p>
+          <ul class="site-footer__socials">
+            <li>
+              <a href="https://www.facebook.com/novaba" target="_blank" class="site-footer__social-link" aria-label="Facebook">
+                <img src="./../../../assets/images/icons/facebook-icon.png" alt="Facebook">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/novaba_org/" target="_blank" class="site-footer__social-link" aria-label="Instagram">
+                <img src="./../../../assets/images/icons/instagram-icon.png" alt="Instagram">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UCbvbSyIiBYbP_vuB3qzD0Tw" target="_blank" class="site-footer__social-link" aria-label="YouTube">
+                <img src="./../../../assets/images/icons/youtube-icon.png" alt="YouTube">
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by NVBA
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
+        <!-- Newsletter -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Our Newsletter</h3>
+          <div class="site-footer__divider"></div>
+          <p class="site-footer__text">The best way to keep in touch with your local Bengali community is through the NVBA newsletter. Provide your email for subscription.</p>
+          <a href="https://novaba.us5.list-manage.com/subscribe?u=71b8b228056801a92f04f6000&id=172a06829e" target="_blank" class="site-footer__btn">
+            Subscribe Now
+          </a>
         </div>
+
+        <!-- Site Links -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Site Links</h3>
+          <div class="site-footer__divider"></div>
+          <ul class="site-footer__links">
+            <li *ngFor="let link of siteLinks">
+              <a href="{{link.pageLink}}">{{link.pageName}}</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Have Questions?</h3>
+          <div class="site-footer__divider"></div>
+          <ul class="site-footer__contact">
+            <li>
+              <img src="./../../../assets/images/icons/map-icon.png" alt="Address">
+              <span>22809 Queensbridge Dr, Ashburn, VA 20148, United States</span>
+            </li>
+            <li>
+              <a href="tel:+16077687705">
+                <img src="./../../../assets/images/icons/phone-icon.png" alt="Phone">
+                <span>+1 (607) 768-7705</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ec@novaba.org">
+                <img src="./../../../assets/images/icons/email-icon.png" alt="Email">
+                <span>ec@novaba.org</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
       </div>
-    </footer>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <div class="site-footer__container">
+      <p class="site-footer__copy">
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by NVBA
+      </p>
+    </div>
+  </div>
+</footer>

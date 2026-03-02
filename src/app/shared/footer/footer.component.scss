@@ -1,38 +1,206 @@
-// Footer Component Styles
+// ─── Design Tokens ────────────────────────────────────────────────────────────
+$font-primary: 'Poppins', system-ui, sans-serif;
+$pb-red:       #c0392b;
+$pb-saffron:   #e67e22;
+$pb-gold:      #f39c12;
+$pb-dark:      #1a0a00;
+$pb-dark-mid:  #2c1810;
+$pb-white:     #ffffff;
 
-// Font Variables for consistency
-$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-// Apply Poppins font to all elements in this component
-:host {
-  font-family: $font-primary !important;
+// ─── Footer Shell ─────────────────────────────────────────────────────────────
+.site-footer {
+  font-family: $font-primary;
 }
 
-footer {
-  font-family: $font-primary !important;
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $font-primary !important;
-  }
-  
-  p, span, div, a, button, li, ul {
-    font-family: $font-primary !important;
+// ─── Top Band ─────────────────────────────────────────────────────────────────
+.site-footer__top {
+  background: linear-gradient(135deg, $pb-dark 0%, $pb-dark-mid 100%);
+  padding: 56px 0 40px;
+}
+
+// ─── Container ────────────────────────────────────────────────────────────────
+.site-footer__container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+// ─── Four-column Grid ─────────────────────────────────────────────────────────
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr;
+  gap: 40px;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 540px) { grid-template-columns: 1fr; }
+}
+
+// ─── Column ───────────────────────────────────────────────────────────────────
+.site-footer__col {}
+
+// ─── Section Heading ──────────────────────────────────────────────────────────
+.site-footer__heading {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: $pb-gold;
+  margin: 0 0 10px;
+}
+
+// ─── Accent Divider ───────────────────────────────────────────────────────────
+.site-footer__divider {
+  width: 36px;
+  height: 2px;
+  background: linear-gradient(90deg, $pb-red, $pb-saffron);
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+// ─── Body Text ────────────────────────────────────────────────────────────────
+.site-footer__text {
+  font-size: 0.82rem;
+  color: rgba($pb-white, 0.68);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+// ─── Subscribe Button ─────────────────────────────────────────────────────────
+.site-footer__btn {
+  display: inline-block;
+  background: linear-gradient(135deg, $pb-red, $pb-saffron);
+  color: $pb-white;
+  font-family: $font-primary;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 9px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 14px rgba($pb-red, 0.38);
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($pb-red, 0.50);
+    color: $pb-white;
+    text-decoration: none;
   }
 }
 
-// Force all footer elements to use Poppins
-.ftco-footer {
-  font-family: $font-primary !important;
-  
-  * {
-    font-family: $font-primary !important;
+// ─── Social Icons ─────────────────────────────────────────────────────────────
+.site-footer__socials {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba($pb-white, 0.08);
+  border: 1px solid rgba($pb-white, 0.14);
+  border-radius: 50%;
+  transition: all 0.22s ease;
+
+  img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $font-primary !important;
+
+  &:hover {
+    background: rgba($pb-red, 0.28);
+    border-color: rgba($pb-red, 0.5);
+    transform: translateY(-2px);
   }
-  
-  p, span, div, a, button, li, ul {
-    font-family: $font-primary !important;
+}
+
+// ─── Site Links ───────────────────────────────────────────────────────────────
+.site-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  a {
+    font-size: 0.82rem;
+    color: rgba($pb-white, 0.68) !important;
+    text-decoration: none !important;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &::before {
+      content: '›';
+      color: $pb-saffron;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $pb-white !important;
+      text-decoration: none !important;
+    }
   }
+}
+
+// ─── Contact List ─────────────────────────────────────────────────────────────
+.site-footer__contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  li, a {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: rgba($pb-white, 0.68) !important;
+    text-decoration: none !important;
+    transition: color 0.2s;
+
+    &:hover { color: $pb-white !important; text-decoration: none !important; }
+  }
+
+  img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 2px;
+    opacity: 0.8;
+  }
+
+  span {
+    line-height: 1.55;
+    color: rgba($pb-white, 0.68) !important;
+  }
+}
+
+// ─── Bottom Bar ───────────────────────────────────────────────────────────────
+.site-footer__bottom {
+  background: $pb-dark;
+  border-top: 1px solid rgba($pb-white, 0.08);
+  padding: 16px 0;
+  text-align: center;
+}
+
+.site-footer__copy {
+  font-size: 0.76rem;
+  color: rgba($pb-white, 0.40);
+  margin: 0;
+  letter-spacing: 0.3px;
 }

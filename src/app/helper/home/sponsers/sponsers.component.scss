@@ -58,7 +58,7 @@ section.ftco-section.sponsers .row .col-md-2 .card {
 
 .sponsers {
   padding: 40px 0; // Reduced from 100px to 40px to reduce space
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a0a00 0%, #2c1810 100%);
   position: relative;
   overflow: hidden;
   
@@ -118,7 +118,7 @@ section.ftco-section.sponsers .row .col-md-2 .card {
         transform: translateX(-50%);
         width: 100px;
         height: 4px;
-        background: linear-gradient(90deg, #ff8d00, #ff6b6b, #ff8d00);
+        background: linear-gradient(90deg, #c0392b, #e67e22, #c0392b);
         background-size: 200% 100%;
         animation: gradientShift 3s ease infinite;
         border-radius: 2px;
@@ -164,7 +164,7 @@ section.ftco-section.sponsers .row .col-md-2 .card {
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, #ff8d00, #ff6b6b, #ff8d00);
+      background: linear-gradient(90deg, #c0392b, #e67e22, #c0392b);
       background-size: 200% 100%;
       animation: gradientShift 3s ease infinite;
       z-index: 1;
