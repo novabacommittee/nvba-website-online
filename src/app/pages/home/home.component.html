@@ -1,21 +1,42 @@
- <div class="home-page-wrapper">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-   <div class="carousel-inner"   >
-      <div class="carousel-item" *ngFor="let itemhi of sliderImage; let i = index" [ngClass]=" i === 0 ? 'active':'' " >
-       <img class="d-block w-100" src="{{itemhi.imageLink}}" alt="First slide"  >
-     </div>
-   </div>
-   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-     <span class="sr-only">Previous</span>
-   </a>
-   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-     <span class="sr-only">Next</span>
-   </a>
- </div>
+<div class="home-wrapper">
 
- <app-threecol></app-threecol>
- <app-latestevents></app-latestevents>
- <app-sponsers></app-sponsers>
+  <!-- ═══════════════════ HERO CAROUSEL ═══════════════════ -->
+  <div class="home-hero">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let itemhi of sliderImage; let i = index" [ngClass]="i === 0 ? 'active' : ''">
+          <img class="d-block w-100" src="{{itemhi.imageLink}}" alt="NVBA Event">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <!-- Hero text overlay — pointer-events:none so carousel controls stay clickable -->
+    <div class="home-hero__overlay">
+      <div class="home-hero__content">
+        <p class="home-hero__eyebrow">Northern Virginia Bengali Association</p>
+        <h1 class="home-hero__title">Celebrating Culture, Building Community</h1>
+        <p class="home-hero__subtitle">Where tradition meets togetherness</p>
+        <a href="/register-user" class="home-hero__cta">Become a Member</a>
+
+        <!-- Donate row — inline, no separate section needed -->
+        <div class="home-hero__donate">
+          <span class="home-hero__donate-label">Support Our Community</span>
+          <a href="https://www.paypal.com/us/fundraiser/charity/2511674" target="_blank" class="home-hero__donate-btn">Donate Now</a>
+          <span class="home-hero__donate-sub">You can make a big difference</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-latestevents></app-latestevents>
+  <app-sponsers></app-sponsers>
+
 </div>

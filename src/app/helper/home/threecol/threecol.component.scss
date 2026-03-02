@@ -1,400 +1,72 @@
-// Enhanced Three Column Component Styles
+// ─── Design Tokens ────────────────────────────────────────────────────────────
+$font-primary: 'Poppins', system-ui, sans-serif;
+$pb-red:       #c0392b;
+$pb-saffron:   #e67e22;
+$pb-gold:      #f39c12;
+$pb-dark:      #1a0a00;
+$pb-white:     #ffffff;
 
-// Font Variables for consistency
-$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+:host { display: block; }
 
-// Apply Poppins font to all elements in this component
-:host {
-  font-family: $font-primary !important;
-}
-
-.ftco-counter.ftco-intro {
-  font-family: $font-primary !important;
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $font-primary !important;
-  }
-  
-  p, span, div, a, button {
-    font-family: $font-primary !important;
-  }
-}
-
-// Main section styling
-.ftco-counter.ftco-intro {
-  padding: 20px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+// ─── Donate Banner ────────────────────────────────────────────────────────────
+.donate-banner {
   position: relative;
-  overflow: hidden;
-  
-  // Full width background with pattern
-  &::before {
-    content: '';
+  padding: 28px 24px;
+  background-size: cover;
+  background-position: center;
+  font-family: $font-primary;
+
+  &__overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-    background-size: cover;
-    animation: waveAnimation 20s ease-in-out infinite;
-    z-index: 0;
+    inset: 0;
+    background: rgba($pb-dark, 0.65);
   }
 
-  // Floating particles effect - full width
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background-image: 
-      radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    animation: floatAnimation 15s ease-in-out infinite;
-    z-index: 1;
-  }
-
-  .container {
+  &__content {
     position: relative;
     z-index: 2;
-    max-width: 1200px; // Wider container for full-width layout
-    margin: 0 auto;
-  }
-
-  .row {
-    justify-content: center;
-    align-items: stretch;
-  }
-
-  .counter-wrap {
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: stretch;
-    margin-bottom: 15px;
+    gap: 24px;
+    flex-wrap: wrap;
   }
 
-  .block-18 {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 20px 20px;
-    margin: 10px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 280px;
-    
-    // Animated top border
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: linear-gradient(90deg, #ff8d00, #ff6b6b, #ff8d00);
-      background-size: 200% 100%;
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-      border-radius: 5px 5px 0 0;
-    }
-    
-    // Gradient overlay on hover
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(255, 141, 0, 0.05), rgba(255, 107, 107, 0.05));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
+  &__tagline {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $pb-gold;
+    margin: 0;
+  }
+
+  &__btn {
+    display: inline-block;
+    background: linear-gradient(135deg, $pb-red, $pb-saffron);
+    color: $pb-white;
+    font-family: $font-primary;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px rgba($pb-red, 0.42);
+    transition: all 0.25s ease;
+
     &:hover {
-      transform: translateY(-15px) scale(1.03);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-      
-      &::before {
-        transform: scaleX(1);
-        animation: shimmerAnimation 2s ease-in-out infinite;
-      }
-      
-      &::after {
-        opacity: 1;
-      }
-    }
-
-    .text {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      
-      h3 {
-        color: #2c3e50;
-        font-size: 1.4rem;
-        font-weight: 700;
-        margin-bottom: 8px;
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        position: relative;
-        
-        // Add subtle glow effect
-        &::after {
-          content: attr(data-text);
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          z-index: -1;
-          background: linear-gradient(135deg, #667eea, #764ba2);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          filter: blur(3px);
-          opacity: 0.3;
-        }
-      }
-
-      p {
-        color: #555;
-        font-size: 0.9rem;
-        margin-bottom: 12px;
-        line-height: 1.4;
-        font-weight: 400;
-      }
-
-      .btn {
-        background: linear-gradient(135deg, #ff8d00, #ff6b6b);
-        color: white;
-        border: none;
-        padding: 8px 20px;
-        border-radius: 25px;
-        font-weight: 600;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        box-shadow: 0 6px 20px rgba(255, 141, 0, 0.3);
-        position: relative;
-        overflow: hidden;
-        
-        // Button shine effect
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-          transition: left 0.5s ease;
-        }
-        
-        &:hover {
-          transform: translateY(-3px) scale(1.05);
-          box-shadow: 0 12px 35px rgba(255, 141, 0, 0.4);
-          background: linear-gradient(135deg, #ff6b6b, #ff8d00);
-          
-          &::before {
-            left: 100%;
-          }
-        }
-        
-        &:active {
-          transform: translateY(-1px) scale(1.02);
-        }
-      }
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba($pb-red, 0.52);
+      color: $pb-white;
+      text-decoration: none;
     }
   }
-}
 
-// Animations
-@keyframes waveAnimation {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-10px) rotate(1deg);
-  }
-  50% {
-    transform: translateY(0) rotate(-1deg);
-  }
-  75% {
-    transform: translateY(-5px) rotate(0.5deg);
-  }
-}
-
-@keyframes floatAnimation {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -30px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-}
-
-@keyframes shimmerAnimation {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-// Responsive Design
-@media (max-width: 992px) {
-  .ftco-counter.ftco-intro {
-    padding: 15px 0;
-    
-    .container {
-      max-width: 100%;
-      padding: 0 20px;
-    }
-    
-    .block-18 {
-      max-width: 250px;
-      padding: 18px 15px;
-      margin: 8px;
-      
-      .text {
-        h3 {
-          font-size: 1.3rem;
-          margin-bottom: 6px;
-        }
-        
-        p {
-          font-size: 0.85rem;
-          margin-bottom: 10px;
-        }
-        
-        .btn {
-          padding: 6px 18px;
-          font-size: 0.8rem;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .ftco-counter.ftco-intro {
-    padding: 12px 0;
-    
-    .container {
-      max-width: 100%;
-      padding: 0 20px;
-    }
-    
-    .block-18 {
-      max-width: 100%;
-      margin: 6px 0;
-      padding: 15px 12px;
-      
-      .text {
-        h3 {
-          font-size: 1.2rem;
-          margin-bottom: 5px;
-        }
-        
-        p {
-          font-size: 0.8rem;
-          margin-bottom: 8px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  .ftco-counter.ftco-intro {
-    padding: 10px 0;
-    
-    .container {
-      padding: 0 15px;
-    }
-    
-    .block-18 {
-      padding: 15px 12px;
-      margin: 5px 0;
-      
-      .text {
-        h3 {
-          font-size: 1.1rem;
-          margin-bottom: 4px;
-        }
-        
-        p {
-          font-size: 0.75rem;
-          margin-bottom: 8px;
-        }
-        
-        .btn {
-          padding: 6px 18px;
-          font-size: 0.75rem;
-        }
-      }
-    }
-  }
-}
-
-// Enhanced accessibility
-@media (prefers-reduced-motion: reduce) {
-  .ftco-counter.ftco-intro {
-    &::before,
-    &::after {
-      animation: none;
-    }
-    
-    .block-18 {
-      transition: none;
-      
-      &:hover {
-        transform: none;
-      }
-      
-      &::before {
-        animation: none;
-      }
-    }
-  }
-}
-
-// High contrast mode support
-@media (prefers-contrast: high) {
-  .ftco-counter.ftco-intro {
-    .block-18 {
-      background: white;
-      border: 2px solid #000;
-      
-      .text {
-        h3 {
-          color: #000;
-          background: none;
-          -webkit-text-fill-color: #000;
-        }
-        
-        .btn {
-          background: #000;
-          color: #fff;
-          border: 2px solid #fff;
-        }
-      }
-    }
+  &__subtitle {
+    font-size: 0.8rem;
+    color: rgba($pb-white, 0.80);
+    margin: 0;
+    letter-spacing: 0.3px;
   }
 }

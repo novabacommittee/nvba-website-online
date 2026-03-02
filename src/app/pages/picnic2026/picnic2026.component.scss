@@ -1,13 +1,15 @@
 $font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $font-display: 'Playfair Display', Georgia, serif;
-$clr-primary: #f86f2d;
-$clr-secondary: #fa8f3d;
-$clr-dark: #1a1a2e;
-$clr-body: #4a5562;
-$clr-muted: #6b7280;
-$clr-light: #f8f9fa;
-$clr-border: #e5e7eb;
-$clr-white: #fff;
+$clr-primary:   #c0392b;   // pb-red
+$clr-secondary: #e67e22;   // pb-saffron
+$clr-gold:      #f39c12;   // pb-gold
+$clr-dark:      #1a0a00;   // pb-dark
+$clr-dark-mid:  #2c1810;   // pb-dark-mid
+$clr-body:      #3d2b1f;   // pb-text
+$clr-muted:     #7d6555;   // pb-text-light
+$clr-light:     #fdf6ec;   // pb-cream
+$clr-border:    rgba(192,57,43,.12);
+$clr-white:     #ffffff;
 $shadow-sm: 0 1px 3px rgba(0,0,0,.08);
 $shadow-md: 0 4px 16px rgba(0,0,0,.10);
 $shadow-lg: 0 8px 32px rgba(0,0,0,.12);
@@ -28,7 +30,7 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
 
 // Section Header
 .pic-section-header {
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   &--center { text-align: center; .pic-section-header__divider { margin: 0 auto; } }
   &--light {
     .pic-section-header__tag { background: rgba($clr-white,.15); color: $clr-white; }
@@ -111,10 +113,10 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
 
 // ABOUT
 .pic-about {
-  padding: 80px 24px; max-width: 1100px; margin: 0 auto;
-  @media (max-width: 768px) { padding: 50px 20px; }
-  &__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-    @media (max-width: 768px) { grid-template-columns: 1fr; gap: 40px; }
+  padding: 52px 24px; max-width: 1100px; margin: 0 auto;
+  @media (max-width: 768px) { padding: 36px 20px; }
+  &__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    @media (max-width: 768px) { grid-template-columns: 1fr; gap: 28px; }
   }
   &__lead { font-size: 18px; color: $clr-dark; line-height: 1.8; margin-bottom: 16px; }
   &__text p { color: $clr-body; margin-bottom: 24px; }
@@ -127,8 +129,8 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
 
 // FOOD
 .pic-food {
-  padding: 80px 24px; background: $clr-light;
-  @media (max-width: 768px) { padding: 50px 16px; }
+  padding: 52px 24px; background: $clr-light;
+  @media (max-width: 768px) { padding: 36px 16px; }
   &__timeline { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
 }
 .pic-food-slot {
@@ -172,9 +174,9 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
 
 // ACTIVITIES
 .pic-activities {
-  padding: 80px 24px; background: linear-gradient(135deg, $clr-dark, lighten($clr-dark, 8%));
-  @media (max-width: 768px) { padding: 50px 16px; }
-  &__time { text-align: center; font-size: 16px; font-weight: 500; color: rgba($clr-white,.7); margin: -20px 0 40px; }
+  padding: 52px 24px; background: linear-gradient(135deg, $clr-dark-mid 0%, $clr-dark 100%);
+  @media (max-width: 768px) { padding: 36px 16px; }
+  &__time { text-align: center; font-size: 16px; font-weight: 500; color: rgba($clr-white,.7); margin: -10px 0 28px; }
   &__grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
     @media (max-width: 700px) { grid-template-columns: 1fr; }
   }
@@ -203,8 +205,8 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
 
 // VENUE
 .pic-venue {
-  padding: 80px 24px; max-width: 1100px; margin: 0 auto;
-  @media (max-width: 768px) { padding: 50px 16px; }
+  padding: 52px 24px; max-width: 1100px; margin: 0 auto;
+  @media (max-width: 768px) { padding: 36px 16px; }
   &__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch;
     @media (max-width: 768px) { grid-template-columns: 1fr; }
   }
