@@ -127,6 +127,7 @@ const routes: Routes = [
   { path: "poilaBoishakh2026", component: PoilaBoishakh2026Component, pathMatch: 'full'  },
   { path: "picnic2026", component: Picnic2026Component, pathMatch: 'full'  },
   { path: "durgapuja2026", component: Durgapuja2026Component, pathMatch: 'full'  },
+  { path: "echoesOfBengal2026", component: ComingSoonComponent, pathMatch: 'full'  },
   { path: "coming-soon", component: ComingSoonComponent, pathMatch: 'full'  },
   { path: "pastteam2024", component: Pastteam2024To25Component, pathMatch: 'full'  }
 
