@@ -23,33 +23,6 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
   background: $pb-white;
 }
 
-// ─── Audio Button ─────────────────────────────────────────────────────────────
-.dp2026-audio-btn {
-  position: fixed;
-  top: 84px;
-  left: 20px;
-  z-index: 2000;
-  background: rgba($pb-dark, 0.7);
-  border: 1.5px solid rgba($pb-white, 0.25);
-  color: $pb-white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: all 0.22s ease;
-
-  &:hover {
-    background: rgba($pb-red, 0.75);
-    border-color: rgba($pb-white, 0.5);
-    transform: scale(1.08);
-  }
-}
-
 // ─── Shared Buttons ───────────────────────────────────────────────────────────
 .dp-btn {
   display: inline-block;
@@ -255,6 +228,34 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
   }
 }
 
+// ─── Theme Song Section ──────────────────────────────────────────────────────
+.dp2026-theme-song {
+  padding: 72px 0;
+  background: linear-gradient(160deg, $pb-dark 0%, $pb-dark-mid 100%);
+
+  &__video {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: min(56.25%, 450px);
+    height: 0;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.40);
+    border: 1px solid rgba($pb-gold, 0.20);
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
 // ─── Venue Section ────────────────────────────────────────────────────────────
 .dp2026-venue {
   padding: 72px 0;
@@ -397,7 +398,7 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
 // ─── Artists Section ──────────────────────────────────────────────────────────
 .dp2026-artists {
   padding: 72px 0;
-  background: $pb-white;
+  background: linear-gradient(170deg, $pb-cream 0%, #f8ece0 50%, #f5e1cc 100%);
 
   &__lead {
     text-align: center;

@@ -1,10 +1,5 @@
 <div class="dp2026-wrapper">
 
-  <!-- ══════════════ AUDIO BUTTON ══════════════ -->
-  <button class="dp2026-audio-btn" (click)="soundplay()" [title]="playAudio ? 'Mute' : 'Unmute'">
-    <i [ngClass]="playAudio ? 'icon-volume-up' : 'icon-volume-off'"></i>
-  </button>
-
   <!-- ══════════════ HERO ══════════════ -->
   <div class="dp2026-hero"
        style="background-image: url('/assets/images/stocks/2026/Durga Puja.png')">
@@ -28,7 +23,7 @@
       <div class="dp2026-info-cards">
 
         <div class="dp2026-info-card">
-          <div class="dp2026-info-card__icon">🌙</div>
+          <div class="dp2026-info-card__icon">🪔</div>
           <div class="dp2026-info-card__body">
             <span class="dp2026-info-card__label">Day 1 — Oct 3rd</span>
             <span class="dp2026-info-card__value">6:00 PM – 10:00 PM</span>
@@ -62,6 +57,26 @@
       </div>
     </div>
   </div>
+
+  <!-- ══════════════ THEME SONG ══════════════ -->
+  <section class="dp2026-theme-song">
+    <div class="container">
+      <div class="dp2026-section-header dp2026-section-header--light">
+        <span class="dp2026-section-header__tag dp2026-section-header__tag--light">NVBA Durgotsav</span>
+        <h2 class="dp2026-section-header__title dp2026-section-header__title--light">Our Theme Song</h2>
+        <div class="dp2026-section-header__divider dp2026-section-header__divider--light"></div>
+      </div>
+      <div class="dp2026-theme-song__video">
+        <iframe
+          src="https://www.youtube.com/embed/V0IJeqioIvc"
+          title="NVBA Durgotsav Theme Song"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
 
   <!-- ══════════════ VENUE & ANNOUNCEMENTS ══════════════ -->
   <section class="dp2026-venue">
