@@ -26,6 +26,14 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
   *, *::before, *::after { font-family: $font-primary !important; box-sizing: border-box; }
   h1, h2, h3 { font-family: $font-display !important; color: $clr-dark; line-height: 1.3; }
   h4, h5, h6 { font-family: $font-primary !important; color: $clr-dark; }
+  // Emoji icons — let the browser use its native emoji font
+  .pic-info-card__icon,
+  .pic-food-slot__time-icon,
+  .pic-activity-card__emoji,
+  .pic-venue__detail-icon {
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif !important;
+    font-variant-emoji: emoji;
+  }
 }
 
 // Section Header

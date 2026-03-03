@@ -104,6 +104,10 @@ $pb-white:     #ffffff;
     color: $pb-gold;
     margin-bottom: 14px;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 576px) {
+      display: none;  // Already visible in the logo
+    }
   }
 
   &__title {
@@ -113,6 +117,11 @@ $pb-white:     #ffffff;
     line-height: 1.25;
     margin: 0 0 12px;
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.50);
+
+    @media (max-width: 576px) {
+      font-size: 1.2rem;
+      margin: 0 0 8px;
+    }
   }
 
   &__subtitle {
@@ -122,6 +131,11 @@ $pb-white:     #ffffff;
     font-weight: 300;
     letter-spacing: 0.6px;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+
+    @media (max-width: 576px) {
+      font-size: 0.82rem;
+      margin-bottom: 20px;
+    }
   }
 
   &__cta {
@@ -156,6 +170,13 @@ $pb-white:     #ffffff;
     margin-top: 20px;
     padding-top: 18px;
     border-top: 1px solid rgba($pb-white, 0.18);
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 14px;
+      padding-top: 14px;
+    }
   }
 
   &__donate-label {
