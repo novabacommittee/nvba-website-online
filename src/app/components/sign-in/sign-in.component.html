@@ -4,6 +4,7 @@
             <div class="displayTableCell text-center row d-flex mb-5">
             <div class="authBlock col-md-6 align-content-center p-5 ">
                 <h3>Log In</h3>
+                <form (ngSubmit)="authService.SignIn(userName.value, userPassword.value)">
                 <div class="formGroup form-group">
                 <input type="text" class="formControl form-control" placeholder="Email" #userName required>
                 </div>
@@ -12,8 +13,9 @@
                 </div>
                 <!-- Calling SignIn Api from AuthService -->
                 <div class="formGroup form-group">
-                <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+                <input type="submit" class="btn btnPrimary" value="Log in">
                 </div>
+                </form>
                 <div class="formGroup form-group">
                 <span class="or"><span class="orInner">Or</span></span>
                 </div>
