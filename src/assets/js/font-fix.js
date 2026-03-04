@@ -11,11 +11,11 @@
         
         // Font families - try different approaches
         const primaryFont = 'Poppins, sans-serif';
-        const secondaryFont = 'Playfair Display, serif';
+        const secondaryFont = 'Poppins, sans-serif';
         
         // Check if fonts are loaded
         console.log('Poppins loaded:', document.fonts.check('1em Poppins'));
-        console.log('Playfair Display loaded:', document.fonts.check('1em Playfair Display'));
+        console.log('Poppins (secondary) loaded:', document.fonts.check('1em Poppins'));
         
         // Force font on all elements with multiple approaches
         allElements.forEach(element => {
@@ -112,8 +112,8 @@
             forceModernFonts(); // Re-apply after fonts load
         });
         
-        document.fonts.load('1em Playfair Display').then(() => {
-            console.log('Playfair Display fonts loaded successfully');
+        document.fonts.load('1em Poppins').then(() => {
+            console.log('Poppins (secondary) fonts loaded successfully');
             forceModernFonts(); // Re-apply after fonts load
         });
         

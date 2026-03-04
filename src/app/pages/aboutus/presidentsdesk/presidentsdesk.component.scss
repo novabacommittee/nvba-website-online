@@ -1,36 +1,256 @@
-// President's Desk Component Styles
-
-// Font Variables for consistency
+// ─── Design Tokens ───────────────────────────────────────────────────────────
 $font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$pd-red:       #c0392b;
+$pd-saffron:   #e67e22;
+$pd-gold:      #f39c12;
+$pd-dark:      #1a0a00;
+$pd-dark-mid:  #2c1810;
+$pd-cream:     #fdf6ec;
+$pd-white:     #ffffff;
+$pd-text:      #3d2b1f;
+$pd-text-light:#7d6555;
 
-// Apply Poppins font to all elements in this component
-:host {
-  font-family: $font-primary !important;
+$radius-lg:  16px;
+$radius-md:  10px;
+$shadow-card: 0 4px 24px rgba(0,0,0,0.10);
+
+// ─── Wrapper ─────────────────────────────────────────────────────────────────
+.pd-wrapper {
+  font-family: $font-primary;
+  color: $pd-text;
+  background: $pd-white;
 }
 
-// Force all elements to use Poppins - MAXIMUM SPECIFICITY
-.wrapper * {
-  font-family: $font-primary !important;
-}
+// ─── Hero (gradient only — no background image) ─────────────────────────────
+.pd-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, $pd-dark 0%, $pd-dark-mid 100%);
 
-.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 {
-  font-family: $font-primary !important;
-}
-
-// Force all text elements to use Poppins - MAXIMUM SPECIFICITY
-p, span, div, a, td, th {
-  font-family: $font-primary !important;
-}
-
-// President's Desk specific styling
-.presidents-desk {
-  font-family: $font-primary !important;
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $font-primary !important;
+  &__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 56px 24px 48px;
+    max-width: 700px;
   }
-  
-  p, span, div, a, button {
-    font-family: $font-primary !important;
+
+  &__breadcrumb {
+    font-size: 0.85rem;
+    color: rgba($pd-white, 0.65);
+    margin-bottom: 16px;
+    a {
+      color: rgba($pd-white, 0.80);
+      text-decoration: none;
+      &:hover { color: $pd-gold; }
+    }
+    .sep { margin: 0 8px; opacity: 0.5; }
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 800;
+    color: $pd-white;
+    line-height: 1.15;
+    margin: 0 0 10px;
+  }
+
+  &__subtitle {
+    font-size: 0.92rem;
+    color: rgba($pd-white, 0.6);
+    margin: 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}
+
+// ─── Letter Section ──────────────────────────────────────────────────────────
+.pd-letter {
+  padding: 64px 0 80px;
+  background: $pd-cream;
+
+  &__card {
+    max-width: 780px;
+    margin: 0 auto;
+    background: $pd-white;
+    border-radius: $radius-lg;
+    padding: 48px 48px 56px;
+    box-shadow: $shadow-card;
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(90deg, $pd-red, $pd-gold) 1;
+
+    @media (max-width: 768px) {
+      padding: 32px 24px 40px;
+    }
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: $pd-text-light;
+    margin-bottom: 18px;
+  }
+
+  // ── Author photo block ──
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+    padding: 20px 24px;
+    background: $pd-cream;
+    border-radius: $radius-md;
+    border-left: 4px solid $pd-red;
+  }
+
+  &__photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid $pd-white;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    flex-shrink: 0;
+  }
+
+  &__author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__author-name {
+    font-size: 1.15rem !important;
+    font-weight: 700;
+    color: $pd-dark !important;
+    margin-bottom: 0 !important;
+  }
+
+  &__author-role {
+    font-size: 0.85rem !important;
+    font-weight: 600;
+    color: $pd-saffron !important;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 0 !important;
+  }
+
+  &__greeting {
+    font-size: 1.05rem !important;
+    font-weight: 600;
+    color: $pd-dark !important;
+    margin-bottom: 24px !important;
+  }
+
+  &__subheading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $pd-dark;
+    margin: 36px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba($pd-red, 0.12);
+  }
+
+  // ── Bullet List ──
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 16px 20px;
+      background: $pd-cream;
+      border-radius: $radius-md;
+      border-left: 4px solid $pd-saffron;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-left-color: $pd-red;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      }
+
+      strong {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: $pd-dark;
+      }
+
+      span {
+        font-size: 0.88rem;
+        color: $pd-text-light;
+        line-height: 1.7;
+      }
+    }
+  }
+
+  // ── Signature ──
+  &__signature {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid rgba($pd-dark, 0.08);
+
+    p { margin-bottom: 2px; }
+  }
+
+  &__sign-off {
+    font-weight: 500;
+    color: $pd-text-light !important;
+    margin-bottom: 12px !important;
+  }
+
+  &__name {
+    font-size: 1.15rem !important;
+    font-weight: 700;
+    color: $pd-dark !important;
+  }
+
+  &__title {
+    font-size: 0.88rem !important;
+    font-weight: 600;
+    color: $pd-saffron !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__org {
+    font-size: 0.82rem !important;
+    color: $pd-text-light !important;
+  }
+}
+
+// ─── Section Header ──────────────────────────────────────────────────────────
+.pd-section-header {
+  text-align: center;
+  margin-bottom: 36px;
+
+  &__tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $pd-saffron;
+    background: rgba($pd-saffron, 0.10);
+    padding: 5px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+  }
+
+  &__divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, $pd-red, $pd-gold);
+    border-radius: 2px;
+    margin: 0 auto;
   }
 }
