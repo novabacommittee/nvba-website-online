@@ -1,5 +1,5 @@
 // ─── Design Tokens ────────────────────────────────────────────────────────────
-$font-primary: 'Poppins', system-ui, sans-serif;
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $pb-red:       #c0392b;
 $pb-saffron:   #e67e22;
 $pb-gold:      #f39c12;
@@ -35,7 +35,7 @@ $pb-white:     #ffffff;
       width: 100%;
       object-fit: cover;
       object-position: center;
-      filter: brightness(0.68);
+      filter: brightness(0.82);
       transition: transform 6s ease;
     }
 
@@ -82,8 +82,8 @@ $pb-white:     #ffffff;
     justify-content: center;
     background: linear-gradient(
       to top,
-      rgba($pb-dark, 0.72) 0%,
-      rgba($pb-dark, 0.35) 45%,
+      rgba($pb-dark, 0.52) 0%,
+      rgba($pb-dark, 0.20) 45%,
       transparent 100%
     );
   }
@@ -111,6 +111,7 @@ $pb-white:     #ffffff;
   }
 
   &__title {
+    font-family: $font-primary !important;
     font-size: clamp(1.4rem, 3.2vw, 2.2rem);
     font-weight: 700;
     color: $pb-white;
