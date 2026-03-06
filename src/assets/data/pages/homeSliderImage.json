@@ -1,58 +1,51 @@
 [
     {
         "homeSliderImageId": "1",
-        "homeSliderImage": "Durga Pujo 2024",
-        "imageLink": "./../../../assets/images/stocks/2026/DurgaPuja.jpg",
+        "homeSliderImage": "Durga Pujo",
+        "imageLink": "./../../../assets/images/stocks/2026/Durga Puja.png",
         "tag": "",
-        "description": "Durga Pujo 2024 Event"
+        "description": "Durga Pujo"
     },
     {
-      "homeSliderImageId": "2",
-      "homeSliderImage": "Durga Pujo 2024",
-      "imageLink": "./../../../assets/images/stocks/2023/DP-2023.jpg",
-      "tag": "",
-      "description": "Durga Pujo 2023 Event"
+        "homeSliderImageId": "2",
+        "homeSliderImage": "Poila Boishakh",
+        "imageLink": "./../../../assets/images/stocks/2026/Poila Boishakh.png",
+        "tag": "",
+        "description": "Poila Boishakh"
     },
     {
-      "homeSliderImageId": "3",
-      "homeSliderImage": "Poila Baishak 2025",
-      "imageLink": "./../../../assets/images/gallery/pb2024/pb_bhog_preparation.jpg",
-      "tag": "",
-      "description": "Poula Baishak Event"
+        "homeSliderImageId": "3",
+        "homeSliderImage": "Annual Picnic",
+        "imageLink": "./../../../assets/images/stocks/2026/Annual Picnic.png",
+        "tag": "",
+        "description": "Annual NVBA Picnic"
     },
     {
-      "homeSliderImageId": "4",
-      "homeSliderImage": "Papon Concert 2025",
-      "imageLink": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
-      "tag": "",
-      "description": "Papon Live Concert 2025"
+        "homeSliderImageId": "4",
+        "homeSliderImage": "Celebrating Bengali Culture",
+        "imageLink": "./../../../assets/images/stocks/2026/CelebratingBengaliCulture.png",
+        "tag": "",
+        "description": "Celebrating Bengali Culture"
     },
     {
-      "homeSliderImageId": "5",
-      "name": "Picnic 2025",
-      "imageLink": "./../../../assets/images/gallery/picnic2025/event_photo_15.jpg",
-      "tag": "",
-      "description": "Annual NVBA Picnic"
+        "homeSliderImageId": "5",
+        "homeSliderImage": "Saraswati Puja",
+        "imageLink": "./../../../assets/images/stocks/2026/SaraswatiPuja.png",
+        "tag": "",
+        "description": "Saraswati Puja"
     },
     {
-      "homeSliderImageId": "6",
-      "name": "Poila Baishak 2024",
-      "imageLink": "./../../../assets/images/gallery/pb2024/pb_opening_performence.jpg",
-      "tag": "",
-      "description": ""
+        "homeSliderImageId": "6",
+        "homeSliderImage": "Sindoor Khela",
+        "imageLink": "./../../../assets/images/stocks/2026/Sindoor Khela.png",
+        "tag": "",
+        "description": "Sindoor Khela"
     },
     {
       "homeSliderImageId": "7",
-      "name": "NVBA_Sponsors_Benefactors",
-      "imageLink": "./../../../assets/images/gallery/sponsors/NVBA_Sponsors_Benefactors_2024_v3.png",
+      "homeSliderImage": "NVBA Cares",
+      "imageLink": "./../../../assets/images/stocks/2026/Cares.png",
       "tag": "",
-      "description": ""
-    },
-    {
-      "homeSliderImageId": "8",
-      "name": "NVBA_Sponsors_Benefactors",
-      "imageLink": "./../../../assets/images/gallery/sponsors/NVBA_Sponsors_Benefactors_2024_v3.png",
-      "tag": "",
-      "description": ""
+      "description": "NVBA Cares"
     }
-  ]
+]
