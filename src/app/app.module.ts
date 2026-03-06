@@ -94,6 +94,11 @@ import { Kobipronam2025Component } from './pages/kobipronam2025/kobipronam2025.c
 import { Poilabaishak2025Component } from './pages/poilabaishak2025/poilabaishak2025.component';
 import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.component';
 import { Saraswatipuja2026Component } from './pages/saraswatipuja2026/saraswatipuja2026.component';
+import { Picnic2026Component } from './pages/picnic2026/picnic2026.component';
+import { PoilaBoishakh2026Component } from './pages/poilaBoishakh2026/poilaBoishakh2026.component';
+import { Durgapuja2026Component } from './pages/durgapuja2026/durgapuja2026.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
+import { EchoesOfBengal2026Component } from './pages/echoesOfBengal2026/echoesOfBengal2026.component';
 import { Pastteam2024To25Component } from './pages/archive/pastteam2024-25/pastteam2024-25.component';
 import { SPtickets2026Component } from './helper/tickets/sptickets2026/sptickets2026.component';
 import { CollapseModule } from "ngx-bootstrap/collapse";
@@ -164,9 +169,14 @@ import { CollapseModule } from "ngx-bootstrap/collapse";
     Kobipronam2025Component,
     Poilabaishak2025Component,
     Durgapuja2025Component,
-    Saraswatipuja2026Component,
     Pastteam2024To25Component,
-    SPtickets2026Component
+    SPtickets2026Component,
+    Saraswatipuja2026Component,
+    Picnic2026Component,
+    PoilaBoishakh2026Component,
+    Durgapuja2026Component,
+    ComingSoonComponent,
+    EchoesOfBengal2026Component
   ],
   imports: [
     BrowserModule,

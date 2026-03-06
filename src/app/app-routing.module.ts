@@ -56,10 +56,16 @@ import { Picnic2025Component } from './pages/picnic2025/picnic2025.component';
 import { Durgapuja2025Component } from './pages/durgapuja2025/durgapuja2025.component';
 
 import { Saraswatipuja2026Component } from './pages/saraswatipuja2026/saraswatipuja2026.component';
+import { Picnic2026Component } from './pages/picnic2026/picnic2026.component';
+import { PoilaBoishakh2026Component } from './pages/poilaBoishakh2026/poilaBoishakh2026.component';
+import { Durgapuja2026Component } from './pages/durgapuja2026/durgapuja2026.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
+import { EchoesOfBengal2026Component } from './pages/echoesOfBengal2026/echoesOfBengal2026.component';
+
 import { Pastteam2024To25Component } from './pages/archive/pastteam2024-25/pastteam2024-25.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent, pathMatch: 'full' }, 
+  { path: "", component: HomeComponent, pathMatch: 'full' },
   { path: "home", component: HomeComponent, pathMatch: 'full'  },
   { path: "team", component: TeamComponent, pathMatch: 'full'  },
   { path: "bod", component: BodComponent, pathMatch: 'full'  },
@@ -84,19 +90,19 @@ const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'login', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard] }, 
-  { path: 'membership', component: DashboardComponent, canActivate:[AuthGuard] }, 
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard] },
+  { path: 'membership', component: DashboardComponent, canActivate:[AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'checkout', component: CheckoutComponent, canActivate:[AuthGuard] },
-  // { path: 'tickets', component:TicketsComponent, canActivate:[AuthGuard] }, 
+  // { path: 'tickets', component:TicketsComponent, canActivate:[AuthGuard] },
 
   { path: 'admin/reports', component:ReportsComponent, canActivate:[AuthGuard] },
   { path: 'admin/alldetails', component:AlldetailsComponent, canActivate:[AuthGuard] },
 
   // { path: 'concerttickets', component: ConcertComponent },
   // { path: 'concert', component: ConcertComponent },
-  { path: 'concertcheckout', component: EventscheckoutComponent },         
+  { path: 'concertcheckout', component: EventscheckoutComponent },
   // { path: 'tickets', component: EventticketsComponent, canActivate:[AuthGuard] },kobipronam
   { path: 'kobipronam', component: KobipronamComponent },
   { path: 'kobipronam2024', component: Kobipronam2024Component },
@@ -107,7 +113,7 @@ const routes: Routes = [
   { path: 'cares', component: CaresComponent },
   { path: "durgapuja2024", component: Durgapuja2024Component, pathMatch: 'full'  },
   { path: "sponsorship", component: SponsorshipComponent, pathMatch: 'full'  },
-  
+
   { path: 'proposedconstitution', component:ProposedconstitutionComponent, canActivate:[AuthGuard] },
   { path: 'user-details-check/:id', component: UserDetailsCheckComponent },
 
@@ -119,6 +125,11 @@ const routes: Routes = [
   { path: "durgapuja2025", component: Durgapuja2025Component, pathMatch: 'full'  },
 
   { path: "saraswatipuja2026", component: Saraswatipuja2026Component, pathMatch: 'full'  },
+  { path: "poilaBoishakh2026", component: PoilaBoishakh2026Component, pathMatch: 'full'  },
+  { path: "picnic2026", component: Picnic2026Component, pathMatch: 'full'  },
+  { path: "durgapuja2026", component: Durgapuja2026Component, pathMatch: 'full'  },
+  { path: "echoesOfBengal2026", component: EchoesOfBengal2026Component, pathMatch: 'full'  },
+  { path: "coming-soon", component: ComingSoonComponent, pathMatch: 'full'  },
   { path: "pastteam2024", component: Pastteam2024To25Component, pathMatch: 'full'  }
 
 ];

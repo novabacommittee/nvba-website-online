@@ -61,14 +61,6 @@
             "tag": "",
             "description": "",
             "child": null
-        },
-        {
-            "pageId": "27",
-            "pageName": "Event Promotion Guidelines",
-            "pageLink": "eventspromoguidelines",
-            "tag": "",
-            "description": "External event promotion guidelines",
-            "child": null
         }]
     },
     {
@@ -77,6 +69,14 @@
         "pageLink": "membership",
         "tag": "",
         "description": "NVBA membership details with email subscription",
+        "child": null
+    },
+    {
+        "pageId": "7",
+        "pageName": "Gallery",
+        "pageLink": "gallery",
+        "tag": "",
+        "description": "Photo gallery with community events organized by year",
         "child": null
     },
     {
