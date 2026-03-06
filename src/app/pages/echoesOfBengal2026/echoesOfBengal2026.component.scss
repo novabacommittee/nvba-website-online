@@ -167,7 +167,10 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
   @media (max-width: 768px) { padding: 36px 16px; }
   &__grid {
     max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    justify-items: center;
     @media (max-width: 700px) { grid-template-columns: 1fr; }
+    // When only 2 cards are visible, center them
+    &--center-2 { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
   }
 }
 .eob-highlight-card {

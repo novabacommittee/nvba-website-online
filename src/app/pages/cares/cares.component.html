@@ -1,39 +1,67 @@
-<div class="wrapper" >
+<div class="cares-page">
 
-    <div class="hero-wrap" style="background-image: url('./../../../assets/images/gallery/cares/Cares.png'); filter: opacity(70%)" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }" style="filter: grayscale(100%) opacity(200%)" >
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2" style="text-transform: lowercase;"><a href="/">Home</a></span>/ &nbsp;<span style="text-transform: lowercase;" >cares</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><style></style>Cares</h1>
-            </div>
-        </div>
-        </div>
+  <!-- ========== HERO ========== -->
+  <section class="cares-hero" style="background-image: url('./../../../assets/images/gallery/cares/Cares.png');">
+    <div class="cares-hero__overlay"></div>
+    <div class="cares-hero__content">
+      <nav class="cares-hero__breadcrumb">
+        <a routerLink="/">Home</a>
+        <span class="cares-hero__breadcrumb-sep">/</span>
+        <span>Cares</span>
+      </nav>
+      <p class="cares-hero__eyebrow">NVBA</p>
+      <h1 class="cares-hero__title">NVBA Cares</h1>
+      <p class="cares-hero__subtitle">Giving back to our community &mdash; one initiative at a time</p>
+    </div>
+  </section>
+
+  <!-- ========== DONATE BANNER ========== -->
+  <app-threecol></app-threecol>
+
+  <!-- ========== INITIATIVES GALLERY ========== -->
+  <section class="cares-gallery">
+    <div class="cares-section-header cares-section-header--center">
+      <span class="cares-section-header__tag">Our Initiatives</span>
+      <h2 class="cares-section-header__title">Making a Difference</h2>
+      <div class="cares-section-header__divider"></div>
     </div>
 
-    <app-threecol></app-threecol>
+    <div class="cares-gallery__grid">
+      <div class="cares-card" *ngFor="let item of initiatives; let i = index" (click)="openLightbox(i)">
+        <div class="cares-card__image" [style.background-image]="'url(' + item.image + ')'">
+          <span class="cares-card__badge">{{ item.date }}</span>
+          <div class="cares-card__expand-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+          </div>
+        </div>
+        <div class="cares-card__body">
+          <h3 class="cares-card__title">{{ item.title }}</h3>
+          <p class="cares-card__meta">{{ item.date }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="ftco-section bg-light">
-        <div class="container">
-        <div class="row">
-            <img src="./../../../assets/images/cares/cares-5k-br-2024.png" alt="cares-5k-br-2024"  />
-            <img src="./../../../assets/images/cares/cares-book-donation-2024.png" alt="cares-book-donation-2024"  />
-            <img src="./../../../assets/images/cares/cares-5k-feedForfairfax-2024.png" alt="cares-5k-feedForfairfax-2024"  />
-            <img src="./../../../assets/images/cares/cares-sbim-2024.png" alt="cares-sbim-2024"  />
-            <img src="./../../../assets/images/cares/cares-ffb-2023.png" alt="cares-ffb-2023"  />
-            <img src="./../../../assets/images/cares/cares-thanksgiving-2023.png" alt="Cares-Thanksgiving-2023"  />
-            <img src="./../../../assets/images/cares/care-8.png" alt="cares image 9"  />
-            <img src="./../../../assets/images/cares/care-7.png" alt="cares image 8"  />
-            <img src="./../../../assets/images/cares/care-6.png" alt="cares image 7"  />
-            <img src="./../../../assets/images/cares/care-5.png" alt="cares image 6"  />
-            <img src="./../../../assets/images/cares/care-4.png" alt="cares image 5"  />
-            <img src="./../../../assets/images/cares/care-3-1.png" alt="cares image 4"  />
-            <img src="./../../../assets/images/cares/care-3.png" alt="cares image 3"  />
-            <img src="./../../../assets/images/cares/care-2.png" alt="cares image 2"  />
-            <img src="./../../../assets/images/cares/care-1.png" alt="cares image 1"  />
-        </div>
-        </div>
-    </section>
 </div>
+
+<!-- ========== LIGHTBOX ========== -->
+<div class="cares-lightbox" *ngIf="lightboxOpen" (click)="closeLightbox()">
+  <button class="cares-lightbox__close" (click)="closeLightbox()">&times;</button>
+  <button class="cares-lightbox__nav cares-lightbox__nav--prev" (click)="prevImage($event)">&#8249;</button>
+  <div class="cares-lightbox__content" (click)="$event.stopPropagation()">
+    <img [src]="initiatives[lightboxIndex].image" [alt]="initiatives[lightboxIndex].title">
+    <div class="cares-lightbox__caption">
+      <h3>{{ initiatives[lightboxIndex].title }}</h3>
+      <p>{{ initiatives[lightboxIndex].date }}</p>
+    </div>
+  </div>
+  <button class="cares-lightbox__nav cares-lightbox__nav--next" (click)="nextImage($event)">&#8250;</button>
+  <div class="cares-lightbox__counter">{{ lightboxIndex + 1 }} / {{ initiatives.length }}</div>
+</div>
+
 <app-sponsers></app-sponsers>
