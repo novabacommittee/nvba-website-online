@@ -1,9 +1,70 @@
 
 <section class="ftco-section">
     <div class="container">
-        <div class="row d-flex">
-            <p>gallery works!</p>
-            <h2>Page Under Constructor</h2>
+      <div class="container p-3 mt-5" >
+          <div class="row no-gutters  align-items-center justify-content-center" data-scrollax-parent="true">
+              <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }" style="filter: grayscale(100%) opacity(200%)" >
+              <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a routerLink="/home">Home</a></span> / <span class="breadcrumbs" >gallery</span></p>
+              <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">NVBA Photo Gallery</h1>
+              </div>
+          </div>
+      </div>
+        
+        <!-- Year Selection Buttons -->
+        <div class="year-buttons-container">
+            <button class="btn btn-primary year-button" 
+                    *ngFor="let year of years; let i = index"
+                    (click)="selectYear(year)" 
+                    [ngClass]="{'selected': selectedYear === year}">
+                {{ year }}
+            </button>
+        </div>
+        
+        <!-- Photo Grid -->
+        <div class="photo-grid" *ngIf="hasPhotosForSelectedYear()">
+            <div class="photo-tile" 
+                 *ngFor="let photo of getPhotosForSelectedYear(); let i = index"
+                 (click)="openPhoto(photo, i)">
+                <img [src]="photo.url" [alt]="photo.filename" class="photo-img">
+                <div class="photo-overlay">
+                    <div class="photo-info">
+                        <span class="photo-year">{{ photo.year }}</span>
+                        <span class="photo-filename">{{ photo.filename }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- No Photos Message -->
+        <div class="no-photos" *ngIf="selectedYear && !hasPhotosForSelectedYear()">
+            <p>No photos available for {{ selectedYear }}</p>
         </div>
     </div>
-</section> 
+</section>
+
+<!-- Photo Modal -->
+<div class="photo-modal" [ngClass]="{'show': isModalOpen}" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="closeModal()">&times;</button>
+        
+        <div class="photo-viewer">
+            <button class="nav-btn prev-btn" (click)="previousPhoto()" 
+                    [disabled]="!selectedYear || getPhotosCountForSelectedYear() <= 1">
+                &#10094;
+            </button>
+            
+            <img [src]="currentPhoto.url" [alt]="currentPhoto.filename" class="modal-photo" 
+                 *ngIf="currentPhoto">
+            
+            <button class="nav-btn next-btn" (click)="nextPhoto()" 
+                    [disabled]="!selectedYear || getPhotosCountForSelectedYear() <= 1">
+                &#10095;
+            </button>
+        </div>
+        
+        <div class="photo-details" *ngIf="currentPhoto">
+            <h3>{{ currentPhoto.filename }}</h3>
+            <p>{{ currentPhoto.year }} • {{ selectedPhotoIndex + 1 }} of {{ getPhotosCountForSelectedYear() }}</p>
+        </div>
+    </div>
+</div> 

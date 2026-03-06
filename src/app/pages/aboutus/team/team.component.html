@@ -1,16 +1,4 @@
 <div class="wrapper" >
-    
-    <div class="hero-wrap" style="background-image: url('./../../../../assets/images/ecm/2026-27/EC Team.jpg'); filter: grayscale(20%) opacity(50%) " data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }" style="filter: grayscale(100%) opacity(200%)" >
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span>/ &nbsp;<span style="text-transform: lowercase;" >team</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Our Team</h1>
-            </div>
-        </div>
-        </div>
-    </div>
 
     <section class="ftco-section bg-light">
         <div class="container">
@@ -25,7 +13,7 @@
                             <div class="position text mb-3">
                                 <p>{{member.designation}}</p>
                                 <img class="text-center" width="20" height="20" src="./../../../../assets/images/ecm/Email_Icon.png " >
-                                <p *ngIf="member.facebook?member.facebook:member.email" >{{member.facebook?member.facebook:member.email}}</p>
+                                <p *ngIf="member.facebook?member.facebook:member.email" style="font-size: 14px; word-wrap: break-word; margin: 0; padding: 0;">{{member.facebook?member.facebook:member.email}}</p>
                             </div>
                             <!-- <div class="text">
                                 <p *ngIf="member.facebook?member.facebook:member.linkedin" ><a target="_blank" href="{{member.facebook?member.facebook:member.linkedin}}">Social link to connect</a></p>
@@ -34,7 +22,7 @@
                     </div>
                 </div>
             </div>
-        
+
         </div>
 
         </div>

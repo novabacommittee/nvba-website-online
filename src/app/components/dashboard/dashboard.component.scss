@@ -1,0 +1,123 @@
+// Modern Font Variables
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Apply modern fonts to all elements in this component - ALL Poppins
+:host {
+  font-family: $font-primary !important;
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary !important;
+  }
+  
+  p, span, div, a, button, input, textarea, select, label {
+    font-family: $font-primary !important;
+  }
+}
+
+// Force all elements to use modern fonts - MAXIMUM SPECIFICITY
+* {
+  font-family: $font-primary !important;
+}
+
+// Force all headings inside any element to use modern fonts - MAXIMUM SPECIFICITY
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all text elements to use modern fonts - MAXIMUM SPECIFICITY
+p, span, div, a, td, th, h4 {
+  font-family: $font-primary !important;
+}
+
+// Specific overrides for nested elements - MAXIMUM SPECIFICITY
+h4 p, h3 p, h2 p, h1 p {
+  font-family: $font-primary !important;
+}
+
+h4 span, h3 span, h2 span, h1 span {
+  font-family: $font-primary !important;
+}
+
+h4 a, h3 a, h2 a, h1 a {
+  font-family: $font-primary !important;
+}
+
+// Force all elements with any class
+[class*="text-"] {
+  font-family: $font-primary !important;
+}
+
+[class*="text-"] h1,
+[class*="text-"] h2,
+[class*="text-"] h3,
+[class*="text-"] h4,
+[class*="text-"] h5,
+[class*="text-"] h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all elements inside container
+.container * {
+  font-family: $font-primary !important;
+}
+
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all elements inside row
+.row * {
+  font-family: $font-primary !important;
+}
+
+.row h1,
+.row h2,
+.row h3,
+.row h4,
+.row h5,
+.row h6 {
+  font-family: $font-primary !important;
+}
+
+// Tab content specific
+.tab-content * {
+  font-family: $font-primary !important;
+}
+
+.tab-content h1,
+.tab-content h2,
+.tab-content h3,
+.tab-content h4,
+.tab-content h5,
+.tab-content h6 {
+  font-family: $font-primary !important;
+}
+
+.tab-pane * {
+  font-family: $font-primary !important;
+}
+
+.tab-pane h1,
+.tab-pane h2,
+.tab-pane h3,
+.tab-pane h4,
+.tab-pane h5,
+.tab-pane h6 {
+  font-family: $font-primary !important;
+}
+
+// Override any remaining font-family declarations
+* [style*="font-family"] {
+  font-family: $font-primary !important;
+}
+
+h1 [style*="font-family"], h2 [style*="font-family"], h3 [style*="font-family"], 
+h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] {
+  font-family: $font-primary !important;
+}
