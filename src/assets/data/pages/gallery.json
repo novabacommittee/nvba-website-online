@@ -1,12 +1,96 @@
 {
   "communityPhotos": {
+    "2026": {
+      "year": "2026",
+      "photos": [
+        "1d4cc169-477f-4c58-9d76-bf561eae3508.JPG",
+        "2535d989-5240-42d0-b3b9-c77a61102710.JPG",
+        "38077d32-da18-4eda-94c8-ea45c46656e5.JPG",
+        "56989e32-2e6a-4522-bcbb-4dcba8b0f661.JPG",
+        "64b8ddae-b165-465d-b701-f8d627117107.JPG",
+        "70f76b2f-031a-4f2b-af62-6bf26fb4c66d.JPG",
+        "757a996b-ae8b-49b3-9ac7-31ab2a08fb92.JPG",
+        "9631dc2d-cb65-4065-a8ec-6dd81249ca7b.JPG",
+        "IMG_1212.JPG",
+        "IMG_1710.JPG",
+        "IMG_2914.JPG",
+        "IMG_5527.JPG",
+        "IMG_6359.JPG",
+        "IMG_8287.JPG",
+        "IMG_8627.JPG",
+        "IMG_9081.JPG",
+        "ae9caf8a-504d-4e89-b24d-a4a9712795b8.JPG",
+        "b2c99312-7674-43dd-b4aa-fd0eb4c6ba23.JPG",
+        "b89f9c84-690e-4599-bc7b-9524d22840a5.JPG",
+        "da2dcf23-132a-44f9-9a51-01f0331bfc16.JPG"
+      ]
+    },
+    "2025": {
+      "year": "2025",
+      "photos": [
+        "11d585b9-bb91-45f9-8e1f-312e73ffa3cc.JPG",
+        "16cd5da5-8939-4cf8-b6e2-9eaae1b25b35.JPG",
+        "1bde3c26-3a28-4249-9d9c-90d0113d6925.JPG",
+        "1e3bc804-f747-41f8-9c6a-c9d8cc0a0966.JPG",
+        "1f55aca7-951e-435b-922c-c48da18be0c5.JPG",
+        "2449d52a-3ba7-4cd2-8273-93e417a6cacd.JPG",
+        "2b1b2064-02d2-4f35-9f66-461060749726.JPG",
+        "3fb6c687-e959-46e7-be53-9aee381ba84a.JPG",
+        "5d54e906-afb0-4ef8-a608-80c0518b55c1.JPG",
+        "6ff18231-b861-4031-ad75-ff4ce4b31e8e.JPG",
+        "70e5eff2-6f9a-4483-a24c-a885bddf903b.JPG",
+        "74ebb094-73d8-481c-abd6-98838cd441c0.JPG",
+        "7d9a73c0-eb2e-436d-8fb0-8b7c13ebaa4f.JPG",
+        "7f7ebed3-cf16-47d5-b247-e73ed0e6addf.JPG",
+        "912b7dfd-a6df-4c51-976c-94c1a9e6a111.JPG",
+        "9164bb89-3410-498f-a31d-c27fd8859312.JPG",
+        "99d36a55-9c24-4f3b-997a-90e710eeecaa.JPG",
+        "9c527a42-b726-4d43-b25e-df3b30ae1d64.JPG",
+        "9ca81083-6e8e-464b-9766-e846da87f8c8.JPG",
+        "9de7ea7c-85f7-4ccf-966f-7cf4ef86025e.JPG",
+        "a503474a-f73e-4759-a6b9-eeee24b89c9a.JPG",
+        "IMG_5178.JPG",
+        "a1007c05-e4ff-4d90-a067-38a790e85711.JPG",
+        "a1736de1-0064-4d69-8fec-39e5e337fb42.JPG",
+        "a40b2630-d9dd-4c35-9118-90a68a4b8bd5.JPG",
+        "b5df0517-1569-4ef9-90fe-f7ffd57369e6.JPG",
+        "d12ca669-cc76-4236-a878-6dd92211987b.JPG",
+        "db0e1cc8-2f17-4864-9c03-36f064e4af10.JPG"
+      ]
+    },
     "2024": {
       "year": "2024",
-      "photos": [ "_DSC0576.jpg", "_DSC0578.jpg", "_DSC0580.jpg", "_DSC0581.jpg", "_DSC0586.jpg",
-        "_DSC0610.jpg", "_DSC0613.jpg", "_DSC0616.jpg", "_DSC0617.jpg", "_DSC0619.jpg",
-        "_DSC0623.jpg", "_DSC0624.jpg", "_DSC0626.jpg", "_DSC0628.jpg",
-        "_DSC0671.jpg", "event_photo_21.jpeg", "event_photo_22.jpeg", "event_photo_5.jpeg",
-        "event_photo_6.jpeg", "event_photo_7.jpeg", "pb_bhog_preparation.jpg", "pb_opening_performence.jpg"]
+      "photos": [
+        "_DSC0576.JPG",
+        "_DSC0578.JPG",
+        "_DSC0580.JPG",
+        "_DSC0581.JPG",
+        "_DSC0586.JPG",
+        "_DSC0610.JPG",
+        "_DSC0613.JPG",
+        "_DSC0616.JPG",
+        "_DSC0617.JPG",
+        "_DSC0619.JPG",
+        "_DSC0623.JPG",
+        "_DSC0624.JPG",
+        "_DSC0626.JPG",
+        "_DSC0628.JPG",
+        "_DSC0671.JPG",
+        "event_photo_1.jpeg",
+        "event_photo_5.jpeg",
+        "event_photo_6.jpeg",
+        "event_photo_7.jpeg",
+        "event_photo_8.jpeg",
+        "event_photo_9.jpeg",
+        "event_photo_10.jpeg",
+        "event_photo_16.jpeg",
+        "event_photo_17.jpeg",
+        "event_photo_19.jpeg",
+        "event_photo_21.jpeg",
+        "event_photo_22.jpeg",
+        "pb_bhog_preparation.jpg",
+        "pb_opening_performance.jpg"
+      ]
     },
     "2022": {
       "year": "2022",
@@ -18,10 +102,12 @@
     },
     "2019": {
       "year": "2019",
-      "photos": [ "1.jpg", "10.jpeg", "11.jpeg", "111.jpeg", "111.jpg", "1122.jpeg",
+      "photos": [
+        "1.jpg", "10.jpeg", "11.jpeg", "111.jpeg", "111.jpg", "1122.jpeg",
         "12.jpeg", "13.jpeg", "14.jpeg", "2.jpg", "21.jpeg", "22.jpeg",
         "23.jpeg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg",
-        "8.jpg", "9.jpeg"]
+        "8.jpg", "9.jpeg"
+      ]
     },
     "2018": {
       "year": "2018",
