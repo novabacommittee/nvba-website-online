@@ -1,51 +1,51 @@
 [
-  {
-    "homeSliderImageId": "1",
-    "homeSliderImage": "Durga Pujo",
-    "imageLink": "./../../../assets/images/stocks/2026/Durga Puja.png",
-    "tag": "",
-    "description": "Durga Pujo"
-  },
-  {
-    "homeSliderImageId": "2",
-    "homeSliderImage": "Poila Boishakh",
-    "imageLink": "./../../../assets/images/stocks/2026/Poila Boishakh.png",
-    "tag": "",
-    "description": "Poila Boishakh"
-  },
-  {
-    "homeSliderImageId": "3",
-    "homeSliderImage": "Annual Picnic",
-    "imageLink": "./../../../assets/images/stocks/2026/Annual Picnic.png",
-    "tag": "",
-    "description": "Annual NVBA Picnic"
-  },
-  {
-    "homeSliderImageId": "4",
-    "homeSliderImage": "Celebrating Bengali Culture",
-    "imageLink": "./../../../assets/images/stocks/2026/CelebratingBengaliCulture.png",
-    "tag": "",
-    "description": "Celebrating Bengali Culture"
-  },
-  {
-    "homeSliderImageId": "5",
-    "homeSliderImage": "Saraswati Puja",
-    "imageLink": "./../../../assets/images/stocks/2026/SaraswatiPuja.png",
-    "tag": "",
-    "description": "Saraswati Puja"
-  },
-  {
-    "homeSliderImageId": "6",
-    "homeSliderImage": "Sindoor Khela",
-    "imageLink": "./../../../assets/images/stocks/2026/Sindoor Khela.png",
-    "tag": "",
-    "description": "Sindoor Khela"
-  },
-  {
-    "homeSliderImageId": "7",
-    "homeSliderImage": "NVBA Cares",
-    "imageLink": "./../../../assets/images/stocks/2026/Cares.png",
-    "tag": "",
-    "description": "NVBA Cares"
-  }
+    {
+        "homeSliderImageId": "1",
+        "homeSliderImage": "Durga Pujo",
+        "imageLink": "./../../../assets/images/stocks/2026/Durga Puja.png",
+        "tag": "",
+        "description": "Durga Pujo"
+    },
+    {
+        "homeSliderImageId": "2",
+        "homeSliderImage": "Poila Boishakh",
+        "imageLink": "./../../../assets/images/stocks/2026/Poila Boishakh.png",
+        "tag": "",
+        "description": "Poila Boishakh"
+    },
+    {
+        "homeSliderImageId": "3",
+        "homeSliderImage": "Annual Picnic",
+        "imageLink": "./../../../assets/images/stocks/2026/Annual Picnic.png",
+        "tag": "",
+        "description": "Annual NVBA Picnic"
+    },
+    {
+        "homeSliderImageId": "4",
+        "homeSliderImage": "Celebrating Bengali Culture",
+        "imageLink": "./../../../assets/images/stocks/2026/CelebratingBengaliCulture.png",
+        "tag": "",
+        "description": "Celebrating Bengali Culture"
+    },
+    {
+        "homeSliderImageId": "5",
+        "homeSliderImage": "Saraswati Puja",
+        "imageLink": "./../../../assets/images/stocks/2026/SaraswatiPuja.png",
+        "tag": "",
+        "description": "Saraswati Puja"
+    },
+    {
+        "homeSliderImageId": "6",
+        "homeSliderImage": "Sindoor Khela",
+        "imageLink": "./../../../assets/images/stocks/2026/Sindoor Khela.png",
+        "tag": "",
+        "description": "Sindoor Khela"
+    },
+    {
+      "homeSliderImageId": "7",
+      "homeSliderImage": "NVBA Cares",
+      "imageLink": "./../../../assets/images/stocks/2026/Cares.png",
+      "tag": "",
+      "description": "NVBA Cares"
+    }
 ]

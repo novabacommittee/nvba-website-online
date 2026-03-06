@@ -1,0 +1,29 @@
+// Modern Font Variables
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Apply Poppins font to all elements in this component
+:host {
+  font-family: $font-primary !important;
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary !important;
+  }
+  
+  p, span, div, a, button, input, textarea, select, label {
+    font-family: $font-primary !important;
+  }
+}
+
+// Force all elements to use Poppins - MAXIMUM SPECIFICITY
+.wrapper * {
+  font-family: $font-primary !important;
+}
+
+.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 {
+  font-family: $font-primary !important;
+}
+
+// Force all text elements to use Poppins - MAXIMUM SPECIFICITY
+p, span, div, a, td, th {
+  font-family: $font-primary !important;
+}
