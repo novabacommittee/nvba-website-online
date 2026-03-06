@@ -1,23 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
 
-      
+
 
     <a class="navbar-brand" routerLink="/">
-      <img src="./../../../assets/images/logo/logo.png " title="NVBA-Logo" alt="NVBA-Logo" >
+      <img src="./../../../assets/images/icons/nvba.png " title="NVBA-Logo" alt="NVBA-Logo" >
     </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" id="nvbaMenu" >
         <span class="oi oi-grid-four-up "></span>
       </button>
 
-      <div class="collapse navbar-collapse"  id="ftco-nav"> 
- 
-        <ul  class="navbar-nav ml-auto "> 
-          
+      <div class="collapse navbar-collapse"  id="ftco-nav">
+
+        <ul  class="navbar-nav ml-auto ">
+
             <li *ngFor="let item of dataObject " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item" [ngClass]="item.child ? 'dropmenu':'' "  >
-            
+
               <a routerLink="/{{item.pageLink}}" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggle()"  >{{item.pageName}}</a>
-  
+
               <ul *ngIf="item.child" class="dropmenu-content "   >
                 <div *ngFor="let itemChild of item.child; let i = index ">
                   <li > <a routerLink="/{{itemChild.pageLink}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggle()" >{{itemChild.pageName}}</a></li>
@@ -49,8 +49,8 @@
                 <li><a  routerlinkactive="active" href="/admin/alldetails" *ngIf="auth.member.value?.usertype == 'admin' "  >Details</a></li>
               </ul>
             </li>
-          
-          
+
+
           <!-- <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="causes.html" class="nav-link">Causes</a></li>
@@ -64,10 +64,10 @@
           <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
           <li class="nav-item"><a href="event.html" class="nav-link">Events</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> -->
-        </ul> 
-      </div>  
+        </ul>
+      </div>
     </div>
   </nav>
     <!-- END nav -->
-      
+
 
