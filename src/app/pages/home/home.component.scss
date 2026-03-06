@@ -1,0 +1,225 @@
+// ─── Design Tokens ────────────────────────────────────────────────────────────
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$pb-red:       #c0392b;
+$pb-saffron:   #e67e22;
+$pb-gold:      #f39c12;
+$pb-dark:      #1a0a00;
+$pb-white:     #ffffff;
+
+// ─── Wrapper ──────────────────────────────────────────────────────────────────
+.home-wrapper {
+  font-family: $font-primary;
+  overflow-x: hidden;
+}
+
+// ─── Hero ─────────────────────────────────────────────────────────────────────
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+
+  // ── Carousel shell
+  #carouselExampleControls {
+    height: 72vh;
+    min-height: 440px;
+
+    @media (max-width: 768px) { height: 54vh; min-height: 300px; }
+    @media (max-width: 576px) { height: 46vh; min-height: 260px; }
+
+    .carousel-inner,
+    .carousel-item { height: 100%; }
+
+    .carousel-item img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.82);
+      transition: transform 6s ease;
+    }
+
+    .carousel-item.active img { transform: scale(1.04); }
+
+    // Navigation buttons
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 46px;
+      height: 46px;
+      background: rgba($pb-white, 0.88);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 20px;
+      opacity: 0.9;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(8px);
+
+      &:hover {
+        opacity: 1;
+        background: $pb-white;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+        transform: translateY(-50%) scale(1.08);
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 18px;
+        height: 18px;
+        filter: invert(22%) sepia(50%) saturate(900%) hue-rotate(340deg);
+      }
+    }
+  }
+
+  // ── Overlay — pointer-events:none keeps carousel controls interactive
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: linear-gradient(
+      to top,
+      rgba($pb-dark, 0.52) 0%,
+      rgba($pb-dark, 0.20) 45%,
+      transparent 100%
+    );
+  }
+
+  &__content {
+    text-align: center;
+    padding: 24px 24px 40px;
+    pointer-events: auto;
+    max-width: 680px;
+    width: 100%;
+  }
+
+  &__eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: $pb-gold;
+    margin-bottom: 14px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 576px) {
+      display: none;  // Already visible in the logo
+    }
+  }
+
+  &__title {
+    font-family: $font-primary !important;
+    font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+    font-weight: 700;
+    color: $pb-white;
+    line-height: 1.25;
+    margin: 0 0 12px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.50);
+
+    @media (max-width: 576px) {
+      font-size: 1.2rem;
+      margin: 0 0 8px;
+    }
+  }
+
+  &__subtitle {
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+    color: rgba($pb-white, 0.88);
+    margin-bottom: 34px;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+
+    @media (max-width: 576px) {
+      font-size: 0.82rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    background: linear-gradient(135deg, $pb-red, $pb-saffron);
+    color: $pb-white;
+    font-family: $font-primary;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 13px 34px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 18px rgba($pb-red, 0.42);
+    transition: all 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 26px rgba($pb-red, 0.52);
+      color: $pb-white;
+      text-decoration: none;
+    }
+  }
+
+  // ── Donate row — compact, sits below the CTA
+  &__donate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba($pb-white, 0.18);
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 14px;
+      padding-top: 14px;
+    }
+  }
+
+  &__donate-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $pb-gold;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  &__donate-btn {
+    display: inline-block;
+    background: rgba($pb-white, 0.15);
+    backdrop-filter: blur(8px);
+    color: $pb-white;
+    font-family: $font-primary;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 7px 20px;
+    border-radius: 50px;
+    border: 1.5px solid rgba($pb-white, 0.40);
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    transition: all 0.22s ease;
+
+    &:hover {
+      background: rgba($pb-white, 0.26);
+      border-color: rgba($pb-white, 0.65);
+      color: $pb-white;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__donate-sub {
+    font-size: 0.7rem;
+    color: rgba($pb-white, 0.65);
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// ─── Global ───────────────────────────────────────────────────────────────────
+html { scroll-behavior: smooth; }

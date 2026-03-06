@@ -1,0 +1,420 @@
+// Enhanced Sponsors Component Styles
+
+// Font Variables for consistency
+$font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Apply Poppins font to all elements in this component
+:host {
+  font-family: $font-primary !important;
+}
+
+.sponsers {
+  font-family: $font-primary !important;
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary !important;
+  }
+  
+  p, span, div, a, button {
+    font-family: $font-primary !important;
+  }
+}
+
+// FORCE LOGO SIZES - Maximum specificity targeting exact HTML structure
+section.ftco-section.sponsers .row .col-md-2 .card .client-logo img {
+  max-height: 172px !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  padding: 2px !important;
+}
+
+section.ftco-section.sponsers .row .col-md-2 .card .client-logo a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+section.ftco-section.sponsers .row .col-md-2 .card .client-logo {
+  height: 196px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex: 1 !important;
+  padding-top: 20px !important;
+}
+
+section.ftco-section.sponsers .row .col-md-2 .card {
+  min-height: 200px !important;
+  height: 200px !important;
+  padding: 2px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.sponsers {
+  padding: 40px 0; // Reduced from 100px to 40px to reduce space
+  background: linear-gradient(135deg, #1a0a00 0%, #2c1810 100%);
+  position: relative;
+  overflow: hidden;
+  
+  // Animated background pattern
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+    animation: waveAnimation 20s ease-in-out infinite;
+  }
+
+  // Floating particles effect
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: floatAnimation 15s ease-in-out infinite;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .heading-section {
+    text-align: center;
+    margin-bottom: 30px; // Reduced from 60px to 30px
+    
+    h2 {
+      font-family: $font-primary;
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      
+      // Animated underline
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, #c0392b, #e67e22, #c0392b);
+        background-size: 200% 100%;
+        animation: gradientShift 3s ease infinite;
+        border-radius: 2px;
+      }
+    }
+    
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .row {
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .col-md-2 {
+    flex: 0 0 calc(16.666% - 20px);
+    max-width: calc(16.666% - 20px);
+    margin-bottom: 30px;
+  }
+
+  .card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    
+    // Animated gradient border
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #c0392b, #e67e22, #c0392b);
+      background-size: 200% 100%;
+      animation: gradientShift 3s ease infinite;
+      z-index: 1;
+    }
+    
+    // Hover effects
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      
+      &::before {
+        animation: gradientShift 0.5s ease infinite;
+      }
+    }
+    
+    .client-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      position: relative;
+      z-index: 2;
+      
+      a {
+        display: block;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+        
+        img {
+          max-height: 180px !important;
+          width: 100% !important;
+          object-fit: contain !important;
+          transition: all 0.3s ease;
+          filter: grayscale(20%);
+          padding: 10px !important;
+          
+          &:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes expandWidth {
+  0% {
+    width: 60px;
+  }
+  100% {
+    width: 100px;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+  .sponsers {
+    .col-md-2 {
+      flex: 0 0 calc(20% - 20px);
+      max-width: calc(20% - 20px);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .sponsers {
+    padding: 80px 0;
+    
+    .heading-section h2 {
+      font-size: 2.5rem;
+    }
+    
+    .col-md-2 {
+      flex: 0 0 calc(25% - 20px);
+      max-width: calc(25% - 20px);
+    }
+    
+    .card {
+      padding: 20px;
+      min-height: 120px;
+      
+      .client-logo img {
+        max-height: 150px;
+        width: 100%;
+        padding: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsers {
+    padding: 60px 0;
+    
+    .heading-section {
+      margin-bottom: 40px;
+      
+      h2 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+    }
+    
+    .col-md-2 {
+      flex: 0 0 calc(33.333% - 20px);
+      max-width: calc(33.333% - 20px);
+    }
+    
+    .card {
+      padding: 15px;
+      min-height: 100px;
+      
+      .client-logo img {
+        max-height: 120px;
+        width: 100%;
+        padding: 6px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .sponsers {
+    padding: 50px 20px;
+    
+    .heading-section {
+      margin-bottom: 30px;
+      
+      h2 {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+      }
+    }
+    
+    .col-md-2 {
+      flex: 0 0 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
+    
+    .card {
+      padding: 12px;
+      min-height: 80px;
+      border-radius: 15px;
+      
+      .client-logo img {
+        max-height: 100px;
+        width: 100%;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .sponsers {
+    .col-md-2 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    
+    .card {
+      .client-logo img {
+        max-height: 80px;
+        width: 100%;
+        padding: 4px;
+      }
+    }
+  }
+}
+
+// Enhanced accessibility
+@media (prefers-reduced-motion: reduce) {
+  .sponsers {
+    .heading-section h2::after {
+      animation: none;
+    }
+    
+    .card {
+      transition: none;
+      
+      &:hover {
+        transform: none;
+      }
+      
+      &::before {
+        animation: none;
+      }
+      
+      .client-logo {
+        a {
+          transition: none;
+          
+          &:hover {
+            transform: none;
+          }
+          
+          img {
+            transition: none;
+            
+            &:hover {
+              transform: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .sponsers {
+    .card {
+      border: 2px solid #000;
+      
+      .client-logo img {
+        filter: contrast(1.5);
+      }
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .sponsers {
+    padding: 20px 0;
+    
+    .card {
+      box-shadow: none;
+      border: 1px solid #ccc;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  }
+}
