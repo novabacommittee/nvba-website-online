@@ -1,31 +1,44 @@
-<div class="wrapper" >
+<div class="team-page">
 
-    <section class="ftco-section bg-light">
-        <div class="container">
-        <div class="row">
+  <!-- ========== HERO ========== -->
+  <section class="team-hero">
+    <div class="team-hero__overlay"></div>
+    <div class="team-hero__content">
+      <nav class="team-hero__breadcrumb">
+        <a routerLink="/">Home</a>
+        <span class="team-hero__breadcrumb-sep">/</span>
+        <span>About Us</span>
+        <span class="team-hero__breadcrumb-sep">/</span>
+        <span>Team</span>
+      </nav>
+      <p class="team-hero__eyebrow">NVBA</p>
+      <h1 class="team-hero__title">Executive Committee</h1>
+      <p class="team-hero__subtitle">Meet the team behind NVBA</p>
+    </div>
+  </section>
 
-            <div class="col-lg-4 d-flex mb-sm-4 ftco-animate " *ngFor="let member of nvbaTeam" >
-                <div class="staff">
-                    <div class="d-flex mb-4">
-                        <div class="img" style="background-image: url({{member.img_url}});"></div>
-                        <div class="info ml-4">
-                            <h3>{{member.display_name}}</h3>
-                            <div class="position text mb-3">
-                                <p>{{member.designation}}</p>
-                                <img class="text-center" width="20" height="20" src="./../../../../assets/images/ecm/Email_Icon.png " >
-                                <p *ngIf="member.facebook?member.facebook:member.email" style="font-size: 14px; word-wrap: break-word; margin: 0; padding: 0;">{{member.facebook?member.facebook:member.email}}</p>
-                            </div>
-                            <!-- <div class="text">
-                                <p *ngIf="member.facebook?member.facebook:member.linkedin" ><a target="_blank" href="{{member.facebook?member.facebook:member.linkedin}}">Social link to connect</a></p>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ========== TEAM GRID ========== -->
+  <section class="team-members">
+    <div class="team-section-header team-section-header--center">
+      <span class="team-section-header__tag">Our Team</span>
+      <h2 class="team-section-header__title">Executive Committee Members</h2>
+      <div class="team-section-header__divider"></div>
+    </div>
 
+    <div class="team-members__grid">
+      <div class="team-card" *ngFor="let member of nvbaTeam">
+        <div class="team-card__photo" [style.background-image]="'url(' + member.img_url + ')'"></div>
+        <div class="team-card__body">
+          <h3 class="team-card__name">{{ member.display_name }}</h3>
+          <p class="team-card__role" *ngIf="member.designation">{{ member.designation }}</p>
+          <div class="team-card__contact" *ngIf="member.facebook || member.email">
+            <img width="16" height="16" src="./../../../../assets/images/ecm/Email_Icon.png" alt="email">
+            <span>{{ member.facebook ? member.facebook : member.email }}</span>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        </div>
-    </section>
 </div>
 <app-sponsers></app-sponsers>

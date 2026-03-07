@@ -1,29 +1,108 @@
-// Modern Font Variables
+// Team Component Styles — matches site-wide design system
 $font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$clr-primary:   #c0392b;
+$clr-secondary: #e67e22;
+$clr-dark:      #1a0a00;
+$clr-dark-mid:  #2c1810;
+$clr-body:      #3d2b1f;
+$clr-muted:     #7d6555;
+$clr-light:     #fdf6ec;
+$clr-border:    rgba(192,57,43,.12);
+$clr-white:     #ffffff;
+$shadow-sm: 0 2px 10px rgba(0,0,0,.07);
+$shadow-md: 0 6px 24px rgba(0,0,0,.11);
+$shadow-lg: 0 12px 38px rgba(0,0,0,.16);
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-full: 100px;
+$ease: all .3s cubic-bezier(.4,0,.2,1);
 
-// Apply Poppins font to all elements in this component
-:host {
-  font-family: $font-primary !important;
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $font-primary !important;
+:host { font-family: $font-primary !important; color: $clr-body; line-height: 1.7; }
+
+.team-page {
+  overflow-x: hidden;
+  *, *::before, *::after { font-family: $font-primary !important; box-sizing: border-box; }
+  h1, h2, h3 { font-family: $font-display !important; color: $clr-dark; line-height: 1.3; }
+  h4, h5, h6 { font-family: $font-primary !important; color: $clr-dark; }
+}
+
+// Section Header
+.team-section-header {
+  margin-bottom: 36px;
+  &--center { text-align: center; .team-section-header__divider { margin: 0 auto; } }
+  &__tag {
+    display: inline-block; background: rgba($clr-primary,.1); color: $clr-primary;
+    font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 6px 18px; border-radius: $radius-full; margin-bottom: 14px;
   }
-  
-  p, span, div, a, button, input, textarea, select, label {
-    font-family: $font-primary !important;
+  &__title { font-size: 36px; font-weight: 700; margin: 0 0 12px;
+    @media (max-width: 768px) { font-size: 26px; }
+  }
+  &__divider { width: 60px; height: 4px; background: linear-gradient(90deg, $clr-primary, $clr-secondary); border-radius: 2px; }
+}
+
+// HERO (gradient, no background image)
+.team-hero {
+  position: relative; min-height: 340px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, $clr-dark-mid 0%, $clr-dark 100%);
+  @media (max-width: 768px) { min-height: 280px; }
+  &__overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba($clr-primary,.15), transparent 70%); z-index: 1; }
+  &__content { position: relative; z-index: 2; text-align: center; padding: 60px 24px 50px; max-width: 760px; }
+  &__breadcrumb {
+    font-size: 14px; color: rgba($clr-white,.7); margin-bottom: 20px;
+    a { color: rgba($clr-white,.8); text-decoration: none; &:hover { color: $clr-secondary; } }
+    &-sep { margin: 0 8px; opacity: .5; }
+  }
+  &__eyebrow { font-size: 14px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: $clr-secondary; margin-bottom: 12px; }
+  &__title { font-size: 48px; font-weight: 800; color: $clr-white !important; margin: 0 0 10px; text-shadow: 0 2px 20px rgba(0,0,0,.3);
+    @media (max-width: 768px) { font-size: 32px; }
+  }
+  &__subtitle { font-size: 20px; color: rgba($clr-white,.85); margin: 0; font-weight: 300;
+    @media (max-width: 768px) { font-size: 16px; }
   }
 }
 
-// Force all elements to use Poppins - MAXIMUM SPECIFICITY
-.wrapper * {
-  font-family: $font-primary !important;
+// TEAM MEMBERS
+.team-members {
+  padding: 60px 24px; background: $clr-light;
+  @media (max-width: 768px) { padding: 40px 16px; }
+  &__grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 520px) { grid-template-columns: 1fr; }
+  }
 }
 
-.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6 {
-  font-family: $font-primary !important;
-}
+.team-card {
+  background: $clr-white; border-radius: $radius-lg; overflow: hidden;
+  border: 1px solid $clr-border; box-shadow: $shadow-sm; transition: $ease;
+  text-align: center;
+  &:hover { transform: translateY(-4px); box-shadow: $shadow-md; }
 
-// Force all text elements to use Poppins - MAXIMUM SPECIFICITY
-p, span, div, a, td, th {
-  font-family: $font-primary !important;
+  &__photo {
+    width: 100%; height: 260px;
+    background-size: cover; background-position: center top;
+    background-color: $clr-light;
+    @media (max-width: 520px) { height: 280px; }
+  }
+
+  &__body { padding: 20px; }
+
+  &__name {
+    font-size: 17px; font-weight: 700; color: $clr-dark !important; margin: 0 0 4px;
+  }
+
+  &__role {
+    font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    color: $clr-primary; margin: 0 0 12px;
+  }
+
+  &__contact {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; color: $clr-muted; word-break: break-all;
+    img { flex-shrink: 0; }
+  }
 }
