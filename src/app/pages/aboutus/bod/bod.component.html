@@ -27,7 +27,9 @@
 
     <div class="bod-members__grid">
       <div class="bod-card" *ngFor="let member of nvbaTeam">
-        <div class="bod-card__photo" [style.background-image]="'url(' + member.img_url + ')'"></div>
+        <div class="bod-card__photo">
+          <img [src]="member.img_url" [alt]="member.display_name" class="bod-card__img">
+        </div>
         <div class="bod-card__body">
           <h3 class="bod-card__name">{{ member.display_name }}</h3>
           <div class="bod-card__contact" *ngIf="member.facebook || member.email">
