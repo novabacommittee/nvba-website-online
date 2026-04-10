@@ -62,7 +62,7 @@
                       <td>{{EOB2026KIDSDINNER}}</td>
                     </tr>
                     <tr class=" bg-light " >
-                      <th>Total Dinner Count</th>
+                      <th>Dinner Distribution Count</th>
                         <th>
                           <div class="d-flex justify-content-around ">
                               <div class="red" >Non-Veg: {{EOB2026DINNERNV}}</div>
@@ -71,11 +71,19 @@
                           </div>
                         </th>
                     </tr>
+                  <tr class=" bg-light " >
+                    <th>Total Entry Count</th>
+                    <th>
+                      <div class="d-flex justify-content-around ">
+                        <div>{{EOB2026TICKET + EOB2026KIDS}}</div>
+                      </div>
+                    </th>
+                  </tr>
                     <tr class=" bg-light " >
-                        <th>Total Head Count</th>
+                        <th>Total Dinner Count</th>
                           <th>
                             <div class="d-flex justify-content-around ">
-                                <div>{{EOB2026TICKET + EOB2026KIDS}}</div>
+                                <div>{{EOB2026DINNERNV + EOB2026DINNERVEG + EOB2026KIDSDINNER}}</div>
                             </div>
                           </th>
                     </tr>

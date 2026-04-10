@@ -912,16 +912,16 @@ export class AlldetailsComponent implements OnInit {
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026DINNERVEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newEOBPurchase = true;
               }
-              else if(e.sku.includes("EOB2026KIDS")){
-                this.EOB2026KIDS += e.quantity ;
-                this.ticketPrice += (e.price*e.quantity);
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDS:e.quantity,sku:e.sku,tax:e.tax});
-                this.newEOBPurchase = true;
-              }
               else if(e.sku.includes("EOB2026KIDSDINNER")){
                 this.EOB2026KIDSDINNER += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDSDINNER:e.quantity,sku:e.sku,tax:e.tax});
+                this.newEOBPurchase = true;
+              }
+              else if(e.sku.includes("EOB2026KIDS")){
+                this.EOB2026KIDS += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDS:e.quantity,sku:e.sku,tax:e.tax});
                 this.newEOBPurchase = true;
               }
 
