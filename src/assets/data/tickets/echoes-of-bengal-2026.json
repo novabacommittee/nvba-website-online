@@ -1,47 +1,47 @@
 [
     {
-      "name": "NVBA Echoes of Bengal 2026 Adult Event Ticket (without Dinner)",
-      "description": "Adult Event Ticket (without Dinner)",
+      "name": "NVBA Echoes of Bengal 2026 Adult Event Ticket with Dinner (Non-Veg)",
+      "description": "Adult Event Ticket with Dinner (Non-Veg)",
       "quantity": 0,
       "price": 35,
       "tax": 0,
-      "sku": "EOB2026TICKET",
+      "sku": "EOB2026ADULTWDNV",
       "currency": "USD"
     },
     {
-      "name": "NVBA Echoes of Bengal 2026 Adult Dinner Non-Veg",
-      "description": "Adult Dinner Non-Veg",
+      "name": "NVBA Echoes of Bengal 2026 Adult Event Ticket with Dinner (Veg)",
+      "description": "Adult Event Ticket with Dinner (Veg)",
       "quantity": 0,
-      "price": 12,
+      "price": 35,
       "tax": 0,
-      "sku": "EOB2026DINNERNV",
+      "sku": "EOB2026ADULTWDVEG",
       "currency": "USD"
     },
     {
-      "name": "NVBA Echoes of Bengal 2026 Adult Dinner Veg",
-      "description": "Adult Dinner Veg",
+      "name": "NVBA Echoes of Bengal 2026 Adult Event Ticket without Dinner",
+      "description": "Adult Event Ticket without Dinner",
       "quantity": 0,
-      "price": 10,
+      "price": 25,
       "tax": 0,
-      "sku": "EOB2026DINNERVEG",
+      "sku": "EOB2026ADULTWOD",
       "currency": "USD"
     },
     {
-      "name": "NVBA Echoes of Bengal 2026 Kids Event Ticket (13 years or younger)",
-      "description": "Kids Event Ticket (13 yrs or younger)",
-      "quantity": 0,
-      "price": 0,
-      "tax": 0,
-      "sku": "EOB2026KIDS",
-      "currency": "USD"
-    },
-    {
-      "name": "NVBA Echoes of Bengal 2026 Kids Dinner (13 years or younger)",
-      "description": "Kids Dinner (13 yrs or younger)",
+      "name": "NVBA Echoes of Bengal 2026 Kids Event Ticket with Dinner (13 yrs or younger)",
+      "description": "Kids Event Ticket with Dinner (13 yrs or younger)",
       "quantity": 0,
       "price": 9,
       "tax": 0,
-      "sku": "EOB2026KIDSDINNER",
+      "sku": "EOB2026KIDSWD",
+      "currency": "USD"
+    },
+    {
+      "name": "NVBA Echoes of Bengal 2026 Kids Event Ticket without Dinner (13 yrs or younger)",
+      "description": "Kids Event Ticket without Dinner (13 yrs or younger)",
+      "quantity": 0,
+      "price": 0,
+      "tax": 0,
+      "sku": "EOB2026KIDSWOD",
       "currency": "USD"
     }
 ]

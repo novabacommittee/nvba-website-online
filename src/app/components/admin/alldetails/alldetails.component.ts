@@ -151,11 +151,11 @@ export class AlldetailsComponent implements OnInit {
   SP2026VEGOTHERREGULAR:number =0;
   SP2026KIDSREGULAR:number =0;
 
-  EOB2026TICKET:number = 0;
-  EOB2026DINNERNV:number = 0;
-  EOB2026DINNERVEG:number = 0;
-  EOB2026KIDS:number = 0;
-  EOB2026KIDSDINNER:number = 0;
+  EOB2026ADULTWDNV:number = 0;
+  EOB2026ADULTWDVEG:number = 0;
+  EOB2026ADULTWOD:number = 0;
+  EOB2026KIDSWD:number = 0;
+  EOB2026KIDSWOD:number = 0;
 
   paymentTime:any;
   customAdult:number =0;
@@ -397,11 +397,11 @@ export class AlldetailsComponent implements OnInit {
     { field: 'phone', sortable: true, resizable: true, filter: true },
     { field: 'lastPurchase', headerName:'Purchase Amount', sortable: true, resizable: true,valueGetter: `' $ ' + data.lastPurchase` },
     { field: 'paymentTime', headerName:'Purchase Date', sortable: true, resizable: true },
-    { field: 'EOB2026TICKET', headerName:'Adult Event Ticket', sortable: true, resizable: true },
-    { field: 'EOB2026DINNERNV', headerName:'Adult Dinner Non-Veg', sortable: true, resizable: true },
-    { field: 'EOB2026DINNERVEG', headerName:'Adult Dinner Veg', sortable: true, resizable: true },
-    { field: 'EOB2026KIDS', headerName:'Kids Event Ticket', sortable: true, resizable: true },
-    { field: 'EOB2026KIDSDINNER', headerName:'Kids Dinner', sortable: true, resizable: true }
+    { field: 'EOB2026ADULTWDNV', headerName:'Adult w/ Dinner (NV)', sortable: true, resizable: true },
+    { field: 'EOB2026ADULTWDVEG', headerName:'Adult w/ Dinner (Veg)', sortable: true, resizable: true },
+    { field: 'EOB2026ADULTWOD', headerName:'Adult w/o Dinner', sortable: true, resizable: true },
+    { field: 'EOB2026KIDSWD', headerName:'Kids w/ Dinner', sortable: true, resizable: true },
+    { field: 'EOB2026KIDSWOD', headerName:'Kids w/o Dinner', sortable: true, resizable: true }
 	];
 
   checkDP2025ConcertDetails(){
@@ -788,11 +788,11 @@ export class AlldetailsComponent implements OnInit {
     this.SP2026VEGOTHERREGULAR =0;
     this.SP2026KIDSREGULAR=0;
 
-    this.EOB2026TICKET = 0;
-    this.EOB2026DINNERNV = 0;
-    this.EOB2026DINNERVEG = 0;
-    this.EOB2026KIDS = 0;
-    this.EOB2026KIDSDINNER = 0;
+    this.EOB2026ADULTWDNV = 0;
+    this.EOB2026ADULTWDVEG = 0;
+    this.EOB2026ADULTWOD = 0;
+    this.EOB2026KIDSWD = 0;
+    this.EOB2026KIDSWOD = 0;
 
     try{
     //console.log(this.rowData);
@@ -894,34 +894,34 @@ export class AlldetailsComponent implements OnInit {
               }
 
               //Echoes of Bengal 2026 Ticket Details
-              else if(e.sku.includes("EOB2026TICKET")){
-                this.EOB2026TICKET += e.quantity ;
+              else if(e.sku.includes("EOB2026ADULTWDNV")){
+                this.EOB2026ADULTWDNV += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026TICKET:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026ADULTWDNV:e.quantity,sku:e.sku,tax:e.tax});
                 this.newEOBPurchase = true;
               }
-              else if(e.sku.includes("EOB2026DINNERNV")){
-                this.EOB2026DINNERNV += e.quantity ;
+              else if(e.sku.includes("EOB2026ADULTWDVEG")){
+                this.EOB2026ADULTWDVEG += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026DINNERNV:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026ADULTWDVEG:e.quantity,sku:e.sku,tax:e.tax});
                 this.newEOBPurchase = true;
               }
-              else if(e.sku.includes("EOB2026DINNERVEG")){
-                this.EOB2026DINNERVEG += e.quantity ;
+              else if(e.sku.includes("EOB2026ADULTWOD")){
+                this.EOB2026ADULTWOD += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026DINNERVEG:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026ADULTWOD:e.quantity,sku:e.sku,tax:e.tax});
                 this.newEOBPurchase = true;
               }
-              else if(e.sku.includes("EOB2026KIDSDINNER")){
-                this.EOB2026KIDSDINNER += e.quantity ;
+              else if(e.sku.includes("EOB2026KIDSWD")){
+                this.EOB2026KIDSWD += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDSDINNER:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDSWD:e.quantity,sku:e.sku,tax:e.tax});
                 this.newEOBPurchase = true;
               }
-              else if(e.sku.includes("EOB2026KIDS")){
-                this.EOB2026KIDS += e.quantity ;
+              else if(e.sku.includes("EOB2026KIDSWOD")){
+                this.EOB2026KIDSWOD += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
-                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDS:e.quantity,sku:e.sku,tax:e.tax});
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDSWOD:e.quantity,sku:e.sku,tax:e.tax});
                 this.newEOBPurchase = true;
               }
 

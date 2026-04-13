@@ -166,11 +166,7 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
   padding: 52px 24px; background: $clr-light;
   @media (max-width: 768px) { padding: 36px 16px; }
   &__grid {
-    max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    justify-items: center;
-    @media (max-width: 700px) { grid-template-columns: 1fr; }
-    // When only 2 cards are visible, center them
-    &--center-2 { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
+    max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
   }
 }
 .eob-highlight-card {
@@ -180,6 +176,47 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
   &__icon { font-size: 36px; display: block; margin-bottom: 14px; }
   &__title { font-size: 18px; font-weight: 700; margin: 0 0 10px; }
   p { font-size: 14px; color: $clr-muted; margin: 0; line-height: 1.7; }
+}
+
+// FOOD
+.eob-food {
+  padding: 52px 24px; background: $clr-white;
+  @media (max-width: 768px) { padding: 36px 16px; }
+  &__photos {
+    max-width: 900px; margin: 0 auto 32px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    @media (max-width: 700px) { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 400px) { grid-template-columns: 1fr; }
+  }
+  &__photo {
+    border-radius: $radius-md; overflow: hidden; box-shadow: $shadow-sm; transition: $ease;
+    &:hover { box-shadow: $shadow-md; transform: translateY(-4px); }
+    img { width: 100%; height: 180px; object-fit: cover; display: block; }
+  }
+  &__grid {
+    max-width: 680px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+    @media (max-width: 520px) { grid-template-columns: 1fr; }
+  }
+  &__disclaimer {
+    text-align: center; font-size: 13px; color: $clr-muted; font-style: italic; margin-top: 24px;
+  }
+}
+.eob-food-card {
+  background: $clr-light; border-radius: $radius-lg; padding: 32px 24px; text-align: center;
+  box-shadow: $shadow-sm; transition: $ease; border: 1px solid $clr-border;
+  &:hover { box-shadow: $shadow-md; transform: translateY(-4px); }
+  &__icon {
+    font-size: 40px; display: block; margin-bottom: 14px;
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif !important;
+    font-variant-emoji: emoji;
+  }
+  &__title { font-size: 20px; font-weight: 700; margin: 0 0 14px; color: $clr-dark; }
+  &__items {
+    list-style: none; padding: 0; margin: 0;
+    li {
+      font-size: 15px; color: $clr-body; padding: 6px 0; font-weight: 500;
+      & + li { border-top: 1px solid $clr-border; }
+    }
+  }
 }
 
 // TICKETS

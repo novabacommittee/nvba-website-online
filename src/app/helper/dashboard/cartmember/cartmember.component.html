@@ -2,15 +2,15 @@
 
     <div class="flex-column row ">
         <div style="font-weight: bold; font-size: 2.2em;color: #848484; text-align: center;" ><span class=" text-primary ">*</span><b>Membership Benefits:</b> </div>
-        <ul  style=" color: #848484; text-align: center;"> 
+        <ul  style=" color: #848484; text-align: center;">
             <li>
-                <h5>Access to year round member only events like Saraswati Puja,Kobi Pronam, Nobo Borsho celebrations, Annual Picnic,Durga Puja, NVBA hosted musical concerts  etc.</h5>
+                <h5>Access to year round member only events like Saraswati Puja, Nobo Borsho celebrations, Annual Picnic, Durga Puja, NVBA hosted musical concerts etc.</h5>
             </li>
             <li>
                 <h5>Access to Early Bird discounted tickets for events.</h5>
             </li>
             <li>
-                <h5>Can participate/perform in Cultural programs during Kobi Pronam, Saraswati Puja.</h5>
+                <h5>Can participate/perform in Cultural programs during the year.</h5>
             </li>
             <li>
                 <h5>Registered members have voting rights at the elections.</h5>
@@ -24,7 +24,7 @@
 
     <div *ngIf="!memberValidity" class="col-md-12 pt-5" id="cartmember"  >
         <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Membership fees: $30 per family.</b> </div>
-           
+
         <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
 
         <button *ngIf="this.member?.expires" (click)="addToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
@@ -42,9 +42,9 @@
         <br/>
     </div>
     <h5 class="green">
-        Saraswati Puja 2026 Earlybird tickets are available now.<br />
+        Echoes of Bengal 2026 tickets are available now.<br />
         If you are not a member of NVBA, please register with annual membership fees to avail Members rate.<br />
         If you are already a member and your membership expired please renew membership, to avail Members rate.<br /><br />
-        You can purcahse event ticket without getting membership at Non-Members rate.
+        You can purchase event ticket without getting membership at Non-Members rate.
     </h5>
 </div>

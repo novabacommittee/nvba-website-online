@@ -42,32 +42,33 @@
                       <th>Count</th>
                     </tr>
                     <tr>
-                      <th>Adult Event Ticket (without Dinner) - $35</th>
-                      <td>{{EOB2026TICKET}}</td>
+                      <th>Adult Event Ticket with Dinner (Non-Veg) - $35</th>
+                      <td>{{EOB2026ADULTWDNV}}</td>
                     </tr>
                     <tr>
-                      <th>Adult Dinner Non-Veg - $12</th>
-                      <td>{{EOB2026DINNERNV}}</td>
+                      <th>Adult Event Ticket with Dinner (Veg) - $35</th>
+                      <td>{{EOB2026ADULTWDVEG}}</td>
                     </tr>
                     <tr>
-                      <th>Adult Dinner Veg - $10</th>
-                      <td>{{EOB2026DINNERVEG}}</td>
+                      <th>Adult Event Ticket without Dinner - $25</th>
+                      <td>{{EOB2026ADULTWOD}}</td>
                     </tr>
                     <tr>
-                      <th>Kids Event Ticket (13 yrs or younger) - Free</th>
-                      <td>{{EOB2026KIDS}}</td>
+                      <th>Kids Event Ticket with Dinner (13 yrs or younger) - $9</th>
+                      <td>{{EOB2026KIDSWD}}</td>
                     </tr>
                     <tr>
-                      <th>Kids Dinner (13 yrs or younger) - $9</th>
-                      <td>{{EOB2026KIDSDINNER}}</td>
+                      <th>Kids Event Ticket without Dinner (13 yrs or younger) - Free</th>
+                      <td>{{EOB2026KIDSWOD}}</td>
                     </tr>
                     <tr class=" bg-light " >
                       <th>Dinner Distribution Count</th>
                         <th>
                           <div class="d-flex justify-content-around ">
-                              <div class="red" >Non-Veg: {{EOB2026DINNERNV}}</div>
-                              <div class="green">Veg: {{EOB2026DINNERVEG}}</div>
-                              <div>Kids: {{EOB2026KIDSDINNER}}</div>
+                              <div class="red">Non-Veg: {{EOB2026ADULTWDNV}}</div>
+                              <div class="green">Veg: {{EOB2026ADULTWDVEG}}</div>
+                              <div>Kids: {{EOB2026KIDSWD}}</div>
+                              <div>Total: {{EOB2026ADULTWDNV + EOB2026ADULTWDVEG + EOB2026KIDSWD}}</div>
                           </div>
                         </th>
                     </tr>
@@ -75,18 +76,10 @@
                     <th>Total Entry Count</th>
                     <th>
                       <div class="d-flex justify-content-around ">
-                        <div>{{EOB2026TICKET + EOB2026KIDS}}</div>
+                        <div>{{EOB2026ADULTWDNV + EOB2026ADULTWDVEG + EOB2026ADULTWOD + EOB2026KIDSWD + EOB2026KIDSWOD}}</div>
                       </div>
                     </th>
                   </tr>
-                    <tr class=" bg-light " >
-                        <th>Total Dinner Count</th>
-                          <th>
-                            <div class="d-flex justify-content-around ">
-                                <div>{{EOB2026DINNERNV + EOB2026DINNERVEG + EOB2026KIDSDINNER}}</div>
-                            </div>
-                          </th>
-                    </tr>
                   </table>
             </div>
 
