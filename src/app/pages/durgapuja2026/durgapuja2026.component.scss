@@ -105,10 +105,11 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
     color: rgba($pb-white, 0.72);
     margin-bottom: 16px;
     a {
-      color: rgba($pb-white, 0.82);
+      color: $pb-white;
       text-decoration: none;
       &:hover { color: $pb-gold; }
     }
+    span { color: rgba($pb-white, 0.72); }
     .sep { margin: 0 8px; opacity: 0.5; }
   }
 
