@@ -2,21 +2,6 @@
     <h5 class="red" style="font-weight: bold;">
         Echoes of Bengal 2026 ticket sale is now open!<br />
     </h5>
-    <h5 class="green">
-        If you are not a member of NVBA, please register with annual membership fees.<br />
-        If you are already a member and your membership expired please renew membership.<br />
-    </h5>
-</div>
-
-<div *ngIf="!memberValidity" id="eobTickets" class="col-md-12 pt-5">
-    <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Annual Membership fees: $30 per family.</b> </div>
-    <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
-
-    <button *ngIf="!this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
-            Buy NVBA Annual Membership</button>
-
-    <button *ngIf="this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
-        Renew Annual Membership</button>
 </div>
 
 <div id="eobTickets" class="table-responsive mb-5 tickets">
