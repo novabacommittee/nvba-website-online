@@ -1,0 +1,65 @@
+<div>
+    <h5 class="red" style="font-weight: bold;">
+        Echoes of Bengal 2026 ticket sale is now open!<br />
+    </h5>
+    <h5 class="green">
+        If you are not a member of NVBA, please register with annual membership fees.<br />
+        If you are already a member and your membership expired please renew membership.<br />
+    </h5>
+</div>
+
+<div *ngIf="!memberValidity" id="eobTickets" class="col-md-12 pt-5">
+    <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Annual Membership fees: $30 per family.</b> </div>
+    <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
+
+    <button *ngIf="!this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
+            Buy NVBA Annual Membership</button>
+
+    <button *ngIf="this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
+        Renew Annual Membership</button>
+</div>
+
+<div id="eobTickets" class="table-responsive mb-5 tickets">
+    <p class="red" style="font-weight: bold;">
+        &ast; Kids (13 yrs or younger) without dinner are free.<br/>
+    </p>
+
+    <accordion [isAnimated]="true" [closeOthers]="false" >
+        <accordion-group [isOpen]="true" style="overflow-wrap: break-word;" heading="Echoes of Bengal 2026 Tickets">
+            <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
+            <table class="table table-bordered table-hover" >
+                <thead>
+                    <tr>
+                    <th scope="col">Items</th>
+                    <th scope="col">Cost</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let item of dataObject; index as i" >
+                    <tr>
+                        <th>{{item.description}}</th>
+                        <td>
+                            <span *ngIf="item.price > 0">$ {{item.price}}</span>
+                            <span *ngIf="item.price === 0">Free</span>
+                        </td>
+                        <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
+                        <td>$ {{item.price * item.quantity}}</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col" ><div class="d-flex justify-content-end">Total</div></th>
+                    <th  scope="col">$ {{totalCost}}</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <div class="float-right mb-3 mr-3" >
+                <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
+            </div>
+        </accordion-group>
+    </accordion>
+</div>

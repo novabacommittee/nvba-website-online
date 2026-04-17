@@ -1,5 +1,5 @@
 <div class="wrapper" >
-        
+
     <div class="container p-3 pt-5" >
         <div class="row no-gutters  align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }" style="filter: grayscale(100%) opacity(200%)" >
@@ -14,694 +14,171 @@
         <div>
             <!-- NVBA Membership Summary Report -->
             <table class="table table-bordered " >
-              <!-- <tr>
-                    <th>Total Annual Membership - 2022 </th>
-                    <th>{{MM2022YY}}</th>
-              </tr>  
-              <tr>
-                    <th>Total Annual Membership - 2023 </th>
-                    <th>{{MM2023YY}}</th>
-              </tr>  
-              <tr>
-                    <th>Total Annual Membership - 2024 </th>
-                    <th>{{MM2024YY}}</th>
-              </tr>   -->
               <tr>
                     <th>Total Annual Membership - 2026 </th>
                     <th>{{MM2026YY}}</th>
-              </tr>  
+              </tr>
               <tr>
                     <th>Total Annual Membership - 2025 </th>
                     <th>{{MM2025YY}}</th>
-              </tr>  
+              </tr>
             </table>
 
-            <h3 class="text-center mt-3 mb-2 " >Saraswati Puja-2026 Ticket Sell Summary(January 24th, 2026)</h3>
-            <!-- Saraswati Puja 2026 Food Summary Report -->
-            <table class="table table-bordered " >
-                <tr>
-                  <th class="d-flex justify-content-around">Ticket Details</th>
-                  <th>
-                    <div class="d-flex justify-content-around">
-                        <div class="red" >Non Veg</div>
-                        <div class="green">Veg</div>
-                    </div>
-                  </th>
-                </tr>
-                <tr>
-                  <th>Adult</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2026EBNVADULT+SP2026NVADULTREGULAR}}</div>
-                          <div class="green">{{SP2026EBVEGADULT+SP2026VEGADULTREGULAR}}</div>
-                     </div> 
-                  </td>
-                </tr>
-                <tr>
-                  <th>Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2026EBNVOTHER+SP2026NVOTHERREGULAR}}</div>
-                          <div class="green">{{SP2026EBVEGOTHER+SP2026VEGOTHERREGULAR}}</div>
-                      </div>
-                  </td>
-                  
-                </tr>
-                <tr>
-                  <th>Kids for age group [ 0 - 10 years ]</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div >{{SP2026EBKIDS+SP2026KIDSREGULAR}}</div>
-                      </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Priority Access</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div >{{SP2026PRPASS}}</div>
-                      </div>
-                  </td>
-                </tr>
-                <tr class=" bg-light " >
-                  <th>Total (without kids count)</th>
+            <!-- Event Dropdown Selector -->
+            <div class="text-center mt-4 mb-3">
+                <label for="eventSelect" class="mr-2" style="font-weight: bold; font-size: 1.1em;">Select Event:</label>
+                <select id="eventSelect" [(ngModel)]="selectedEvent" class="form-control d-inline-block" style="width: auto; min-width: 300px;">
+                    <option value="eob2026">Echoes of Bengal 2026</option>
+                    <option value="sp2026">Saraswati Puja 2026</option>
+                </select>
+            </div>
+
+            <!-- ==================== Echoes of Bengal 2026 ==================== -->
+            <div *ngIf="selectedEvent === 'eob2026'">
+                <h3 class="text-center mt-3 mb-2 " >Echoes of Bengal 2026 Ticket Sell Summary</h3>
+                <table class="table table-bordered " >
+                    <tr>
+                      <th class="d-flex justify-content-around">Ticket Details</th>
+                      <th>Count</th>
+                    </tr>
+                    <tr>
+                      <th>Adult Event Ticket with Dinner (Non-Veg) - $35</th>
+                      <td>{{EOB2026ADULTWDNV}}</td>
+                    </tr>
+                    <tr>
+                      <th>Adult Event Ticket with Dinner (Veg) - $35</th>
+                      <td>{{EOB2026ADULTWDVEG}}</td>
+                    </tr>
+                    <tr>
+                      <th>Adult Event Ticket without Dinner - $25</th>
+                      <td>{{EOB2026ADULTWOD}}</td>
+                    </tr>
+                    <tr>
+                      <th>Kids Event Ticket with Dinner (13 yrs or younger) - $9</th>
+                      <td>{{EOB2026KIDSWD}}</td>
+                    </tr>
+                    <tr>
+                      <th>Kids Event Ticket without Dinner (13 yrs or younger) - Free</th>
+                      <td>{{EOB2026KIDSWOD}}</td>
+                    </tr>
+                    <tr class=" bg-light " >
+                      <th>Dinner Distribution Count</th>
+                        <th>
+                          <div class="d-flex justify-content-around ">
+                              <div class="red">Non-Veg: {{EOB2026ADULTWDNV}}</div>
+                              <div class="green">Veg: {{EOB2026ADULTWDVEG}}</div>
+                              <div>Kids: {{EOB2026KIDSWD}}</div>
+                              <div>Total: {{EOB2026ADULTWDNV + EOB2026ADULTWDVEG + EOB2026KIDSWD}}</div>
+                          </div>
+                        </th>
+                    </tr>
+                  <tr class=" bg-light " >
+                    <th>Total Entry Count</th>
                     <th>
                       <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2026EBNVADULT + SP2026EBNVOTHER + SP2026NVADULTREGULAR + SP2026NVOTHERREGULAR }}</div>
-                          <div class="green">{{SP2026EBVEGADULT + SP2026EBVEGOTHER + SP2026VEGADULTREGULAR + SP2026VEGOTHERREGULAR }}</div>
+                        <div>{{EOB2026ADULTWDNV + EOB2026ADULTWDVEG + EOB2026ADULTWOD + EOB2026KIDSWD + EOB2026KIDSWOD}}</div>
                       </div>
                     </th>
-                </tr>
-                <tr class=" bg-light " >
-                    <th>Total Head Count</th>
-                      <th>
-                        <div class="d-flex justify-content-around ">
-                            <div  >{{SP2026EBNVADULT + SP2026EBNVOTHER + SP2026EBVEGADULT + SP2026EBVEGOTHER + SP2026EBKIDS+
-                                SP2026NVADULTREGULAR+SP2026VEGADULTREGULAR+SP2026NVOTHERREGULAR+SP2026VEGOTHERREGULAR+SP2026KIDSREGULAR}}</div>
-                        </div>
-                      </th>
-                </tr>
-              </table>
-
-
-            <!-- Kobi Pronam 2025 Food Summary Report -->
-            <!-- <table class="table table-bordered " >
-                <tr>
-                      <th>Total Annual Membership - 2025</th>
-                      <th>{{MM2025YY}}</th>
-                </tr>  
-                <tr>
-                  <th></th>
-                  <th class="d-flex justify-content-around " >Sunday, 1st June, 2025</th>
-                </tr>
-                <tr>
-                    <th class="d-flex justify-content-around ">Beverage</th>
-                    <th align="d-flex justify-content-center">Count/Price Details</th>
-                </tr>
-                <tr>
-                    <th>Tea with Milk or Black($1)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green" >{{KP2025TEA}}</div>
-                            <div class="green" >${{KP2025TEA}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Coffee($2)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green" >{{KP2025COFFEE}}</div>
-                            <div class="green" >${{KP2025COFFEE*2}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Cold Drinks($1)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green" >{{KP2025COLDDRINKS}}</div>
-                            <div class="green" >${{KP2025COLDDRINKS}}</div>
-                        </div>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <th class="d-flex justify-content-around ">Snacks</th>
-                    <th align="d-flex justify-content-center">Count/Price Details</th>
-                </tr>
-                <tr>
-                  <th>Veg Chop($5/2 pcs)</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="green" >{{KP2025VEGCHOP+KP2025VEGCHOPDOUBLE}}</div>
-                          <div class="green" >${{(KP2025VEGCHOP+KP2025VEGCHOPDOUBLE)*5}}</div>
-                     </div> 
-                  </td>
-                </tr>
-                <tr>
-                    <th>Veg Ghugni($3/bowl)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green">{{KP2025GHUGNISINGLE}}</div>
-                            <div class="green" >${{KP2025GHUGNISINGLE*3}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Veg Ghugni($5 for 2 bowls)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green">{{KP2025GHUGNIDOUBLE}}</div>
-                            <div class="green" >${{KP2025GHUGNIDOUBLE*5}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Jhal Muri($3/bowl)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green">{{KP2025JHALMURISINGLE}}</div>
-                            <div class="green" >${{KP2025JHALMURISINGLE*3}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Jhal Muri($5 for 2 bowls)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green">{{KP2025JHALMURIDOUBLE}}</div>
-                            <div class="green" >${{KP2025JHALMURIDOUBLE*5}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Egg Devil($3/piece)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green">{{KP2025EGGDEVILSINGLE}}</div>
-                            <div class="green" >${{KP2025EGGDEVILSINGLE*3}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Egg Devil($5 for 2 pieces)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green">{{KP2025EGGDEVILDOUBLE}}</div>
-                            <div class="green" >${{KP2025EGGDEVILDOUBLE*5}}</div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th class="d-flex justify-content-around ">Dinner</th>
-                    <th>Count/Price Details</th>
-                </tr>
-                <tr>
-                    <th>Veg Biriyani with Sweet and Raita($10)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green" >{{KP2025VEG}}</div>
-                            <div class="green" >${{KP2025VEG*10}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Non-Veg Biriyani with Sweet and Raita($12)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green" >{{KP2025NONVEG}}</div>
-                            <div class="green" >${{KP2025NONVEG*12}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr class=" bg-light " >
-                    <th>Total Food Sell</th>
-                      <th>
-                        <div class="d-flex justify-content-around ">
-                            <div  >${{KP2025TEA+KP2025COFFEE*2+KP2025COLDDRINKS+(KP2025VEGCHOP+KP2025VEGCHOPDOUBLE)*5+KP2025GHUGNISINGLE*3+KP2025GHUGNIDOUBLE*5+KP2025JHALMURISINGLE*3+KP2025JHALMURIDOUBLE*5+KP2025EGGDEVILSINGLE*3+KP2025EGGDEVILDOUBLE*5+KP2025VEG*10+KP2025NONVEG*12}}</div>
-                        </div>
-                      </th>
-                </tr>
-            </table> -->
-
-
-            <!-- Kobi Pronam 2024 Food Summary Report -->
-            <!-- <table class="table table-bordered " >
-                <tr>
-                      <th>Total Annual Membership - 2024</th>
-                      <th>{{MM2024YY}}</th>
-                </tr>  
-                <tr>
-                  <th></th>
-                  <th class="d-flex justify-content-around " >Saturday, 22nd June, 2024</th>
-                </tr>
-                <tr>
-                    <th class="d-flex justify-content-around ">Snacks</th>
-                    <th align="d-flex justify-content-center">Count/Price Details</th>
-                </tr>
-                <tr>
-                  <th>Veg Chop($3/2 pcs)</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="green" >{{KP2024VEGCHOP*2}}</div>
-                          <div class="green" >${{KP2024VEGCHOP*3}}</div>
-                     </div> 
-                  </td>
-                </tr>
-                <tr>
-                  <th>Veg Ghugni($2/bowl)</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="green">{{KP2024GHUGNI}}</div>
-                          <div class="green" >${{KP2024GHUGNI*2}}</div>
-                      </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Tea($1)</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="green" >{{KP2024TEA}}</div>
-                          <div class="green" >${{KP2024TEA*1}}</div>
-                      </div>
-                  </td>
-                </tr>
-                <tr>
-                    <th>Cold Drinks($1)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green" >{{KP2024COLDDRINKS}}</div>
-                            <div class="green" >${{KP2024COLDDRINKS*1}}</div>
-                        </div>
-                    </td>
                   </tr>
-                  <tr>
-                    <th class="d-flex justify-content-around ">Dinner</th>
-                    <th>Count/Price Details</th>
-                </tr>
-                <tr>
-                    <th>Veg Biriyani with Sweet and Raita($8)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green" >{{KP2024VEG}}</div>
-                            <div class="green" >${{KP2024VEG*8}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Non-Veg Biriyani with Sweet and Raita($10)</th>
-                    <td>
-                        <div class="d-flex justify-content-around ">
-                            <div class="green" >{{KP2024NONVEG}}</div>
-                            <div class="green" >${{KP2024NONVEG*10}}</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr class=" bg-light " >
-                    <th>Total Food Sell</th>
+                  </table>
+            </div>
+
+            <!-- ==================== Saraswati Puja 2026 ==================== -->
+            <div *ngIf="selectedEvent === 'sp2026'">
+                <h3 class="text-center mt-3 mb-2 " >Saraswati Puja-2026 Ticket Sell Summary(January 24th, 2026)</h3>
+                <table class="table table-bordered " >
+                    <tr>
+                      <th class="d-flex justify-content-around">Ticket Details</th>
                       <th>
-                        <div class="d-flex justify-content-around ">
-                            <div  >${{KP2024VEGCHOP*3+KP2024GHUGNI*2+KP2024TEA*1+KP2024COLDDRINKS*1+KP2024VEG*8+KP2024NONVEG*10}}</div>
+                        <div class="d-flex justify-content-around">
+                            <div class="red" >Non Veg</div>
+                            <div class="green">Veg</div>
                         </div>
                       </th>
-                </tr>
-            </table> -->
-
-            <!-- <h3 class="text-center mt-3 mb-2 " >Saraswati Puja-2024 Ticket Sell Summary(Saturday 24th, 2024)</h3>
-            <!-- Saraswati Puja 2024 Food Summary Report -->
-            <!-- <table class="table table-bordered " >
-                <tr>
-                  <th>Ticket Details</th>
-                  <th>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >Non Veg</div>
-                        <div class="green">Veg</div>
-                    </div>
-                  </th>
-                </tr>
-                <tr>
-                  <th>Adult</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2024AEBNON}}</div>
-                          <div class="green">{{SP2024AEBVEG}}</div>
-                     </div> 
-                  </td>
-                </tr>
-                <tr>
-                  <th>Kids [ 11 to 18 years ] / Visiting Parents / Students for Non-Veg</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2024STUDENTEBNON}}</div>
-                          <div class="green">{{SP2024STUDENTEBVEG}}</div>
-                      </div>
-                  </td>
-                  
-                </tr>
-                <tr>
-                  <th>Kids age group [ 0 - 10 years ] are free </th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div >{{SP2024KIDS}}</div>
-                      </div>
-                  </td>
-                </tr>
-                <tr class=" bg-light " >
-                  <th>Total ( without kids count)</th>
-                    <th>
-                      <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2024AEBNON + SP2024STUDENTEBNON }}</div>
-                          <div class="green">{{SP2024AEBVEG + SP2024STUDENTEBVEG }}</div>
-                      </div>
-                    </th>
-                </tr>
-                <tr class=" bg-light " >
-                    <th>Total Head Count</th>
-                      <th>
-                        <div class="d-flex justify-content-around ">
-                            <div  >{{SP2024AEBNON + SP2024STUDENTEBNON + SP2024AEBVEG + SP2024STUDENTEBVEG + SP2024KIDS}}</div>
-                        </div>
-                      </th>
-                </tr>
-              </table> -->
-
-            <!-- Durga Puja 2024 Food Summary Report -->
-            <!-- <table class="table table-bordered " >
-              <tr>
-                    <th>Total Annual Membership </th>
-                    <th>{{MM2024YY}}</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-              </tr>  
-              <tr>
-                <th></th>
-                <th>All 3 Days</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-                <th>Sunday</th>
-              </tr>
-              <tr>
-                <th>Adult</th>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBALL01NON}}</div>
-                        <div class="green">{{DP2024EBALL02VEG}}</div>
-                   </div> 
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBFRI01NON}}</div>
-                        <div class="green">{{DP2024EBFRI02VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSAT01NON}}</div>
-                        <div class="green">{{DP2024EBSAT02VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSUN01NON}}</div>
-                        <div class="green">{{DP2024EBSUN02VEG}}</div>
-                    </div>
-                </td>
-              </tr>
-              <tr>
-                <th>Kids [ 11 to 18 years ],Students and Visiting Parents</th>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBALL03NON+DP2024EBALL06NON}}</div>
-                        <div class="green">{{DP2024EBALL04VEG+DP2024EBALL07VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBFRI03NON}}</div>
-                        <div class="green">{{DP2024EBFRI04VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSAT03NON}}</div>
-                        <div class="green">{{DP2024EBSAT04VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSUN03NON}}</div>
-                        <div class="green">{{DP2024EBSUN04VEG}}</div>
-                    </div>
-                </td>
-              </tr>
-              <tr>
-                <th>Kids [ 0 to 10 years ]</th>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBALL05KID}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBFRI05KID}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSAT05KID}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSUN05KID}}</div>
-                    </div>
-                </td>
-              </tr>
-              <tr class=" bg-light " >
-                <th>Total</th>
-                  <th>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBALL01NON + DP2024EBALL03NON + DP2024EBALL05KID+DP2024EBALL06NON }}</div>
-                        <div class="green">{{DP2024EBALL02VEG + DP2024EBALL04VEG+DP2024EBALL07VEG}}</div>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBFRI01NON + DP2024EBFRI03NON + DP2024EBFRI05KID }}</div>
-                        <div class="green">{{DP2024EBFRI02VEG + DP2024EBFRI04VEG}}</div>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSAT01NON + DP2024EBSAT03NON + DP2024EBSAT05KID }}</div>
-                        <div class="green">{{DP2024EBSAT02VEG + DP2024EBSAT04VEG }}</div>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2024EBSUN01NON + DP2024EBSUN03NON + DP2024EBSUN05KID }}</div>
-                        <div class="green">{{DP2024EBSUN02VEG + DP2024EBSUN04VEG }}</div>
-                    </div>
-                  </th>
-              </tr>
-            </table> -->
-
-            <!-- <h3 class="text-center mt-3 mb-2 " >Saraswati Puja-2025 Ticket Sell Summary(February 1st, 2025)</h3> -->
-            <!-- Saraswati Puja 2025 Food Summary Report -->
-            <!-- <table class="table table-bordered " >
-                <tr>
-                  <th class="d-flex justify-content-around">Ticket Details</th>
-                  <th>
-                    <div class="d-flex justify-content-around">
-                        <div class="red" >Non Veg</div>
-                        <div class="green">Veg</div>
-                    </div>
-                  </th>
-                </tr>
-                <tr>
-                  <th>Adult</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2025EBNVADULT}}</div>
-                          <div class="green">{{SP2025EBVEGADULT}}</div>
-                     </div> 
-                  </td>
-                </tr>
-                <tr>
-                  <th>Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2025EBNVOTHER}}</div>
-                          <div class="green">{{SP2025EBVEGOTHER}}</div>
-                      </div>
-                  </td>
-                  
-                </tr>
-                <tr>
-                  <th>Kids for age group [ 0 - 10 years ]</th>
-                  <td>
-                      <div class="d-flex justify-content-around ">
-                          <div >{{SP2025EBKIDS}}</div>
-                      </div>
-                  </td>
-                </tr>
-                <tr class=" bg-light " >
-                  <th>Total (without kids count)</th>
-                    <th>
-                      <div class="d-flex justify-content-around ">
-                          <div class="red" >{{SP2025EBNVADULT + SP2025EBNVOTHER }}</div>
-                          <div class="green">{{SP2025EBVEGADULT + SP2025EBVEGOTHER }}</div>
-                      </div>
-                    </th>
-                </tr>
-                <tr class=" bg-light " >
-                    <th>Total Head Count</th>
-                      <th>
-                        <div class="d-flex justify-content-around ">
-                            <div  >{{SP2025EBNVADULT + SP2025EBNVOTHER + SP2025EBVEGADULT + SP2025EBVEGOTHER + SP2025EBKIDS}}</div>
-                        </div>
-                      </th>
-                </tr>
-              </table> -->
-
-            <!-- <h3 class="text-center mt-3 mb-2 " >Durga Puja-2025 Ticket Sell Summary</h3>
-
-            <!-- Durga Puja 2025 Event Ticket Summary Report -->
-            <!-- <table class="table table-bordered " >
-              <tr>
-                <th></th>
-                <th>All 3 Days</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-                <th>Sunday</th>
-              </tr>
-              <tr>
-                <th>Adult</th>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBALL01NON}}</div>
-                        <div class="green">{{DP2025EBALL02VEG}}</div>
-                   </div> 
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBFRI01NON}}</div>
-                        <div class="green">{{DP2025EBFRI02VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBSAT01NON}}</div>
-                        <div class="green">{{DP2025EBSAT02VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBSUN01NON}}</div>
-                        <div class="green">{{DP2025EBSUN02VEG}}</div>
-                    </div>
-                </td>
-              </tr>
-              <tr>
-                <th>Kids [ 11 to 18 years ],Students and Visiting Parents</th>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBALL03NON}}</div>
-                        <div class="green">{{DP2025EBALL04VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBFRI03NON}}</div>
-                        <div class="green">{{DP2025EBFRI04VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBSAT03NON}}</div>
-                        <div class="green">{{DP2025EBSAT04VEG}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBSUN03NON}}</div>
-                        <div class="green">{{DP2025EBSUN04VEG}}</div>
-                    </div>
-                </td>
-              </tr>
-              <tr>
-                <th>Kids [ 0 to 10 years ]</th>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBALL05KID}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBFRI05KID}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBSAT05KID}}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBSUN05KID}}</div>
-                    </div>
-                </td>
-              </tr>
-              <tr class=" bg-light " >
-                <th>Total</th>
-                  <th>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBALL01NON + DP2025EBALL03NON + DP2025EBALL05KID }}</div>
-                        <div class="green">{{DP2025EBALL02VEG + DP2025EBALL04VEG}}</div>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBFRI01NON + DP2025EBFRI03NON + DP2025EBFRI05KID }}</div>
-                        <div class="green">{{DP2025EBFRI02VEG + DP2025EBFRI04VEG}}</div>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBSAT01NON + DP2025EBSAT03NON + DP2025EBSAT05KID }}</div>
-                        <div class="green">{{DP2025EBSAT02VEG + DP2025EBSAT04VEG }}</div>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="d-flex justify-content-around ">
-                        <div class="red" >{{DP2025EBSUN01NON + DP2025EBSUN03NON + DP2025EBSUN05KID }}</div>
-                        <div class="green">{{DP2025EBSUN02VEG + DP2025EBSUN04VEG }}</div>
-                    </div>
-                  </th>
-              </tr>
-              <tr>
-                    <th>Total Early Bird Sale - 2025 </th>
-                    <th>
-                        <div class="d-flex justify-content-around ">
-                            {{DP2025EBALL01NON + DP2025EBALL03NON + DP2025EBALL05KID +
-                            DP2025EBALL02VEG + DP2025EBALL04VEG+
-                            DP2025EBFRI01NON + DP2025EBFRI03NON + DP2025EBFRI05KID +
-                            DP2025EBFRI02VEG + DP2025EBFRI04VEG+
-                            DP2025EBSAT01NON + DP2025EBSAT03NON + DP2025EBSAT05KID +
-                            DP2025EBSAT02VEG + DP2025EBSAT04VEG +
-                            DP2025EBSUN01NON + DP2025EBSUN03NON + DP2025EBSUN05KID +
-                            DP2025EBSUN02VEG + DP2025EBSUN04VEG }}
-                        </div>
-                    </th>
-              </tr>  
-            </table> -->
+                    </tr>
+                    <tr>
+                      <th>Adult</th>
+                      <td>
+                          <div class="d-flex justify-content-around ">
+                              <div class="red" >{{SP2026EBNVADULT+SP2026NVADULTREGULAR}}</div>
+                              <div class="green">{{SP2026EBVEGADULT+SP2026VEGADULTREGULAR}}</div>
+                         </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID</th>
+                      <td>
+                          <div class="d-flex justify-content-around ">
+                              <div class="red" >{{SP2026EBNVOTHER+SP2026NVOTHERREGULAR}}</div>
+                              <div class="green">{{SP2026EBVEGOTHER+SP2026VEGOTHERREGULAR}}</div>
+                          </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Kids for age group [ 0 - 10 years ]</th>
+                      <td>
+                          <div class="d-flex justify-content-around ">
+                              <div >{{SP2026EBKIDS+SP2026KIDSREGULAR}}</div>
+                          </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Priority Access</th>
+                      <td>
+                          <div class="d-flex justify-content-around ">
+                              <div >{{SP2026PRPASS}}</div>
+                          </div>
+                      </td>
+                    </tr>
+                    <tr class=" bg-light " >
+                      <th>Total (without kids count)</th>
+                        <th>
+                          <div class="d-flex justify-content-around ">
+                              <div class="red" >{{SP2026EBNVADULT + SP2026EBNVOTHER + SP2026NVADULTREGULAR + SP2026NVOTHERREGULAR }}</div>
+                              <div class="green">{{SP2026EBVEGADULT + SP2026EBVEGOTHER + SP2026VEGADULTREGULAR + SP2026VEGOTHERREGULAR }}</div>
+                          </div>
+                        </th>
+                    </tr>
+                    <tr class=" bg-light " >
+                        <th>Total Head Count</th>
+                          <th>
+                            <div class="d-flex justify-content-around ">
+                                <div  >{{SP2026EBNVADULT + SP2026EBNVOTHER + SP2026EBVEGADULT + SP2026EBVEGOTHER + SP2026EBKIDS+
+                                    SP2026NVADULTREGULAR+SP2026VEGADULTREGULAR+SP2026NVOTHERREGULAR+SP2026VEGOTHERREGULAR+SP2026KIDSREGULAR}}</div>
+                            </div>
+                          </th>
+                    </tr>
+                  </table>
+            </div>
         </div>
     </div>
 
-        <div class=" container mt-5 mb-3 " >
+    <!-- ==================== Transaction Grids ==================== -->
+
+    <!-- Echoes of Bengal 2026 Transactions -->
+    <div *ngIf="selectedEvent === 'eob2026'" class=" container mt-5 mb-3 " >
+        <h3 class="text-center " >Echoes of Bengal 2026 Ticket Sell Transactions</h3>
+        <div class=" mb-3  table-bordered" >
+            <ag-grid-angular
+                style="height:500px; "
+                class="ag-theme-alpine table-light table-responsive agGridTable"
+                #agGrid
+                id="EOB2026Grid"
+                class="ag-theme-alpine"
+                (gridReady)="onEOBTicketGridReady($event)"
+                [rowData]="eob2026TicketList"
+                [columnDefs]="eob2026columnDefsTickets"
+                [animateRows]="true"
+                 >
+            </ag-grid-angular>
+        </div>
+        <div class=" d-flex justify-content-end mb-5 " >
+            <button (click)="onEOBBtnExport()" class=" btn-get-started ">Export CSV File</button>
+        </div>
+    </div>
+
+    <!-- Saraswati Puja 2026 Early Bird Transactions -->
+    <div *ngIf="selectedEvent === 'sp2026'" class=" container mt-5 mb-3 " >
         <h3 class="text-center " >Saraswati Puja-2026 Early Bird Ticket Sell Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
@@ -722,7 +199,8 @@
         </div>
     </div>
 
-    <div class=" container mt-5 mb-3 " >
+    <!-- Saraswati Puja 2026 Regular Transactions -->
+    <div *ngIf="selectedEvent === 'sp2026'" class=" container mt-5 mb-3 " >
         <h3 class="text-center " >Saraswati Puja-2026 Regular Ticket Sell Transactions</h3>
         <div class=" mb-3  table-bordered" >
             <ag-grid-angular
@@ -742,63 +220,4 @@
             <button (click)="onRegBtnExport()" class=" btn-get-started ">Export CSV File</button>
         </div>
     </div>
-
-    <!-- <div class=" container mt-5 mb-3 " >
-        <h3 class="text-center " >Durga Puja-2025 Concert Ticket Transactions</h3>
-        <div class=" mb-3  table-bordered" >
-            <ag-grid-angular
-                style="height:500px; "
-                class="ag-theme-alpine table-light table-responsive agGridTable"
-                #agGrid
-                
-                id="myGrid"
-                class="ag-theme-alpine"
-                (gridReady)="onGridReady($event)"
-                [rowData]="dp2025ConcertTicketList"
-                [columnDefs]="dp2025ConcertTicketcolumnDefs"
-                [animateRows]="true"
-                 >
-            </ag-grid-angular>
-        </div>
-    </div> -->
-
-    <!-- <div class=" container mt-5 mb-3 " >
-        <h3 class="text-center " >Durga Puja-2024 Concert Ticket Transactions</h3>
-        <div class=" mb-3  table-bordered" >
-            <ag-grid-angular
-                style="height:500px; "
-                class="ag-theme-alpine table-light table-responsive agGridTable"
-                #agGrid
-                
-                id="myGrid"
-                class="ag-theme-alpine"
-                (gridReady)="onGridReady($event)"
-                [rowData]="dp2024ConcertTicketList"
-                [columnDefs]="dp2024ConcertTicketcolumnDefs"
-                [animateRows]="true"
-                 >
-            </ag-grid-angular>
-        </div>
-    </div> -->
-
-    <!-- <div class=" container mt-5 mb-3 " >
-        <h3 class="text-center " >Membership Details of 2025</h3>
-        <div class=" mb-3  table-bordered" >
-            <ag-grid-angular
-                style="height:500px; "
-                class="ag-theme-alpine table-light table-responsive agGridTable"
-                #agGrid
-                id="myGrid"
-                class="ag-theme-alpine"
-                (gridReady)="onGridReady($event)"
-                [rowData]="membershipList"
-                [columnDefs]="membershipcolumnDefs"
-                [animateRows]="true"
-                 >
-            </ag-grid-angular>
-        </div>
-        <div class=" d-flex justify-content-end mb-5 " >
-            <button (click)="onBtnExport()" class=" btn-get-started ">Export CSV File</button>
-        </div>
-    </div> -->
 </div>

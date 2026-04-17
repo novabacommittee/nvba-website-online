@@ -52,7 +52,8 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
   &__content { position: relative; z-index: 2; text-align: center; padding: 60px 24px 50px; max-width: 760px; }
   &__breadcrumb {
     font-size: 14px; color: rgba($clr-white,.7); margin-bottom: 20px;
-    a { color: rgba($clr-white,.8); text-decoration: none; &:hover { color: $clr-secondary; } }
+    a { color: $clr-white; text-decoration: none; &:hover { color: $clr-secondary; } }
+    span { color: rgba($clr-white,.7); }
     &-sep { margin: 0 8px; opacity: .5; }
   }
   &__eyebrow { font-size: 14px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: $clr-secondary; margin-bottom: 12px; }

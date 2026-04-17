@@ -19,6 +19,7 @@ export class AlldetailsComponent implements OnInit {
   foodTickets:any;
   private gridApiSP26EB:any;
   private gridApiSP26REG:any;
+  private gridApiEOB26:any;
   private gridColumnApi:any;
 
   membershipList:any;
@@ -28,11 +29,14 @@ export class AlldetailsComponent implements OnInit {
   dp2025ConcertTicketList:any;
   foodPurchaseList:any;
   membershipRenew:boolean = false;
-  newEBPurches:boolean = false;
-  newRegPurches:boolean = false;
+  newEBPurchase:boolean = false;
+  newRegPurchase:boolean = false;
+  newEOBPurchase:boolean = false;
+  selectedEvent:string = 'eob2026';
   sp2025TicketList:any;
   sp2026EBTicketList:any;
   sp2026RegTicketList:any;
+  eob2026TicketList:any;
 
   MM2022YY: number = 0;
   MM2023YY: number = 0;
@@ -146,6 +150,12 @@ export class AlldetailsComponent implements OnInit {
   SP2026NVOTHERREGULAR:number =0;
   SP2026VEGOTHERREGULAR:number =0;
   SP2026KIDSREGULAR:number =0;
+
+  EOB2026ADULTWDNV:number = 0;
+  EOB2026ADULTWDVEG:number = 0;
+  EOB2026ADULTWOD:number = 0;
+  EOB2026KIDSWD:number = 0;
+  EOB2026KIDSWOD:number = 0;
 
   paymentTime:any;
   customAdult:number =0;
@@ -378,6 +388,20 @@ export class AlldetailsComponent implements OnInit {
     { field: 'SP2026VEGOTHERREGULAR', headerName:'Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg', sortable: true, resizable: true },
     { field: 'SP2026KIDSREGULAR', headerName:'Kids for age group [ 0 - 10 years ]', sortable: true, resizable: true },
     { field: 'SP2026PRPASS', headerName:'Priority Access', sortable: true, resizable: true }
+	];
+
+  eob2026columnDefsTickets = [
+		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
+		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
+    { field: 'email', sortable: true, resizable: true, filter: true },
+    { field: 'phone', sortable: true, resizable: true, filter: true },
+    { field: 'lastPurchase', headerName:'Purchase Amount', sortable: true, resizable: true,valueGetter: `' $ ' + data.lastPurchase` },
+    { field: 'paymentTime', headerName:'Purchase Date', sortable: true, resizable: true },
+    { field: 'EOB2026ADULTWDNV', headerName:'Adult w/ Dinner (NV)', sortable: true, resizable: true },
+    { field: 'EOB2026ADULTWDVEG', headerName:'Adult w/ Dinner (Veg)', sortable: true, resizable: true },
+    { field: 'EOB2026ADULTWOD', headerName:'Adult w/o Dinner', sortable: true, resizable: true },
+    { field: 'EOB2026KIDSWD', headerName:'Kids w/ Dinner', sortable: true, resizable: true },
+    { field: 'EOB2026KIDSWOD', headerName:'Kids w/o Dinner', sortable: true, resizable: true }
 	];
 
   checkDP2025ConcertDetails(){
@@ -701,6 +725,7 @@ export class AlldetailsComponent implements OnInit {
     this.sp2025TicketList = [];
     this.sp2026EBTicketList = [];
     this.sp2026RegTicketList = [];
+    this.eob2026TicketList = [];
     this.dp2025TicketList = [];
     
     this.MM2022YY = 0;
@@ -763,6 +788,12 @@ export class AlldetailsComponent implements OnInit {
     this.SP2026VEGOTHERREGULAR =0;
     this.SP2026KIDSREGULAR=0;
 
+    this.EOB2026ADULTWDNV = 0;
+    this.EOB2026ADULTWDVEG = 0;
+    this.EOB2026ADULTWOD = 0;
+    this.EOB2026KIDSWD = 0;
+    this.EOB2026KIDSWOD = 0;
+
     try{
     //console.log(this.rowData);
     [...this.rowData].forEach( m =>{ 
@@ -797,37 +828,37 @@ export class AlldetailsComponent implements OnInit {
                 this.SP2026EBNVADULT += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBNVADULT:e.quantity,sku:e.sku,tax:e.tax});
-                this.newEBPurches = true;
+                this.newEBPurchase = true;
               }
               else if(e.sku.includes("SP2026EBVEGADULT")){
                 this.SP2026EBVEGADULT += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBVEGADULT:e.quantity,sku:e.sku,tax:e.tax});
-                this.newEBPurches = true;
+                this.newEBPurchase = true;
               }
               else if(e.sku.includes("SP2026EBNVOTHER")){
                 this.SP2026EBNVOTHER += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBNVOTHER:e.quantity,sku:e.sku,tax:e.tax});
-                this.newEBPurches = true;
+                this.newEBPurchase = true;
               }
               else if(e.sku.includes("SP2026EBVEGOTHER")){
                 this.SP2026EBVEGOTHER += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBVEGOTHER:e.quantity,sku:e.sku,tax:e.tax});
-                this.newEBPurches = true;
+                this.newEBPurchase = true;
               }
               else if(e.sku.includes("SP2026EBKIDS")){
                 this.SP2026EBKIDS += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026EBKIDS:e.quantity,sku:e.sku,tax:e.tax});
-                this.newEBPurches = true;
+                this.newEBPurchase = true;
               }
               else if(e.sku.includes("SP2026PRPASS")){
                 this.SP2026PRPASS += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026PRPASS:e.quantity,sku:e.sku,tax:e.tax});
-                this.newEBPurches = true;
+                this.newEBPurchase = true;
               }
 
               //Saraswati Puja 2026 Regular Ticket Details
@@ -835,31 +866,63 @@ export class AlldetailsComponent implements OnInit {
                 this.SP2026NVADULTREGULAR += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026NVADULTREGULAR:e.quantity,sku:e.sku,tax:e.tax});
-                this.newRegPurches = true;
+                this.newRegPurchase = true;
               }
               else if(e.sku.includes("SP2026VEGADULTREGULAR")){
                 this.SP2026VEGADULTREGULAR += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026VEGADULTREGULAR:e.quantity,sku:e.sku,tax:e.tax});
-                this.newRegPurches = true;
+                this.newRegPurchase = true;
               }
               else if(e.sku.includes("SP2026NVOTHERREGULAR")){
                 this.SP2026NVOTHERREGULAR += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026NVOTHERREGULAR:e.quantity,sku:e.sku,tax:e.tax});
-                this.newRegPurches = true;
+                this.newRegPurchase = true;
               }
               else if(e.sku.includes("SP2026VEGOTHERREGULAR")){
                 this.SP2026VEGOTHERREGULAR += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026VEGOTHERREGULAR:e.quantity,sku:e.sku,tax:e.tax});
-                this.newRegPurches = true;
+                this.newRegPurchase = true;
               }
               else if(e.sku.includes("SP2026KIDSREGULAR")){
                 this.SP2026KIDSREGULAR += e.quantity ;
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026KIDSREGULAR:e.quantity,sku:e.sku,tax:e.tax});
-                this.newRegPurches = true;
+                this.newRegPurchase = true;
+              }
+
+              //Echoes of Bengal 2026 Ticket Details
+              else if(e.sku.includes("EOB2026ADULTWDNV")){
+                this.EOB2026ADULTWDNV += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026ADULTWDNV:e.quantity,sku:e.sku,tax:e.tax});
+                this.newEOBPurchase = true;
+              }
+              else if(e.sku.includes("EOB2026ADULTWDVEG")){
+                this.EOB2026ADULTWDVEG += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026ADULTWDVEG:e.quantity,sku:e.sku,tax:e.tax});
+                this.newEOBPurchase = true;
+              }
+              else if(e.sku.includes("EOB2026ADULTWOD")){
+                this.EOB2026ADULTWOD += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026ADULTWOD:e.quantity,sku:e.sku,tax:e.tax});
+                this.newEOBPurchase = true;
+              }
+              else if(e.sku.includes("EOB2026KIDSWD")){
+                this.EOB2026KIDSWD += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDSWD:e.quantity,sku:e.sku,tax:e.tax});
+                this.newEOBPurchase = true;
+              }
+              else if(e.sku.includes("EOB2026KIDSWOD")){
+                this.EOB2026KIDSWOD += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDSWOD:e.quantity,sku:e.sku,tax:e.tax});
+                this.newEOBPurchase = true;
               }
 
               //Saraswati Puja 2025 Ticket Details
@@ -1188,7 +1251,7 @@ export class AlldetailsComponent implements OnInit {
             }); // End of Purchase Loop e
           }
           
-          if(this.newEBPurches || this.newRegPurches || this.membershipRenew){
+          if(this.newEBPurchase || this.newRegPurchase || this.newEOBPurchase || this.membershipRenew){
                 this.user = {
                   index : m.id,
                   firstname : m.firstname,
@@ -1203,18 +1266,22 @@ export class AlldetailsComponent implements OnInit {
                 if(this.membershipRenew == true){
                   this.membershipList.unshift(this.user);
                 }
-                else if(this.newEBPurches == true){
+                else if(this.newEBPurchase == true){
                   this.sp2026EBTicketList.unshift(this.user);
                   //console.log(this.sp2026EBTicketList);
                 }
-                else if(this.newRegPurches == true){
+                else if(this.newRegPurchase == true){
                   this.sp2026RegTicketList.unshift(this.user);
                   //console.log(this.sp2026RegTicketList);
                 }
+                else if(this.newEOBPurchase == true){
+                  this.eob2026TicketList.unshift(this.user);
+                }
               //console.log(this.user);
 
-              this.newEBPurches = false;
-              this.newRegPurches = false;
+              this.newEBPurchase = false;
+              this.newRegPurchase = false;
+              this.newEOBPurchase = false;
               this.membershipRenew = false;
               this.ticketPrice = 0;
             }
@@ -1253,6 +1320,15 @@ export class AlldetailsComponent implements OnInit {
 
   onRegBtnExport() {
     this.gridApiSP26REG.exportDataAsCsv();
+  }
+
+  onEOBTicketGridReady(params:any) {
+    this.gridApiEOB26 = params.api;
+    this.gridColumnApi = params.columnApi;
+  }
+
+  onEOBBtnExport() {
+    this.gridApiEOB26.exportDataAsCsv();
   }
 
 }

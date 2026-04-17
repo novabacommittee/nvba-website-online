@@ -101,6 +101,7 @@ import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 import { EchoesOfBengal2026Component } from './pages/echoesOfBengal2026/echoesOfBengal2026.component';
 import { Pastteam2024To25Component } from './pages/archive/pastteam2024-25/pastteam2024-25.component';
 import { SPtickets2026Component } from './helper/tickets/sptickets2026/sptickets2026.component';
+import { EOBtickets2026Component } from './helper/tickets/eobtickets2026/eobtickets2026.component';
 import { CollapseModule } from "ngx-bootstrap/collapse";
 
 
@@ -176,7 +177,8 @@ import { CollapseModule } from "ngx-bootstrap/collapse";
     PoilaBoishakh2026Component,
     Durgapuja2026Component,
     ComingSoonComponent,
-    EchoesOfBengal2026Component
+    EchoesOfBengal2026Component,
+    EOBtickets2026Component
   ],
   imports: [
     BrowserModule,
