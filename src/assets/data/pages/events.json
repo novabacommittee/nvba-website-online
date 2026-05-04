@@ -394,7 +394,7 @@
     },
     {
       "eventId":31,
-      "eventType": "current",
+      "eventType": "past",
       "eventName": "Poila Boishakh 2026",
       "eventDate": "April 19th, 2026",
       "eventEndDate": "April 19th, 2026",
@@ -430,6 +430,19 @@
       "pageLink": "/picnic2026",
       "description": "Join us for NVBA's biggest annual gathering - a day of authentic Bengali cuisine, exciting activities, and the warmth of our community. Free entry for all members!",
       "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
+    },
+    {
+      "eventId":35,
+      "eventType": "current",
+      "eventName": "Subodh Somipe",
+      "eventDate": "May 10th, 2026",
+      "eventEndDate": "May 10th, 2026",
+      "eventImage": "./../../../assets/images/gallery/external/2026/subodh-sarkar-bw.jpg",
+      "timming": "3:00 PM - 5:00 PM",
+      "venue": "4805 Edgemoor Ln, Bethesda, MD 20814",
+      "pageLink": "assets/images/gallery/external/2026/Subodh Sarkar.pdf",
+      "description": "Join us for Subodh Somipe at Bethesda, MD",
+      "mapUrl": ""
     },
     {
       "eventId":34,
