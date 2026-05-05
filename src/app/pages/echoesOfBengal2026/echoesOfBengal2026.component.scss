@@ -125,7 +125,7 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
 // ABOUT
 .eob-about {
   padding: 52px 24px; max-width: 1100px; margin: 0 auto;
-  @media (max-width: 768px) { padding: 36px 20px; }
+  @media (max-width: 768px) { display: none; }
   &__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
     @media (max-width: 768px) { grid-template-columns: 1fr; gap: 28px; }
   }
@@ -141,26 +141,129 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
 .eob-programs {
   padding: 52px 24px; background: linear-gradient(135deg, $clr-dark-mid 0%, $clr-dark 100%);
   @media (max-width: 768px) { padding: 36px 16px; }
+
+  // 6-column base — cards 1-3 fill one row (span 2 each),
+  // cards 4-5 are centred on the second row (offset by one column).
   &__grid {
-    max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-    @media (max-width: 700px) { grid-template-columns: 1fr; }
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+
+    // Row 1 — three equal cards
+    .eob-program-card:nth-child(1) { grid-column: 1 / span 2; }
+    .eob-program-card:nth-child(2) { grid-column: 3 / span 2; }
+    .eob-program-card:nth-child(3) { grid-column: 5 / span 2; }
+
+    // Row 2 — two cards centred (columns 2-3 and 4-5)
+    .eob-program-card:nth-child(4) { grid-column: 2 / span 2; }
+    .eob-program-card:nth-child(5) { grid-column: 4 / span 2; }
+
+    // Mobile — single column stack
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+      .eob-program-card { grid-column: auto !important; }
+    }
   }
 }
+
 .eob-program-card {
-  background: rgba($clr-white,.06); backdrop-filter: blur(8px); border: 1px solid rgba($clr-white,.1);
-  border-radius: $radius-lg; padding: 32px; transition: $ease; text-align: center;
-  &:hover { background: rgba($clr-white,.1); transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.2); }
-  &--wide {
-    grid-column: 1 / -1;
-    @media (max-width: 700px) { grid-column: auto; }
+  border-radius: $radius-lg; overflow: hidden; transition: $ease;
+  border: 1px solid rgba($clr-white, .12);
+  box-shadow: 0 4px 20px rgba(0,0,0,.35);
+  display: flex; flex-direction: column;
+  &:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+
+  &--img { padding: 0; background: $clr-dark; }
+
+  &__img-wrap {
+    position: relative;
+    height: 400px; overflow: hidden;
+    background: #0d0d0d;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    @media (max-width: 768px) { height: 280px; }
   }
-  &__icon { font-size: 40px; margin-bottom: 16px; display: block; }
-  &__title { font-size: 24px; font-weight: 700; color: $clr-white !important; margin: 0 0 6px;
-    @media (max-width: 768px) { font-size: 20px; }
+  &__img {
+    width: 100%; height: 100%;
+    object-fit: contain; display: block;
+    transition: transform 0.4s ease;
+    .eob-program-card__img-wrap:hover & { transform: scale(1.04); }
   }
-  &__subtitle { font-size: 15px; font-weight: 500; color: $clr-secondary; margin: 0 0 14px; }
-  &__desc { font-size: 14px; color: rgba($clr-white,.7); margin: 0; line-height: 1.7; }
+
+  // Hover overlay on the picture
+  &__overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.3s ease;
+    .eob-program-card__img-wrap:hover & { background: rgba(0,0,0,.45); }
+  }
+  &__overlay-icon {
+    color: $clr-white; font-size: 52px; font-weight: 300;
+    opacity: 0; transform: scale(0.6);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-shadow: 0 2px 12px rgba(0,0,0,.6);
+    .eob-program-card__img-wrap:hover & { opacity: 1; transform: scale(1); }
+  }
+
+  &__label {
+    padding: 15px 18px; text-align: center;
+    background: linear-gradient(135deg, rgba($clr-primary,.88) 0%, rgba(darken($clr-primary,15%),.96) 100%);
+    border-top: 1px solid rgba($clr-white,.1);
+    cursor: pointer; user-select: none;
+    transition: background 0.25s ease;
+    &:hover { background: linear-gradient(135deg, $clr-primary 0%, darken($clr-primary,18%) 100%); }
+  }
+  &__title {
+    font-size: 19px; font-weight: 700; color: $clr-white !important; margin: 0;
+    letter-spacing: 0.02em;
+    @media (max-width: 768px) { font-size: 16px; }
+  }
 }
+
+// LIGHTBOX
+.eob-lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  animation: eobFadeIn 0.2s ease;
+
+  &__backdrop {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,.88);
+    backdrop-filter: blur(6px);
+  }
+  &__panel {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    max-width: min(90vw, 700px); max-height: 92vh;
+    animation: eobSlideUp 0.25s ease;
+  }
+  &__close {
+    position: absolute; top: -14px; right: -14px;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: $clr-primary; border: none; color: $clr-white;
+    font-size: 22px; line-height: 1; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,.4);
+    transition: $ease;
+    &:hover { background: darken($clr-primary, 12%); transform: scale(1.1); }
+  }
+  &__title {
+    color: $clr-white; font-size: 18px; font-weight: 700;
+    margin: 0; text-align: center; letter-spacing: 0.03em;
+  }
+  &__img {
+    max-width: 100%; max-height: calc(92vh - 80px);
+    object-fit: contain; border-radius: $radius-lg;
+    box-shadow: 0 24px 80px rgba(0,0,0,.7);
+    display: block;
+  }
+}
+
+@keyframes eobFadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes eobSlideUp { from { opacity: 0; transform: translateY(24px) scale(.97); } to { opacity: 1; transform: none; } }
 
 // HIGHLIGHTS
 .eob-highlights {
@@ -225,21 +328,6 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
   padding: 52px 24px; background: $clr-light;
   @media (max-width: 768px) { padding: 36px 16px; }
   &__content { max-width: 900px; margin: 0 auto; }
-}
-
-// FLYERS
-.eob-flyers {
-  padding: 52px 24px; max-width: 1100px; margin: 0 auto;
-  @media (max-width: 768px) { padding: 36px 16px; }
-  &__grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
-    @media (max-width: 700px) { grid-template-columns: 1fr; }
-  }
-  &__item {
-    border-radius: $radius-lg; overflow: hidden; box-shadow: $shadow-md; transition: $ease;
-    &:hover { box-shadow: $shadow-lg; transform: translateY(-4px); }
-  }
-  &__image { width: 100%; height: auto; display: block; }
 }
 
 // VENUE
