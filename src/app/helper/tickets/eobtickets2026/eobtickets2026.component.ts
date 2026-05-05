@@ -52,6 +52,11 @@ export class EOBtickets2026Component implements OnInit, OnChanges, AfterViewChec
       this.auth.member.subscribe( m => {
         this.member = m;
 
+        if (!m) {
+          this.memberValidity = false;
+          return;
+        }
+
         this.currentDate = moment();
 
         if(moment(this.member.expires).isAfter(this.currentDate) )
