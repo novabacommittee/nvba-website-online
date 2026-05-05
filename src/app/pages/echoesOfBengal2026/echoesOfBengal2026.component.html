@@ -46,13 +46,6 @@
           <span class="eob-info-card__value">J Michael Lunsford Middle School</span>
         </div>
       </div>
-      <div class="eob-info-card">
-        <div class="eob-info-card__icon">🎶</div>
-        <div class="eob-info-card__body">
-          <span class="eob-info-card__label">Highlights</span>
-          <span class="eob-info-card__value">Music, Drama, Orchestra &amp; More</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -108,53 +101,73 @@
 
     <div class="eob-programs__grid">
 
-      <div class="eob-program-card">
-        <div class="eob-program-card__icon">🎭</div>
-        <h3 class="eob-program-card__title">নাট্যরঙ্গ</h3>
-        <p class="eob-program-card__subtitle">The Art of Drama</p>
-        <p class="eob-program-card__desc">
-          Experience the depth of Bengali theatre through powerful performances that bring classic and contemporary stories to life.
-        </p>
+      <!-- 1. শতাব্দীর সুর -->
+      <div class="eob-program-card eob-program-card--img">
+        <div class="eob-program-card__img-wrap" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Musikala.JPG','শতাব্দীর সুর')">
+          <img src="./../../../../assets/images/gallery/echoesOfBengal/Musikala.JPG" alt="শতাব্দীর সুর" class="eob-program-card__img">
+          <div class="eob-program-card__overlay"><span class="eob-program-card__overlay-icon">⊕</span></div>
+        </div>
+        <div class="eob-program-card__label" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Musikala.JPG','শতাব্দীর সুর')">
+          <h3 class="eob-program-card__title">শতাব্দীর সুর</h3>
+        </div>
       </div>
 
-      <div class="eob-program-card">
-        <div class="eob-program-card__icon">⭐</div>
-        <h3 class="eob-program-card__title">চলো যাই মাটির টানে</h3>
-        <p class="eob-program-card__subtitle">Magic on Stage</p>
-        <p class="eob-program-card__desc">
-          Our youngest stars take the spotlight! Enjoy charming and delightful stage acts by NVBA&rsquo;s little performers.
-        </p>
+      <!-- 2. নক্সী কাঁথার মাঠ -->
+      <div class="eob-program-card eob-program-card--img">
+        <div class="eob-program-card__img-wrap" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Nakshi Kanthar Math.JPG','নক্সী কাঁথার মাঠ')">
+          <img src="./../../../../assets/images/gallery/echoesOfBengal/Nakshi Kanthar Math.JPG" alt="নক্সী কাঁথার মাঠ" class="eob-program-card__img">
+          <div class="eob-program-card__overlay"><span class="eob-program-card__overlay-icon">⊕</span></div>
+        </div>
+        <div class="eob-program-card__label" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Nakshi Kanthar Math.JPG','নক্সী কাঁথার মাঠ')">
+          <h3 class="eob-program-card__title">নক্সী কাঁথার মাঠ</h3>
+        </div>
       </div>
 
-      <div class="eob-program-card">
-        <div class="eob-program-card__icon">🎨</div>
-        <h3 class="eob-program-card__title">নৃত্য-নাট্য</h3>
-        <p class="eob-program-card__subtitle">Where Music, Dance &amp; Story Weave Together</p>
-        <p class="eob-program-card__desc">
-          A vibrant blend of music, movement, and storytelling that captures the emotional tapestry of Bengal.
-        </p>
+      <!-- 3. একটি খুনের রায় -->
+      <div class="eob-program-card eob-program-card--img">
+        <div class="eob-program-card__img-wrap" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Ekti Khuner Ray.PNG','একটি খুনের রায়')">
+          <img src="./../../../../assets/images/gallery/echoesOfBengal/Ekti Khuner Ray.PNG" alt="একটি খুনের রায়" class="eob-program-card__img">
+          <div class="eob-program-card__overlay"><span class="eob-program-card__overlay-icon">⊕</span></div>
+        </div>
+        <div class="eob-program-card__label" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Ekti Khuner Ray.PNG','একটি খুনের রায়')">
+          <h3 class="eob-program-card__title">একটি খুনের রায়</h3>
+        </div>
       </div>
 
-      <div class="eob-program-card">
-        <div class="eob-program-card__icon">🎲</div>
-        <h3 class="eob-program-card__title">আড্ডাগিরি</h3>
-        <p class="eob-program-card__subtitle">NVBA&rsquo;s First Live Game Challenge Show</p>
-        <p class="eob-program-card__desc">
-          A fun, energetic, interactive segment debuting this year &mdash; cheer on your favorite participants!
-        </p>
+      <!-- 4. আড্ডাগিরি -->
+      <div class="eob-program-card eob-program-card--img">
+        <div class="eob-program-card__img-wrap" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Addagiri.JPG','আড্ডাগিরি')">
+          <img src="./../../../../assets/images/gallery/echoesOfBengal/Addagiri.JPG" alt="আড্ডাগিরি" class="eob-program-card__img">
+          <div class="eob-program-card__overlay"><span class="eob-program-card__overlay-icon">⊕</span></div>
+        </div>
+        <div class="eob-program-card__label" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Addagiri.JPG','আড্ডাগিরি')">
+          <h3 class="eob-program-card__title">আড্ডাগিরি</h3>
+        </div>
       </div>
 
-      <div class="eob-program-card eob-program-card--wide">
-        <div class="eob-program-card__icon">🎸</div>
-        <h3 class="eob-program-card__title">Live Orchestra &amp; Voices in Harmony</h3>
-        <p class="eob-program-card__subtitle">Soulful Melodies</p>
-        <p class="eob-program-card__desc">
-          Lose yourself in soulful melodies and beautifully orchestrated performances.
-        </p>
+      <!-- 5. চলো যাই মাটির টানে -->
+      <div class="eob-program-card eob-program-card--img">
+        <div class="eob-program-card__img-wrap" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Chalo Jai Maatir Taane.JPG','চলো যাই মাটির টানে')">
+          <img src="./../../../../assets/images/gallery/echoesOfBengal/Chalo Jai Maatir Taane.JPG" alt="চলো যাই মাটির টানে" class="eob-program-card__img">
+          <div class="eob-program-card__overlay"><span class="eob-program-card__overlay-icon">⊕</span></div>
+        </div>
+        <div class="eob-program-card__label" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/Chalo Jai Maatir Taane.JPG','চলো যাই মাটির টানে')">
+          <h3 class="eob-program-card__title">চলো যাই মাটির টানে</h3>
+        </div>
       </div>
 
     </div>
   </section>
+
+  <!-- ========== FLYER LIGHTBOX ========== -->
+  <div class="eob-lightbox" *ngIf="activeFlyer" (click)="closeFlyer()">
+    <div class="eob-lightbox__backdrop"></div>
+    <div class="eob-lightbox__panel" (click)="$event.stopPropagation()">
+      <button class="eob-lightbox__close" (click)="closeFlyer()" aria-label="Close">&times;</button>
+      <p class="eob-lightbox__title">{{ activeFlyerTitle }}</p>
+      <img [src]="activeFlyer" [alt]="activeFlyerTitle" class="eob-lightbox__img">
+    </div>
+  </div>
 
   <!-- ========== FOOD ========== -->
   <section class="eob-food">
@@ -220,32 +233,6 @@
         <span class="eob-highlight-card__icon">🛒</span>
         <h4 class="eob-highlight-card__title">Unique Vendors</h4>
         <p>Discover unique products from local vendors &mdash; handicrafts, jewelry, clothing, and more.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FLYERS ========== -->
-  <section class="eob-flyers">
-    <div class="eob-section-header eob-section-header--center">
-      <span class="eob-section-header__tag">Event Flyers</span>
-      <h2 class="eob-section-header__title">Program Details</h2>
-      <div class="eob-section-header__divider"></div>
-    </div>
-    <div class="eob-flyers__grid">
-      <div class="eob-flyers__item">
-        <img src="./../../../../assets/images/gallery/echoesOfBengal/Musikala.JPG" alt="Musikala" class="eob-flyers__image">
-      </div>
-      <div class="eob-flyers__item">
-        <img src="./../../../../assets/images/gallery/echoesOfBengal/Addagiri.JPG" alt="Addagiri" class="eob-flyers__image">
-      </div>
-      <div class="eob-flyers__item">
-        <img src="./../../../../assets/images/gallery/echoesOfBengal/Ekti Khuner Ray.PNG" alt="Ekti Khuner Ray" class="eob-flyers__image">
-      </div>
-      <div class="eob-flyers__item">
-        <img src="./../../../../assets/images/gallery/echoesOfBengal/Nakshi Kanthar Math.JPG" alt="Nakshi Kanthar Math" class="eob-flyers__image">
-      </div>
-      <div class="eob-flyers__item">
-        <img src="./../../../../assets/images/gallery/echoesOfBengal/Chalo Jai Maatir Taane.JPG" alt="Chalo Jai Maatir Taane" class="eob-flyers__image">
       </div>
     </div>
   </section>
