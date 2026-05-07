@@ -159,6 +159,26 @@
     </div>
   </section>
 
+  <!-- ========== BOOK CORNER ========== -->
+  <section class="eob-bookcorner">
+    <div class="eob-section-header eob-section-header--center eob-section-header--light">
+      <span class="eob-section-header__tag">Special Attraction</span>
+      <h2 class="eob-section-header__title">Book Corner</h2>
+      <div class="eob-section-header__divider"></div>
+    </div>
+    <div class="eob-bookcorner__grid">
+      <div class="eob-program-card eob-program-card--img">
+        <div class="eob-program-card__img-wrap" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/BookCorner.png','Book Corner')">
+          <img src="./../../../../assets/images/gallery/echoesOfBengal/BookCorner.png" alt="Book Corner" class="eob-program-card__img">
+          <div class="eob-program-card__overlay"><span class="eob-program-card__overlay-icon">⊕</span></div>
+        </div>
+        <div class="eob-program-card__label" (click)="openFlyer('./../../../../assets/images/gallery/echoesOfBengal/BookCorner.png','Book Corner')">
+          <h3 class="eob-program-card__title">Book Corner</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== FLYER LIGHTBOX ========== -->
   <div class="eob-lightbox" *ngIf="activeFlyer" (click)="closeFlyer()">
     <div class="eob-lightbox__backdrop"></div>
