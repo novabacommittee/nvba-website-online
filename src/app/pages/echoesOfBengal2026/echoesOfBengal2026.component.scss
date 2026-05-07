@@ -229,6 +229,21 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
   }
 }
 
+// BOOK CORNER
+.eob-bookcorner {
+  padding: 0 24px 52px;
+  background: linear-gradient(135deg, $clr-dark-mid 0%, $clr-dark 100%);
+  @media (max-width: 768px) { padding: 0 16px 36px; }
+  &__grid {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: center;
+    .eob-program-card {
+      width: calc((100% - 2 * 24px) / 3);
+      @media (max-width: 700px) { width: 100%; }
+    }
+  }
+}
+
 // LIGHTBOX
 .eob-lightbox {
   position: fixed; inset: 0; z-index: 1000;
