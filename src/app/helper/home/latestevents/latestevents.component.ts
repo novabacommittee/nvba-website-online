@@ -9,7 +9,7 @@ interface Event {
   eventDate: string;
   eventEndDate: string;
   eventImage: string;
-  timming: string;
+  timing: string;
   venue: string;
   pageLink: string;
   description: string;
