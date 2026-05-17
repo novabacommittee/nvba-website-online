@@ -412,7 +412,7 @@
       "eventDate": "June 6th, 2026",
       "eventEndDate": "June 6th, 2026",
       "eventImage": "./../../../assets/images/gallery/echoesOfBengal/EchoesOfBengal.png",
-      "timming": "2:00 PM - 10:00 PM",
+      "timming": "1:00 PM - 10:00 PM",
       "venue": "J Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
       "pageLink": "/echoesOfBengal2026",
       "description": "Come and join us to celebrate Echoes of Bengal and enjoy the day full of cultural performances and delicious bengali food",
@@ -431,19 +431,19 @@
       "description": "Join us for NVBA's biggest annual gathering - a day of authentic Bengali cuisine, exciting activities, and the warmth of our community. Free entry for all members!",
       "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
     },
-    {
-      "eventId":35,
-      "eventType": "current",
-      "eventName": "Subodh Somipe",
-      "eventDate": "May 10th, 2026",
-      "eventEndDate": "May 10th, 2026",
-      "eventImage": "./../../../assets/images/gallery/external/2026/subodh-sarkar-bw.jpg",
-      "timming": "3:00 PM - 5:00 PM",
-      "venue": "4805 Edgemoor Ln, Bethesda, MD 20814",
-      "pageLink": "assets/images/gallery/external/2026/Subodh Sarkar.pdf",
-      "description": "Join us for Subodh Somipe at Bethesda, MD",
-      "mapUrl": ""
-    },
+//    {
+//      "eventId":35,
+//      "eventType": "past",
+//      "eventName": "Subodh Somipe",
+//      "eventDate": "May 10th, 2026",
+//      "eventEndDate": "May 10th, 2026",
+//      "eventImage": "./../../../assets/images/gallery/external/2026/subodh-sarkar-bw.jpg",
+//      "timming": "3:00 PM - 5:00 PM",
+//      "venue": "4805 Edgemoor Ln, Bethesda, MD 20814",
+//      "pageLink": "assets/images/gallery/external/2026/Subodh Sarkar.pdf",
+//      "description": "Join us for Subodh Somipe at Bethesda, MD",
+//      "mapUrl": ""
+//    },
     {
       "eventId":34,
       "eventType": "current",
