@@ -229,6 +229,83 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
   }
 }
 
+// SCHEDULE
+.eob-schedule {
+  max-width: 780px; margin: 0 auto; padding: 0 24px 48px;
+  @media (max-width: 768px) { padding: 0 16px 32px; }
+
+  &__card {
+    background: rgba($clr-white, .05); border: 1px solid rgba($clr-white, .1);
+    border-radius: $radius-lg; overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,.35);
+  }
+
+  // Arrival notice banner
+  &__notice {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 20px 24px;
+    background: rgba($clr-primary, .15);
+    border-bottom: 1px solid rgba($clr-primary, .3);
+    font-size: 14px; color: rgba($clr-white, .9); line-height: 1.7;
+    strong { color: $clr-white; }
+    @media (max-width: 480px) { font-size: 13px; padding: 16px; }
+  }
+  &__notice-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+
+  // Time blocks
+  &__block {
+    border-bottom: 1px solid rgba($clr-white, .07);
+    &:last-of-type { border-bottom: none; }
+
+    &--intermission &-header { background: rgba($clr-white, .04); }
+    &--entry        &-header { background: rgba($clr-white, .02); }
+    &--finale {
+      background: linear-gradient(135deg, rgba($clr-primary,.25), rgba(darken($clr-primary,10%),.35));
+      border-top: 1px solid rgba($clr-primary,.4);
+      .eob-schedule__block-label { font-size: 16px; color: $clr-white; }
+    }
+  }
+  &__block-header {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    padding: 16px 24px;
+    @media (max-width: 480px) { padding: 14px 16px; gap: 8px; }
+  }
+  &__block-time {
+    white-space: nowrap; font-size: 13px; font-weight: 700;
+    color: $clr-secondary; letter-spacing: 0.03em;
+    background: rgba($clr-secondary, .12); border-radius: 20px;
+    padding: 4px 12px; flex-shrink: 0;
+  }
+  &__block-label {
+    font-size: 15px; font-weight: 700; color: $clr-white;
+    em { font-style: italic; font-weight: 400; color: rgba($clr-white,.8); }
+    @media (max-width: 480px) { font-size: 14px; }
+  }
+  &__block-note {
+    padding: 0 24px 16px; margin: 0;
+    font-size: 13px; color: rgba($clr-white,.65); line-height: 1.7;
+    @media (max-width: 480px) { padding: 0 16px 14px; }
+  }
+
+  // Numbered list inside afternoon block
+  &__list {
+    margin: 0; padding: 4px 24px 18px 52px; list-style: decimal;
+    @media (max-width: 480px) { padding: 4px 16px 14px 40px; }
+    li {
+      padding: 5px 0; font-size: 14px; color: rgba($clr-white,.82);
+      line-height: 1.5; border-bottom: 1px solid rgba($clr-white,.05);
+      &:last-child { border-bottom: none; }
+      em { font-style: italic; color: $clr-secondary; }
+    }
+  }
+
+  &__note {
+    text-align: center; padding: 14px 24px;
+    font-size: 12px; color: rgba($clr-white,.35); font-style: italic;
+    border-top: 1px solid rgba($clr-white,.06);
+  }
+}
+
 // BOOK CORNER
 .eob-bookcorner {
   padding: 0 24px 52px;
