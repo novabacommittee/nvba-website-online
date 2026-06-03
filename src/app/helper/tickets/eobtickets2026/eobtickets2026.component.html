@@ -21,15 +21,24 @@
                     <th scope="col">Total</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let item of dataObject; index as i" >
+                <tbody *ngFor="let item of dataObject; index as i" [class.ticket-sold-out]="item.soldOut">
                     <tr>
-                        <th>{{item.description}}</th>
+                        <th>
+                            <span [class.ticket-struck]="item.soldOut">{{item.description}}</span>
+                            <span *ngIf="item.soldOut" class="ticket-sold-out-badge">🔴 SOLD OUT</span>
+                        </th>
                         <td>
-                            <span *ngIf="item.price > 0">$ {{item.price}}</span>
+                            <span *ngIf="item.price > 0" [class.ticket-struck]="item.soldOut">$ {{item.price}}</span>
                             <span *ngIf="item.price === 0">Free</span>
                         </td>
-                        <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
-                        <td>$ {{item.price * item.quantity}}</td>
+                        <td>
+                            <input *ngIf="!item.soldOut" type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10">
+                            <span *ngIf="item.soldOut" class="ticket-na">—</span>
+                        </td>
+                        <td>
+                            <span *ngIf="!item.soldOut">$ {{item.price * item.quantity}}</span>
+                            <span *ngIf="item.soldOut" class="ticket-na">—</span>
+                        </td>
                     </tr>
                 </tbody>
                 <thead>
