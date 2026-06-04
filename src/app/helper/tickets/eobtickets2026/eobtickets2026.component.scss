@@ -47,3 +47,42 @@ p, span, div, a, td, th, h5, h6 {
 table * {
   font-family: $font-primary !important;
 }
+
+// Sold-out row
+.ticket-sold-out {
+  background-color: #fff5f5 !important;
+  opacity: 0.85;
+
+  td, th { color: #999 !important; }
+}
+
+.ticket-struck {
+  text-decoration: line-through;
+  color: #aaa !important;
+}
+
+.ticket-sold-out-badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 8px;
+  background: #e53e3e;
+  color: #fff !important;
+  font-size: 11px;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  animation: pulse-badge 1.8s ease-in-out infinite;
+}
+
+.ticket-na {
+  color: #bbb !important;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.7; transform: scale(1.06); }
+}
