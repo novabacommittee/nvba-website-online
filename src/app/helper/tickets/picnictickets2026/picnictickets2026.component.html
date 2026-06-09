@@ -10,7 +10,7 @@
 
 <div *ngIf="member && !memberValidity">
     <div class="alert alert-warning">
-        <strong>Membership Expired!</strong> Your membership has expired. Please renew your membership to purchase picnic tickets.
+        <strong>Membership Expired!</strong> Your membership has expired. Please renew your membership to RSVP for the picnic.
         <br/><br/>
         <button class="btn btn-warning btn-sm" (click)="addMembershipToCartobj()">Renew Membership - $30</button>
         <br/><br/>
@@ -32,40 +32,23 @@
         </p>
 
         <accordion [isAnimated]="true" [closeOthers]="false" >
-            <accordion-group [isOpen]="true" style="overflow-wrap: break-word;" heading="Picnic 2026 Tickets">
-                <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
+            <accordion-group [isOpen]="true" style="overflow-wrap: break-word;" heading="Picnic 2026 RSVP">
+                <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Reset</button>
                 <table class="table table-bordered table-hover" >
                     <thead>
                         <tr>
-                        <th scope="col">Items</th>
-                        <th scope="col">Cost</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Total</th>
+                        <th scope="col">Attendee Type</th>
+                        <th scope="col">Number Attending</th>
                         </tr>
                     </thead>
                     <tbody *ngFor="let item of dataObject; index as i">
                         <tr>
                             <th>{{item.description}}</th>
                             <td>
-                                <span *ngIf="item.price > 0">$ {{item.price}}</span>
-                                <span *ngIf="item.price === 0">Free</span>
-                            </td>
-                            <td>
                                 <input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="20">
-                            </td>
-                            <td>
-                                <span>$ {{item.price * item.quantity}}</span>
                             </td>
                         </tr>
                     </tbody>
-                    <thead>
-                        <tr>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th scope="col" ><div class="d-flex justify-content-end">Total</div></th>
-                        <th  scope="col">$ {{totalCost}}</th>
-                        </tr>
-                    </thead>
                 </table>
 
                 <div class="float-right mb-3 mr-3" >

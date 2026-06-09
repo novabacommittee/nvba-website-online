@@ -1,7 +1,7 @@
 [
     {
-      "name": "NVBA Annual Picnic 2026 Adult Ticket",
-      "description": "Adult Ticket",
+      "name": "NVBA Annual Picnic 2026 - Adult",
+      "description": "Adult",
       "quantity": 0,
       "price": 0,
       "tax": 0,
@@ -9,8 +9,8 @@
       "currency": "USD"
     },
     {
-      "name": "NVBA Annual Picnic 2026 Kids Ticket (13 yrs or younger)",
-      "description": "Kids Ticket (13 yrs or younger)",
+      "name": "NVBA Annual Picnic 2026 - Kids (13 yrs or younger)",
+      "description": "Kids (13 yrs or younger)",
       "quantity": 0,
       "price": 0,
       "tax": 0,
