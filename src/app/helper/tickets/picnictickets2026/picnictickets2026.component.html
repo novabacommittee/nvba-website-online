@@ -1,0 +1,84 @@
+<div *ngIf="!member">
+    <div class="alert alert-info">
+        <strong>Members Only!</strong> Picnic tickets are available exclusively for NVBA members with valid membership.
+        <br/><br/>
+        Please <a routerLink="/sign-in" class="alert-link">sign in</a> to purchase tickets.
+        <br/><br/>
+        Not a member yet? <a href="https://www.novaba.org/membership" class="alert-link">Become a member</a> or
+        <a href="https://www.novaba.org/picnic2026" class="alert-link">buy via Picnic page</a>.
+    </div>
+</div>
+
+<div *ngIf="member && !memberValidity">
+    <div class="alert alert-warning">
+        <strong>Membership Expired!</strong> Your membership has expired. Please renew your membership to purchase picnic tickets.
+        <br/><br/>
+        <button class="btn btn-warning btn-sm" (click)="addMembershipToCartobj()">Renew Membership - $30</button>
+        <br/><br/>
+        Or renew via <a href="https://www.novaba.org/membership" class="alert-link">Membership page</a> or
+        <a href="https://www.novaba.org/picnic2026" class="alert-link">Picnic page</a>.
+    </div>
+</div>
+
+<div *ngIf="member && memberValidity">
+    <div>
+        <h5 class="green" style="font-weight: bold;">
+            Annual Picnic 2026 - Free for Members!<br />
+        </h5>
+    </div>
+
+    <div id="picnicTickets" class="table-responsive mb-5 tickets">
+        <p style="font-weight: bold;">
+            &ast; Please RSVP the number of attendees for headcount purposes.<br/>
+        </p>
+
+        <accordion [isAnimated]="true" [closeOthers]="false" >
+            <accordion-group [isOpen]="true" style="overflow-wrap: break-word;" heading="Picnic 2026 Tickets">
+                <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
+                <table class="table table-bordered table-hover" >
+                    <thead>
+                        <tr>
+                        <th scope="col">Items</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of dataObject; index as i">
+                        <tr>
+                            <th>{{item.description}}</th>
+                            <td>
+                                <span *ngIf="item.price > 0">$ {{item.price}}</span>
+                                <span *ngIf="item.price === 0">Free</span>
+                            </td>
+                            <td>
+                                <input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="20">
+                            </td>
+                            <td>
+                                <span>$ {{item.price * item.quantity}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col" ><div class="d-flex justify-content-end">Total</div></th>
+                        <th  scope="col">$ {{totalCost}}</th>
+                        </tr>
+                    </thead>
+                </table>
+
+                <div class="float-right mb-3 mr-3" >
+                    <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >RSVP</button>
+                </div>
+            </accordion-group>
+        </accordion>
+
+        <p class="mt-3">
+            You can also register via
+            <a href="https://www.novaba.org/membership" target="_blank">Membership page</a> or
+            <a href="https://www.novaba.org/picnic2026" target="_blank">Picnic page</a>.
+        </p>
+    </div>
+</div>

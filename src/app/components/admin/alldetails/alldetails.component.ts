@@ -20,6 +20,7 @@ export class AlldetailsComponent implements OnInit {
   private gridApiSP26EB:any;
   private gridApiSP26REG:any;
   private gridApiEOB26:any;
+  private gridApiPICNIC26:any;
   private gridColumnApi:any;
 
   membershipList:any;
@@ -32,11 +33,13 @@ export class AlldetailsComponent implements OnInit {
   newEBPurchase:boolean = false;
   newRegPurchase:boolean = false;
   newEOBPurchase:boolean = false;
-  selectedEvent:string = 'eob2026';
+  newPicnicPurchase:boolean = false;
+  selectedEvent:string = 'picnic2026';
   sp2025TicketList:any;
   sp2026EBTicketList:any;
   sp2026RegTicketList:any;
   eob2026TicketList:any;
+  picnic2026TicketList:any;
 
   MM2022YY: number = 0;
   MM2023YY: number = 0;
@@ -156,6 +159,9 @@ export class AlldetailsComponent implements OnInit {
   EOB2026ADULTWOD:number = 0;
   EOB2026KIDSWD:number = 0;
   EOB2026KIDSWOD:number = 0;
+
+  PICNIC2026ADULT:number = 0;
+  PICNIC2026KIDS:number = 0;
 
   paymentTime:any;
   customAdult:number =0;
@@ -402,6 +408,16 @@ export class AlldetailsComponent implements OnInit {
     { field: 'EOB2026ADULTWOD', headerName:'Adult w/o Dinner', sortable: true, resizable: true },
     { field: 'EOB2026KIDSWD', headerName:'Kids w/ Dinner', sortable: true, resizable: true },
     { field: 'EOB2026KIDSWOD', headerName:'Kids w/o Dinner', sortable: true, resizable: true }
+	];
+
+  picnic2026columnDefsTickets = [
+		{ field: 'firstname', sortable: true, resizable: true, filter: true , cellClass: 'center' },
+		{ field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
+    { field: 'email', sortable: true, resizable: true, filter: true },
+    { field: 'phone', sortable: true, resizable: true, filter: true },
+    { field: 'paymentTime', headerName:'Registration Date', sortable: true, resizable: true },
+    { field: 'PICNIC2026ADULT', headerName:'Adult', sortable: true, resizable: true },
+    { field: 'PICNIC2026KIDS', headerName:'Kids (13 yrs or younger)', sortable: true, resizable: true }
 	];
 
   checkDP2025ConcertDetails(){
@@ -726,6 +742,7 @@ export class AlldetailsComponent implements OnInit {
     this.sp2026EBTicketList = [];
     this.sp2026RegTicketList = [];
     this.eob2026TicketList = [];
+    this.picnic2026TicketList = [];
     this.dp2025TicketList = [];
     
     this.MM2022YY = 0;
@@ -793,6 +810,9 @@ export class AlldetailsComponent implements OnInit {
     this.EOB2026ADULTWOD = 0;
     this.EOB2026KIDSWD = 0;
     this.EOB2026KIDSWOD = 0;
+
+    this.PICNIC2026ADULT = 0;
+    this.PICNIC2026KIDS = 0;
 
     try{
     //console.log(this.rowData);
@@ -923,6 +943,20 @@ export class AlldetailsComponent implements OnInit {
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,EOB2026KIDSWOD:e.quantity,sku:e.sku,tax:e.tax});
                 this.newEOBPurchase = true;
+              }
+
+              //Annual Picnic 2026 Ticket Details
+              else if(e.sku.includes("PICNIC2026ADULT")){
+                this.PICNIC2026ADULT += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,PICNIC2026ADULT:e.quantity,sku:e.sku,tax:e.tax});
+                this.newPicnicPurchase = true;
+              }
+              else if(e.sku.includes("PICNIC2026KIDS")){
+                this.PICNIC2026KIDS += e.quantity ;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,PICNIC2026KIDS:e.quantity,sku:e.sku,tax:e.tax});
+                this.newPicnicPurchase = true;
               }
 
               //Saraswati Puja 2025 Ticket Details
@@ -1251,7 +1285,7 @@ export class AlldetailsComponent implements OnInit {
             }); // End of Purchase Loop e
           }
           
-          if(this.newEBPurchase || this.newRegPurchase || this.newEOBPurchase || this.membershipRenew){
+          if(this.newEBPurchase || this.newRegPurchase || this.newEOBPurchase || this.newPicnicPurchase || this.membershipRenew){
                 this.user = {
                   index : m.id,
                   firstname : m.firstname,
@@ -1277,11 +1311,15 @@ export class AlldetailsComponent implements OnInit {
                 else if(this.newEOBPurchase == true){
                   this.eob2026TicketList.unshift(this.user);
                 }
+                else if(this.newPicnicPurchase == true){
+                  this.picnic2026TicketList.unshift(this.user);
+                }
               //console.log(this.user);
 
               this.newEBPurchase = false;
               this.newRegPurchase = false;
               this.newEOBPurchase = false;
+              this.newPicnicPurchase = false;
               this.membershipRenew = false;
               this.ticketPrice = 0;
             }
@@ -1329,6 +1367,15 @@ export class AlldetailsComponent implements OnInit {
 
   onEOBBtnExport() {
     this.gridApiEOB26.exportDataAsCsv();
+  }
+
+  onPicnicTicketGridReady(params:any) {
+    this.gridApiPICNIC26 = params.api;
+    this.gridColumnApi = params.columnApi;
+  }
+
+  onPicnicBtnExport() {
+    this.gridApiPICNIC26.exportDataAsCsv();
   }
 
 }
