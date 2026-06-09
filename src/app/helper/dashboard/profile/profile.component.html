@@ -9,29 +9,29 @@
       <div class="alert alert-warning" role="alert" *ngIf="!member?.firstname" >
         Please update your details, on profile tab.
       </div>
-      
+
       <div class="alert alert-warning" role="alert" *ngIf="member?.joined">
         <i class="ni business_briefcase-24 mr-2"></i>Member Since, {{member?.joined}}
       </div>
       <div *ngIf="member?.email">
-        <i class="ni education_hat mr-2"></i>Email: <span class="font-weight-light">{{member?.email}}</span> 
+        <i class="ni education_hat mr-2"></i>Email: <span class="font-weight-light">{{member?.email}}</span>
       </div>
       <div *ngIf="member?.Phone">
-        <i class="ni education_hat mr-2"></i>Phone: <span class="font-weight-light">{{member?.Phone}}</span> 
+        <i class="ni education_hat mr-2"></i>Phone: <span class="font-weight-light">{{member?.Phone}}</span>
       </div>
 
       <app-cartmember></app-cartmember>
 
-      <button [routerLink]="['/picnic2026']" class="btn-get-started w-100 mb-3 mt-2" >Buy Annual Picnic 2026 Ticket</button>
+      <button [routerLink]="['/picnic2026']" class="btn-get-started w-100 mb-3 mt-2" >RSVP for Annual Picnic 2026</button>
 
       <a href="https://novaba.us5.list-manage.com/subscribe?u=71b8b228056801a92f04f6000&id=172a06829e" class=" btn btn-secondary px-3 py-2 mt-2" target="_blank" >Subscribe for email</a>
-    
+
       <style>
         #cartmember{
                margin-left: auto ;
-               margin-right: auto ; 
+               margin-right: auto ;
            }
-       
+
      </style>
 
      <div class="mt-2 mb-3"  >
@@ -56,7 +56,7 @@
               [width]="300"
               (qrCodeURL)="onChangeURL($event)"
             ></qrcode>
-          </div>  
+          </div>
           <a [href]="qrCodeDownloadLink" download="qrcode" class=" btn btn-secondary px-3 py-2 mt-2" target="_blank" >Download QR Code</a>
       </div>
     </div>

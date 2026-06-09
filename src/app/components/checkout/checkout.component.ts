@@ -31,15 +31,15 @@ export class CheckoutComponent implements OnInit {
 
   public payPalConfig ? : IPayPalConfig;
 
-  constructor( 
-    private cart: CartService, 
+  constructor(
+    private cart: CartService,
     private toastr: ToastrService,
     private ar: ActivatedRoute,
     private mds: MemberService,
     private location: Location,
     private router: Router,
     private userService: AuthService
-    ) 
+    )
     {
 
       this.userService.cast.subscribe( m => {
@@ -48,7 +48,7 @@ export class CheckoutComponent implements OnInit {
         // Only process member data if it exists
         if (this.member) {
           this.currentDate = moment();
-            
+
           if(this.member.expires && moment(this.member.expires).isAfter(this.currentDate) )
           {
               this.memberValidity = true;
@@ -126,37 +126,37 @@ export class CheckoutComponent implements OnInit {
             const items = data?.purchase_units?.[0]?.items;
             if(items)
             {
-              items.forEach(item => 
+              items.forEach(item =>
               {
                 console.log('Item:', item.name, item.sku, item.quantity, item.unit_amount.value);
                 if(item.name == 'NVBA Annual Membership' )
                 {
-                  let current = moment(); 
-                  
+                  let current = moment();
+
                   if(this.member.expires && (moment(this.member.expires).isSame(current) ||  moment(current).isAfter(this.member.expires))){
-                    this.member.expires = moment(current).add(1, 'years'); 
+                    this.member.expires = moment(current).add(1, 'years');
                     this.member.membershipstatus = 'Valid';
                   }
                   else{
-                    this.member.expires = moment(this.member.expires).add(1, 'years'); 
-                    this.member.membershipstatus = 'Valid'; 
+                    this.member.expires = moment(this.member.expires).add(1, 'years');
+                    this.member.membershipstatus = 'Valid';
                   }
 
                   if(!this.member.expires){
-                    this.member.expires = moment(current).add(1, 'years'); 
+                    this.member.expires = moment(current).add(1, 'years');
                   }
                 }
               });
 
               if((!this.member.payments) && (!this.member.purchase) )
-              { 
+              {
                   this.member.payments = [];
                   this.member.purchase = [];
               }
               else {
                 console.log('regular Member');
               }
-            
+
             this.currentPurches = [];
             [...this.cartCheck].forEach(e => {
               this.currentPurches.unshift({ ...e, paymentTime: data.create_time });
@@ -168,13 +168,13 @@ export class CheckoutComponent implements OnInit {
             console.log('update done');
             const userNa = this.member.displayName?this.member.displayName:'';
             console.log(userNa);
-            this.toastr.success('Hi '+ userNa +', \n  Thanks for your recent purchase. Your payment is successful. \n You will get confirmation emails form Paypal. \n You can varify your tickets at Membership page under order history tab. ','Payment Process');
+            this.toastr.success('Hi '+ userNa +', \n  Thanks for your recent purchase. Your payment is successful. \n You will get confirmation emails form Paypal. \n You can verify your tickets at Membership page under order history tab. ','Payment Process');
             console.log(data.payer);
-    
+
             this.cart.clearCart();
             this.cleanup();
-    
-            setTimeout(()=>{                           
+
+            setTimeout(()=>{
               //this.router.navigate(['/membership?#orderHistory']);
               this.router.navigate(['/membership'], { queryParams: { tab: 'orderHistory' } });
             }, 2000);
