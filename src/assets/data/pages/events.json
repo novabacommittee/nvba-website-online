@@ -407,7 +407,7 @@
     },
     {
       "eventId":32,
-      "eventType": "current",
+      "eventType": "past",
       "eventName": "Echoes of Bengal 2026",
       "eventDate": "June 6th, 2026",
       "eventEndDate": "June 6th, 2026",

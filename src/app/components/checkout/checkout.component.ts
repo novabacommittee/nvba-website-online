@@ -197,6 +197,38 @@ export class CheckoutComponent implements OnInit {
       this.location.back();
   }
 
+  confirmFreeRegistration(){
+    if(!this.member){
+      this.toastr.error('Please sign in first');
+      return;
+    }
+
+    if((!this.member.payments) && (!this.member.purchase))
+    {
+      this.member.payments = [];
+      this.member.purchase = [];
+    }
+
+    this.currentPurches = [];
+    const now = moment().toISOString();
+    [...this.cartCheck].forEach(e => {
+      this.currentPurches.unshift({ ...e, paymentTime: now });
+    });
+
+    this.member.purchase.unshift(this.currentPurches);
+    this.mds.UpdateMember(this.member.id, this.member);
+
+    const userNa = this.member.displayName ? this.member.displayName : '';
+    this.toastr.success('Hi ' + userNa + ', \n  Your registration is confirmed! \n You can verify your registration at Membership page under order history tab.', 'Registration Complete');
+
+    this.cart.clearCart();
+    this.cleanup();
+
+    setTimeout(() => {
+      this.router.navigate(['/membership'], { queryParams: { tab: 'orderHistory' } });
+    }, 2000);
+  }
+
   cleanup(){
     this.cartCheck = [];
     this.subtotal = 0;

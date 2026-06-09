@@ -28,9 +28,37 @@
             <div class="text-center mt-4 mb-3">
                 <label for="eventSelect" class="mr-2" style="font-weight: bold; font-size: 1.1em;">Select Event:</label>
                 <select id="eventSelect" [(ngModel)]="selectedEvent" class="form-control d-inline-block" style="width: auto; min-width: 300px;">
+                    <option value="picnic2026">Annual Picnic 2026</option>
                     <option value="eob2026">Echoes of Bengal 2026</option>
                     <option value="sp2026">Saraswati Puja 2026</option>
                 </select>
+            </div>
+
+            <!-- ==================== Annual Picnic 2026 ==================== -->
+            <div *ngIf="selectedEvent === 'picnic2026'">
+                <h3 class="text-center mt-3 mb-2 " >Annual Picnic 2026 Registration Summary</h3>
+                <table class="table table-bordered " >
+                    <tr>
+                      <th class="d-flex justify-content-around">Ticket Details</th>
+                      <th>Count</th>
+                    </tr>
+                    <tr>
+                      <th>Adult Ticket - Free</th>
+                      <td>{{PICNIC2026ADULT}}</td>
+                    </tr>
+                    <tr>
+                      <th>Kids Ticket (13 yrs or younger) - Free</th>
+                      <td>{{PICNIC2026KIDS}}</td>
+                    </tr>
+                    <tr class=" bg-light " >
+                      <th>Total Head Count</th>
+                      <th>
+                        <div class="d-flex justify-content-around ">
+                          <div>{{PICNIC2026ADULT + PICNIC2026KIDS}}</div>
+                        </div>
+                      </th>
+                    </tr>
+                  </table>
             </div>
 
             <!-- ==================== Echoes of Bengal 2026 ==================== -->
@@ -154,6 +182,28 @@
     </div>
 
     <!-- ==================== Transaction Grids ==================== -->
+
+    <!-- Annual Picnic 2026 Transactions -->
+    <div *ngIf="selectedEvent === 'picnic2026'" class=" container mt-5 mb-3 " >
+        <h3 class="text-center " >Annual Picnic 2026 Registration Transactions</h3>
+        <div class=" mb-3  table-bordered" >
+            <ag-grid-angular
+                style="height:500px; "
+                class="ag-theme-alpine table-light table-responsive agGridTable"
+                #agGrid
+                id="PICNIC2026Grid"
+                class="ag-theme-alpine"
+                (gridReady)="onPicnicTicketGridReady($event)"
+                [rowData]="picnic2026TicketList"
+                [columnDefs]="picnic2026columnDefsTickets"
+                [animateRows]="true"
+                 >
+            </ag-grid-angular>
+        </div>
+        <div class=" d-flex justify-content-end mb-5 " >
+            <button (click)="onPicnicBtnExport()" class=" btn-get-started ">Export CSV File</button>
+        </div>
+    </div>
 
     <!-- Echoes of Bengal 2026 Transactions -->
     <div *ngIf="selectedEvent === 'eob2026'" class=" container mt-5 mb-3 " >

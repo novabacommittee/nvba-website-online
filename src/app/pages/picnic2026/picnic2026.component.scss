@@ -213,6 +213,13 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
 }
 
 // VENUE
+// TICKETS
+.pic-tickets {
+  padding: 52px 24px; max-width: 1100px; margin: 0 auto;
+  @media (max-width: 768px) { padding: 36px 16px; }
+  &__content { max-width: 800px; margin: 0 auto; }
+}
+
 .pic-venue {
   padding: 52px 24px; max-width: 1100px; margin: 0 auto;
   @media (max-width: 768px) { padding: 36px 16px; }
