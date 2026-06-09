@@ -118,6 +118,9 @@ export class Picnictickets2026Component implements OnInit, OnChanges, AfterViewC
   }
 
   addToCartobj(){
+    if(!this.memberValidity){
+      return;
+    }
     this.cs.items = [];
     this.dataObject.forEach((value:any) => {
       if(value.quantity > 0){

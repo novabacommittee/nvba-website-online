@@ -203,6 +203,11 @@ export class CheckoutComponent implements OnInit {
       return;
     }
 
+    if(!this.memberValidity){
+      this.toastr.error('You need a valid membership to register. Please renew or purchase a membership first.');
+      return;
+    }
+
     if((!this.member.payments) && (!this.member.purchase))
     {
       this.member.payments = [];
