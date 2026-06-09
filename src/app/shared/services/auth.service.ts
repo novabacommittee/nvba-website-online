@@ -185,31 +185,26 @@ export class AuthService  {
 
   memberDetail(){
      let newuser:boolean = true;
-     let idCount = 0;
       //console.log('Auth.services->memberDetail()');
-      
+
       // Only proceed if userData exists
       if (!this.userData || !this.userData.email) {
         return null;
       }
-      
+
       this.memberService.GetMembersList().subscribe(mlist => {
          mlist.forEach((e,index)=>{
-          idCount++;
             if(e.email == this.userData.email){
               newuser = false;
               this.memberData = e;
                this.member.next({...e,...this.userData});
-              // //console.log(this.memberData);
-              // //console.log('this.member');
-              // //console.log(this.member.value);
             }
-            
+
          })
          if(newuser){
          let con = JSON.parse(localStorage.getItem('user')!) ;
-          
-          let newMember = {id:idCount, email:con.email};
+
+          let newMember = {id: this.userData.uid, email:con.email};
           //console.log( newMember );
           this.memberService.AddMember(newMember)
          // this.member.next(con);
