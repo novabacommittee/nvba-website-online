@@ -10,12 +10,10 @@
 
 <div *ngIf="member && !memberValidity">
     <div class="alert alert-warning">
-        <strong>Membership Expired!</strong> Your membership has expired. Please renew your membership to RSVP for the picnic.
+        <strong>Your membership has expired!</strong>Please renew your membership to RSVP for the picnic.
         <br/><br/>
         <button class="btn btn-warning btn-sm" (click)="addMembershipToCartobj()">Renew Membership - $30</button>
         <br/><br/>
-        Or renew via <a href="https://www.novaba.org/membership" class="alert-link">Membership page</a> or
-        <a href="https://www.novaba.org/picnic2026" class="alert-link">Picnic page</a>.
     </div>
 </div>
 
