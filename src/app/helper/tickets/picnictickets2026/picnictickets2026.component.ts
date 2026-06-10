@@ -35,6 +35,7 @@ export class Picnictickets2026Component implements OnInit, OnChanges, AfterViewC
   customClass = 'customClass';
   memberValidity : boolean = false;
   addtoCartBtn: boolean = true;
+  rsvpClosed: boolean = true;   // venue capacity reached - RSVP closed
 
   private _jsonURLcart = '/assets/data/tickets/picnic-2026.json';
 

@@ -1,4 +1,9 @@
-<div *ngIf="!member">
+<div *ngIf="rsvpClosed" class="alert alert-danger text-center" style="font-size: 1.15em; padding: 1.5rem;">
+    <h4 style="font-weight: bold; margin-bottom: 0.5rem;">Venue Capacity Reached</h4>
+    We are full. RSVP has been closed.
+</div>
+
+<div *ngIf="!rsvpClosed && !member">
     <div class="alert alert-info">
         <strong>This is a members only event.</strong>
         <br/><br/>
@@ -8,7 +13,7 @@
     </div>
 </div>
 
-<div *ngIf="member && !memberValidity">
+<div *ngIf="!rsvpClosed && member && !memberValidity">
     <div class="alert alert-warning">
         <strong>Your membership has expired!</strong>Please renew your membership to RSVP for the picnic.
         <br/><br/>
@@ -17,7 +22,7 @@
     </div>
 </div>
 
-<div *ngIf="member && memberValidity">
+<div *ngIf="!rsvpClosed && member && memberValidity">
     <div>
         <h5 class="green" style="font-weight: bold;">
             Annual Picnic 2026 - Free for Members!<br />
