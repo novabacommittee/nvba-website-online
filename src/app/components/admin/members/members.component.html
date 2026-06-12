@@ -1,0 +1,70 @@
+<div class="wrapper" >
+
+    <div class="container p-3 pt-5" >
+        <div class="row no-gutters  align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }" style="filter: grayscale(100%) opacity(200%)" >
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> / <span>admin/members</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Admin Reports - Members</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" >
+        <!-- Summary -->
+        <table class="table table-bordered" >
+            <tr>
+                <th>Total Members</th>
+                <th>{{totalCount}}</th>
+            </tr>
+            <tr>
+                <th>Active (membership not expired)</th>
+                <th>{{activeCount}}</th>
+            </tr>
+            <tr>
+                <th>Inactive (expired / never purchased)</th>
+                <th>{{inactiveCount}}</th>
+            </tr>
+        </table>
+
+        <!-- Filters -->
+        <div class="filter-bar text-center mt-4 mb-3">
+            <label for="statusSelect" class="mr-2" style="font-weight: bold; font-size: 1.1em;">Show:</label>
+            <select id="statusSelect" [(ngModel)]="filterStatus" (change)="applyFilter()" class="form-control d-inline-block" style="width: auto; min-width: 220px;">
+                <option value="active">Active Members</option>
+                <option value="inactive">Inactive Members</option>
+                <option value="expiring">Expiring in next...</option>
+            </select>
+
+            <ng-container *ngIf="filterStatus === 'expiring'">
+                <select [(ngModel)]="expiringValue" (change)="applyFilter()" class="form-control d-inline-block ml-2" style="width: auto;">
+                    <option *ngFor="let n of expiringValueOptions" [ngValue]="n">{{n}}</option>
+                </select>
+                <select [(ngModel)]="expiringUnit" (change)="onUnitChange()" class="form-control d-inline-block ml-2" style="width: auto;">
+                    <option value="days">Days</option>
+                    <option value="months">Months</option>
+                </select>
+            </ng-container>
+        </div>
+
+        <h5 class="text-center mb-3">Showing {{filteredList.length}} member<span *ngIf="filteredList.length !== 1">s</span></h5>
+
+        <!-- Members Grid -->
+        <div class=" mb-3  table-bordered" >
+            <ag-grid-angular
+                style="height:600px; "
+                class="ag-theme-alpine table-light table-responsive agGridTable"
+                #agGrid
+                id="MembersGrid"
+                class="ag-theme-alpine"
+                (gridReady)="onGridReady($event)"
+                [rowData]="filteredList"
+                [columnDefs]="columnDefs"
+                [animateRows]="true"
+                 >
+            </ag-grid-angular>
+        </div>
+        <div class=" d-flex justify-content-end mb-5 " >
+            <button (click)="onBtnExport()" class=" btn-get-started ">Export CSV File</button>
+        </div>
+    </div>
+</div>
