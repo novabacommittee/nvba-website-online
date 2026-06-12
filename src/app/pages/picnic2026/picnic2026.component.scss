@@ -161,7 +161,7 @@ $ease: all .3s cubic-bezier(.4,0,.2,1);
   }
   &__menu-col { padding-top: 8px; }
   &__menu-label { display: inline-block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: $clr-primary; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid rgba($clr-primary,.2); }
-  &__buy-items { display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  &__buy-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
     @media (max-width: 640px) { grid-template-columns: 1fr; }
   }
 }
