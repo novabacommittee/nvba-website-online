@@ -25,6 +25,7 @@ import { Pastteam2020To21Component } from './pages/archive/pastteam2020-21/pastt
 import { MagazinesComponent } from './pages/archive/magazines/magazines.component';
 import { ReportsComponent } from './components/admin/reports/reports.component';
 import { AlldetailsComponent } from './components/admin/alldetails/alldetails.component';
+import { MembersComponent } from './components/admin/members/members.component';
 
 import { ConcertComponent } from './components/events/concert/concert.component';
 import { EventscheckoutComponent } from './components/events/eventscheckout/eventscheckout.component';
@@ -99,6 +100,7 @@ const routes: Routes = [
 
   { path: 'admin/reports', component:ReportsComponent, canActivate:[AuthGuard] },
   { path: 'admin/alldetails', component:AlldetailsComponent, canActivate:[AuthGuard] },
+  { path: 'admin/members', component:MembersComponent, canActivate:[AuthGuard] },
 
   // { path: 'concerttickets', component: ConcertComponent },
   // { path: 'concert', component: ConcertComponent },
