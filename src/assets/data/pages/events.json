@@ -420,7 +420,7 @@
     },
     {
       "eventId":33,
-      "eventType": "current",
+      "eventType": "past",
       "eventName": "Annual Picnic 2026",
       "eventDate": "June 13th 2026",
       "eventEndDate": "June 13th 2026",
