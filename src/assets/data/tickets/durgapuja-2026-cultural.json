@@ -1,0 +1,29 @@
+[
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only Ticket - Saturday & Sunday",
+    "description": "Cultural Program Only (Saturday & Sunday)",
+    "quantity": 0,
+    "price": 120,
+    "tax": 0,
+    "sku": "DP2026CULTURALSATSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only Ticket - Saturday",
+    "description": "Cultural Program Only (Saturday)",
+    "quantity": 0,
+    "price": 60,
+    "tax": 0,
+    "sku": "DP2026CULTURALSAT",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only Ticket - Sunday",
+    "description": "Cultural Program Only (Sunday)",
+    "quantity": 0,
+    "price": 60,
+    "tax": 0,
+    "sku": "DP2026CULTURALSUN",
+    "currency": "USD"
+  }
+]

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, UrlTree } from '@angular/router';
 import { AuthService } from "../../shared/services/auth.service";
 import { Observable } from 'rxjs';
 @Injectable({
@@ -13,9 +13,12 @@ export class AuthGuard implements CanActivate {
   ){ }
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean | UrlTree {
     if(this.authService.isLoggedIn !== true) {
-      this.router.navigate(['sign-in'])
+      // Block the guarded route AND redirect to sign-in. Returning a UrlTree
+      // cancels this navigation cleanly instead of allowing it (return true)
+      // and relying on a side-effect navigation to override it.
+      return this.router.parseUrl('sign-in');
     }
     return true;
   }

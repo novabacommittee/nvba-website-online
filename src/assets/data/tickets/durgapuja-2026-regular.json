@@ -1,0 +1,139 @@
+[
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - All 3 days(Non-Veg)",
+    "description": "Adult Non-Veg",
+    "quantity": 0,
+    "price": 130,
+    "tax": 0,
+    "sku": "DP2026REGADULTNONVEG3DAYS",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - All 3 days(Veg)",
+    "description": "Adult Veg",
+    "quantity": 0,
+    "price": 130,
+    "tax": 0,
+    "sku": "DP2026REGADULTVEG3DAYS",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - All 3 days(Non-Veg)",
+    "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg",
+    "quantity": 0,
+    "price": 75,
+    "tax": 0,
+    "sku": "DP2026REGCONCESSIONNONVEG3DAYS",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - All 3 days(Veg)",
+    "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg",
+    "quantity": 0,
+    "price": 75,
+    "tax": 0,
+    "sku": "DP2026REGCONCESSIONVEG3DAYS",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - All 3 days",
+    "description": "Kids [ Below 10 years ]",
+    "quantity": 0,
+    "price": 0,
+    "tax": 0,
+    "sku": "DP2026REGKIDS3DAYS",
+    "currency": "USD"
+  },
+
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Saturday Only(Non-Veg)",
+    "description": "Adult Non-Veg",
+    "quantity": 0,
+    "price": 100,
+    "tax": 0,
+    "sku": "DP2026REGADULTNONVEGSAT",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Saturday Only(Veg)",
+    "description": "Adult Veg",
+    "quantity": 0,
+    "price": 100,
+    "tax": 0,
+    "sku": "DP2026REGADULTVEGSAT",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Saturday Only(Non-Veg)",
+    "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg",
+    "quantity": 0,
+    "price": 60,
+    "tax": 0,
+    "sku": "DP2026REGCONCESSIONNONVEGSAT",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Saturday Only(Veg)",
+    "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg",
+    "quantity": 0,
+    "price": 60,
+    "tax": 0,
+    "sku": "DP2026REGCONCESSIONVEGSAT",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Saturday Only",
+    "description": "Kids [ Below 10 years ]",
+    "quantity": 0,
+    "price": 0,
+    "tax": 0,
+    "sku": "DP2026REGKIDSSAT",
+    "currency": "USD"
+  },
+
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Sunday Only(Non-Veg)",
+    "description": "Adult Non-Veg",
+    "quantity": 0,
+    "price": 100,
+    "tax": 0,
+    "sku": "DP2026REGADULTNONVEGSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Sunday Only(Veg)",
+    "description": "Adult Veg",
+    "quantity": 0,
+    "price": 100,
+    "tax": 0,
+    "sku": "DP2026REGADULTVEGSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Sunday Only(Non-Veg)",
+    "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Non-Veg",
+    "quantity": 0,
+    "price": 60,
+    "tax": 0,
+    "sku": "DP2026REGCONCESSIONNONVEGSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Sunday Only(Veg)",
+    "description": "Visiting Parents | Young Adults [ 11 to 18 years ] | Student with ID Veg",
+    "quantity": 0,
+    "price": 60,
+    "tax": 0,
+    "sku": "DP2026REGCONCESSIONVEGSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Ticket - Sunday Only",
+    "description": "Kids [ Below 10 years ]",
+    "quantity": 0,
+    "price": 0,
+    "tax": 0,
+    "sku": "DP2026REGKIDSSUN",
+    "currency": "USD"
+  }
+]

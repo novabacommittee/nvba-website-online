@@ -74,6 +74,7 @@ import { EventsguidelinesComponent } from './pages/aboutus/eventsguidelines/even
 import { Durgapujatickets2023Component } from './helper/tickets/durgapujatickets2023/durgapujatickets2023.component';
 import { Durgapujatickets2024Component } from './helper/tickets/durgapujatickets2024/durgapujatickets2024.component';
 import { Durgapujatickets2025Component } from './helper/tickets/durgapujatickets2025/durgapujatickets2025.component';
+import { Durgapujatickets2026Component } from './helper/tickets/durgapujatickets2026/durgapujatickets2026.component';
 import { CaresComponent } from './pages/cares/cares.component';
 
 import { ProposedconstitutionComponent } from './pages/archive/proposedconstitution/proposedconstitution.component';
@@ -156,6 +157,7 @@ import { CollapseModule } from "ngx-bootstrap/collapse";
     Durgapujatickets2023Component,
     Durgapujatickets2024Component,
     Durgapujatickets2025Component,
+    Durgapujatickets2026Component,
     CaresComponent,
 
     ProposedconstitutionComponent,
