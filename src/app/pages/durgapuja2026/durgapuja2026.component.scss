@@ -161,7 +161,7 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 22px 20px;
+  padding: 16px 20px;
   border-right: 1px solid rgba($pb-red, 0.10);
   transition: background 0.2s;
 
@@ -192,7 +192,7 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
 // ─── Section Header ───────────────────────────────────────────────────────────
 .dp2026-section-header {
   text-align: center;
-  margin-bottom: 44px;
+  margin-bottom: 16px;
 
   &__tag {
     display: inline-block;
@@ -213,7 +213,7 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
     font-weight: 800;
     color: $pb-dark;
-    margin: 0 0 16px;
+    margin: 0 0 10px;
 
     &--light { color: $pb-white; }
   }
@@ -231,7 +231,7 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
 
 // ─── Theme Song Section ──────────────────────────────────────────────────────
 .dp2026-theme-song {
-  padding: 72px 0;
+  padding: 32px 0;
   background: linear-gradient(160deg, $pb-dark 0%, $pb-dark-mid 100%);
 
   &__video {
@@ -259,7 +259,7 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
 
 // ─── Venue Section ────────────────────────────────────────────────────────────
 .dp2026-venue {
-  padding: 72px 0;
+  padding: 32px 0;
   background: $pb-cream;
 
   &__grid {
@@ -309,7 +309,12 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
 
   &__detail-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
 
-  &__actions { display: flex; flex-direction: column; }
+  &__actions {
+    display: flex;
+    flex-direction: column;
+
+    &--center { max-width: 640px; margin: 0 auto; }
+  }
 }
 
 // ─── Notice Box ───────────────────────────────────────────────────────────────
@@ -318,8 +323,8 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
   border: 1.5px solid rgba($pb-gold, 0.35);
   border-left: 4px solid $pb-gold;
   border-radius: $radius-md;
-  padding: 20px 20px 20px 16px;
-  margin-bottom: 20px;
+  padding: 16px 20px 16px 16px;
+  margin-bottom: 14px;
   display: flex;
   gap: 14px;
   align-items: flex-start;
@@ -337,13 +342,13 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
 
 // ─── Activities Section ───────────────────────────────────────────────────────
 .dp2026-activities {
-  padding: 72px 0;
+  padding: 32px 0;
   background: linear-gradient(135deg, $pb-dark-mid 0%, $pb-dark 100%);
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 16px;
     max-width: 920px;
     margin: 0 auto;
 
@@ -357,8 +362,8 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 10px;
-  padding: 28px 20px;
+  gap: 8px;
+  padding: 20px 20px;
   background: rgba($pb-white, 0.05);
   border: 1px solid rgba($pb-gold, 0.20);
   border-radius: $radius-lg;
@@ -398,7 +403,7 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
 
 // ─── Artists Section ──────────────────────────────────────────────────────────
 .dp2026-artists {
-  padding: 72px 0;
+  padding: 32px 0;
   background: linear-gradient(170deg, $pb-cream 0%, #f8ece0 50%, #f5e1cc 100%);
 
   &__lead {
@@ -406,8 +411,8 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
     font-size: 0.95rem;
     color: $pb-muted;
     max-width: 700px;
-    margin: 0 auto 36px;
-    line-height: 1.75;
+    margin: 0 auto 14px;
+    line-height: 1.55;
   }
 
   &__coming-soon {
@@ -426,13 +431,13 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
   &__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px;
+    gap: 24px;
     max-width: 900px;
     margin: 0 auto;
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
-      gap: 28px;
+      gap: 20px;
     }
   }
 }
@@ -486,7 +491,7 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
 
 // ─── Food Menu Section ────────────────────────────────────────────────────────
 .dp2026-food {
-  padding: 72px 0;
+  padding: 32px 0;
   background: linear-gradient(135deg, $pb-dark-mid 0%, $pb-dark 100%);
 
   &__coming-soon {
