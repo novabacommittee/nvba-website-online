@@ -34,7 +34,7 @@ export class AlldetailsComponent implements OnInit {
   newRegPurchase:boolean = false;
   newEOBPurchase:boolean = false;
   newPicnicPurchase:boolean = false;
-  selectedEvent:string = 'picnic2026';
+  selectedEvent:string = 'dp2026';
   sp2025TicketList:any;
   sp2026EBTicketList:any;
   sp2026RegTicketList:any;
@@ -163,6 +163,102 @@ export class AlldetailsComponent implements OnInit {
   PICNIC2026ADULT:number = 0;
   PICNIC2026KIDS:number = 0;
 
+  // ===== Durga Puja 2026 =====
+  private gridApiDP26EB:any;
+  private gridApiDP26REG:any;
+  private gridApiDP26CUL:any;
+
+  dp2026EBTicketList:any;
+  dp2026RegTicketList:any;
+  dp2026CulturalTicketList:any;
+
+  newDPEBPurchase:boolean = false;
+  newDPRegPurchase:boolean = false;
+  newDPCulturalPurchase:boolean = false;
+
+  // Running per-SKU totals for the summary table, keyed by SKU.
+  dp2026Counts: { [sku: string]: number } = {};
+
+  dp2026MemberCols = [
+    { field: 'firstname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
+    { field: 'lastname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
+    { field: 'email', sortable: true, resizable: true, filter: true },
+    { field: 'phone', sortable: true, resizable: true, filter: true },
+    { field: 'lastPurchase', headerName: 'Purchase Amount', sortable: true, resizable: true, valueGetter: `' $ ' + data.lastPurchase` },
+    { field: 'paymentTime', headerName: 'Purchase Date', sortable: true, resizable: true }
+  ];
+
+  dp2026EBSkuCols = [
+    { field: 'DP2026EBADULTNONVEG3DAYS', headerName: 'All 3 Days — Adult Non-Veg' },
+    { field: 'DP2026EBADULTVEG3DAYS', headerName: 'All 3 Days — Adult Veg' },
+    { field: 'DP2026EBCONCESSIONNONVEG3DAYS', headerName: 'All 3 Days — Concession Non-Veg' },
+    { field: 'DP2026EBCONCESSIONVEG3DAYS', headerName: 'All 3 Days — Concession Veg' },
+    { field: 'DP2026EBKIDS3DAYS', headerName: 'All 3 Days — Kids' },
+    { field: 'DP2026EBADULTNONVEGSAT', headerName: 'Saturday — Adult Non-Veg' },
+    { field: 'DP2026EBADULTVEGSAT', headerName: 'Saturday — Adult Veg' },
+    { field: 'DP2026EBCONCESSIONNONVEGSAT', headerName: 'Saturday — Concession Non-Veg' },
+    { field: 'DP2026EBCONCESSIONVEGSAT', headerName: 'Saturday — Concession Veg' },
+    { field: 'DP2026EBKIDSSAT', headerName: 'Saturday — Kids' },
+    { field: 'DP2026EBADULTNONVEGSUN', headerName: 'Sunday — Adult Non-Veg' },
+    { field: 'DP2026EBADULTVEGSUN', headerName: 'Sunday — Adult Veg' },
+    { field: 'DP2026EBCONCESSIONNONVEGSUN', headerName: 'Sunday — Concession Non-Veg' },
+    { field: 'DP2026EBCONCESSIONVEGSUN', headerName: 'Sunday — Concession Veg' },
+    { field: 'DP2026EBKIDSSUN', headerName: 'Sunday — Kids' }
+  ];
+
+  dp2026REGSkuCols = [
+    { field: 'DP2026REGADULTNONVEG3DAYS', headerName: 'All 3 Days — Adult Non-Veg' },
+    { field: 'DP2026REGADULTVEG3DAYS', headerName: 'All 3 Days — Adult Veg' },
+    { field: 'DP2026REGCONCESSIONNONVEG3DAYS', headerName: 'All 3 Days — Concession Non-Veg' },
+    { field: 'DP2026REGCONCESSIONVEG3DAYS', headerName: 'All 3 Days — Concession Veg' },
+    { field: 'DP2026REGKIDS3DAYS', headerName: 'All 3 Days — Kids' },
+    { field: 'DP2026REGADULTNONVEGSAT', headerName: 'Saturday — Adult Non-Veg' },
+    { field: 'DP2026REGADULTVEGSAT', headerName: 'Saturday — Adult Veg' },
+    { field: 'DP2026REGCONCESSIONNONVEGSAT', headerName: 'Saturday — Concession Non-Veg' },
+    { field: 'DP2026REGCONCESSIONVEGSAT', headerName: 'Saturday — Concession Veg' },
+    { field: 'DP2026REGKIDSSAT', headerName: 'Saturday — Kids' },
+    { field: 'DP2026REGADULTNONVEGSUN', headerName: 'Sunday — Adult Non-Veg' },
+    { field: 'DP2026REGADULTVEGSUN', headerName: 'Sunday — Adult Veg' },
+    { field: 'DP2026REGCONCESSIONNONVEGSUN', headerName: 'Sunday — Concession Non-Veg' },
+    { field: 'DP2026REGCONCESSIONVEGSUN', headerName: 'Sunday — Concession Veg' },
+    { field: 'DP2026REGKIDSSUN', headerName: 'Sunday — Kids' }
+  ];
+
+  dp2026CULSkuCols = [
+    { field: 'DP2026CULTURALSATSUN', headerName: 'Cultural — Saturday & Sunday' },
+    { field: 'DP2026CULTURALSAT', headerName: 'Cultural — Saturday' },
+    { field: 'DP2026CULTURALSUN', headerName: 'Cultural — Sunday' }
+  ];
+
+  dp2026ebcolumnDefsTickets: any[] = [];
+  dp2026regcolumnDefsTickets: any[] = [];
+  dp2026culcolumnDefsTickets: any[] = [];
+
+  // Summary rows combine Early Bird + Regular counts per category.
+  dp2026SummaryRows = [
+    { label: 'All 3 Days — Adult Non-Veg', eb: 'DP2026EBADULTNONVEG3DAYS', reg: 'DP2026REGADULTNONVEG3DAYS' },
+    { label: 'All 3 Days — Adult Veg', eb: 'DP2026EBADULTVEG3DAYS', reg: 'DP2026REGADULTVEG3DAYS' },
+    { label: 'All 3 Days — Concession Non-Veg', eb: 'DP2026EBCONCESSIONNONVEG3DAYS', reg: 'DP2026REGCONCESSIONNONVEG3DAYS' },
+    { label: 'All 3 Days — Concession Veg', eb: 'DP2026EBCONCESSIONVEG3DAYS', reg: 'DP2026REGCONCESSIONVEG3DAYS' },
+    { label: 'All 3 Days — Kids', eb: 'DP2026EBKIDS3DAYS', reg: 'DP2026REGKIDS3DAYS' },
+    { label: 'Saturday — Adult Non-Veg', eb: 'DP2026EBADULTNONVEGSAT', reg: 'DP2026REGADULTNONVEGSAT' },
+    { label: 'Saturday — Adult Veg', eb: 'DP2026EBADULTVEGSAT', reg: 'DP2026REGADULTVEGSAT' },
+    { label: 'Saturday — Concession Non-Veg', eb: 'DP2026EBCONCESSIONNONVEGSAT', reg: 'DP2026REGCONCESSIONNONVEGSAT' },
+    { label: 'Saturday — Concession Veg', eb: 'DP2026EBCONCESSIONVEGSAT', reg: 'DP2026REGCONCESSIONVEGSAT' },
+    { label: 'Saturday — Kids', eb: 'DP2026EBKIDSSAT', reg: 'DP2026REGKIDSSAT' },
+    { label: 'Sunday — Adult Non-Veg', eb: 'DP2026EBADULTNONVEGSUN', reg: 'DP2026REGADULTNONVEGSUN' },
+    { label: 'Sunday — Adult Veg', eb: 'DP2026EBADULTVEGSUN', reg: 'DP2026REGADULTVEGSUN' },
+    { label: 'Sunday — Concession Non-Veg', eb: 'DP2026EBCONCESSIONNONVEGSUN', reg: 'DP2026REGCONCESSIONNONVEGSUN' },
+    { label: 'Sunday — Concession Veg', eb: 'DP2026EBCONCESSIONVEGSUN', reg: 'DP2026REGCONCESSIONVEGSUN' },
+    { label: 'Sunday — Kids', eb: 'DP2026EBKIDSSUN', reg: 'DP2026REGKIDSSUN' }
+  ];
+
+  dp2026CulturalRows = [
+    { label: 'Cultural — Saturday & Sunday', sku: 'DP2026CULTURALSATSUN' },
+    { label: 'Cultural — Saturday', sku: 'DP2026CULTURALSAT' },
+    { label: 'Cultural — Sunday', sku: 'DP2026CULTURALSUN' }
+  ];
+
   paymentTime:any;
   customAdult:number =0;
   customKid:number =0;
@@ -215,6 +311,12 @@ export class AlldetailsComponent implements OnInit {
       //console.log(t);
       //this.checkKP2025Details();
     })
+
+    // Build Durga Puja 2026 grid column defs (member columns + one column per SKU)
+    const dpCol = (c:any) => ({ ...c, sortable: true, resizable: true });
+    this.dp2026ebcolumnDefsTickets = [...this.dp2026MemberCols, ...this.dp2026EBSkuCols.map(dpCol)];
+    this.dp2026regcolumnDefsTickets = [...this.dp2026MemberCols, ...this.dp2026REGSkuCols.map(dpCol)];
+    this.dp2026culcolumnDefsTickets = [...this.dp2026MemberCols, ...this.dp2026CULSkuCols.map(dpCol)];
   }
 
   ngOnInit(): void {
@@ -744,7 +846,11 @@ export class AlldetailsComponent implements OnInit {
     this.eob2026TicketList = [];
     this.picnic2026TicketList = [];
     this.dp2025TicketList = [];
-    
+    this.dp2026EBTicketList = [];
+    this.dp2026RegTicketList = [];
+    this.dp2026CulturalTicketList = [];
+    this.dp2026Counts = {};
+
     this.MM2022YY = 0;
     this.MM2023YY = 0;
     this.MM2024YY = 0;
@@ -911,6 +1017,28 @@ export class AlldetailsComponent implements OnInit {
                 this.ticketPrice += (e.price*e.quantity);
                 Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,SP2026KIDSREGULAR:e.quantity,sku:e.sku,tax:e.tax});
                 this.newRegPurchase = true;
+              }
+
+              //Durga Puja 2026 Early Bird Ticket Details
+              else if(e.sku.includes("DP2026EB")){
+                this.dp2026Counts[e.sku] = (this.dp2026Counts[e.sku] || 0) + e.quantity;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,[e.sku]:e.quantity,sku:e.sku,tax:e.tax});
+                this.newDPEBPurchase = true;
+              }
+              //Durga Puja 2026 Regular Ticket Details
+              else if(e.sku.includes("DP2026REG")){
+                this.dp2026Counts[e.sku] = (this.dp2026Counts[e.sku] || 0) + e.quantity;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,[e.sku]:e.quantity,sku:e.sku,tax:e.tax});
+                this.newDPRegPurchase = true;
+              }
+              //Durga Puja 2026 Cultural Only Ticket Details
+              else if(e.sku.includes("DP2026CULTURAL")){
+                this.dp2026Counts[e.sku] = (this.dp2026Counts[e.sku] || 0) + e.quantity;
+                this.ticketPrice += (e.price*e.quantity);
+                Object.assign(userPurchase,{ currency: e.currency, description:e.description, name:e.name,paymentTime:this.paymentTime,price:e.price,[e.sku]:e.quantity,sku:e.sku,tax:e.tax});
+                this.newDPCulturalPurchase = true;
               }
 
               //Echoes of Bengal 2026 Ticket Details
@@ -1285,7 +1413,7 @@ export class AlldetailsComponent implements OnInit {
             }); // End of Purchase Loop e
           }
           
-          if(this.newEBPurchase || this.newRegPurchase || this.newEOBPurchase || this.newPicnicPurchase || this.membershipRenew){
+          if(this.newEBPurchase || this.newRegPurchase || this.newEOBPurchase || this.newPicnicPurchase || this.newDPEBPurchase || this.newDPRegPurchase || this.newDPCulturalPurchase || this.membershipRenew){
                 this.user = {
                   index : m.id,
                   firstname : m.firstname,
@@ -1314,12 +1442,24 @@ export class AlldetailsComponent implements OnInit {
                 else if(this.newPicnicPurchase == true){
                   this.picnic2026TicketList.unshift(this.user);
                 }
+                else if(this.newDPEBPurchase == true){
+                  this.dp2026EBTicketList.unshift(this.user);
+                }
+                else if(this.newDPRegPurchase == true){
+                  this.dp2026RegTicketList.unshift(this.user);
+                }
+                else if(this.newDPCulturalPurchase == true){
+                  this.dp2026CulturalTicketList.unshift(this.user);
+                }
               //console.log(this.user);
 
               this.newEBPurchase = false;
               this.newRegPurchase = false;
               this.newEOBPurchase = false;
               this.newPicnicPurchase = false;
+              this.newDPEBPurchase = false;
+              this.newDPRegPurchase = false;
+              this.newDPCulturalPurchase = false;
               this.membershipRenew = false;
               this.ticketPrice = 0;
             }
@@ -1376,6 +1516,42 @@ export class AlldetailsComponent implements OnInit {
 
   onPicnicBtnExport() {
     this.gridApiPICNIC26.exportDataAsCsv();
+  }
+
+  // ===== Durga Puja 2026 =====
+  dpCount(sku:string):number {
+    return this.dp2026Counts[sku] || 0;
+  }
+
+  dp2026Total():number {
+    return Object.keys(this.dp2026Counts).reduce((sum, k) => sum + this.dp2026Counts[k], 0);
+  }
+
+  onDPEBTicketGridReady(params:any) {
+    this.gridApiDP26EB = params.api;
+    this.gridColumnApi = params.columnApi;
+  }
+
+  onDPEBBtnExport() {
+    this.gridApiDP26EB.exportDataAsCsv();
+  }
+
+  onDPRegTicketGridReady(params:any) {
+    this.gridApiDP26REG = params.api;
+    this.gridColumnApi = params.columnApi;
+  }
+
+  onDPRegBtnExport() {
+    this.gridApiDP26REG.exportDataAsCsv();
+  }
+
+  onDPCulturalTicketGridReady(params:any) {
+    this.gridApiDP26CUL = params.api;
+    this.gridColumnApi = params.columnApi;
+  }
+
+  onDPCulturalBtnExport() {
+    this.gridApiDP26CUL.exportDataAsCsv();
   }
 
 }

@@ -28,6 +28,7 @@
             <div class="text-center mt-4 mb-3">
                 <label for="eventSelect" class="mr-2" style="font-weight: bold; font-size: 1.1em;">Select Event:</label>
                 <select id="eventSelect" [(ngModel)]="selectedEvent" class="form-control d-inline-block" style="width: auto; min-width: 300px;">
+                    <option value="dp2026">Durga Puja 2026</option>
                     <option value="picnic2026">Annual Picnic 2026</option>
                     <option value="eob2026">Echoes of Bengal 2026</option>
                     <option value="sp2026">Saraswati Puja 2026</option>
@@ -178,6 +179,29 @@
                     </tr>
                   </table>
             </div>
+
+            <!-- ==================== Durga Puja 2026 ==================== -->
+            <div *ngIf="selectedEvent === 'dp2026'">
+                <h3 class="text-center mt-3 mb-2 ">Durga Puja 2026 Ticket Sell Summary (Oct 23rd – 25th, 2026)</h3>
+                <table class="table table-bordered ">
+                    <tr>
+                      <th class="d-flex justify-content-around">Ticket Details (Early Bird + Regular)</th>
+                      <th>Count</th>
+                    </tr>
+                    <tr *ngFor="let r of dp2026SummaryRows">
+                      <th>{{r.label}}</th>
+                      <td>{{dpCount(r.eb) + dpCount(r.reg)}}</td>
+                    </tr>
+                    <tr *ngFor="let r of dp2026CulturalRows">
+                      <th>{{r.label}}</th>
+                      <td>{{dpCount(r.sku)}}</td>
+                    </tr>
+                    <tr class=" bg-light ">
+                      <th>Total Head Count (all tickets)</th>
+                      <th>{{dp2026Total()}}</th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -268,6 +292,72 @@
         </div>
         <div class=" d-flex justify-content-end mb-5 " >
             <button (click)="onRegBtnExport()" class=" btn-get-started ">Export CSV File</button>
+        </div>
+    </div>
+
+    <!-- Durga Puja 2026 Early Bird Transactions -->
+    <div *ngIf="selectedEvent === 'dp2026'" class=" container mt-5 mb-3 " >
+        <h3 class="text-center " >Durga Puja 2026 Early Bird Ticket Sell Transactions</h3>
+        <div class=" mb-3  table-bordered" >
+            <ag-grid-angular
+                style="height:500px; "
+                class="ag-theme-alpine table-light table-responsive agGridTable"
+                #agGrid
+                id="DP2026EBGrid"
+                class="ag-theme-alpine"
+                (gridReady)="onDPEBTicketGridReady($event)"
+                [rowData]="dp2026EBTicketList"
+                [columnDefs]="dp2026ebcolumnDefsTickets"
+                [animateRows]="true"
+                 >
+            </ag-grid-angular>
+        </div>
+        <div class=" d-flex justify-content-end mb-5 " >
+            <button (click)="onDPEBBtnExport()" class=" btn-get-started ">Export CSV File</button>
+        </div>
+    </div>
+
+    <!-- Durga Puja 2026 Regular Transactions -->
+    <div *ngIf="selectedEvent === 'dp2026'" class=" container mt-5 mb-3 " >
+        <h3 class="text-center " >Durga Puja 2026 Regular Ticket Sell Transactions</h3>
+        <div class=" mb-3  table-bordered" >
+            <ag-grid-angular
+                style="height:500px; "
+                class="ag-theme-alpine table-light table-responsive agGridTable"
+                #agGrid
+                id="DP2026REGGrid"
+                class="ag-theme-alpine"
+                (gridReady)="onDPRegTicketGridReady($event)"
+                [rowData]="dp2026RegTicketList"
+                [columnDefs]="dp2026regcolumnDefsTickets"
+                [animateRows]="true"
+                 >
+            </ag-grid-angular>
+        </div>
+        <div class=" d-flex justify-content-end mb-5 " >
+            <button (click)="onDPRegBtnExport()" class=" btn-get-started ">Export CSV File</button>
+        </div>
+    </div>
+
+    <!-- Durga Puja 2026 Cultural Only Transactions -->
+    <div *ngIf="selectedEvent === 'dp2026'" class=" container mt-5 mb-3 " >
+        <h3 class="text-center " >Durga Puja 2026 Cultural Only Ticket Sell Transactions</h3>
+        <div class=" mb-3  table-bordered" >
+            <ag-grid-angular
+                style="height:500px; "
+                class="ag-theme-alpine table-light table-responsive agGridTable"
+                #agGrid
+                id="DP2026CULGrid"
+                class="ag-theme-alpine"
+                (gridReady)="onDPCulturalTicketGridReady($event)"
+                [rowData]="dp2026CulturalTicketList"
+                [columnDefs]="dp2026culcolumnDefsTickets"
+                [animateRows]="true"
+                 >
+            </ag-grid-angular>
+        </div>
+        <div class=" d-flex justify-content-end mb-5 " >
+            <button (click)="onDPCulturalBtnExport()" class=" btn-get-started ">Export CSV File</button>
         </div>
     </div>
 </div>
