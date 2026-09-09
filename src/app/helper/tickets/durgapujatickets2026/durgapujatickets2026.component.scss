@@ -28,11 +28,12 @@
   // ── Strikethrough / price ──
   .dp-strike {
     text-decoration: line-through;
-    color: #9aa0a6;
+    color: #c0392b;
     margin-right: 8px;
     font-size: 0.9em;
   }
   .dp-price { font-weight: 600; }
+  .dp-price--sale { color: #218838; }   // green: shown when there is an Early Bird strike-out
 
   // ── Total bar ──
   .dp-total {

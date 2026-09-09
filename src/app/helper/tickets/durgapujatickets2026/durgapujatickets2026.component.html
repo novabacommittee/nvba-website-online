@@ -40,7 +40,7 @@
                         <th>{{ item.description }}</th>
                         <td>
                             <span *ngIf="item.originalPrice && item.originalPrice > item.price" class="dp-strike">$ {{ item.originalPrice }}</span>
-                            <span class="dp-price">$ {{ item.price }}</span>
+                            <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">$ {{ item.price }}</span>
                         </td>
                         <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10"></td>
                         <td>$ {{ item.price * item.quantity }}</td>
