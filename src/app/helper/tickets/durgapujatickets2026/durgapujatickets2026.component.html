@@ -1,148 +1,150 @@
-<div *ngIf="!memberValidity" id="earlyBirdWithoutcul" class="col-md-12 pt-5">
-    <p class=" text-center" style="color: #848484;">
+<!-- ══════════════ NON-MEMBER / EXPIRED PROMPT ══════════════ -->
+<div *ngIf="!memberValidity" class="col-md-12 pt-5">
+    <p class="text-center" style="color: #848484;">
             Durga Puja 2026 tickets are exclusively available for members.<br />
             If you are not a member of NVBA, please register with annual membership fees.
             If you are already a member, kindly check your membership status and renew membership if it has expired,
             before booking your ticket for Durga Puja 2026.
     </p>
-    <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;" ><b>Annual Membership fees: $30 per family.</b> </div>
-    <div  class="redExpired" *ngIf="this.member?.expires"  > Membership Expired : {{ this.member?.expires }}</div>
+    <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;"><b>Annual Membership fees: $30 per family.</b></div>
+    <div class="redExpired" *ngIf="this.member?.expires"> Membership Expired : {{ this.member?.expires }}</div>
 
-    <button *ngIf="!this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
+    <button *ngIf="!this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2">
             NVBA Annual Membership</button>
-
-    <button *ngIf="this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2" >
+    <button *ngIf="this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2">
         Renew Annual Membership</button>
 </div>
 
-<div *ngIf="memberValidity" id="earlyBirdWithoutcul" class="table-responsive mb-5 tickets">
-    <p  class="red "  >
-        &ast; Tickets are required for food, local cultural program and concert with international artist for everyone, including kids (below 10 years).
+<!-- ══════════════ TICKETS (members only) ══════════════ -->
+<div *ngIf="memberValidity" class="table-responsive mb-5 tickets">
+    <p class="red">
+        &ast; Tickets are required for food, local cultural program and concert with international artist for everyone, including kids (0-5 years).
     </p>
 
-    <accordion [isAnimated]="true" [closeOthers]="false" >
-        <!-- All 3 Days of Durga Puja Ticket-->
-        <accordion-group style="overflow-wrap: break-word;" heading="All 3 Days (Friday October 23rd, Saturday October 24th and Sunday October 25th, 2026)"  >
-            <p class="ml-4 mt-3">
-                <span >Note:- Tickets include three days of food, local cultural programs and concert with international artist.</span>
-                <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
-            </p>
-            <table class="table table-bordered table-hover" >
-                <thead>
-                  <tr>
-                    <th scope="col"  >Items</th>
-                    <th scope="col">Cost</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Total</th>
-                  </tr>
-                </thead>
-                <tbody *ngFor="let item of dataObject; index as i" >
-                  <tr *ngIf="i < 5">
-                      <th>{{item.description}}</th>
-                      <td>$ {{item.price}}</td>
-                      <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
-                      <td  >$ {{item.price * item.quantity}}</td>
-                  </tr>
-                </tbody>
-            </table>
-        </accordion-group>
+    <!-- One block per released tier -->
+    <div *ngFor="let tier of tiers" class="dp-tier">
+        <h4 class="dp-tier__title">{{ tier.title }}</h4>
 
-        <!-- Any 1 Day of Durga Puja Ticket-->
-        <accordion-group heading="Single Day Tickets" >
-            <div id="singleDay" class="singleDay" >
-                <accordion>
-                    <!-- Durga Puja Ticket for Saturday-->
-                    <accordion-group heading="Saturday only (October 24th, 2026)">
-                        <p class="ml-4 mt-3 ">
-                         <span> Note:- Tickets include food, local cultural programs and concert with international artist.</span>
-                          <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
-                        </p>
-                        <table class="table table-bordered table-hover ">
-                            <thead>
-                                <tr>
-                                    <th scope="col" >Items</th>
-                                    <th scope="col">Cost</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Total</th>
-                                </tr>
-                            </thead>
-                            <tbody *ngFor="let item of dataObject; index as i" >
-                                <tr *ngIf="i > 4 && i < 10" >
-                                    <th>{{item.description}}</th>
-                                    <td>$ {{item.price}}</td>
-                                    <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
-                                    <td  >$ {{item.price * item.quantity}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </accordion-group>
-                    <!-- Durga Puja Ticket for Sunday-->
-                    <accordion-group heading="Sunday only (October 25th, 2026)">
-                        <p class="ml-4 mt-3 ">
-                            <span> Note:- Tickets include food, local cultural programs and concert with international artist.</span>
-                            <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
-                        </p>
-                        <table class="table table-bordered table-hover ">
-                            <thead>
-                                <tr>
-                                    <th scope="col" >Items</th>
-                                    <th scope="col">Cost</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Total</th>
-                                </tr>
-                                </thead>
-                                <tbody *ngFor="let item of dataObject; index as i" >
-                                    <tr *ngIf="i > 9 && i < 15" >
-                                    <th>{{item.description}}</th>
-                                    <td>$ {{item.price}}</td>
-                                    <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
-                                    <td  >$ {{item.price * item.quantity}}</td>
-                                    </tr>
-                            </tbody>
-                        </table>
-                    </accordion-group>
-                </accordion>
-            </div>
-        </accordion-group>
-
-        <!-- Cultural Only Tickets (released separately; not part of Early Bird / Regular) -->
-        <accordion-group *ngIf="culturalReleased" heading="Cultural Program Only" >
-            <p class="ml-4 mt-3 ">
-                <span> Note:- Cultural Only tickets cover the local cultural program and concert with international artist. Food is NOT included.</span>
-                <button class="btn-small rounded btn-warning float-right mr-2 mb-2" (click)="clearCart()" >Clear Order</button>
-            </p>
-            <table class="table table-bordered table-hover ">
+        <div *ngFor="let group of groups(tier.items)" class="dp-group">
+            <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" >Items</th>
+                        <th scope="col">{{ group }}</th>
                         <th scope="col">Cost</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Total</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let item of culturalObject" >
-                    <tr>
-                        <th>{{item.description}}</th>
-                        <td>$ {{item.price}}</td>
-                        <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10" ></td>
-                        <td  >$ {{item.price * item.quantity}}</td>
+                <tbody>
+                    <tr *ngFor="let item of itemsInGroup(tier.items, group)">
+                        <th>{{ item.description }}</th>
+                        <td>
+                            <span *ngIf="item.originalPrice && item.originalPrice > item.price" class="dp-strike">$ {{ item.originalPrice }}</span>
+                            <span class="dp-price">$ {{ item.price }}</span>
+                        </td>
+                        <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10"></td>
+                        <td>$ {{ item.price * item.quantity }}</td>
                     </tr>
                 </tbody>
             </table>
-        </accordion-group>
-    </accordion>
+        </div>
+    </div>
 
-    <table class="table table-bordered table-hover  ">
-        <thead>
-            <tr>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col" colspan="3" ><div class="d-flex justify-content-end">Total</div></th>
-            <th  scope="col">$ {{totalCost}}</th>
-            </tr>
-        </thead>
-    </table>
+    <!-- ── Total ── -->
+    <div class="dp-total">
+        <span class="dp-total__label">Total</span>
+        <span class="dp-total__amount">$ {{ totalCost }}</span>
+    </div>
+
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn-small rounded btn-warning" (click)="clearCart()">Clear Order</button>
+    </div>
+
+    <!-- ── Mandatory agreements ── -->
+    <div class="dp-agree">
+        <label class="dp-agree__item">
+            <input type="checkbox" [(ngModel)]="agreeTerms">
+            <span>
+                I have read, understood, and agree to the
+                <a href="javascript:void(0)" (click)="showTerms = !showTerms">Event Participation Terms &amp; Conditions</a>
+                for myself and any other attendees included in my ticket purchase.
+            </span>
+        </label>
+
+        <div class="dp-legal" *ngIf="showTerms">
+            <h6>Event Participation Terms &amp; Conditions</h6>
+            <p>By purchasing tickets for myself and/or others, and by attending or participating in this event, I acknowledge and agree to the following terms &mdash;</p>
+            <ol>
+                <li>I agree to comply with all applicable event rules, school and facility policies, safety requirements, and reasonable instructions communicated or posted before or during the event by NVBA, its Executive Committee, authorized volunteers, school personnel, or facility representatives.</li>
+                <li>I understand that I am responsible for my own conduct and for the conduct and supervision of any minor children attending with me.</li>
+                <li>I will not engage in disruptive, unsafe, abusive, threatening, or inappropriate behavior. The NVBA Executive Committee reserves the right to ask any attendee who violates event or facility rules to leave the premises.</li>
+                <li>I will respect the school property, equipment, classrooms, common areas, and surrounding premises. I understand that I may be responsible for damage caused by me or members of my family.</li>
+                <li>I agree to remain within designated event areas and not enter restricted rooms, classrooms, offices, or other areas not authorized for event use.</li>
+                <li>I understand and voluntarily accept that participation in event activities may involve inherent risks, including slips, falls, physical activity, food-related concerns, or other unforeseen incidents.</li>
+                <li>I understand that NVBA may not be able to accommodate food allergies or dietary restrictions. Attendees are responsible for exercising appropriate caution and determining whether food served is suitable for themselves and/or their family.</li>
+                <li>I agree to promptly inform a member of the NVBA Executive Committee or authorized volunteer of any unsafe condition, injury, accident, or emergency.</li>
+                <li>I understand that NVBA, its Executive Committee, authorized volunteers and the school/facility are not responsible for lost, stolen, or damaged personal belongings.</li>
+                <li>I understand that photographs and videos may be taken during the event for event documentation, organizational communications, and other NVBA-related purposes. Where applicable, I will inform the organizers if I have concerns regarding photography or video of myself or my minor child.</li>
+            </ol>
+        </div>
+
+        <label class="dp-agree__item">
+            <input type="checkbox" [(ngModel)]="agreeRefund">
+            <span>
+                I acknowledge that I have read, understood, and agree to the
+                <a href="javascript:void(0)" (click)="showRefund = !showRefund">Event Refund Policy</a>.
+            </span>
+        </label>
+
+        <div class="dp-legal" *ngIf="showRefund">
+            <h6>Event Refund Policy</h6>
+            <ol>
+                <li>
+                    <strong>Event Cancellation by NVBA</strong>
+                    <ul>
+                        <li>If an event is cancelled by NVBA, ticket holders will be entitled to 100% refund of the ticket price paid.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Event Rescheduling by NVBA</strong>
+                    <ul>
+                        <li>Existing tickets will remain valid for the rescheduled date.</li>
+                        <li>Ticket holders who are unable to attend the rescheduled date may request a 100% refund of the ticket price paid.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Ticket Holder-Initiated Cancellation</strong> &mdash; if a ticket holder voluntarily cancels their attendance and the event proceeds as scheduled:
+                    <ul>
+                        <li>Refund requests must be submitted at least 14 calendar days before the scheduled event date to be eligible for a refund, less any applicable processing fees.</li>
+                        <li>Cancellations submitted less than 14 calendar days before the scheduled event date are non-refundable.</li>
+                        <li>No refunds will be provided for no-shows.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Pricing Errors or Administrative Issues</strong>
+                    <ul>
+                        <li>If a ticket holder is incorrectly charged because of a membership-status error, website or payment-system issue, duplicate charge, or other administrative error, NVBA will refund the incorrectly charged amount.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Weather-Related Cancellations or Rescheduling</strong>
+                    <ul>
+                        <li>If NVBA cancels or reschedules an event because of weather, facility closure, safety concerns, or similar circumstances, the refund provisions under Sections 1 or 2 above will apply, as applicable.</li>
+                    </ul>
+                </li>
+                <li>
+                    All refund requests must be submitted in writing to <a href="mailto:treasurer@novaba.org">treasurer@novaba.org</a>.
+                    Approved refunds will generally be processed within 4-6 weeks and issued to the original payment method, where reasonably practicable.
+                </li>
+            </ol>
+        </div>
+
+        <p *ngIf="hasItems && (!agreeTerms || !agreeRefund)" class="dp-agree__hint">
+            Please accept both agreements above to continue.
+        </p>
+    </div>
+
     <div class="float-right mb-3 mr-3">
-        <button [disabled]="addtoCartBtn === false" class="btn btn-warning" (click)="addToCartobj()" >Add to Cart</button>
+        <button [disabled]="!canCheckout" class="btn btn-warning" (click)="addToCartobj()">Add to Cart</button>
     </div>
 </div>

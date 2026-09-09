@@ -15,3 +15,74 @@
       -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
       box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
   }
+
+  // ── Tier + group headings ──
+  .dp-tier { margin-bottom: 8px; }
+  .dp-tier__title {
+    font-weight: 700;
+    color: #c0392b;
+    margin: 18px 0 10px;
+  }
+  .dp-group { margin-bottom: 4px; }
+
+  // ── Strikethrough / price ──
+  .dp-strike {
+    text-decoration: line-through;
+    color: #9aa0a6;
+    margin-right: 8px;
+    font-size: 0.9em;
+  }
+  .dp-price { font-weight: 600; }
+
+  // ── Total bar ──
+  .dp-total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 24px;
+    border-top: 2px solid rgba(0,0,0,0.15);
+    padding: 12px 6px 10px;
+    margin-top: 4px;
+    font-size: 1.05rem;
+
+    &__label { font-weight: 700; color: #333; }
+    &__amount { font-weight: 700; color: #c0392b; min-width: 90px; text-align: right; }
+  }
+
+  // ── Mandatory agreements ──
+  .dp-agree {
+    margin: 8px 0 16px;
+
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      input[type="checkbox"] { margin-top: 4px; flex-shrink: 0; transform: scale(1.15); }
+      a { color: #c0392b; text-decoration: underline; cursor: pointer; }
+    }
+
+    &__hint { color: #c0392b; font-size: 0.85rem; margin: 4px 0 0; }
+  }
+
+  .dp-legal {
+    max-height: 260px;
+    overflow-y: auto;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-left: 4px solid #ff8d00;
+    border-radius: 6px;
+    background: #fffdf8;
+    padding: 14px 18px;
+    margin: 0 0 14px;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #444;
+
+    h6 { font-weight: 700; color: #333; margin-bottom: 8px; }
+    ol, ul { padding-left: 20px; margin-bottom: 0; }
+    li { margin-bottom: 6px; }
+  }

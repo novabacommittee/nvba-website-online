@@ -1,29 +1,124 @@
 [
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only Ticket - Saturday & Sunday",
-    "description": "Cultural Program Only (Saturday & Sunday)",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Adult/Visiting Parents (Saturday & Sunday)",
+    "description": "Adult / Visiting Parents",
+    "group": "Saturday & Sunday",
     "quantity": 0,
     "price": 120,
     "tax": 0,
-    "sku": "DP2026CULTURALSATSUN",
+    "sku": "DP2026CULTURALADULTVPSATSUN",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only Ticket - Saturday",
-    "description": "Cultural Program Only (Saturday)",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Kids/Youth (6-18yrs) (Saturday & Sunday)",
+    "description": "Kids/Youth (6-18yrs)",
+    "group": "Saturday & Sunday",
     "quantity": 0,
-    "price": 60,
+    "price": 100,
     "tax": 0,
-    "sku": "DP2026CULTURALSAT",
+    "sku": "DP2026CULTURALYOUTHSATSUN",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only Ticket - Sunday",
-    "description": "Cultural Program Only (Sunday)",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Students (Saturday & Sunday)",
+    "description": "Students (19-24 yrs, with valid Student ID)",
+    "group": "Saturday & Sunday",
     "quantity": 0,
-    "price": 60,
+    "price": 100,
     "tax": 0,
-    "sku": "DP2026CULTURALSUN",
+    "sku": "DP2026CULTURALSTUDENTSATSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only - Kids (Saturday & Sunday)",
+    "description": "Kids (0-5 yrs)",
+    "group": "Saturday & Sunday",
+    "quantity": 0,
+    "price": 0,
+    "tax": 0,
+    "sku": "DP2026CULTURALKIDSSATSUN",
+    "currency": "USD"
+  },
+
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only - Adult/Visiting Parents (Saturday Only)",
+    "description": "Adult / Visiting Parents",
+    "group": "Saturday Only",
+    "quantity": 0,
+    "price": 65,
+    "tax": 0,
+    "sku": "DP2026CULTURALADULTVPSAT",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only - Kids/Youth (6-18yrs) (Saturday Only)",
+    "description": "Kids/Youth (6-18yrs)",
+    "group": "Saturday Only",
+    "quantity": 0,
+    "price": 55,
+    "tax": 0,
+    "sku": "DP2026CULTURALYOUTHSAT",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only - Students (Saturday Only)",
+    "description": "Students (19-24 yrs, with valid Student ID)",
+    "group": "Saturday Only",
+    "quantity": 0,
+    "price": 55,
+    "tax": 0,
+    "sku": "DP2026CULTURALSTUDENTSAT",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only - Kids (Saturday Only)",
+    "description": "Kids (0-5 yrs)",
+    "group": "Saturday Only",
+    "quantity": 0,
+    "price": 0,
+    "tax": 0,
+    "sku": "DP2026CULTURALKIDSSAT",
+    "currency": "USD"
+  },
+
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only - Adult/Visiting Parents (Sunday Only)",
+    "description": "Adult / Visiting Parents",
+    "group": "Sunday Only",
+    "quantity": 0,
+    "price": 65,
+    "tax": 0,
+    "sku": "DP2026CULTURALADULTVPSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only - Kids/Youth (6-18yrs) (Sunday Only)",
+    "description": "Kids/Youth (6-18yrs)",
+    "group": "Sunday Only",
+    "quantity": 0,
+    "price": 55,
+    "tax": 0,
+    "sku": "DP2026CULTURALYOUTHSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only - Students (Sunday Only)",
+    "description": "Students (19-24 yrs, with valid Student ID)",
+    "group": "Sunday Only",
+    "quantity": 0,
+    "price": 55,
+    "tax": 0,
+    "sku": "DP2026CULTURALSTUDENTSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Cultural Only - Kids (Sunday Only)",
+    "description": "Kids (0-5 yrs)",
+    "group": "Sunday Only",
+    "quantity": 0,
+    "price": 0,
+    "tax": 0,
+    "sku": "DP2026CULTURALKIDSSUN",
     "currency": "USD"
   }
 ]
