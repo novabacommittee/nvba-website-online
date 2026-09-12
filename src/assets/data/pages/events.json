@@ -432,6 +432,20 @@
       "mapUrl": "https://maps.app.goo.gl/jkeD9GE97dfmGuQY7"
     },
     {
+      "eventId":35,
+      "eventType": "current",
+      "eventName": "Nepal Disaster Relief - Aajo Ardhangini",
+      "eventDate": "September 26th, 2026",
+      "eventEndDate": "September 26th, 2026",
+      "eventImage": "./../../../assets/images/gallery/external/2026/Aajo%20Ardhangini%20-%20Nepal%20Disaster%20Help.jpg",
+      "timing": "2:00 PM",
+      "venue": "J. Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
+      "pageLink": "/",
+      "flyer": "/assets/images/gallery/external/2026/Aajo%20Ardhangini%20-%20Nepal%20Disaster%20Help.jpg",
+      "description": "A cultural fundraising event, Aajo Ardhangini, in support of Nepal Disaster Relief. Please join us to stand with those affected.",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=J.+Michael+Lunsford+Middle+School%2C+26020+Ticonderoga+Rd%2C+Chantilly%2C+VA+20152"
+    },
+    {
       "eventId":34,
       "eventType": "current",
       "eventName": "Sarbojonin Durgotsav 2026",

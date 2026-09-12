@@ -11,12 +11,16 @@
     <div class="ev-grid">
       <ng-container *ngFor="let event of commingevents">
         <div class="ev-card" *ngIf="event.eventType=='current'">
-          <a href="{{event.pageLink}}" class="ev-card__image" style="background-image: url({{event.eventImage}});">
+          <a *ngIf="event.flyer" (click)="openFlyer(event.flyer)" class="ev-card__image ev-card__image--clickable" style="background-image: url({{event.eventImage}});">
+            <span class="ev-card__date-badge">{{ event.eventDate }}</span>
+          </a>
+          <a *ngIf="!event.flyer" href="{{event.pageLink}}" class="ev-card__image" style="background-image: url({{event.eventImage}});">
             <span class="ev-card__date-badge">{{ event.eventDate }}</span>
           </a>
           <div class="ev-card__body">
             <h3 class="ev-card__title">
-              <a href="{{event.pageLink}}">{{ event.eventName }}</a>
+              <a *ngIf="event.flyer" (click)="openFlyer(event.flyer)" class="ev-card__title-link">{{ event.eventName }}</a>
+              <a *ngIf="!event.flyer" href="{{event.pageLink}}">{{ event.eventName }}</a>
             </h3>
             <div class="ev-card__meta">
               <span class="ev-card__meta-row">
@@ -28,7 +32,10 @@
                 {{ event.venue }}
               </a>
             </div>
-            <a *ngIf="event.pageLink != '/'" href="{{event.pageLink}}" class="ev-card__cta">
+            <a *ngIf="event.flyer" (click)="openFlyer(event.flyer)" class="ev-card__cta ev-card__cta--clickable">
+              View Details &rarr;
+            </a>
+            <a *ngIf="!event.flyer && event.pageLink != '/'" href="{{event.pageLink}}" class="ev-card__cta">
               View Details &rarr;
             </a>
           </div>
@@ -102,3 +109,10 @@
     </div>
   </div>
 </section>
+
+
+<!-- ═══════════════════ FLYER LIGHTBOX ═══════════════════ -->
+<div class="ev-flyer-modal" *ngIf="flyerImage" (click)="closeFlyer()">
+  <span class="ev-flyer-modal__close" (click)="closeFlyer()">&times;</span>
+  <img [src]="flyerImage" class="ev-flyer-modal__img" alt="Event flyer" (click)="$event.stopPropagation()">
+</div>

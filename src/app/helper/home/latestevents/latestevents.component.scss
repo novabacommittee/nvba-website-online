@@ -314,3 +314,36 @@ $radius-full:   100px;
     transform: scale(1.06);
   }
 }
+
+/* ═══ Flyer lightbox ═══ */
+.ev-flyer-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+.ev-flyer-modal__img {
+  max-width: 95vw;
+  max-height: 92vh;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  border-radius: 6px;
+  cursor: default;
+}
+.ev-flyer-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  color: #fff;
+  font-size: 2.4rem;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 300;
+}
+.ev-card__image--clickable,
+.ev-card__title-link,
+.ev-card__cta--clickable { cursor: pointer; }

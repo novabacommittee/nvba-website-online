@@ -27,6 +27,7 @@ export class LatesteventsComponent implements OnInit {
   pastevents: any =[];
   commingevents: any =[];
   pastEventsExpanded: boolean = false; // Set to false to make it collapsed by default
+  flyerImage: string | null = null; // full-size event flyer shown in a lightbox
   selectedYear: string = ''; // Track the selected year
   pastEventsByYear: { [key: string]: any[] } = {}; // Group events by year
   expandedYears: { [key: string]: boolean } = {}; // Object to track which years are expanded
@@ -104,5 +105,13 @@ export class LatesteventsComponent implements OnInit {
   
   getYearKeys(): string[] {
     return Object.keys(this.pastEventsByYear).sort((a, b) => parseInt(b) - parseInt(a));
+  }
+
+  openFlyer(img: string): void {
+    this.flyerImage = img;
+  }
+
+  closeFlyer(): void {
+    this.flyerImage = null;
   }
 }
