@@ -27,7 +27,8 @@ export class CartService {
 
   clearCart() {
     this.items = [];
-    //console.log(" Clean Cart "+this.items);
+    // Emit the reset so subscribers (ticket pages, cart badge, etc.) update.
+    this.cartvalue.next(this.items);
     return this.items;
   }
 
