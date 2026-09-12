@@ -42,7 +42,7 @@
                             <span *ngIf="item.originalPrice && item.originalPrice > item.price" class="dp-strike">$ {{ item.originalPrice }}</span>
                             <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">$ {{ item.price }}</span>
                         </td>
-                        <td><input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" style="width:50px" min="0" max="10"></td>
+                        <td><input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" style="width:50px" min="0"></td>
                         <td>$ {{ item.price * item.quantity }}</td>
                     </tr>
                 </tbody>

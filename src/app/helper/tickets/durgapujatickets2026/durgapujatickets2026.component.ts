@@ -201,7 +201,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   toWhole(v: any): number {
     const n = Math.floor(Number(v));
     if (isNaN(n) || n < 0) { return 0; }
-    return n > 10 ? 10 : n;
+    return n;
   }
 
   blockNonInteger(e: KeyboardEvent): void {
