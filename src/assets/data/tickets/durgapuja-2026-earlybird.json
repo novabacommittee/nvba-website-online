@@ -11,14 +11,25 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Early Bird - Kids/Youth (6-18yrs) (All 3 Days)",
-    "description": "Kids/Youth (6-18yrs)",
+    "name": "NVBA Durga Puja 2026 Early Bird - Youth (6-18yrs) (All 3 Days)",
+    "description": "Youth (6-18yrs)",
     "group": "All 3 Days",
     "quantity": 0,
     "price": 70,
     "originalPrice": 85,
     "tax": 0,
     "sku": "DP2026EBYOUTH3DAYS",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Early Bird - Youth (6-18yrs) - With Kids (0-5 yrs) Food Option (All 3 Days)",
+    "description": "Youth (6-18yrs) - With Kids (0-5 yrs) Food Option",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 70,
+    "originalPrice": 85,
+    "tax": 0,
+    "sku": "DP2026EBYOUTHWKIDS3DAYS",
     "currency": "USD"
   },
   {

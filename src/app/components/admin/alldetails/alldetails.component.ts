@@ -193,52 +193,62 @@ export class AlldetailsComponent implements OnInit {
 
   dp2026EBSkuCols = [
     { field: 'DP2026EBADULTVP3DAYS', headerName: 'All 3 Days — Adult/Visiting Parents' },
-    { field: 'DP2026EBYOUTH3DAYS', headerName: 'All 3 Days — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026EBYOUTH3DAYS', headerName: 'All 3 Days — Youth (6-18yrs)' },
+    { field: 'DP2026EBYOUTHWKIDS3DAYS', headerName: 'All 3 Days — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026EBSTUDENT3DAYS', headerName: 'All 3 Days — Students' },
     { field: 'DP2026EBKIDS3DAYS', headerName: 'All 3 Days — Kids (0-5)' }
   ];
 
   dp2026REGSkuCols = [
     { field: 'DP2026REGADULTVP3DAYS', headerName: 'All 3 Days — Adult/Visiting Parents' },
-    { field: 'DP2026REGYOUTH3DAYS', headerName: 'All 3 Days — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026REGYOUTH3DAYS', headerName: 'All 3 Days — Youth (6-18yrs)' },
+    { field: 'DP2026REGYOUTHWKIDS3DAYS', headerName: 'All 3 Days — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026REGSTUDENT3DAYS', headerName: 'All 3 Days — Students' },
     { field: 'DP2026REGKIDS3DAYS', headerName: 'All 3 Days — Kids (0-5)' },
     { field: 'DP2026REGADULTVPSAT', headerName: 'Saturday — Adult/Visiting Parents' },
-    { field: 'DP2026REGYOUTHSAT', headerName: 'Saturday — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026REGYOUTHSAT', headerName: 'Saturday — Youth (6-18yrs)' },
+    { field: 'DP2026REGYOUTHWKIDSSAT', headerName: 'Saturday — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026REGSTUDENTSAT', headerName: 'Saturday — Students' },
     { field: 'DP2026REGKIDSSAT', headerName: 'Saturday — Kids (0-5)' },
     { field: 'DP2026REGADULTVPSUN', headerName: 'Sunday — Adult/Visiting Parents' },
-    { field: 'DP2026REGYOUTHSUN', headerName: 'Sunday — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026REGYOUTHSUN', headerName: 'Sunday — Youth (6-18yrs)' },
+    { field: 'DP2026REGYOUTHWKIDSSUN', headerName: 'Sunday — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026REGSTUDENTSUN', headerName: 'Sunday — Students' },
     { field: 'DP2026REGKIDSSUN', headerName: 'Sunday — Kids (0-5)' }
   ];
 
   dp2026NOCULSkuCols = [
     { field: 'DP2026NOCULADULTVP3DAYS', headerName: 'All 3 Days — Adult/Visiting Parents' },
-    { field: 'DP2026NOCULYOUTH3DAYS', headerName: 'All 3 Days — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026NOCULYOUTH3DAYS', headerName: 'All 3 Days — Youth (6-18yrs)' },
+    { field: 'DP2026NOCULYOUTHWKIDS3DAYS', headerName: 'All 3 Days — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026NOCULSTUDENT3DAYS', headerName: 'All 3 Days — Students' },
     { field: 'DP2026NOCULKIDS3DAYS', headerName: 'All 3 Days — Kids (0-5)' },
     { field: 'DP2026NOCULADULTVPSAT', headerName: 'Saturday — Adult/Visiting Parents' },
-    { field: 'DP2026NOCULYOUTHSAT', headerName: 'Saturday — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026NOCULYOUTHSAT', headerName: 'Saturday — Youth (6-18yrs)' },
+    { field: 'DP2026NOCULYOUTHWKIDSSAT', headerName: 'Saturday — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026NOCULSTUDENTSAT', headerName: 'Saturday — Students' },
     { field: 'DP2026NOCULKIDSSAT', headerName: 'Saturday — Kids (0-5)' },
     { field: 'DP2026NOCULADULTVPSUN', headerName: 'Sunday — Adult/Visiting Parents' },
-    { field: 'DP2026NOCULYOUTHSUN', headerName: 'Sunday — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026NOCULYOUTHSUN', headerName: 'Sunday — Youth (6-18yrs)' },
+    { field: 'DP2026NOCULYOUTHWKIDSSUN', headerName: 'Sunday — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026NOCULSTUDENTSUN', headerName: 'Sunday — Students' },
     { field: 'DP2026NOCULKIDSSUN', headerName: 'Sunday — Kids (0-5)' }
   ];
 
   dp2026CULSkuCols = [
     { field: 'DP2026CULTURALADULTVPSATSUN', headerName: 'Sat & Sun — Adult/Visiting Parents' },
-    { field: 'DP2026CULTURALYOUTHSATSUN', headerName: 'Sat & Sun — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026CULTURALYOUTHSATSUN', headerName: 'Sat & Sun — Youth (6-18yrs)' },
+    { field: 'DP2026CULTURALYOUTHWKIDSSATSUN', headerName: 'Sat & Sun — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026CULTURALSTUDENTSATSUN', headerName: 'Sat & Sun — Students' },
     { field: 'DP2026CULTURALKIDSSATSUN', headerName: 'Sat & Sun — Kids (0-5)' },
     { field: 'DP2026CULTURALADULTVPSAT', headerName: 'Saturday — Adult/Visiting Parents' },
-    { field: 'DP2026CULTURALYOUTHSAT', headerName: 'Saturday — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026CULTURALYOUTHSAT', headerName: 'Saturday — Youth (6-18yrs)' },
+    { field: 'DP2026CULTURALYOUTHWKIDSSAT', headerName: 'Saturday — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026CULTURALSTUDENTSAT', headerName: 'Saturday — Students' },
     { field: 'DP2026CULTURALKIDSSAT', headerName: 'Saturday — Kids (0-5)' },
     { field: 'DP2026CULTURALADULTVPSUN', headerName: 'Sunday — Adult/Visiting Parents' },
-    { field: 'DP2026CULTURALYOUTHSUN', headerName: 'Sunday — Kids/Youth (6-18yrs)' },
+    { field: 'DP2026CULTURALYOUTHSUN', headerName: 'Sunday — Youth (6-18yrs)' },
+    { field: 'DP2026CULTURALYOUTHWKIDSSUN', headerName: 'Sunday — Youth (6-18yrs) + Kids Food' },
     { field: 'DP2026CULTURALSTUDENTSUN', headerName: 'Sunday — Students' },
     { field: 'DP2026CULTURALKIDSSUN', headerName: 'Sunday — Kids (0-5)' }
   ];
@@ -251,45 +261,54 @@ export class AlldetailsComponent implements OnInit {
   // Full-event summary combines Early Bird + Regular (Early Bird only sells the 3-day package).
   dp2026FullRows = [
     { label: 'All 3 Days — Adult/Visiting Parents', skus: ['DP2026EBADULTVP3DAYS', 'DP2026REGADULTVP3DAYS'] },
-    { label: 'All 3 Days — Kids/Youth (6-18yrs)', skus: ['DP2026EBYOUTH3DAYS', 'DP2026REGYOUTH3DAYS'] },
+    { label: 'All 3 Days — Youth (6-18yrs)', skus: ['DP2026EBYOUTH3DAYS', 'DP2026REGYOUTH3DAYS'] },
+    { label: 'All 3 Days — Youth (6-18yrs) + Kids Food', skus: ['DP2026EBYOUTHWKIDS3DAYS', 'DP2026REGYOUTHWKIDS3DAYS'] },
     { label: 'All 3 Days — Students', skus: ['DP2026EBSTUDENT3DAYS', 'DP2026REGSTUDENT3DAYS'] },
     { label: 'All 3 Days — Kids (0-5)', skus: ['DP2026EBKIDS3DAYS', 'DP2026REGKIDS3DAYS'] },
     { label: 'Saturday — Adult/Visiting Parents', skus: ['DP2026REGADULTVPSAT'] },
-    { label: 'Saturday — Kids/Youth (6-18yrs)', skus: ['DP2026REGYOUTHSAT'] },
+    { label: 'Saturday — Youth (6-18yrs)', skus: ['DP2026REGYOUTHSAT'] },
+    { label: 'Saturday — Youth (6-18yrs) + Kids Food', skus: ['DP2026REGYOUTHWKIDSSAT'] },
     { label: 'Saturday — Students', skus: ['DP2026REGSTUDENTSAT'] },
     { label: 'Saturday — Kids (0-5)', skus: ['DP2026REGKIDSSAT'] },
     { label: 'Sunday — Adult/Visiting Parents', skus: ['DP2026REGADULTVPSUN'] },
-    { label: 'Sunday — Kids/Youth (6-18yrs)', skus: ['DP2026REGYOUTHSUN'] },
+    { label: 'Sunday — Youth (6-18yrs)', skus: ['DP2026REGYOUTHSUN'] },
+    { label: 'Sunday — Youth (6-18yrs) + Kids Food', skus: ['DP2026REGYOUTHWKIDSSUN'] },
     { label: 'Sunday — Students', skus: ['DP2026REGSTUDENTSUN'] },
     { label: 'Sunday — Kids (0-5)', skus: ['DP2026REGKIDSSUN'] }
   ];
 
   dp2026NoCulRows = [
     { label: 'All 3 Days — Adult/Visiting Parents', skus: ['DP2026NOCULADULTVP3DAYS'] },
-    { label: 'All 3 Days — Kids/Youth (6-18yrs)', skus: ['DP2026NOCULYOUTH3DAYS'] },
+    { label: 'All 3 Days — Youth (6-18yrs)', skus: ['DP2026NOCULYOUTH3DAYS'] },
+    { label: 'All 3 Days — Youth (6-18yrs) + Kids Food', skus: ['DP2026NOCULYOUTHWKIDS3DAYS'] },
     { label: 'All 3 Days — Students', skus: ['DP2026NOCULSTUDENT3DAYS'] },
     { label: 'All 3 Days — Kids (0-5)', skus: ['DP2026NOCULKIDS3DAYS'] },
     { label: 'Saturday — Adult/Visiting Parents', skus: ['DP2026NOCULADULTVPSAT'] },
-    { label: 'Saturday — Kids/Youth (6-18yrs)', skus: ['DP2026NOCULYOUTHSAT'] },
+    { label: 'Saturday — Youth (6-18yrs)', skus: ['DP2026NOCULYOUTHSAT'] },
+    { label: 'Saturday — Youth (6-18yrs) + Kids Food', skus: ['DP2026NOCULYOUTHWKIDSSAT'] },
     { label: 'Saturday — Students', skus: ['DP2026NOCULSTUDENTSAT'] },
     { label: 'Saturday — Kids (0-5)', skus: ['DP2026NOCULKIDSSAT'] },
     { label: 'Sunday — Adult/Visiting Parents', skus: ['DP2026NOCULADULTVPSUN'] },
-    { label: 'Sunday — Kids/Youth (6-18yrs)', skus: ['DP2026NOCULYOUTHSUN'] },
+    { label: 'Sunday — Youth (6-18yrs)', skus: ['DP2026NOCULYOUTHSUN'] },
+    { label: 'Sunday — Youth (6-18yrs) + Kids Food', skus: ['DP2026NOCULYOUTHWKIDSSUN'] },
     { label: 'Sunday — Students', skus: ['DP2026NOCULSTUDENTSUN'] },
     { label: 'Sunday — Kids (0-5)', skus: ['DP2026NOCULKIDSSUN'] }
   ];
 
   dp2026CulturalRows = [
     { label: 'Sat & Sun — Adult/Visiting Parents', skus: ['DP2026CULTURALADULTVPSATSUN'] },
-    { label: 'Sat & Sun — Kids/Youth (6-18yrs)', skus: ['DP2026CULTURALYOUTHSATSUN'] },
+    { label: 'Sat & Sun — Youth (6-18yrs)', skus: ['DP2026CULTURALYOUTHSATSUN'] },
+    { label: 'Sat & Sun — Youth (6-18yrs) + Kids Food', skus: ['DP2026CULTURALYOUTHWKIDSSATSUN'] },
     { label: 'Sat & Sun — Students', skus: ['DP2026CULTURALSTUDENTSATSUN'] },
     { label: 'Sat & Sun — Kids (0-5)', skus: ['DP2026CULTURALKIDSSATSUN'] },
     { label: 'Saturday — Adult/Visiting Parents', skus: ['DP2026CULTURALADULTVPSAT'] },
-    { label: 'Saturday — Kids/Youth (6-18yrs)', skus: ['DP2026CULTURALYOUTHSAT'] },
+    { label: 'Saturday — Youth (6-18yrs)', skus: ['DP2026CULTURALYOUTHSAT'] },
+    { label: 'Saturday — Youth (6-18yrs) + Kids Food', skus: ['DP2026CULTURALYOUTHWKIDSSAT'] },
     { label: 'Saturday — Students', skus: ['DP2026CULTURALSTUDENTSAT'] },
     { label: 'Saturday — Kids (0-5)', skus: ['DP2026CULTURALKIDSSAT'] },
     { label: 'Sunday — Adult/Visiting Parents', skus: ['DP2026CULTURALADULTVPSUN'] },
-    { label: 'Sunday — Kids/Youth (6-18yrs)', skus: ['DP2026CULTURALYOUTHSUN'] },
+    { label: 'Sunday — Youth (6-18yrs)', skus: ['DP2026CULTURALYOUTHSUN'] },
+    { label: 'Sunday — Youth (6-18yrs) + Kids Food', skus: ['DP2026CULTURALYOUTHWKIDSSUN'] },
     { label: 'Sunday — Students', skus: ['DP2026CULTURALSTUDENTSUN'] },
     { label: 'Sunday — Kids (0-5)', skus: ['DP2026CULTURALKIDSSUN'] }
   ];

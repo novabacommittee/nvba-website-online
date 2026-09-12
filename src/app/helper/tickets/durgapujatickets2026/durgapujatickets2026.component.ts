@@ -120,7 +120,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
 
   buildTiers(): void {
     this.tiers = [
-      { key: 'eb',  title: 'Early Bird Tickets',                released: this.releaseEarlyBird,               items: this.earlyBirdTickets },
+      { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 19, 2026)', released: this.releaseEarlyBird,               items: this.earlyBirdTickets },
       { key: 'reg', title: 'Regular Tickets',                  released: this.releaseRegular,                 items: this.regularTickets },
       { key: 'rnc', title: 'Regular Tickets (Without Cultural)', released: this.releaseRegularWithoutCultural, items: this.regularNoCulturalTickets },
       { key: 'cul', title: 'Cultural Only Tickets',            released: this.releaseOnlyCultural,            items: this.culturalTickets }
@@ -195,5 +195,17 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
 
   clearCart(): void {
     this.releasedItems.forEach(value => value.quantity = 0);
+  }
+
+  // Quantities must be whole, non-negative numbers (0-10).
+  toWhole(v: any): number {
+    const n = Math.floor(Number(v));
+    if (isNaN(n) || n < 0) { return 0; }
+    return n > 10 ? 10 : n;
+  }
+
+  blockNonInteger(e: KeyboardEvent): void {
+    // Prevent decimals / exponent / sign characters in the quantity field.
+    if (['.', ',', 'e', 'E', '+', '-'].indexOf(e.key) !== -1) { e.preventDefault(); }
   }
 }

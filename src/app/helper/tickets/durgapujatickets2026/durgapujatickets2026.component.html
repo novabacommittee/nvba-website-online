@@ -42,7 +42,7 @@
                             <span *ngIf="item.originalPrice && item.originalPrice > item.price" class="dp-strike">$ {{ item.originalPrice }}</span>
                             <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">$ {{ item.price }}</span>
                         </td>
-                        <td><input type="number" [(ngModel)]="item.quantity" style="width:50px" min="0" max="10"></td>
+                        <td><input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" style="width:50px" min="0" max="10"></td>
                         <td>$ {{ item.price * item.quantity }}</td>
                     </tr>
                 </tbody>
@@ -72,7 +72,10 @@
         </label>
 
         <div class="dp-legal" *ngIf="showTerms">
-            <h6>Event Participation Terms &amp; Conditions</h6>
+            <div class="dp-legal__head">
+                <h6>Event Participation Terms &amp; Conditions</h6>
+                <a href="/assets/docs/NVBA-Event-Terms-and-Conditions.pdf" target="_blank" download class="dp-agree__pdf">Download PDF</a>
+            </div>
             <p>By purchasing tickets for myself and/or others, and by attending or participating in this event, I acknowledge and agree to the following terms &mdash;</p>
             <ol>
                 <li>I agree to comply with all applicable event rules, school and facility policies, safety requirements, and reasonable instructions communicated or posted before or during the event by NVBA, its Executive Committee, authorized volunteers, school personnel, or facility representatives.</li>
@@ -97,7 +100,10 @@
         </label>
 
         <div class="dp-legal" *ngIf="showRefund">
-            <h6>Event Refund Policy</h6>
+            <div class="dp-legal__head">
+                <h6>Event Refund Policy</h6>
+                <a href="/assets/docs/NVBA-Event-Refund-Policy.pdf" target="_blank" download class="dp-agree__pdf">Download PDF</a>
+            </div>
             <ol>
                 <li>
                     <strong>Event Cancellation by NVBA</strong>

@@ -1,6 +1,6 @@
 [
   {
-    "eventId":1,
+    "eventId": 1,
     "eventType": "past",
     "eventName": "Breakfast for Firefighter 2024",
     "eventDate": "December 8th, 2024",
@@ -13,7 +13,7 @@
     "mapUrl": ""
   },
   {
-    "eventId":2,
+    "eventId": 2,
     "eventType": "past",
     "eventName": "Annual General Meeting (AGM) 2024",
     "eventDate": "January 18th, 2025",
@@ -26,7 +26,7 @@
     "mapUrl": "https://www.google.com/maps/place/Chantilly+Regional+Library/@38.8826348,-77.4103814,17z/data=!4m5!3m4!1s0x89b645d93e9c74d7:0xea49f7691dcdee5f!8m2!3d38.8826348!4d-77.4081927"
   },
   {
-    "eventId":3,
+    "eventId": 3,
     "eventType": "past",
     "eventName": "Sarbojanin Durgotsob 2024",
     "eventDate": "October 11th, 2024 - October 13th, 2024",
@@ -39,7 +39,7 @@
     "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
   },
   {
-    "eventId":4,
+    "eventId": 4,
     "eventType": "past",
     "eventName": "DC South Asian Festival 2024",
     "eventDate": "Sept 06-30, 2024",
@@ -50,10 +50,10 @@
     "pageLink": "https://dcsaff2024.eventive.org/welcome",
     "description": "DCSAACI is dedicated to providing valuable opportunities for South Asian artists to showcase their talents through films, literature, dance and art. We are honored to have Padma Shri Sitar Maestro Ustad Shahid Parvez Khan as our opening performer on Friday September 6, 2024 at 7:30 PM.",
     "mapUrl": "https://maps.app.goo.gl/1jaJNProjta6cev99",
-    "externalLink":"https://dcsaff2024.eventive.org/welcome"
+    "externalLink": "https://dcsaff2024.eventive.org/welcome"
   },
   {
-    "eventId":5,
+    "eventId": 5,
     "eventType": "past",
     "eventName": "Annual Picnic 2024",
     "eventDate": "June 29th, 2024",
@@ -66,7 +66,7 @@
     "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
   },
   {
-    "eventId":6,
+    "eventId": 6,
     "eventType": "past",
     "eventName": "Kobi Pronam 2024",
     "eventDate": "June 22nd, 2024",
@@ -79,7 +79,7 @@
     "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
   },
   {
-    "eventId":7,
+    "eventId": 7,
     "eventType": "past",
     "eventName": "Poila Boisakh 2024",
     "eventDate": "April 13th, 2024",
@@ -92,7 +92,7 @@
     "mapUrl": "https://goo.gl/maps/oK7kDeWN1RjXAZQRA"
   },
   {
-    "eventId":8,
+    "eventId": 8,
     "eventType": "past",
     "eventName": "Saraswati Puja 2024",
     "eventDate": "February 10th, 2024",
@@ -105,7 +105,7 @@
     "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
   },
   {
-    "eventId":9,
+    "eventId": 9,
     "eventType": "past",
     "eventName": "Breakfast for Firefighter 2023",
     "eventDate": "December 4th, 2022",
@@ -118,7 +118,7 @@
     "mapUrl": ""
   },
   {
-    "eventId":10,
+    "eventId": 10,
     "eventType": "past",
     "eventName": "Annual General Meeting (AGM) 2023",
     "eventDate": "April 6th, 2024",
@@ -131,7 +131,7 @@
     "mapUrl": "https://www.google.com/maps/place/Chantilly+Regional+Library/@38.8826348,-77.4103814,17z/data=!4m5!3m4!1s0x89b645d93e9c74d7:0xea49f7691dcdee5f!8m2!3d38.8826348!4d-77.4081927"
   },
   {
-    "eventId":11,
+    "eventId": 11,
     "eventType": "past",
     "eventName": "Sarbojanin Durgotsob 2023",
     "eventDate": "October 20th, 2023 - October 22nd, 2023",
@@ -144,7 +144,7 @@
     "mapUrl": "https://maps.app.goo.gl/mvmNYLDipdGZaHB36"
   },
   {
-    "eventId":12,
+    "eventId": 12,
     "eventType": "past",
     "eventName": "Pancham Swar",
     "eventDate": "September 10th, 2023",
@@ -155,10 +155,10 @@
     "pageLink": "",
     "description": "Raising funds for women, children and underprivileged communities Where music intersects with giving hearts resulting in pure magic \n \"Pancham Swar\" \n A Musical Tribute to R.D. Burman.",
     "mapUrl": "https://www.google.com/maps/place/Richard+J+Ernst+Community+Cultural+Center/@38.8333994,-77.2389877,17z/data=!3m1!4b1!4m6!3m5!1s0x89b64cf9a4b7d595:0x736872a31ef0fe0b!8m2!3d38.8333994!4d-77.236799!16s%2Fg%2F1tfb7fvw?entry=ttu",
-    "externalLink":"https://breakthetide.org/"
+    "externalLink": "https://breakthetide.org/"
   },
   {
-    "eventId":13,
+    "eventId": 13,
     "eventType": "past",
     "eventName": "Annual Picnic 2023",
     "eventDate": "June 17th, 2023",
@@ -171,7 +171,7 @@
     "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
   },
   {
-    "eventId":14,
+    "eventId": 14,
     "eventType": "past",
     "eventName": "Kobi Pronam 2023",
     "eventDate": "June 10th, 2023",
@@ -184,7 +184,7 @@
     "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
   },
   {
-    "eventId":15,
+    "eventId": 15,
     "eventType": "past",
     "eventName": "Tagore and the Colors of Spring",
     "eventDate": "May 19th, 2023",
@@ -198,7 +198,7 @@
     "externalLink": "https://events.eventgroove.com/event/Tagore-And-The-Colors-Of-Spring-75386"
   },
   {
-    "eventId":16,
+    "eventId": 16,
     "eventType": "past",
     "eventName": "Poila Boisakh 2023",
     "eventDate": "April 15th, 2023",
@@ -211,7 +211,7 @@
     "mapUrl": "https://goo.gl/maps/oK7kDeWN1RjXAZQRA"
   },
   {
-    "eventId":17,
+    "eventId": 17,
     "eventType": "past",
     "eventName": "Saraswati Puja 2023",
     "eventDate": "January 28th, 2023",
@@ -224,7 +224,7 @@
     "mapUrl": "https://maps.app.goo.gl/VY94qBUgGUiXYt6C8"
   },
   {
-    "eventId":18,
+    "eventId": 18,
     "eventType": "past",
     "eventName": "Breakfast for Firefighter 2022",
     "eventDate": "December 4th, 2022",
@@ -237,7 +237,7 @@
     "mapUrl": ""
   },
   {
-    "eventId":19,
+    "eventId": 19,
     "eventType": "past",
     "eventName": "Annual General Meeting (AGM) 2022",
     "eventDate": "December 3th, 2022",
@@ -250,7 +250,7 @@
     "mapUrl": "https://www.google.com/maps/place/Chantilly+Regional+Library/@38.8826348,-77.4103814,17z/data=!4m5!3m4!1s0x89b645d93e9c74d7:0xea49f7691dcdee5f!8m2!3d38.8826348!4d-77.4081927"
   },
   {
-    "eventId":20,
+    "eventId": 20,
     "eventType": "past",
     "eventName": "Sarbojanin Durgotsob 2022",
     "eventDate": "September 30th, 2022 - October 2nd, 2022",
@@ -263,199 +263,200 @@
     "mapUrl": "https://maps.app.goo.gl/xCmrA2UmHG5qYhbT9"
   },
   {
-        "eventId":21,
-        "eventType": "past",
-        "eventName": "Breakfast for Firefighter 2025",
-        "eventDate": "December 14th, 2025",
-        "eventEndDate": "December 14th, 2025",
-        "eventImage": "./../../../assets/images/stocks/firefighters.jpg",
-        "timing": "6:00 AM - 9:30 AM",
-        "venue": "4 Zones covering South Riding, Ashburn, Sterling, Reston",
-        "pageLink": "/cares",
-        "description": "We prepare and deliver Breakfast to our Firefighters expressing NVBA community member's gratitude to the firefighetr's service for the community.",
-        "mapUrl": ""
-    },
-    {
-        "eventId":22,
-        "eventType": "past",
-        "eventName": "Annual General Meeting (AGM) 2025",
-        "eventDate": "December 6th, 2025",
-        "eventEndDate": "December 6th, 2025",
-        "eventImage": "./../../../assets/images/stocks/agm.jpg",
-        "timing": "2:30 PM - 5:00 PM",
-        "venue": "Sterling Regional Library  22330 S Sterling Blvd, Sterling, VA 20164",
-        "pageLink": "",
-        "description": "Your participation is highly appreciated.",
-        "mapUrl": "https://maps.app.goo.gl/czVbyBMCz6nmdhDH8"
-    },
-    {
-        "eventId":23,
-        "eventType": "past",
-        "eventName": "Sarbojanin Durgotsob 2025",
-        "eventDate": "October 3-5, 2025",
-        "eventEndDate": "October 3-5, 2025",
-        "eventImage": "./../../../assets/images/stocks/DP-2020.jpg",
-        "timing": "October 3rd - 6 PM to 10 PM. October 4th - 11 AM - 10 PM and October 5th - 9 AM to 10 PM",
-        "venue": "John Champe High School, 41535 Sacred Mountain St, Aldie, VA 20105",
-        "pageLink": "/durgapuja2025",
-        "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
-        "mapUrl": "https://maps.app.goo.gl/iKfsDD2p3cg5V6HB7"
-    },
-    {
-        "eventId":24,
-        "eventType": "past",
-        "eventName": "Joy-Lopa Concert 2025",
-        "eventDate": "September 27, 2025",
-        "eventEndDate": "September 27, 2025",
-        "eventImage": "./../../../assets/images/gallery/externalevents/prantik-concert-2025-2.jpg",
-        "timing": "September 27 - 8 PM",
-        "venue": "Howard High School Auditorium, 8700 Old Annapolis Rd, Columbia, MD 21043",
-        "pageLink": "https://www.prantik.org/event-details/prantik-durga-pujo-sep-27th-2025",
-        "description": "Prantik Baltimore is organizing a concert on September 27th during our Durga Pujo. We will have Lopamudra Mitra and Joy Sarkar with their musical group from Kolkata coming to perform. Their Joy-Lopa Express is their Signature concert making waves in Kolkata this past year.Tickets registration is on Tickets registration available below",
-        "mapUrl": "https://maps.app.goo.gl/ZY6W6DbnyjgPKQej7"
-    },
-    {
-        "eventId":25,
-        "eventType": "past",
-        "eventName": "Papon Live Concert",
-        "eventDate": "June 27th, 2025",
-        "eventEndDate": "June 27th, 2025",
-        "eventImage": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
-        "timing": "5:00 PM - 9:30 PM",
-        "venue": "Stone Bridge High School, 43100 Hay Rd, Ashburn, VA 20147",
-        "pageLink": "/paponliveconcert2025",
-        "description": "NVBA proudly presents a LIVE concert featuring the sensational Papon and top Bollywood musicians!",
-        "mapUrl": "https://maps.app.goo.gl/k4gcfuTCaWnDynEt7"
-    },
-    {
-        "eventId":26,
-        "eventType": "past",
-        "eventName": "Annual Picnic 2025",
-        "eventDate": "June 14th, 2025",
-        "eventEndDate": "June 14th, 2025",
-        "eventImage": "./../../../assets/images/gallery/picnic2025/event_photo_15.jpg",
-        "timing": "10:00 AM - 6:00 PM",
-        "venue": "Shelter 1 at Bull Run,7700 Bull Run Dr, Centreville, VA 20121",
-        "pageLink": "/picnic2025",
-        "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship..",
-        "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
-    },
-    {
-        "eventId":27,
-        "eventType": "past",
-        "eventName": "Kobi Pronam 2025",
-        "eventDate": "June 1st, 2025",
-        "eventEndDate": "June 1st, 2025",
-        "eventImage": "./../../../assets/images/gallery/common/kobipronam.jpg",
-        "timing": "3:30 PM - 8:30 PM",
-        "venue": "Stone Hills Middle School, 23415 Evergreen Ridge Dr, Ashburn, VA 20148",
-        "pageLink": "/kobipronam2025",
-        "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
-        "mapUrl": "https://maps.app.goo.gl/MeLB5sAGvx8SZvna9"
-    },
-    {
-        "eventId":28,
-        "eventType": "past",
-        "eventName": "Poila Boisakh 2025",
-        "eventDate": "April 13th, 2025",
-        "eventEndDate": "April 13th, 2025",
-        "eventImage": "./../../../assets/images/gallery/common/poila-boisakh.jpg",
-        "timing": "10:00 AM - 5:00 PM",
-        "venue": "Washington Kali Temple",
-        "pageLink": "",
-        "description": "Come join us to celebrate our new year.",
-        "mapUrl": "https://goo.gl/maps/oK7kDeWN1RjXAZQRA"
-    },
-    {
-        "eventId":29,
-        "eventType": "past",
-        "eventName": "Saraswati Puja 2025",
-        "eventDate": "February 1st, 2025",
-        "eventEndDate": "February 10th, 2025",
-        "eventImage": "./../../../assets/images/stocks/saraswati-2021.jpg",
-        "timing": "11:00 AM - 10:00 PM",
-        "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
-        "pageLink": "/saraswatipuja2025",
-        "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, bengali delicious food and cultural performances",
-        "mapUrl": ""
-    },
-    {
-        "eventId":30,
-        "eventType": "past",
-        "eventName": "Saraswati Puja 2026",
-        "eventDate": "February 7th, 2026",
-        "eventEndDate": "February 7th, 2026",
-        "eventImage": "./../../../assets/images/gallery/sp2026/SaraswatiPuja2026.jpg",
-        "timing": "10:00 AM - 10:00 PM",
-        "venue": "J Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
-        "pageLink": "/saraswatipuja2026",
-        "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, bengali delicious food and cultural performances",
-        "mapUrl": "https://maps.app.goo.gl/ZS1Mni6M3NSxULzc9"
-    },
-    {
-      "eventId":31,
-      "eventType": "past",
-      "eventName": "Poila Boishakh 2026",
-      "eventDate": "April 19th, 2026",
-      "eventEndDate": "April 19th, 2026",
-      "eventImage": "./../../../assets/images/gallery/poilaBoishakh2026/BengaliNewYear2026.jpg",
-      "timing": "10:00 AM - 05:00 PM",
-      "venue": "16126 New Columbia Pike, Burtonsville, MD, 20866",
-      "pageLink": "/poilaBoishakh2026",
-      "description": "Come and join us to celebrate Poila Boishakh 2026 with your family and enjoy the day with puja and delicious bengali food",
-      "mapUrl": "https://maps.app.goo.gl/CceDpQ4kiLQFQqdg7"
-    },
-    {
-      "eventId":32,
-      "eventType": "past",
-      "eventName": "Echoes of Bengal 2026",
-      "eventDate": "June 6th, 2026",
-      "eventEndDate": "June 6th, 2026",
-      "eventImage": "./../../../assets/images/gallery/echoesOfBengal/EchoesOfBengal.png",
-      "timing": "1:00 PM - 10:00 PM",
-      "venue": "J Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
-      "pageLink": "/echoesOfBengal2026",
-      "description": "Come and join us to celebrate Echoes of Bengal and enjoy the day full of cultural performances and delicious bengali food",
-      "mapUrl": "https://maps.app.goo.gl/ZS1Mni6M3NSxULzc9"
-    },
-    {
-      "eventId":33,
-      "eventType": "past",
-      "eventName": "Annual Picnic 2026",
-      "eventDate": "June 13th 2026",
-      "eventEndDate": "June 13th 2026",
-      "eventImage": "./../../../assets/images/gallery/picnic2026/Picnic2026.png",
-      "timing": "10:00 AM - 6:00 PM",
-      "venue": "Shelter 1 at Bull Run, 7700 Bull Run Dr, Centreville, VA 20121",
-      "pageLink": "/picnic2026",
-      "description": "Join us for NVBA's biggest annual gathering - a day of authentic Bengali cuisine, exciting activities, and the warmth of our community. Free entry for all members!",
-      "mapUrl": "https://maps.app.goo.gl/jkeD9GE97dfmGuQY7"
-    },
-    {
-      "eventId":35,
-      "eventType": "current",
-      "eventName": "Nepal Disaster Relief - Aajo Ardhangini",
-      "eventDate": "September 26th, 2026",
-      "eventEndDate": "September 26th, 2026",
-      "eventImage": "./../../../assets/images/gallery/external/2026/Aajo%20Ardhangini%20-%20Nepal%20Disaster%20Help.jpg",
-      "timing": "2:00 PM",
-      "venue": "J. Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
-      "pageLink": "/",
-      "flyer": "/assets/images/gallery/external/2026/Aajo%20Ardhangini%20-%20Nepal%20Disaster%20Help.jpg",
-      "description": "A cultural fundraising event, Aajo Ardhangini, in support of Nepal Disaster Relief. Please join us to stand with those affected.",
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=J.+Michael+Lunsford+Middle+School%2C+26020+Ticonderoga+Rd%2C+Chantilly%2C+VA+20152"
-    },
-    {
-      "eventId":34,
-      "eventType": "current",
-      "eventName": "Sarbojonin Durgotsav 2026",
-      "eventDate": "Oct 23rd, 2026 - Oct 25th, 2026",
-      "eventEndDate": "Oct 25th, 2026",
-      "eventImage": "./../../../assets/images/gallery/dp2026/DurgaPuja2026.jpg",
-      "timing": "10:00 AM - 10:00 PM",
-      "venue": "Park View High School, Sterling, VA",
-      "pageLink": "/durgapuja2026",
-      "description": "Come join us to celebrate our most auspicious Bengali event of the year",
-      "mapUrl": "https://maps.app.goo.gl/n1sohfreYqn9s1rG8"
-    }
+    "eventId": 21,
+    "eventType": "past",
+    "eventName": "Breakfast for Firefighter 2025",
+    "eventDate": "December 14th, 2025",
+    "eventEndDate": "December 14th, 2025",
+    "eventImage": "./../../../assets/images/stocks/firefighters.jpg",
+    "timing": "6:00 AM - 9:30 AM",
+    "venue": "4 Zones covering South Riding, Ashburn, Sterling, Reston",
+    "pageLink": "/cares",
+    "description": "We prepare and deliver Breakfast to our Firefighters expressing NVBA community member's gratitude to the firefighetr's service for the community.",
+    "mapUrl": ""
+  },
+  {
+    "eventId": 22,
+    "eventType": "past",
+    "eventName": "Annual General Meeting (AGM) 2025",
+    "eventDate": "December 6th, 2025",
+    "eventEndDate": "December 6th, 2025",
+    "eventImage": "./../../../assets/images/stocks/agm.jpg",
+    "timing": "2:30 PM - 5:00 PM",
+    "venue": "Sterling Regional Library  22330 S Sterling Blvd, Sterling, VA 20164",
+    "pageLink": "",
+    "description": "Your participation is highly appreciated.",
+    "mapUrl": "https://maps.app.goo.gl/czVbyBMCz6nmdhDH8"
+  },
+  {
+    "eventId": 23,
+    "eventType": "past",
+    "eventName": "Sarbojanin Durgotsob 2025",
+    "eventDate": "October 3-5, 2025",
+    "eventEndDate": "October 3-5, 2025",
+    "eventImage": "./../../../assets/images/stocks/DP-2020.jpg",
+    "timing": "October 3rd - 6 PM to 10 PM. October 4th - 11 AM - 10 PM and October 5th - 9 AM to 10 PM",
+    "venue": "John Champe High School, 41535 Sacred Mountain St, Aldie, VA 20105",
+    "pageLink": "/durgapuja2025",
+    "description": "Come join us to celebrate our most auspicious Bengali event of the year.",
+    "mapUrl": "https://maps.app.goo.gl/iKfsDD2p3cg5V6HB7"
+  },
+  {
+    "eventId": 24,
+    "eventType": "past",
+    "eventName": "Joy-Lopa Concert 2025",
+    "eventDate": "September 27, 2025",
+    "eventEndDate": "September 27, 2025",
+    "eventImage": "./../../../assets/images/gallery/externalevents/prantik-concert-2025-2.jpg",
+    "timing": "September 27 - 8 PM",
+    "venue": "Howard High School Auditorium, 8700 Old Annapolis Rd, Columbia, MD 21043",
+    "pageLink": "https://www.prantik.org/event-details/prantik-durga-pujo-sep-27th-2025",
+    "description": "Prantik Baltimore is organizing a concert on September 27th during our Durga Pujo. We will have Lopamudra Mitra and Joy Sarkar with their musical group from Kolkata coming to perform. Their Joy-Lopa Express is their Signature concert making waves in Kolkata this past year.Tickets registration is on Tickets registration available below",
+    "mapUrl": "https://maps.app.goo.gl/ZY6W6DbnyjgPKQej7"
+  },
+  {
+    "eventId": 25,
+    "eventType": "past",
+    "eventName": "Papon Live Concert",
+    "eventDate": "June 27th, 2025",
+    "eventEndDate": "June 27th, 2025",
+    "eventImage": "./../../../assets/images/gallery/paponconcert2025/Papon_Concert_Promo_2.jpg",
+    "timing": "5:00 PM - 9:30 PM",
+    "venue": "Stone Bridge High School, 43100 Hay Rd, Ashburn, VA 20147",
+    "pageLink": "/paponliveconcert2025",
+    "description": "NVBA proudly presents a LIVE concert featuring the sensational Papon and top Bollywood musicians!",
+    "mapUrl": "https://maps.app.goo.gl/k4gcfuTCaWnDynEt7"
+  },
+  {
+    "eventId": 26,
+    "eventType": "past",
+    "eventName": "Annual Picnic 2025",
+    "eventDate": "June 14th, 2025",
+    "eventEndDate": "June 14th, 2025",
+    "eventImage": "./../../../assets/images/gallery/picnic2025/event_photo_15.jpg",
+    "timing": "10:00 AM - 6:00 PM",
+    "venue": "Shelter 1 at Bull Run,7700 Bull Run Dr, Centreville, VA 20121",
+    "pageLink": "/picnic2025",
+    "description": "Our annual picnic, where all our members were invite to a free picnic event for a great day of food, fun and friendship..",
+    "mapUrl": "https://maps.app.goo.gl/kKHYDEhQUfLFfB1i8"
+  },
+  {
+    "eventId": 27,
+    "eventType": "past",
+    "eventName": "Kobi Pronam 2025",
+    "eventDate": "June 1st, 2025",
+    "eventEndDate": "June 1st, 2025",
+    "eventImage": "./../../../assets/images/gallery/common/kobipronam.jpg",
+    "timing": "3:30 PM - 8:30 PM",
+    "venue": "Stone Hills Middle School, 23415 Evergreen Ridge Dr, Ashburn, VA 20148",
+    "pageLink": "/kobipronam2025",
+    "description": "Tribute for Kobi Pronam. As Bengalis we are always very proud of this unique event in honor of the poets who form the cornerstone of our Bengali culture.",
+    "mapUrl": "https://maps.app.goo.gl/MeLB5sAGvx8SZvna9"
+  },
+  {
+    "eventId": 28,
+    "eventType": "past",
+    "eventName": "Poila Boisakh 2025",
+    "eventDate": "April 13th, 2025",
+    "eventEndDate": "April 13th, 2025",
+    "eventImage": "./../../../assets/images/gallery/common/poila-boisakh.jpg",
+    "timing": "10:00 AM - 5:00 PM",
+    "venue": "Washington Kali Temple",
+    "pageLink": "",
+    "description": "Come join us to celebrate our new year.",
+    "mapUrl": "https://goo.gl/maps/oK7kDeWN1RjXAZQRA"
+  },
+  {
+    "eventId": 29,
+    "eventType": "past",
+    "eventName": "Saraswati Puja 2025",
+    "eventDate": "February 1st, 2025",
+    "eventEndDate": "February 10th, 2025",
+    "eventImage": "./../../../assets/images/stocks/saraswati-2021.jpg",
+    "timing": "11:00 AM - 10:00 PM",
+    "venue": "Mercer Middle School, 42149 Greenstone Dr, Aldie, VA 20105",
+    "pageLink": "/saraswatipuja2025",
+    "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, bengali delicious food and cultural performances",
+    "mapUrl": ""
+  },
+  {
+    "eventId": 30,
+    "eventType": "past",
+    "eventName": "Saraswati Puja 2026",
+    "eventDate": "February 7th, 2026",
+    "eventEndDate": "February 7th, 2026",
+    "eventImage": "./../../../assets/images/gallery/sp2026/SaraswatiPuja2026.jpg",
+    "timing": "10:00 AM - 10:00 PM",
+    "venue": "J Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
+    "pageLink": "/saraswatipuja2026",
+    "description": "Come and join us to celebrate Saraswati Puja with your kids and enjoy the day full with activities, bengali delicious food and cultural performances",
+    "mapUrl": "https://maps.app.goo.gl/ZS1Mni6M3NSxULzc9"
+  },
+  {
+    "eventId": 31,
+    "eventType": "past",
+    "eventName": "Poila Boishakh 2026",
+    "eventDate": "April 19th, 2026",
+    "eventEndDate": "April 19th, 2026",
+    "eventImage": "./../../../assets/images/gallery/poilaBoishakh2026/BengaliNewYear2026.jpg",
+    "timing": "10:00 AM - 05:00 PM",
+    "venue": "16126 New Columbia Pike, Burtonsville, MD, 20866",
+    "pageLink": "/poilaBoishakh2026",
+    "description": "Come and join us to celebrate Poila Boishakh 2026 with your family and enjoy the day with puja and delicious bengali food",
+    "mapUrl": "https://maps.app.goo.gl/CceDpQ4kiLQFQqdg7"
+  },
+  {
+    "eventId": 32,
+    "eventType": "past",
+    "eventName": "Echoes of Bengal 2026",
+    "eventDate": "June 6th, 2026",
+    "eventEndDate": "June 6th, 2026",
+    "eventImage": "./../../../assets/images/gallery/echoesOfBengal/EchoesOfBengal.png",
+    "timing": "1:00 PM - 10:00 PM",
+    "venue": "J Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
+    "pageLink": "/echoesOfBengal2026",
+    "description": "Come and join us to celebrate Echoes of Bengal and enjoy the day full of cultural performances and delicious bengali food",
+    "mapUrl": "https://maps.app.goo.gl/ZS1Mni6M3NSxULzc9"
+  },
+  {
+    "eventId": 33,
+    "eventType": "past",
+    "eventName": "Annual Picnic 2026",
+    "eventDate": "June 13th 2026",
+    "eventEndDate": "June 13th 2026",
+    "eventImage": "./../../../assets/images/gallery/picnic2026/Picnic2026.png",
+    "timing": "10:00 AM - 6:00 PM",
+    "venue": "Shelter 1 at Bull Run, 7700 Bull Run Dr, Centreville, VA 20121",
+    "pageLink": "/picnic2026",
+    "description": "Join us for NVBA's biggest annual gathering - a day of authentic Bengali cuisine, exciting activities, and the warmth of our community. Free entry for all members!",
+    "mapUrl": "https://maps.app.goo.gl/jkeD9GE97dfmGuQY7"
+  },
+  {
+    "eventId": 35,
+    "eventType": "current",
+    "eventName": "Nepal Disaster Relief - Aajo Ardhangini",
+    "eventDate": "September 26th, 2026",
+    "eventEndDate": "September 26th, 2026",
+    "eventImage": "./../../../assets/images/gallery/external/2026/Aajo%20Ardhangini%20-%20Nepal%20Disaster%20Help.jpg",
+    "timing": "2:00 PM",
+    "venue": "J. Michael Lunsford Middle School, 26020 Ticonderoga Rd, Chantilly, VA 20152",
+    "pageLink": "/",
+    "flyer": "/assets/images/gallery/external/2026/Aajo%20Ardhangini%20-%20Nepal%20Disaster%20Help.jpg",
+    "description": "A cultural fundraising event, Aajo Ardhangini, in support of Nepal Disaster Relief. Please join us to stand with those affected.",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=J.+Michael+Lunsford+Middle+School%2C+26020+Ticonderoga+Rd%2C+Chantilly%2C+VA+20152"
+  },
+  {
+    "eventId": 34,
+    "eventType": "current",
+    "eventName": "Sarbojonin Durgotsav 2026",
+    "eventDate": "Oct 23rd, 2026 - Oct 25th, 2026",
+    "eventEndDate": "Oct 25th, 2026",
+    "eventImage": "./../../../assets/images/gallery/dp2026/DurgaPuja.png",
+    "timing": "10:00 AM - 10:00 PM",
+    "venue": "Park View High School, Sterling, VA",
+    "pageLink": "/durgapuja2026",
+    "ticketLink": "/durgapuja2026",
+    "description": "Come join us to celebrate our most auspicious Bengali event of the year",
+    "mapUrl": "https://maps.app.goo.gl/n1sohfreYqn9s1rG8"
+  }
 ]

@@ -36,7 +36,7 @@
               View Details &rarr;
             </a>
             <a *ngIf="!event.flyer && event.pageLink != '/'" href="{{event.pageLink}}" class="ev-card__cta">
-              View Details &rarr;
+              {{ event.ticketLink ? 'View Details/ Get Tickets' : 'View Details' }} &rarr;
             </a>
           </div>
         </div>

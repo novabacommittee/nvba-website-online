@@ -10,13 +10,23 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular - Kids/Youth (6-18yrs) (All 3 Days)",
-    "description": "Kids/Youth (6-18yrs)",
+    "name": "NVBA Durga Puja 2026 Regular - Youth (6-18yrs) (All 3 Days)",
+    "description": "Youth (6-18yrs)",
     "group": "All 3 Days",
     "quantity": 0,
     "price": 85,
     "tax": 0,
     "sku": "DP2026REGYOUTH3DAYS",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Regular - Youth (6-18yrs) - With Kids (0-5 yrs) Food Option (All 3 Days)",
+    "description": "Youth (6-18yrs) - With Kids (0-5 yrs) Food Option",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 85,
+    "tax": 0,
+    "sku": "DP2026REGYOUTHWKIDS3DAYS",
     "currency": "USD"
   },
   {
@@ -39,7 +49,6 @@
     "sku": "DP2026REGKIDS3DAYS",
     "currency": "USD"
   },
-
   {
     "name": "NVBA Durga Puja 2026 Regular - Adult/Visiting Parents (Saturday Only)",
     "description": "Adult / Visiting Parents",
@@ -51,13 +60,23 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular - Kids/Youth (6-18yrs) (Saturday Only)",
-    "description": "Kids/Youth (6-18yrs)",
+    "name": "NVBA Durga Puja 2026 Regular - Youth (6-18yrs) (Saturday Only)",
+    "description": "Youth (6-18yrs)",
     "group": "Saturday Only",
     "quantity": 0,
     "price": 70,
     "tax": 0,
     "sku": "DP2026REGYOUTHSAT",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Regular - Youth (6-18yrs) - With Kids (0-5 yrs) Food Option (Saturday Only)",
+    "description": "Youth (6-18yrs) - With Kids (0-5 yrs) Food Option",
+    "group": "Saturday Only",
+    "quantity": 0,
+    "price": 70,
+    "tax": 0,
+    "sku": "DP2026REGYOUTHWKIDSSAT",
     "currency": "USD"
   },
   {
@@ -80,7 +99,6 @@
     "sku": "DP2026REGKIDSSAT",
     "currency": "USD"
   },
-
   {
     "name": "NVBA Durga Puja 2026 Regular - Adult/Visiting Parents (Sunday Only)",
     "description": "Adult / Visiting Parents",
@@ -92,13 +110,23 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular - Kids/Youth (6-18yrs) (Sunday Only)",
-    "description": "Kids/Youth (6-18yrs)",
+    "name": "NVBA Durga Puja 2026 Regular - Youth (6-18yrs) (Sunday Only)",
+    "description": "Youth (6-18yrs)",
     "group": "Sunday Only",
     "quantity": 0,
     "price": 70,
     "tax": 0,
     "sku": "DP2026REGYOUTHSUN",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Regular - Youth (6-18yrs) - With Kids (0-5 yrs) Food Option (Sunday Only)",
+    "description": "Youth (6-18yrs) - With Kids (0-5 yrs) Food Option",
+    "group": "Sunday Only",
+    "quantity": 0,
+    "price": 70,
+    "tax": 0,
+    "sku": "DP2026REGYOUTHWKIDSSUN",
     "currency": "USD"
   },
   {

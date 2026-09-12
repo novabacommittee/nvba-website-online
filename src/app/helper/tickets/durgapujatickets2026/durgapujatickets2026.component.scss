@@ -67,7 +67,20 @@
       a { color: #c0392b; text-decoration: underline; cursor: pointer; }
     }
 
-    &__hint { color: #c0392b; font-size: 0.85rem; margin: 4px 0 0; }
+    &__hint { color: #c0392b; font-size: 1.1rem; font-weight: 600; margin: 10px 0 0; }
+
+    &__pdf { color: #218838; font-weight: 600; white-space: nowrap; }
+  }
+
+  .dp-legal__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+
+    h6 { margin-bottom: 0; }
+    .dp-agree__pdf { flex-shrink: 0; }
   }
 
   .dp-legal {
