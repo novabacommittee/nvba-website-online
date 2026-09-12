@@ -16,39 +16,78 @@
 </div>
 
 <!-- ══════════════ TICKETS (members only) ══════════════ -->
-<div *ngIf="memberValidity" class="table-responsive mb-5 tickets">
-    <p class="red">
-        &ast; Tickets are required for food, local cultural program and concert with international artist for everyone, including kids (0-5 years).
-    </p>
+<div *ngIf="memberValidity" class="mb-5 tickets">
+    <!-- Header banner -->
+    <div class="dp-banner">
+        <span class="dp-banner__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </span>
+        <div class="dp-banner__text">
+            <strong>Tickets are required for all attendees, including children ages 0&ndash;5.</strong>
+            <span>Please select the appropriate ticket category and food option for each attendee.</span>
+        </div>
+    </div>
 
     <!-- One block per released tier -->
     <div *ngFor="let tier of tiers" class="dp-tier">
-        <h4 class="dp-tier__title">{{ tier.title }}</h4>
-
         <div *ngFor="let group of groups(tier.items)" class="dp-group">
-            <table class="table table-bordered table-hover">
+            <div class="dp-group__label" *ngIf="groups(tier.items).length > 1">{{ group }}</div>
+            <div class="dp-ttable-wrap">
+            <table class="dp-ttable">
                 <thead>
                     <tr>
-                        <th scope="col">{{ group }}</th>
-                        <th scope="col">Cost</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Total</th>
+                        <th class="dp-ttable__type">Ticket Type</th>
+                        <th class="dp-ttable__price">
+                            Price ({{ tier.priceLabel }})
+                            <span class="dp-ttable__price-note" *ngIf="tier.priceNote">{{ tier.priceNote }}</span>
+                        </th>
+                        <th class="dp-ttable__qty">Quantity</th>
+                        <th class="dp-ttable__total">Total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of itemsInGroup(tier.items, group)">
-                        <th>{{ item.description }}</th>
-                        <td>
-                            <span *ngIf="item.originalPrice && item.originalPrice > item.price" class="dp-strike">$ {{ item.originalPrice }}</span>
-                            <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">$ {{ item.price }}</span>
+                    <tr *ngFor="let item of orderedItems(tier.items, group)">
+                        <td class="dp-ttable__type">
+                            <div class="dp-cat">
+                                <span class="dp-cat__icon" [style.color]="metaOf(item).color">
+                                    <ng-container [ngSwitch]="metaOf(item).icon">
+                                        <svg *ngSwitchCase="'person'" viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                        <svg *ngSwitchCase="'cap'" viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                                        <svg *ngSwitchCase="'child'" viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><circle cx="12" cy="4.5" r="2.5"/><path d="M14.5 8h-5A2.5 2.5 0 007 10.5V15h2v6h2v-4h2v4h2v-6h2v-4.5A2.5 2.5 0 0014.5 8z"/></svg>
+                                    </ng-container>
+                                </span>
+                                <div class="dp-cat__text">
+                                    <div class="dp-cat__title">
+                                        {{ item.description }}
+                                        <span *ngIf="metaOf(item).tooltip" class="dp-tip">
+                                            <span class="dp-tip__icon">i</span>
+                                            <span class="dp-tip__bubble">{{ metaOf(item).tooltip }}</span>
+                                        </span>
+                                    </div>
+                                    <div class="dp-cat__sub" *ngIf="metaOf(item).subtitle">{{ metaOf(item).subtitle }}</div>
+                                </div>
+                            </div>
                         </td>
-                        <td><input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" style="width:50px" min="0"></td>
-                        <td>$ {{ item.price * item.quantity }}</td>
+                        <td class="dp-ttable__price">
+                            <span *ngIf="item.originalPrice && item.originalPrice > item.price" class="dp-strike">${{ item.originalPrice }}</span>
+                            <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">${{ item.price }}</span>
+                        </td>
+                        <td class="dp-ttable__qty">
+                            <input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" min="0" class="dp-qty">
+                        </td>
+                        <td class="dp-ttable__total">${{ item.price * item.quantity }}</td>
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
+
+    <!-- Footer note -->
+    <p class="dp-footnote">
+        <span class="dp-footnote__i">i</span>
+        All ticket types include access to Puja, cultural programs, and the concert for all 3 days.
+    </p>
 
     <!-- ── Total ── -->
     <div class="dp-total">
@@ -150,7 +189,7 @@
         </p>
     </div>
 
-    <div class="float-right mb-3 mr-3">
-        <button [disabled]="!canCheckout" class="btn btn-warning" (click)="addToCartobj()">Add to Cart</button>
+    <div class="d-flex justify-content-end mb-3">
+        <button [disabled]="!canCheckout" class="btn-small rounded btn-warning" (click)="addToCartobj()">Add to Cart</button>
     </div>
 </div>

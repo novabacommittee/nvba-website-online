@@ -10,6 +10,8 @@ import * as moment from 'moment';
 interface Tier {
   key: string;
   title: string;
+  priceLabel: string;
+  priceNote: string;
   released: boolean;
   items: any[];
 }
@@ -120,10 +122,10 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
 
   buildTiers(): void {
     this.tiers = [
-      { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 19, 2026)', released: this.releaseEarlyBird,               items: this.earlyBirdTickets },
-      { key: 'reg', title: 'Regular Tickets',                  released: this.releaseRegular,                 items: this.regularTickets },
-      { key: 'rnc', title: 'Regular Tickets (Without Cultural)', released: this.releaseRegularWithoutCultural, items: this.regularNoCulturalTickets },
-      { key: 'cul', title: 'Cultural Only Tickets',            released: this.releaseOnlyCultural,            items: this.culturalTickets }
+      { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 19, 2026)', priceLabel: 'Early Bird', priceNote: 'Until Sep 19, 2026', released: this.releaseEarlyBird,               items: this.earlyBirdTickets },
+      { key: 'reg', title: 'Regular Tickets',                  priceLabel: 'Regular', priceNote: '', released: this.releaseRegular,                 items: this.regularTickets },
+      { key: 'rnc', title: 'Regular Tickets (Without Cultural)', priceLabel: 'Regular (Without Cultural)', priceNote: '', released: this.releaseRegularWithoutCultural, items: this.regularNoCulturalTickets },
+      { key: 'cul', title: 'Cultural Only Tickets',            priceLabel: 'Cultural Only', priceNote: '', released: this.releaseOnlyCultural,            items: this.culturalTickets }
     ].filter(t => t.released && t.items && t.items.length > 0);
   }
 
@@ -141,6 +143,34 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
 
   itemsInGroup(items: any[], group: string): any[] {
     return items.filter(i => i.group === group);
+  }
+
+  // ── Presentation metadata per category (icon, subtitle, tooltip) ──
+  categoryOrder = ['adult', 'student', 'youthadult', 'youthkids', 'child'];
+  categoryMeta: { [k: string]: { subtitle: string; tooltip: string; icon: string; color: string } } = {
+    adult:      { subtitle: '', tooltip: '', icon: 'person', color: '#c0392b' },
+    student:    { subtitle: 'Students (19-24 yrs) with valid Student ID or Visiting Parents.', tooltip: '', icon: 'cap', color: '#7b3fa0' },
+    youthadult: { subtitle: 'For ages 6-17. Includes food from the Adult Menu.', tooltip: 'Adult Food Option: Select this if the youth will have food from the Adult Menu.', icon: 'person', color: '#2b7de9' },
+    youthkids:  { subtitle: 'For ages 6-17. Includes food from the Kids Menu.', tooltip: 'Kids Food Option: Select this if the youth will have food from the Kids Menu.', icon: 'person', color: '#e67e22' },
+    child:      { subtitle: '', tooltip: '', icon: 'child', color: '#27ae60' }
+  };
+
+  catOf(sku: string): string {
+    if (sku.indexOf('ADULT') !== -1) { return 'adult'; }
+    if (sku.indexOf('STUDENT') !== -1) { return 'student'; }
+    if (sku.indexOf('YOUTHWKIDS') !== -1) { return 'youthkids'; }
+    if (sku.indexOf('YOUTH') !== -1) { return 'youthadult'; }
+    return 'child';
+  }
+
+  metaOf(item: any) {
+    return this.categoryMeta[this.catOf(item.sku)];
+  }
+
+  orderedItems(items: any[], group: string): any[] {
+    return this.itemsInGroup(items, group)
+      .slice()
+      .sort((a, b) => this.categoryOrder.indexOf(this.catOf(a.sku)) - this.categoryOrder.indexOf(this.catOf(b.sku)));
   }
 
   checkData(): void {
