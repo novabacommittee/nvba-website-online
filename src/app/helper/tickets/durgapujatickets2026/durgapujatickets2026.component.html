@@ -36,7 +36,7 @@
             <table class="dp-ttable">
                 <thead>
                     <tr>
-                        <th class="dp-ttable__type">Ticket Type</th>
+                        <th class="dp-ttable__type">Ticket Type ({{ group }})</th>
                         <th class="dp-ttable__price">
                             Price ({{ tier.priceLabel }})
                             <span class="dp-ttable__price-note" *ngIf="tier.priceNote">{{ tier.priceNote }}</span>
@@ -59,12 +59,8 @@
                                 <div class="dp-cat__text">
                                     <div class="dp-cat__title">
                                         {{ item.description }}
-                                        <span *ngIf="metaOf(item).tooltip" class="dp-tip">
-                                            <span class="dp-tip__icon">i</span>
-                                            <span class="dp-tip__bubble">{{ metaOf(item).tooltip }}</span>
-                                        </span>
                                     </div>
-                                    <div class="dp-cat__sub" *ngIf="metaOf(item).subtitle">{{ metaOf(item).subtitle }}</div>
+                                    <div class="dp-cat__sub" *ngIf="subtitleOf(item)">{{ subtitleOf(item) }}</div>
                                 </div>
                             </div>
                         </td>
@@ -73,7 +69,7 @@
                             <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">${{ item.price }}</span>
                         </td>
                         <td class="dp-ttable__qty">
-                            <input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" min="0" class="dp-qty">
+                            <input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" min="0" max="10" class="dp-qty">
                         </td>
                         <td class="dp-ttable__total">${{ item.price * item.quantity }}</td>
                     </tr>
@@ -81,13 +77,13 @@
             </table>
             </div>
         </div>
-    </div>
 
-    <!-- Footer note -->
-    <p class="dp-footnote">
-        <span class="dp-footnote__i">i</span>
-        All ticket types include access to Puja, cultural programs, and the concert for all 3 days.
-    </p>
+        <!-- Per-tier note -->
+        <p class="dp-footnote">
+            <span class="dp-footnote__i">i</span>
+            {{ tier.note }}
+        </p>
+    </div>
 
     <!-- ── Total ── -->
     <div class="dp-total">
@@ -111,10 +107,7 @@
         </label>
 
         <div class="dp-legal" *ngIf="showTerms">
-            <div class="dp-legal__head">
-                <h6>Event Participation Terms &amp; Conditions</h6>
-                <a href="/assets/docs/NVBA-Event-Terms-and-Conditions.pdf" target="_blank" download class="dp-agree__pdf">Download PDF</a>
-            </div>
+            <h6>Event Participation Terms &amp; Conditions</h6>
             <p>By purchasing tickets for myself and/or others, and by attending or participating in this event, I acknowledge and agree to the following terms &mdash;</p>
             <ol>
                 <li>I agree to comply with all applicable event rules, school and facility policies, safety requirements, and reasonable instructions communicated or posted before or during the event by NVBA, its Executive Committee, authorized volunteers, school personnel, or facility representatives.</li>
@@ -139,10 +132,7 @@
         </label>
 
         <div class="dp-legal" *ngIf="showRefund">
-            <div class="dp-legal__head">
-                <h6>Event Refund Policy</h6>
-                <a href="/assets/docs/NVBA-Event-Refund-Policy.pdf" target="_blank" download class="dp-agree__pdf">Download PDF</a>
-            </div>
+            <h6>Event Refund Policy</h6>
             <ol>
                 <li>
                     <strong>Event Cancellation by NVBA</strong>

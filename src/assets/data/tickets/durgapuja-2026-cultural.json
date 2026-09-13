@@ -1,72 +1,32 @@
 [
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Adult (18+) - Non-Veg (Saturday & Sunday)",
-    "description": "Adult (18+) - Non-Veg",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Adult (18+) (Saturday & Sunday)",
+    "description": "Adult (18+)",
     "group": "Saturday & Sunday",
     "quantity": 0,
     "price": 120,
     "tax": 0,
-    "sku": "DP2026CULTURALADULTSATSUNNONVEG",
+    "sku": "DP2026CULTURALADULTSATSUN",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Adult (18+) - Veg (Saturday & Sunday)",
-    "description": "Adult (18+) - Veg",
-    "group": "Saturday & Sunday",
-    "quantity": 0,
-    "price": 120,
-    "tax": 0,
-    "sku": "DP2026CULTURALADULTSATSUNVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) - Adult Food Option - Non-Veg (Saturday & Sunday)",
-    "description": "Youth (6-17 yrs) - Adult Food Option - Non-Veg",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Student / Visiting Parent (Saturday & Sunday)",
+    "description": "Student / Visiting Parent",
     "group": "Saturday & Sunday",
     "quantity": 0,
     "price": 100,
     "tax": 0,
-    "sku": "DP2026CULTURALYOUTHSATSUNNONVEG",
+    "sku": "DP2026CULTURALSTUDENTVPSATSUN",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) - Adult Food Option - Veg (Saturday & Sunday)",
-    "description": "Youth (6-17 yrs) - Adult Food Option - Veg",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) (Saturday & Sunday)",
+    "description": "Youth (6-17 yrs)",
     "group": "Saturday & Sunday",
     "quantity": 0,
     "price": 100,
     "tax": 0,
-    "sku": "DP2026CULTURALYOUTHSATSUNVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) - Kids Food Option (Saturday & Sunday)",
-    "description": "Youth (6-17 yrs) - Kids Food Option",
-    "group": "Saturday & Sunday",
-    "quantity": 0,
-    "price": 100,
-    "tax": 0,
-    "sku": "DP2026CULTURALYOUTHWKIDSSATSUN",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Student / Visiting Parent - Non-Veg (Saturday & Sunday)",
-    "description": "Student / Visiting Parent - Non-Veg",
-    "group": "Saturday & Sunday",
-    "quantity": 0,
-    "price": 100,
-    "tax": 0,
-    "sku": "DP2026CULTURALSTUDENTVPSATSUNNONVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Student / Visiting Parent - Veg (Saturday & Sunday)",
-    "description": "Student / Visiting Parent - Veg",
-    "group": "Saturday & Sunday",
-    "quantity": 0,
-    "price": 100,
-    "tax": 0,
-    "sku": "DP2026CULTURALSTUDENTVPSATSUNVEG",
+    "sku": "DP2026CULTURALYOUTHSATSUN",
     "currency": "USD"
   },
   {
@@ -80,73 +40,33 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Adult (18+) - Non-Veg (Saturday Only)",
-    "description": "Adult (18+) - Non-Veg",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Adult (18+) (Saturday Only)",
+    "description": "Adult (18+)",
     "group": "Saturday Only",
     "quantity": 0,
     "price": 65,
     "tax": 0,
-    "sku": "DP2026CULTURALADULTSATNONVEG",
+    "sku": "DP2026CULTURALADULTSAT",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Adult (18+) - Veg (Saturday Only)",
-    "description": "Adult (18+) - Veg",
-    "group": "Saturday Only",
-    "quantity": 0,
-    "price": 65,
-    "tax": 0,
-    "sku": "DP2026CULTURALADULTSATVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) - Adult Food Option - Non-Veg (Saturday Only)",
-    "description": "Youth (6-17 yrs) - Adult Food Option - Non-Veg",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Student / Visiting Parent (Saturday Only)",
+    "description": "Student / Visiting Parent",
     "group": "Saturday Only",
     "quantity": 0,
     "price": 55,
     "tax": 0,
-    "sku": "DP2026CULTURALYOUTHSATNONVEG",
+    "sku": "DP2026CULTURALSTUDENTVPSAT",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) - Adult Food Option - Veg (Saturday Only)",
-    "description": "Youth (6-17 yrs) - Adult Food Option - Veg",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) (Saturday Only)",
+    "description": "Youth (6-17 yrs)",
     "group": "Saturday Only",
     "quantity": 0,
     "price": 55,
     "tax": 0,
-    "sku": "DP2026CULTURALYOUTHSATVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) - Kids Food Option (Saturday Only)",
-    "description": "Youth (6-17 yrs) - Kids Food Option",
-    "group": "Saturday Only",
-    "quantity": 0,
-    "price": 55,
-    "tax": 0,
-    "sku": "DP2026CULTURALYOUTHWKIDSSAT",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Student / Visiting Parent - Non-Veg (Saturday Only)",
-    "description": "Student / Visiting Parent - Non-Veg",
-    "group": "Saturday Only",
-    "quantity": 0,
-    "price": 55,
-    "tax": 0,
-    "sku": "DP2026CULTURALSTUDENTVPSATNONVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Student / Visiting Parent - Veg (Saturday Only)",
-    "description": "Student / Visiting Parent - Veg",
-    "group": "Saturday Only",
-    "quantity": 0,
-    "price": 55,
-    "tax": 0,
-    "sku": "DP2026CULTURALSTUDENTVPSATVEG",
+    "sku": "DP2026CULTURALYOUTHSAT",
     "currency": "USD"
   },
   {
@@ -160,73 +80,33 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Adult (18+) - Non-Veg (Sunday Only)",
-    "description": "Adult (18+) - Non-Veg",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Adult (18+) (Sunday Only)",
+    "description": "Adult (18+)",
     "group": "Sunday Only",
     "quantity": 0,
     "price": 65,
     "tax": 0,
-    "sku": "DP2026CULTURALADULTSUNNONVEG",
+    "sku": "DP2026CULTURALADULTSUN",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Adult (18+) - Veg (Sunday Only)",
-    "description": "Adult (18+) - Veg",
-    "group": "Sunday Only",
-    "quantity": 0,
-    "price": 65,
-    "tax": 0,
-    "sku": "DP2026CULTURALADULTSUNVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) - Adult Food Option - Non-Veg (Sunday Only)",
-    "description": "Youth (6-17 yrs) - Adult Food Option - Non-Veg",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Student / Visiting Parent (Sunday Only)",
+    "description": "Student / Visiting Parent",
     "group": "Sunday Only",
     "quantity": 0,
     "price": 55,
     "tax": 0,
-    "sku": "DP2026CULTURALYOUTHSUNNONVEG",
+    "sku": "DP2026CULTURALSTUDENTVPSUN",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) - Adult Food Option - Veg (Sunday Only)",
-    "description": "Youth (6-17 yrs) - Adult Food Option - Veg",
+    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) (Sunday Only)",
+    "description": "Youth (6-17 yrs)",
     "group": "Sunday Only",
     "quantity": 0,
     "price": 55,
     "tax": 0,
-    "sku": "DP2026CULTURALYOUTHSUNVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Youth (6-17 yrs) - Kids Food Option (Sunday Only)",
-    "description": "Youth (6-17 yrs) - Kids Food Option",
-    "group": "Sunday Only",
-    "quantity": 0,
-    "price": 55,
-    "tax": 0,
-    "sku": "DP2026CULTURALYOUTHWKIDSSUN",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Student / Visiting Parent - Non-Veg (Sunday Only)",
-    "description": "Student / Visiting Parent - Non-Veg",
-    "group": "Sunday Only",
-    "quantity": 0,
-    "price": 55,
-    "tax": 0,
-    "sku": "DP2026CULTURALSTUDENTVPSUNNONVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Cultural Only - Student / Visiting Parent - Veg (Sunday Only)",
-    "description": "Student / Visiting Parent - Veg",
-    "group": "Sunday Only",
-    "quantity": 0,
-    "price": 55,
-    "tax": 0,
-    "sku": "DP2026CULTURALSTUDENTVPSUNVEG",
+    "sku": "DP2026CULTURALYOUTHSUN",
     "currency": "USD"
   },
   {

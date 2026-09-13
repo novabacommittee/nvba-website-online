@@ -12,6 +12,7 @@ interface Tier {
   title: string;
   priceLabel: string;
   priceNote: string;
+  note: string;
   released: boolean;
   items: any[];
 }
@@ -53,6 +54,12 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   releaseRegular: boolean = false;
   releaseRegularWithoutCultural: boolean = false;
   releaseOnlyCultural: boolean = false;
+
+  // ── Single-day release control (independent of the 3-day / Sat & Sun offerings) ──
+  // Flip these to open or hold the "Saturday Only" / "Sunday Only" tickets across
+  // the Regular, Without-Cultural and Cultural Only tiers.
+  releaseSaturdayOnly: boolean = false;
+  releaseSundayOnly: boolean = false;
 
   private urls = {
     earlybird:         '/assets/data/tickets/durgapuja-2026-earlybird.json',
@@ -120,12 +127,22 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     return this.http.get(url);
   }
 
+  // Hide single-day groups that are not yet released. The 3-day and
+  // "Saturday & Sunday" base offerings are always shown for a released tier.
+  private applyDayScope(items: any[]): any[] {
+    return (items || []).filter(i => {
+      if (i.group === 'Saturday Only') { return this.releaseSaturdayOnly; }
+      if (i.group === 'Sunday Only')   { return this.releaseSundayOnly; }
+      return true;
+    });
+  }
+
   buildTiers(): void {
     this.tiers = [
-      { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 19, 2026)', priceLabel: 'Early Bird', priceNote: 'Until Sep 19, 2026', released: this.releaseEarlyBird,               items: this.earlyBirdTickets },
-      { key: 'reg', title: 'Regular Tickets',                  priceLabel: 'Regular', priceNote: '', released: this.releaseRegular,                 items: this.regularTickets },
-      { key: 'rnc', title: 'Regular Tickets (Without Cultural)', priceLabel: 'Regular (Without Cultural)', priceNote: '', released: this.releaseRegularWithoutCultural, items: this.regularNoCulturalTickets },
-      { key: 'cul', title: 'Cultural Only Tickets',            priceLabel: 'Cultural Only', priceNote: '', released: this.releaseOnlyCultural,            items: this.culturalTickets }
+      { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 20, 2026)', priceLabel: 'Early Bird', priceNote: 'Until Sep 20, 2026', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseEarlyBird,               items: this.applyDayScope(this.earlyBirdTickets) },
+      { key: 'reg', title: 'Regular Tickets',                  priceLabel: 'Regular', priceNote: '', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseRegular,                 items: this.applyDayScope(this.regularTickets) },
+      { key: 'rnc', title: 'Regular Tickets (Without Cultural)', priceLabel: 'Without Cultural', priceNote: '', note: 'All ticket types include admission to Puja and food for all 3 days (cultural program not included)', released: this.releaseRegularWithoutCultural, items: this.applyDayScope(this.regularNoCulturalTickets) },
+      { key: 'cul', title: 'Cultural Only Tickets',            priceLabel: 'Cultural Only', priceNote: '', note: 'Cultural program admission only (food not included)', released: this.releaseOnlyCultural,            items: this.applyDayScope(this.culturalTickets) }
     ].filter(t => t.released && t.items && t.items.length > 0);
   }
 
@@ -150,8 +167,8 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   categoryMeta: { [k: string]: { subtitle: string; tooltip: string; icon: string; color: string } } = {
     adult:      { subtitle: '', tooltip: '', icon: 'person', color: '#c0392b' },
     student:    { subtitle: 'Students (19-24 yrs) with valid Student ID or Visiting Parents.', tooltip: '', icon: 'cap', color: '#7b3fa0' },
-    youthadult: { subtitle: 'For ages 6-17. Includes food from the Adult Menu.', tooltip: 'Adult Food Option: Select this if the youth will have food from the Adult Menu.', icon: 'person', color: '#2b7de9' },
-    youthkids:  { subtitle: 'For ages 6-17. Includes food from the Kids Menu.', tooltip: 'Kids Food Option: Select this if the youth will have food from the Kids Menu.', icon: 'person', color: '#e67e22' },
+    youthadult: { subtitle: 'Select this if the youth will have food from the Adult Menu', tooltip: '', icon: 'person', color: '#2b7de9' },
+    youthkids:  { subtitle: 'Select this if the youth will have food from the Kids Menu', tooltip: '', icon: 'person', color: '#e67e22' },
     child:      { subtitle: '', tooltip: '', icon: 'child', color: '#27ae60' }
   };
 
@@ -165,6 +182,14 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
 
   metaOf(item: any) {
     return this.categoryMeta[this.catOf(item.sku)];
+  }
+
+  subtitleOf(item: any): string {
+    const cat = this.catOf(item.sku);
+    if (item.sku.indexOf('CULTURAL') !== -1) {
+      return cat === 'student' ? this.categoryMeta['student'].subtitle : '';
+    }
+    return this.categoryMeta[cat].subtitle;
   }
 
   orderedItems(items: any[], group: string): any[] {
@@ -231,7 +256,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   toWhole(v: any): number {
     const n = Math.floor(Number(v));
     if (isNaN(n) || n < 0) { return 0; }
-    return n;
+    return n > 10 ? 10 : n;
   }
 
   blockNonInteger(e: KeyboardEvent): void {
