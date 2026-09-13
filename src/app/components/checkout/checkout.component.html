@@ -1,23 +1,23 @@
 <div class=" wrapper ">
     <section id="checkout" class="main-pages "  >
         <div class="container">
-            <div class="topLineFix"></div>   
+            <div class="topLineFix"></div>
           <div class="section-header">
             <h2>Check Out</h2>
             <h3 style="text-align: center;">
             </h3>
           </div>
-    
+
         <div>
             <div class="mb-3"><a (click)="goBack()"  style="color: #ff6500; cursor: pointer; " ><i class="fa fa-chevron-left" aria-hidden="true"></i> Go Back</a></div>
                 <div class="table-responsive">
-                    <div class="flex-column my-5" *ngIf="!emptyCart"  > 
-                        <div class="flex-center  my-5">Your last order is completed. Cart is empty now. </div> 
-                        <h2 class="flex-center  my-3">Always update your mailing address and phone number in case we need to issue a refund.</h2>
+                    <div class="flex-column my-5" *ngIf="!emptyCart"  >
+                        <div class="flex-center  my-5">Your last order is completed. Cart is empty now. </div>
+                        <h2 class="flex-center  my-3">Keep your profile updated with the correct email and phone number for any communication or refund</h2>
                         <div class="flex-center ">
                             <a class="btn-get-started text-center " routerLink="/dashboard" >Membership Details Page</a>
                         </div>
-                    </div> 
+                    </div>
                     <table class="table table-hover table-bordered" *ngIf="emptyCart"  >
                         <thead>
                         <tr>
@@ -59,6 +59,6 @@
                     </div>
                 </div>
             </div>
-        </div> 
-    </section>     
+        </div>
+    </section>
 </div>

@@ -1,0 +1,276 @@
+  .btn-get-started {
+      background: #ff8d00;
+      border: 2px solid #ff8d00;
+      color: #fff;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 10px 32px;
+      border-radius: 5px;
+      transition: 0.5s;
+      margin: 0 20px 20px 0;
+      -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
+      -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
+      box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.55);
+  }
+
+  // ── Tier + group headings ──
+  .dp-tier { margin-bottom: 8px; }
+  .dp-tier__title {
+    font-weight: 700;
+    color: #c0392b;
+    margin: 18px 0 10px;
+  }
+  .dp-group { margin-bottom: 4px; }
+
+  // ── Strikethrough / price ──
+  .dp-strike {
+    text-decoration: line-through;
+    color: #333;
+    margin-right: 8px;
+    font-size: 0.9em;
+  }
+  .dp-price { font-weight: 600; }
+  .dp-price--sale { color: #218838; }   // green: shown when there is an Early Bird strike-out
+
+  // ── Total bar ──
+  .dp-total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 24px;
+    border-top: 2px solid rgba(0,0,0,0.15);
+    padding: 12px 6px 10px;
+    margin-top: 4px;
+    font-size: 1.05rem;
+
+    &__label { font-weight: 700; color: #333; }
+    &__amount { font-weight: 700; color: #c0392b; min-width: 90px; text-align: right; }
+  }
+
+  // ── Mandatory agreements ──
+  .dp-agree {
+    margin: 8px 0 16px;
+
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      input[type="checkbox"] { margin-top: 4px; flex-shrink: 0; transform: scale(1.15); }
+      a { color: #c0392b; text-decoration: underline; cursor: pointer; }
+    }
+
+    &__hint { color: #c0392b; font-size: 1.1rem; font-weight: 600; margin: 10px 0 0; }
+
+    &__pdf { color: #218838; font-weight: 600; white-space: nowrap; }
+  }
+
+  .dp-legal__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+
+    h6 { margin-bottom: 0; }
+    .dp-agree__pdf { flex-shrink: 0; }
+  }
+
+  .dp-legal {
+    max-height: 260px;
+    overflow-y: auto;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-left: 4px solid #ff8d00;
+    border-radius: 6px;
+    background: #fffdf8;
+    padding: 14px 18px;
+    margin: 0 0 14px;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #444;
+
+    h6 { font-weight: 700; color: #333; margin-bottom: 8px; }
+    ol, ul { padding-left: 20px; margin-bottom: 0; }
+    li { margin-bottom: 6px; }
+  }
+
+/* ============ Redesigned ticket table (mockup look) ============ */
+.dp-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(192, 57, 43, 0.06);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 8px 0 22px;
+}
+.dp-banner__icon { color: #c0392b; flex-shrink: 0; display: flex; }
+.dp-banner__text { display: flex; flex-direction: column; line-height: 1.45; }
+.dp-banner__text strong { color: #c0392b; font-size: 1.02rem; }
+.dp-banner__text span { color: #7d6555; font-size: 0.95rem; }
+
+.dp-tier__title { font-weight: 800; color: #1a0a00; font-size: 1.5rem; margin: 26px 0 14px; }
+.dp-group__label { font-weight: 700; color: #c0392b; margin: 18px 0 8px; font-size: 1.05rem; }
+
+.dp-ttable-wrap { margin-bottom: 8px; }
+@media (max-width: 760px) { .dp-ttable-wrap { overflow-x: auto; } }
+.dp-ttable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border: 1px solid #f0e6d8;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+.dp-ttable thead th {
+  background: linear-gradient(135deg, #c0392b, #e67e22);
+  color: #fff;
+  font-weight: 700;
+  padding: 15px 18px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+.dp-ttable thead th.dp-ttable__type { text-align: left; }
+.dp-ttable__price-note { display: block; font-weight: 500; font-size: 0.8rem; color: rgba(255,255,255,0.95); }
+.dp-ttable tbody td { padding: 15px 18px; border-top: 1px solid #eee; vertical-align: middle; }
+.dp-ttable tbody tr:first-child td { border-top: none; }
+.dp-ttable tbody tr:hover td { background: #fdf6ec; }
+.dp-ttable__type { width: 56%; }
+.dp-ttable tbody td.dp-ttable__price,
+.dp-ttable tbody td.dp-ttable__qty,
+.dp-ttable tbody td.dp-ttable__total { text-align: center; white-space: nowrap; }
+.dp-ttable tbody td.dp-ttable__total { font-weight: 700; color: #3d2b1f; }
+
+.dp-cat { display: flex; align-items: flex-start; gap: 14px; }
+.dp-cat__icon { flex-shrink: 0; display: flex; margin-top: 2px; }
+.dp-cat__text { display: flex; flex-direction: column; }
+.dp-cat__title { font-weight: 700; color: #3d2b1f; font-size: 1.02rem; display: flex; align-items: center; gap: 8px; }
+.dp-cat__sub { color: #7d6555; font-size: 0.88rem; line-height: 1.4; margin-top: 3px; }
+.dp-cat__info {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #2b7de9; color: #fff; font-size: 11px; font-weight: 700; font-style: italic;
+  cursor: help; flex-shrink: 0;
+}
+
+.dp-qty { width: 64px; padding: 6px 8px; border: 1px solid #cfcfcf; border-radius: 6px; text-align: center; font-size: 1rem; }
+
+.dp-ttable .dp-strike { display: inline-block; }
+.dp-ttable .dp-price { display: inline-block; font-size: 1.2rem; font-weight: 700; }
+
+.dp-footnote { display: flex; align-items: flex-start; gap: 8px; color: #6b6b6b; font-size: 0.9rem; margin: 6px 2px 18px; }
+.dp-footnote__i {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #9aa8b5; color: #fff; font-size: 11px; font-weight: 700; font-style: italic;
+  flex-shrink: 0; margin-top: 1px;
+}
+
+/* Match the page font (Poppins) across the whole ticket component */
+:host, :host * {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Info hover tooltip */
+.dp-tip { position: relative; display: inline-flex; }
+.dp-tip__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #2b7de9; color: #fff; font-size: 11px; font-weight: 700; font-style: italic;
+  cursor: help; flex-shrink: 0;
+}
+.dp-tip__bubble {
+  visibility: hidden; opacity: 0;
+  position: absolute; top: 150%; left: 50%; transform: translateX(-50%);
+  width: 250px; max-width: 72vw;
+  background: #2c1810; color: #fff;
+  font-size: 0.8rem; font-weight: 400; line-height: 1.45; font-style: normal;
+  text-align: left; padding: 9px 11px; border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.32);
+  z-index: 30; transition: opacity 0.15s ease;
+}
+.dp-tip__bubble::after {
+  content: ''; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+  border: 6px solid transparent; border-bottom-color: #2c1810;
+}
+.dp-tip:hover .dp-tip__bubble { visibility: visible; opacity: 1; }
+
+  // ── Whole-cart ticket limit error ──
+  .dp-limit-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: rgba(192, 57, 43, 0.08);
+    border: 1px solid rgba(192, 57, 43, 0.35);
+    border-left: 4px solid #c0392b;
+    border-radius: 6px;
+    color: #a5281b;
+    font-weight: 600;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    padding: 12px 14px;
+    margin: 10px 2px 4px;
+  }
+
+  // ── Disabled "Add to Cart" (validations not yet satisfied) ──
+  .btn-warning:disabled,
+  .btn-warning[disabled] {
+    background-color: #d6d6d6;
+    border-color: #d6d6d6;
+    color: #8a8a8a;
+    opacity: 1;               // override Bootstrap's translucent disabled look
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+/* ============ COMPACT MOBILE (phones) — desktop look unchanged ============ */
+@media (max-width: 600px) {
+  .dp-banner {
+    gap: 10px;
+    padding: 10px 12px;
+    margin: 6px 0 16px;
+    border-radius: 10px;
+  }
+  .dp-banner__icon svg { width: 20px; height: 20px; }
+  .dp-banner__text strong { font-size: 0.9rem; line-height: 1.35; }
+  .dp-banner__text span { font-size: 0.82rem; }
+
+  .dp-tier__title { font-size: 1.15rem; margin: 18px 0 8px; }
+  .dp-group__label { font-size: 0.95rem; margin: 12px 0 6px; }
+
+  .dp-ttable { border-radius: 12px; }
+  .dp-ttable thead th { padding: 8px 8px; font-size: 0.8rem; }
+  .dp-ttable__price-note { font-size: 0.68rem; }
+  .dp-ttable tbody td { padding: 9px 8px; }
+
+  .dp-cat { gap: 8px; }
+  .dp-cat__icon svg { width: 22px; height: 22px; }
+  .dp-cat__title { font-size: 0.9rem; gap: 5px; }
+  .dp-cat__sub { font-size: 0.76rem; line-height: 1.3; margin-top: 2px; }
+
+  .dp-ttable .dp-price { font-size: 0.98rem; }
+  .dp-strike { font-size: 0.8em; margin-right: 5px; }
+
+  .dp-qty { width: 46px; padding: 4px 4px; font-size: 0.9rem; }
+
+  .dp-footnote { font-size: 0.8rem; margin: 4px 2px 12px; }
+
+  .dp-total { gap: 12px; padding: 10px 4px 8px; font-size: 0.95rem; }
+  .dp-total__amount { min-width: 70px; }
+
+  .dp-limit-error { font-size: 0.84rem; padding: 10px 12px; }
+
+  .dp-agree__item { font-size: 0.85rem; gap: 8px; }
+  .dp-agree__hint { font-size: 0.95rem; }
+  .dp-legal { max-height: 220px; padding: 12px 14px; font-size: 0.8rem; }
+}

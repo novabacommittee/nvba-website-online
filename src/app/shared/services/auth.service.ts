@@ -9,6 +9,7 @@ import {
 import { Observable, BehaviorSubject, observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { MemberService } from './../member/member.service';
+import { CartService } from './cart.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
@@ -28,12 +29,15 @@ export class AuthService  {
     public router: Router,
     public ngZone: NgZone, // NgZone service to remove outside scope warning
     public memberService : MemberService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private cartService: CartService
   ) {
 
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
     this.afAuth.authState.subscribe((user) => {
+      // Always start from an empty cart on any auth change (login, logout, account switch).
+      this.cartService.clearCart();
       if (user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));

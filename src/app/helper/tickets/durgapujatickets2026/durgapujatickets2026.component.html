@@ -1,0 +1,192 @@
+<!-- ══════════════ NON-MEMBER / EXPIRED PROMPT ══════════════ -->
+<div *ngIf="!memberValidity" class="col-md-12 pt-5">
+    <p class="text-center" style="color: #848484;">
+            Durga Puja 2026 tickets are exclusively available for members.<br />
+            If you are not a member of NVBA, please register with annual membership fees.
+            If you are already a member, kindly check your membership status and renew membership if it has expired,
+            before booking your ticket for Durga Puja 2026.
+    </p>
+    <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;"><b>Annual Membership fees: $30 per family.</b></div>
+    <div class="redExpired" *ngIf="this.member?.expires"> Membership Expired : {{ this.member?.expires }}</div>
+
+    <button *ngIf="!this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2">
+            NVBA Annual Membership</button>
+    <button *ngIf="this.member?.expires" (click)="addMembershipToCartobj()" class="btn-get-started w-100 mb-3 mt-2">
+        Renew Annual Membership</button>
+</div>
+
+<!-- ══════════════ TICKETS (members only) ══════════════ -->
+<div *ngIf="memberValidity" class="mb-5 tickets">
+    <!-- Header banner -->
+    <div class="dp-banner">
+        <span class="dp-banner__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </span>
+        <div class="dp-banner__text">
+            <strong>Tickets are required for all attendees, including children ages 0&ndash;5.</strong>
+            <span>Please select the appropriate ticket category and food option for each attendee.</span>
+        </div>
+    </div>
+
+    <!-- One block per released tier -->
+    <div *ngFor="let tier of tiers" class="dp-tier">
+        <div *ngFor="let group of groups(tier.items)" class="dp-group">
+            <div class="dp-group__label" *ngIf="groups(tier.items).length > 1">{{ group }}</div>
+            <div class="dp-ttable-wrap">
+            <table class="dp-ttable">
+                <thead>
+                    <tr>
+                        <th class="dp-ttable__type">Ticket Type ({{ group }})</th>
+                        <th class="dp-ttable__price">
+                            Price ({{ tier.priceLabel }})
+                            <span class="dp-ttable__price-note" *ngIf="tier.priceNote">{{ tier.priceNote }}</span>
+                        </th>
+                        <th class="dp-ttable__qty">Quantity</th>
+                        <th class="dp-ttable__total">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of orderedItems(tier.items, group)">
+                        <td class="dp-ttable__type">
+                            <div class="dp-cat">
+                                <span class="dp-cat__icon" [style.color]="metaOf(item).color">
+                                    <ng-container [ngSwitch]="metaOf(item).icon">
+                                        <svg *ngSwitchCase="'person'" viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                        <svg *ngSwitchCase="'cap'" viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                                        <svg *ngSwitchCase="'child'" viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><circle cx="12" cy="4.5" r="2.5"/><path d="M14.5 8h-5A2.5 2.5 0 007 10.5V15h2v6h2v-4h2v4h2v-6h2v-4.5A2.5 2.5 0 0014.5 8z"/></svg>
+                                    </ng-container>
+                                </span>
+                                <div class="dp-cat__text">
+                                    <div class="dp-cat__title">
+                                        {{ item.description }}
+                                    </div>
+                                    <div class="dp-cat__sub" *ngIf="subtitleOf(item)">{{ subtitleOf(item) }}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="dp-ttable__price">
+                            <span *ngIf="item.originalPrice && item.originalPrice > item.price" class="dp-strike">${{ item.originalPrice }}</span>
+                            <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">${{ item.price }}</span>
+                        </td>
+                        <td class="dp-ttable__qty">
+                            <input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" min="0" max="10" class="dp-qty">
+                        </td>
+                        <td class="dp-ttable__total">${{ item.price * item.quantity }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+
+        <!-- Per-tier note -->
+        <p class="dp-footnote">
+            <span class="dp-footnote__i">i</span>
+            {{ tier.note }}
+        </p>
+    </div>
+
+    <!-- ── Total ── -->
+    <div class="dp-total">
+        <span class="dp-total__label">Total</span>
+        <span class="dp-total__amount">$ {{ totalCost }}</span>
+    </div>
+
+    <!-- Whole-cart ticket limit -->
+    <p *ngIf="overTicketLimit" class="dp-limit-error">
+        You have selected {{ totalTickets }} tickets. A maximum of {{ maxTotalTickets }} tickets is allowed per order.
+        Please reduce the quantity to continue.
+    </p>
+
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn-small rounded btn-warning" (click)="clearCart()">Clear Order</button>
+    </div>
+
+    <!-- ── Mandatory agreements ── -->
+    <div class="dp-agree">
+        <label class="dp-agree__item">
+            <input type="checkbox" [(ngModel)]="agreeTerms">
+            <span>
+                I have read, understood, and agree to the
+                <a href="javascript:void(0)" (click)="showTerms = !showTerms">Event Participation Terms &amp; Conditions</a>
+                for myself and any other attendees included in my ticket purchase.
+            </span>
+        </label>
+
+        <div class="dp-legal" *ngIf="showTerms">
+            <h6>Event Participation Terms &amp; Conditions</h6>
+            <p>By purchasing tickets for myself and/or others, and by attending or participating in this event, I acknowledge and agree to the following terms &mdash;</p>
+            <ol>
+                <li>I agree to comply with all applicable event rules, school and facility policies, safety requirements, and reasonable instructions communicated or posted before or during the event by NVBA, its Executive Committee, authorized volunteers, school personnel, or facility representatives.</li>
+                <li>I agree to purchase member tickets only for myself and my immediate family members. I understand that the NVBA Executive Committee reserves the right to cancel and refund, in whole or in part, any ticket purchase that violates this requirement or any other applicable event guideline.</li>
+                <li>I understand that I am responsible for my own conduct and for the conduct and supervision of any minor children attending with me.</li>
+                <li>I will not engage in disruptive, unsafe, abusive, threatening, or inappropriate behavior. The NVBA Executive Committee reserves the right to ask any attendee who violates event or facility rules to leave the premises.</li>
+                <li>I will respect the school property, equipment, classrooms, common areas, and surrounding premises. I understand that I may be responsible for damage caused by me or members of my family.</li>
+                <li>I agree to remain within designated event areas and not enter restricted rooms, classrooms, offices, or other areas not authorized for event use.</li>
+                <li>I understand and voluntarily accept that participation in event activities may involve inherent risks, including slips, falls, physical activity, food-related concerns, or other unforeseen incidents.</li>
+                <li>I understand that NVBA may not be able to accommodate food allergies or dietary restrictions. Attendees are responsible for exercising appropriate caution and determining whether food served is suitable for themselves and/or their family.</li>
+                <li>I agree to promptly inform a member of the NVBA Executive Committee or authorized volunteer of any unsafe condition, injury, accident, or emergency.</li>
+                <li>I understand that NVBA, its Executive Committee, authorized volunteers and the school/facility are not responsible for lost, stolen, or damaged personal belongings.</li>
+                <li>I understand that photographs and videos may be taken during the event for event documentation, organizational communications, and other NVBA-related purposes. Where applicable, I will inform the organizers if I have concerns regarding photography or video of myself or my minor child.</li>
+            </ol>
+        </div>
+
+        <label class="dp-agree__item">
+            <input type="checkbox" [(ngModel)]="agreeRefund">
+            <span>
+                I acknowledge that I have read, understood, and agree to the
+                <a href="javascript:void(0)" (click)="showRefund = !showRefund">Event Refund Policy</a>.
+            </span>
+        </label>
+
+        <div class="dp-legal" *ngIf="showRefund">
+            <h6>Event Refund Policy</h6>
+            <ol>
+                <li>
+                    <strong>Event Cancellation by NVBA</strong>
+                    <ul>
+                        <li>If an event is cancelled by NVBA, ticket holders will be entitled to 100% refund of the ticket price paid.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Event Rescheduling by NVBA</strong>
+                    <ul>
+                        <li>Existing tickets will remain valid for the rescheduled date.</li>
+                        <li>Ticket holders who are unable to attend the rescheduled date may request a 100% refund of the ticket price paid.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Ticket Holder-Initiated Cancellation</strong> &mdash; if a ticket holder voluntarily cancels their attendance and the event proceeds as scheduled:
+                    <ul>
+                        <li>Refund requests must be submitted at least 14 calendar days before the scheduled event date to be eligible for a refund, less any applicable processing fees.</li>
+                        <li>Cancellations submitted less than 14 calendar days before the scheduled event date are non-refundable.</li>
+                        <li>No refunds will be provided for no-shows.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Pricing Errors or Administrative Issues</strong>
+                    <ul>
+                        <li>If a ticket holder is incorrectly charged because of a membership-status error, website or payment-system issue, duplicate charge, or other administrative error, NVBA will refund the incorrectly charged amount.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Weather-Related Cancellations or Rescheduling</strong>
+                    <ul>
+                        <li>If NVBA cancels or reschedules an event because of weather, facility closure, safety concerns, or similar circumstances, the refund provisions under Sections 1 or 2 above will apply, as applicable.</li>
+                    </ul>
+                </li>
+                <li>
+                    All refund requests must be submitted in writing to <a href="mailto:treasurer@novaba.org">treasurer@novaba.org</a>.
+                    Approved refunds will generally be processed within 4-6 weeks and issued to the original payment method, where reasonably practicable.
+                </li>
+            </ol>
+        </div>
+
+        <p *ngIf="hasItems && (!agreeTerms || !agreeRefund)" class="dp-agree__hint">
+            Please accept both agreements above to continue.
+        </p>
+    </div>
+
+    <div class="d-flex justify-content-end mb-3">
+        <button [disabled]="!canCheckout" class="btn-small rounded btn-warning" (click)="addToCartobj()">Add to Cart</button>
+    </div>
+</div>

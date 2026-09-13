@@ -1,0 +1,89 @@
+[
+  {
+    "name": "NVBA Durga Puja 2026 Early Bird - Adult (18+) | Non-Veg (All 3 Days)",
+    "description": "Adult (18+) | Non-Veg",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 120,
+    "originalPrice": 135,
+    "tax": 0,
+    "sku": "DP2026EBADULT3DAYSNONVEG",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Early Bird - Adult (18+) | Veg (All 3 Days)",
+    "description": "Adult (18+) | Veg",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 120,
+    "originalPrice": 135,
+    "tax": 0,
+    "sku": "DP2026EBADULT3DAYSVEG",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Early Bird - Youth (6-17 yrs) | Adult Food Option | Non-Veg (All 3 Days)",
+    "description": "Youth (6-17 yrs) | Adult Food Option | Non-Veg",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 70,
+    "originalPrice": 85,
+    "tax": 0,
+    "sku": "DP2026EBYOUTH3DAYSNONVEG",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Early Bird - Youth (6-17 yrs) | Adult Food Option | Veg (All 3 Days)",
+    "description": "Youth (6-17 yrs) | Adult Food Option | Veg",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 70,
+    "originalPrice": 85,
+    "tax": 0,
+    "sku": "DP2026EBYOUTH3DAYSVEG",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Early Bird - Youth (6-17 yrs) | Kids Food Option (All 3 Days)",
+    "description": "Youth (6-17 yrs) | Kids Food Option",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 70,
+    "originalPrice": 85,
+    "tax": 0,
+    "sku": "DP2026EBYOUTHWKIDS3DAYS",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Early Bird - Student / Visiting Parent | Non-Veg (All 3 Days)",
+    "description": "Student / Visiting Parent | Non-Veg",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 95,
+    "originalPrice": 110,
+    "tax": 0,
+    "sku": "DP2026EBSTUDENTVP3DAYSNONVEG",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Early Bird - Student / Visiting Parent | Veg (All 3 Days)",
+    "description": "Student / Visiting Parent | Veg",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 95,
+    "originalPrice": 110,
+    "tax": 0,
+    "sku": "DP2026EBSTUDENTVP3DAYSVEG",
+    "currency": "USD"
+  },
+  {
+    "name": "NVBA Durga Puja 2026 Early Bird - Child (0-5 yrs) | Kids Food Option (All 3 Days)",
+    "description": "Child (0-5 yrs) | Kids Food Option",
+    "group": "All 3 Days",
+    "quantity": 0,
+    "price": 0,
+    "tax": 0,
+    "sku": "DP2026EBKIDS3DAYS",
+    "currency": "USD"
+  }
+]

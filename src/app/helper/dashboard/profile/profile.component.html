@@ -4,6 +4,10 @@
     <div class="col-lg-8 col-md-12 m-auto ">
       <h2 class=" text-black-50">Welcome, {{member?.firstname}} {{member?.lastname}}</h2>
 
+      <div *ngIf="member?.membershipstatus == 'Valid' && member?.expires" class="profile-expiry">
+        Membership Expiration Date: {{ member?.expires | date:'d-MMM-yyyy' }}
+      </div>
+
       <p *ngIf="member?.membershipstatus == 'Valid'" class="text-gray mt-0 mb-7">Thanks for being part of the NVBA family. This is your account's profile page. You can see the membership details along with various updates.</p>
 
       <div class="alert alert-warning" role="alert" *ngIf="!member?.firstname" >
@@ -20,9 +24,7 @@
         <i class="ni education_hat mr-2"></i>Phone: <span class="font-weight-light">{{member?.Phone}}</span>
       </div>
 
-      <app-cartmember></app-cartmember>
-
-      <button [routerLink]="['/picnic2026']" class="btn-get-started w-100 mb-3 mt-2" >RSVP for Annual Picnic 2026</button>
+      <button [routerLink]="['/durgapuja2026']" class="btn-get-started w-100 mb-3 mt-2" >Durga Puja 2026 Details</button>
 
       <a href="https://novaba.us5.list-manage.com/subscribe?u=71b8b228056801a92f04f6000&id=172a06829e" class=" btn btn-secondary px-3 py-2 mt-2" target="_blank" >Subscribe for email</a>
 
@@ -59,6 +61,8 @@
           </div>
           <a [href]="qrCodeDownloadLink" download="qrcode" class=" btn btn-secondary px-3 py-2 mt-2" target="_blank" >Download QR Code</a>
       </div>
+
+      <app-cartmember></app-cartmember>
     </div>
   </div>
 </div>
