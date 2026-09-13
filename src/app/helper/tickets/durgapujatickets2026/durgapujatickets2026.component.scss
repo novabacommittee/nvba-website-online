@@ -204,3 +204,31 @@
   border: 6px solid transparent; border-bottom-color: #2c1810;
 }
 .dp-tip:hover .dp-tip__bubble { visibility: visible; opacity: 1; }
+
+  // ── Whole-cart ticket limit error ──
+  .dp-limit-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: rgba(192, 57, 43, 0.08);
+    border: 1px solid rgba(192, 57, 43, 0.35);
+    border-left: 4px solid #c0392b;
+    border-radius: 6px;
+    color: #a5281b;
+    font-weight: 600;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    padding: 12px 14px;
+    margin: 10px 2px 4px;
+  }
+
+  // ── Disabled "Add to Cart" (validations not yet satisfied) ──
+  .btn-warning:disabled,
+  .btn-warning[disabled] {
+    background-color: #d6d6d6;
+    border-color: #d6d6d6;
+    color: #8a8a8a;
+    opacity: 1;               // override Bootstrap's translucent disabled look
+    cursor: not-allowed;
+    box-shadow: none;
+  }

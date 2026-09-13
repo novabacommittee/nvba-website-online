@@ -219,13 +219,25 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     this.cdr.detectChanges();
   }
 
+  // Maximum number of tickets allowed across the entire cart.
+  readonly maxTotalTickets: number = 10;
+
   get hasItems(): boolean {
     return this.releasedItems.some(v => v.quantity > 0);
   }
 
+  // Running total of tickets selected across every row/tier on screen.
+  get totalTickets(): number {
+    return this.releasedItems.reduce((sum, v) => sum + (Number(v.quantity) || 0), 0);
+  }
+
+  get overTicketLimit(): boolean {
+    return this.totalTickets > this.maxTotalTickets;
+  }
+
   // Add to Cart is allowed only when both agreements are checked and there is at least one ticket.
   get canCheckout(): boolean {
-    return this.hasItems && this.agreeTerms && this.agreeRefund;
+    return this.hasItems && !this.overTicketLimit && this.agreeTerms && this.agreeRefund;
   }
 
   addMembershipToCartobj(): void {
@@ -235,7 +247,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   }
 
   addToCartobj(): void {
-    if (!this.canCheckout) { return; }
+    if (!this.canCheckout || this.overTicketLimit) { return; }
     this.cs.items = [];
     this.releasedItems.forEach((value: any) => {
       if (value.quantity > 0) {

@@ -91,6 +91,12 @@
         <span class="dp-total__amount">$ {{ totalCost }}</span>
     </div>
 
+    <!-- Whole-cart ticket limit -->
+    <p *ngIf="overTicketLimit" class="dp-limit-error">
+        You have selected {{ totalTickets }} tickets. A maximum of {{ maxTotalTickets }} tickets is allowed per order.
+        Please reduce the quantity to continue.
+    </p>
+
     <div class="d-flex justify-content-end mb-3">
         <button class="btn-small rounded btn-warning" (click)="clearCart()">Clear Order</button>
     </div>
