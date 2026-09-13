@@ -232,3 +232,45 @@
     cursor: not-allowed;
     box-shadow: none;
   }
+
+/* ============ COMPACT MOBILE (phones) — desktop look unchanged ============ */
+@media (max-width: 600px) {
+  .dp-banner {
+    gap: 10px;
+    padding: 10px 12px;
+    margin: 6px 0 16px;
+    border-radius: 10px;
+  }
+  .dp-banner__icon svg { width: 20px; height: 20px; }
+  .dp-banner__text strong { font-size: 0.9rem; line-height: 1.35; }
+  .dp-banner__text span { font-size: 0.82rem; }
+
+  .dp-tier__title { font-size: 1.15rem; margin: 18px 0 8px; }
+  .dp-group__label { font-size: 0.95rem; margin: 12px 0 6px; }
+
+  .dp-ttable { border-radius: 12px; }
+  .dp-ttable thead th { padding: 8px 8px; font-size: 0.8rem; }
+  .dp-ttable__price-note { font-size: 0.68rem; }
+  .dp-ttable tbody td { padding: 9px 8px; }
+
+  .dp-cat { gap: 8px; }
+  .dp-cat__icon svg { width: 22px; height: 22px; }
+  .dp-cat__title { font-size: 0.9rem; gap: 5px; }
+  .dp-cat__sub { font-size: 0.76rem; line-height: 1.3; margin-top: 2px; }
+
+  .dp-ttable .dp-price { font-size: 0.98rem; }
+  .dp-strike { font-size: 0.8em; margin-right: 5px; }
+
+  .dp-qty { width: 46px; padding: 4px 4px; font-size: 0.9rem; }
+
+  .dp-footnote { font-size: 0.8rem; margin: 4px 2px 12px; }
+
+  .dp-total { gap: 12px; padding: 10px 4px 8px; font-size: 0.95rem; }
+  .dp-total__amount { min-width: 70px; }
+
+  .dp-limit-error { font-size: 0.84rem; padding: 10px 12px; }
+
+  .dp-agree__item { font-size: 0.85rem; gap: 8px; }
+  .dp-agree__hint { font-size: 0.95rem; }
+  .dp-legal { max-height: 220px; padding: 12px 14px; font-size: 0.8rem; }
+}
