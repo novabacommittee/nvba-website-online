@@ -13,7 +13,7 @@
 // };
 
 
-export const paypalKey = 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS';
+// export const paypalKey = 'AVBsfj0Jw-jl5_63BPGwuduCaKDsPvbz1pwyqECm7N5FzKEi1Q_o-xQAiM_BTzQhAW064uAPf1v9uZdS';
 
 
 // NOVABA G-Suite
@@ -31,3 +31,4 @@ export const environment = {
     measurementId: "G-YM094H77Y4"
   }
 };
+export const paypalKey = 'AeLhWUCfC2jHOZv7b-KDfZV6R6Mig-2FklW6iIxsuI0UROww652TU9SlVPHyW1ygMGohQo21TfXUVPrz';
