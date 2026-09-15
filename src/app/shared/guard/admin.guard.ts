@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, UrlTree } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
-// Admin accounts allowed to reach /admin/editMember.
+// Admin accounts allowed to reach /admin/editmember.
 // NOTE: this is a UI gate only. The real protection must be enforced by
 // Firebase Realtime Database security rules restricting writes to /Members.
 const ADMIN_EMAILS: string[] = ['it_secretary@novaba.org'];
