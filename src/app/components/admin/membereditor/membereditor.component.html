@@ -1,0 +1,89 @@
+<div class="wrapper">
+
+  <div class="container p-3 pt-5">
+    <div class="row no-gutters align-items-center justify-content-center">
+      <div class="col-md-8 text-center">
+        <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> / <span>admin/editMember</span></p>
+        <h1 class="mb-3 bread">Member Admin &mdash; Edit Member</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container p-3">
+    <p class="me-hint">
+      Click <strong>Edit</strong> on a member to open the record editor. Use the grid's column filters to find a member.
+    </p>
+
+    <p *ngIf="loading" class="me-muted">Loading members&hellip;</p>
+
+    <div class="row" *ngIf="!loading">
+      <div class="col-12 mb-3 border-rounded">
+        <ag-grid-angular
+          style="width: 100%; height: 560px;"
+          class="ag-theme-alpine table-light table-responsive agGridTable"
+          [rowData]="rowData"
+          [columnDefs]="columnDefs"
+          [defaultColDef]="defaultColDef"
+          [animateRows]="true"
+          (gridReady)="onGridReady($event)"
+          (cellClicked)="onCellClicked($event)">
+        </ag-grid-angular>
+      </div>
+    </div>
+
+    <div class="me-log" *ngIf="log.length">
+      <h5>Activity</h5>
+      <ul><li *ngFor="let line of log">{{ line }}</li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Edit modal ============ -->
+<div class="me-modal-overlay" *ngIf="modalOpen" (click)="close()">
+  <div class="me-modal" (click)="$event.stopPropagation()">
+    <div class="me-modal-head">
+      <div>
+        <strong>{{ selectedEmail }}</strong>
+        <span class="me-muted">(key {{ selectedKey }})</span>
+      </div>
+      <button class="me-x" (click)="close()" title="Close">&times;</button>
+    </div>
+
+    <div class="me-modal-body">
+      <textarea class="me-json" [(ngModel)]="jsonText" (ngModelChange)="onJsonChange()" spellcheck="false"></textarea>
+
+      <p class="me-json-status" [class.me-ok]="jsonValid" [class.me-err]="!jsonValid">
+        {{ jsonValid ? (statusMsg || 'JSON parses OK') : ('Invalid JSON: ' + jsonError) }}
+      </p>
+
+      <!-- Compare panel -->
+      <div class="me-diff" *ngIf="diffComputed">
+        <h6>Changes vs loaded baseline</h6>
+        <p *ngIf="diff.length === 0" class="me-muted">No changes.</p>
+        <table *ngIf="diff.length > 0" class="me-diff-table">
+          <thead><tr><th>Field</th><th>Change</th><th>Before</th><th>After</th></tr></thead>
+          <tbody>
+            <tr *ngFor="let d of diff">
+              <td><code>{{ d.key }}</code></td>
+              <td><span class="me-badge me-badge--{{ d.type }}">{{ d.type }}</span></td>
+              <td class="me-diff-val">{{ d.before }}</td>
+              <td class="me-diff-val">{{ d.after }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="me-modal-foot">
+      <label class="me-mode"><input type="radio" name="mode" value="merge" [(ngModel)]="saveMode"> Merge</label>
+      <label class="me-mode"><input type="radio" name="mode" value="replace" [(ngModel)]="saveMode"> Replace</label>
+
+      <span class="me-foot-spacer"></span>
+
+      <button class="me-btn me-btn--load" (click)="loadLatest()" [disabled]="saving">Load latest</button>
+      <button class="me-btn me-btn--validate" (click)="validate()" [disabled]="saving">Validate</button>
+      <button class="me-btn me-btn--compare" (click)="compare()" [disabled]="saving">Compare changes</button>
+      <button class="me-btn me-btn--save" (click)="save()" [disabled]="!jsonValid || saving">{{ saving ? 'Saving…' : 'Save' }}</button>
+    </div>
+  </div>
+</div>

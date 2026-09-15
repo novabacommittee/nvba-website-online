@@ -1248,3 +1248,15 @@ p{
 .green{
 	color: #008000;
 }
+
+/* ag-Grid icons: the site's global `* / span { font-family: ... !important }`
+   rules clobber ag-grid's embedded icon font, making header sort/filter/menu
+   icons render as tofu/boxes. Restore the icon fonts (higher specificity + !important). */
+.ag-theme-alpine .ag-icon,
+.ag-theme-alpine .ag-icon::before {
+  font-family: "agGridAlpine" !important;
+}
+.ag-theme-balham .ag-icon,
+.ag-theme-balham .ag-icon::before {
+  font-family: "agGridBalham" !important;
+}

@@ -26,6 +26,8 @@ import { MagazinesComponent } from './pages/archive/magazines/magazines.componen
 import { ReportsComponent } from './components/admin/reports/reports.component';
 import { AlldetailsComponent } from './components/admin/alldetails/alldetails.component';
 import { MembersComponent } from './components/admin/members/members.component';
+import { MemberEditorComponent } from './components/admin/membereditor/membereditor.component';
+import { AdminGuard } from './shared/guard/admin.guard';
 
 import { ConcertComponent } from './components/events/concert/concert.component';
 import { EventscheckoutComponent } from './components/events/eventscheckout/eventscheckout.component';
@@ -101,6 +103,7 @@ const routes: Routes = [
   { path: 'admin/reports', component:ReportsComponent, canActivate:[AuthGuard] },
   { path: 'admin/alldetails', component:AlldetailsComponent, canActivate:[AuthGuard] },
   { path: 'admin/members', component:MembersComponent, canActivate:[AuthGuard] },
+  { path: 'admin/editMember', component:MemberEditorComponent, canActivate:[AdminGuard] },
 
   // { path: 'concerttickets', component: ConcertComponent },
   // { path: 'concert', component: ConcertComponent },

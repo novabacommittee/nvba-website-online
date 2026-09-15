@@ -60,6 +60,7 @@ import { ReportsComponent } from './components/admin/reports/reports.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { AlldetailsComponent } from './components/admin/alldetails/alldetails.component';
 import { MembersComponent } from './components/admin/members/members.component';
+import { MemberEditorComponent } from './components/admin/membereditor/membereditor.component';
 import { ConcertComponent } from './components/events/concert/concert.component';
 import { EventscheckoutComponent } from './components/events/eventscheckout/eventscheckout.component';
 import { AgmComponent } from './pages/aboutus/agm/agm.component';
@@ -143,6 +144,7 @@ import { CollapseModule } from "ngx-bootstrap/collapse";
     ReportsComponent,
     AlldetailsComponent,
     MembersComponent,
+    MemberEditorComponent,
     ConcertComponent,
     EventscheckoutComponent,
     AgmComponent,
