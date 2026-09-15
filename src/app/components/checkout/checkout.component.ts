@@ -129,22 +129,19 @@ export class CheckoutComponent implements OnInit {
               items.forEach(item =>
               {
                 console.log('Item:', item.name, item.sku, item.quantity, item.unit_amount.value);
-                if(item.name == 'NVBA Annual Membership' )
+                if(item.name == 'NVBA Annual Membership' || item.sku == 'MM2026YY')
                 {
-                  let current = moment();
-
-                  if(this.member.expires && (moment(this.member.expires).isSame(current) ||  moment(current).isAfter(this.member.expires))){
-                    this.member.expires = moment(current).add(1, 'years');
-                    this.member.membershipstatus = 'Valid';
-                  }
-                  else{
-                    this.member.expires = moment(this.member.expires).add(1, 'years');
-                    this.member.membershipstatus = 'Valid';
-                  }
-
-                  if(!this.member.expires){
-                    this.member.expires = moment(current).add(1, 'years');
-                  }
+                  const current = moment();
+                  const prior = moment(this.member.expires);
+                  // Extend only from an existing, still-valid future expiry; otherwise start from today.
+                  // This avoids moment('' / null / bad) which yields an Invalid Moment that serializes
+                  // to null and gets DELETED by Firebase .update().
+                  const base = (this.member.expires && prior.isValid() && prior.isAfter(current))
+                                 ? prior
+                                 : current;
+                  // Always persist a plain ISO string (never a Moment object, never null/Invalid).
+                  this.member.expires = base.add(1, 'years').toISOString();
+                  this.member.membershipstatus = 'Valid';
                 }
               });
 

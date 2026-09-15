@@ -24,6 +24,29 @@ export class MemberService {
     this.items = db.list('/Members').valueChanges();
   }
 
+  /* Account-creation hardening: never persist a blank/invalid `expires`.
+     A blank expires ("" / null / non-ISO / Invalid) is the value that, on a later
+     renewal, moment() turns into an Invalid Moment -> null -> Firebase field delete.
+     We drop the key on the automatic write paths so the record stays "absent"
+     (which renews correctly). Valid ISO strings and future dates are left intact.
+     NOTE: not applied to the admin raw writes (setMemberRaw/updateMemberRaw) — the
+     admin editor must be able to set/clear expires deliberately. */
+  private stripBlankExpires(obj: any): any {
+    if (!obj || typeof obj !== 'object' || !('expires' in obj)) { return obj; }
+    const e = obj.expires;
+    const isBlank =
+      e === null ||
+      e === undefined ||
+      (typeof e === 'string' && e.trim() === '') ||
+      (typeof e === 'object' && typeof e.isValid === 'function' && !e.isValid()); // Invalid Moment guard
+    if (isBlank) {
+      const clone = { ...obj };
+      delete clone.expires;
+      return clone;
+    }
+    return obj;
+  }
+
   /* Create member */
   AddMember(member: any) {
     // this.membersRef
@@ -31,7 +54,7 @@ export class MemberService {
     //   .catch((error) => {
     //     this.errorMgmt(error);
     //   });
-    this.db.object('/Members/'+member.id).set({ ...member }).catch(error => 
+    this.db.object('/Members/'+member.id).set(this.stripBlankExpires({ ...member })).catch(error => 
     {
       ////console.log(error);
     }).then( c => {
@@ -67,7 +90,7 @@ export class MemberService {
     //     this.errorMgmt(error);
     //   });
 
-    this.db.object('/Members/' + memb.id).update( JSON.parse( JSON.stringify(memb ) )).catch(error => {
+    this.db.object('/Members/' + memb.id).update( JSON.parse( JSON.stringify(this.stripBlankExpires(memb) ) )).catch(error => {
       this.errorMgmt(error);
       console.log(error);
     }).then( c => {
