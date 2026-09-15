@@ -1,0 +1,66 @@
+:host { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+.me-muted { color: #8a8a8a; font-size: 0.85rem; }
+.me-hint { color: #6b6b6b; font-size: 0.9rem; margin-bottom: 12px; }
+.me-hint code, .me-diff code { background: #f3f3f3; padding: 1px 5px; border-radius: 4px; }
+
+/* Edit button inside the grid (cellRenderer html) */
+::ng-deep .me-editbtn {
+  background: #e67e22; color: #fff; border: none; border-radius: 5px;
+  padding: 4px 14px; font-weight: 600; font-size: 0.8rem; cursor: pointer;
+}
+::ng-deep .me-editbtn:hover { background: #cf6f16; }
+
+.me-log { margin-top: 18px; }
+.me-log h5 { font-weight: 700; }
+.me-log ul { list-style: none; padding: 10px 12px; margin: 0; max-height: 200px; overflow-y: auto;
+  background: #1e1e1e; color: #d7d7d7; border-radius: 8px; font-family: monospace; font-size: 0.78rem; }
+.me-log li { padding: 2px 0; }
+
+/* ---------- Modal ---------- */
+.me-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center; z-index: 1050; padding: 20px;
+}
+.me-modal {
+  background: #fff; border-radius: 12px; width: 100%; max-width: 860px; max-height: 90vh;
+  display: flex; flex-direction: column; box-shadow: 0 12px 48px rgba(0,0,0,0.3); overflow: hidden;
+}
+.me-modal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px; border-bottom: 1px solid #eee; background: #faf3ea;
+}
+.me-modal-head strong { color: #c0392b; }
+.me-x { border: none; background: transparent; font-size: 1.6rem; line-height: 1; cursor: pointer; color: #888; }
+.me-x:hover { color: #333; }
+
+.me-modal-body { padding: 16px 18px; overflow-y: auto; }
+.me-json {
+  width: 100%; min-height: 300px; font-family: monospace; font-size: 0.82rem; line-height: 1.4;
+  border: 1px solid #ccc; border-radius: 8px; padding: 12px; resize: vertical; white-space: pre;
+}
+.me-json-status { font-size: 0.82rem; margin: 8px 0 4px; }
+.me-ok { color: #1e7e46; } .me-err { color: #c0392b; font-weight: 600; }
+
+.me-diff { margin-top: 12px; border-top: 1px dashed #ddd; padding-top: 10px; }
+.me-diff h6 { font-weight: 700; }
+.me-diff-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.me-diff-table th, .me-diff-table td { border: 1px solid #eee; padding: 6px 8px; text-align: left; vertical-align: top; }
+.me-diff-table thead th { background: #faf3ea; }
+.me-diff-val { max-width: 260px; word-break: break-all; font-family: monospace; font-size: 0.76rem; color: #444; }
+.me-badge { padding: 1px 8px; border-radius: 100px; font-size: 0.7rem; font-weight: 700; }
+.me-badge--added { background: rgba(39,174,96,0.15); color: #1e7e46; }
+.me-badge--removed { background: rgba(192,57,43,0.15); color: #a5281b; }
+.me-badge--changed { background: rgba(230,126,34,0.15); color: #b9600f; }
+
+.me-modal-foot {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 12px 18px; border-top: 1px solid #eee; background: #fafafa;
+}
+.me-mode { font-size: 0.84rem; color: #444; margin: 0; }
+.me-foot-spacer { flex: 1; }
+.me-btn { border: none; border-radius: 6px; padding: 8px 16px; font-weight: 600; cursor: pointer; font-size: 0.82rem; }
+.me-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.me-btn--load { background: #e9e9e9; color: #333; }
+.me-btn--validate { background: #2b7de9; color: #fff; }
+.me-btn--compare { background: #7b3fa0; color: #fff; }
+.me-btn--save { background: #c0392b; color: #fff; }

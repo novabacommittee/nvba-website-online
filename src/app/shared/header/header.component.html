@@ -47,6 +47,7 @@
               <ul class="dropmenu-content">
                 <li><a routerlinkactive="active" routerLink="admin/reports" *ngIf="auth.member.value?.usertype == 'admin' "  >Reports</a></li>
                 <li><a  routerlinkactive="active" href="/admin/alldetails" *ngIf="auth.member.value?.usertype == 'admin' "  >Details</a></li>
+                <li><a routerlinkactive="active" routerLink="admin/editMember" *ngIf="(auth.member.value?.email | lowercase) == 'it_secretary@novaba.org' "  >Edit Member</a></li>
               </ul>
             </li>
           
