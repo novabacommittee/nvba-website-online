@@ -64,3 +64,27 @@
 .me-btn--validate { background: #2b7de9; color: #fff; }
 .me-btn--compare { background: #7b3fa0; color: #fff; }
 .me-btn--save { background: #c0392b; color: #fff; }
+
+::ng-deep .me-refundbtn {
+  background: #7b3fa0; color: #fff; border: none; border-radius: 5px;
+  padding: 4px 12px; font-weight: 600; font-size: 0.8rem; cursor: pointer; margin-left: 6px;
+}
+::ng-deep .me-refundbtn:hover { background: #683490; }
+
+.me-refund-filters { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 14px; }
+.me-refund-field { display: flex; flex-direction: column; gap: 4px; font-size: 0.82rem; font-weight: 600; color: #3d2b1f; }
+.me-refund-field select { padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem; min-width: 160px; }
+.me-refund-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.me-refund-table th, .me-refund-table td { border: 1px solid #eee; padding: 6px 8px; text-align: left; }
+.me-refund-table thead th { background: #faf3ea; }
+.me-refunded { color: #a5281b; font-weight: 700; }
+.me-refund-msg { margin-top: 10px; font-weight: 600; color: #1e7e46; }
+
+/* Actions cell: show both buttons, don't clip to an ellipsis. */
+::ng-deep .ag-theme-alpine .me-actions-cell {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  display: flex; align-items: center; gap: 6px;
+  padding-left: 8px !important; padding-right: 8px !important;
+}
+::ng-deep .me-editbtn, ::ng-deep .me-refundbtn { white-space: nowrap; line-height: 1.2; }

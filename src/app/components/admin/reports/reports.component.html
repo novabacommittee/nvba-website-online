@@ -2,9 +2,32 @@
     <div class="container p-3 pt-5" >
         <div class="row no-gutters  align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }" style="filter: grayscale(100%) opacity(200%)" >
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> / <span>admin/reports</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Admin Reports - Membership Details</h1>
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> / <span>admin/membershipreports</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Admin - Membership Reports</h1>
             </div>
+        </div>
+    </div>
+
+    <div class="container p-3">
+        <div class="dp-report">
+            <label class="dp-report__field">
+                <span>Report type</span>
+                <select [(ngModel)]="reportType" (ngModelChange)="applyReport()" class="dp-report__select">
+                    <option value="all">All members</option>
+                    <option value="active">Active members</option>
+                    <option value="expiry">Membership expiry due in</option>
+                </select>
+            </label>
+
+            <label class="dp-report__field" *ngIf="reportType === 'expiry'">
+                <select [(ngModel)]="expiryMonths" (ngModelChange)="applyReport()" class="dp-report__select">
+                    <option *ngFor="let m of monthOptions" [ngValue]="m">{{ m }}</option>
+                </select>
+                <span>month(s)</span>
+            </label>
+
+            <span class="dp-report__count">{{ reportCount }} member(s) match</span>
+            <button (click)="downloadCsv()" class="btn-get-started dp-report__btn" [disabled]="reportCount === 0">Download CSV</button>
         </div>
     </div>
 

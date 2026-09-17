@@ -26,7 +26,7 @@
             </li>
             <li class="nav-item" [ngClass]="auth.member.value?.email ? 'dropmenu':'' " >
               <a class="nav-link" routerLink="/membership" (click)="toggle()" *ngIf="auth.member.value?.email"  >
-                  Welcome,<span class=" text-primary "  > {{auth.member.value?.firstname?auth.member.value?.firstname:'Guest'}}</span>
+                  <span class="dp-welcome">Welcome,<span class="text-primary dp-welcome__name"> {{auth.member.value?.firstname?auth.member.value?.firstname:'Guest'}}</span></span>
               </a>
               <a class="nav-link" routerLink="/membership"  (click)="toggle()" *ngIf="!auth.member.value?.email" >
                <span class=" text-primary " > Login</span>
@@ -40,19 +40,18 @@
                   </li>
                 </ul>
             </li>
-            <li class="nav-item  " [ngClass]="auth.member.value?.usertype == 'admin' ? 'dropmenu':'' "  >
-              <a class="nav-link" routerLink="/admin/reports" (click)="toggle()" *ngIf="auth.member.value?.usertype == 'admin' "  >
-                 <span class=" text-secondary "  > Admin </span>
+            <!-- Single Admin dropdown.
+                 Executive Committee sees 2 items (Reports, Details);
+                 Executive Committee IT Admin additionally sees Manage Member (3 total). -->
+            <li class="nav-item  " [ngClass]="isExecCommittee ? 'dropmenu':'' " *ngIf="isExecCommittee"  >
+              <a class="nav-link" href="javascript:void(0)" (click)="toggle()"  >
+                 <span> Admin </span>
               </a>
               <ul class="dropmenu-content">
-                <li><a routerlinkactive="active" routerLink="admin/reports" *ngIf="auth.member.value?.usertype == 'admin' "  >Reports</a></li>
-                <li><a  routerlinkactive="active" href="/admin/alldetails" *ngIf="auth.member.value?.usertype == 'admin' "  >Details</a></li>
+                <li *ngIf="isCommitteeAdmin"><a routerlinkactive="active" routerLink="admin/membershipreports"  >Membership Reports</a></li>
+                <li><a routerlinkactive="active" routerLink="admin/eventreport"  >Event Report</a></li>
+                <li *ngIf="isIdAdmin"><a routerlinkactive="active" routerLink="admin/managemember"  >Manage Member</a></li>
               </ul>
-            </li>
-
-            <!-- Edit Member: standalone item for it_secretary (a non-admin login), outside the usertype=='admin' dropdown -->
-            <li class="nav-item" *ngIf="(auth.member.value?.email | lowercase) == 'it_secretary@novaba.org' " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              <a class="nav-link" routerLink="/admin/editmember" (click)="toggle()" routerLinkActive="active"><span class="text-secondary">Edit Member</span></a>
             </li>
           
           
