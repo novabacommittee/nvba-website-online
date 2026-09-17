@@ -155,8 +155,20 @@ export class CheckoutComponent implements OnInit {
               }
 
             this.currentPurches = [];
+            // PayPal transaction details (stored per line item for reconciliation with PayPal).
+            const pp: any = data;
+            const paypalOrderId = pp?.id;
+            const captureId = pp?.purchase_units?.[0]?.payments?.captures?.[0]?.id;
+            const payerEmail = pp?.payer?.email_address;
             [...this.cartCheck].forEach(e => {
-              this.currentPurches.unshift({ ...e, paymentTime: data.create_time });
+              this.currentPurches.unshift({
+                ...e,
+                paymentTime: data.create_time,
+                paypalOrderId: paypalOrderId,
+                captureId: captureId,
+                payerEmail: payerEmail,
+                paymentStatus: data.status
+              });
             });
 
             this.member.purchase.unshift(this.currentPurches);
@@ -214,7 +226,7 @@ export class CheckoutComponent implements OnInit {
     this.currentPurches = [];
     const now = moment().toISOString();
     [...this.cartCheck].forEach(e => {
-      this.currentPurches.unshift({ ...e, paymentTime: now });
+      this.currentPurches.unshift({ ...e, paymentTime: now, paymentStatus: 'FREE' });
     });
 
     this.member.purchase.unshift(this.currentPurches);
