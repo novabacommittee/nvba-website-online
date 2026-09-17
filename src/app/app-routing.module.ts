@@ -105,7 +105,7 @@ const routes: Routes = [
   { path: 'admin/membershipreports', component:ReportsComponent, canActivate:[CommitteeAdminGuard] },
   { path: 'admin/eventreport', component:AlldetailsComponent, canActivate:[CommitteeGuard] },
   { path: 'admin/members', component:MembersComponent, canActivate:[CommitteeGuard] },
-  { path: 'admin/editmember', component:MemberEditorComponent, canActivate:[AdminGuard] },
+  { path: 'admin/managemember', component:MemberEditorComponent, canActivate:[AdminGuard] },
 
   // { path: 'concerttickets', component: ConcertComponent },
   // { path: 'concert', component: ConcertComponent },

@@ -19,7 +19,7 @@ export const EXECUTIVE_COMMITTEE: string[] = [
   'communications_secretary@novaba.org'
 ];
 
-// Can access /admin/editmember (the member record editor).
+// Can access /admin/managemember (the member record editor).
 export const EXECUTIVE_COMMITTEE_IT_ADMIN: string[] = [
   'it_secretary@novaba.org'
 ];
