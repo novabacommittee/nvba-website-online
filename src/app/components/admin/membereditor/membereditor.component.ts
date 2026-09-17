@@ -24,8 +24,8 @@ export class MemberEditorComponent implements OnInit {
     { headerName: 'Expires', field: 'expires', flex: 1, minWidth: 150,
       valueGetter: (p: any) => (p.data && ('expires' in p.data)) ? p.data.expires : '' },
     { headerName: 'Status', field: 'membershipstatus', width: 120 },
-    { headerName: '', field: 'edit', width: 100, sortable: false, filter: false,
-      cellRenderer: () => '<button class="me-editbtn">Edit</button>' }
+    { headerName: 'Actions', field: 'actions', width: 190, sortable: false, filter: false, cellClass: 'me-actions-cell',
+      cellRenderer: () => '<button class="me-editbtn">Edit</button><button class="me-refundbtn">Refund</button>' }
   ];
 
   // ---- Modal state ----
@@ -63,7 +63,10 @@ export class MemberEditorComponent implements OnInit {
   }
 
   onCellClicked(e: any): void {
-    if (e && e.colDef && e.colDef.field === 'edit' && e.data) { this.openEditor(e.data); }
+    if (!e || !e.data || !e.colDef || e.colDef.field !== 'actions') { return; }
+    const cls = (e.event && e.event.target && e.event.target.className) ? String(e.event.target.className) : '';
+    if (cls.indexOf('me-refundbtn') !== -1) { this.openRefunds(e.data); }
+    else if (cls.indexOf('me-editbtn') !== -1) { this.openEditor(e.data); }
   }
 
   private stable(o: any): string {
@@ -174,6 +177,177 @@ export class MemberEditorComponent implements OnInit {
       window.alert('Save failed: ' + (e && e.message ? e.message : e));
     } finally {
       this.saving = false;
+    }
+  }
+
+  // ── Manage Refunds ───────────────────────────────────────────────────────────
+  refundOpen = false;
+  refundKey: string | null = null;
+  refundEmail = '';
+  refundItems: any[] = [];     // flattened purchase items of the loaded record
+  refundYear = '';
+  refundEvent = '';
+  refundSku = '';
+  refundQty = 1;
+  refundSaving = false;
+  refundMsg = '';
+
+  private itemYear(it: any): string {
+    if (it && it.paymentTime) {
+      const y = moment(it.paymentTime).year();
+      if (!isNaN(y) && y > 2000) { return String(y); }
+    }
+    const m = String(it && it.sku || '').match(/(20\d{2})/);
+    return m ? m[1] : 'Unknown';
+  }
+  private itemEvent(it: any): string {
+    const s = String(it && it.sku || '');
+    if (s.indexOf('MM') === 0) { return 'Membership'; }
+    if (s.indexOf('DP') === 0) { return 'Durga Puja'; }
+    if (s.indexOf('SP') === 0) { return 'Saraswati Puja'; }
+    if (s.indexOf('PICNIC') === 0) { return 'Picnic'; }
+    if (s.indexOf('EOB') === 0) { return 'Echoes of Bengal'; }
+    if (s.indexOf('KP') === 0) { return 'Kobi Pronam'; }
+    return (it && it.name) ? it.name : s;
+  }
+  private flatItems(rec: any): any[] {
+    const out: any[] = [];
+    ((rec && rec.purchase) || []).forEach((g: any) => {
+      (Array.isArray(g) ? g : [g]).forEach((it: any) => {
+        if (it && it.sku) {
+          out.push({
+            sku: it.sku, name: it.name, description: it.description,
+            quantity: it.quantity, price: it.price, paymentTime: it.paymentTime,
+            status: it.status || '', year: this.itemYear(it), event: this.itemEvent(it)
+          });
+        }
+      });
+    });
+    return out;
+  }
+
+  private uniq(a: string[]): string[] { return Array.from(new Set(a)); }
+
+  get refundYears(): string[] { return this.uniq(this.refundItems.map(i => i.year)).sort().reverse(); }
+  get refundEvents(): string[] {
+    return this.uniq(this.refundItems.filter(i => !this.refundYear || i.year === this.refundYear).map(i => i.event));
+  }
+  get refundSkus(): string[] {
+    return this.uniq(this.refundItems
+      .filter(i => (!this.refundYear || i.year === this.refundYear) && (!this.refundEvent || i.event === this.refundEvent))
+      .map(i => i.sku));
+  }
+  get refundMatches(): any[] {
+    if (!this.refundSku) { return []; }
+    return this.refundItems.filter(i => i.sku === this.refundSku && i.year === this.refundYear && i.event === this.refundEvent);
+  }
+
+  // Quantity still available to refund for the current selection (sum of non-refunded qty).
+  get refundAvailableQty(): number {
+    return this.refundMatches
+      .filter(i => i.status !== 'Refunded')
+      .reduce((sum, i) => sum + (Number(i.quantity) || 0), 0);
+  }
+  get refundQtyOptions(): number[] {
+    const n = this.refundAvailableQty;
+    return Array.from({ length: n > 0 ? n : 0 }, (_, i) => i + 1);
+  }
+  onRefundSkuChange(): void { this.refundQty = 1; }
+
+  openRefunds(m: any): void {
+    this.refundKey = m.$key;
+    this.refundEmail = m.email;
+    this.refundYear = ''; this.refundEvent = ''; this.refundSku = ''; this.refundMsg = '';
+    this.mds.getMemberOnce(m.$key).then(rec => {
+      this.refundItems = this.flatItems(rec || {});
+      this.refundOpen = true;
+    });
+  }
+  closeRefund(): void { this.refundOpen = false; }
+  onRefundYearChange(): void { this.refundEvent = ''; this.refundSku = ''; this.refundQty = 1; }
+  onRefundEventChange(): void { this.refundSku = ''; this.refundQty = 1; }
+
+  private matchesSelection(it: any): boolean {
+    return it && it.sku === this.refundSku
+      && this.itemYear(it) === this.refundYear
+      && this.itemEvent(it) === this.refundEvent;
+  }
+
+  // Refund a chosen quantity. Full-item refunds flip status to 'Refunded';
+  // partial refunds split the line (reduce the active qty, add a Refunded sibling).
+  async doRefund(): Promise<void> {
+    if (!this.refundKey || !this.refundSku || this.refundSaving) { return; }
+    let qty = Number(this.refundQty) || 0;
+    if (qty <= 0) { return; }
+    this.refundSaving = true;
+    const key = this.refundKey;
+    try {
+      const rec = await this.mds.getMemberOnce(key);
+      const purchase = (rec && rec.purchase) ? rec.purchase : [];
+      let remaining = qty;
+      for (const group of purchase) {
+        const items = Array.isArray(group) ? group : [group];
+        for (const it of [...items]) {                       // snapshot so pushed siblings aren't re-processed
+          if (remaining <= 0) { break; }
+          if (!this.matchesSelection(it) || it.status === 'Refunded') { continue; }
+          const q = Number(it.quantity) || 0;
+          if (q <= 0) { continue; }
+          if (remaining >= q) {
+            it.status = 'Refunded';                          // whole line refunded
+            remaining -= q;
+          } else {
+            it.quantity = q - remaining;                     // keep the balance active
+            items.push({ ...it, quantity: remaining, status: 'Refunded' });  // refunded portion
+            remaining = 0;
+          }
+        }
+        if (remaining <= 0) { break; }
+      }
+      const done = qty - remaining;
+      if (done <= 0) { this.refundMsg = 'Nothing available to refund (it may have changed).'; this.refundSaving = false; return; }
+      if (!window.confirm('Refund ' + done + ' of SKU ' + this.refundSku + ' (' + this.refundEvent + ' ' + this.refundYear + ') for ' + this.refundEmail + '?')) {
+        this.refundSaving = false; return;
+      }
+      await this.mds.updateMemberRaw(key, { purchase });
+      this.refundMsg = 'Refunded ' + done + ' item(s).';
+      this.refundItems = this.flatItems(rec);
+      this.refundQty = 1;
+      this.updateGridRow(key, rec);
+      this.log.unshift(new Date().toISOString() + '  REFUND  ' + this.refundEmail + '  ' + this.refundSku + '  x' + done);
+    } catch (e: any) {
+      this.refundMsg = 'Refund failed: ' + (e && e.message ? e.message : e);
+    } finally {
+      this.refundSaving = false;
+    }
+  }
+
+  // Revert all refunded lines for the current selection back to active.
+  async undoRefund(): Promise<void> {
+    if (!this.refundKey || !this.refundSku || this.refundSaving) { return; }
+    this.refundSaving = true;
+    const key = this.refundKey;
+    try {
+      const rec = await this.mds.getMemberOnce(key);
+      const purchase = (rec && rec.purchase) ? rec.purchase : [];
+      let n = 0;
+      purchase.forEach((g: any) => {
+        (Array.isArray(g) ? g : [g]).forEach((it: any) => {
+          if (this.matchesSelection(it) && it.status === 'Refunded') { delete it.status; n++; }
+        });
+      });
+      if (n === 0) { this.refundMsg = 'No refunded items to revert for this selection.'; this.refundSaving = false; return; }
+      if (!window.confirm('Revert ' + n + ' refunded line(s) of SKU ' + this.refundSku + ' back to active for ' + this.refundEmail + '?')) {
+        this.refundSaving = false; return;
+      }
+      await this.mds.updateMemberRaw(key, { purchase });
+      this.refundMsg = 'Reverted ' + n + ' line(s).';
+      this.refundItems = this.flatItems(rec);
+      this.updateGridRow(key, rec);
+      this.log.unshift(new Date().toISOString() + '  UNREFUND  ' + this.refundEmail + '  ' + this.refundSku + '  x' + n);
+    } catch (e: any) {
+      this.refundMsg = 'Failed: ' + (e && e.message ? e.message : e);
+    } finally {
+      this.refundSaving = false;
     }
   }
 

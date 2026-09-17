@@ -1026,6 +1026,9 @@ export class AlldetailsComponent implements OnInit {
             [...element].forEach(e => {
               //console.log(e.name+"("+e.sku+")-"+e.quantity+"-->"+e.paymentTime);
 
+              // Refunded purchases are excluded from all Event Summary counts and transaction lists.
+              if (e && e.status === 'Refunded') { return; }
+
               this.paymentTime = moment(e.paymentTime).format("YYYY-MM-DD HH:mm");
               if(e.sku.includes("MM2025YY")){
                   this.MM2025YY += e.quantity ;

@@ -87,3 +87,74 @@
     </div>
   </div>
 </div>
+
+
+<!-- ============ Manage Refunds modal ============ -->
+<div class="me-modal-overlay" *ngIf="refundOpen" (click)="closeRefund()">
+  <div class="me-modal" (click)="$event.stopPropagation()">
+    <div class="me-modal-head">
+      <div><strong>Manage Refunds</strong> <span class="me-muted">{{ refundEmail }}</span></div>
+      <button class="me-x" (click)="closeRefund()" title="Close">&times;</button>
+    </div>
+
+    <div class="me-modal-body">
+      <p *ngIf="refundItems.length === 0" class="me-muted">This member has no purchases.</p>
+
+      <div *ngIf="refundItems.length > 0" class="me-refund-filters">
+        <label class="me-refund-field">
+          <span>Year</span>
+          <select [(ngModel)]="refundYear" (ngModelChange)="onRefundYearChange()">
+            <option value="">— select —</option>
+            <option *ngFor="let y of refundYears" [value]="y">{{ y }}</option>
+          </select>
+        </label>
+        <label class="me-refund-field">
+          <span>Event</span>
+          <select [(ngModel)]="refundEvent" (ngModelChange)="onRefundEventChange()" [disabled]="!refundYear">
+            <option value="">— select —</option>
+            <option *ngFor="let ev of refundEvents" [value]="ev">{{ ev }}</option>
+          </select>
+        </label>
+        <label class="me-refund-field">
+          <span>SKU</span>
+          <select [(ngModel)]="refundSku" (ngModelChange)="onRefundSkuChange()" [disabled]="!refundEvent">
+            <option value="">— select —</option>
+            <option *ngFor="let s of refundSkus" [value]="s">{{ s }}</option>
+          </select>
+        </label>
+        <label class="me-refund-field">
+          <span>Quantity</span>
+          <select [(ngModel)]="refundQty" [disabled]="!refundSku || refundAvailableQty === 0">
+            <option *ngFor="let q of refundQtyOptions" [ngValue]="q">{{ q }}</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="me-muted" *ngIf="refundSku">Available to refund: {{ refundAvailableQty }}</p>
+
+      <table class="me-refund-table" *ngIf="refundMatches.length > 0">
+        <thead><tr><th>Description</th><th>SKU</th><th>Qty</th><th>Price</th><th>Paid</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr *ngFor="let it of refundMatches">
+            <td>{{ it.description || it.name }}</td>
+            <td><code>{{ it.sku }}</code></td>
+            <td>{{ it.quantity }}</td>
+            <td>{{ it.price }}</td>
+            <td>{{ it.paymentTime || '—' }}</td>
+            <td><span [class.me-refunded]="it.status === 'Refunded'">{{ it.status || 'Active' }}</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="me-refund-msg" *ngIf="refundMsg">{{ refundMsg }}</p>
+    </div>
+
+    <div class="me-modal-foot">
+      <span class="me-foot-spacer"></span>
+      <button class="me-btn me-btn--load" (click)="undoRefund()" [disabled]="!refundSku || refundSaving">Undo Refund</button>
+      <button class="me-btn me-btn--save" (click)="doRefund()" [disabled]="!refundSku || refundSaving">
+        {{ refundSaving ? 'Saving…' : 'Refund' }}
+      </button>
+    </div>
+  </div>
+</div>
