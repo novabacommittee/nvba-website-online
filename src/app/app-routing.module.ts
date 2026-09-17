@@ -28,6 +28,8 @@ import { AlldetailsComponent } from './components/admin/alldetails/alldetails.co
 import { MembersComponent } from './components/admin/members/members.component';
 import { MemberEditorComponent } from './components/admin/membereditor/membereditor.component';
 import { AdminGuard } from './shared/guard/admin.guard';
+import { CommitteeGuard } from './shared/guard/committee.guard';
+import { CommitteeAdminGuard } from './shared/guard/committee-admin.guard';
 
 import { ConcertComponent } from './components/events/concert/concert.component';
 import { EventscheckoutComponent } from './components/events/eventscheckout/eventscheckout.component';
@@ -100,9 +102,9 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent, canActivate:[AuthGuard] },
   // { path: 'tickets', component:TicketsComponent, canActivate:[AuthGuard] },
 
-  { path: 'admin/reports', component:ReportsComponent, canActivate:[AuthGuard] },
-  { path: 'admin/alldetails', component:AlldetailsComponent, canActivate:[AuthGuard] },
-  { path: 'admin/members', component:MembersComponent, canActivate:[AuthGuard] },
+  { path: 'admin/membershipreports', component:ReportsComponent, canActivate:[CommitteeAdminGuard] },
+  { path: 'admin/eventreport', component:AlldetailsComponent, canActivate:[CommitteeGuard] },
+  { path: 'admin/members', component:MembersComponent, canActivate:[CommitteeGuard] },
   { path: 'admin/editmember', component:MemberEditorComponent, canActivate:[AdminGuard] },
 
   // { path: 'concerttickets', component: ConcertComponent },

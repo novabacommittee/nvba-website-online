@@ -96,3 +96,49 @@ h1 [style*="font-family"], h2 [style*="font-family"], h3 [style*="font-family"],
 h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] {
   font-family: $font-primary !important;
 }
+
+/* Each nav item stays on one line (no mid-word breaks); tighter horizontal
+   padding so the extra admin items fit; wrap to a second line as a last resort
+   instead of clipping off the right edge. */
+.navbar-nav { flex-wrap: wrap; }
+.navbar-nav .nav-link {
+  white-space: nowrap;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+/* Uniform WHITE nav text — override the template greys (.text-secondary on
+   Admin / Edit Member, the orange .text-primary, and the global #909090). */
+.navbar-nav .nav-link,
+.navbar-nav .nav-link span,
+.navbar-nav .text-secondary,
+.dp-welcome { color: #fff !important; }
+
+/* Welcome label: never wraps; a very long first name is truncated with an ellipsis. */
+.dp-welcome { white-space: nowrap; }
+.dp-welcome__name {
+  display: inline-block;
+  margin-left: 0.35em;   /* inline-block trims the leading space; restore the gap after "Welcome," */
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+/* Restore hover behavior: nav text toggles to black on hover (the white base above is !important,
+   so the hover state must be re-asserted with !important; scoped rules win via view encapsulation). */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:hover span,
+.navbar-nav .nav-item:hover > .nav-link,
+.navbar-nav .nav-item:hover > .nav-link span {   /* nav hover -> black */
+  color: #181818 !important;
+}
+
+/* Member name (and the logged-out "Login") keep the brand orange accent in all
+   states — more specific than the white base and the hover-black rules above. */
+.navbar-nav .nav-link .text-primary,
+.navbar-nav .nav-link:hover .text-primary,
+.navbar-nav .nav-item:hover > .nav-link .text-primary {   /* brand orange accent */
+  color: #f86f2d !important;
+}
