@@ -142,3 +142,33 @@ h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] 
 .navbar-nav .nav-item:hover > .nav-link .text-primary {   /* brand orange accent */
   color: #f86f2d !important;
 }
+
+/* ============ MOBILE MENU FIXES (<=991.98px / touch) ============ */
+@media (max-width: 991.98px) {
+  /* Expanded menu scrolls, so bottom items (e.g. Admin options) are reachable. */
+  .navbar-collapse {
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Own solid dark background so text stays readable even when the navbar
+       turns white on scroll (.scrolled). */
+    background: #1c1c1c;
+    border-radius: 8px;
+    padding: 8px 14px 14px;
+    margin-top: 8px;
+  }
+
+  .navbar-nav .nav-link { color: #fff !important; padding: 10px 6px !important; }
+  .navbar-nav .nav-link .text-primary { color: #f86f2d !important; }
+
+  /* Dropdowns (Admin, etc.): show inline — touch has no hover. */
+  .dropmenu { display: block; }
+  .dropmenu-content {
+    display: block !important;
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+    margin-top: 4px;
+    border-radius: 6px;
+  }
+}
