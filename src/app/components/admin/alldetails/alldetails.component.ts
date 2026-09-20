@@ -181,6 +181,7 @@ export class AlldetailsComponent implements OnInit {
 
   // Running per-SKU totals for the summary tables, keyed by SKU.
   dp2026Counts: { [sku: string]: number } = {};
+  sponsorTickets: any[] = [];
 
   dp2026MemberCols = [
     { field: 'firstname', sortable: true, resizable: true, filter: true, cellClass: 'center' },
@@ -346,6 +347,12 @@ export class AlldetailsComponent implements OnInit {
     { label: 'Sunday — Child (0-5)', skus: ['DP2026CULTURALKIDSSUN'] }
   ];
 
+  dp2026SponsorRows = [
+    { label: 'Sponsor — Adult (18+) | Non-Veg', skus: ['DP2026SPONSORADULTNONVEG'] },
+    { label: 'Sponsor — Adult (18+) | Veg', skus: ['DP2026SPONSORADULTVEG'] },
+    { label: 'Sponsor — Kids', skus: ['DP2026SPONSORKIDS'] }
+  ];
+
   paymentTime:any;
   customAdult:number =0;
   customKid:number =0;
@@ -384,6 +391,12 @@ export class AlldetailsComponent implements OnInit {
       
       this.rowData =  this.members;
       //console.log(this.rowData);
+      this.checkDetails();
+    })
+
+    // Sponsor complimentary tickets — rebuild counts when they change.
+    this.mds.getSponsorTickets().subscribe((list:any[])=>{
+      this.sponsorTickets = list || [];
       this.checkDetails();
     })
 
@@ -1581,6 +1594,26 @@ export class AlldetailsComponent implements OnInit {
     catch (e) {
       console.error(e);
     }
+
+    // Add sponsor complimentary tickets into the DP2026 category counts.
+    this.addSponsorCounts();
+  }
+
+  sponsorSkuFor(category: string): string {
+    if (category === 'Adult Non-Veg') { return 'DP2026SPONSORADULTNONVEG'; }
+    if (category === 'Adult Veg')     { return 'DP2026SPONSORADULTVEG'; }
+    if (category === 'Kids')          { return 'DP2026SPONSORKIDS'; }
+    return '';
+  }
+
+  private addSponsorCounts(): void {
+    (this.sponsorTickets || []).forEach((st: any) => {
+      if (!st) { return; }
+      if (String(st.year) !== '2026' || st.event !== 'Durga Puja') { return; }   // DP2026 only
+      const sku = this.sponsorSkuFor(st.category);   // dedicated sponsor SKU (authoritative)
+      const cnt = Number(st.count) || 0;
+      if (sku && cnt > 0) { this.dp2026Counts[sku] = (this.dp2026Counts[sku] || 0) + cnt; }
+    });
   }
 
  
@@ -1631,6 +1664,10 @@ export class AlldetailsComponent implements OnInit {
   }
 
   // Sum the counts for a set of SKUs (used by the summary tables).
+  dpGroupTotal(rows:any[]):number {
+    return (rows || []).reduce((s:number, r:any) => s + this.dpSum(r.skus), 0);
+  }
+
   dpSum(skus:string[]):number {
     return (skus || []).reduce((sum, s) => sum + this.dpCount(s), 0);
   }

@@ -27,6 +27,7 @@ import { ReportsComponent } from './components/admin/reports/reports.component';
 import { AlldetailsComponent } from './components/admin/alldetails/alldetails.component';
 import { MembersComponent } from './components/admin/members/members.component';
 import { MemberEditorComponent } from './components/admin/membereditor/membereditor.component';
+import { SponsorTicketsComponent } from './components/admin/sponsortickets/sponsortickets.component';
 import { AdminGuard } from './shared/guard/admin.guard';
 import { CommitteeGuard } from './shared/guard/committee.guard';
 import { CommitteeAdminGuard } from './shared/guard/committee-admin.guard';
@@ -106,6 +107,7 @@ const routes: Routes = [
   { path: 'admin/eventreport', component:AlldetailsComponent, canActivate:[CommitteeGuard] },
   { path: 'admin/members', component:MembersComponent, canActivate:[CommitteeGuard] },
   { path: 'admin/managemember', component:MemberEditorComponent, canActivate:[AdminGuard] },
+  { path: 'admin/sponsortickets', component:SponsorTicketsComponent, canActivate:[CommitteeAdminGuard] },
 
   // { path: 'concerttickets', component: ConcertComponent },
   // { path: 'concert', component: ConcertComponent },

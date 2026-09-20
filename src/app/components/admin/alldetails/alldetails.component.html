@@ -184,6 +184,7 @@
             <div *ngIf="selectedEvent === 'dp2026'">
                 <h3 class="text-center mt-3 mb-2 ">Durga Puja 2026 Ticket Sell Summary (Oct 23rd – 25th, 2026)</h3>
 
+                <ng-container *ngIf="dpGroupTotal(dp2026FullRows) > 0">
                 <h5 class="text-center mt-4 mb-2">Full Event (Early Bird + Regular)</h5>
                 <table class="table table-bordered ">
                     <tr>
@@ -191,13 +192,17 @@
                       <th>SKU</th>
                       <th>Count</th>
                     </tr>
-                    <tr *ngFor="let r of dp2026FullRows">
-                      <th>{{r.label}}</th>
-                      <td>{{ r.skus.join(', ') }}</td>
-                      <td>{{dpSum(r.skus)}}</td>
-                    </tr>
+                    <ng-container *ngFor="let r of dp2026FullRows">
+                      <tr *ngIf="dpSum(r.skus) > 0">
+                        <th>{{r.label}}</th>
+                        <td>{{ r.skus.join(', ') }}</td>
+                        <td>{{dpSum(r.skus)}}</td>
+                      </tr>
+                    </ng-container>
                 </table>
+                </ng-container>
 
+                <ng-container *ngIf="dpGroupTotal(dp2026NoCulRows) > 0">
                 <h5 class="text-center mt-4 mb-2">Regular (Without Cultural)</h5>
                 <table class="table table-bordered ">
                     <tr>
@@ -205,13 +210,17 @@
                       <th>SKU</th>
                       <th>Count</th>
                     </tr>
-                    <tr *ngFor="let r of dp2026NoCulRows">
-                      <th>{{r.label}}</th>
-                      <td>{{ r.skus.join(', ') }}</td>
-                      <td>{{dpSum(r.skus)}}</td>
-                    </tr>
+                    <ng-container *ngFor="let r of dp2026NoCulRows">
+                      <tr *ngIf="dpSum(r.skus) > 0">
+                        <th>{{r.label}}</th>
+                        <td>{{ r.skus.join(', ') }}</td>
+                        <td>{{dpSum(r.skus)}}</td>
+                      </tr>
+                    </ng-container>
                 </table>
+                </ng-container>
 
+                <ng-container *ngIf="dpGroupTotal(dp2026CulturalRows) > 0">
                 <h5 class="text-center mt-4 mb-2">Cultural Only</h5>
                 <table class="table table-bordered ">
                     <tr>
@@ -219,12 +228,33 @@
                       <th>SKU</th>
                       <th>Count</th>
                     </tr>
-                    <tr *ngFor="let r of dp2026CulturalRows">
-                      <th>{{r.label}}</th>
-                      <td>{{ r.skus.join(', ') }}</td>
-                      <td>{{dpSum(r.skus)}}</td>
-                    </tr>
+                    <ng-container *ngFor="let r of dp2026CulturalRows">
+                      <tr *ngIf="dpSum(r.skus) > 0">
+                        <th>{{r.label}}</th>
+                        <td>{{ r.skus.join(', ') }}</td>
+                        <td>{{dpSum(r.skus)}}</td>
+                      </tr>
+                    </ng-container>
                 </table>
+                </ng-container>
+
+                <ng-container *ngIf="dpGroupTotal(dp2026SponsorRows) > 0">
+                <h5 class="text-center mt-4 mb-2">Sponsor Complimentary Tickets (no payment)</h5>
+                <table class="table table-bordered ">
+                    <tr>
+                      <th class="d-flex justify-content-around">Ticket Details</th>
+                      <th>SKU</th>
+                      <th>Count</th>
+                    </tr>
+                    <ng-container *ngFor="let r of dp2026SponsorRows">
+                      <tr *ngIf="dpSum(r.skus) > 0">
+                        <th>{{r.label}}</th>
+                        <td>{{ r.skus.join(', ') }}</td>
+                        <td>{{dpSum(r.skus)}}</td>
+                      </tr>
+                    </ng-container>
+                </table>
+                </ng-container>
 
                 <table class="table table-bordered ">
                     <tr class=" bg-light ">
