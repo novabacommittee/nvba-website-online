@@ -156,6 +156,19 @@ export class MemberService {
     return this.db.object('/Members/' + key).update(obj);
   }
 
+  // ── Sponsor complimentary tickets (no PayPal) ────────────────────────────────
+  getSponsorTickets() {
+    return this.db.list('/SponsorTickets').snapshotChanges().pipe(
+      map(changes => changes.map(c => ({ $key: c.payload.key, ...(c.payload.val() as any) })))
+    );
+  }
+  addSponsorTicket(obj: any): any {
+    return this.db.list('/SponsorTickets').push(obj);
+  }
+  deleteSponsorTicket(key: string): Promise<any> {
+    return this.db.object('/SponsorTickets/' + key).remove();
+  }
+
   concert(purches:any){
       this.db.object('/concert-2025/'+purches.id).set({ ...purches }).catch(error => {
             console.log(error);

@@ -1,0 +1,20 @@
+:host { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+.sp-wrap { color: #3d2b1f; }
+.sp-hint { color: #6b6b6b; font-size: 0.9rem; margin-bottom: 14px; }
+.sp-muted { color: #8a8a8a; font-size: 0.85rem; }
+
+.sp-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 14px;
+  background: #faf3ea; border: 1px solid #f0e6d8; border-radius: 10px; padding: 16px; }
+.sp-field { display: flex; flex-direction: column; gap: 4px; font-size: 0.8rem; font-weight: 600; }
+.sp-field input, .sp-field select { padding: 7px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem; min-width: 150px; }
+.sp-field--count input { min-width: 90px; }
+.sp-add { margin: 0 0 0 auto; }
+.sp-msg { margin: 10px 2px; font-weight: 600; color: #1e7e46; }
+
+.sp-totals { display: flex; flex-wrap: wrap; gap: 18px; margin: 16px 0; font-size: 0.92rem; color: #3d2b1f; }
+.sp-total--grand { color: #c0392b; }
+
+.sp-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; background: #fff; }
+.sp-table th, .sp-table td { border: 1px solid #eee; padding: 8px 10px; text-align: left; }
+.sp-table thead th { background: #faf3ea; }
+.sp-del { background: #c0392b; color: #fff; border: none; border-radius: 5px; padding: 4px 12px; font-weight: 600; cursor: pointer; }
