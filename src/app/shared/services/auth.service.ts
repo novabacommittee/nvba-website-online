@@ -198,7 +198,9 @@ export class AuthService  {
 
       this.memberService.GetMembersList().subscribe(mlist => {
          mlist.forEach((e,index)=>{
-            if(e.email == this.userData.email){
+            // Case-insensitive email match (Firebase emails are case-insensitive) so a
+            // differently-cased login never fails to find the member / spawns a duplicate.
+            if(String(e.email || '').toLowerCase() === String(this.userData.email || '').toLowerCase()){
               newuser = false;
               this.memberData = e;
                this.member.next({...e,...this.userData});
@@ -208,7 +210,7 @@ export class AuthService  {
          if(newuser){
          let con = JSON.parse(localStorage.getItem('user')!) ;
 
-          let newMember = {id: this.userData.uid, email:con.email};
+          let newMember = {id: this.userData.uid, email: String(con.email || '').toLowerCase()};
           //console.log( newMember );
           this.memberService.AddMember(newMember)
          // this.member.next(con);
