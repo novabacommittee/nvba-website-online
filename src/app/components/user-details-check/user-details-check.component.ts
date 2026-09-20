@@ -21,7 +21,7 @@ export class UserDetailsCheckComponent implements OnInit {
    // console.log(decoded);
     this.ms.GetMembersList().subscribe( mList =>{
       [...mList].forEach( member => {
-        if(member.email == decoded){
+        if(String(member.email || '').toLowerCase() === String(decoded || '').toLowerCase()){
           this.userMember = member;
           console.log(this.userMember);
 
