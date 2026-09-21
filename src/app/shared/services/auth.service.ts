@@ -211,9 +211,12 @@ export class AuthService  {
          let con = JSON.parse(localStorage.getItem('user')!) ;
 
           let newMember = {id: this.userData.uid, email: String(con.email || '').toLowerCase()};
-          //console.log( newMember );
-          this.memberService.AddMember(newMember)
-         // this.member.next(con);
+          this.memberService.AddMember(newMember);
+          // Emit the freshly-created member so first-time (never-member) users still have a
+          // member context — e.g. to buy non-member Festival tickets. memberValidity stays
+          // false (no `expires`), so they are correctly treated as non-members everywhere.
+          this.memberData = { ...this.userData, ...newMember };
+          this.member.next(this.memberData);
          }
          
          //console.log(this.member.value);

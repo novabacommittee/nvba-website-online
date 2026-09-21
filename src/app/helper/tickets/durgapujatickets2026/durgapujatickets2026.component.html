@@ -1,10 +1,25 @@
-<!-- ══════════════ NON-MEMBER / EXPIRED PROMPT ══════════════ -->
-<div *ngIf="!memberValidity" class="col-md-12 pt-5">
-    <p class="text-center" style="color: #848484;">
+<!-- ══════════════ SOLD OUT ══════════════ -->
+<div *ngIf="isSoldOut" class="dp-soldout">
+    <div class="dp-soldout__stamp">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.41 0 8 3.59 8 8 0 1.85-.63 3.55-1.69 4.9z"/>
+        </svg>
+        <span>SOLD OUT</span>
+    </div>
+    <p class="dp-soldout__msg">We have reached Auditorium capacity. Please stay tuned to NVBA communications for further updates.</p>
+</div>
+
+<!-- ══════════════ NOT LOGGED IN ══════════════ -->
+<div *ngIf="!isSoldOut && !member" class="col-md-12 pt-5">
+    <p class="text-center" style="color: #848484;">Please sign in to purchase Durga Puja 2026 tickets.</p>
+    <button (click)="router.navigate(['/sign-in'])" class="btn-get-started w-100 mb-3 mt-2">Sign In</button>
+</div>
+
+<!-- ══════════════ LOGGED IN, NOT A VALID MEMBER (membership option) ══════════════ -->
+<div *ngIf="!isSoldOut && member && !memberValidity" class="col-md-12 pt-4">
+    <p *ngIf="tiers.length === 0" class="text-center" style="color: #848484;">
             Durga Puja 2026 tickets are exclusively available for members.<br />
-            If you are not a member of NVBA, please register with annual membership fees.
-            If you are already a member, kindly check your membership status and renew membership if it has expired,
-            before booking your ticket for Durga Puja 2026.
+            Please register with annual membership fees, or renew if your membership has expired.
     </p>
     <div style="font-weight: bold; font-size: 1.1em;color: #848484; text-align: center;"><b>Annual Membership fees: $30 per family.</b></div>
     <div class="redExpired" *ngIf="this.member?.expires"> Membership Expired : {{ this.member?.expires }}</div>
@@ -15,8 +30,8 @@
         Renew Annual Membership</button>
 </div>
 
-<!-- ══════════════ TICKETS (members only) ══════════════ -->
-<div *ngIf="memberValidity" class="mb-5 tickets">
+<!-- ══════════════ TICKETS (logged-in members & non-members with an available tier) ══════════════ -->
+<div *ngIf="!isSoldOut && member && tiers.length > 0" class="mb-5 tickets">
     <!-- Header banner -->
     <div class="dp-banner">
         <span class="dp-banner__icon" aria-hidden="true">
@@ -66,12 +81,13 @@
                         </td>
                         <td class="dp-ttable__price">
                             <span *ngIf="item.originalPrice && item.originalPrice > item.price" class="dp-strike">${{ item.originalPrice }}</span>
-                            <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">${{ item.price }}</span>
+                            <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">${{ displayPrice(item) }}</span>
+                            <span class="dp-ttable__price-note" *ngIf="surchargeFor(item) > 0">incl. $10 non-member</span>
                         </td>
                         <td class="dp-ttable__qty">
                             <input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" min="0" max="10" class="dp-qty">
                         </td>
-                        <td class="dp-ttable__total">${{ item.price * item.quantity }}</td>
+                        <td class="dp-ttable__total">${{ displayPrice(item) * item.quantity }}</td>
                     </tr>
                 </tbody>
             </table>
