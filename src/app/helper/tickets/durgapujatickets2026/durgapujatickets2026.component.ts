@@ -50,7 +50,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   // ── Staged release control ───────────────────────────────────────────────────
   // Flip these as each phase opens; set a phase false to close it.
   // Typical order: Early Bird → Regular → Regular (Without Cultural) → Cultural Only.
-  releaseEarlyBird: boolean = true;
+  releaseEarlyBird: boolean = false;
   releaseRegular: boolean = false;
   releaseRegularWithoutCultural: boolean = false;
   releaseOnlyCultural: boolean = false;
@@ -60,6 +60,20 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   // the Regular, Without-Cultural and Cultural Only tiers.
   releaseSaturdayOnly: boolean = false;
   releaseSundayOnly: boolean = false;
+
+  // ── Sold out / sales closed ───────────────────────────────────────────────────
+  // Set `soldOut = true` to close ticket sales immediately, OR set `salesCloseAt`
+  // to an ISO timestamp (with timezone offset, e.g. '2026-09-22T00:00:00-04:00')
+  // to auto-close at that exact moment. Either one shows the SOLD OUT banner and
+  // hides the entire ticket/cart UI.
+  soldOut: boolean = true;
+  salesCloseAt: string = '';
+
+  get isSoldOut(): boolean {
+    if (this.soldOut) { return true; }
+    if (this.salesCloseAt) { return moment().isSameOrAfter(moment(this.salesCloseAt)); }
+    return false;
+  }
 
   private urls = {
     earlybird:         '/assets/data/tickets/durgapuja-2026-earlybird.json',
@@ -101,6 +115,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
 
           if (!m) {
             this.memberValidity = false;
+            this.buildTiers();
             return;
           }
 
@@ -114,6 +129,8 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
             this.memberValidity = false;
             this.member.membershipstatus = 'Expired';
           }
+          this.buildTiers();   // membership affects which tiers are shown + pricing
+          this.checkData();
         });
 
         this.checkData();
@@ -138,12 +155,14 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   }
 
   buildTiers(): void {
-    this.tiers = [
+    const all = [
       { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 20, 2026)', priceLabel: 'Early Bird', priceNote: 'Until Sep 20, 2026', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseEarlyBird,               items: this.applyDayScope(this.earlyBirdTickets) },
       { key: 'reg', title: 'Regular Tickets',                  priceLabel: 'Regular', priceNote: '', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseRegular,                 items: this.applyDayScope(this.regularTickets) },
-      { key: 'rnc', title: 'Regular Tickets (Without Cultural)', priceLabel: 'Without Cultural', priceNote: '', note: 'All ticket types include admission to Puja and food for all 3 days (cultural program not included)', released: this.releaseRegularWithoutCultural, items: this.applyDayScope(this.regularNoCulturalTickets) },
+      { key: 'rnc', title: 'Festival Tickets (Without Cultural)', priceLabel: 'Without Cultural', priceNote: '', note: 'Admission to Puja and food for all 3 days (cultural program not included)', released: this.releaseRegularWithoutCultural, items: this.applyDayScope(this.regularNoCulturalTickets) },
       { key: 'cul', title: 'Cultural Only Tickets',            priceLabel: 'Cultural Only', priceNote: '', note: 'Cultural program admission only (food not included)', released: this.releaseOnlyCultural,            items: this.applyDayScope(this.culturalTickets) }
     ].filter(t => t.released && t.items && t.items.length > 0);
+    // Non-members / expired members may buy ONLY the Festival (Without Cultural) tier.
+    this.tiers = this.memberValidity ? all : all.filter(t => t.key === 'rnc');
   }
 
   // All ticket rows currently on screen (across every released tier).
@@ -212,11 +231,20 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     let tc = 0;
     this.releasedItems.forEach(value => {
       if (value.quantity > 0) {
-        tc += (value.price * value.quantity);
+        tc += (this.displayPrice(value) * value.quantity);
       }
     });
     this.totalCost = tc;
     this.cdr.detectChanges();
+  }
+
+  // ── Non-member pricing: non-members / expired pay +$10 per PAID ticket
+  //    (kids / $0 tickets are exempt). Members pay the base price. ──
+  surchargeFor(item: any): number {
+    return (!this.memberValidity && Number(item.price) > 0) ? 10 : 0;
+  }
+  displayPrice(item: any): number {
+    return Number(item.price) + this.surchargeFor(item);
   }
 
   // Maximum number of tickets allowed across the entire cart.
@@ -251,12 +279,15 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     this.cs.items = [];
     this.releasedItems.forEach((value: any) => {
       if (value.quantity > 0) {
-        this.cs.items.push(value);
+        // Store the price the buyer actually pays (base + any non-member surcharge).
+        this.cs.items.push({ ...value, price: this.displayPrice(value) });
       }
     });
     this.cs.addToCart(this.cs.items);
-    if (this.member?.expires) {
+    if (this.member) {
       this.router.navigate(['/checkout']);
+    } else {
+      this.router.navigate(['/sign-in']);
     }
   }
 

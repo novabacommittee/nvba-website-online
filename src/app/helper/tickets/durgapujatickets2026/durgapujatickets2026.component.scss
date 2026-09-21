@@ -274,3 +274,35 @@
   .dp-agree__hint { font-size: 0.95rem; }
   .dp-legal { max-height: 220px; padding: 12px 14px; font-size: 0.8rem; }
 }
+
+/* ── SOLD OUT banner ── */
+.dp-soldout {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 24px auto;
+  max-width: 620px;
+  background: rgba(192, 57, 43, 0.05);
+  border: 1px solid rgba(192, 57, 43, 0.20);
+  border-radius: 16px;
+}
+.dp-soldout__stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #c0392b;
+  border: 3px solid #c0392b;
+  border-radius: 10px;
+  padding: 8px 20px;
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  transform: rotate(-4deg);
+  box-shadow: 0 2px 10px rgba(192, 57, 43, 0.15);
+}
+.dp-soldout__msg {
+  margin: 22px auto 0;
+  max-width: 480px;
+  color: #7d6555;
+  font-size: 1rem;
+  line-height: 1.55;
+}
