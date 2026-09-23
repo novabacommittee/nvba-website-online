@@ -1,76 +1,56 @@
 [
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Adult (18+) | Non-Veg (All 3 Days)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Adult (18+) | Non-Veg (All 3 Days)",
     "description": "Adult (18+) | Non-Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 75,
+    "price": 65,
     "tax": 0,
     "sku": "DP2026NOCULADULT3DAYSNONVEG",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Adult (18+) | Veg (All 3 Days)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Adult (18+) | Veg (All 3 Days)",
     "description": "Adult (18+) | Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 75,
+    "price": 65,
     "tax": 0,
     "sku": "DP2026NOCULADULT3DAYSVEG",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Non-Veg (All 3 Days)",
-    "description": "Youth (6-17 yrs) | Adult Food Option | Non-Veg",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Youth (6-17 yrs) / Student / Visiting Parent | Non-Veg (All 3 Days)",
+    "description": "Youth (6-17 yrs) / Student / Visiting Parent | Non-Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 55,
+    "price": 50,
     "tax": 0,
-    "sku": "DP2026NOCULYOUTH3DAYSNONVEG",
+    "sku": "DP2026NOCULYOUTHVP3DAYSNONVEG",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Veg (All 3 Days)",
-    "description": "Youth (6-17 yrs) | Adult Food Option | Veg",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Youth (6-17 yrs) / Student / Visiting Parent | Veg (All 3 Days)",
+    "description": "Youth (6-17 yrs) / Student / Visiting Parent | Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 55,
+    "price": 50,
     "tax": 0,
-    "sku": "DP2026NOCULYOUTH3DAYSVEG",
+    "sku": "DP2026NOCULYOUTHVP3DAYSVEG",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Youth (6-17 yrs) | Kids Food Option (All 3 Days)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Youth (6-17 yrs) | Kids Food Option (All 3 Days)",
     "description": "Youth (6-17 yrs) | Kids Food Option",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 55,
+    "price": 50,
     "tax": 0,
     "sku": "DP2026NOCULYOUTHWKIDS3DAYS",
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Student / Visiting Parent | Non-Veg (All 3 Days)",
-    "description": "Student / Visiting Parent | Non-Veg",
-    "group": "All 3 Days",
-    "quantity": 0,
-    "price": 65,
-    "tax": 0,
-    "sku": "DP2026NOCULSTUDENTVP3DAYSNONVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Student / Visiting Parent | Veg (All 3 Days)",
-    "description": "Student / Visiting Parent | Veg",
-    "group": "All 3 Days",
-    "quantity": 0,
-    "price": 65,
-    "tax": 0,
-    "sku": "DP2026NOCULSTUDENTVP3DAYSVEG",
-    "currency": "USD"
-  },
-  {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Child (0-5 yrs) | Kids Food Option (All 3 Days)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Child (0-5 yrs) | Kids Food Option (All 3 Days)",
     "description": "Child (0-5 yrs) | Kids Food Option",
     "group": "All 3 Days",
     "quantity": 0,
@@ -80,7 +60,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Adult (18+) | Non-Veg (Saturday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Adult (18+) | Non-Veg (Saturday Only)",
     "description": "Adult (18+) | Non-Veg",
     "group": "Saturday Only",
     "quantity": 0,
@@ -90,7 +70,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Adult (18+) | Veg (Saturday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Adult (18+) | Veg (Saturday Only)",
     "description": "Adult (18+) | Veg",
     "group": "Saturday Only",
     "quantity": 0,
@@ -100,7 +80,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Non-Veg (Saturday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Non-Veg (Saturday Only)",
     "description": "Youth (6-17 yrs) | Adult Food Option | Non-Veg",
     "group": "Saturday Only",
     "quantity": 0,
@@ -110,7 +90,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Veg (Saturday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Veg (Saturday Only)",
     "description": "Youth (6-17 yrs) | Adult Food Option | Veg",
     "group": "Saturday Only",
     "quantity": 0,
@@ -120,7 +100,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Youth (6-17 yrs) | Kids Food Option (Saturday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Youth (6-17 yrs) | Kids Food Option (Saturday Only)",
     "description": "Youth (6-17 yrs) | Kids Food Option",
     "group": "Saturday Only",
     "quantity": 0,
@@ -130,7 +110,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Student / Visiting Parent | Non-Veg (Saturday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Student / Visiting Parent | Non-Veg (Saturday Only)",
     "description": "Student / Visiting Parent | Non-Veg",
     "group": "Saturday Only",
     "quantity": 0,
@@ -140,7 +120,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Student / Visiting Parent | Veg (Saturday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Student / Visiting Parent | Veg (Saturday Only)",
     "description": "Student / Visiting Parent | Veg",
     "group": "Saturday Only",
     "quantity": 0,
@@ -150,7 +130,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Child (0-5 yrs) | Kids Food Option (Saturday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Child (0-5 yrs) | Kids Food Option (Saturday Only)",
     "description": "Child (0-5 yrs) | Kids Food Option",
     "group": "Saturday Only",
     "quantity": 0,
@@ -160,7 +140,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Adult (18+) | Non-Veg (Sunday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Adult (18+) | Non-Veg (Sunday Only)",
     "description": "Adult (18+) | Non-Veg",
     "group": "Sunday Only",
     "quantity": 0,
@@ -170,7 +150,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Adult (18+) | Veg (Sunday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Adult (18+) | Veg (Sunday Only)",
     "description": "Adult (18+) | Veg",
     "group": "Sunday Only",
     "quantity": 0,
@@ -180,7 +160,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Non-Veg (Sunday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Non-Veg (Sunday Only)",
     "description": "Youth (6-17 yrs) | Adult Food Option | Non-Veg",
     "group": "Sunday Only",
     "quantity": 0,
@@ -190,7 +170,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Veg (Sunday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Youth (6-17 yrs) | Adult Food Option | Veg (Sunday Only)",
     "description": "Youth (6-17 yrs) | Adult Food Option | Veg",
     "group": "Sunday Only",
     "quantity": 0,
@@ -200,7 +180,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Youth (6-17 yrs) | Kids Food Option (Sunday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Youth (6-17 yrs) | Kids Food Option (Sunday Only)",
     "description": "Youth (6-17 yrs) | Kids Food Option",
     "group": "Sunday Only",
     "quantity": 0,
@@ -210,7 +190,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Student / Visiting Parent | Non-Veg (Sunday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Student / Visiting Parent | Non-Veg (Sunday Only)",
     "description": "Student / Visiting Parent | Non-Veg",
     "group": "Sunday Only",
     "quantity": 0,
@@ -220,7 +200,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Student / Visiting Parent | Veg (Sunday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Student / Visiting Parent | Veg (Sunday Only)",
     "description": "Student / Visiting Parent | Veg",
     "group": "Sunday Only",
     "quantity": 0,
@@ -230,7 +210,7 @@
     "currency": "USD"
   },
   {
-    "name": "NVBA Durga Puja 2026 Regular (Without Cultural) - Child (0-5 yrs) | Kids Food Option (Sunday Only)",
+    "name": "NVBA Durga Puja 2026 Festival (Without Cultural) - Child (0-5 yrs) | Kids Food Option (Sunday Only)",
     "description": "Child (0-5 yrs) | Kids Food Option",
     "group": "Sunday Only",
     "quantity": 0,

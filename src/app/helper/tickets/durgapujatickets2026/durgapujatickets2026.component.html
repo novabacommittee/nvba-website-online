@@ -82,7 +82,6 @@
                         <td class="dp-ttable__price">
                             <span *ngIf="item.originalPrice && item.originalPrice > item.price" class="dp-strike">${{ item.originalPrice }}</span>
                             <span class="dp-price" [class.dp-price--sale]="item.originalPrice && item.originalPrice > item.price">${{ displayPrice(item) }}</span>
-                            <span class="dp-ttable__price-note" *ngIf="surchargeFor(item) > 0">incl. $10 non-member</span>
                         </td>
                         <td class="dp-ttable__qty">
                             <input type="number" [(ngModel)]="item.quantity" (keydown)="blockNonInteger($event)" (blur)="item.quantity = toWhole(item.quantity)" step="1" min="0" max="10" class="dp-qty">
@@ -106,6 +105,11 @@
         <span class="dp-total__label">Total</span>
         <span class="dp-total__amount">$ {{ totalCost }}</span>
     </div>
+
+    <!-- Free-only cart guard -->
+    <p *ngIf="hasItems && cartValue === 0" class="dp-limit-error">
+        Must be accompanied by an adult ticket.
+    </p>
 
     <!-- Whole-cart ticket limit -->
     <p *ngIf="overTicketLimit" class="dp-limit-error">
