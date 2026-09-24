@@ -158,7 +158,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     const all = [
       { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 20, 2026)', priceLabel: 'Early Bird', priceNote: 'Until Sep 20, 2026', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseEarlyBird,               items: this.applyDayScope(this.earlyBirdTickets) },
       { key: 'reg', title: 'Regular Tickets',                  priceLabel: 'Regular', priceNote: '', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseRegular,                 items: this.applyDayScope(this.regularTickets) },
-      { key: 'rnc', title: 'Festival Tickets (Without Cultural)', priceLabel: 'Without Cultural', priceNote: '', note: 'Admission to Puja and food for all 3 days (cultural program not included)', released: this.releaseRegularWithoutCultural, items: this.applyDayScope(this.regularNoCulturalTickets) },
+      { key: 'rnc', title: 'Festival Tickets (Without Cultural)', priceLabel: '', priceNote: '', note: 'Admission to Puja and food for all 3 days (Sat/Sun concerts not included)', released: this.releaseRegularWithoutCultural, items: this.applyDayScope(this.regularNoCulturalTickets) },
       { key: 'cul', title: 'Cultural Only Tickets',            priceLabel: 'Cultural Only', priceNote: '', note: 'Cultural program admission only (food not included)', released: this.releaseOnlyCultural,            items: this.applyDayScope(this.culturalTickets) }
     ].filter(t => t.released && t.items && t.items.length > 0);
     // Non-members / expired members may buy ONLY the Festival (Without Cultural) tier.

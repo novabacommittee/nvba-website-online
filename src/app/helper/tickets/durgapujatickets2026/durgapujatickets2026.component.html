@@ -55,7 +55,7 @@
                     <tr>
                         <th class="dp-ttable__type">Ticket Type ({{ group }})</th>
                         <th class="dp-ttable__price">
-                            Price ({{ tier.priceLabel }})
+                            Price<span *ngIf="tier.priceLabel"> ({{ tier.priceLabel }})</span>
                             <span class="dp-ttable__price-note" *ngIf="tier.priceNote">{{ tier.priceNote }}</span>
                         </th>
                         <th class="dp-ttable__qty">Quantity</th>
