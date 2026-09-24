@@ -11,7 +11,7 @@
 
 <!-- ══════════════ NOT LOGGED IN ══════════════ -->
 <div *ngIf="!isSoldOut && !member" class="col-md-12 pt-5">
-    <p class="text-center" style="color: #848484;">Please sign in to purchase Durga Puja 2026 tickets.</p>
+    <p class="text-center" style="color: #848484;">New to NVBA? Create an account first. You can then become an NVBA member or continue as a non-member.</p>
     <button (click)="router.navigate(['/sign-in'])" class="btn-get-started w-100 mb-3 mt-2">Sign In</button>
 </div>
 
@@ -45,6 +45,8 @@
 
     <!-- One block per released tier -->
     <div *ngFor="let tier of tiers" class="dp-tier">
+        <img *ngIf="tier.key === 'rnc'" src="./../../../assets/images/gallery/dp2026/Festival_Ticket_Banner.jpg"
+             alt="NVBA Durga Puja 2026 Festival Tickets" class="dp-festival-banner">
         <div *ngFor="let group of groups(tier.items)" class="dp-group">
             <div class="dp-group__label" *ngIf="groups(tier.items).length > 1">{{ group }}</div>
             <div class="dp-ttable-wrap">
@@ -108,7 +110,7 @@
 
     <!-- Free-only cart guard -->
     <p *ngIf="hasItems && cartValue === 0" class="dp-limit-error">
-        Must be accompanied by an adult ticket.
+        Kids&rsquo; festival tickets are not available for standalone purchase. Thank you for your understanding and support of NVBA.
     </p>
 
     <!-- Whole-cart ticket limit -->
