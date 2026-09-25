@@ -52,7 +52,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   // Typical order: Early Bird → Regular → Regular (Without Cultural) → Cultural Only.
   releaseEarlyBird: boolean = false;
   releaseRegular: boolean = false;
-  releaseRegularWithoutCultural: boolean = false;
+  releaseRegularWithoutCultural: boolean = true;
   releaseOnlyCultural: boolean = false;
 
   // ── Single-day release control (independent of the 3-day / Sat & Sun offerings) ──
@@ -66,7 +66,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   // to an ISO timestamp (with timezone offset, e.g. '2026-09-22T00:00:00-04:00')
   // to auto-close at that exact moment. Either one shows the SOLD OUT banner and
   // hides the entire ticket/cart UI.
-  soldOut: boolean = true;
+  soldOut: boolean = false;
   salesCloseAt: string = '';
 
   get isSoldOut(): boolean {
@@ -158,7 +158,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     const all = [
       { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 20, 2026)', priceLabel: 'Early Bird', priceNote: 'Until Sep 20, 2026', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseEarlyBird,               items: this.applyDayScope(this.earlyBirdTickets) },
       { key: 'reg', title: 'Regular Tickets',                  priceLabel: 'Regular', priceNote: '', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseRegular,                 items: this.applyDayScope(this.regularTickets) },
-      { key: 'rnc', title: 'Festival Tickets (Without Cultural)', priceLabel: 'Without Cultural', priceNote: '', note: 'Admission to Puja and food for all 3 days (cultural program not included)', released: this.releaseRegularWithoutCultural, items: this.applyDayScope(this.regularNoCulturalTickets) },
+      { key: 'rnc', title: 'Festival Tickets (Without Cultural)', priceLabel: '', priceNote: '', note: 'Admission to Puja and food for all 3 days (Sat/Sun concerts not included)', released: this.releaseRegularWithoutCultural, items: this.applyDayScope(this.regularNoCulturalTickets) },
       { key: 'cul', title: 'Cultural Only Tickets',            priceLabel: 'Cultural Only', priceNote: '', note: 'Cultural program admission only (food not included)', released: this.releaseOnlyCultural,            items: this.applyDayScope(this.culturalTickets) }
     ].filter(t => t.released && t.items && t.items.length > 0);
     // Non-members / expired members may buy ONLY the Festival (Without Cultural) tier.
@@ -182,10 +182,11 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   }
 
   // ── Presentation metadata per category (icon, subtitle, tooltip) ──
-  categoryOrder = ['adult', 'student', 'youthadult', 'youthkids', 'child'];
+  categoryOrder = ['adult', 'youthvp', 'student', 'youthadult', 'youthkids', 'child'];
   categoryMeta: { [k: string]: { subtitle: string; tooltip: string; icon: string; color: string } } = {
     adult:      { subtitle: '', tooltip: '', icon: 'person', color: '#c0392b' },
     student:    { subtitle: 'Students (19-24 yrs) with valid Student ID or Visiting Parents.', tooltip: '', icon: 'cap', color: '#7b3fa0' },
+    youthvp:    { subtitle: 'Youth (6-17 yrs) on the adult menu, Students (19-24 yrs with valid ID), or Visiting Parents.', tooltip: '', icon: 'cap', color: '#7b3fa0' },
     youthadult: { subtitle: 'Select this if the youth will have food from the Adult Menu', tooltip: '', icon: 'person', color: '#2b7de9' },
     youthkids:  { subtitle: 'Select this if the youth will have food from the Kids Menu', tooltip: '', icon: 'person', color: '#e67e22' },
     child:      { subtitle: '', tooltip: '', icon: 'child', color: '#27ae60' }
@@ -195,6 +196,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     if (sku.indexOf('ADULT') !== -1) { return 'adult'; }
     if (sku.indexOf('STUDENT') !== -1) { return 'student'; }
     if (sku.indexOf('YOUTHWKIDS') !== -1) { return 'youthkids'; }
+    if (sku.indexOf('YOUTHVP') !== -1) { return 'youthvp'; }
     if (sku.indexOf('YOUTH') !== -1) { return 'youthadult'; }
     return 'child';
   }
@@ -263,9 +265,17 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     return this.totalTickets > this.maxTotalTickets;
   }
 
-  // Add to Cart is allowed only when both agreements are checked and there is at least one ticket.
+  // Total cart value (what the buyer pays, incl. any non-member surcharge).
+  get cartValue(): number {
+    return this.releasedItems.reduce((sum, v) =>
+      sum + ((Number(v.quantity) > 0) ? this.displayPrice(v) * Number(v.quantity) : 0), 0);
+  }
+
+  // Add to Cart is allowed only when both agreements are checked, there is at least
+  // one ticket, and the cart value is greater than $0 (free child tickets alone
+  // must be accompanied by a paid/adult ticket).
   get canCheckout(): boolean {
-    return this.hasItems && !this.overTicketLimit && this.agreeTerms && this.agreeRefund;
+    return this.hasItems && this.cartValue > 0 && !this.overTicketLimit && this.agreeTerms && this.agreeRefund;
   }
 
   addMembershipToCartobj(): void {

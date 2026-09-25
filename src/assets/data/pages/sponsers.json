@@ -1,110 +1,110 @@
 [
-    {
-        "name" : "CMCI",
-        "image" : "assets/images/gallery/sponsors/CMCI New Logo.jpg",
-        "url": "https://www.c-mci.com/corporate/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "10,000",
-        "cause" : "NVBA Sponser",
-        "type" : "Platinum"
-    },
-    {
-        "name" : "Synergy",
-        "image" : "assets/images/gallery/sponsors/synergy.png",
-        "url": "https://www.synergybis.com/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "10,000",
-        "cause" : "NVBA Sponser",
-        "type" : "Platinum"
-    },
-    {
-        "name" : "Brite Group Inc. ",
-        "image" : "assets/images/gallery/sponsors/thebritegroup.png",
-        "url": "https://www.thebritegroup.com/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "3,000",
-        "cause" : "NVBA Sponser",
-        "type" : "Benefactor"
-    },
-    {
-        "name" : "RR Homes",
-        "image" : "assets/images/gallery/sponsors/RRHomesAD.png",
-        "url": "https://www.facebook.com/share/1AzYAGMxhu/?mibextid=wwXIfr",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "2,500",
-        "cause" : "NVBA Sponser",
-        "type" : "Benefactor"
-    },
-    {
-        "name" : "GoldenYug Life",
-        "image" : "assets/images/gallery/sponsors/GoldenYug.png",
-        "url": "https://www.goldenyug.life/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "2,000",
-        "cause" : "NVBA Sponser",
-        "type" : "Benefactor"
-    },
-    {
-        "name" : "Raaha LLC",
-        "image" : "assets/images/gallery/sponsors/raahallc.png",
-        "url": "https://raahallc.com/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "5,000",
-        "cause" : "NVBA Sponser",
-        "type" : "Benefactor"
-    },
-    {
-        "name" : "DesiNatural",
-        "image" : "assets/images/gallery/sponsors/Desibadge3c.png",
-        "url": "https://desifreshfoods.com/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "2,300",
-        "cause" : "NVBA Sponser",
-        "type" : "Benefactor"
-    },
-    {
-        "name" : "Keller Williams",
-        "image" : "assets/images/gallery/sponsors/Samson Property Logo.png",
-        "url": "https://chantilly.samsonproperties.net/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "1,000",
-        "cause" : "NVBA Sponser",
-        "type" : "Donor"
-    },
-    {
-        "name" : "Tech Soft Inc.",
-        "image" : "assets/images/gallery/sponsors/TechSoftLogo.jpg",
-        "url": "https://techsoft-inc.com/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "3,000",
-        "cause" : "NVBA Sponser",
-        "type" : "Benefactor"
-    },
-    {
-        "name" : "Stone Ridge Family Medicine",
-        "image" : "assets/images/gallery/sponsors/Stone Ridge Family Medicine main logo.png",
-        "url": "https://www.stoneridgefamilymedicine.com/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "1,500",
-        "cause" : "NVBA Sponser",
-        "type" : "Digital Partner"
-    },
-    {
-        "name" : "Halo Capital Management",
-        "image" : "assets/images/gallery/sponsors/HALO logo2.png",
-        "url": "https://halocap.com/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "2,100",
-        "cause" : "NVBA Sponser",
-        "type" : "Benefactor"
-    },
-    {
-        "name" : "Bravent",
-        "image" : "assets/images/gallery/sponsors/Bravent Sponsor.jpg",
-        "url": "http://bravent.us/",
-        "dateofDonation" : "Donated Just now",
-        "amount" : "1,600",
-        "cause" : "NVBA Sponser",
-        "type" : "Digital Partner"
-    }
+  {
+    "name": "CMCI",
+    "image": "assets/images/gallery/sponsors/CMCI New Logo.jpg",
+    "url": "https://www.c-mci.com/corporate/",
+    "dateofDonation": "Donated Just now",
+    "amount": "10,000",
+    "cause": "NVBA Sponser",
+    "type": "Platinum"
+  },
+  {
+    "name": "Synergy",
+    "image": "assets/images/gallery/sponsors/synergy.png",
+    "url": "https://www.synergybis.com/",
+    "dateofDonation": "Donated Just now",
+    "amount": "10,000",
+    "cause": "NVBA Sponser",
+    "type": "Platinum"
+  },
+  {
+    "name": "Brite Group Inc. ",
+    "image": "assets/images/gallery/sponsors/thebritegroup.png",
+    "url": "https://www.thebritegroup.com/",
+    "dateofDonation": "Donated Just now",
+    "amount": "3,000",
+    "cause": "NVBA Sponser",
+    "type": "Benefactor"
+  },
+  {
+    "name": "RR Homes",
+    "image": "assets/images/gallery/sponsors/ReemaRaju.png",
+    "url": "https://www.facebook.com/share/1AzYAGMxhu/?mibextid=wwXIfr",
+    "dateofDonation": "Donated Just now",
+    "amount": "2,500",
+    "cause": "NVBA Sponser",
+    "type": "Benefactor"
+  },
+  {
+    "name": "GoldenYug Life",
+    "image": "assets/images/gallery/sponsors/GoldenYugResort.jpeg",
+    "url": "https://www.goldenyug.life/",
+    "dateofDonation": "Donated Just now",
+    "amount": "2,000",
+    "cause": "NVBA Sponser",
+    "type": "Benefactor"
+  },
+  {
+    "name": "Raaha LLC",
+    "image": "assets/images/gallery/sponsors/raahallc.png",
+    "url": "https://raahallc.com/",
+    "dateofDonation": "Donated Just now",
+    "amount": "5,000",
+    "cause": "NVBA Sponser",
+    "type": "Benefactor"
+  },
+  {
+    "name": "Keller Williams",
+    "image": "assets/images/gallery/sponsors/Samson Property Logo.png",
+    "url": "https://chantilly.samsonproperties.net/",
+    "dateofDonation": "Donated Just now",
+    "amount": "1,000",
+    "cause": "NVBA Sponser",
+    "type": "Donor"
+  },
+  {
+    "name": "Tech Soft Inc.",
+    "image": "assets/images/gallery/sponsors/TechSoftLogo.jpg",
+    "url": "https://techsoft-inc.com/",
+    "dateofDonation": "Donated Just now",
+    "amount": "3,000",
+    "cause": "NVBA Sponser",
+    "type": "Benefactor"
+  },
+  {
+    "name": "Halo Capital Management",
+    "image": "assets/images/gallery/sponsors/HALO logo2.png",
+    "url": "https://halocap.com/",
+    "dateofDonation": "Donated Just now",
+    "amount": "2,100",
+    "cause": "NVBA Sponser",
+    "type": "Benefactor"
+  },
+  {
+    "name": "Bravent",
+    "image": "assets/images/gallery/sponsors/Bravent Sponsor.jpg",
+    "url": "http://bravent.us/",
+    "dateofDonation": "Donated Just now",
+    "amount": "1,600",
+    "cause": "NVBA Sponser",
+    "type": "Digital Partner"
+  },
+  {
+    "name": "May Jewelers",
+    "image": "assets/images/gallery/sponsors/MayJewelers.png",
+    "url": "",
+    "dateofDonation": "",
+    "amount": "",
+    "cause": "NVBA Sponser",
+    "type": "Sponser"
+  },
+  {
+    "name": "Strategic IT Solutions",
+    "image": "assets/images/gallery/sponsors/StrategicITSolutions.jpeg",
+    "url": "",
+    "dateofDonation": "",
+    "amount": "",
+    "cause": "NVBA Sponser",
+    "type": "Sponser"
+  }
 ]

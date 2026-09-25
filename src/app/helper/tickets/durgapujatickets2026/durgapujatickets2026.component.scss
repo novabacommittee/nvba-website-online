@@ -306,3 +306,14 @@
   font-size: 1rem;
   line-height: 1.55;
 }
+
+/* Festival ticket banner (shown above the Festival table only) */
+.dp-festival-banner {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 0 auto 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
