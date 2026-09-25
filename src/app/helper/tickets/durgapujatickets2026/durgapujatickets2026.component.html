@@ -11,6 +11,7 @@
 
 <!-- ══════════════ NOT LOGGED IN ══════════════ -->
 <div *ngIf="!isSoldOut && !member" class="col-md-12 pt-5">
+    <p class="text-center" style="color: #848484;">Already have an account? <a (click)="router.navigate(['/sign-in'])" style="color: #f86f2d; cursor: pointer; text-decoration: underline;">Sign in.</a></p>
     <p class="text-center" style="color: #848484;">New to NVBA? Create an account first. You can then become an NVBA member or continue as a non-member.</p>
     <button (click)="router.navigate(['/sign-in'])" class="btn-get-started w-100 mb-3 mt-2">Sign In</button>
 </div>
