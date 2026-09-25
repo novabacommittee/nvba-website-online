@@ -317,3 +317,27 @@
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
 }
+
+/* Sign In button — matches the "Timings of Durgotsav 2026" (.dp-btn--primary) style:
+   red→saffron gradient, pill shape, content-width (not full-width). */
+.dp-signin-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #c0392b, #e67e22);
+  box-shadow: 0 4px 16px rgba(192, 57, 43, 0.35);
+  transition: all 0.25s ease;
+}
+.dp-signin-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(192, 57, 43, 0.48);
+  color: #ffffff;
+  text-decoration: none;
+}
