@@ -48,16 +48,22 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   showRefund: boolean = false;   // toggles the full Refund Policy text
 
   // ── Staged release control ───────────────────────────────────────────────────
-  // Flip these as each phase opens; set a phase false to close it.
-  // Typical order: Early Bird → Regular → Regular (Without Cultural) → Cultural Only.
+  // Early Bird / Without-Cultural / Cultural-Only tiers (kept for future phases; off now).
   releaseEarlyBird: boolean = false;
-  releaseRegular: boolean = false;
-  releaseRegularWithoutCultural: boolean = true;
+  releaseRegularWithoutCultural: boolean = false;
   releaseOnlyCultural: boolean = false;
 
-  // ── Single-day release control (independent of the 3-day / Sat & Sun offerings) ──
-  // Flip these to open or hold the "Saturday Only" / "Sunday Only" tickets across
-  // the Regular, Without-Cultural and Cultural Only tiers.
+  // ── Regular tier release toggles (the three live options) ─────────────────────
+  //   A) 3-Day tickets                         → MEMBERS ONLY
+  //   B) 1-Day (Saturday & Sunday) tickets      → MEMBERS
+  //   C) 1-Day (Saturday & Sunday) tickets      → NON-MEMBERS (expired / never-member)
+  // Non-members never see 3-Day tickets. Each 1-Day toggle reveals BOTH Sat & Sun.
+  releaseRegular3DayMember: boolean = true;
+  releaseRegular1DayMember: boolean = true;
+  releaseRegular1DayNonMember: boolean = true;
+
+  // Single-day release for the (currently inactive) Early Bird / Without-Cultural /
+  // Cultural-Only tiers only. The Regular tier uses the three toggles above instead.
   releaseSaturdayOnly: boolean = false;
   releaseSundayOnly: boolean = false;
 
@@ -154,15 +160,41 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     });
   }
 
+  // Regular-tier items depend on the audience and the three release toggles:
+  //   • "All 3 Days"  → MEMBERS ONLY   (toggle A)
+  //   • "Saturday/Sunday Only" → members use toggle B, non-members use toggle C
+  // Non-members never receive 3-Day items.
+  private regularItemsFor(isMember: boolean): any[] {
+    return (this.regularTickets || []).filter(i => {
+      if (i.group === 'All 3 Days') {
+        return isMember && this.releaseRegular3DayMember;
+      }
+      if (i.group === 'Saturday Only' || i.group === 'Sunday Only') {
+        return isMember ? this.releaseRegular1DayMember : this.releaseRegular1DayNonMember;
+      }
+      return false;
+    });
+  }
+
   buildTiers(): void {
+    const regItems = this.regularItemsFor(this.memberValidity);
     const all = [
       { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 20, 2026)', priceLabel: 'Early Bird', priceNote: 'Until Sep 20, 2026', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseEarlyBird,               items: this.applyDayScope(this.earlyBirdTickets) },
-      { key: 'reg', title: 'Regular Tickets',                  priceLabel: 'Regular', priceNote: '', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseRegular,                 items: this.applyDayScope(this.regularTickets) },
+      { key: 'reg', title: 'Regular Tickets',                  priceLabel: '', priceNote: '', note: 'All ticket types include admission to Puja, cultural programs and food.', released: true,                             items: regItems },
       { key: 'rnc', title: 'Festival Tickets (Without Cultural)', priceLabel: '', priceNote: '', note: 'Admission to Puja and food for all 3 days (Sat/Sun concerts not included)', released: this.releaseRegularWithoutCultural, items: this.applyDayScope(this.regularNoCulturalTickets) },
       { key: 'cul', title: 'Cultural Only Tickets',            priceLabel: 'Cultural Only', priceNote: '', note: 'Cultural program admission only (food not included)', released: this.releaseOnlyCultural,            items: this.applyDayScope(this.culturalTickets) }
     ].filter(t => t.released && t.items && t.items.length > 0);
-    // Non-members / expired members may buy ONLY the Festival (Without Cultural) tier.
-    this.tiers = this.memberValidity ? all : all.filter(t => t.key === 'rnc');
+    // Members see every released tier; non-members may buy ONLY the Regular 1-Day tickets.
+    this.tiers = this.memberValidity ? all : all.filter(t => t.key === 'reg');
+  }
+
+  // ── Collapsible group sections (collapsed by default) ─────────────────────────
+  openGroups: { [k: string]: boolean } = {};
+  private groupKey(tierKey: string, group: string): string { return tierKey + '|' + group; }
+  isGroupOpen(tierKey: string, group: string): boolean { return !!this.openGroups[this.groupKey(tierKey, group)]; }
+  toggleGroup(tierKey: string, group: string): void {
+    const k = this.groupKey(tierKey, group);
+    this.openGroups[k] = !this.openGroups[k];
   }
 
   // All ticket rows currently on screen (across every released tier).

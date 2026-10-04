@@ -84,7 +84,7 @@
     "description": "Adult (18+) | Non-Veg",
     "group": "Saturday Only",
     "quantity": 0,
-    "price": 105,
+    "price": 90,
     "tax": 0,
     "sku": "DP2026REGADULTSATNONVEG",
     "currency": "USD"
@@ -94,7 +94,7 @@
     "description": "Adult (18+) | Veg",
     "group": "Saturday Only",
     "quantity": 0,
-    "price": 105,
+    "price": 90,
     "tax": 0,
     "sku": "DP2026REGADULTSATVEG",
     "currency": "USD"
@@ -104,7 +104,7 @@
     "description": "Youth (6-17 yrs) | Adult Food Option | Non-Veg",
     "group": "Saturday Only",
     "quantity": 0,
-    "price": 70,
+    "price": 50,
     "tax": 0,
     "sku": "DP2026REGYOUTHSATNONVEG",
     "currency": "USD"
@@ -114,7 +114,7 @@
     "description": "Youth (6-17 yrs) | Adult Food Option | Veg",
     "group": "Saturday Only",
     "quantity": 0,
-    "price": 70,
+    "price": 50,
     "tax": 0,
     "sku": "DP2026REGYOUTHSATVEG",
     "currency": "USD"
@@ -124,7 +124,7 @@
     "description": "Youth (6-17 yrs) | Kids Food Option",
     "group": "Saturday Only",
     "quantity": 0,
-    "price": 70,
+    "price": 50,
     "tax": 0,
     "sku": "DP2026REGYOUTHWKIDSSAT",
     "currency": "USD"
@@ -134,7 +134,7 @@
     "description": "Student / Visiting Parent | Non-Veg",
     "group": "Saturday Only",
     "quantity": 0,
-    "price": 100,
+    "price": 70,
     "tax": 0,
     "sku": "DP2026REGSTUDENTVPSATNONVEG",
     "currency": "USD"
@@ -144,7 +144,7 @@
     "description": "Student / Visiting Parent | Veg",
     "group": "Saturday Only",
     "quantity": 0,
-    "price": 100,
+    "price": 70,
     "tax": 0,
     "sku": "DP2026REGSTUDENTVPSATVEG",
     "currency": "USD"
@@ -164,7 +164,7 @@
     "description": "Adult (18+) | Non-Veg",
     "group": "Sunday Only",
     "quantity": 0,
-    "price": 105,
+    "price": 90,
     "tax": 0,
     "sku": "DP2026REGADULTSUNNONVEG",
     "currency": "USD"
@@ -174,7 +174,7 @@
     "description": "Adult (18+) | Veg",
     "group": "Sunday Only",
     "quantity": 0,
-    "price": 105,
+    "price": 90,
     "tax": 0,
     "sku": "DP2026REGADULTSUNVEG",
     "currency": "USD"
@@ -184,7 +184,7 @@
     "description": "Youth (6-17 yrs) | Adult Food Option | Non-Veg",
     "group": "Sunday Only",
     "quantity": 0,
-    "price": 70,
+    "price": 50,
     "tax": 0,
     "sku": "DP2026REGYOUTHSUNNONVEG",
     "currency": "USD"
@@ -194,7 +194,7 @@
     "description": "Youth (6-17 yrs) | Adult Food Option | Veg",
     "group": "Sunday Only",
     "quantity": 0,
-    "price": 70,
+    "price": 50,
     "tax": 0,
     "sku": "DP2026REGYOUTHSUNVEG",
     "currency": "USD"
@@ -204,7 +204,7 @@
     "description": "Youth (6-17 yrs) | Kids Food Option",
     "group": "Sunday Only",
     "quantity": 0,
-    "price": 70,
+    "price": 50,
     "tax": 0,
     "sku": "DP2026REGYOUTHWKIDSSUN",
     "currency": "USD"
@@ -214,7 +214,7 @@
     "description": "Student / Visiting Parent | Non-Veg",
     "group": "Sunday Only",
     "quantity": 0,
-    "price": 100,
+    "price": 70,
     "tax": 0,
     "sku": "DP2026REGSTUDENTVPSUNNONVEG",
     "currency": "USD"
@@ -224,7 +224,7 @@
     "description": "Student / Visiting Parent | Veg",
     "group": "Sunday Only",
     "quantity": 0,
-    "price": 100,
+    "price": 70,
     "tax": 0,
     "sku": "DP2026REGSTUDENTVPSUNVEG",
     "currency": "USD"
