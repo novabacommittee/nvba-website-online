@@ -4,7 +4,7 @@
     "description": "Adult (18+) | Non-Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 125,
+    "price": 135,
     "tax": 0,
     "sku": "DP2026REGADULT3DAYSNONVEG",
     "currency": "USD"
@@ -14,7 +14,7 @@
     "description": "Adult (18+) | Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 125,
+    "price": 135,
     "tax": 0,
     "sku": "DP2026REGADULT3DAYSVEG",
     "currency": "USD"
@@ -24,7 +24,7 @@
     "description": "Youth (6-17 yrs) | Adult Food Option | Non-Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 75,
+    "price": 85,
     "tax": 0,
     "sku": "DP2026REGYOUTH3DAYSNONVEG",
     "currency": "USD"
@@ -34,7 +34,7 @@
     "description": "Youth (6-17 yrs) | Adult Food Option | Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 75,
+    "price": 85,
     "tax": 0,
     "sku": "DP2026REGYOUTH3DAYSVEG",
     "currency": "USD"
@@ -44,7 +44,7 @@
     "description": "Youth (6-17 yrs) | Kids Food Option",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 75,
+    "price": 85,
     "tax": 0,
     "sku": "DP2026REGYOUTHWKIDS3DAYS",
     "currency": "USD"
@@ -54,7 +54,7 @@
     "description": "Student / Visiting Parent | Non-Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 100,
+    "price": 110,
     "tax": 0,
     "sku": "DP2026REGSTUDENTVP3DAYSNONVEG",
     "currency": "USD"
@@ -64,7 +64,7 @@
     "description": "Student / Visiting Parent | Veg",
     "group": "All 3 Days",
     "quantity": 0,
-    "price": 100,
+    "price": 110,
     "tax": 0,
     "sku": "DP2026REGSTUDENTVP3DAYSVEG",
     "currency": "USD"
