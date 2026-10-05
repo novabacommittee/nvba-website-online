@@ -536,3 +536,6 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
     }
   }
 }
+
+/* Offset so QR deep-link (#food-menu) doesn't land under the fixed header */
+#food-menu { scroll-margin-top: 90px; }
