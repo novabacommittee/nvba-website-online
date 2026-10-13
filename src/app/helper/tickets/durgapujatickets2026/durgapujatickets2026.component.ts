@@ -51,7 +51,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   // Early Bird / Without-Cultural / Cultural-Only tiers (kept for future phases; off now).
   releaseEarlyBird: boolean = false;
   releaseRegularWithoutCultural: boolean = false;
-  releaseOnlyCultural: boolean = false;
+  releaseOnlyCultural: boolean = true;
 
   // ── Regular tier release toggles (the three live options) ─────────────────────
   //   A) 3-Day tickets                         → MEMBERS ONLY
@@ -182,10 +182,11 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
       { key: 'eb',  title: 'Early Bird Tickets (Available until Sep 20, 2026)', priceLabel: 'Early Bird', priceNote: 'Until Sep 20, 2026', note: 'All ticket types include admission to Puja, cultural programs and food for all 3 days', released: this.releaseEarlyBird,               items: this.applyDayScope(this.earlyBirdTickets) },
       { key: 'reg', title: 'Regular Tickets',                  priceLabel: '', priceNote: '', note: 'All ticket types include admission to Puja, cultural programs and food.', released: true,                             items: regItems },
       { key: 'rnc', title: 'Festival Tickets (Without Cultural)', priceLabel: '', priceNote: '', note: 'Admission to Puja and food for all 3 days (Sat/Sun concerts not included)', released: this.releaseRegularWithoutCultural, items: this.applyDayScope(this.regularNoCulturalTickets) },
-      { key: 'cul', title: 'Cultural Only Tickets',            priceLabel: 'Cultural Only', priceNote: '', note: 'Cultural program admission only (food not included)', released: this.releaseOnlyCultural,            items: this.applyDayScope(this.culturalTickets) }
+      { key: 'cul', title: 'Concert Only Tickets',             priceLabel: '', priceNote: '', note: 'Concert (cultural program) admission only — food not included.', released: this.releaseOnlyCultural,            items: this.applyDayScope(this.culturalTickets) }
     ].filter(t => t.released && t.items && t.items.length > 0);
-    // Members see every released tier; non-members may buy ONLY the Regular 1-Day tickets.
-    this.tiers = this.memberValidity ? all : all.filter(t => t.key === 'reg');
+    // Members see every released tier; non-members may buy the Regular 1-Day tickets and
+    // the Concert Only tickets.
+    this.tiers = this.memberValidity ? all : all.filter(t => t.key === 'reg' || t.key === 'cul');
   }
 
   // ── Collapsible group sections (collapsed by default) ─────────────────────────
@@ -214,13 +215,14 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   }
 
   // ── Presentation metadata per category (icon, subtitle, tooltip) ──
-  categoryOrder = ['adult', 'youthvp', 'student', 'youthadult', 'youthkids', 'child'];
+  categoryOrder = ['adult', 'youthvp', 'student', 'youthadult', 'youthkids', 'concert', 'child'];
   categoryMeta: { [k: string]: { subtitle: string; tooltip: string; icon: string; color: string } } = {
     adult:      { subtitle: '', tooltip: '', icon: 'person', color: '#c0392b' },
     student:    { subtitle: 'Students (19-24 yrs) with valid Student ID or Visiting Parents.', tooltip: '', icon: 'cap', color: '#7b3fa0' },
     youthvp:    { subtitle: 'Youth (6-17 yrs) on the adult menu, Students (19-24 yrs with valid ID), or Visiting Parents.', tooltip: '', icon: 'cap', color: '#7b3fa0' },
     youthadult: { subtitle: 'Select this if the youth will have food from the Adult Menu', tooltip: '', icon: 'person', color: '#2b7de9' },
     youthkids:  { subtitle: 'Select this if the youth will have food from the Kids Menu', tooltip: '', icon: 'person', color: '#e67e22' },
+    concert:    { subtitle: '', tooltip: '', icon: 'music', color: '#8e44ad' },
     child:      { subtitle: '', tooltip: '', icon: 'child', color: '#27ae60' }
   };
 
@@ -230,6 +232,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     if (sku.indexOf('YOUTHWKIDS') !== -1) { return 'youthkids'; }
     if (sku.indexOf('YOUTHVP') !== -1) { return 'youthvp'; }
     if (sku.indexOf('YOUTH') !== -1) { return 'youthadult'; }
+    if (sku.indexOf('CULTURAL') !== -1) { return 'concert'; }
     return 'child';
   }
 
@@ -278,6 +281,11 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
     return (!this.memberValidity && Number(item.price) > 0) ? 10 : 0;
   }
   displayPrice(item: any): number {
+    // Tiers that set an explicit non-member price (e.g. Concert Only, where the delta is
+    // not the flat +$10) use it directly; all other paid tickets fall back to +$10.
+    if (!this.memberValidity && item.priceNonMember != null) {
+      return Number(item.priceNonMember);
+    }
     return Number(item.price) + this.surchargeFor(item);
   }
 

@@ -256,18 +256,9 @@ export class AlldetailsComponent implements OnInit {
   ];
 
   dp2026CULSkuCols = [
-    { field: 'DP2026CULTURALADULTSATSUN', headerName: 'Sat & Sun — Adult (18+)' },
-    { field: 'DP2026CULTURALSTUDENTVPSATSUN', headerName: 'Sat & Sun — Student / Visiting Parent' },
-    { field: 'DP2026CULTURALYOUTHSATSUN', headerName: 'Sat & Sun — Youth (6-17 yrs)' },
-    { field: 'DP2026CULTURALKIDSSATSUN', headerName: 'Sat & Sun — Child (0-5)' },
-    { field: 'DP2026CULTURALADULTSAT', headerName: 'Saturday — Adult (18+)' },
-    { field: 'DP2026CULTURALSTUDENTVPSAT', headerName: 'Saturday — Student / Visiting Parent' },
-    { field: 'DP2026CULTURALYOUTHSAT', headerName: 'Saturday — Youth (6-17 yrs)' },
-    { field: 'DP2026CULTURALKIDSSAT', headerName: 'Saturday — Child (0-5)' },
-    { field: 'DP2026CULTURALADULTSUN', headerName: 'Sunday — Adult (18+)' },
-    { field: 'DP2026CULTURALSTUDENTVPSUN', headerName: 'Sunday — Student / Visiting Parent' },
-    { field: 'DP2026CULTURALYOUTHSUN', headerName: 'Sunday — Youth (6-17 yrs)' },
-    { field: 'DP2026CULTURALKIDSSUN', headerName: 'Sunday — Child (0-5)' }
+    { field: 'DP2026CULTURALSAT', headerName: 'Concert — Saturday (1 Day)' },
+    { field: 'DP2026CULTURALSUN', headerName: 'Concert — Sunday (1 Day)' },
+    { field: 'DP2026CULTURALSATSUN', headerName: 'Concert — Saturday & Sunday (2 Days)' }
   ];
 
   dp2026ebcolumnDefsTickets: any[] = [];
@@ -329,18 +320,9 @@ export class AlldetailsComponent implements OnInit {
   ];
 
   dp2026CulturalRows = [
-    { label: 'Sat & Sun — Adult (18+)', skus: ['DP2026CULTURALADULTSATSUN'] },
-    { label: 'Sat & Sun — Student / Visiting Parent', skus: ['DP2026CULTURALSTUDENTVPSATSUN'] },
-    { label: 'Sat & Sun — Youth (6-17 yrs)', skus: ['DP2026CULTURALYOUTHSATSUN'] },
-    { label: 'Sat & Sun — Child (0-5)', skus: ['DP2026CULTURALKIDSSATSUN'] },
-    { label: 'Saturday — Adult (18+)', skus: ['DP2026CULTURALADULTSAT'] },
-    { label: 'Saturday — Student / Visiting Parent', skus: ['DP2026CULTURALSTUDENTVPSAT'] },
-    { label: 'Saturday — Youth (6-17 yrs)', skus: ['DP2026CULTURALYOUTHSAT'] },
-    { label: 'Saturday — Child (0-5)', skus: ['DP2026CULTURALKIDSSAT'] },
-    { label: 'Sunday — Adult (18+)', skus: ['DP2026CULTURALADULTSUN'] },
-    { label: 'Sunday — Student / Visiting Parent', skus: ['DP2026CULTURALSTUDENTVPSUN'] },
-    { label: 'Sunday — Youth (6-17 yrs)', skus: ['DP2026CULTURALYOUTHSUN'] },
-    { label: 'Sunday — Child (0-5)', skus: ['DP2026CULTURALKIDSSUN'] }
+    { label: 'Concert — Saturday (1 Day)', skus: ['DP2026CULTURALSAT'] },
+    { label: 'Concert — Sunday (1 Day)', skus: ['DP2026CULTURALSUN'] },
+    { label: 'Concert — Saturday & Sunday (2 Days)', skus: ['DP2026CULTURALSATSUN'] }
   ];
 
   dp2026SponsorRows = [
