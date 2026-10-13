@@ -1,8 +1,8 @@
 [
   {
     "sku": "DP2026CULTURALSAT",
-    "name": "NVBA Durga Puja 2026 Concert Only - Saturday (1 Day)",
-    "description": "Saturday (1 Day)",
+    "name": "NVBA Durga Puja 2026 Concert Only - Saturday (Akriti Kakkar)",
+    "description": "Saturday (Akriti Kakkar)",
     "price": 45,
     "priceNonMember": 50,
     "group": "Concert Only",
@@ -12,8 +12,8 @@
   },
   {
     "sku": "DP2026CULTURALSUN",
-    "name": "NVBA Durga Puja 2026 Concert Only - Sunday (1 Day)",
-    "description": "Sunday (1 Day)",
+    "name": "NVBA Durga Puja 2026 Concert Only - Sunday (Shubhamita)",
+    "description": "Sunday (Shubhamita)",
     "price": 45,
     "priceNonMember": 50,
     "group": "Concert Only",
@@ -23,8 +23,8 @@
   },
   {
     "sku": "DP2026CULTURALSATSUN",
-    "name": "NVBA Durga Puja 2026 Concert Only - Saturday & Sunday (2 Days)",
-    "description": "Saturday & Sunday (2 Days)",
+    "name": "NVBA Durga Puja 2026 Concert Only - Saturday & Sunday (Both Artists)",
+    "description": "Saturday & Sunday (Both Artists)",
     "price": 75,
     "priceNonMember": 85,
     "group": "Concert Only",
