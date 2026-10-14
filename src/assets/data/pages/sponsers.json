@@ -36,9 +36,9 @@
     "type": "Benefactor"
   },
   {
-    "name": "GoldenYug Life",
+    "name": "Sandesh Sharda",
     "image": "assets/images/gallery/sponsors/SandeshSardaLogo.jpeg",
-    "url": "https://www.goldenyug.life/",
+    "url": "https://www.linkedin.com/in/sandesh-sharda-8633785a",
     "dateofDonation": "Donated Just now",
     "amount": "2,000",
     "cause": "NVBA Sponser",
@@ -52,15 +52,6 @@
     "amount": "5,000",
     "cause": "NVBA Sponser",
     "type": "Benefactor"
-  },
-  {
-    "name": "Keller Williams",
-    "image": "assets/images/gallery/sponsors/Samson Property Logo.png",
-    "url": "https://chantilly.samsonproperties.net/",
-    "dateofDonation": "Donated Just now",
-    "amount": "1,000",
-    "cause": "NVBA Sponser",
-    "type": "Donor"
   },
   {
     "name": "Tech Soft Inc.",
@@ -92,7 +83,7 @@
   {
     "name": "May Jewelers",
     "image": "assets/images/gallery/sponsors/MayJewelers.png",
-    "url": "",
+    "url": "https://mayjewelers.com/",
     "dateofDonation": "",
     "amount": "",
     "cause": "NVBA Sponser",
@@ -101,7 +92,34 @@
   {
     "name": "Strategic IT Solutions",
     "image": "assets/images/gallery/sponsors/StrategicITSolutions.jpeg",
-    "url": "",
+    "url": "https://strategicit-solutions.com/",
+    "dateofDonation": "",
+    "amount": "",
+    "cause": "NVBA Sponsor",
+    "type": "Sponser"
+  },
+  {
+    "name": "Tanishq",
+    "image": "assets/images/gallery/sponsors/Tanishq.svg",
+    "url": "https://www.tanishq.com/",
+    "dateofDonation": "",
+    "amount": "",
+    "cause": "NVBA Sponsor",
+    "type": "Sponser"
+  },
+  {
+    "name": "Sunshine Groceries",
+    "image": "assets/images/gallery/sponsors/SunshineGroceries.png",
+    "url": "https://www.sunshineghm.com/",
+    "dateofDonation": "",
+    "amount": "",
+    "cause": "NVBA Sponser",
+    "type": "Sponser"
+  },
+  {
+    "name": "BITS",
+    "image": "assets/images/gallery/sponsors/BITS.png",
+    "url": "https://www.b-itsinc.com/",
     "dateofDonation": "",
     "amount": "",
     "cause": "NVBA Sponser",
