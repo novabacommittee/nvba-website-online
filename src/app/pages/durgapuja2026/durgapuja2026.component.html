@@ -67,10 +67,17 @@
         <div class="dp2026-section-header__divider"></div>
       </div>
 
-      <div class="dp2026-venue__actions dp2026-venue__actions--center">
-        <a class="dp-btn dp-btn--primary dp-btn--block" routerLink="/coming-soon">
-          📄 Timings of Durgotsav 2026 - Coming Soon
-        </a>
+      <div class="dp2026-venue__schedule">
+        <img src="./../../../assets/images/gallery/dp2026/DurgaPuja2026Schedule.JPG"
+             alt="NVBA Durga Puja 2026 Schedule" class="dp2026-schedule-img" (click)="openSchedule()">
+        <p class="dp2026-schedule-hint" (click)="openSchedule()">Tap to enlarge</p>
+      </div>
+
+      <!-- Schedule lightbox (click anywhere / Esc to close) -->
+      <div class="dp2026-schedule-lightbox" *ngIf="scheduleOpen" (click)="closeSchedule()">
+        <button class="dp2026-schedule-lightbox__close" type="button" (click)="closeSchedule()" aria-label="Close">&times;</button>
+        <img src="./../../../assets/images/gallery/dp2026/DurgaPuja2026Schedule.JPG"
+             alt="NVBA Durga Puja 2026 Schedule" class="dp2026-schedule-lightbox__img" (click)="$event.stopPropagation()">
       </div>
     </div>
   </section>

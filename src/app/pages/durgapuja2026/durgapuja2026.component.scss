@@ -539,3 +539,67 @@ $shadow-hover: 0 8px 36px rgba(0, 0, 0, 0.18);
 
 /* Offset so QR deep-link (#food-menu) doesn't land under the fixed header */
 #food-menu, #announcements, #featured-artists { scroll-margin-top: 90px; }
+
+/* Durga Puja 2026 schedule image (Announcements section) — small thumbnail, click to enlarge */
+.dp2026-venue__schedule { text-align: center; }
+.dp2026-schedule-img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.dp2026-schedule-img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+.dp2026-schedule-hint {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: #8a8a8a;
+  cursor: zoom-in;
+  letter-spacing: 0.3px;
+}
+
+/* Fullscreen lightbox */
+.dp2026-schedule-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+.dp2026-schedule-lightbox__img {
+  max-width: 94vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+.dp2026-schedule-lightbox__close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.dp2026-schedule-lightbox__close:hover { background: rgba(255, 255, 255, 0.3); }
