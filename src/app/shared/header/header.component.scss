@@ -147,14 +147,20 @@ h4 [style*="font-family"], h5 [style*="font-family"], h6 [style*="font-family"] 
 @media (max-width: 991.98px) {
   /* Expanded menu scrolls, so bottom items (e.g. Admin options) are reachable. */
   .navbar-collapse {
+    /* `100vh` on iOS Safari is taller than the visible area (it extends behind the
+       bottom toolbar), which hid the last menu item (Logout) under it. `100dvh`
+       uses the *visible* viewport; the extra safe-area bottom padding guarantees the
+       final item scrolls clear of the toolbar / home indicator. */
     max-height: calc(100vh - 90px);
+    max-height: calc(100dvh - 90px);
     overflow-y: auto;
+    overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
     /* Own solid dark background so text stays readable even when the navbar
        turns white on scroll (.scrolled). */
     background: #1c1c1c;
     border-radius: 8px;
-    padding: 8px 14px 14px;
+    padding: 8px 14px calc(env(safe-area-inset-bottom, 0px) + 32px);
     margin-top: 8px;
   }
 

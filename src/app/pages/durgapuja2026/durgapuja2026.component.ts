@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GetjsonfileService } from './../../services/getjsonfile.service';
 import { AuthService } from './../../shared/services/auth.service';
@@ -39,5 +39,12 @@ export class Durgapuja2026Component implements OnInit, AfterViewInit {
       setTimeout(() => this.scrollToFragment(id, attempt + 1), 200);
     }
   }
+
+  // ── Schedule image lightbox (click the thumbnail to view full size) ──
+  scheduleOpen = false;
+  openSchedule(): void { this.scheduleOpen = true; }
+  closeSchedule(): void { this.scheduleOpen = false; }
+  @HostListener('document:keydown.escape')
+  onEscKey(): void { if (this.scheduleOpen) { this.closeSchedule(); } }
 
 }
