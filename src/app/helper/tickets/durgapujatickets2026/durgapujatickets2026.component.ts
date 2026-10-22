@@ -72,7 +72,7 @@ export class Durgapujatickets2026Component implements OnInit, OnChanges, AfterVi
   // to an ISO timestamp (with timezone offset, e.g. '2026-09-22T00:00:00-04:00')
   // to auto-close at that exact moment. Either one shows the SOLD OUT banner and
   // hides the entire ticket/cart UI.
-  soldOut: boolean = false;
+  soldOut: boolean = true;
   salesCloseAt: string = '';
 
   get isSoldOut(): boolean {
