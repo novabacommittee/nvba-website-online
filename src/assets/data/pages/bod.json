@@ -3,40 +3,39 @@
         "id": "1",
         "img_url": "assets/images/bod/Paul_Upadhyay.JPG",
         "img_xurl": "",
-        "designation":"Board of Director",
+        "designation": "Board of Director",
         "tag": "",
         "description": "0",
         "display_name": "Paul Upadhyay",
         "facebook": "",
-        "email":"panditjee@novaba.onmicrosoft.com",
+        "email": "panditjee@novaba.onmicrosoft.com",
         "linkedin": "",
-        "website":""
-  },
-  {
+        "website": ""
+    },
+    {
         "id": "2",
-        "img_url": "assets/images/bod/dBasak.png",
+        "img_url": "assets/images/bod/DebasisBasak.jpg",
         "img_xurl": "",
-        "designation":"Board of Director",
+        "designation": "Board of Director",
         "tag": "",
         "description": "0",
         "display_name": "Debasis Basak",
         "facebook": "",
-        "email":"dbasak@novaba.onmicrosoft.com",
+        "email": "dbasak@novaba.onmicrosoft.com",
         "linkedin": "",
-        "website":""
+        "website": ""
     },
     {
         "id": "3",
         "img_url": "assets/images/bod/SRay.jpg",
         "img_xurl": "",
-        "designation":"Board of Director",
+        "designation": "Board of Director",
         "tag": "",
         "description": "0",
         "display_name": "Suparna Ray",
         "facebook": "",
-        "email":"suparna@novaba.onmicrosoft.com",
+        "email": "suparna@novaba.onmicrosoft.com",
         "linkedin": "",
-        "website":""
+        "website": ""
     }
-
 ]
