@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
 import { TeamComponent } from './pages/aboutus/team/team.component';
+import { SponsorsComponent } from './pages/aboutus/sponsors/sponsors.component';
 import { BodComponent } from './pages/aboutus/bod/bod.component';
 import { ConstitutionComponent } from './pages/aboutus/constitution/constitution.component';
 import { HistoryComponent } from './pages/aboutus/history/history.component';
@@ -74,6 +75,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: 'full' },
   { path: "home", component: HomeComponent, pathMatch: 'full'  },
   { path: "team", component: TeamComponent, pathMatch: 'full'  },
+  { path: "sponsors", component: SponsorsComponent, pathMatch: 'full'  },
   { path: "bod", component: BodComponent, pathMatch: 'full'  },
   { path: "history", component: HistoryComponent, pathMatch: 'full'  },
   { path: "constitution", component: ConstitutionComponent, pathMatch: 'full'  },

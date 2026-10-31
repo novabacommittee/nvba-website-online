@@ -26,7 +26,7 @@ export class LatesteventsComponent implements OnInit {
   events: any = [];
   pastevents: any =[];
   commingevents: any =[];
-  pastEventsExpanded: boolean = false; // Set to false to make it collapsed by default
+  pastEventsExpanded: boolean = true; // Default set in ngOnInit based on hasUpcoming
   flyerImage: string | null = null; // full-size event flyer shown in a lightbox
   selectedYear: string = ''; // Track the selected year
   pastEventsByYear: { [key: string]: any[] } = {}; // Group events by year
@@ -49,6 +49,10 @@ export class LatesteventsComponent implements OnInit {
       
       // Group past events by year
       this.groupPastEventsByYear();
+      // Default to the most recent past year (e.g. 2026) so those events are shown on load.
+      this.selectedYear = this.getYearKeys()[0] || '';
+      // Collapse Past Events when there are upcoming events; keep it open when there are none.
+      this.pastEventsExpanded = !this.hasUpcoming;
       console.log( this.pastevents);
     });
   }
@@ -105,6 +109,11 @@ export class LatesteventsComponent implements OnInit {
   
   getYearKeys(): string[] {
     return Object.keys(this.pastEventsByYear).sort((a, b) => parseInt(b) - parseInt(a));
+  }
+
+  // True only when at least one event is currently live/upcoming.
+  get hasUpcoming(): boolean {
+    return (this.commingevents || []).some((e: any) => e.eventType === 'current');
   }
 
   openFlyer(img: string): void {
