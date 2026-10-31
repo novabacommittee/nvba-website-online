@@ -1,5 +1,5 @@
 <!-- ═══════════════════ UPCOMING EVENTS ═══════════════════ -->
-<section class="ev-upcoming">
+<section class="ev-upcoming" *ngIf="hasUpcoming">
   <div class="ev-container">
 
     <div class="ev-section-header">
@@ -47,7 +47,7 @@
 </section>
 
 <!-- ═══════════════════ SECTION DIVIDER ═══════════════════ -->
-<div class="ev-divider">
+<div class="ev-divider" *ngIf="hasUpcoming">
   <span class="ev-divider__line"></span>
   <span class="ev-divider__icon">&#10038;</span>
   <span class="ev-divider__line"></span>

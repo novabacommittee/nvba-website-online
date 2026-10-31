@@ -1,132 +1,140 @@
 [
-    {
-        "pageId": "1",
-        "pageName": "Home",
-        "pageLink": "home",
+  {
+    "pageId": "1",
+    "pageName": "Home",
+    "pageLink": "home",
+    "tag": "",
+    "description": "",
+    "child": null
+  },
+  {
+    "pageId": "4",
+    "pageName": "Cares",
+    "pageLink": "cares",
+    "tag": "",
+    "description": "NVBA Cares related activities",
+    "child": null
+  },
+  {
+    "pageId": "2",
+    "pageName": "About Us",
+    "pageLink": "about",
+    "tag": "",
+    "description": "",
+    "child": [
+      {
+        "pageId": "20",
+        "pageName": "Sponsors",
+        "pageLink": "sponsors",
+        "tag": "",
+        "description": "Our sponsors",
+        "child": null
+      },
+      {
+        "pageId": "21",
+        "pageName": "Executive Committee",
+        "pageLink": "team",
+        "tag": "",
+        "description": "This is the current Executive Committee for 2024-2025",
+        "child": null
+      },
+      {
+        "pageId": "22",
+        "pageName": "Board Of Directors",
+        "pageLink": "bod",
+        "tag": "",
+        "description": "Board of Directors team",
+        "child": null
+      },
+      {
+        "pageId": "24",
+        "pageName": "Our Constitution",
+        "pageLink": "constitution",
+        "tag": "",
+        "description": "NVBA constitution approved by IRS for 501c3 organization",
+        "child": null
+      },
+      {
+        "pageId": "25",
+        "pageName": "Annual General Meeting",
+        "pageLink": "agm",
+        "tag": "",
+        "description": "Annual general meeting with NVBA members for fiancial report presentation",
+        "child": null
+      },
+      {
+        "pageId": "26",
+        "pageName": "From President's Desk",
+        "pageLink": "frompresidentsdesk",
         "tag": "",
         "description": "",
         "child": null
-    },
-    {
-        "pageId": "4",
-        "pageName": "Cares",
-        "pageLink": "cares",
+      }
+    ]
+  },
+  {
+    "pageId": "3",
+    "pageName": "Membership",
+    "pageLink": "membership",
+    "tag": "",
+    "description": "NVBA membership details with email subscription",
+    "child": null
+  },
+  {
+    "pageId": "7",
+    "pageName": "Gallery",
+    "pageLink": "gallery",
+    "tag": "",
+    "description": "Photo gallery with community events organized by year",
+    "child": null
+  },
+  {
+    "pageId": "5",
+    "pageName": "Archive",
+    "pageLink": "archive",
+    "tag": "",
+    "description": "",
+    "child": [
+      {
+        "pageId": "51",
+        "pageName": "Team 2024-25",
+        "pageLink": "pastteam2024",
         "tag": "",
-        "description": "NVBA Cares related activities",
+        "description": "This is the Executive Committee for 2024-2025",
         "child": null
-    },
-    {
-        "pageId": "2",
-        "pageName": "About Us",
-        "pageLink": "about",
+      },
+      {
+        "pageId": "52",
+        "pageName": "Team 2022-23",
+        "pageLink": "pastteam2022",
         "tag": "",
-        "description": "",
-        "child": [
-        {
-            "pageId": "21",
-            "pageName": "Executive Committee",
-            "pageLink": "team",
-            "tag": "",
-            "description": "This is the current Executive Committee for 2024-2025",
-            "child": null
-        },
-        {
-            "pageId": "22",
-            "pageName": "Board Of Directors",
-            "pageLink": "bod",
-            "tag": "",
-            "description": "Board of Directors team",
-            "child": null
-        },
-        {
-            "pageId": "24",
-            "pageName": "Our Constitution",
-            "pageLink": "constitution",
-            "tag": "",
-            "description": "NVBA constitution approved by IRS for 501c3 organization",
-            "child": null
-        },
-        {
-            "pageId": "25",
-            "pageName": "Annual General Meeting",
-            "pageLink": "agm",
-            "tag": "",
-            "description": "Annual general meeting with NVBA members for fiancial report presentation",
-            "child": null
-        },
-        {
-            "pageId": "26",
-            "pageName": "From President's Desk",
-            "pageLink": "frompresidentsdesk",
-            "tag": "",
-            "description": "",
-            "child": null
-        }]
-    },
-    {
-        "pageId": "3",
-        "pageName": "Membership",
-        "pageLink": "membership",
-        "tag": "",
-        "description": "NVBA membership details with email subscription",
+        "description": "This is the Executive Committee for 2022-2023",
         "child": null
-    },
-    {
-        "pageId": "7",
-        "pageName": "Gallery",
-        "pageLink": "gallery",
+      },
+      {
+        "pageId": "53",
+        "pageName": "Team 2020-21",
+        "pageLink": "pastteam2020",
         "tag": "",
-        "description": "Photo gallery with community events organized by year",
+        "description": "This is the Executive Committee for 2020-2021",
         "child": null
-    },
-    {
-        "pageId": "5",
-        "pageName": "Archive",
-        "pageLink": "archive",
+      },
+      {
+        "pageId": "54",
+        "pageName": "Magazines",
+        "pageLink": "magazines",
         "tag": "",
-        "description": "",
-        "child": [
-            {
-                "pageId": "51",
-                "pageName": "Team 2024-25",
-                "pageLink": "pastteam2024",
-                "tag": "",
-                "description": "This is the Executive Committee for 2024-2025",
-                "child": null
-            },
-            {
-                "pageId": "52",
-                "pageName": "Team 2022-23",
-                "pageLink": "pastteam2022",
-                "tag": "",
-                "description": "This is the Executive Committee for 2022-2023",
-                "child": null
-            },
-            {
-                "pageId": "53",
-                "pageName": "Team 2020-21",
-                "pageLink": "pastteam2020",
-                "tag": "",
-                "description": "This is the Executive Committee for 2020-2021",
-                "child": null
-            },
-            {
-                "pageId": "54",
-                "pageName": "Magazines",
-                "pageLink": "magazines",
-                "tag": "",
-                "description": "Past annual magazine published during Durga Puja",
-                "child": null
-            }
-        ]
-    },
-    {
-        "pageId": "6",
-        "pageName": "Contact Us",
-        "pageLink": "contactus",
-        "tag": "",
-        "description": "Contact information for Northern Virginia Bengali Association",
+        "description": "Past annual magazine published during Durga Puja",
         "child": null
-    }
-
+      }
+    ]
+  },
+  {
+    "pageId": "6",
+    "pageName": "Contact Us",
+    "pageLink": "contactus",
+    "tag": "",
+    "description": "Contact information for Northern Virginia Bengali Association",
+    "child": null
+  }
 ]

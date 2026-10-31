@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { TeamComponent } from './pages/aboutus/team/team.component';
+import { SponsorsComponent } from './pages/aboutus/sponsors/sponsors.component';
 import { BodComponent } from './pages/aboutus/bod/bod.component';
 
 import { GetjsonfileService } from './services/getjsonfile.service';
@@ -118,6 +119,7 @@ import { CollapseModule } from "ngx-bootstrap/collapse";
     HomeComponent,
     ContactusComponent,
     TeamComponent,
+    SponsorsComponent,
     BodComponent,
     ConstitutionComponent,
     ThreecolComponent,
